@@ -1,0 +1,2282 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_ipcc.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c"
+  20              		.section	.text.HAL_IPCC_RxCallback,"ax",%progbits
+  21              		.align	1
+  22              		.weak	HAL_IPCC_RxCallback
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	HAL_IPCC_RxCallback:
+  28              	.LVL0:
+  29              	.LFB1114:
+   1:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+   2:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ******************************************************************************
+   3:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @file    stm32wbxx_hal_ipcc.c
+   4:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @author  MCD Application Team
+   5:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief   IPCC HAL module driver.
+   6:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This file provides firmware functions to manage the following
+   7:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          functionalities of the Inter-Processor communication controller
+   8:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          peripherals (IPCC).
+   9:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *           + Initialization and de-initialization functions
+  10:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *           + Configuration, notification and interrupts handling
+  11:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *           + Peripheral State and Error functions
+  12:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ******************************************************************************
+  13:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @attention
+  14:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+  15:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * Copyright (c) 2019 STMicroelectronics.
+  16:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * All rights reserved.
+  17:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+  18:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  19:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * in the root directory of this software component.
+  20:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  21:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+  22:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ******************************************************************************
+  23:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   @verbatim
+  24:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ==============================================================================
+  25:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                         ##### How to use this driver #####
+  26:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ==============================================================================
+  27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     [..]
+  28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       The IPCC HAL driver can be used as follows:
+  29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 2
+
+
+  30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Declare a IPCC_HandleTypeDef handle structure, for example: IPCC_HandleTypeDef hipcc;
+  31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Initialize the IPCC low level resources by implementing the HAL_IPCC_MspInit() API:
+  32:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         (##) Enable the IPCC interface clock
+  33:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         (##) NVIC configuration if you need to use interrupt process
+  34:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             (+++) Configure the IPCC interrupt priority
+  35:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             (+++) Enable the NVIC IPCC IRQ
+  36:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  37:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Initialize the IPCC registers by calling the HAL_IPCC_Init() API which trig
+  38:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           HAL_IPCC_MspInit().
+  39:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  40:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Implement the interrupt callbacks for transmission and reception to use the driver in int
+  41:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  42:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Associate those callback to the corresponding channel and direction using HAL_IPCC_Config
+  43:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           This is the interrupt mode.
+  44:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           If no callback are configured for a given channel and direction, it is up to the user to 
+  45:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           status of the communication (polling mode).
+  46:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  47:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (#) Notify the other MCU when a message is available in a chosen channel
+  48:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           or when a message has been retrieved from a chosen channel by calling
+  49:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           the HAL_IPCC_NotifyCPU() API.
+  50:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  51:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @endverbatim
+  52:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ******************************************************************************
+  53:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  54:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  55:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Includes ------------------------------------------------------------------*/
+  56:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #include "stm32wbxx_hal.h"
+  57:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  58:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #if defined(IPCC)
+  59:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup STM32WBxx_HAL_Driver
+  60:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+  61:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  62:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  63:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC
+  64:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+  65:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  66:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  67:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #ifdef HAL_IPCC_MODULE_ENABLED
+  68:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  69:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Private typedef -----------------------------------------------------------*/
+  70:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Private define ------------------------------------------------------------*/
+  71:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @defgroup IPCC_Private_Constants IPCC Private Constants
+  72:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+  73:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  74:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #define IPCC_ALL_RX_BUF 0x0000003FU /*!< Mask for all RX buffers. */
+  75:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #define IPCC_ALL_TX_BUF 0x003F0000U /*!< Mask for all TX buffers. */
+  76:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** #define CHANNEL_INDEX_MASK 0x0000000FU /*!< Mask the channel index to avoid overflow */
+  77:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+  78:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+  79:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  80:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  81:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Private macros ------------------------------------------------------------*/
+  82:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Private variables ---------------------------------------------------------*/
+  83:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /* Private function prototypes -----------------------------------------------*/
+  84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @defgroup IPCC_Private_Functions IPCC Private Functions
+  85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+  86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 3
+
+
+  87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_MaskInterrupt(uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir);
+  88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_UnmaskInterrupt(uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir);
+  89:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_SetDefaultCallbacks(IPCC_HandleTypeDef *hipcc);
+  90:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_Reset_Register(IPCC_CommonTypeDef *Instance);
+  91:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+  92:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+  93:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  94:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  95:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_Exported_Functions
+  96:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+  97:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+  98:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  99:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_Exported_Functions_Group1
+ 100:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *  @brief    Initialization and de-initialization functions
+ 101:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+ 102:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @verbatim
+ 103:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****  ===============================================================================
+ 104:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****              ##### Initialization and de-initialization functions  #####
+ 105:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****  ===============================================================================
+ 106:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     [..]  This subsection provides a set of functions allowing to initialize and
+ 107:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           deinitialize the IPCC peripheral:
+ 108:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 109:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (+) User must Implement HAL_IPCC_MspInit() function in which he configures
+ 110:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           all related peripherals resources (CLOCK and NVIC ).
+ 111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (+) Call the function HAL_IPCC_Init() to configure the IPCC register.
+ 113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       (+) Call the function HAL_PKA_DeInit() to restore the default configuration
+ 115:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****           of the selected IPCC peripheral.
+ 116:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 117:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @endverbatim
+ 118:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+ 119:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 120:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 121:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 122:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Initialize the IPCC peripheral.
+ 123:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 124:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval HAL status
+ 125:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 126:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_StatusTypeDef HAL_IPCC_Init(IPCC_HandleTypeDef *hipcc)
+ 127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 128:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 129:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 130:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the IPCC handle allocation */
+ 131:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (hipcc != NULL)
+ 132:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 133:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Check the parameters */
+ 134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ 135:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 136:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 137:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if (hipcc->State == HAL_IPCC_STATE_RESET)
+ 139:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 140:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* Init the low level hardware : CLOCK, NVIC */
+ 141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       HAL_IPCC_MspInit(hipcc);
+ 142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 4
+
+
+ 144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Reset all registers of the current cpu to default state */
+ 145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_Reset_Register(currentInstance);
+ 146:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Activate the interrupts */
+ 148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->CR |= (IPCC_CR_RXOIE | IPCC_CR_TXFIE);
+ 149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Clear callback pointers */
+ 151:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_SetDefaultCallbacks(hipcc);
+ 152:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 153:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Reset all callback notification request */
+ 154:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->callbackRequest = 0;
+ 155:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 156:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->State = HAL_IPCC_STATE_READY;
+ 157:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 158:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 159:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 160:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     err = HAL_ERROR;
+ 161:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 162:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 163:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return err;
+ 164:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 165:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 166:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 167:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  DeInitialize the IPCC peripheral.
+ 168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval HAL status
+ 170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_StatusTypeDef HAL_IPCC_DeInit(IPCC_HandleTypeDef *hipcc)
+ 172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 174:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 175:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the IPCC handle allocation */
+ 176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (hipcc != NULL)
+ 177:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 178:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ 179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 180:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 181:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Set the state to busy */
+ 182:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->State = HAL_IPCC_STATE_BUSY;
+ 183:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 184:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Reset all registers of the current cpu to default state */
+ 185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_Reset_Register(currentInstance);
+ 186:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 187:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Clear callback pointers */
+ 188:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_SetDefaultCallbacks(hipcc);
+ 189:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 190:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Reset all callback notification request */
+ 191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->callbackRequest = 0;
+ 192:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* DeInit the low level hardware : CLOCK, NVIC */
+ 194:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     HAL_IPCC_MspDeInit(hipcc);
+ 195:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 196:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->State = HAL_IPCC_STATE_RESET;
+ 197:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 198:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     err = HAL_ERROR;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 5
+
+
+ 201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return err;
+ 204:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 205:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 206:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 207:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Initialize the IPCC MSP.
+ 208:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 209:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval None
+ 210:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 211:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** __weak void HAL_IPCC_MspInit(IPCC_HandleTypeDef *hipcc)
+ 212:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 213:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+ 214:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(hipcc);
+ 215:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* NOTE : This function should not be modified. When the callback is needed
+ 217:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             the HAL_IPCC_MspInit should be implemented in the user file
+ 218:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****    */
+ 219:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 220:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 221:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 222:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief IPCC MSP DeInit
+ 223:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 224:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval None
+ 225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** __weak void HAL_IPCC_MspDeInit(IPCC_HandleTypeDef *hipcc)
+ 227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+ 229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(hipcc);
+ 230:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 231:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* NOTE : This function should not be modified. When the callback is needed
+ 232:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             the HAL_IPCC_MspDeInit should be implemented in the user file
+ 233:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****    */
+ 234:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 235:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 236:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 237:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+ 238:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 239:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 240:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 241:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_Exported_Functions_Group2
+ 242:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *  @brief    Configuration, notification and Irq handling functions.
+ 243:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+ 244:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @verbatim
+ 245:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****  ===============================================================================
+ 246:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****               ##### IO operation functions #####
+ 247:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****  ===============================================================================
+ 248:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     [..]  This section provides functions to allow two MCU to communicate.
+ 249:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 250:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     (#) For a given channel (from 0 to IPCC_CHANNEL_NUMBER), for a given direction
+ 251:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         IPCC_CHANNEL_DIR_TX or IPCC_CHANNEL_DIR_RX, you can choose to communicate
+ 252:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         in polling mode or in interrupt mode using IPCC.
+ 253:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         By default, the IPCC HAL driver handle the communication in polling mode.
+ 254:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         By setting a callback for a channel/direction, this communication use
+ 255:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         the interrupt mode.
+ 256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     (#) Polling mode:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 6
+
+
+ 258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) To transmit information, use HAL_IPCC_NotifyCPU() with
+ 259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_CHANNEL_DIR_TX. To know when the other processor has handled
+ 260:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             the notification, poll the communication using HAL_IPCC_NotifyCPU
+ 261:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             with IPCC_CHANNEL_DIR_TX.
+ 262:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 263:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) To receive information, poll the status of the communication with
+ 264:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             HAL_IPCC_GetChannelStatus with IPCC_CHANNEL_DIR_RX. To notify the other
+ 265:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             processor that the information has been received, use HAL_IPCC_NotifyCPU
+ 266:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             with IPCC_CHANNEL_DIR_RX.
+ 267:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 268:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     (#) Interrupt mode:
+ 269:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) Configure a callback for the channel and the direction using HAL_IPCC_ConfigChannel().
+ 270:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             This callback will be triggered under interrupt.
+ 271:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 272:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) To transmit information, use HAL_IPCC_NotifyCPU() with
+ 273:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_CHANNEL_DIR_TX. The callback configured with HAL_IPCC_ConfigChannel() and
+ 274:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_CHANNEL_DIR_TX will be triggered once the communication has been handled by the
+ 275:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             other processor.
+ 276:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 277:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) To receive information, the callback configured with HAL_IPCC_ConfigChannel() and
+ 278:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_CHANNEL_DIR_RX will be triggered on reception of a communication.To notify the oth
+ 279:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             processor that the information has been received, use HAL_IPCC_NotifyCPU
+ 280:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             with IPCC_CHANNEL_DIR_RX.
+ 281:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) HAL_IPCC_TX_IRQHandler must be added to the IPCC TX IRQHandler
+ 283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****        (++) HAL_IPCC_RX_IRQHandler must be added to the IPCC RX IRQHandler
+ 285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @endverbatim
+ 286:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+ 287:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 288:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 289:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 290:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Activate the callback notification on receive/transmit interrupt
+ 291:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 292:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 293:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 294:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 295:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 296:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 297:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 298:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 299:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 300:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 301:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  cb Interrupt callback
+ 302:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval HAL status
+ 303:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 304:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_StatusTypeDef HAL_IPCC_ActivateNotification(IPCC_HandleTypeDef *hipcc,
+ 305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                                                 uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef Chann
+ 306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                                                 ChannelCb cb)
+ 307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 309:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 310:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the IPCC handle allocation */
+ 311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (hipcc != NULL)
+ 312:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Check the parameters */
+ 314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 7
+
+
+ 315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Check IPCC state */
+ 317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if (hipcc->State == HAL_IPCC_STATE_READY)
+ 318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 319:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* Set callback and register masking information */
+ 320:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (ChannelDir == IPCC_CHANNEL_DIR_TX)
+ 321:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 322:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackTx[ChannelIndex] = cb;
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 324:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 325:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       else
+ 326:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackRx[ChannelIndex] = cb;
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 329:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 331:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* Unmask only the channels in reception (Transmission channel mask/unmask is done in HAL_IPC
+ 332:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (ChannelDir == IPCC_CHANNEL_DIR_RX)
+ 333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 334:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         IPCC_UnmaskInterrupt(ChannelIndex, ChannelDir);
+ 335:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 336:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 337:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     else
+ 338:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       err = HAL_ERROR;
+ 340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 343:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     err = HAL_ERROR;
+ 345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 346:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return err;
+ 347:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 348:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 349:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 350:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Remove the callback notification on receive/transmit interrupt
+ 351:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 352:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 353:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 354:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 355:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 356:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 357:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 358:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 359:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 360:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 361:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval HAL status
+ 362:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 363:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_StatusTypeDef HAL_IPCC_DeActivateNotification(IPCC_HandleTypeDef *hipcc,
+ 364:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                                                   uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef Cha
+ 365:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 366:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 367:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 368:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the IPCC handle allocation */
+ 369:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (hipcc != NULL)
+ 370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Check the parameters */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 8
+
+
+ 372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ 373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 374:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Check IPCC state */
+ 375:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if (hipcc->State == HAL_IPCC_STATE_READY)
+ 376:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 377:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* Set default callback and register masking information */
+ 378:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (ChannelDir == IPCC_CHANNEL_DIR_TX)
+ 379:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 380:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackTx[ChannelIndex] = HAL_IPCC_TxCallback;
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 382:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 383:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       else
+ 384:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 385:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackRx[ChannelIndex] = HAL_IPCC_RxCallback;
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 387:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 388:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 389:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* Mask the interrupt */
+ 390:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       IPCC_MaskInterrupt(ChannelIndex, ChannelDir);
+ 391:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 392:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     else
+ 393:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 394:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       err = HAL_ERROR;
+ 395:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 396:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     err = HAL_ERROR;
+ 400:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 401:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return err;
+ 402:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 403:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 404:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 405:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Get state of IPCC channel
+ 406:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 407:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 408:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 409:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 410:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 411:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 412:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 413:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 414:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 415:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 416:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval Channel status
+ 417:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 418:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** IPCC_CHANNELStatusTypeDef HAL_IPCC_GetChannelStatus(IPCC_HandleTypeDef const *const hipcc,
+ 419:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                                                     uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef C
+ 420:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 421:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t channel_state;
+ 422:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 423:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *otherInstance = IPCC_C2;
+ 424:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 425:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the parameters */
+ 426:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ 427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Read corresponding channel depending of the MCU and the direction */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 9
+
+
+ 429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (ChannelDir == IPCC_CHANNEL_DIR_TX)
+ 430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     channel_state = (currentInstance->SR) & (IPCC_SR_CH1F_Msk << (ChannelIndex & CHANNEL_INDEX_MASK
+ 432:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 433:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 434:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     channel_state = (otherInstance->SR) & (IPCC_SR_CH1F_Msk << (ChannelIndex & CHANNEL_INDEX_MASK))
+ 436:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 437:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 438:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return (channel_state == 0UL) ? IPCC_CHANNEL_STATUS_FREE : IPCC_CHANNEL_STATUS_OCCUPIED ;
+ 439:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 440:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 441:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 442:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Notify remote processor
+ 443:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 444:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 445:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 446:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 447:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 448:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 449:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 450:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 451:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 452:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval HAL status
+ 454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_StatusTypeDef HAL_IPCC_NotifyCPU(IPCC_HandleTypeDef const *const hipcc,
+ 456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                                      uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir)
+ 457:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 458:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 459:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t mask;
+ 460:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 461:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 462:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check the parameters */
+ 463:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   assert_param(IS_IPCC_ALL_INSTANCE(hipcc->Instance));
+ 464:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 465:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Check if IPCC is initialized */
+ 466:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (hipcc->State == HAL_IPCC_STATE_READY)
+ 467:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 468:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* For IPCC_CHANNEL_DIR_TX, set the status. For IPCC_CHANNEL_DIR_RX, clear the status */
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->SCR |= ((ChannelDir == IPCC_CHANNEL_DIR_TX) ? IPCC_SCR_CH1S :
+ 470:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 471:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                             << (ChannelIndex & CHANNEL_INDEX_MASK);
+ 472:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 473:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Unmask interrupt if the callback is requested */
+ 474:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     mask = ((ChannelDir == IPCC_CHANNEL_DIR_TX) ? IPCC_MR_CH1FM_Msk :
+ 475:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_MR_CH1OM_Msk) << (ChannelIndex & CHANNEL_INDEX_MASK);
+ 476:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if ((hipcc->callbackRequest & mask) == mask)
+ 477:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 478:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       IPCC_UnmaskInterrupt(ChannelIndex, ChannelDir);
+ 479:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 480:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 481:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 482:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 483:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     err = HAL_ERROR;
+ 484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 10
+
+
+ 486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return err;
+ 487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 488:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 489:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 490:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+ 491:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 492:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 493:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_IRQ_Handler_and_Callbacks
+ 494:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+ 495:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 496:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 497:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 498:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  This function handles IPCC Tx Free interrupt request.
+ 499:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 500:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval None
+ 501:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 502:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void HAL_IPCC_TX_IRQHandler(IPCC_HandleTypeDef *const hipcc)
+ 503:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 504:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 505:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t bit_pos;
+ 506:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t ch_count = 0U;
+ 507:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 508:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 509:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* check the Tx free channels which are not masked */
+ 510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = ~(currentInstance->MR) & IPCC_ALL_TX_BUF;
+ 511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & ~(currentInstance->SR << IPCC_MR_CH1FM_Pos);
+ 512:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   while (irqmask != 0UL)  /* if several bits are set, it loops to serve all of them */
+ 514:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     bit_pos = 1UL << (IPCC_MR_CH1FM_Pos + (ch_count & CHANNEL_INDEX_MASK));
+ 516:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 517:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if ((irqmask & bit_pos) != 0U)
+ 518:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 519:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* mask the channel Free interrupt  */
+ 520:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       currentInstance->MR |= bit_pos;
+ 521:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackTx[ch_count] != NULL)
+ 522:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 523:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackTx[ch_count](hipcc, ch_count, IPCC_CHANNEL_DIR_TX);
+ 524:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 525:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       irqmask =  irqmask & ~(bit_pos);
+ 526:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 527:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     ch_count++;
+ 528:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 529:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 530:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 531:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 532:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  This function handles IPCC Rx Occupied interrupt request.
+ 533:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc : IPCC handle
+ 534:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval None
+ 535:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 536:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void HAL_IPCC_RX_IRQHandler(IPCC_HandleTypeDef *const hipcc)
+ 537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 538:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 539:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t bit_pos;
+ 540:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t ch_count = 0U;
+ 541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *otherInstance = IPCC_C2;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 11
+
+
+ 543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* check the Rx occupied channels which are not masked */
+ 545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = ~(currentInstance->MR) & IPCC_ALL_RX_BUF;
+ 546:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & otherInstance->SR;
+ 547:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 548:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   while (irqmask != 0UL)  /* if several bits are set, it loops to serve all of them */
+ 549:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 550:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     bit_pos = 1UL << (ch_count & CHANNEL_INDEX_MASK);
+ 551:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 552:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     if ((irqmask & bit_pos) != 0U)
+ 553:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 554:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       /* mask the channel occupied interrupt */
+ 555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       currentInstance->MR |= bit_pos;
+ 556:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackRx[ch_count] != NULL)
+ 557:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 558:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->ChannelCallbackRx[ch_count](hipcc, ch_count, IPCC_CHANNEL_DIR_RX);
+ 559:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 560:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       irqmask = irqmask & ~(bit_pos);
+ 561:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 562:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     ch_count++;
+ 563:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 564:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 565:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 566:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 567:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Rx occupied callback
+ 568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param hipcc IPCC handle
+ 569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param ChannelIndex Channel number
+ 570:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 571:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 572:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 573:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 574:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 575:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 576:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 577:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param ChannelDir Channel direction
+ 578:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 579:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** __weak void HAL_IPCC_RxCallback(IPCC_HandleTypeDef *hipcc, uint32_t ChannelIndex, IPCC_CHANNELDirTy
+ 580:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+  30              		.loc 1 580 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+ 581:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+ 582:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(hipcc);
+  35              		.loc 1 582 3 view .LVU1
+ 583:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(ChannelIndex);
+  36              		.loc 1 583 3 view .LVU2
+ 584:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(ChannelDir);
+  37              		.loc 1 584 3 view .LVU3
+ 585:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 586:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 587:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             the HAL_IPCC_RxCallback can be implemented in the user file
+ 588:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****    */
+ 589:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+  38              		.loc 1 589 1 is_stmt 0 view .LVU4
+  39 0000 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 12
+
+
+  40              		.cfi_endproc
+  41              	.LFE1114:
+  43              		.section	.text.HAL_IPCC_TxCallback,"ax",%progbits
+  44              		.align	1
+  45              		.weak	HAL_IPCC_TxCallback
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	HAL_IPCC_TxCallback:
+  51              	.LVL1:
+  52              	.LFB1115:
+ 590:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 591:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 592:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Tx free callback
+ 593:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param hipcc IPCC handle
+ 594:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param ChannelIndex Channel number
+ 595:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 596:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 597:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 602:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param ChannelDir Channel direction
+ 603:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 604:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** __weak void HAL_IPCC_TxCallback(IPCC_HandleTypeDef *hipcc, uint32_t ChannelIndex, IPCC_CHANNELDirTy
+ 605:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+  53              		.loc 1 605 1 is_stmt 1 view -0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+ 606:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+ 607:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(hipcc);
+  58              		.loc 1 607 3 view .LVU6
+ 608:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(ChannelIndex);
+  59              		.loc 1 608 3 view .LVU7
+ 609:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   UNUSED(ChannelDir);
+  60              		.loc 1 609 3 view .LVU8
+ 610:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 611:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 612:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             the HAL_IPCC_TxCallback can be implemented in the user file
+ 613:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****    */
+ 614:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+  61              		.loc 1 614 1 is_stmt 0 view .LVU9
+  62 0000 7047     		bx	lr
+  63              		.cfi_endproc
+  64              	.LFE1115:
+  66              		.section	.text.HAL_IPCC_MspInit,"ax",%progbits
+  67              		.align	1
+  68              		.weak	HAL_IPCC_MspInit
+  69              		.syntax unified
+  70              		.thumb
+  71              		.thumb_func
+  73              	HAL_IPCC_MspInit:
+  74              	.LVL2:
+  75              	.LFB1106:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 13
+
+
+ 212:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+  76              		.loc 1 212 1 is_stmt 1 view -0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+ 214:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  81              		.loc 1 214 3 view .LVU11
+ 219:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+  82              		.loc 1 219 1 is_stmt 0 view .LVU12
+  83 0000 7047     		bx	lr
+  84              		.cfi_endproc
+  85              	.LFE1106:
+  87              		.section	.text.HAL_IPCC_MspDeInit,"ax",%progbits
+  88              		.align	1
+  89              		.weak	HAL_IPCC_MspDeInit
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	HAL_IPCC_MspDeInit:
+  95              	.LVL3:
+  96              	.LFB1107:
+ 227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Prevent unused argument(s) compilation warning */
+  97              		.loc 1 227 1 is_stmt 1 view -0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              		@ link register save eliminated.
+ 229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 102              		.loc 1 229 3 view .LVU14
+ 234:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 103              		.loc 1 234 1 is_stmt 0 view .LVU15
+ 104 0000 7047     		bx	lr
+ 105              		.cfi_endproc
+ 106              	.LFE1107:
+ 108              		.section	.text.HAL_IPCC_GetChannelStatus,"ax",%progbits
+ 109              		.align	1
+ 110              		.global	HAL_IPCC_GetChannelStatus
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	HAL_IPCC_GetChannelStatus:
+ 116              	.LVL4:
+ 117              	.LFB1110:
+ 420:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t channel_state;
+ 118              		.loc 1 420 1 is_stmt 1 view -0
+ 119              		.cfi_startproc
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122              		@ link register save eliminated.
+ 421:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 123              		.loc 1 421 3 view .LVU17
+ 422:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *otherInstance = IPCC_C2;
+ 124              		.loc 1 422 3 view .LVU18
+ 423:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 125              		.loc 1 423 3 view .LVU19
+ 426:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 14
+
+
+ 126              		.loc 1 426 3 view .LVU20
+ 429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 127              		.loc 1 429 3 view .LVU21
+ 429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 128              		.loc 1 429 6 is_stmt 0 view .LVU22
+ 129 0000 52B9     		cbnz	r2, .L6
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 130              		.loc 1 431 5 is_stmt 1 view .LVU23
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 131              		.loc 1 431 37 is_stmt 0 view .LVU24
+ 132 0002 094B     		ldr	r3, .L8
+ 133 0004 D868     		ldr	r0, [r3, #12]
+ 134              	.LVL5:
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 135              		.loc 1 431 80 view .LVU25
+ 136 0006 01F00F01 		and	r1, r1, #15
+ 137              	.LVL6:
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 138              		.loc 1 431 63 view .LVU26
+ 139 000a 0123     		movs	r3, #1
+ 140 000c 8B40     		lsls	r3, r3, r1
+ 431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 141              		.loc 1 431 19 view .LVU27
+ 142 000e 1840     		ands	r0, r0, r3
+ 143              	.LVL7:
+ 144              	.L7:
+ 438:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 145              		.loc 1 438 3 is_stmt 1 view .LVU28
+ 439:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 146              		.loc 1 439 1 is_stmt 0 view .LVU29
+ 147 0010 0038     		subs	r0, r0, #0
+ 439:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 148              		.loc 1 439 1 view .LVU30
+ 149 0012 18BF     		it	ne
+ 150 0014 0120     		movne	r0, #1
+ 151              	.LVL8:
+ 439:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 152              		.loc 1 439 1 view .LVU31
+ 153 0016 7047     		bx	lr
+ 154              	.LVL9:
+ 155              	.L6:
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 156              		.loc 1 435 5 is_stmt 1 view .LVU32
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 157              		.loc 1 435 35 is_stmt 0 view .LVU33
+ 158 0018 034B     		ldr	r3, .L8
+ 159 001a D869     		ldr	r0, [r3, #28]
+ 160              	.LVL10:
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 161              		.loc 1 435 78 view .LVU34
+ 162 001c 01F00F01 		and	r1, r1, #15
+ 163              	.LVL11:
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 164              		.loc 1 435 61 view .LVU35
+ 165 0020 0123     		movs	r3, #1
+ 166 0022 8B40     		lsls	r3, r3, r1
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 15
+
+
+ 167              		.loc 1 435 19 view .LVU36
+ 168 0024 1840     		ands	r0, r0, r3
+ 169              	.LVL12:
+ 435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 170              		.loc 1 435 19 view .LVU37
+ 171 0026 F3E7     		b	.L7
+ 172              	.L9:
+ 173              		.align	2
+ 174              	.L8:
+ 175 0028 000C0058 		.word	1476398080
+ 176              		.cfi_endproc
+ 177              	.LFE1110:
+ 179              		.section	.text.HAL_IPCC_TX_IRQHandler,"ax",%progbits
+ 180              		.align	1
+ 181              		.global	HAL_IPCC_TX_IRQHandler
+ 182              		.syntax unified
+ 183              		.thumb
+ 184              		.thumb_func
+ 186              	HAL_IPCC_TX_IRQHandler:
+ 187              	.LVL13:
+ 188              	.LFB1112:
+ 503:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 189              		.loc 1 503 1 is_stmt 1 view -0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 503:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 193              		.loc 1 503 1 is_stmt 0 view .LVU39
+ 194 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 195              		.cfi_def_cfa_offset 24
+ 196              		.cfi_offset 3, -24
+ 197              		.cfi_offset 4, -20
+ 198              		.cfi_offset 5, -16
+ 199              		.cfi_offset 6, -12
+ 200              		.cfi_offset 7, -8
+ 201              		.cfi_offset 14, -4
+ 202 0002 0746     		mov	r7, r0
+ 504:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t bit_pos;
+ 203              		.loc 1 504 3 is_stmt 1 view .LVU40
+ 505:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t ch_count = 0U;
+ 204              		.loc 1 505 3 view .LVU41
+ 506:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 205              		.loc 1 506 3 view .LVU42
+ 206              	.LVL14:
+ 507:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 207              		.loc 1 507 3 view .LVU43
+ 510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & ~(currentInstance->SR << IPCC_MR_CH1FM_Pos);
+ 208              		.loc 1 510 3 view .LVU44
+ 510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & ~(currentInstance->SR << IPCC_MR_CH1FM_Pos);
+ 209              		.loc 1 510 30 is_stmt 0 view .LVU45
+ 210 0004 124B     		ldr	r3, .L18
+ 211 0006 5D68     		ldr	r5, [r3, #4]
+ 510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & ~(currentInstance->SR << IPCC_MR_CH1FM_Pos);
+ 212              		.loc 1 510 13 view .LVU46
+ 213 0008 ED43     		mvns	r5, r5
+ 510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & ~(currentInstance->SR << IPCC_MR_CH1FM_Pos);
+ 214              		.loc 1 510 11 view .LVU47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 16
+
+
+ 215 000a 05F47C15 		and	r5, r5, #4128768
+ 216              	.LVL15:
+ 511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 217              		.loc 1 511 3 is_stmt 1 view .LVU48
+ 511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 218              		.loc 1 511 40 is_stmt 0 view .LVU49
+ 219 000e DB68     		ldr	r3, [r3, #12]
+ 511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 220              		.loc 1 511 11 view .LVU50
+ 221 0010 25EA0345 		bic	r5, r5, r3, lsl #16
+ 222              	.LVL16:
+ 513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 223              		.loc 1 513 3 is_stmt 1 view .LVU51
+ 506:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 224              		.loc 1 506 12 is_stmt 0 view .LVU52
+ 225 0014 0026     		movs	r6, #0
+ 513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 226              		.loc 1 513 9 view .LVU53
+ 227 0016 06E0     		b	.L11
+ 228              	.LVL17:
+ 229              	.L17:
+ 523:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 230              		.loc 1 523 9 is_stmt 1 view .LVU54
+ 231 0018 0022     		movs	r2, #0
+ 232 001a 3146     		mov	r1, r6
+ 233 001c 3846     		mov	r0, r7
+ 234 001e 9847     		blx	r3
+ 235              	.LVL18:
+ 236              	.L13:
+ 525:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 237              		.loc 1 525 7 view .LVU55
+ 525:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 238              		.loc 1 525 15 is_stmt 0 view .LVU56
+ 239 0020 25EA0405 		bic	r5, r5, r4
+ 240              	.LVL19:
+ 241              	.L12:
+ 527:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 242              		.loc 1 527 5 is_stmt 1 view .LVU57
+ 527:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 243              		.loc 1 527 13 is_stmt 0 view .LVU58
+ 244 0024 0136     		adds	r6, r6, #1
+ 245              	.LVL20:
+ 246              	.L11:
+ 513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 247              		.loc 1 513 18 is_stmt 1 view .LVU59
+ 248 0026 8DB1     		cbz	r5, .L16
+ 515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 249              		.loc 1 515 5 view .LVU60
+ 515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 250              		.loc 1 515 53 is_stmt 0 view .LVU61
+ 251 0028 06F00F03 		and	r3, r6, #15
+ 515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 252              		.loc 1 515 41 view .LVU62
+ 253 002c 1033     		adds	r3, r3, #16
+ 515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 254              		.loc 1 515 13 view .LVU63
+ 255 002e 0124     		movs	r4, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 17
+
+
+ 256 0030 9C40     		lsls	r4, r4, r3
+ 257              	.LVL21:
+ 517:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 258              		.loc 1 517 5 is_stmt 1 view .LVU64
+ 517:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 259              		.loc 1 517 8 is_stmt 0 view .LVU65
+ 260 0032 2542     		tst	r5, r4
+ 261 0034 F6D0     		beq	.L12
+ 520:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackTx[ch_count] != NULL)
+ 262              		.loc 1 520 7 is_stmt 1 view .LVU66
+ 520:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackTx[ch_count] != NULL)
+ 263              		.loc 1 520 22 is_stmt 0 view .LVU67
+ 264 0036 064A     		ldr	r2, .L18
+ 265 0038 5368     		ldr	r3, [r2, #4]
+ 520:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackTx[ch_count] != NULL)
+ 266              		.loc 1 520 27 view .LVU68
+ 267 003a 2343     		orrs	r3, r3, r4
+ 268 003c 5360     		str	r3, [r2, #4]
+ 521:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 269              		.loc 1 521 7 is_stmt 1 view .LVU69
+ 521:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 270              		.loc 1 521 35 is_stmt 0 view .LVU70
+ 271 003e B31D     		adds	r3, r6, #6
+ 272 0040 07EB8303 		add	r3, r7, r3, lsl #2
+ 273 0044 5B68     		ldr	r3, [r3, #4]
+ 521:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 274              		.loc 1 521 10 view .LVU71
+ 275 0046 002B     		cmp	r3, #0
+ 276 0048 E6D1     		bne	.L17
+ 277 004a E9E7     		b	.L13
+ 278              	.LVL22:
+ 279              	.L16:
+ 529:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 280              		.loc 1 529 1 view .LVU72
+ 281 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 282              	.LVL23:
+ 283              	.L19:
+ 529:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 284              		.loc 1 529 1 view .LVU73
+ 285 004e 00BF     		.align	2
+ 286              	.L18:
+ 287 0050 000C0058 		.word	1476398080
+ 288              		.cfi_endproc
+ 289              	.LFE1112:
+ 291              		.section	.text.HAL_IPCC_RX_IRQHandler,"ax",%progbits
+ 292              		.align	1
+ 293              		.global	HAL_IPCC_RX_IRQHandler
+ 294              		.syntax unified
+ 295              		.thumb
+ 296              		.thumb_func
+ 298              	HAL_IPCC_RX_IRQHandler:
+ 299              	.LVL24:
+ 300              	.LFB1113:
+ 537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 301              		.loc 1 537 1 is_stmt 1 view -0
+ 302              		.cfi_startproc
+ 303              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 18
+
+
+ 304              		@ frame_needed = 0, uses_anonymous_args = 0
+ 537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t irqmask;
+ 305              		.loc 1 537 1 is_stmt 0 view .LVU75
+ 306 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 307              		.cfi_def_cfa_offset 24
+ 308              		.cfi_offset 3, -24
+ 309              		.cfi_offset 4, -20
+ 310              		.cfi_offset 5, -16
+ 311              		.cfi_offset 6, -12
+ 312              		.cfi_offset 7, -8
+ 313              		.cfi_offset 14, -4
+ 314 0002 0746     		mov	r7, r0
+ 538:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t bit_pos;
+ 315              		.loc 1 538 3 is_stmt 1 view .LVU76
+ 539:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t ch_count = 0U;
+ 316              		.loc 1 539 3 view .LVU77
+ 540:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 317              		.loc 1 540 3 view .LVU78
+ 318              	.LVL25:
+ 541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *otherInstance = IPCC_C2;
+ 319              		.loc 1 541 3 view .LVU79
+ 542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 320              		.loc 1 542 3 view .LVU80
+ 545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & otherInstance->SR;
+ 321              		.loc 1 545 3 view .LVU81
+ 545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & otherInstance->SR;
+ 322              		.loc 1 545 30 is_stmt 0 view .LVU82
+ 323 0004 104A     		ldr	r2, .L28
+ 324 0006 5368     		ldr	r3, [r2, #4]
+ 545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & otherInstance->SR;
+ 325              		.loc 1 545 13 view .LVU83
+ 326 0008 DB43     		mvns	r3, r3
+ 545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   irqmask = irqmask & otherInstance->SR;
+ 327              		.loc 1 545 11 view .LVU84
+ 328 000a 03F03F03 		and	r3, r3, #63
+ 329              	.LVL26:
+ 546:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 330              		.loc 1 546 3 is_stmt 1 view .LVU85
+ 546:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 331              		.loc 1 546 36 is_stmt 0 view .LVU86
+ 332 000e D669     		ldr	r6, [r2, #28]
+ 546:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 333              		.loc 1 546 11 view .LVU87
+ 334 0010 1E40     		ands	r6, r6, r3
+ 335              	.LVL27:
+ 548:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 336              		.loc 1 548 3 is_stmt 1 view .LVU88
+ 540:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 337              		.loc 1 540 12 is_stmt 0 view .LVU89
+ 338 0012 0025     		movs	r5, #0
+ 548:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 339              		.loc 1 548 9 view .LVU90
+ 340 0014 06E0     		b	.L21
+ 341              	.LVL28:
+ 342              	.L27:
+ 558:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 343              		.loc 1 558 9 is_stmt 1 view .LVU91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 19
+
+
+ 344 0016 0122     		movs	r2, #1
+ 345 0018 2946     		mov	r1, r5
+ 346 001a 3846     		mov	r0, r7
+ 347 001c 9847     		blx	r3
+ 348              	.LVL29:
+ 349              	.L23:
+ 560:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 350              		.loc 1 560 7 view .LVU92
+ 560:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 351              		.loc 1 560 15 is_stmt 0 view .LVU93
+ 352 001e 26EA0406 		bic	r6, r6, r4
+ 353              	.LVL30:
+ 354              	.L22:
+ 562:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 355              		.loc 1 562 5 is_stmt 1 view .LVU94
+ 562:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 356              		.loc 1 562 13 is_stmt 0 view .LVU95
+ 357 0022 0135     		adds	r5, r5, #1
+ 358              	.LVL31:
+ 359              	.L21:
+ 548:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 360              		.loc 1 548 18 is_stmt 1 view .LVU96
+ 361 0024 7EB1     		cbz	r6, .L26
+ 550:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 362              		.loc 1 550 5 view .LVU97
+ 550:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 363              		.loc 1 550 32 is_stmt 0 view .LVU98
+ 364 0026 05F00F03 		and	r3, r5, #15
+ 550:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 365              		.loc 1 550 13 view .LVU99
+ 366 002a 0124     		movs	r4, #1
+ 367 002c 9C40     		lsls	r4, r4, r3
+ 368              	.LVL32:
+ 552:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 369              		.loc 1 552 5 is_stmt 1 view .LVU100
+ 552:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 370              		.loc 1 552 8 is_stmt 0 view .LVU101
+ 371 002e 2642     		tst	r6, r4
+ 372 0030 F7D0     		beq	.L22
+ 555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackRx[ch_count] != NULL)
+ 373              		.loc 1 555 7 is_stmt 1 view .LVU102
+ 555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackRx[ch_count] != NULL)
+ 374              		.loc 1 555 22 is_stmt 0 view .LVU103
+ 375 0032 054A     		ldr	r2, .L28
+ 376 0034 5368     		ldr	r3, [r2, #4]
+ 555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       if (hipcc->ChannelCallbackRx[ch_count] != NULL)
+ 377              		.loc 1 555 27 view .LVU104
+ 378 0036 2343     		orrs	r3, r3, r4
+ 379 0038 5360     		str	r3, [r2, #4]
+ 556:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 380              		.loc 1 556 7 is_stmt 1 view .LVU105
+ 556:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 381              		.loc 1 556 35 is_stmt 0 view .LVU106
+ 382 003a 07EB8503 		add	r3, r7, r5, lsl #2
+ 383 003e 5B68     		ldr	r3, [r3, #4]
+ 556:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 384              		.loc 1 556 10 view .LVU107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 20
+
+
+ 385 0040 002B     		cmp	r3, #0
+ 386 0042 E8D1     		bne	.L27
+ 387 0044 EBE7     		b	.L23
+ 388              	.LVL33:
+ 389              	.L26:
+ 564:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 390              		.loc 1 564 1 view .LVU108
+ 391 0046 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 392              	.LVL34:
+ 393              	.L29:
+ 564:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 394              		.loc 1 564 1 view .LVU109
+ 395              		.align	2
+ 396              	.L28:
+ 397 0048 000C0058 		.word	1476398080
+ 398              		.cfi_endproc
+ 399              	.LFE1113:
+ 401              		.section	.text.HAL_IPCC_GetState,"ax",%progbits
+ 402              		.align	1
+ 403              		.global	HAL_IPCC_GetState
+ 404              		.syntax unified
+ 405              		.thumb
+ 406              		.thumb_func
+ 408              	HAL_IPCC_GetState:
+ 409              	.LVL35:
+ 410              	.LFB1116:
+ 615:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 616:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 617:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+ 618:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 619:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 620:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_Exported_Functions_Group3
+ 621:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *  @brief   IPCC Peripheral State and Error functions
+ 622:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *
+ 623:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @verbatim
+ 624:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ==============================================================================
+ 625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             ##### Peripheral State and Error functions #####
+ 626:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   ==============================================================================
+ 627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     [..]
+ 628:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     This subsection permit to get in run-time the status of the peripheral
+ 629:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     and the data flow.
+ 630:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 631:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** @endverbatim
+ 632:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+ 633:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 634:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 635:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 636:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Return the IPCC handle state.
+ 637:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 638:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @retval IPCC handle state
+ 639:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 640:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** HAL_IPCC_StateTypeDef HAL_IPCC_GetState(IPCC_HandleTypeDef const *const hipcc)
+ 641:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 411              		.loc 1 641 1 is_stmt 1 view -0
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 21
+
+
+ 415              		@ link register save eliminated.
+ 642:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   return hipcc->State;
+ 416              		.loc 1 642 3 view .LVU111
+ 417              		.loc 1 642 15 is_stmt 0 view .LVU112
+ 418 0000 90F83800 		ldrb	r0, [r0, #56]	@ zero_extendqisi2
+ 419              	.LVL36:
+ 643:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 420              		.loc 1 643 1 view .LVU113
+ 421 0004 7047     		bx	lr
+ 422              		.cfi_endproc
+ 423              	.LFE1116:
+ 425              		.section	.text.IPCC_MaskInterrupt,"ax",%progbits
+ 426              		.align	1
+ 427              		.global	IPCC_MaskInterrupt
+ 428              		.syntax unified
+ 429              		.thumb
+ 430              		.thumb_func
+ 432              	IPCC_MaskInterrupt:
+ 433              	.LVL37:
+ 434              	.LFB1117:
+ 644:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 645:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 646:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+ 647:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 648:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 649:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 650:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @}
+ 651:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 652:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 653:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /** @addtogroup IPCC_Private_Functions
+ 654:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @{
+ 655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Mask IPCC interrupts.
+ 659:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 660:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 661:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 662:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 663:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 664:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 665:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 666:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 667:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 668:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 669:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_MaskInterrupt(uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir)
+ 670:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 435              		.loc 1 670 1 is_stmt 1 view -0
+ 436              		.cfi_startproc
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439              		@ link register save eliminated.
+ 671:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 440              		.loc 1 671 3 view .LVU115
+ 672:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (ChannelDir == IPCC_CHANNEL_DIR_TX)
+ 441              		.loc 1 672 3 view .LVU116
+ 442              		.loc 1 672 6 is_stmt 0 view .LVU117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 22
+
+
+ 443 0000 49B9     		cbnz	r1, .L32
+ 673:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 674:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Mask interrupt */
+ 675:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->MR |= (IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 444              		.loc 1 675 5 is_stmt 1 view .LVU118
+ 445              		.loc 1 675 20 is_stmt 0 view .LVU119
+ 446 0002 0949     		ldr	r1, .L34
+ 447              	.LVL38:
+ 448              		.loc 1 675 20 view .LVU120
+ 449 0004 4B68     		ldr	r3, [r1, #4]
+ 450              		.loc 1 675 64 view .LVU121
+ 451 0006 00F00F00 		and	r0, r0, #15
+ 452              	.LVL39:
+ 453              		.loc 1 675 47 view .LVU122
+ 454 000a 4FF48032 		mov	r2, #65536
+ 455 000e 8240     		lsls	r2, r2, r0
+ 456              		.loc 1 675 25 view .LVU123
+ 457 0010 1343     		orrs	r3, r3, r2
+ 458 0012 4B60     		str	r3, [r1, #4]
+ 459 0014 7047     		bx	lr
+ 460              	.LVL40:
+ 461              	.L32:
+ 676:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 677:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 678:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 679:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Mask interrupt */
+ 680:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->MR |= (IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 462              		.loc 1 680 5 is_stmt 1 view .LVU124
+ 463              		.loc 1 680 20 is_stmt 0 view .LVU125
+ 464 0016 0449     		ldr	r1, .L34
+ 465              	.LVL41:
+ 466              		.loc 1 680 20 view .LVU126
+ 467 0018 4B68     		ldr	r3, [r1, #4]
+ 468              		.loc 1 680 64 view .LVU127
+ 469 001a 00F00F00 		and	r0, r0, #15
+ 470              	.LVL42:
+ 471              		.loc 1 680 47 view .LVU128
+ 472 001e 0122     		movs	r2, #1
+ 473 0020 8240     		lsls	r2, r2, r0
+ 474              		.loc 1 680 25 view .LVU129
+ 475 0022 1343     		orrs	r3, r3, r2
+ 476 0024 4B60     		str	r3, [r1, #4]
+ 681:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 682:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 477              		.loc 1 682 1 view .LVU130
+ 478 0026 7047     		bx	lr
+ 479              	.L35:
+ 480              		.align	2
+ 481              	.L34:
+ 482 0028 000C0058 		.word	1476398080
+ 483              		.cfi_endproc
+ 484              	.LFE1117:
+ 486              		.section	.text.HAL_IPCC_DeActivateNotification,"ax",%progbits
+ 487              		.align	1
+ 488              		.global	HAL_IPCC_DeActivateNotification
+ 489              		.syntax unified
+ 490              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 23
+
+
+ 491              		.thumb_func
+ 493              	HAL_IPCC_DeActivateNotification:
+ 494              	.LVL43:
+ 495              	.LFB1109:
+ 365:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 496              		.loc 1 365 1 is_stmt 1 view -0
+ 497              		.cfi_startproc
+ 498              		@ args = 0, pretend = 0, frame = 0
+ 499              		@ frame_needed = 0, uses_anonymous_args = 0
+ 366:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 500              		.loc 1 366 3 view .LVU132
+ 369:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 501              		.loc 1 369 3 view .LVU133
+ 369:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 502              		.loc 1 369 6 is_stmt 0 view .LVU134
+ 503 0000 68B3     		cbz	r0, .L40
+ 365:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 504              		.loc 1 365 1 view .LVU135
+ 505 0002 08B5     		push	{r3, lr}
+ 506              		.cfi_def_cfa_offset 8
+ 507              		.cfi_offset 3, -8
+ 508              		.cfi_offset 14, -4
+ 509 0004 8E46     		mov	lr, r1
+ 510 0006 8446     		mov	ip, r0
+ 372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 511              		.loc 1 372 5 is_stmt 1 view .LVU136
+ 375:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 512              		.loc 1 375 5 view .LVU137
+ 375:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 513              		.loc 1 375 14 is_stmt 0 view .LVU138
+ 514 0008 90F83830 		ldrb	r3, [r0, #56]	@ zero_extendqisi2
+ 515 000c DBB2     		uxtb	r3, r3
+ 375:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 516              		.loc 1 375 8 view .LVU139
+ 517 000e 012B     		cmp	r3, #1
+ 518 0010 01D0     		beq	.L46
+ 394:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 519              		.loc 1 394 11 view .LVU140
+ 520 0012 0120     		movs	r0, #1
+ 521              	.LVL44:
+ 522              	.L37:
+ 401:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 523              		.loc 1 401 3 is_stmt 1 view .LVU141
+ 402:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 524              		.loc 1 402 1 is_stmt 0 view .LVU142
+ 525 0014 08BD     		pop	{r3, pc}
+ 526              	.LVL45:
+ 527              	.L46:
+ 378:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 528              		.loc 1 378 7 is_stmt 1 view .LVU143
+ 378:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 529              		.loc 1 378 10 is_stmt 0 view .LVU144
+ 530 0016 A2B9     		cbnz	r2, .L38
+ 380:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 531              		.loc 1 380 9 is_stmt 1 view .LVU145
+ 380:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 532              		.loc 1 380 48 is_stmt 0 view .LVU146
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 24
+
+
+ 533 0018 8B1D     		adds	r3, r1, #6
+ 534 001a 00EB8303 		add	r3, r0, r3, lsl #2
+ 535 001e 1149     		ldr	r1, .L47
+ 536              	.LVL46:
+ 380:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 537              		.loc 1 380 48 view .LVU147
+ 538 0020 5960     		str	r1, [r3, #4]
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 539              		.loc 1 381 9 is_stmt 1 view .LVU148
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 540              		.loc 1 381 14 is_stmt 0 view .LVU149
+ 541 0022 436B     		ldr	r3, [r0, #52]
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 542              		.loc 1 381 72 view .LVU150
+ 543 0024 0EF00F00 		and	r0, lr, #15
+ 544              	.LVL47:
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 545              		.loc 1 381 55 view .LVU151
+ 546 0028 4FF48031 		mov	r1, #65536
+ 547 002c 8140     		lsls	r1, r1, r0
+ 381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 548              		.loc 1 381 32 view .LVU152
+ 549 002e 23EA0103 		bic	r3, r3, r1
+ 550 0032 CCF83430 		str	r3, [ip, #52]
+ 551              	.L39:
+ 390:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 552              		.loc 1 390 7 is_stmt 1 view .LVU153
+ 553 0036 1146     		mov	r1, r2
+ 554 0038 7046     		mov	r0, lr
+ 555 003a FFF7FEFF 		bl	IPCC_MaskInterrupt
+ 556              	.LVL48:
+ 366:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 557              		.loc 1 366 21 is_stmt 0 view .LVU154
+ 558 003e 0020     		movs	r0, #0
+ 559 0040 E8E7     		b	.L37
+ 560              	.LVL49:
+ 561              	.L38:
+ 385:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 562              		.loc 1 385 9 is_stmt 1 view .LVU155
+ 385:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 563              		.loc 1 385 48 is_stmt 0 view .LVU156
+ 564 0042 00EB8103 		add	r3, r0, r1, lsl #2
+ 565 0046 0849     		ldr	r1, .L47+4
+ 566              	.LVL50:
+ 385:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest &= ~(IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 567              		.loc 1 385 48 view .LVU157
+ 568 0048 5960     		str	r1, [r3, #4]
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 569              		.loc 1 386 9 is_stmt 1 view .LVU158
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 570              		.loc 1 386 14 is_stmt 0 view .LVU159
+ 571 004a 436B     		ldr	r3, [r0, #52]
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 572              		.loc 1 386 72 view .LVU160
+ 573 004c 0EF00F00 		and	r0, lr, #15
+ 574              	.LVL51:
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 25
+
+
+ 575              		.loc 1 386 55 view .LVU161
+ 576 0050 0121     		movs	r1, #1
+ 577 0052 8140     		lsls	r1, r1, r0
+ 386:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 578              		.loc 1 386 32 view .LVU162
+ 579 0054 23EA0103 		bic	r3, r3, r1
+ 580 0058 CCF83430 		str	r3, [ip, #52]
+ 581 005c EBE7     		b	.L39
+ 582              	.LVL52:
+ 583              	.L40:
+ 584              		.cfi_def_cfa_offset 0
+ 585              		.cfi_restore 3
+ 586              		.cfi_restore 14
+ 399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 587              		.loc 1 399 9 view .LVU163
+ 588 005e 0120     		movs	r0, #1
+ 589              	.LVL53:
+ 401:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 590              		.loc 1 401 3 is_stmt 1 view .LVU164
+ 402:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 591              		.loc 1 402 1 is_stmt 0 view .LVU165
+ 592 0060 7047     		bx	lr
+ 593              	.L48:
+ 594 0062 00BF     		.align	2
+ 595              	.L47:
+ 596 0064 00000000 		.word	HAL_IPCC_TxCallback
+ 597 0068 00000000 		.word	HAL_IPCC_RxCallback
+ 598              		.cfi_endproc
+ 599              	.LFE1109:
+ 601              		.section	.text.IPCC_UnmaskInterrupt,"ax",%progbits
+ 602              		.align	1
+ 603              		.global	IPCC_UnmaskInterrupt
+ 604              		.syntax unified
+ 605              		.thumb
+ 606              		.thumb_func
+ 608              	IPCC_UnmaskInterrupt:
+ 609              	.LVL54:
+ 610              	.LFB1118:
+ 683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief  Unmask IPCC interrupts.
+ 685:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelIndex Channel number
+ 686:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *          This parameter can be one of the following values:
+ 687:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_1: IPCC Channel 1
+ 688:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_2: IPCC Channel 2
+ 689:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_3: IPCC Channel 3
+ 690:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_4: IPCC Channel 4
+ 691:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_5: IPCC Channel 5
+ 692:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   *            @arg IPCC_CHANNEL_6: IPCC Channel 6
+ 693:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  ChannelDir Channel direction
+ 694:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 695:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_UnmaskInterrupt(uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir)
+ 696:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 611              		.loc 1 696 1 is_stmt 1 view -0
+ 612              		.cfi_startproc
+ 613              		@ args = 0, pretend = 0, frame = 0
+ 614              		@ frame_needed = 0, uses_anonymous_args = 0
+ 615              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 26
+
+
+ 697:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 616              		.loc 1 697 3 view .LVU167
+ 698:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   if (ChannelDir == IPCC_CHANNEL_DIR_TX)
+ 617              		.loc 1 698 3 view .LVU168
+ 618              		.loc 1 698 6 is_stmt 0 view .LVU169
+ 619 0000 51B9     		cbnz	r1, .L50
+ 699:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 700:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Unmask interrupt */
+ 701:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->MR &= ~(IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 620              		.loc 1 701 5 is_stmt 1 view .LVU170
+ 621              		.loc 1 701 20 is_stmt 0 view .LVU171
+ 622 0002 0A49     		ldr	r1, .L52
+ 623              	.LVL55:
+ 624              		.loc 1 701 20 view .LVU172
+ 625 0004 4B68     		ldr	r3, [r1, #4]
+ 626              		.loc 1 701 65 view .LVU173
+ 627 0006 00F00F00 		and	r0, r0, #15
+ 628              	.LVL56:
+ 629              		.loc 1 701 48 view .LVU174
+ 630 000a 4FF48032 		mov	r2, #65536
+ 631 000e 8240     		lsls	r2, r2, r0
+ 632              		.loc 1 701 25 view .LVU175
+ 633 0010 23EA0203 		bic	r3, r3, r2
+ 634 0014 4B60     		str	r3, [r1, #4]
+ 635 0016 7047     		bx	lr
+ 636              	.LVL57:
+ 637              	.L50:
+ 702:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 703:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   else
+ 704:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 705:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     /* Unmask interrupt */
+ 706:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     currentInstance->MR &= ~(IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 638              		.loc 1 706 5 is_stmt 1 view .LVU176
+ 639              		.loc 1 706 20 is_stmt 0 view .LVU177
+ 640 0018 0449     		ldr	r1, .L52
+ 641              	.LVL58:
+ 642              		.loc 1 706 20 view .LVU178
+ 643 001a 4B68     		ldr	r3, [r1, #4]
+ 644              		.loc 1 706 65 view .LVU179
+ 645 001c 00F00F00 		and	r0, r0, #15
+ 646              	.LVL59:
+ 647              		.loc 1 706 48 view .LVU180
+ 648 0020 0122     		movs	r2, #1
+ 649 0022 8240     		lsls	r2, r2, r0
+ 650              		.loc 1 706 25 view .LVU181
+ 651 0024 23EA0203 		bic	r3, r3, r2
+ 652 0028 4B60     		str	r3, [r1, #4]
+ 707:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 708:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 653              		.loc 1 708 1 view .LVU182
+ 654 002a 7047     		bx	lr
+ 655              	.L53:
+ 656              		.align	2
+ 657              	.L52:
+ 658 002c 000C0058 		.word	1476398080
+ 659              		.cfi_endproc
+ 660              	.LFE1118:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 27
+
+
+ 662              		.section	.text.HAL_IPCC_ActivateNotification,"ax",%progbits
+ 663              		.align	1
+ 664              		.global	HAL_IPCC_ActivateNotification
+ 665              		.syntax unified
+ 666              		.thumb
+ 667              		.thumb_func
+ 669              	HAL_IPCC_ActivateNotification:
+ 670              	.LVL60:
+ 671              	.LFB1108:
+ 307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 672              		.loc 1 307 1 is_stmt 1 view -0
+ 673              		.cfi_startproc
+ 674              		@ args = 0, pretend = 0, frame = 0
+ 675              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 676              		.loc 1 308 3 view .LVU184
+ 311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 677              		.loc 1 311 3 view .LVU185
+ 311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 678              		.loc 1 311 6 is_stmt 0 view .LVU186
+ 679 0000 78B3     		cbz	r0, .L58
+ 307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 680              		.loc 1 307 1 view .LVU187
+ 681 0002 10B5     		push	{r4, lr}
+ 682              		.cfi_def_cfa_offset 8
+ 683              		.cfi_offset 4, -8
+ 684              		.cfi_offset 14, -4
+ 685 0004 0C46     		mov	r4, r1
+ 686 0006 8646     		mov	lr, r0
+ 314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 687              		.loc 1 314 5 is_stmt 1 view .LVU188
+ 317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 688              		.loc 1 317 5 view .LVU189
+ 317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 689              		.loc 1 317 14 is_stmt 0 view .LVU190
+ 690 0008 90F838C0 		ldrb	ip, [r0, #56]	@ zero_extendqisi2
+ 691 000c 5FFA8CFC 		uxtb	ip, ip
+ 317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 692              		.loc 1 317 8 view .LVU191
+ 693 0010 BCF1010F 		cmp	ip, #1
+ 694 0014 01D0     		beq	.L65
+ 339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 695              		.loc 1 339 11 view .LVU192
+ 696 0016 0120     		movs	r0, #1
+ 697              	.LVL61:
+ 698              	.L55:
+ 346:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 699              		.loc 1 346 3 is_stmt 1 view .LVU193
+ 347:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 700              		.loc 1 347 1 is_stmt 0 view .LVU194
+ 701 0018 10BD     		pop	{r4, pc}
+ 702              	.LVL62:
+ 703              	.L65:
+ 320:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 704              		.loc 1 320 7 is_stmt 1 view .LVU195
+ 320:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 705              		.loc 1 320 10 is_stmt 0 view .LVU196
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 28
+
+
+ 706 001a 82B9     		cbnz	r2, .L56
+ 322:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 707              		.loc 1 322 9 is_stmt 1 view .LVU197
+ 322:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 708              		.loc 1 322 48 is_stmt 0 view .LVU198
+ 709 001c 0631     		adds	r1, r1, #6
+ 710              	.LVL63:
+ 322:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1FM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 711              		.loc 1 322 48 view .LVU199
+ 712 001e 00EB8101 		add	r1, r0, r1, lsl #2
+ 713 0022 4B60     		str	r3, [r1, #4]
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 714              		.loc 1 323 9 is_stmt 1 view .LVU200
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 715              		.loc 1 323 14 is_stmt 0 view .LVU201
+ 716 0024 436B     		ldr	r3, [r0, #52]
+ 717              	.LVL64:
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 718              		.loc 1 323 71 view .LVU202
+ 719 0026 04F00F00 		and	r0, r4, #15
+ 720              	.LVL65:
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 721              		.loc 1 323 54 view .LVU203
+ 722 002a 4FF48031 		mov	r1, #65536
+ 723              	.LVL66:
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 724              		.loc 1 323 54 view .LVU204
+ 725 002e 8140     		lsls	r1, r1, r0
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 726              		.loc 1 323 32 view .LVU205
+ 727 0030 0B43     		orrs	r3, r3, r1
+ 728 0032 CEF83430 		str	r3, [lr, #52]
+ 729              	.LVL67:
+ 730              	.L57:
+ 332:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 731              		.loc 1 332 7 is_stmt 1 view .LVU206
+ 332:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       {
+ 732              		.loc 1 332 10 is_stmt 0 view .LVU207
+ 733 0036 012A     		cmp	r2, #1
+ 734 0038 0DD0     		beq	.L66
+ 308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 735              		.loc 1 308 21 view .LVU208
+ 736 003a 0020     		movs	r0, #0
+ 737 003c ECE7     		b	.L55
+ 738              	.LVL68:
+ 739              	.L56:
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 740              		.loc 1 327 9 is_stmt 1 view .LVU209
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 741              		.loc 1 327 48 is_stmt 0 view .LVU210
+ 742 003e 00EB8101 		add	r1, r0, r1, lsl #2
+ 743              	.LVL69:
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****         hipcc->callbackRequest |= (IPCC_MR_CH1OM_Msk << (ChannelIndex & CHANNEL_INDEX_MASK));
+ 744              		.loc 1 327 48 view .LVU211
+ 745 0042 4B60     		str	r3, [r1, #4]
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 746              		.loc 1 328 9 is_stmt 1 view .LVU212
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 29
+
+
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 747              		.loc 1 328 14 is_stmt 0 view .LVU213
+ 748 0044 436B     		ldr	r3, [r0, #52]
+ 749              	.LVL70:
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 750              		.loc 1 328 71 view .LVU214
+ 751 0046 04F00F00 		and	r0, r4, #15
+ 752              	.LVL71:
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 753              		.loc 1 328 54 view .LVU215
+ 754 004a 0121     		movs	r1, #1
+ 755              	.LVL72:
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 756              		.loc 1 328 54 view .LVU216
+ 757 004c 8140     		lsls	r1, r1, r0
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 758              		.loc 1 328 32 view .LVU217
+ 759 004e 0B43     		orrs	r3, r3, r1
+ 760 0050 CEF83430 		str	r3, [lr, #52]
+ 761              	.LVL73:
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 762              		.loc 1 328 32 view .LVU218
+ 763 0054 EFE7     		b	.L57
+ 764              	.L66:
+ 334:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****       }
+ 765              		.loc 1 334 9 is_stmt 1 view .LVU219
+ 766 0056 1146     		mov	r1, r2
+ 767 0058 2046     		mov	r0, r4
+ 768 005a FFF7FEFF 		bl	IPCC_UnmaskInterrupt
+ 769              	.LVL74:
+ 308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 770              		.loc 1 308 21 is_stmt 0 view .LVU220
+ 771 005e 0020     		movs	r0, #0
+ 772 0060 DAE7     		b	.L55
+ 773              	.LVL75:
+ 774              	.L58:
+ 775              		.cfi_def_cfa_offset 0
+ 776              		.cfi_restore 4
+ 777              		.cfi_restore 14
+ 344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 778              		.loc 1 344 9 view .LVU221
+ 779 0062 0120     		movs	r0, #1
+ 780              	.LVL76:
+ 346:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 781              		.loc 1 346 3 is_stmt 1 view .LVU222
+ 347:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 782              		.loc 1 347 1 is_stmt 0 view .LVU223
+ 783 0064 7047     		bx	lr
+ 784              		.cfi_endproc
+ 785              	.LFE1108:
+ 787              		.section	.text.HAL_IPCC_NotifyCPU,"ax",%progbits
+ 788              		.align	1
+ 789              		.global	HAL_IPCC_NotifyCPU
+ 790              		.syntax unified
+ 791              		.thumb
+ 792              		.thumb_func
+ 794              	HAL_IPCC_NotifyCPU:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 30
+
+
+ 795              	.LVL77:
+ 796              	.LFB1111:
+ 457:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 797              		.loc 1 457 1 is_stmt 1 view -0
+ 798              		.cfi_startproc
+ 799              		@ args = 0, pretend = 0, frame = 0
+ 800              		@ frame_needed = 0, uses_anonymous_args = 0
+ 458:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t mask;
+ 801              		.loc 1 458 3 view .LVU225
+ 459:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 802              		.loc 1 459 3 view .LVU226
+ 460:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 803              		.loc 1 460 3 view .LVU227
+ 463:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 804              		.loc 1 463 3 view .LVU228
+ 466:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 805              		.loc 1 466 3 view .LVU229
+ 466:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 806              		.loc 1 466 12 is_stmt 0 view .LVU230
+ 807 0000 90F83830 		ldrb	r3, [r0, #56]	@ zero_extendqisi2
+ 808 0004 DBB2     		uxtb	r3, r3
+ 466:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 809              		.loc 1 466 6 view .LVU231
+ 810 0006 012B     		cmp	r3, #1
+ 811 0008 01D0     		beq	.L77
+ 483:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 812              		.loc 1 483 9 view .LVU232
+ 813 000a 0120     		movs	r0, #1
+ 814              	.LVL78:
+ 486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 815              		.loc 1 486 3 is_stmt 1 view .LVU233
+ 487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 816              		.loc 1 487 1 is_stmt 0 view .LVU234
+ 817 000c 7047     		bx	lr
+ 818              	.LVL79:
+ 819              	.L77:
+ 457:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 820              		.loc 1 457 1 view .LVU235
+ 821 000e 10B5     		push	{r4, lr}
+ 822              		.cfi_def_cfa_offset 8
+ 823              		.cfi_offset 4, -8
+ 824              		.cfi_offset 14, -4
+ 825 0010 8C46     		mov	ip, r1
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 826              		.loc 1 469 5 is_stmt 1 view .LVU236
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 827              		.loc 1 469 20 is_stmt 0 view .LVU237
+ 828 0012 0C4B     		ldr	r3, .L79
+ 829 0014 9968     		ldr	r1, [r3, #8]
+ 830              	.LVL80:
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 831              		.loc 1 469 82 view .LVU238
+ 832 0016 62B9     		cbnz	r2, .L71
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 833              		.loc 1 469 82 discriminator 1 view .LVU239
+ 834 0018 4FF48033 		mov	r3, #65536
+ 835              	.L69:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 31
+
+
+ 471:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 836              		.loc 1 471 46 view .LVU240
+ 837 001c 0CF00F04 		and	r4, ip, #15
+ 471:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 838              		.loc 1 471 29 view .LVU241
+ 839 0020 A340     		lsls	r3, r3, r4
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 840              		.loc 1 469 26 view .LVU242
+ 841 0022 1943     		orrs	r1, r1, r3
+ 842 0024 074C     		ldr	r4, .L79
+ 843 0026 A160     		str	r1, [r4, #8]
+ 474:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****             IPCC_MR_CH1OM_Msk) << (ChannelIndex & CHANNEL_INDEX_MASK);
+ 844              		.loc 1 474 5 is_stmt 1 view .LVU243
+ 845              	.LVL81:
+ 476:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 846              		.loc 1 476 5 view .LVU244
+ 476:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 847              		.loc 1 476 15 is_stmt 0 view .LVU245
+ 848 0028 416B     		ldr	r1, [r0, #52]
+ 476:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 849              		.loc 1 476 8 view .LVU246
+ 850 002a 8B43     		bics	r3, r3, r1
+ 851              	.LVL82:
+ 476:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 852              		.loc 1 476 8 view .LVU247
+ 853 002c 03D0     		beq	.L78
+ 458:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t mask;
+ 854              		.loc 1 458 21 view .LVU248
+ 855 002e 0020     		movs	r0, #0
+ 856              	.LVL83:
+ 857              	.L68:
+ 486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 858              		.loc 1 486 3 is_stmt 1 view .LVU249
+ 487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 859              		.loc 1 487 1 is_stmt 0 view .LVU250
+ 860 0030 10BD     		pop	{r4, pc}
+ 861              	.LVL84:
+ 862              	.L71:
+ 469:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****                              IPCC_SCR_CH1C)
+ 863              		.loc 1 469 82 discriminator 2 view .LVU251
+ 864 0032 0123     		movs	r3, #1
+ 865 0034 F2E7     		b	.L69
+ 866              	.LVL85:
+ 867              	.L78:
+ 478:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 868              		.loc 1 478 7 is_stmt 1 view .LVU252
+ 869 0036 1146     		mov	r1, r2
+ 870 0038 6046     		mov	r0, ip
+ 871              	.LVL86:
+ 478:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 872              		.loc 1 478 7 is_stmt 0 view .LVU253
+ 873 003a FFF7FEFF 		bl	IPCC_UnmaskInterrupt
+ 874              	.LVL87:
+ 458:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t mask;
+ 875              		.loc 1 458 21 view .LVU254
+ 876 003e 0020     		movs	r0, #0
+ 877 0040 F6E7     		b	.L68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 32
+
+
+ 878              	.L80:
+ 879 0042 00BF     		.align	2
+ 880              	.L79:
+ 881 0044 000C0058 		.word	1476398080
+ 882              		.cfi_endproc
+ 883              	.LFE1111:
+ 885              		.section	.text.IPCC_SetDefaultCallbacks,"ax",%progbits
+ 886              		.align	1
+ 887              		.global	IPCC_SetDefaultCallbacks
+ 888              		.syntax unified
+ 889              		.thumb
+ 890              		.thumb_func
+ 892              	IPCC_SetDefaultCallbacks:
+ 893              	.LVL88:
+ 894              	.LFB1119:
+ 709:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 710:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 711:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Reset all callbacks of the handle to NULL.
+ 712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  hipcc IPCC handle
+ 713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_SetDefaultCallbacks(IPCC_HandleTypeDef *hipcc)
+ 715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 895              		.loc 1 715 1 is_stmt 1 view -0
+ 896              		.cfi_startproc
+ 897              		@ args = 0, pretend = 0, frame = 0
+ 898              		@ frame_needed = 0, uses_anonymous_args = 0
+ 899              		@ link register save eliminated.
+ 716:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   uint32_t i;
+ 900              		.loc 1 716 3 view .LVU256
+ 717:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Set all callbacks to default */
+ 718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   for (i = 0; i < IPCC_CHANNEL_NUMBER; i++)
+ 901              		.loc 1 718 3 view .LVU257
+ 902              		.loc 1 718 10 is_stmt 0 view .LVU258
+ 903 0000 0023     		movs	r3, #0
+ 904              		.loc 1 718 3 view .LVU259
+ 905 0002 09E0     		b	.L82
+ 906              	.LVL89:
+ 907              	.L83:
+ 719:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 720:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->ChannelCallbackRx[i] = HAL_IPCC_RxCallback;
+ 908              		.loc 1 720 5 is_stmt 1 view .LVU260
+ 909              		.loc 1 720 33 is_stmt 0 view .LVU261
+ 910 0004 00EB8302 		add	r2, r0, r3, lsl #2
+ 911 0008 0549     		ldr	r1, .L84
+ 912 000a 5160     		str	r1, [r2, #4]
+ 721:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     hipcc->ChannelCallbackTx[i] = HAL_IPCC_TxCallback;
+ 913              		.loc 1 721 5 is_stmt 1 view .LVU262
+ 914              		.loc 1 721 33 is_stmt 0 view .LVU263
+ 915 000c 9A1D     		adds	r2, r3, #6
+ 916 000e 00EB8202 		add	r2, r0, r2, lsl #2
+ 917 0012 0449     		ldr	r1, .L84+4
+ 918 0014 5160     		str	r1, [r2, #4]
+ 718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 919              		.loc 1 718 41 is_stmt 1 discriminator 3 view .LVU264
+ 920 0016 0133     		adds	r3, r3, #1
+ 921              	.LVL90:
+ 922              	.L82:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 33
+
+
+ 718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 923              		.loc 1 718 17 discriminator 1 view .LVU265
+ 924 0018 052B     		cmp	r3, #5
+ 925 001a F3D9     		bls	.L83
+ 722:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 723:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 926              		.loc 1 723 1 is_stmt 0 view .LVU266
+ 927 001c 7047     		bx	lr
+ 928              	.L85:
+ 929 001e 00BF     		.align	2
+ 930              	.L84:
+ 931 0020 00000000 		.word	HAL_IPCC_RxCallback
+ 932 0024 00000000 		.word	HAL_IPCC_TxCallback
+ 933              		.cfi_endproc
+ 934              	.LFE1119:
+ 936              		.section	.text.IPCC_Reset_Register,"ax",%progbits
+ 937              		.align	1
+ 938              		.global	IPCC_Reset_Register
+ 939              		.syntax unified
+ 940              		.thumb
+ 941              		.thumb_func
+ 943              	IPCC_Reset_Register:
+ 944              	.LVL91:
+ 945              	.LFB1120:
+ 724:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 725:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** /**
+ 726:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @brief Reset IPCC register to default value for the concerned instance.
+ 727:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   * @param  Instance pointer to register
+ 728:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   */
+ 729:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** void IPCC_Reset_Register(IPCC_CommonTypeDef *Instance)
+ 730:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** {
+ 946              		.loc 1 730 1 is_stmt 1 view -0
+ 947              		.cfi_startproc
+ 948              		@ args = 0, pretend = 0, frame = 0
+ 949              		@ frame_needed = 0, uses_anonymous_args = 0
+ 950              		@ link register save eliminated.
+ 731:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Disable RX and TX interrupts */
+ 732:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   Instance->CR  = 0x00000000U;
+ 951              		.loc 1 732 3 view .LVU268
+ 952              		.loc 1 732 17 is_stmt 0 view .LVU269
+ 953 0000 0023     		movs	r3, #0
+ 954 0002 0360     		str	r3, [r0]
+ 733:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 734:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Mask RX and TX interrupts */
+ 735:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   Instance->MR  = (IPCC_ALL_TX_BUF | IPCC_ALL_RX_BUF);
+ 955              		.loc 1 735 3 is_stmt 1 view .LVU270
+ 956              		.loc 1 735 17 is_stmt 0 view .LVU271
+ 957 0004 4FF03F13 		mov	r3, #4128831
+ 958 0008 4360     		str	r3, [r0, #4]
+ 736:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 737:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   /* Clear RX status */
+ 738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   Instance->SCR = IPCC_ALL_RX_BUF;
+ 959              		.loc 1 738 3 is_stmt 1 view .LVU272
+ 960              		.loc 1 738 17 is_stmt 0 view .LVU273
+ 961 000a 3F23     		movs	r3, #63
+ 962 000c 8360     		str	r3, [r0, #8]
+ 739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 34
+
+
+ 963              		.loc 1 739 1 view .LVU274
+ 964 000e 7047     		bx	lr
+ 965              		.cfi_endproc
+ 966              	.LFE1120:
+ 968              		.section	.text.HAL_IPCC_Init,"ax",%progbits
+ 969              		.align	1
+ 970              		.global	HAL_IPCC_Init
+ 971              		.syntax unified
+ 972              		.thumb
+ 973              		.thumb_func
+ 975              	HAL_IPCC_Init:
+ 976              	.LVL92:
+ 977              	.LFB1104:
+ 127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 978              		.loc 1 127 1 is_stmt 1 view -0
+ 979              		.cfi_startproc
+ 980              		@ args = 0, pretend = 0, frame = 0
+ 981              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 982              		.loc 1 128 3 view .LVU276
+ 131:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 983              		.loc 1 131 3 view .LVU277
+ 131:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 984              		.loc 1 131 6 is_stmt 0 view .LVU278
+ 985 0000 C0B1     		cbz	r0, .L90
+ 127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 986              		.loc 1 127 1 view .LVU279
+ 987 0002 38B5     		push	{r3, r4, r5, lr}
+ 988              		.cfi_def_cfa_offset 16
+ 989              		.cfi_offset 3, -16
+ 990              		.cfi_offset 4, -12
+ 991              		.cfi_offset 5, -8
+ 992              		.cfi_offset 14, -4
+ 993 0004 0446     		mov	r4, r0
+ 994              	.LBB2:
+ 134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 995              		.loc 1 134 5 is_stmt 1 view .LVU280
+ 136:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 996              		.loc 1 136 5 view .LVU281
+ 997              	.LVL93:
+ 138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 998              		.loc 1 138 5 view .LVU282
+ 138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 999              		.loc 1 138 14 is_stmt 0 view .LVU283
+ 1000 0006 90F83830 		ldrb	r3, [r0, #56]	@ zero_extendqisi2
+ 138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     {
+ 1001              		.loc 1 138 8 view .LVU284
+ 1002 000a 83B1     		cbz	r3, .L95
+ 1003              	.LVL94:
+ 1004              	.L89:
+ 145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1005              		.loc 1 145 5 is_stmt 1 view .LVU285
+ 1006 000c 0A4D     		ldr	r5, .L96
+ 1007 000e 2846     		mov	r0, r5
+ 1008 0010 FFF7FEFF 		bl	IPCC_Reset_Register
+ 1009              	.LVL95:
+ 148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 35
+
+
+ 1010              		.loc 1 148 5 view .LVU286
+ 148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1011              		.loc 1 148 20 is_stmt 0 view .LVU287
+ 1012 0014 2B68     		ldr	r3, [r5]
+ 148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1013              		.loc 1 148 25 view .LVU288
+ 1014 0016 43F00113 		orr	r3, r3, #65537
+ 1015 001a 2B60     		str	r3, [r5]
+ 151:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1016              		.loc 1 151 5 is_stmt 1 view .LVU289
+ 1017 001c 2046     		mov	r0, r4
+ 1018 001e FFF7FEFF 		bl	IPCC_SetDefaultCallbacks
+ 1019              	.LVL96:
+ 154:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1020              		.loc 1 154 5 view .LVU290
+ 154:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1021              		.loc 1 154 28 is_stmt 0 view .LVU291
+ 1022 0022 0020     		movs	r0, #0
+ 1023 0024 6063     		str	r0, [r4, #52]
+ 156:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1024              		.loc 1 156 5 is_stmt 1 view .LVU292
+ 156:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1025              		.loc 1 156 18 is_stmt 0 view .LVU293
+ 1026 0026 0123     		movs	r3, #1
+ 1027 0028 84F83830 		strb	r3, [r4, #56]
+ 1028              	.LVL97:
+ 156:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1029              		.loc 1 156 18 view .LVU294
+ 1030              	.LBE2:
+ 163:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 1031              		.loc 1 163 3 is_stmt 1 view .LVU295
+ 164:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1032              		.loc 1 164 1 is_stmt 0 view .LVU296
+ 1033 002c 38BD     		pop	{r3, r4, r5, pc}
+ 1034              	.LVL98:
+ 1035              	.L95:
+ 1036              	.LBB3:
+ 141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 1037              		.loc 1 141 7 is_stmt 1 view .LVU297
+ 1038 002e FFF7FEFF 		bl	HAL_IPCC_MspInit
+ 1039              	.LVL99:
+ 141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 1040              		.loc 1 141 7 is_stmt 0 view .LVU298
+ 1041 0032 EBE7     		b	.L89
+ 1042              	.LVL100:
+ 1043              	.L90:
+ 1044              		.cfi_def_cfa_offset 0
+ 1045              		.cfi_restore 3
+ 1046              		.cfi_restore 4
+ 1047              		.cfi_restore 5
+ 1048              		.cfi_restore 14
+ 141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     }
+ 1049              		.loc 1 141 7 view .LVU299
+ 1050              	.LBE3:
+ 160:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1051              		.loc 1 160 9 view .LVU300
+ 1052 0034 0120     		movs	r0, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 36
+
+
+ 1053              	.LVL101:
+ 163:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 1054              		.loc 1 163 3 is_stmt 1 view .LVU301
+ 164:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1055              		.loc 1 164 1 is_stmt 0 view .LVU302
+ 1056 0036 7047     		bx	lr
+ 1057              	.L97:
+ 1058              		.align	2
+ 1059              	.L96:
+ 1060 0038 000C0058 		.word	1476398080
+ 1061              		.cfi_endproc
+ 1062              	.LFE1104:
+ 1064              		.section	.text.HAL_IPCC_DeInit,"ax",%progbits
+ 1065              		.align	1
+ 1066              		.global	HAL_IPCC_DeInit
+ 1067              		.syntax unified
+ 1068              		.thumb
+ 1069              		.thumb_func
+ 1071              	HAL_IPCC_DeInit:
+ 1072              	.LVL102:
+ 1073              	.LFB1105:
+ 172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 1074              		.loc 1 172 1 is_stmt 1 view -0
+ 1075              		.cfi_startproc
+ 1076              		@ args = 0, pretend = 0, frame = 0
+ 1077              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1078              		.loc 1 173 3 view .LVU304
+ 176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 1079              		.loc 1 176 3 view .LVU305
+ 176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   {
+ 1080              		.loc 1 176 6 is_stmt 0 view .LVU306
+ 1081 0000 98B1     		cbz	r0, .L100
+ 172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   HAL_StatusTypeDef err = HAL_OK;
+ 1082              		.loc 1 172 1 view .LVU307
+ 1083 0002 38B5     		push	{r3, r4, r5, lr}
+ 1084              		.cfi_def_cfa_offset 16
+ 1085              		.cfi_offset 3, -16
+ 1086              		.cfi_offset 4, -12
+ 1087              		.cfi_offset 5, -8
+ 1088              		.cfi_offset 14, -4
+ 1089 0004 0546     		mov	r5, r0
+ 1090              	.LBB4:
+ 178:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****     IPCC_CommonTypeDef *currentInstance = IPCC_C1;
+ 1091              		.loc 1 178 5 is_stmt 1 view .LVU308
+ 179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1092              		.loc 1 179 5 view .LVU309
+ 1093              	.LVL103:
+ 182:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1094              		.loc 1 182 5 view .LVU310
+ 182:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1095              		.loc 1 182 18 is_stmt 0 view .LVU311
+ 1096 0006 0223     		movs	r3, #2
+ 1097 0008 80F83830 		strb	r3, [r0, #56]
+ 185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1098              		.loc 1 185 5 is_stmt 1 view .LVU312
+ 1099 000c 0848     		ldr	r0, .L105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 37
+
+
+ 1100              	.LVL104:
+ 185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1101              		.loc 1 185 5 is_stmt 0 view .LVU313
+ 1102 000e FFF7FEFF 		bl	IPCC_Reset_Register
+ 1103              	.LVL105:
+ 188:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1104              		.loc 1 188 5 is_stmt 1 view .LVU314
+ 1105 0012 2846     		mov	r0, r5
+ 1106 0014 FFF7FEFF 		bl	IPCC_SetDefaultCallbacks
+ 1107              	.LVL106:
+ 191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1108              		.loc 1 191 5 view .LVU315
+ 191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1109              		.loc 1 191 28 is_stmt 0 view .LVU316
+ 1110 0018 0024     		movs	r4, #0
+ 1111 001a 6C63     		str	r4, [r5, #52]
+ 194:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1112              		.loc 1 194 5 is_stmt 1 view .LVU317
+ 1113 001c 2846     		mov	r0, r5
+ 1114 001e FFF7FEFF 		bl	HAL_IPCC_MspDeInit
+ 1115              	.LVL107:
+ 196:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1116              		.loc 1 196 5 view .LVU318
+ 196:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1117              		.loc 1 196 18 is_stmt 0 view .LVU319
+ 1118 0022 85F83840 		strb	r4, [r5, #56]
+ 1119              	.LBE4:
+ 173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1120              		.loc 1 173 21 view .LVU320
+ 1121 0026 2046     		mov	r0, r4
+ 1122              	.LVL108:
+ 203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 1123              		.loc 1 203 3 is_stmt 1 view .LVU321
+ 204:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1124              		.loc 1 204 1 is_stmt 0 view .LVU322
+ 1125 0028 38BD     		pop	{r3, r4, r5, pc}
+ 1126              	.LVL109:
+ 1127              	.L100:
+ 1128              		.cfi_def_cfa_offset 0
+ 1129              		.cfi_restore 3
+ 1130              		.cfi_restore 4
+ 1131              		.cfi_restore 5
+ 1132              		.cfi_restore 14
+ 200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c ****   }
+ 1133              		.loc 1 200 9 view .LVU323
+ 1134 002a 0120     		movs	r0, #1
+ 1135              	.LVL110:
+ 203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** }
+ 1136              		.loc 1 203 3 is_stmt 1 view .LVU324
+ 204:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c **** 
+ 1137              		.loc 1 204 1 is_stmt 0 view .LVU325
+ 1138 002c 7047     		bx	lr
+ 1139              	.L106:
+ 1140 002e 00BF     		.align	2
+ 1141              	.L105:
+ 1142 0030 000C0058 		.word	1476398080
+ 1143              		.cfi_endproc
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 38
+
+
+ 1144              	.LFE1105:
+ 1146              		.text
+ 1147              	.Letext0:
+ 1148              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1149              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1150              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1151              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1152              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_ipcc.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s 			page 39
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_ipcc.c
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:21     .text.HAL_IPCC_RxCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:27     .text.HAL_IPCC_RxCallback:00000000 HAL_IPCC_RxCallback
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:44     .text.HAL_IPCC_TxCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:50     .text.HAL_IPCC_TxCallback:00000000 HAL_IPCC_TxCallback
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:67     .text.HAL_IPCC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:73     .text.HAL_IPCC_MspInit:00000000 HAL_IPCC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:88     .text.HAL_IPCC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:94     .text.HAL_IPCC_MspDeInit:00000000 HAL_IPCC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:109    .text.HAL_IPCC_GetChannelStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:115    .text.HAL_IPCC_GetChannelStatus:00000000 HAL_IPCC_GetChannelStatus
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:175    .text.HAL_IPCC_GetChannelStatus:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:180    .text.HAL_IPCC_TX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:186    .text.HAL_IPCC_TX_IRQHandler:00000000 HAL_IPCC_TX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:287    .text.HAL_IPCC_TX_IRQHandler:00000050 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:292    .text.HAL_IPCC_RX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:298    .text.HAL_IPCC_RX_IRQHandler:00000000 HAL_IPCC_RX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:397    .text.HAL_IPCC_RX_IRQHandler:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:402    .text.HAL_IPCC_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:408    .text.HAL_IPCC_GetState:00000000 HAL_IPCC_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:426    .text.IPCC_MaskInterrupt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:432    .text.IPCC_MaskInterrupt:00000000 IPCC_MaskInterrupt
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:482    .text.IPCC_MaskInterrupt:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:487    .text.HAL_IPCC_DeActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:493    .text.HAL_IPCC_DeActivateNotification:00000000 HAL_IPCC_DeActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:596    .text.HAL_IPCC_DeActivateNotification:00000064 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:602    .text.IPCC_UnmaskInterrupt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:608    .text.IPCC_UnmaskInterrupt:00000000 IPCC_UnmaskInterrupt
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:658    .text.IPCC_UnmaskInterrupt:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:663    .text.HAL_IPCC_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:669    .text.HAL_IPCC_ActivateNotification:00000000 HAL_IPCC_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:788    .text.HAL_IPCC_NotifyCPU:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:794    .text.HAL_IPCC_NotifyCPU:00000000 HAL_IPCC_NotifyCPU
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:881    .text.HAL_IPCC_NotifyCPU:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:886    .text.IPCC_SetDefaultCallbacks:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:892    .text.IPCC_SetDefaultCallbacks:00000000 IPCC_SetDefaultCallbacks
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:931    .text.IPCC_SetDefaultCallbacks:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:937    .text.IPCC_Reset_Register:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:943    .text.IPCC_Reset_Register:00000000 IPCC_Reset_Register
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:969    .text.HAL_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:975    .text.HAL_IPCC_Init:00000000 HAL_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:1060   .text.HAL_IPCC_Init:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:1065   .text.HAL_IPCC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:1071   .text.HAL_IPCC_DeInit:00000000 HAL_IPCC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccjR4h4h.s:1142   .text.HAL_IPCC_DeInit:00000030 $d
+
+NO UNDEFINED SYMBOLS

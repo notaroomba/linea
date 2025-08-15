@@ -28,6 +28,9 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32wbxx_hal.h"
+#include "app_conf.h"
+#include "app_entry.h"
+#include "app_common.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -65,18 +68,18 @@ void Error_Handler(void);
 #define S1_GPIO_Port GPIOA
 #define S0_Pin GPIO_PIN_10
 #define S0_GPIO_Port GPIOC
-#define E5_Pin GPIO_PIN_12
-#define E5_GPIO_Port GPIOC
-#define E4_Pin GPIO_PIN_0
-#define E4_GPIO_Port GPIOD
-#define E3_Pin GPIO_PIN_1
-#define E3_GPIO_Port GPIOD
-#define E2_Pin GPIO_PIN_3
-#define E2_GPIO_Port GPIOB
-#define E1_Pin GPIO_PIN_4
-#define E1_GPIO_Port GPIOB
-#define E0_Pin GPIO_PIN_5
-#define E0_GPIO_Port GPIOB
+#define E5N_Pin GPIO_PIN_12
+#define E5N_GPIO_Port GPIOC
+#define E4N_Pin GPIO_PIN_0
+#define E4N_GPIO_Port GPIOD
+#define E3N_Pin GPIO_PIN_1
+#define E3N_GPIO_Port GPIOD
+#define E2N_Pin GPIO_PIN_3
+#define E2N_GPIO_Port GPIOB
+#define E1N_Pin GPIO_PIN_4
+#define E1N_GPIO_Port GPIOB
+#define E0N_Pin GPIO_PIN_5
+#define E0N_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

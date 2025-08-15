@@ -1,0 +1,1377 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32_lpm.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Utilities/lpm/tiny_lpm/stm32_lpm.c"
+  20              		.section	.text.UTIL_LPM_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	UTIL_LPM_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	UTIL_LPM_Init:
+  28              	.LFB1412:
+   1:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+   2:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  ******************************************************************************
+   3:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @file    stm32_lpm.c
+   4:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @author  MCD Application Team
+   5:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief   Low Power Manager
+   6:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  ******************************************************************************
+   7:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @attention
+   8:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *
+   9:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics. 
+  10:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * All rights reserved.</center></h2>
+  11:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *
+  12:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * in the root directory of this software component.
+  14:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *
+  16:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  ******************************************************************************
+  17:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  18:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  19:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Includes ------------------------------------------------------------------*/
+  20:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #include "stm32_lpm.h"
+  21:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #include "utilities_conf.h"
+  22:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  23:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @addtogroup TINY_LPM
+  24:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
+  25:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
+  26:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  27:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private typedef -----------------------------------------------------------*/
+  28:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private macros ------------------------------------------------------------*/
+  29:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @defgroup TINY_LPM_Private_macros TINY LPM private macros
+  30:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 2
+
+
+  31:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
+  32:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  33:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  34:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief macro used to initialized the critical section
+  35:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  36:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #ifndef UTIL_LPM_INIT_CRITICAL_SECTION
+  37:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   #define UTIL_LPM_INIT_CRITICAL_SECTION( )
+  38:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #endif
+  39:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  40:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  41:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief macro used to enter the critical section
+  42:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  43:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #ifndef UTIL_LPM_ENTER_CRITICAL_SECTION
+  44:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   #define UTIL_LPM_ENTER_CRITICAL_SECTION( )    UTILS_ENTER_CRITICAL_SECTION( )
+  45:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #endif
+  46:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  47:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  48:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief macro used to exit the critical section
+  49:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  50:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #ifndef UTIL_LPM_EXIT_CRITICAL_SECTION
+  51:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   #define UTIL_LPM_EXIT_CRITICAL_SECTION( )     UTILS_EXIT_CRITICAL_SECTION( )
+  52:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #endif
+  53:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  54:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  55:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief macro used to enter the critical section when Entering Low Power 
+  56:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @note  this macro is only called inside the function UTIL_LPM_EnterLowPower
+  57:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        and in a basic configuration shall be identcal to the macro 
+  58:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        UTIL_LPM_EXIT_CRITICAL_SECTION. In general, the request to enter the
+  59:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        low power mode is already done under a critical section and 
+  60:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        nesting it is useless (in specific implementations not even possible). 
+  61:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        So the users could define their own macro)
+  62:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  63:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #ifndef UTIL_LPM_ENTER_CRITICAL_SECTION_ELP
+  64:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   #define UTIL_LPM_ENTER_CRITICAL_SECTION_ELP( )    UTIL_LPM_ENTER_CRITICAL_SECTION( )
+  65:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #endif
+  66:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  67:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  68:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief macro used to exit the critical section when exiting Low Power mode
+  69:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @note  the behavior of the macro shall be symmetrical with the macro 
+  70:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  *        UTIL_LPM_ENTER_CRITICAL_SECTION_ELP
+  71:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  72:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #ifndef UTIL_LPM_EXIT_CRITICAL_SECTION_ELP
+  73:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   #define UTIL_LPM_EXIT_CRITICAL_SECTION_ELP( )     UTIL_LPM_EXIT_CRITICAL_SECTION( )
+  74:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #endif
+  75:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  76:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  77:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @}
+  78:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  79:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private function prototypes -----------------------------------------------*/
+  80:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private variables ---------------------------------------------------------*/
+  81:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private typedef -----------------------------------------------------------*/
+  82:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private defines -----------------------------------------------------------*/
+  83:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @defgroup TINY_LPM_Private_define TINY LPM private defines
+  84:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
+  85:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
+  86:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  87:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 3
+
+
+  88:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief value used to reset the LPM mode
+  89:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  90:Utilities/lpm/tiny_lpm/stm32_lpm.c **** #define UTIL_LPM_NO_BIT_SET   (0UL)
+  91:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+  92:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+  93:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @}
+  94:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+  95:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private macros ------------------------------------------------------------*/
+  96:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private variables ---------------------------------------------------------*/
+  97:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @defgroup TINY_LPM_Private_variables TINY LPM private variables
+  98:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
+  99:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
+ 100:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 101:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+ 102:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief value used to represent the LPM state of stop mode
+ 103:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+ 104:Utilities/lpm/tiny_lpm/stm32_lpm.c **** static UTIL_LPM_bm_t StopModeDisable = UTIL_LPM_NO_BIT_SET;
+ 105:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 106:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+ 107:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief value used to represent the LPM state of off mode
+ 108:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+ 109:Utilities/lpm/tiny_lpm/stm32_lpm.c **** static UTIL_LPM_bm_t OffModeDisable = UTIL_LPM_NO_BIT_SET;
+ 110:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 111:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
+ 112:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @}
+ 113:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  */
+ 114:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Global variables ----------------------------------------------------------*/
+ 115:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private function prototypes -----------------------------------------------*/
+ 116:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Functions Definition ------------------------------------------------------*/
+ 117:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 118:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @addtogroup TINY_LPM_Exported_function
+ 119:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
+ 120:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
+ 121:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_Init( void )
+ 122:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+  29              		.loc 1 122 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+ 123:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   StopModeDisable = UTIL_LPM_NO_BIT_SET;
+  34              		.loc 1 123 3 view .LVU1
+  35              		.loc 1 123 19 is_stmt 0 view .LVU2
+  36 0000 0023     		movs	r3, #0
+  37 0002 024A     		ldr	r2, .L2
+  38 0004 1360     		str	r3, [r2]
+ 124:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   OffModeDisable = UTIL_LPM_NO_BIT_SET;
+  39              		.loc 1 124 3 is_stmt 1 view .LVU3
+  40              		.loc 1 124 18 is_stmt 0 view .LVU4
+  41 0006 024A     		ldr	r2, .L2+4
+  42 0008 1360     		str	r3, [r2]
+ 125:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_INIT_CRITICAL_SECTION( );
+  43              		.loc 1 125 36 is_stmt 1 view .LVU5
+ 126:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+  44              		.loc 1 126 1 is_stmt 0 view .LVU6
+  45 000a 7047     		bx	lr
+  46              	.L3:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 4
+
+
+  47              		.align	2
+  48              	.L2:
+  49 000c 00000000 		.word	StopModeDisable
+  50 0010 00000000 		.word	OffModeDisable
+  51              		.cfi_endproc
+  52              	.LFE1412:
+  54              		.section	.text.UTIL_LPM_DeInit,"ax",%progbits
+  55              		.align	1
+  56              		.global	UTIL_LPM_DeInit
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+  61              	UTIL_LPM_DeInit:
+  62              	.LFB1413:
+ 127:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 128:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_DeInit( void )
+ 129:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+  63              		.loc 1 129 1 is_stmt 1 view -0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+ 130:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+  68              		.loc 1 130 1 view .LVU8
+  69 0000 7047     		bx	lr
+  70              		.cfi_endproc
+  71              	.LFE1413:
+  73              		.section	.text.UTIL_LPM_SetStopMode,"ax",%progbits
+  74              		.align	1
+  75              		.global	UTIL_LPM_SetStopMode
+  76              		.syntax unified
+  77              		.thumb
+  78              		.thumb_func
+  80              	UTIL_LPM_SetStopMode:
+  81              	.LVL0:
+  82              	.LFB1414:
+ 131:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 132:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_SetStopMode( UTIL_LPM_bm_t lpm_id_bm, UTIL_LPM_State_t state )
+ 133:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+  83              		.loc 1 133 1 view -0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+ 134:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_ENTER_CRITICAL_SECTION( );
+  88              		.loc 1 134 3 view .LVU10
+  89              	.LBB26:
+  90              	.LBI26:
+  91              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.2.0
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     08. May 2019
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 5
+
+
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 6
+
+
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 7
+
+
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 8
+
+
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 210:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 211:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 212:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 213:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 214:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Control Register
+ 215:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the Control Register.
+ 216:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Control Register value
+ 217:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 218:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_CONTROL(void)
+ 219:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 220:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 221:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 222:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control" : "=r" (result) );
+ 223:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 224:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 225:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 226:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 227:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 228:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 229:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Control Register (non-secure)
+ 230:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the non-secure Control Register when in secure mode.
+ 231:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               non-secure Control Register value
+ 232:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 233:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_CONTROL_NS(void)
+ 234:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 235:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 236:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 9
+
+
+ 237:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control_ns" : "=r" (result) );
+ 238:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 239:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 240:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 241:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 242:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 243:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 244:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register
+ 245:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
+ 246:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+ 247:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 248:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_CONTROL(uint32_t control)
+ 249:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 250:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
+ 251:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 252:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 253:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 254:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 255:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 256:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register (non-secure)
+ 257:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the non-secure Control Register when in secure state.
+ 258:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+ 259:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 260:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
+ 261:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 262:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control_ns, %0" : : "r" (control) : "memory");
+ 263:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 264:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 265:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 266:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 267:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 268:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get IPSR Register
+ 269:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the IPSR Register.
+ 270:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               IPSR Register value
+ 271:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 272:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_IPSR(void)
+ 273:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 274:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 275:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 276:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
+ 277:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 278:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 279:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 280:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 281:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 282:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get APSR Register
+ 283:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the APSR Register.
+ 284:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               APSR Register value
+ 285:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 286:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_APSR(void)
+ 287:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 288:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 289:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 290:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, apsr" : "=r" (result) );
+ 291:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 292:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 293:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 10
+
+
+ 294:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 295:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 296:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get xPSR Register
+ 297:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the xPSR Register.
+ 298:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               xPSR Register value
+ 299:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 300:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
+ 301:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 302:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 303:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 304:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, xpsr" : "=r" (result) );
+ 305:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 306:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 307:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 308:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 309:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 310:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
+ 311:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
+ 312:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
+ 313:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 314:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSP(void)
+ 315:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 316:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 317:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 318:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp"  : "=r" (result) );
+ 319:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 320:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 321:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 322:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 323:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 324:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 325:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer (non-secure)
+ 326:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Process Stack Pointer (PSP) when in secure s
+ 327:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
+ 328:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 329:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PSP_NS(void)
+ 330:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 331:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 332:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 333:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp_ns"  : "=r" (result) );
+ 334:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 335:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 336:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 337:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 338:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 339:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 340:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer
+ 341:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer (PSP).
+ 342:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+ 343:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 344:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PSP(uint32_t topOfProcStack)
+ 345:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 346:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
+ 347:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 348:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 349:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 350:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 11
+
+
+ 351:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 352:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer (non-secure)
+ 353:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Process Stack Pointer (PSP) when in secure sta
+ 354:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+ 355:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 356:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_PSP_NS(uint32_t topOfProcStack)
+ 357:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 358:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp_ns, %0" : : "r" (topOfProcStack) : );
+ 359:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 360:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 361:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 362:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 363:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 364:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer
+ 365:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer (MSP).
+ 366:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
+ 367:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 368:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
+ 369:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 370:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 371:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 372:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp" : "=r" (result) );
+ 373:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 374:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 375:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 376:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 377:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 378:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 379:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer (non-secure)
+ 380:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Main Stack Pointer (MSP) when in secure stat
+ 381:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
+ 382:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 383:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSP_NS(void)
+ 384:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 385:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 386:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 387:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp_ns" : "=r" (result) );
+ 388:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 389:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 390:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 391:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 392:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 393:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 394:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer
+ 395:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer (MSP).
+ 396:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+ 397:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 398:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_MSP(uint32_t topOfMainStack)
+ 399:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 400:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
+ 401:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 402:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 403:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 404:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 405:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 406:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer (non-secure)
+ 407:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 12
+
+
+ 408:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
+ 409:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 410:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSP_NS(uint32_t topOfMainStack)
+ 411:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 412:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp_ns, %0" : : "r" (topOfMainStack) : );
+ 413:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 414:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 415:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 416:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 417:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 418:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 419:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Stack Pointer (non-secure)
+ 420:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the non-secure Stack Pointer (SP) when in secure state.
+ 421:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               SP Register value
+ 422:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 423:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
+ 424:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 425:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 426:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 427:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, sp_ns" : "=r" (result) );
+ 428:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 429:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 430:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 431:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 432:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 433:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Stack Pointer (non-secure)
+ 434:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Stack Pointer (SP) when in secure state.
+ 435:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfStack  Stack Pointer value to set
+ 436:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 437:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_SP_NS(uint32_t topOfStack)
+ 438:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 439:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR sp_ns, %0" : : "r" (topOfStack) : );
+ 440:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 441:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 442:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 443:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 444:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 445:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Priority Mask
+ 446:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current state of the priority mask bit from the Priority Mask Register.
+ 447:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Priority Mask value
+ 448:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 449:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PRIMASK(void)
+  92              		.loc 2 449 31 view .LVU11
+  93              	.LBB27:
+ 450:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 451:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+  94              		.loc 2 451 3 view .LVU12
+ 452:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 453:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask" : "=r" (result) :: "memory");
+  95              		.loc 2 453 3 view .LVU13
+  96              		.syntax unified
+  97              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  98 0000 EFF31083 		MRS r3, primask
+  99              	@ 0 "" 2
+ 100              	.LVL1:
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 101              		.loc 2 454 3 view .LVU14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 13
+
+
+ 102              		.loc 2 454 3 is_stmt 0 view .LVU15
+ 103              		.thumb
+ 104              		.syntax unified
+ 105              	.LBE27:
+ 106              	.LBE26:
+ 107              		.loc 1 134 3 is_stmt 1 discriminator 1 view .LVU16
+ 108              	.LBB28:
+ 109              	.LBI28:
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 110              		.loc 2 207 27 view .LVU17
+ 111              	.LBB29:
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 112              		.loc 2 209 3 view .LVU18
+ 113              		.syntax unified
+ 114              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 115 0004 72B6     		cpsid i
+ 116              	@ 0 "" 2
+ 117              		.thumb
+ 118              		.syntax unified
+ 119              	.LBE29:
+ 120              	.LBE28:
+ 135:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   
+ 136:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   switch( state )
+ 121              		.loc 1 136 3 view .LVU19
+ 122 0006 41B1     		cbz	r1, .L6
+ 123 0008 0129     		cmp	r1, #1
+ 124 000a 03D1     		bne	.L7
+ 137:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   {
+ 138:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   case UTIL_LPM_DISABLE:
+ 139:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 140:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       StopModeDisable |= lpm_id_bm;
+ 125              		.loc 1 140 7 view .LVU20
+ 126              		.loc 1 140 23 is_stmt 0 view .LVU21
+ 127 000c 0649     		ldr	r1, .L8
+ 128              	.LVL2:
+ 129              		.loc 1 140 23 view .LVU22
+ 130 000e 0A68     		ldr	r2, [r1]
+ 131 0010 0243     		orrs	r2, r2, r0
+ 132 0012 0A60     		str	r2, [r1]
+ 141:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 133              		.loc 1 141 7 is_stmt 1 view .LVU23
+ 134              	.L7:
+ 142:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 143:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   case UTIL_LPM_ENABLE:
+ 144:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 145:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       StopModeDisable &= ( ~lpm_id_bm );
+ 146:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 147:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 148:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   default :
+ 149:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 150:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 151:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 152:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 153:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   
+ 154:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_EXIT_CRITICAL_SECTION( );
+ 135              		.loc 1 154 3 view .LVU24
+ 136              	.LBB30:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 14
+
+
+ 137              	.LBI30:
+ 455:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 456:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 457:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 458:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
+ 459:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 460:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Priority Mask (non-secure)
+ 461:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current state of the non-secure priority mask bit from the Priority Mask Reg
+ 462:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Priority Mask value
+ 463:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 464:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PRIMASK_NS(void)
+ 465:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 466:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 467:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 468:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask_ns" : "=r" (result) :: "memory");
+ 469:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 470:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 471:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 472:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 473:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 474:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 475:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask
+ 476:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
+ 477:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+ 478:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 479:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_PRIMASK(uint32_t priMask)
+ 138              		.loc 2 479 27 view .LVU25
+ 139              	.LBB31:
+ 480:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 481:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
+ 140              		.loc 2 481 3 view .LVU26
+ 141              		.syntax unified
+ 142              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 143 0014 83F31088 		MSR primask, r3
+ 144              	@ 0 "" 2
+ 145              		.thumb
+ 146              		.syntax unified
+ 147              	.LBE31:
+ 148              	.LBE30:
+ 155:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+ 149              		.loc 1 155 1 is_stmt 0 view .LVU27
+ 150 0018 7047     		bx	lr
+ 151              	.LVL3:
+ 152              	.L6:
+ 145:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 153              		.loc 1 145 7 is_stmt 1 view .LVU28
+ 145:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 154              		.loc 1 145 23 is_stmt 0 view .LVU29
+ 155 001a 0349     		ldr	r1, .L8
+ 156              	.LVL4:
+ 145:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 157              		.loc 1 145 23 view .LVU30
+ 158 001c 0A68     		ldr	r2, [r1]
+ 159 001e 22EA0002 		bic	r2, r2, r0
+ 160 0022 0A60     		str	r2, [r1]
+ 146:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 161              		.loc 1 146 7 is_stmt 1 view .LVU31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 15
+
+
+ 162 0024 F6E7     		b	.L7
+ 163              	.L9:
+ 164 0026 00BF     		.align	2
+ 165              	.L8:
+ 166 0028 00000000 		.word	StopModeDisable
+ 167              		.cfi_endproc
+ 168              	.LFE1414:
+ 170              		.section	.text.UTIL_LPM_SetOffMode,"ax",%progbits
+ 171              		.align	1
+ 172              		.global	UTIL_LPM_SetOffMode
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ 177              	UTIL_LPM_SetOffMode:
+ 178              	.LVL5:
+ 179              	.LFB1415:
+ 156:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 157:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_SetOffMode( UTIL_LPM_bm_t lpm_id_bm, UTIL_LPM_State_t state )
+ 158:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+ 180              		.loc 1 158 1 view -0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184              		@ link register save eliminated.
+ 159:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_ENTER_CRITICAL_SECTION( );
+ 185              		.loc 1 159 3 view .LVU33
+ 186              	.LBB32:
+ 187              	.LBI32:
+ 449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 188              		.loc 2 449 31 view .LVU34
+ 189              	.LBB33:
+ 451:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 190              		.loc 2 451 3 view .LVU35
+ 453:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 191              		.loc 2 453 3 view .LVU36
+ 192              		.syntax unified
+ 193              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 194 0000 EFF31083 		MRS r3, primask
+ 195              	@ 0 "" 2
+ 196              	.LVL6:
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 197              		.loc 2 454 3 view .LVU37
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 198              		.loc 2 454 3 is_stmt 0 view .LVU38
+ 199              		.thumb
+ 200              		.syntax unified
+ 201              	.LBE33:
+ 202              	.LBE32:
+ 203              		.loc 1 159 3 is_stmt 1 discriminator 1 view .LVU39
+ 204              	.LBB34:
+ 205              	.LBI34:
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 206              		.loc 2 207 27 view .LVU40
+ 207              	.LBB35:
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 208              		.loc 2 209 3 view .LVU41
+ 209              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 16
+
+
+ 210              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 211 0004 72B6     		cpsid i
+ 212              	@ 0 "" 2
+ 213              		.thumb
+ 214              		.syntax unified
+ 215              	.LBE35:
+ 216              	.LBE34:
+ 160:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   
+ 161:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   switch(state)
+ 217              		.loc 1 161 3 view .LVU42
+ 218 0006 41B1     		cbz	r1, .L11
+ 219 0008 0129     		cmp	r1, #1
+ 220 000a 03D1     		bne	.L12
+ 162:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   {
+ 163:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   case UTIL_LPM_DISABLE:
+ 164:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 165:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       OffModeDisable |= lpm_id_bm;
+ 221              		.loc 1 165 7 view .LVU43
+ 222              		.loc 1 165 22 is_stmt 0 view .LVU44
+ 223 000c 0649     		ldr	r1, .L13
+ 224              	.LVL7:
+ 225              		.loc 1 165 22 view .LVU45
+ 226 000e 0A68     		ldr	r2, [r1]
+ 227 0010 0243     		orrs	r2, r2, r0
+ 228 0012 0A60     		str	r2, [r1]
+ 166:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 229              		.loc 1 166 7 is_stmt 1 view .LVU46
+ 230              	.L12:
+ 167:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 168:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   case UTIL_LPM_ENABLE:
+ 169:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 170:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       OffModeDisable &= ( ~lpm_id_bm );
+ 171:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 172:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 173:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   default :
+ 174:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 175:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 176:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 177:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 178:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   
+ 179:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_EXIT_CRITICAL_SECTION( );
+ 231              		.loc 1 179 3 view .LVU47
+ 232              	.LBB36:
+ 233              	.LBI36:
+ 479:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 234              		.loc 2 479 27 view .LVU48
+ 235              	.LBB37:
+ 236              		.loc 2 481 3 view .LVU49
+ 237              		.syntax unified
+ 238              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 239 0014 83F31088 		MSR primask, r3
+ 240              	@ 0 "" 2
+ 241              		.thumb
+ 242              		.syntax unified
+ 243              	.LBE37:
+ 244              	.LBE36:
+ 180:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 17
+
+
+ 245              		.loc 1 180 1 is_stmt 0 view .LVU50
+ 246 0018 7047     		bx	lr
+ 247              	.LVL8:
+ 248              	.L11:
+ 170:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 249              		.loc 1 170 7 is_stmt 1 view .LVU51
+ 170:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 250              		.loc 1 170 22 is_stmt 0 view .LVU52
+ 251 001a 0349     		ldr	r1, .L13
+ 252              	.LVL9:
+ 170:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       break;
+ 253              		.loc 1 170 22 view .LVU53
+ 254 001c 0A68     		ldr	r2, [r1]
+ 255 001e 22EA0002 		bic	r2, r2, r0
+ 256 0022 0A60     		str	r2, [r1]
+ 171:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 257              		.loc 1 171 7 is_stmt 1 view .LVU54
+ 258 0024 F6E7     		b	.L12
+ 259              	.L14:
+ 260 0026 00BF     		.align	2
+ 261              	.L13:
+ 262 0028 00000000 		.word	OffModeDisable
+ 263              		.cfi_endproc
+ 264              	.LFE1415:
+ 266              		.section	.text.UTIL_LPM_GetMode,"ax",%progbits
+ 267              		.align	1
+ 268              		.global	UTIL_LPM_GetMode
+ 269              		.syntax unified
+ 270              		.thumb
+ 271              		.thumb_func
+ 273              	UTIL_LPM_GetMode:
+ 274              	.LFB1416:
+ 181:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 182:Utilities/lpm/tiny_lpm/stm32_lpm.c **** UTIL_LPM_Mode_t UTIL_LPM_GetMode( void )
+ 183:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+ 275              		.loc 1 183 1 view -0
+ 276              		.cfi_startproc
+ 277              		@ args = 0, pretend = 0, frame = 0
+ 278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 279              		@ link register save eliminated.
+ 184:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_Mode_t mode_selected;
+ 280              		.loc 1 184 3 view .LVU56
+ 185:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 186:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_ENTER_CRITICAL_SECTION( );
+ 281              		.loc 1 186 3 view .LVU57
+ 282              	.LBB38:
+ 283              	.LBI38:
+ 449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 284              		.loc 2 449 31 view .LVU58
+ 285              	.LBB39:
+ 451:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 286              		.loc 2 451 3 view .LVU59
+ 453:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 287              		.loc 2 453 3 view .LVU60
+ 288              		.syntax unified
+ 289              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 290 0000 EFF31083 		MRS r3, primask
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 18
+
+
+ 291              	@ 0 "" 2
+ 292              	.LVL10:
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 293              		.loc 2 454 3 view .LVU61
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 294              		.loc 2 454 3 is_stmt 0 view .LVU62
+ 295              		.thumb
+ 296              		.syntax unified
+ 297              	.LBE39:
+ 298              	.LBE38:
+ 299              		.loc 1 186 3 is_stmt 1 discriminator 1 view .LVU63
+ 300              	.LBB40:
+ 301              	.LBI40:
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 302              		.loc 2 207 27 view .LVU64
+ 303              	.LBB41:
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 304              		.loc 2 209 3 view .LVU65
+ 305              		.syntax unified
+ 306              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 307 0004 72B6     		cpsid i
+ 308              	@ 0 "" 2
+ 309              		.thumb
+ 310              		.syntax unified
+ 311              	.LBE41:
+ 312              	.LBE40:
+ 187:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 188:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   if( StopModeDisable != UTIL_LPM_NO_BIT_SET )
+ 313              		.loc 1 188 3 view .LVU66
+ 314              		.loc 1 188 23 is_stmt 0 view .LVU67
+ 315 0006 074A     		ldr	r2, .L19
+ 316 0008 1268     		ldr	r2, [r2]
+ 317              		.loc 1 188 5 view .LVU68
+ 318 000a 22B9     		cbnz	r2, .L17
+ 189:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   {
+ 190:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     /**
+ 191:Utilities/lpm/tiny_lpm/stm32_lpm.c ****      * At least one user disallows Stop Mode
+ 192:Utilities/lpm/tiny_lpm/stm32_lpm.c ****      */
+ 193:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     mode_selected = UTIL_LPM_SLEEPMODE;
+ 194:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 195:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   else
+ 196:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   {
+ 197:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     if( OffModeDisable != UTIL_LPM_NO_BIT_SET )
+ 319              		.loc 1 197 5 is_stmt 1 view .LVU69
+ 320              		.loc 1 197 24 is_stmt 0 view .LVU70
+ 321 000c 064A     		ldr	r2, .L19+4
+ 322 000e 1268     		ldr	r2, [r2]
+ 323              		.loc 1 197 7 view .LVU71
+ 324 0010 2AB1     		cbz	r2, .L18
+ 198:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 199:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       /**
+ 200:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        * At least one user disallows Off Mode
+ 201:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        */
+ 202:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       mode_selected = UTIL_LPM_STOPMODE;
+ 325              		.loc 1 202 21 view .LVU72
+ 326 0012 0120     		movs	r0, #1
+ 327 0014 00E0     		b	.L16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 19
+
+
+ 328              	.L17:
+ 193:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 329              		.loc 1 193 19 view .LVU73
+ 330 0016 0020     		movs	r0, #0
+ 331              	.L16:
+ 332              	.LVL11:
+ 203:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 204:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     else
+ 205:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 206:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       mode_selected = UTIL_LPM_OFFMODE;
+ 207:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 208:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 209:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 210:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_EXIT_CRITICAL_SECTION( );
+ 333              		.loc 1 210 3 is_stmt 1 view .LVU74
+ 334              	.LBB42:
+ 335              	.LBI42:
+ 479:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 336              		.loc 2 479 27 view .LVU75
+ 337              	.LBB43:
+ 338              		.loc 2 481 3 view .LVU76
+ 339              		.syntax unified
+ 340              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 341 0018 83F31088 		MSR primask, r3
+ 342              	@ 0 "" 2
+ 343              		.thumb
+ 344              		.syntax unified
+ 345              	.LBE43:
+ 346              	.LBE42:
+ 211:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 212:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   return mode_selected;
+ 347              		.loc 1 212 3 view .LVU77
+ 213:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+ 348              		.loc 1 213 1 is_stmt 0 view .LVU78
+ 349 001c 7047     		bx	lr
+ 350              	.LVL12:
+ 351              	.L18:
+ 206:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 352              		.loc 1 206 21 view .LVU79
+ 353 001e 0220     		movs	r0, #2
+ 354 0020 FAE7     		b	.L16
+ 355              	.L20:
+ 356 0022 00BF     		.align	2
+ 357              	.L19:
+ 358 0024 00000000 		.word	StopModeDisable
+ 359 0028 00000000 		.word	OffModeDisable
+ 360              		.cfi_endproc
+ 361              	.LFE1416:
+ 363              		.section	.text.UTIL_LPM_EnterLowPower,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	UTIL_LPM_EnterLowPower
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 370              	UTIL_LPM_EnterLowPower:
+ 371              	.LFB1417:
+ 214:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 20
+
+
+ 215:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_EnterLowPower( void )
+ 216:Utilities/lpm/tiny_lpm/stm32_lpm.c **** {
+ 372              		.loc 1 216 1 is_stmt 1 view -0
+ 373              		.cfi_startproc
+ 374              		@ args = 0, pretend = 0, frame = 0
+ 375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 376 0000 38B5     		push	{r3, r4, r5, lr}
+ 377              		.cfi_def_cfa_offset 16
+ 378              		.cfi_offset 3, -16
+ 379              		.cfi_offset 4, -12
+ 380              		.cfi_offset 5, -8
+ 381              		.cfi_offset 14, -4
+ 217:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_ENTER_CRITICAL_SECTION_ELP( );
+ 382              		.loc 1 217 3 view .LVU81
+ 383              	.LBB44:
+ 384              	.LBI44:
+ 449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 385              		.loc 2 449 31 view .LVU82
+ 386              	.LBB45:
+ 451:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 387              		.loc 2 451 3 view .LVU83
+ 453:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 388              		.loc 2 453 3 view .LVU84
+ 389              		.syntax unified
+ 390              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 391 0002 EFF31084 		MRS r4, primask
+ 392              	@ 0 "" 2
+ 393              	.LVL13:
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 394              		.loc 2 454 3 view .LVU85
+ 454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 395              		.loc 2 454 3 is_stmt 0 view .LVU86
+ 396              		.thumb
+ 397              		.syntax unified
+ 398              	.LBE45:
+ 399              	.LBE44:
+ 400              		.loc 1 217 3 is_stmt 1 discriminator 1 view .LVU87
+ 401              	.LBB46:
+ 402              	.LBI46:
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 403              		.loc 2 207 27 view .LVU88
+ 404              	.LBB47:
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 405              		.loc 2 209 3 view .LVU89
+ 406              		.syntax unified
+ 407              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 408 0006 72B6     		cpsid i
+ 409              	@ 0 "" 2
+ 410              		.thumb
+ 411              		.syntax unified
+ 412              	.LBE47:
+ 413              	.LBE46:
+ 218:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
+ 219:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   if( StopModeDisable != UTIL_LPM_NO_BIT_SET )
+ 414              		.loc 1 219 3 view .LVU90
+ 415              		.loc 1 219 23 is_stmt 0 view .LVU91
+ 416 0008 0C4B     		ldr	r3, .L26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 21
+
+
+ 417 000a 1B68     		ldr	r3, [r3]
+ 418              		.loc 1 219 5 view .LVU92
+ 419 000c 3BB1     		cbz	r3, .L22
+ 220:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   {
+ 221:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     /**
+ 222:Utilities/lpm/tiny_lpm/stm32_lpm.c ****      * At least one user disallows Stop Mode
+ 223:Utilities/lpm/tiny_lpm/stm32_lpm.c ****      * SLEEP mode is required
+ 224:Utilities/lpm/tiny_lpm/stm32_lpm.c ****      */
+ 225:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.EnterSleepMode( );
+ 420              		.loc 1 225 7 is_stmt 1 view .LVU93
+ 421              		.loc 1 225 23 is_stmt 0 view .LVU94
+ 422 000e 0C4D     		ldr	r5, .L26+4
+ 423 0010 2B68     		ldr	r3, [r5]
+ 424              		.loc 1 225 7 view .LVU95
+ 425 0012 9847     		blx	r3
+ 426              	.LVL14:
+ 226:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.ExitSleepMode( );
+ 427              		.loc 1 226 7 is_stmt 1 view .LVU96
+ 428              		.loc 1 226 23 is_stmt 0 view .LVU97
+ 429 0014 6B68     		ldr	r3, [r5, #4]
+ 430              		.loc 1 226 7 view .LVU98
+ 431 0016 9847     		blx	r3
+ 432              	.LVL15:
+ 433              	.L23:
+ 227:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 228:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   else
+ 229:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   { 
+ 230:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     if( OffModeDisable != UTIL_LPM_NO_BIT_SET )
+ 231:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 232:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       /**
+ 233:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        * At least one user disallows Off Mode
+ 234:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        * STOP mode is required
+ 235:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        */
+ 236:Utilities/lpm/tiny_lpm/stm32_lpm.c ****         UTIL_PowerDriver.EnterStopMode( );
+ 237:Utilities/lpm/tiny_lpm/stm32_lpm.c ****         UTIL_PowerDriver.ExitStopMode( );
+ 238:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 239:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     else
+ 240:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 241:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       /**
+ 242:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        * OFF mode is required
+ 243:Utilities/lpm/tiny_lpm/stm32_lpm.c ****        */
+ 244:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.EnterOffMode( );
+ 245:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.ExitOffMode( );
+ 246:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 247:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   }
+ 248:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   
+ 249:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_EXIT_CRITICAL_SECTION_ELP( );
+ 434              		.loc 1 249 3 is_stmt 1 view .LVU99
+ 435              	.LBB48:
+ 436              	.LBI48:
+ 479:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 437              		.loc 2 479 27 view .LVU100
+ 438              	.LBB49:
+ 439              		.loc 2 481 3 view .LVU101
+ 440              		.syntax unified
+ 441              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 442 0018 84F31088 		MSR primask, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 22
+
+
+ 443              	@ 0 "" 2
+ 444              		.thumb
+ 445              		.syntax unified
+ 446              	.LBE49:
+ 447              	.LBE48:
+ 250:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
+ 448              		.loc 1 250 1 is_stmt 0 view .LVU102
+ 449 001c 38BD     		pop	{r3, r4, r5, pc}
+ 450              	.LVL16:
+ 451              	.L22:
+ 230:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 452              		.loc 1 230 5 is_stmt 1 view .LVU103
+ 230:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 453              		.loc 1 230 24 is_stmt 0 view .LVU104
+ 454 001e 094B     		ldr	r3, .L26+8
+ 455 0020 1B68     		ldr	r3, [r3]
+ 230:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     {
+ 456              		.loc 1 230 7 view .LVU105
+ 457 0022 2BB1     		cbz	r3, .L24
+ 236:Utilities/lpm/tiny_lpm/stm32_lpm.c ****         UTIL_PowerDriver.ExitStopMode( );
+ 458              		.loc 1 236 9 is_stmt 1 view .LVU106
+ 236:Utilities/lpm/tiny_lpm/stm32_lpm.c ****         UTIL_PowerDriver.ExitStopMode( );
+ 459              		.loc 1 236 25 is_stmt 0 view .LVU107
+ 460 0024 064D     		ldr	r5, .L26+4
+ 461 0026 AB68     		ldr	r3, [r5, #8]
+ 236:Utilities/lpm/tiny_lpm/stm32_lpm.c ****         UTIL_PowerDriver.ExitStopMode( );
+ 462              		.loc 1 236 9 view .LVU108
+ 463 0028 9847     		blx	r3
+ 464              	.LVL17:
+ 237:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 465              		.loc 1 237 9 is_stmt 1 view .LVU109
+ 237:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 466              		.loc 1 237 25 is_stmt 0 view .LVU110
+ 467 002a EB68     		ldr	r3, [r5, #12]
+ 237:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 468              		.loc 1 237 9 view .LVU111
+ 469 002c 9847     		blx	r3
+ 470              	.LVL18:
+ 471 002e F3E7     		b	.L23
+ 472              	.L24:
+ 244:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.ExitOffMode( );
+ 473              		.loc 1 244 7 is_stmt 1 view .LVU112
+ 244:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.ExitOffMode( );
+ 474              		.loc 1 244 23 is_stmt 0 view .LVU113
+ 475 0030 034D     		ldr	r5, .L26+4
+ 476 0032 2B69     		ldr	r3, [r5, #16]
+ 244:Utilities/lpm/tiny_lpm/stm32_lpm.c ****       UTIL_PowerDriver.ExitOffMode( );
+ 477              		.loc 1 244 7 view .LVU114
+ 478 0034 9847     		blx	r3
+ 479              	.LVL19:
+ 245:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 480              		.loc 1 245 7 is_stmt 1 view .LVU115
+ 245:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 481              		.loc 1 245 23 is_stmt 0 view .LVU116
+ 482 0036 6B69     		ldr	r3, [r5, #20]
+ 245:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
+ 483              		.loc 1 245 7 view .LVU117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 23
+
+
+ 484 0038 9847     		blx	r3
+ 485              	.LVL20:
+ 486 003a EDE7     		b	.L23
+ 487              	.L27:
+ 488              		.align	2
+ 489              	.L26:
+ 490 003c 00000000 		.word	StopModeDisable
+ 491 0040 00000000 		.word	UTIL_PowerDriver
+ 492 0044 00000000 		.word	OffModeDisable
+ 493              		.cfi_endproc
+ 494              	.LFE1417:
+ 496              		.section	.bss.OffModeDisable,"aw",%nobits
+ 497              		.align	2
+ 500              	OffModeDisable:
+ 501 0000 00000000 		.space	4
+ 502              		.section	.bss.StopModeDisable,"aw",%nobits
+ 503              		.align	2
+ 506              	StopModeDisable:
+ 507 0000 00000000 		.space	4
+ 508              		.text
+ 509              	.Letext0:
+ 510              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 511              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 512              		.file 5 "Utilities/lpm/tiny_lpm/stm32_lpm.h"
+ 513              		.file 6 "Core/Inc/app_conf.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s 			page 24
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32_lpm.c
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:21     .text.UTIL_LPM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:27     .text.UTIL_LPM_Init:00000000 UTIL_LPM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:49     .text.UTIL_LPM_Init:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:506    .bss.StopModeDisable:00000000 StopModeDisable
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:500    .bss.OffModeDisable:00000000 OffModeDisable
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:55     .text.UTIL_LPM_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:61     .text.UTIL_LPM_DeInit:00000000 UTIL_LPM_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:74     .text.UTIL_LPM_SetStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:80     .text.UTIL_LPM_SetStopMode:00000000 UTIL_LPM_SetStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:166    .text.UTIL_LPM_SetStopMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:171    .text.UTIL_LPM_SetOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:177    .text.UTIL_LPM_SetOffMode:00000000 UTIL_LPM_SetOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:262    .text.UTIL_LPM_SetOffMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:267    .text.UTIL_LPM_GetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:273    .text.UTIL_LPM_GetMode:00000000 UTIL_LPM_GetMode
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:358    .text.UTIL_LPM_GetMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:364    .text.UTIL_LPM_EnterLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:370    .text.UTIL_LPM_EnterLowPower:00000000 UTIL_LPM_EnterLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:490    .text.UTIL_LPM_EnterLowPower:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:497    .bss.OffModeDisable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccu74k1M.s:503    .bss.StopModeDisable:00000000 $d
+
+UNDEFINED SYMBOLS
+UTIL_PowerDriver

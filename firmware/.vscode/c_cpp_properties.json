@@ -1,0 +1,38 @@
+{
+  "configurations": [
+    {
+      "name": "STM32",
+      "includePath": [
+        "Core/Inc",
+        "Drivers/CMSIS/Device/ST/STM32WBxx/Include",
+        "Drivers/CMSIS/Include",
+        "Drivers/STM32WBxx_HAL_Driver/Inc",
+        "Drivers/STM32WBxx_HAL_Driver/Inc/Legacy",
+        "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc",
+        "Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
+        "Middlewares/ST/STM32_WPAN",
+        "Middlewares/ST/STM32_WPAN/ble",
+        "Middlewares/ST/STM32_WPAN/ble/core",
+        "Middlewares/ST/STM32_WPAN/ble/core/auto",
+        "Middlewares/ST/STM32_WPAN/ble/core/template",
+        "Middlewares/ST/STM32_WPAN/ble/svc/Inc",
+        "Middlewares/ST/STM32_WPAN/ble/svc/Src",
+        "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread",
+        "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci",
+        "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl",
+        "Middlewares/ST/STM32_WPAN/utilities",
+        "STM32_WPAN/App",
+        "USB_Device/App",
+        "USB_Device/Target",
+        "Utilities/lpm/tiny_lpm",
+        "Utilities/sequencer"
+      ],
+      "defines": [
+        "STM32WB55xx",
+        "USE_HAL_DRIVER"
+      ],
+      "compilerPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN\\arm-none-eabi-gcc.EXE"
+    }
+  ],
+  "version": 4
+}

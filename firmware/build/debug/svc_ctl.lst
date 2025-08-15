@@ -1,0 +1,1109 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"svc_ctl.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c"
+  20              		.section	.text.BAS_Init,"ax",%progbits
+  21              		.align	1
+  22              		.weak	BAS_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	BAS_Init:
+  28              	.LFB1417:
+   1:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /**
+   2:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @file    svc_ctl.c
+   4:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @brief   BLE Controller
+   6:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @attention
+   8:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  *
+   9:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  *
+  12:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  *
+  16:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  */
+  18:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  19:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  20:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Includes ------------------------------------------------------------------*/
+  21:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #include "common_blesvc.h"
+  22:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #include "cmsis_compiler.h"
+  23:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  24:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Private typedef -----------------------------------------------------------*/
+  25:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** typedef struct
+  26:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+  27:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_SVC_MAX_NBR_CB > 0)
+  28:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** SVC_CTL_p_EvtHandler_t SVCCTL__SvcHandlerTab[BLE_CFG_SVC_MAX_NBR_CB];
+  29:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+  30:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** uint8_t NbreOfRegisteredHandler;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 2
+
+
+  31:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** } SVCCTL_EvtHandler_t;
+  32:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  33:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** typedef struct
+  34:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+  35:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_CLT_MAX_NBR_CB > 0)
+  36:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** SVC_CTL_p_EvtHandler_t SVCCTL_CltHandlerTable[BLE_CFG_CLT_MAX_NBR_CB];
+  37:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+  38:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** uint8_t NbreOfRegisteredHandler;
+  39:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** } SVCCTL_CltHandler_t;
+  40:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  41:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Private defines -----------------------------------------------------------*/
+  42:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #define SVCCTL_EGID_EVT_MASK   0xFF00
+  43:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #define SVCCTL_GATT_EVT_TYPE   0x0C00
+  44:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #define SVCCTL_GAP_DEVICE_NAME_LENGTH 7
+  45:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  46:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Private macros ------------------------------------------------------------*/
+  47:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Private variables ---------------------------------------------------------*/
+  48:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /**
+  49:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * START of Section BLE_DRIVER_CONTEXT
+  50:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  */
+  51:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  52:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** PLACE_IN_SECTION("BLE_DRIVER_CONTEXT") SVCCTL_EvtHandler_t SVCCTL_EvtHandler;
+  53:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** PLACE_IN_SECTION("BLE_DRIVER_CONTEXT") SVCCTL_CltHandler_t SVCCTL_CltHandler;
+  54:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  55:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /**
+  56:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * END of Section BLE_DRIVER_CONTEXT
+  57:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  */
+  58:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  59:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Private functions ----------------------------------------------------------*/
+  60:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Weak functions ----------------------------------------------------------*/
+  61:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** void BVOPUS_STM_Init(void);
+  62:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  63:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void BAS_Init( void )
+  64:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+  29              		.loc 1 64 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  65:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+  34              		.loc 1 65 3 view .LVU1
+  66:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+  35              		.loc 1 66 1 is_stmt 0 view .LVU2
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE1417:
+  40              		.section	.text.BLS_Init,"ax",%progbits
+  41              		.align	1
+  42              		.weak	BLS_Init
+  43              		.syntax unified
+  44              		.thumb
+  45              		.thumb_func
+  47              	BLS_Init:
+  48              	.LFB1418:
+  67:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+  68:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void BLS_Init( void )
+  69:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 3
+
+
+  49              		.loc 1 69 1 is_stmt 1 view -0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  70:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+  54              		.loc 1 70 3 view .LVU4
+  71:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+  55              		.loc 1 71 1 is_stmt 0 view .LVU5
+  56 0000 7047     		bx	lr
+  57              		.cfi_endproc
+  58              	.LFE1418:
+  60              		.section	.text.CRS_STM_Init,"ax",%progbits
+  61              		.align	1
+  62              		.weak	CRS_STM_Init
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  67              	CRS_STM_Init:
+  68              	.LFB1419:
+  72:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void CRS_STM_Init( void )
+  73:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+  69              		.loc 1 73 1 is_stmt 1 view -0
+  70              		.cfi_startproc
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+  74              		.loc 1 74 3 view .LVU7
+  75:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+  75              		.loc 1 75 1 is_stmt 0 view .LVU8
+  76 0000 7047     		bx	lr
+  77              		.cfi_endproc
+  78              	.LFE1419:
+  80              		.section	.text.DIS_Init,"ax",%progbits
+  81              		.align	1
+  82              		.weak	DIS_Init
+  83              		.syntax unified
+  84              		.thumb
+  85              		.thumb_func
+  87              	DIS_Init:
+  88              	.LFB1420:
+  76:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void DIS_Init( void )
+  77:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+  89              		.loc 1 77 1 is_stmt 1 view -0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  78:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+  94              		.loc 1 78 3 view .LVU10
+  79:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+  95              		.loc 1 79 1 is_stmt 0 view .LVU11
+  96 0000 7047     		bx	lr
+  97              		.cfi_endproc
+  98              	.LFE1420:
+ 100              		.section	.text.EDS_STM_Init,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 4
+
+
+ 101              		.align	1
+ 102              		.weak	EDS_STM_Init
+ 103              		.syntax unified
+ 104              		.thumb
+ 105              		.thumb_func
+ 107              	EDS_STM_Init:
+ 108              	.LFB1421:
+  80:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void EDS_STM_Init( void )
+  81:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 109              		.loc 1 81 1 is_stmt 1 view -0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113              		@ link register save eliminated.
+  82:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 114              		.loc 1 82 3 view .LVU13
+  83:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 115              		.loc 1 83 1 is_stmt 0 view .LVU14
+ 116 0000 7047     		bx	lr
+ 117              		.cfi_endproc
+ 118              	.LFE1421:
+ 120              		.section	.text.HIDS_Init,"ax",%progbits
+ 121              		.align	1
+ 122              		.weak	HIDS_Init
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 127              	HIDS_Init:
+ 128              	.LFB1422:
+  84:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void HIDS_Init( void )
+  85:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 129              		.loc 1 85 1 is_stmt 1 view -0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+  86:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 134              		.loc 1 86 3 view .LVU16
+  87:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 135              		.loc 1 87 1 is_stmt 0 view .LVU17
+ 136 0000 7047     		bx	lr
+ 137              		.cfi_endproc
+ 138              	.LFE1422:
+ 140              		.section	.text.HRS_Init,"ax",%progbits
+ 141              		.align	1
+ 142              		.weak	HRS_Init
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 147              	HRS_Init:
+ 148              	.LFB1423:
+  88:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void HRS_Init( void )
+  89:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 149              		.loc 1 89 1 is_stmt 1 view -0
+ 150              		.cfi_startproc
+ 151              		@ args = 0, pretend = 0, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 5
+
+
+ 153              		@ link register save eliminated.
+  90:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 154              		.loc 1 90 3 view .LVU19
+  91:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 155              		.loc 1 91 1 is_stmt 0 view .LVU20
+ 156 0000 7047     		bx	lr
+ 157              		.cfi_endproc
+ 158              	.LFE1423:
+ 160              		.section	.text.HTS_Init,"ax",%progbits
+ 161              		.align	1
+ 162              		.weak	HTS_Init
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	HTS_Init:
+ 168              	.LFB1424:
+  92:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void HTS_Init( void )
+  93:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 169              		.loc 1 93 1 is_stmt 1 view -0
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173              		@ link register save eliminated.
+  94:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 174              		.loc 1 94 3 view .LVU22
+  95:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 175              		.loc 1 95 1 is_stmt 0 view .LVU23
+ 176 0000 7047     		bx	lr
+ 177              		.cfi_endproc
+ 178              	.LFE1424:
+ 180              		.section	.text.IAS_Init,"ax",%progbits
+ 181              		.align	1
+ 182              		.weak	IAS_Init
+ 183              		.syntax unified
+ 184              		.thumb
+ 185              		.thumb_func
+ 187              	IAS_Init:
+ 188              	.LFB1425:
+  96:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void IAS_Init( void )
+  97:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 189              		.loc 1 97 1 is_stmt 1 view -0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              		@ link register save eliminated.
+  98:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 194              		.loc 1 98 3 view .LVU25
+  99:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 195              		.loc 1 99 1 is_stmt 0 view .LVU26
+ 196 0000 7047     		bx	lr
+ 197              		.cfi_endproc
+ 198              	.LFE1425:
+ 200              		.section	.text.LLS_Init,"ax",%progbits
+ 201              		.align	1
+ 202              		.weak	LLS_Init
+ 203              		.syntax unified
+ 204              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 6
+
+
+ 205              		.thumb_func
+ 207              	LLS_Init:
+ 208              	.LFB1426:
+ 100:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void LLS_Init( void )
+ 101:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 209              		.loc 1 101 1 is_stmt 1 view -0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ 102:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 214              		.loc 1 102 3 view .LVU28
+ 103:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 215              		.loc 1 103 1 is_stmt 0 view .LVU29
+ 216 0000 7047     		bx	lr
+ 217              		.cfi_endproc
+ 218              	.LFE1426:
+ 220              		.section	.text.TPS_Init,"ax",%progbits
+ 221              		.align	1
+ 222              		.weak	TPS_Init
+ 223              		.syntax unified
+ 224              		.thumb
+ 225              		.thumb_func
+ 227              	TPS_Init:
+ 228              	.LFB1427:
+ 104:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void TPS_Init( void )
+ 105:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 229              		.loc 1 105 1 is_stmt 1 view -0
+ 230              		.cfi_startproc
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 106:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 234              		.loc 1 106 3 view .LVU31
+ 107:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 235              		.loc 1 107 1 is_stmt 0 view .LVU32
+ 236 0000 7047     		bx	lr
+ 237              		.cfi_endproc
+ 238              	.LFE1427:
+ 240              		.section	.text.MOTENV_STM_Init,"ax",%progbits
+ 241              		.align	1
+ 242              		.weak	MOTENV_STM_Init
+ 243              		.syntax unified
+ 244              		.thumb
+ 245              		.thumb_func
+ 247              	MOTENV_STM_Init:
+ 248              	.LFB1428:
+ 108:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void MOTENV_STM_Init( void )
+ 109:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 249              		.loc 1 109 1 is_stmt 1 view -0
+ 250              		.cfi_startproc
+ 251              		@ args = 0, pretend = 0, frame = 0
+ 252              		@ frame_needed = 0, uses_anonymous_args = 0
+ 253              		@ link register save eliminated.
+ 110:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 254              		.loc 1 110 3 view .LVU34
+ 111:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 7
+
+
+ 255              		.loc 1 111 1 is_stmt 0 view .LVU35
+ 256 0000 7047     		bx	lr
+ 257              		.cfi_endproc
+ 258              	.LFE1428:
+ 260              		.section	.text.P2PS_STM_Init,"ax",%progbits
+ 261              		.align	1
+ 262              		.weak	P2PS_STM_Init
+ 263              		.syntax unified
+ 264              		.thumb
+ 265              		.thumb_func
+ 267              	P2PS_STM_Init:
+ 268              	.LFB1429:
+ 112:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void P2PS_STM_Init( void )
+ 113:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 269              		.loc 1 113 1 is_stmt 1 view -0
+ 270              		.cfi_startproc
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273              		@ link register save eliminated.
+ 114:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 274              		.loc 1 114 3 view .LVU37
+ 115:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 275              		.loc 1 115 1 is_stmt 0 view .LVU38
+ 276 0000 7047     		bx	lr
+ 277              		.cfi_endproc
+ 278              	.LFE1429:
+ 280              		.section	.text.ZDD_STM_Init,"ax",%progbits
+ 281              		.align	1
+ 282              		.weak	ZDD_STM_Init
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ 287              	ZDD_STM_Init:
+ 288              	.LFB1430:
+ 116:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void ZDD_STM_Init( void )
+ 117:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 289              		.loc 1 117 1 is_stmt 1 view -0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              		@ link register save eliminated.
+ 118:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 294              		.loc 1 118 3 view .LVU40
+ 119:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 295              		.loc 1 119 1 is_stmt 0 view .LVU41
+ 296 0000 7047     		bx	lr
+ 297              		.cfi_endproc
+ 298              	.LFE1430:
+ 300              		.section	.text.OTAS_STM_Init,"ax",%progbits
+ 301              		.align	1
+ 302              		.weak	OTAS_STM_Init
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 307              	OTAS_STM_Init:
+ 308              	.LFB1431:
+ 120:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void OTAS_STM_Init( void )
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 8
+
+
+ 121:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 309              		.loc 1 121 1 is_stmt 1 view -0
+ 310              		.cfi_startproc
+ 311              		@ args = 0, pretend = 0, frame = 0
+ 312              		@ frame_needed = 0, uses_anonymous_args = 0
+ 313              		@ link register save eliminated.
+ 122:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 314              		.loc 1 122 3 view .LVU43
+ 123:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 315              		.loc 1 123 1 is_stmt 0 view .LVU44
+ 316 0000 7047     		bx	lr
+ 317              		.cfi_endproc
+ 318              	.LFE1431:
+ 320              		.section	.text.MESH_Init,"ax",%progbits
+ 321              		.align	1
+ 322              		.weak	MESH_Init
+ 323              		.syntax unified
+ 324              		.thumb
+ 325              		.thumb_func
+ 327              	MESH_Init:
+ 328              	.LFB1432:
+ 124:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void MESH_Init( void )
+ 125:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 329              		.loc 1 125 1 is_stmt 1 view -0
+ 330              		.cfi_startproc
+ 331              		@ args = 0, pretend = 0, frame = 0
+ 332              		@ frame_needed = 0, uses_anonymous_args = 0
+ 333              		@ link register save eliminated.
+ 126:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 334              		.loc 1 126 3 view .LVU46
+ 127:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 335              		.loc 1 127 1 is_stmt 0 view .LVU47
+ 336 0000 7047     		bx	lr
+ 337              		.cfi_endproc
+ 338              	.LFE1432:
+ 340              		.section	.text.BVOPUS_STM_Init,"ax",%progbits
+ 341              		.align	1
+ 342              		.weak	BVOPUS_STM_Init
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 347              	BVOPUS_STM_Init:
+ 348              	.LFB1433:
+ 128:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void BVOPUS_STM_Init( void )
+ 129:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 349              		.loc 1 129 1 is_stmt 1 view -0
+ 350              		.cfi_startproc
+ 351              		@ args = 0, pretend = 0, frame = 0
+ 352              		@ frame_needed = 0, uses_anonymous_args = 0
+ 353              		@ link register save eliminated.
+ 130:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 354              		.loc 1 130 3 view .LVU49
+ 131:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 355              		.loc 1 131 1 is_stmt 0 view .LVU50
+ 356 0000 7047     		bx	lr
+ 357              		.cfi_endproc
+ 358              	.LFE1433:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 9
+
+
+ 360              		.section	.text.SVCCTL_InitCustomSvc,"ax",%progbits
+ 361              		.align	1
+ 362              		.weak	SVCCTL_InitCustomSvc
+ 363              		.syntax unified
+ 364              		.thumb
+ 365              		.thumb_func
+ 367              	SVCCTL_InitCustomSvc:
+ 368              	.LFB1434:
+ 132:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void SVCCTL_InitCustomSvc( void )
+ 133:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 369              		.loc 1 133 1 is_stmt 1 view -0
+ 370              		.cfi_startproc
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+ 134:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 374              		.loc 1 134 3 view .LVU52
+ 135:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 375              		.loc 1 135 1 is_stmt 0 view .LVU53
+ 376 0000 7047     		bx	lr
+ 377              		.cfi_endproc
+ 378              	.LFE1434:
+ 380              		.section	.text.SVCCTL_SvcInit,"ax",%progbits
+ 381              		.align	1
+ 382              		.weak	SVCCTL_SvcInit
+ 383              		.syntax unified
+ 384              		.thumb
+ 385              		.thumb_func
+ 387              	SVCCTL_SvcInit:
+ 388              	.LFB1436:
+ 136:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 137:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /* Functions Definition ------------------------------------------------------*/
+ 138:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 139:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** void SVCCTL_Init( void )
+ 140:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 141:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  
+ 142:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   /**
+ 143:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    * Initialize the number of registered Handler
+ 144:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    */
+ 145:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_EvtHandler.NbreOfRegisteredHandler = 0;
+ 146:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_CltHandler.NbreOfRegisteredHandler = 0;
+ 147:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 148:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   /**
+ 149:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    * Add and Initialize requested services
+ 150:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    */
+ 151:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_SvcInit();
+ 152:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 153:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 154:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 155:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 156:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK void SVCCTL_SvcInit(void)
+ 157:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 389              		.loc 1 157 1 is_stmt 1 view -0
+ 390              		.cfi_startproc
+ 391              		@ args = 0, pretend = 0, frame = 0
+ 392              		@ frame_needed = 0, uses_anonymous_args = 0
+ 393 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 10
+
+
+ 394              		.cfi_def_cfa_offset 8
+ 395              		.cfi_offset 3, -8
+ 396              		.cfi_offset 14, -4
+ 158:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   BAS_Init();
+ 397              		.loc 1 158 3 view .LVU55
+ 398 0002 FFF7FEFF 		bl	BAS_Init
+ 399              	.LVL0:
+ 159:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 160:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   BLS_Init();
+ 400              		.loc 1 160 3 view .LVU56
+ 401 0006 FFF7FEFF 		bl	BLS_Init
+ 402              	.LVL1:
+ 161:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 162:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   CRS_STM_Init();
+ 403              		.loc 1 162 3 view .LVU57
+ 404 000a FFF7FEFF 		bl	CRS_STM_Init
+ 405              	.LVL2:
+ 163:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 164:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   DIS_Init();
+ 406              		.loc 1 164 3 view .LVU58
+ 407 000e FFF7FEFF 		bl	DIS_Init
+ 408              	.LVL3:
+ 165:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 166:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   EDS_STM_Init();
+ 409              		.loc 1 166 3 view .LVU59
+ 410 0012 FFF7FEFF 		bl	EDS_STM_Init
+ 411              	.LVL4:
+ 167:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 168:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   HIDS_Init();
+ 412              		.loc 1 168 3 view .LVU60
+ 413 0016 FFF7FEFF 		bl	HIDS_Init
+ 414              	.LVL5:
+ 169:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 170:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   HRS_Init();
+ 415              		.loc 1 170 3 view .LVU61
+ 416 001a FFF7FEFF 		bl	HRS_Init
+ 417              	.LVL6:
+ 171:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 172:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   HTS_Init();
+ 418              		.loc 1 172 3 view .LVU62
+ 419 001e FFF7FEFF 		bl	HTS_Init
+ 420              	.LVL7:
+ 173:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 174:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   IAS_Init();
+ 421              		.loc 1 174 3 view .LVU63
+ 422 0022 FFF7FEFF 		bl	IAS_Init
+ 423              	.LVL8:
+ 175:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 176:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   LLS_Init();
+ 424              		.loc 1 176 3 view .LVU64
+ 425 0026 FFF7FEFF 		bl	LLS_Init
+ 426              	.LVL9:
+ 177:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 178:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   TPS_Init();
+ 427              		.loc 1 178 3 view .LVU65
+ 428 002a FFF7FEFF 		bl	TPS_Init
+ 429              	.LVL10:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 11
+
+
+ 179:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 180:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   MOTENV_STM_Init();
+ 430              		.loc 1 180 3 view .LVU66
+ 431 002e FFF7FEFF 		bl	MOTENV_STM_Init
+ 432              	.LVL11:
+ 181:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 182:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   P2PS_STM_Init();
+ 433              		.loc 1 182 3 view .LVU67
+ 434 0032 FFF7FEFF 		bl	P2PS_STM_Init
+ 435              	.LVL12:
+ 183:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 184:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   ZDD_STM_Init();
+ 436              		.loc 1 184 3 view .LVU68
+ 437 0036 FFF7FEFF 		bl	ZDD_STM_Init
+ 438              	.LVL13:
+ 185:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 186:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   OTAS_STM_Init();
+ 439              		.loc 1 186 3 view .LVU69
+ 440 003a FFF7FEFF 		bl	OTAS_STM_Init
+ 441              	.LVL14:
+ 187:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   
+ 188:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   BVOPUS_STM_Init();
+ 442              		.loc 1 188 3 view .LVU70
+ 443 003e FFF7FEFF 		bl	BVOPUS_STM_Init
+ 444              	.LVL15:
+ 189:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 190:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   MESH_Init();
+ 445              		.loc 1 190 3 view .LVU71
+ 446 0042 FFF7FEFF 		bl	MESH_Init
+ 447              	.LVL16:
+ 191:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 192:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_InitCustomSvc();
+ 448              		.loc 1 192 3 view .LVU72
+ 449 0046 FFF7FEFF 		bl	SVCCTL_InitCustomSvc
+ 450              	.LVL17:
+ 193:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   
+ 194:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 451              		.loc 1 194 3 view .LVU73
+ 195:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 452              		.loc 1 195 1 is_stmt 0 view .LVU74
+ 453 004a 08BD     		pop	{r3, pc}
+ 454              		.cfi_endproc
+ 455              	.LFE1436:
+ 457              		.section	.text.SVCCTL_Init,"ax",%progbits
+ 458              		.align	1
+ 459              		.global	SVCCTL_Init
+ 460              		.syntax unified
+ 461              		.thumb
+ 462              		.thumb_func
+ 464              	SVCCTL_Init:
+ 465              	.LFB1435:
+ 140:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  
+ 466              		.loc 1 140 1 is_stmt 1 view -0
+ 467              		.cfi_startproc
+ 468              		@ args = 0, pretend = 0, frame = 0
+ 469              		@ frame_needed = 0, uses_anonymous_args = 0
+ 470 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 12
+
+
+ 471              		.cfi_def_cfa_offset 8
+ 472              		.cfi_offset 3, -8
+ 473              		.cfi_offset 14, -4
+ 145:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_CltHandler.NbreOfRegisteredHandler = 0;
+ 474              		.loc 1 145 3 view .LVU76
+ 145:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_CltHandler.NbreOfRegisteredHandler = 0;
+ 475              		.loc 1 145 45 is_stmt 0 view .LVU77
+ 476 0002 0023     		movs	r3, #0
+ 477 0004 034A     		ldr	r2, .L23
+ 478 0006 1377     		strb	r3, [r2, #28]
+ 146:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 479              		.loc 1 146 3 is_stmt 1 view .LVU78
+ 146:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 480              		.loc 1 146 45 is_stmt 0 view .LVU79
+ 481 0008 034A     		ldr	r2, .L23+4
+ 482 000a 1370     		strb	r3, [r2]
+ 151:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 483              		.loc 1 151 3 is_stmt 1 view .LVU80
+ 484 000c FFF7FEFF 		bl	SVCCTL_SvcInit
+ 485              	.LVL18:
+ 153:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 486              		.loc 1 153 3 view .LVU81
+ 154:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 487              		.loc 1 154 1 is_stmt 0 view .LVU82
+ 488 0010 08BD     		pop	{r3, pc}
+ 489              	.L24:
+ 490 0012 00BF     		.align	2
+ 491              	.L23:
+ 492 0014 00000000 		.word	SVCCTL_EvtHandler
+ 493 0018 00000000 		.word	SVCCTL_CltHandler
+ 494              		.cfi_endproc
+ 495              	.LFE1435:
+ 497              		.section	.text.SVCCTL_RegisterSvcHandler,"ax",%progbits
+ 498              		.align	1
+ 499              		.global	SVCCTL_RegisterSvcHandler
+ 500              		.syntax unified
+ 501              		.thumb
+ 502              		.thumb_func
+ 504              	SVCCTL_RegisterSvcHandler:
+ 505              	.LVL19:
+ 506              	.LFB1437:
+ 196:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 197:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /**
+ 198:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @brief  BLE Controller initialization
+ 199:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @param  None
+ 200:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @retval None
+ 201:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  */
+ 202:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** void SVCCTL_RegisterSvcHandler( SVC_CTL_p_EvtHandler_t pfBLE_SVC_Service_Event_Handler )
+ 203:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 507              		.loc 1 203 1 is_stmt 1 view -0
+ 508              		.cfi_startproc
+ 509              		@ args = 0, pretend = 0, frame = 0
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511              		@ link register save eliminated.
+ 204:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_SVC_MAX_NBR_CB > 0)
+ 205:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_EvtHandler.SVCCTL__SvcHandlerTab[SVCCTL_EvtHandler.NbreOfRegisteredHandler] = pfBLE_SVC_Se
+ 512              		.loc 1 205 3 view .LVU84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 13
+
+
+ 513              		.loc 1 205 60 is_stmt 0 view .LVU85
+ 514 0000 034A     		ldr	r2, .L26
+ 515 0002 137F     		ldrb	r3, [r2, #28]	@ zero_extendqisi2
+ 516              		.loc 1 205 86 view .LVU86
+ 517 0004 42F82300 		str	r0, [r2, r3, lsl #2]
+ 206:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_EvtHandler.NbreOfRegisteredHandler++;
+ 518              		.loc 1 206 3 is_stmt 1 view .LVU87
+ 519              		.loc 1 206 44 is_stmt 0 view .LVU88
+ 520 0008 0133     		adds	r3, r3, #1
+ 521 000a 1377     		strb	r3, [r2, #28]
+ 207:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #else
+ 208:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   (void)(pfBLE_SVC_Service_Event_Handler);
+ 209:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+ 210:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 211:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 522              		.loc 1 211 3 is_stmt 1 view .LVU89
+ 212:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 523              		.loc 1 212 1 is_stmt 0 view .LVU90
+ 524 000c 7047     		bx	lr
+ 525              	.L27:
+ 526 000e 00BF     		.align	2
+ 527              	.L26:
+ 528 0010 00000000 		.word	SVCCTL_EvtHandler
+ 529              		.cfi_endproc
+ 530              	.LFE1437:
+ 532              		.section	.text.SVCCTL_RegisterCltHandler,"ax",%progbits
+ 533              		.align	1
+ 534              		.global	SVCCTL_RegisterCltHandler
+ 535              		.syntax unified
+ 536              		.thumb
+ 537              		.thumb_func
+ 539              	SVCCTL_RegisterCltHandler:
+ 540              	.LVL20:
+ 541              	.LFB1438:
+ 213:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 214:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** /**
+ 215:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @brief  BLE Controller initialization
+ 216:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @param  None
+ 217:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  * @retval None
+ 218:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****  */
+ 219:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** void SVCCTL_RegisterCltHandler( SVC_CTL_p_EvtHandler_t pfBLE_SVC_Client_Event_Handler )
+ 220:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 542              		.loc 1 220 1 is_stmt 1 view -0
+ 543              		.cfi_startproc
+ 544              		@ args = 0, pretend = 0, frame = 0
+ 545              		@ frame_needed = 0, uses_anonymous_args = 0
+ 546              		@ link register save eliminated.
+ 221:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_CLT_MAX_NBR_CB > 0)
+ 222:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_CltHandler.SVCCTL_CltHandlerTable[SVCCTL_CltHandler.NbreOfRegisteredHandler] = pfBLE_SVC_C
+ 223:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_CltHandler.NbreOfRegisteredHandler++;
+ 224:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #else
+ 225:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   (void)(pfBLE_SVC_Client_Event_Handler);
+ 547              		.loc 1 225 3 view .LVU92
+ 226:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+ 227:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 228:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return;
+ 548              		.loc 1 228 3 view .LVU93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 14
+
+
+ 229:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 549              		.loc 1 229 1 is_stmt 0 view .LVU94
+ 550 0000 7047     		bx	lr
+ 551              		.cfi_endproc
+ 552              	.LFE1438:
+ 554              		.section	.text.SVCCTL_UserEvtRx,"ax",%progbits
+ 555              		.align	1
+ 556              		.weak	SVCCTL_UserEvtRx
+ 557              		.syntax unified
+ 558              		.thumb
+ 559              		.thumb_func
+ 561              	SVCCTL_UserEvtRx:
+ 562              	.LVL21:
+ 563              	.LFB1439:
+ 230:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 231:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** __WEAK SVCCTL_UserEvtFlowStatus_t SVCCTL_UserEvtRx( void *pckt )
+ 232:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** {
+ 564              		.loc 1 232 1 is_stmt 1 view -0
+ 565              		.cfi_startproc
+ 566              		@ args = 0, pretend = 0, frame = 0
+ 567              		@ frame_needed = 0, uses_anonymous_args = 0
+ 568              		.loc 1 232 1 is_stmt 0 view .LVU96
+ 569 0000 38B5     		push	{r3, r4, r5, lr}
+ 570              		.cfi_def_cfa_offset 16
+ 571              		.cfi_offset 3, -16
+ 572              		.cfi_offset 4, -12
+ 573              		.cfi_offset 5, -8
+ 574              		.cfi_offset 14, -4
+ 575 0002 0546     		mov	r5, r0
+ 233:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   hci_event_pckt *event_pckt;
+ 576              		.loc 1 233 3 is_stmt 1 view .LVU97
+ 234:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   evt_blecore_aci *blecore_evt;
+ 577              		.loc 1 234 3 view .LVU98
+ 235:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_EvtAckStatus_t event_notification_status;
+ 578              		.loc 1 235 3 view .LVU99
+ 236:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   SVCCTL_UserEvtFlowStatus_t return_status;
+ 579              		.loc 1 236 3 view .LVU100
+ 237:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   uint8_t index;
+ 580              		.loc 1 237 3 view .LVU101
+ 238:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 239:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   event_pckt = (hci_event_pckt*) ((hci_uart_pckt *) pckt)->data;
+ 581              		.loc 1 239 3 view .LVU102
+ 582              	.LVL22:
+ 240:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   event_notification_status = SVCCTL_EvtNotAck;
+ 583              		.loc 1 240 3 view .LVU103
+ 241:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 242:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   switch (event_pckt->evt)
+ 584              		.loc 1 242 3 view .LVU104
+ 585              		.loc 1 242 21 is_stmt 0 view .LVU105
+ 586 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 587              		.loc 1 242 3 view .LVU106
+ 588 0006 FF2B     		cmp	r3, #255
+ 589 0008 06D1     		bne	.L30
+ 243:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   {
+ 244:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     case HCI_VENDOR_SPECIFIC_DEBUG_EVT_CODE:
+ 245:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     {
+ 246:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       blecore_evt = (evt_blecore_aci*) event_pckt->data;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 15
+
+
+ 590              		.loc 1 246 7 is_stmt 1 view .LVU107
+ 591              	.LVL23:
+ 247:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 248:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       switch ((blecore_evt->ecode) & SVCCTL_EGID_EVT_MASK)
+ 592              		.loc 1 248 7 view .LVU108
+ 593              		.loc 1 248 27 is_stmt 0 view .LVU109
+ 594 000a B0F80330 		ldrh	r3, [r0, #3]	@ unaligned
+ 595              		.loc 1 248 7 view .LVU110
+ 596 000e 03F47F43 		and	r3, r3, #65280
+ 597 0012 B3F5406F 		cmp	r3, #3072
+ 598 0016 03D0     		beq	.L38
+ 599              	.LVL24:
+ 600              	.L30:
+ 249:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       {
+ 250:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****         case SVCCTL_GATT_EVT_TYPE:
+ 251:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_SVC_MAX_NBR_CB > 0)
+ 252:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           /* For Service event handler */
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           for (index = 0; index < SVCCTL_EvtHandler.NbreOfRegisteredHandler; index++)
+ 254:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 255:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             event_notification_status = SVCCTL_EvtHandler.SVCCTL__SvcHandlerTab[index](pckt);
+ 256:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             /**
+ 257:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              * When a GATT event has been acknowledged by a Service, there is no need to call the o
+ 258:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              * a GATT event is relevant for only one Service
+ 259:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              */
+ 260:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             if (event_notification_status != SVCCTL_EvtNotAck)
+ 261:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             {
+ 262:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****               /**
+ 263:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****                *  The event has been managed. The Event processing should be stopped
+ 264:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****                */
+ 265:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****               break;
+ 266:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             }
+ 267:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           }
+ 268:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+ 269:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #if (BLE_CFG_CLT_MAX_NBR_CB > 0)
+ 270:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           /* For Client event handler */
+ 271:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           event_notification_status = SVCCTL_EvtNotAck;
+ 272:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           for(index = 0; index <SVCCTL_CltHandler.NbreOfRegisteredHandler; index++)
+ 273:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 274:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             event_notification_status = SVCCTL_CltHandler.SVCCTL_CltHandlerTable[index](pckt);
+ 275:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             /**
+ 276:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              * When a GATT event has been acknowledged by a Client, there is no need to call the ot
+ 277:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              * a GATT event is relevant for only one Client
+ 278:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****              */
+ 279:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             if (event_notification_status != SVCCTL_EvtNotAck)
+ 280:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             {
+ 281:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****               /**
+ 282:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****                *  The event has been managed. The Event processing should be stopped
+ 283:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****                */
+ 284:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****               break;
+ 285:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             }
+ 286:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           }
+ 287:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** #endif
+ 288:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           break;
+ 289:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 290:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****         default:
+ 291:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           break;
+ 292:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 16
+
+
+ 293:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     }
+ 294:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break; /* HCI_HCI_VENDOR_SPECIFIC_DEBUG_EVT_CODE_SPECIFIC */
+ 295:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 296:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     default:
+ 297:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 298:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   }
+ 299:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 300:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   /**
+ 301:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    * When no registered handlers (either Service or Client) has acknowledged the GATT event, it is 
+ 302:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    * a GAP event is always reported to the application.
+ 303:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****    */
+ 304:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   switch (event_notification_status)
+ 305:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   {
+ 306:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     case SVCCTL_EvtNotAck:
+ 307:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       /**
+ 308:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****        *  The event has NOT been managed.
+ 309:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****        *  It shall be passed to the application for processing
+ 310:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****        */
+ 311:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       return_status = SVCCTL_App_Notification(pckt);
+ 601              		.loc 1 311 7 is_stmt 1 view .LVU111
+ 602              		.loc 1 311 23 is_stmt 0 view .LVU112
+ 603 0018 2846     		mov	r0, r5
+ 604 001a FFF7FEFF 		bl	SVCCTL_App_Notification
+ 605              	.LVL25:
+ 312:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 606              		.loc 1 312 7 is_stmt 1 view .LVU113
+ 607              	.L34:
+ 313:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 314:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     case SVCCTL_EvtAckFlowEnable:
+ 315:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       return_status = SVCCTL_UserEvtFlowEnable;
+ 316:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 317:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 318:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     case SVCCTL_EvtAckFlowDisable:
+ 319:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       return_status = SVCCTL_UserEvtFlowDisable;
+ 320:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 321:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 322:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****     default:
+ 323:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       return_status = SVCCTL_UserEvtFlowEnable;
+ 324:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 325:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   }
+ 326:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 327:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   return (return_status);
+ 608              		.loc 1 327 3 view .LVU114
+ 328:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** }
+ 609              		.loc 1 328 1 is_stmt 0 view .LVU115
+ 610 001e 38BD     		pop	{r3, r4, r5, pc}
+ 611              	.LVL26:
+ 612              	.L38:
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 613              		.loc 1 253 22 view .LVU116
+ 614 0020 0024     		movs	r4, #0
+ 240:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c **** 
+ 615              		.loc 1 240 29 view .LVU117
+ 616 0022 2246     		mov	r2, r4
+ 617              	.LVL27:
+ 618              	.L31:
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 17
+
+
+ 619              		.loc 1 253 33 is_stmt 1 discriminator 1 view .LVU118
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 620              		.loc 1 253 52 is_stmt 0 discriminator 1 view .LVU119
+ 621 0024 0A4B     		ldr	r3, .L39
+ 622 0026 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 623              		.loc 1 253 33 discriminator 1 view .LVU120
+ 624 0028 A342     		cmp	r3, r4
+ 625 002a 09D9     		bls	.L32
+ 255:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             /**
+ 626              		.loc 1 255 13 is_stmt 1 view .LVU121
+ 255:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             /**
+ 627              		.loc 1 255 80 is_stmt 0 view .LVU122
+ 628 002c 084B     		ldr	r3, .L39
+ 629 002e 53F82430 		ldr	r3, [r3, r4, lsl #2]
+ 255:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             /**
+ 630              		.loc 1 255 41 view .LVU123
+ 631 0032 2846     		mov	r0, r5
+ 632 0034 9847     		blx	r3
+ 633              	.LVL28:
+ 260:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             {
+ 634              		.loc 1 260 13 is_stmt 1 view .LVU124
+ 260:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****             {
+ 635              		.loc 1 260 16 is_stmt 0 view .LVU125
+ 636 0036 0246     		mov	r2, r0
+ 637 0038 10B9     		cbnz	r0, .L32
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 638              		.loc 1 253 83 is_stmt 1 discriminator 2 view .LVU126
+ 639 003a 0134     		adds	r4, r4, #1
+ 640              	.LVL29:
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 641              		.loc 1 253 83 is_stmt 0 discriminator 2 view .LVU127
+ 642 003c E4B2     		uxtb	r4, r4
+ 643              	.LVL30:
+ 253:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****           {
+ 644              		.loc 1 253 83 discriminator 2 view .LVU128
+ 645 003e F1E7     		b	.L31
+ 646              	.LVL31:
+ 647              	.L32:
+ 304:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   {
+ 648              		.loc 1 304 3 is_stmt 1 view .LVU129
+ 649 0040 002A     		cmp	r2, #0
+ 650 0042 E9D0     		beq	.L30
+ 651 0044 022A     		cmp	r2, #2
+ 652 0046 01D1     		bne	.L36
+ 319:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****       break;
+ 653              		.loc 1 319 21 is_stmt 0 view .LVU130
+ 654 0048 0020     		movs	r0, #0
+ 655 004a E8E7     		b	.L34
+ 656              	.L36:
+ 304:Middlewares/ST/STM32_WPAN/ble/svc/Src/svc_ctl.c ****   {
+ 657              		.loc 1 304 3 view .LVU131
+ 658 004c 0120     		movs	r0, #1
+ 659 004e E6E7     		b	.L34
+ 660              	.L40:
+ 661              		.align	2
+ 662              	.L39:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 18
+
+
+ 663 0050 00000000 		.word	SVCCTL_EvtHandler
+ 664              		.cfi_endproc
+ 665              	.LFE1439:
+ 667              		.global	SVCCTL_CltHandler
+ 668              		.section	BLE_DRIVER_CONTEXT,"aw"
+ 669              		.align	2
+ 672              	SVCCTL_CltHandler:
+ 673 0000 00       		.space	1
+ 674              		.global	SVCCTL_EvtHandler
+ 675 0001 000000   		.align	2
+ 678              	SVCCTL_EvtHandler:
+ 679 0004 00000000 		.space	32
+ 679      00000000 
+ 679      00000000 
+ 679      00000000 
+ 679      00000000 
+ 680              		.text
+ 681              	.Letext0:
+ 682              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 683              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 684              		.file 4 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
+ 685              		.file 5 "Core/Inc/app_conf.h"
+ 686              		.file 6 "Middlewares/ST/STM32_WPAN/ble/svc/Inc/svc_ctl.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 svc_ctl.c
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:21     .text.BAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:27     .text.BAS_Init:00000000 BAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:41     .text.BLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:47     .text.BLS_Init:00000000 BLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:61     .text.CRS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:67     .text.CRS_STM_Init:00000000 CRS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:81     .text.DIS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:87     .text.DIS_Init:00000000 DIS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:101    .text.EDS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:107    .text.EDS_STM_Init:00000000 EDS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:121    .text.HIDS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:127    .text.HIDS_Init:00000000 HIDS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:141    .text.HRS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:147    .text.HRS_Init:00000000 HRS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:161    .text.HTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:167    .text.HTS_Init:00000000 HTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:181    .text.IAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:187    .text.IAS_Init:00000000 IAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:201    .text.LLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:207    .text.LLS_Init:00000000 LLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:221    .text.TPS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:227    .text.TPS_Init:00000000 TPS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:241    .text.MOTENV_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:247    .text.MOTENV_STM_Init:00000000 MOTENV_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:261    .text.P2PS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:267    .text.P2PS_STM_Init:00000000 P2PS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:281    .text.ZDD_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:287    .text.ZDD_STM_Init:00000000 ZDD_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:301    .text.OTAS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:307    .text.OTAS_STM_Init:00000000 OTAS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:321    .text.MESH_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:327    .text.MESH_Init:00000000 MESH_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:341    .text.BVOPUS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:347    .text.BVOPUS_STM_Init:00000000 BVOPUS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:361    .text.SVCCTL_InitCustomSvc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:367    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:381    .text.SVCCTL_SvcInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:387    .text.SVCCTL_SvcInit:00000000 SVCCTL_SvcInit
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:458    .text.SVCCTL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:464    .text.SVCCTL_Init:00000000 SVCCTL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:492    .text.SVCCTL_Init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:678    BLE_DRIVER_CONTEXT:00000004 SVCCTL_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:672    BLE_DRIVER_CONTEXT:00000000 SVCCTL_CltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:498    .text.SVCCTL_RegisterSvcHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:504    .text.SVCCTL_RegisterSvcHandler:00000000 SVCCTL_RegisterSvcHandler
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:528    .text.SVCCTL_RegisterSvcHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:533    .text.SVCCTL_RegisterCltHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:539    .text.SVCCTL_RegisterCltHandler:00000000 SVCCTL_RegisterCltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:555    .text.SVCCTL_UserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:561    .text.SVCCTL_UserEvtRx:00000000 SVCCTL_UserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:663    .text.SVCCTL_UserEvtRx:00000050 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s:669    BLE_DRIVER_CONTEXT:00000000 $d
+
+UNDEFINED SYMBOLS
+SVCCTL_App_Notification
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyqSUTh.s 			page 20
+
+

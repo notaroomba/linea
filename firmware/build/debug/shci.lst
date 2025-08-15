@@ -1,0 +1,2679 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"shci.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c"
+  20              		.section	.text.SHCI_C2_FUS_GetState,"ax",%progbits
+  21              		.align	1
+  22              		.global	SHCI_C2_FUS_GetState
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	SHCI_C2_FUS_GetState:
+  28              	.LVL0:
+  29              	.LFB1107:
+   1:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /**
+   2:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * @file    shci.c
+   4:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * @brief   HCI command for the system channel
+   6:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * @attention
+   8:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *
+   9:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *
+  12:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *
+  16:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  */
+  18:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  19:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  20:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Includes ------------------------------------------------------------------*/
+  21:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** #include "stm32_wpan_common.h"
+  22:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  23:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** #include "shci_tl.h"
+  24:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** #include "shci.h"
+  25:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** #include "stm32wbxx.h"
+  26:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  27:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Private typedef -----------------------------------------------------------*/
+  28:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Private defines -----------------------------------------------------------*/
+  29:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Private macros ------------------------------------------------------------*/
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 2
+
+
+  30:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Private variables ---------------------------------------------------------*/
+  31:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Global variables ----------------------------------------------------------*/
+  32:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Private function prototypes -----------------------------------------------*/
+  33:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Local Functions Definition ------------------------------------------------------*/
+  34:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /* Public Functions Definition ------------------------------------------------------*/
+  35:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  36:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /**
+  37:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *  C2 COMMAND
+  38:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *  These commands are sent to the CPU2
+  39:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  */
+  40:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** uint8_t SHCI_C2_FUS_GetState( SHCI_FUS_GetState_ErrorCode_t *p_error_code )
+  41:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+  30              		.loc 1 41 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 24
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 41 1 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 86B0     		sub	sp, sp, #24
+  40              		.cfi_def_cfa_offset 32
+  41 0004 0446     		mov	r4, r0
+  42:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+  43:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete with payload
+  44:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+  45:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE + 1];
+  42              		.loc 1 45 3 is_stmt 1 view .LVU2
+  46:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+  43              		.loc 1 46 3 view .LVU3
+  47:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  48:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+  44              		.loc 1 48 3 view .LVU4
+  45              	.LVL1:
+  49:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  50:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_GET_STATE,
+  46              		.loc 1 50 3 view .LVU5
+  47 0006 01AB     		add	r3, sp, #4
+  48              	.LVL2:
+  49              		.loc 1 50 3 is_stmt 0 view .LVU6
+  50 0008 0022     		movs	r2, #0
+  51 000a 1146     		mov	r1, r2
+  52 000c 4FF65240 		movw	r0, #64594
+  53              	.LVL3:
+  54              		.loc 1 50 3 view .LVU7
+  55 0010 FFF7FEFF 		bl	shci_send
+  56              	.LVL4:
+  51:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+  52:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+  53:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+  54:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  55:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   if(p_error_code != 0)
+  57              		.loc 1 55 3 is_stmt 1 view .LVU8
+  58              		.loc 1 55 5 is_stmt 0 view .LVU9
+  59 0014 14B1     		cbz	r4, .L2
+  56:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 3
+
+
+  57:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     *p_error_code = (SHCI_FUS_GetState_ErrorCode_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->
+  60              		.loc 1 57 5 is_stmt 1 view .LVU10
+  61              		.loc 1 57 107 is_stmt 0 view .LVU11
+  62 0016 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2
+  63              		.loc 1 57 19 view .LVU12
+  64 001a 2370     		strb	r3, [r4]
+  65              	.L2:
+  58:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+  59:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  60:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+  66              		.loc 1 60 3 is_stmt 1 view .LVU13
+  61:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+  67              		.loc 1 61 1 is_stmt 0 view .LVU14
+  68 001c 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+  69 0020 06B0     		add	sp, sp, #24
+  70              		.cfi_def_cfa_offset 8
+  71              		@ sp needed
+  72 0022 10BD     		pop	{r4, pc}
+  73              		.loc 1 61 1 view .LVU15
+  74              		.cfi_endproc
+  75              	.LFE1107:
+  77              		.section	.text.SHCI_C2_FUS_FwUpgrade,"ax",%progbits
+  78              		.align	1
+  79              		.global	SHCI_C2_FUS_FwUpgrade
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  84              	SHCI_C2_FUS_FwUpgrade:
+  85              	.LVL5:
+  86              	.LFB1108:
+  62:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  63:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_FwUpgrade( uint32_t fw_src_add,  uint32_t fw_dest_add )
+  64:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+  87              		.loc 1 64 1 is_stmt 1 view -0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 16
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              		.loc 1 64 1 is_stmt 0 view .LVU17
+  92 0000 00B5     		push	{lr}
+  93              		.cfi_def_cfa_offset 4
+  94              		.cfi_offset 14, -4
+  95 0002 85B0     		sub	sp, sp, #20
+  96              		.cfi_def_cfa_offset 24
+  97 0004 0B46     		mov	r3, r1
+  65:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+  66:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * TL_BLEEVT_CC_BUFFER_SIZE is 16 bytes so it is large enough to hold the 8 bytes of command para
+  67:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+  68:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+  69:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+  98              		.loc 1 69 3 is_stmt 1 view .LVU18
+  70:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+  99              		.loc 1 70 3 view .LVU19
+  71:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t *p_cmd;
+ 100              		.loc 1 71 3 view .LVU20
+  72:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t cmd_length;
+ 101              		.loc 1 72 3 view .LVU21
+  73:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 4
+
+
+  74:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_cmd = (uint32_t*)local_buffer;
+ 102              		.loc 1 74 3 view .LVU22
+ 103              	.LVL6:
+  75:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   cmd_length = 0;
+ 104              		.loc 1 75 3 view .LVU23
+  76:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  77:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   if(fw_src_add != 0)
+ 105              		.loc 1 77 3 view .LVU24
+ 106              		.loc 1 77 5 is_stmt 0 view .LVU25
+ 107 0006 80B1     		cbz	r0, .L7
+  78:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+  79:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     *p_cmd = fw_src_add;
+ 108              		.loc 1 79 5 is_stmt 1 view .LVU26
+ 109              		.loc 1 79 12 is_stmt 0 view .LVU27
+ 110 0008 0090     		str	r0, [sp]
+  80:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     cmd_length += 4;
+ 111              		.loc 1 80 5 is_stmt 1 view .LVU28
+ 112              	.LVL7:
+ 113              		.loc 1 80 16 is_stmt 0 view .LVU29
+ 114 000a 0421     		movs	r1, #4
+ 115              	.LVL8:
+ 116              	.L5:
+  81:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+  82:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  83:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   if(fw_dest_add != 0)
+ 117              		.loc 1 83 3 is_stmt 1 view .LVU30
+ 118              		.loc 1 83 5 is_stmt 0 view .LVU31
+ 119 000c 13B1     		cbz	r3, .L6
+  84:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+  85:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     *(p_cmd+1) = fw_dest_add;
+ 120              		.loc 1 85 5 is_stmt 1 view .LVU32
+ 121              		.loc 1 85 16 is_stmt 0 view .LVU33
+ 122 000e 0193     		str	r3, [sp, #4]
+  86:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     cmd_length += 4;
+ 123              		.loc 1 86 5 is_stmt 1 view .LVU34
+ 124              		.loc 1 86 16 is_stmt 0 view .LVU35
+ 125 0010 0431     		adds	r1, r1, #4
+ 126              	.LVL9:
+ 127              		.loc 1 86 16 view .LVU36
+ 128 0012 C9B2     		uxtb	r1, r1
+ 129              	.LVL10:
+ 130              	.L6:
+  87:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+  88:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  89:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 131              		.loc 1 89 3 is_stmt 1 view .LVU37
+  90:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  91:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_FW_UPGRADE,
+ 132              		.loc 1 91 3 view .LVU38
+ 133 0014 6B46     		mov	r3, sp
+ 134              	.LVL11:
+ 135              		.loc 1 91 3 is_stmt 0 view .LVU39
+ 136 0016 6A46     		mov	r2, sp
+ 137 0018 4FF65440 		movw	r0, #64596
+ 138              	.LVL12:
+ 139              		.loc 1 91 3 view .LVU40
+ 140 001c FFF7FEFF 		bl	shci_send
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 5
+
+
+ 141              	.LVL13:
+  92:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              cmd_length,
+  93:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+  94:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+  95:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  96:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 142              		.loc 1 96 3 is_stmt 1 view .LVU41
+  97:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 143              		.loc 1 97 1 is_stmt 0 view .LVU42
+ 144 0020 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 145 0024 05B0     		add	sp, sp, #20
+ 146              		.cfi_remember_state
+ 147              		.cfi_def_cfa_offset 4
+ 148              	.LVL14:
+ 149              		.loc 1 97 1 view .LVU43
+ 150              		@ sp needed
+ 151 0026 5DF804FB 		ldr	pc, [sp], #4
+ 152              	.LVL15:
+ 153              	.L7:
+ 154              		.cfi_restore_state
+  75:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 155              		.loc 1 75 14 view .LVU44
+ 156 002a 0021     		movs	r1, #0
+ 157              	.LVL16:
+  75:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 158              		.loc 1 75 14 view .LVU45
+ 159 002c EEE7     		b	.L5
+ 160              		.cfi_endproc
+ 161              	.LFE1108:
+ 163              		.section	.text.SHCI_C2_FUS_FwDelete,"ax",%progbits
+ 164              		.align	1
+ 165              		.global	SHCI_C2_FUS_FwDelete
+ 166              		.syntax unified
+ 167              		.thumb
+ 168              		.thumb_func
+ 170              	SHCI_C2_FUS_FwDelete:
+ 171              	.LFB1109:
+  98:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+  99:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_FwDelete( void )
+ 100:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 172              		.loc 1 100 1 is_stmt 1 view -0
+ 173              		.cfi_startproc
+ 174              		@ args = 0, pretend = 0, frame = 16
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176 0000 00B5     		push	{lr}
+ 177              		.cfi_def_cfa_offset 4
+ 178              		.cfi_offset 14, -4
+ 179 0002 85B0     		sub	sp, sp, #20
+ 180              		.cfi_def_cfa_offset 24
+ 101:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 102:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 103:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 104:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 181              		.loc 1 104 3 view .LVU47
+ 105:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 182              		.loc 1 105 3 view .LVU48
+ 106:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 6
+
+
+ 107:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 183              		.loc 1 107 3 view .LVU49
+ 184              	.LVL17:
+ 108:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 109:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_FW_DELETE,
+ 185              		.loc 1 109 3 view .LVU50
+ 186 0004 6B46     		mov	r3, sp
+ 187 0006 0022     		movs	r2, #0
+ 188 0008 1146     		mov	r1, r2
+ 189 000a 4FF65540 		movw	r0, #64597
+ 190 000e FFF7FEFF 		bl	shci_send
+ 191              	.LVL18:
+ 110:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 111:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 112:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 113:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 114:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 192              		.loc 1 114 3 view .LVU51
+ 115:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 193              		.loc 1 115 1 is_stmt 0 view .LVU52
+ 194 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 195 0016 05B0     		add	sp, sp, #20
+ 196              		.cfi_def_cfa_offset 4
+ 197              	.LVL19:
+ 198              		.loc 1 115 1 view .LVU53
+ 199              		@ sp needed
+ 200 0018 5DF804FB 		ldr	pc, [sp], #4
+ 201              		.loc 1 115 1 view .LVU54
+ 202              		.cfi_endproc
+ 203              	.LFE1109:
+ 205              		.section	.text.SHCI_C2_FUS_UpdateAuthKey,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	SHCI_C2_FUS_UpdateAuthKey
+ 208              		.syntax unified
+ 209              		.thumb
+ 210              		.thumb_func
+ 212              	SHCI_C2_FUS_UpdateAuthKey:
+ 213              	.LVL20:
+ 214              	.LFB1110:
+ 116:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 117:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_UpdateAuthKey( SHCI_C2_FUS_UpdateAuthKey_Cmd_Param_t *pParam )
+ 118:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 215              		.loc 1 118 1 is_stmt 1 view -0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 16
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		.loc 1 118 1 is_stmt 0 view .LVU56
+ 220 0000 00B5     		push	{lr}
+ 221              		.cfi_def_cfa_offset 4
+ 222              		.cfi_offset 14, -4
+ 223 0002 85B0     		sub	sp, sp, #20
+ 224              		.cfi_def_cfa_offset 24
+ 225 0004 0246     		mov	r2, r0
+ 119:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 120:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 121:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 122:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 7
+
+
+ 226              		.loc 1 122 3 is_stmt 1 view .LVU57
+ 123:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 227              		.loc 1 123 3 view .LVU58
+ 124:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 125:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 228              		.loc 1 125 3 view .LVU59
+ 229              	.LVL21:
+ 126:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 127:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_UPDATE_AUTH_KEY,
+ 230              		.loc 1 127 3 view .LVU60
+ 231 0006 6B46     		mov	r3, sp
+ 232 0008 4121     		movs	r1, #65
+ 233 000a 4FF65640 		movw	r0, #64598
+ 234              	.LVL22:
+ 235              		.loc 1 127 3 is_stmt 0 view .LVU61
+ 236 000e FFF7FEFF 		bl	shci_send
+ 237              	.LVL23:
+ 128:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              sizeof( SHCI_C2_FUS_UpdateAuthKey_Cmd_Param_t ),
+ 129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              (uint8_t*)pParam,
+ 130:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 131:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 132:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 238              		.loc 1 132 3 is_stmt 1 view .LVU62
+ 133:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 239              		.loc 1 133 1 is_stmt 0 view .LVU63
+ 240 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 241 0016 05B0     		add	sp, sp, #20
+ 242              		.cfi_def_cfa_offset 4
+ 243              	.LVL24:
+ 244              		.loc 1 133 1 view .LVU64
+ 245              		@ sp needed
+ 246 0018 5DF804FB 		ldr	pc, [sp], #4
+ 247              		.loc 1 133 1 view .LVU65
+ 248              		.cfi_endproc
+ 249              	.LFE1110:
+ 251              		.section	.text.SHCI_C2_FUS_LockAuthKey,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	SHCI_C2_FUS_LockAuthKey
+ 254              		.syntax unified
+ 255              		.thumb
+ 256              		.thumb_func
+ 258              	SHCI_C2_FUS_LockAuthKey:
+ 259              	.LFB1111:
+ 134:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 135:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_LockAuthKey( void )
+ 136:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 260              		.loc 1 136 1 is_stmt 1 view -0
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 16
+ 263              		@ frame_needed = 0, uses_anonymous_args = 0
+ 264 0000 00B5     		push	{lr}
+ 265              		.cfi_def_cfa_offset 4
+ 266              		.cfi_offset 14, -4
+ 267 0002 85B0     		sub	sp, sp, #20
+ 268              		.cfi_def_cfa_offset 24
+ 137:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 138:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 8
+
+
+ 139:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 269              		.loc 1 140 3 view .LVU67
+ 141:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 270              		.loc 1 141 3 view .LVU68
+ 142:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 143:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 271              		.loc 1 143 3 view .LVU69
+ 272              	.LVL25:
+ 144:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 145:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_LOCK_AUTH_KEY,
+ 273              		.loc 1 145 3 view .LVU70
+ 274 0004 6B46     		mov	r3, sp
+ 275 0006 0022     		movs	r2, #0
+ 276 0008 1146     		mov	r1, r2
+ 277 000a 4FF65740 		movw	r0, #64599
+ 278 000e FFF7FEFF 		bl	shci_send
+ 279              	.LVL26:
+ 146:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 147:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 148:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 149:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 150:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 280              		.loc 1 150 3 view .LVU71
+ 151:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 281              		.loc 1 151 1 is_stmt 0 view .LVU72
+ 282 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 283 0016 05B0     		add	sp, sp, #20
+ 284              		.cfi_def_cfa_offset 4
+ 285              	.LVL27:
+ 286              		.loc 1 151 1 view .LVU73
+ 287              		@ sp needed
+ 288 0018 5DF804FB 		ldr	pc, [sp], #4
+ 289              		.loc 1 151 1 view .LVU74
+ 290              		.cfi_endproc
+ 291              	.LFE1111:
+ 293              		.section	.text.SHCI_C2_FUS_StoreUsrKey,"ax",%progbits
+ 294              		.align	1
+ 295              		.global	SHCI_C2_FUS_StoreUsrKey
+ 296              		.syntax unified
+ 297              		.thumb
+ 298              		.thumb_func
+ 300              	SHCI_C2_FUS_StoreUsrKey:
+ 301              	.LVL28:
+ 302              	.LFB1112:
+ 152:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_StoreUsrKey( SHCI_C2_FUS_StoreUsrKey_Cmd_Param_t *pParam, uint8_t *p_k
+ 154:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 303              		.loc 1 154 1 is_stmt 1 view -0
+ 304              		.cfi_startproc
+ 305              		@ args = 0, pretend = 0, frame = 24
+ 306              		@ frame_needed = 0, uses_anonymous_args = 0
+ 307              		.loc 1 154 1 is_stmt 0 view .LVU76
+ 308 0000 10B5     		push	{r4, lr}
+ 309              		.cfi_def_cfa_offset 8
+ 310              		.cfi_offset 4, -8
+ 311              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 9
+
+
+ 312 0002 86B0     		sub	sp, sp, #24
+ 313              		.cfi_def_cfa_offset 32
+ 314 0004 0246     		mov	r2, r0
+ 315 0006 0C46     		mov	r4, r1
+ 155:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 156:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete with payload
+ 157:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 158:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE + 1];
+ 316              		.loc 1 158 3 is_stmt 1 view .LVU77
+ 159:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 317              		.loc 1 159 3 view .LVU78
+ 160:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_payload_len;
+ 318              		.loc 1 160 3 view .LVU79
+ 161:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 162:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   if(pParam->KeyType == KEYTYPE_ENCRYPTED)
+ 319              		.loc 1 162 3 view .LVU80
+ 320              		.loc 1 162 12 is_stmt 0 view .LVU81
+ 321 0008 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 322              		.loc 1 162 5 view .LVU82
+ 323 000a 032B     		cmp	r3, #3
+ 324 000c 0ED0     		beq	.L19
+ 163:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+ 164:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /**
+ 165:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      * When the key is encrypted, the 12 bytes IV Key is included in the payload as well
+ 166:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      * The IV key is always 12 bytes
+ 167:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      */
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     local_payload_len = pParam->KeySize + 2 + 12;
+ 169:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 170:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   else
+ 171:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+ 172:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     local_payload_len = pParam->KeySize + 2;
+ 325              		.loc 1 172 5 is_stmt 1 view .LVU83
+ 326              		.loc 1 172 31 is_stmt 0 view .LVU84
+ 327 000e 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 328              		.loc 1 172 23 view .LVU85
+ 329 0010 0233     		adds	r3, r3, #2
+ 330 0012 D9B2     		uxtb	r1, r3
+ 331              	.LVL29:
+ 332              	.L17:
+ 173:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 174:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 175:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 333              		.loc 1 175 3 is_stmt 1 view .LVU86
+ 176:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_STORE_USR_KEY,
+ 334              		.loc 1 177 3 view .LVU87
+ 335 0014 01AB     		add	r3, sp, #4
+ 336              	.LVL30:
+ 337              		.loc 1 177 3 is_stmt 0 view .LVU88
+ 338 0016 4FF65840 		movw	r0, #64600
+ 339              	.LVL31:
+ 340              		.loc 1 177 3 view .LVU89
+ 341 001a FFF7FEFF 		bl	shci_send
+ 342              	.LVL32:
+ 178:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_payload_len ,
+ 179:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              (uint8_t*)pParam,
+ 180:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 10
+
+
+ 181:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 182:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   *p_key_index = (((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[1]);
+ 343              		.loc 1 182 3 is_stmt 1 view .LVU90
+ 344              		.loc 1 182 73 is_stmt 0 view .LVU91
+ 345 001e 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2
+ 346              		.loc 1 182 16 view .LVU92
+ 347 0022 2370     		strb	r3, [r4]
+ 183:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 184:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 348              		.loc 1 184 3 is_stmt 1 view .LVU93
+ 185:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 349              		.loc 1 185 1 is_stmt 0 view .LVU94
+ 350 0024 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+ 351 0028 06B0     		add	sp, sp, #24
+ 352              		.cfi_remember_state
+ 353              		.cfi_def_cfa_offset 8
+ 354              		@ sp needed
+ 355 002a 10BD     		pop	{r4, pc}
+ 356              	.LVL33:
+ 357              	.L19:
+ 358              		.cfi_restore_state
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 359              		.loc 1 168 5 is_stmt 1 view .LVU95
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 360              		.loc 1 168 31 is_stmt 0 view .LVU96
+ 361 002c 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 362              		.loc 1 168 23 view .LVU97
+ 363 002e 0E33     		adds	r3, r3, #14
+ 364 0030 D9B2     		uxtb	r1, r3
+ 365              	.LVL34:
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 366              		.loc 1 168 23 view .LVU98
+ 367 0032 EFE7     		b	.L17
+ 368              		.cfi_endproc
+ 369              	.LFE1112:
+ 371              		.section	.text.SHCI_C2_FUS_LoadUsrKey,"ax",%progbits
+ 372              		.align	1
+ 373              		.global	SHCI_C2_FUS_LoadUsrKey
+ 374              		.syntax unified
+ 375              		.thumb
+ 376              		.thumb_func
+ 378              	SHCI_C2_FUS_LoadUsrKey:
+ 379              	.LVL35:
+ 380              	.LFB1113:
+ 186:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 187:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_LoadUsrKey( uint8_t key_index )
+ 188:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 381              		.loc 1 188 1 is_stmt 1 view -0
+ 382              		.cfi_startproc
+ 383              		@ args = 0, pretend = 0, frame = 16
+ 384              		@ frame_needed = 0, uses_anonymous_args = 0
+ 385              		.loc 1 188 1 is_stmt 0 view .LVU100
+ 386 0000 00B5     		push	{lr}
+ 387              		.cfi_def_cfa_offset 4
+ 388              		.cfi_offset 14, -4
+ 389 0002 85B0     		sub	sp, sp, #20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 11
+
+
+ 390              		.cfi_def_cfa_offset 24
+ 189:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 190:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 191:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 192:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 391              		.loc 1 192 3 is_stmt 1 view .LVU101
+ 193:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 392              		.loc 1 193 3 view .LVU102
+ 194:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 195:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 393              		.loc 1 195 3 view .LVU103
+ 394              	.LVL36:
+ 196:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 197:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = key_index;
+ 395              		.loc 1 197 3 view .LVU104
+ 396              		.loc 1 197 19 is_stmt 0 view .LVU105
+ 397 0004 8DF80000 		strb	r0, [sp]
+ 198:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 199:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_LOAD_USR_KEY,
+ 398              		.loc 1 199 3 is_stmt 1 view .LVU106
+ 399 0008 6B46     		mov	r3, sp
+ 400 000a 6A46     		mov	r2, sp
+ 401 000c 0121     		movs	r1, #1
+ 402 000e 4FF65940 		movw	r0, #64601
+ 403              	.LVL37:
+ 404              		.loc 1 199 3 is_stmt 0 view .LVU107
+ 405 0012 FFF7FEFF 		bl	shci_send
+ 406              	.LVL38:
+ 200:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 201:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 202:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 203:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 204:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 407              		.loc 1 204 3 is_stmt 1 view .LVU108
+ 205:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 408              		.loc 1 205 1 is_stmt 0 view .LVU109
+ 409 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 410 001a 05B0     		add	sp, sp, #20
+ 411              		.cfi_def_cfa_offset 4
+ 412              	.LVL39:
+ 413              		.loc 1 205 1 view .LVU110
+ 414              		@ sp needed
+ 415 001c 5DF804FB 		ldr	pc, [sp], #4
+ 416              		.loc 1 205 1 view .LVU111
+ 417              		.cfi_endproc
+ 418              	.LFE1113:
+ 420              		.section	.text.SHCI_C2_FUS_StartWs,"ax",%progbits
+ 421              		.align	1
+ 422              		.global	SHCI_C2_FUS_StartWs
+ 423              		.syntax unified
+ 424              		.thumb
+ 425              		.thumb_func
+ 427              	SHCI_C2_FUS_StartWs:
+ 428              	.LFB1114:
+ 206:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 207:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_StartWs( void )
+ 208:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 12
+
+
+ 429              		.loc 1 208 1 is_stmt 1 view -0
+ 430              		.cfi_startproc
+ 431              		@ args = 0, pretend = 0, frame = 16
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433 0000 00B5     		push	{lr}
+ 434              		.cfi_def_cfa_offset 4
+ 435              		.cfi_offset 14, -4
+ 436 0002 85B0     		sub	sp, sp, #20
+ 437              		.cfi_def_cfa_offset 24
+ 209:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 210:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 211:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 212:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 438              		.loc 1 212 3 view .LVU113
+ 213:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 439              		.loc 1 213 3 view .LVU114
+ 214:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 215:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 440              		.loc 1 215 3 view .LVU115
+ 441              	.LVL40:
+ 216:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 217:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_START_WS,
+ 442              		.loc 1 217 3 view .LVU116
+ 443 0004 6B46     		mov	r3, sp
+ 444 0006 0022     		movs	r2, #0
+ 445 0008 1146     		mov	r1, r2
+ 446 000a 4FF65A40 		movw	r0, #64602
+ 447 000e FFF7FEFF 		bl	shci_send
+ 448              	.LVL41:
+ 218:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 219:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 220:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 221:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 449              		.loc 1 222 3 view .LVU117
+ 223:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 450              		.loc 1 223 1 is_stmt 0 view .LVU118
+ 451 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 452 0016 05B0     		add	sp, sp, #20
+ 453              		.cfi_def_cfa_offset 4
+ 454              	.LVL42:
+ 455              		.loc 1 223 1 view .LVU119
+ 456              		@ sp needed
+ 457 0018 5DF804FB 		ldr	pc, [sp], #4
+ 458              		.loc 1 223 1 view .LVU120
+ 459              		.cfi_endproc
+ 460              	.LFE1114:
+ 462              		.section	.text.SHCI_C2_FUS_LockUsrKey,"ax",%progbits
+ 463              		.align	1
+ 464              		.global	SHCI_C2_FUS_LockUsrKey
+ 465              		.syntax unified
+ 466              		.thumb
+ 467              		.thumb_func
+ 469              	SHCI_C2_FUS_LockUsrKey:
+ 470              	.LVL43:
+ 471              	.LFB1115:
+ 224:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 13
+
+
+ 225:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_LockUsrKey( uint8_t key_index )
+ 226:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 472              		.loc 1 226 1 is_stmt 1 view -0
+ 473              		.cfi_startproc
+ 474              		@ args = 0, pretend = 0, frame = 16
+ 475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 476              		.loc 1 226 1 is_stmt 0 view .LVU122
+ 477 0000 00B5     		push	{lr}
+ 478              		.cfi_def_cfa_offset 4
+ 479              		.cfi_offset 14, -4
+ 480 0002 85B0     		sub	sp, sp, #20
+ 481              		.cfi_def_cfa_offset 24
+ 227:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 228:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 229:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 230:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 482              		.loc 1 230 3 is_stmt 1 view .LVU123
+ 231:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 483              		.loc 1 231 3 view .LVU124
+ 232:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 233:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 484              		.loc 1 233 3 view .LVU125
+ 485              	.LVL44:
+ 234:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 235:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = key_index;
+ 486              		.loc 1 235 3 view .LVU126
+ 487              		.loc 1 235 19 is_stmt 0 view .LVU127
+ 488 0004 8DF80000 		strb	r0, [sp]
+ 236:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 237:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_LOCK_USR_KEY,
+ 489              		.loc 1 237 3 is_stmt 1 view .LVU128
+ 490 0008 6B46     		mov	r3, sp
+ 491 000a 6A46     		mov	r2, sp
+ 492 000c 0121     		movs	r1, #1
+ 493 000e 4FF65D40 		movw	r0, #64605
+ 494              	.LVL45:
+ 495              		.loc 1 237 3 is_stmt 0 view .LVU129
+ 496 0012 FFF7FEFF 		bl	shci_send
+ 497              	.LVL46:
+ 238:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 239:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 240:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 241:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 242:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 498              		.loc 1 242 3 is_stmt 1 view .LVU130
+ 243:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 499              		.loc 1 243 1 is_stmt 0 view .LVU131
+ 500 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 501 001a 05B0     		add	sp, sp, #20
+ 502              		.cfi_def_cfa_offset 4
+ 503              	.LVL47:
+ 504              		.loc 1 243 1 view .LVU132
+ 505              		@ sp needed
+ 506 001c 5DF804FB 		ldr	pc, [sp], #4
+ 507              		.loc 1 243 1 view .LVU133
+ 508              		.cfi_endproc
+ 509              	.LFE1115:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 14
+
+
+ 511              		.section	.text.SHCI_C2_FUS_UnloadUsrKey,"ax",%progbits
+ 512              		.align	1
+ 513              		.global	SHCI_C2_FUS_UnloadUsrKey
+ 514              		.syntax unified
+ 515              		.thumb
+ 516              		.thumb_func
+ 518              	SHCI_C2_FUS_UnloadUsrKey:
+ 519              	.LVL48:
+ 520              	.LFB1116:
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 245:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_UnloadUsrKey( uint8_t key_index )
+ 246:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 521              		.loc 1 246 1 is_stmt 1 view -0
+ 522              		.cfi_startproc
+ 523              		@ args = 0, pretend = 0, frame = 16
+ 524              		@ frame_needed = 0, uses_anonymous_args = 0
+ 525              		.loc 1 246 1 is_stmt 0 view .LVU135
+ 526 0000 00B5     		push	{lr}
+ 527              		.cfi_def_cfa_offset 4
+ 528              		.cfi_offset 14, -4
+ 529 0002 85B0     		sub	sp, sp, #20
+ 530              		.cfi_def_cfa_offset 24
+ 247:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 248:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 249:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 250:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 531              		.loc 1 250 3 is_stmt 1 view .LVU136
+ 251:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 532              		.loc 1 251 3 view .LVU137
+ 252:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 253:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 533              		.loc 1 253 3 view .LVU138
+ 534              	.LVL49:
+ 254:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 255:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = key_index;
+ 535              		.loc 1 255 3 view .LVU139
+ 536              		.loc 1 255 19 is_stmt 0 view .LVU140
+ 537 0004 8DF80000 		strb	r0, [sp]
+ 256:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 257:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_UNLOAD_USR_KEY,
+ 538              		.loc 1 257 3 is_stmt 1 view .LVU141
+ 539 0008 6B46     		mov	r3, sp
+ 540 000a 6A46     		mov	r2, sp
+ 541 000c 0121     		movs	r1, #1
+ 542 000e 4FF65E40 		movw	r0, #64606
+ 543              	.LVL50:
+ 544              		.loc 1 257 3 is_stmt 0 view .LVU142
+ 545 0012 FFF7FEFF 		bl	shci_send
+ 546              	.LVL51:
+ 258:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 259:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 260:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 261:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 262:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 547              		.loc 1 262 3 is_stmt 1 view .LVU143
+ 263:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 548              		.loc 1 263 1 is_stmt 0 view .LVU144
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 15
+
+
+ 549 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 550 001a 05B0     		add	sp, sp, #20
+ 551              		.cfi_def_cfa_offset 4
+ 552              	.LVL52:
+ 553              		.loc 1 263 1 view .LVU145
+ 554              		@ sp needed
+ 555 001c 5DF804FB 		ldr	pc, [sp], #4
+ 556              		.loc 1 263 1 view .LVU146
+ 557              		.cfi_endproc
+ 558              	.LFE1116:
+ 560              		.section	.text.SHCI_C2_FUS_ActivateAntiRollback,"ax",%progbits
+ 561              		.align	1
+ 562              		.global	SHCI_C2_FUS_ActivateAntiRollback
+ 563              		.syntax unified
+ 564              		.thumb
+ 565              		.thumb_func
+ 567              	SHCI_C2_FUS_ActivateAntiRollback:
+ 568              	.LFB1117:
+ 264:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 265:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FUS_ActivateAntiRollback( void )
+ 266:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 569              		.loc 1 266 1 is_stmt 1 view -0
+ 570              		.cfi_startproc
+ 571              		@ args = 0, pretend = 0, frame = 16
+ 572              		@ frame_needed = 0, uses_anonymous_args = 0
+ 573 0000 00B5     		push	{lr}
+ 574              		.cfi_def_cfa_offset 4
+ 575              		.cfi_offset 14, -4
+ 576 0002 85B0     		sub	sp, sp, #20
+ 577              		.cfi_def_cfa_offset 24
+ 267:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 268:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 269:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 270:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 578              		.loc 1 270 3 view .LVU148
+ 271:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 579              		.loc 1 271 3 view .LVU149
+ 272:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 273:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 580              		.loc 1 273 3 view .LVU150
+ 581              	.LVL53:
+ 274:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 275:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FUS_ACTIVATE_ANTIROLLBACK,
+ 582              		.loc 1 275 3 view .LVU151
+ 583 0004 6B46     		mov	r3, sp
+ 584 0006 0022     		movs	r2, #0
+ 585 0008 1146     		mov	r1, r2
+ 586 000a 4FF65F40 		movw	r0, #64607
+ 587 000e FFF7FEFF 		bl	shci_send
+ 588              	.LVL54:
+ 276:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 277:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 278:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 279:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 280:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 589              		.loc 1 280 3 view .LVU152
+ 281:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 16
+
+
+ 590              		.loc 1 281 1 is_stmt 0 view .LVU153
+ 591 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 592 0016 05B0     		add	sp, sp, #20
+ 593              		.cfi_def_cfa_offset 4
+ 594              	.LVL55:
+ 595              		.loc 1 281 1 view .LVU154
+ 596              		@ sp needed
+ 597 0018 5DF804FB 		ldr	pc, [sp], #4
+ 598              		.loc 1 281 1 view .LVU155
+ 599              		.cfi_endproc
+ 600              	.LFE1117:
+ 602              		.section	.text.SHCI_C2_BLE_Init,"ax",%progbits
+ 603              		.align	1
+ 604              		.global	SHCI_C2_BLE_Init
+ 605              		.syntax unified
+ 606              		.thumb
+ 607              		.thumb_func
+ 609              	SHCI_C2_BLE_Init:
+ 610              	.LVL56:
+ 611              	.LFB1118:
+ 282:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 283:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_BLE_Init( SHCI_C2_Ble_Init_Cmd_Packet_t *pCmdPacket )
+ 284:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 612              		.loc 1 284 1 is_stmt 1 view -0
+ 613              		.cfi_startproc
+ 614              		@ args = 0, pretend = 0, frame = 16
+ 615              		@ frame_needed = 0, uses_anonymous_args = 0
+ 616              		.loc 1 284 1 is_stmt 0 view .LVU157
+ 617 0000 00B5     		push	{lr}
+ 618              		.cfi_def_cfa_offset 4
+ 619              		.cfi_offset 14, -4
+ 620 0002 85B0     		sub	sp, sp, #20
+ 621              		.cfi_def_cfa_offset 24
+ 285:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 286:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 287:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 288:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 622              		.loc 1 288 3 is_stmt 1 view .LVU158
+ 289:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 623              		.loc 1 289 3 view .LVU159
+ 290:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 291:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 624              		.loc 1 291 3 view .LVU160
+ 625              	.LVL57:
+ 292:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 293:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  shci_send( SHCI_OPCODE_C2_BLE_INIT,
+ 626              		.loc 1 293 2 view .LVU161
+ 627 0004 6B46     		mov	r3, sp
+ 628 0006 00F10C02 		add	r2, r0, #12
+ 629 000a 2E21     		movs	r1, #46
+ 630 000c 4FF66640 		movw	r0, #64614
+ 631              	.LVL58:
+ 632              		.loc 1 293 2 is_stmt 0 view .LVU162
+ 633 0010 FFF7FEFF 		bl	shci_send
+ 634              	.LVL59:
+ 294:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****             sizeof( SHCI_C2_Ble_Init_Cmd_Param_t ),
+ 295:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****             (uint8_t*)&pCmdPacket->Param,
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 17
+
+
+ 296:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****             p_rsp );
+ 297:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  
+ 298:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 635              		.loc 1 298 3 is_stmt 1 view .LVU163
+ 299:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 636              		.loc 1 299 1 is_stmt 0 view .LVU164
+ 637 0014 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 638 0018 05B0     		add	sp, sp, #20
+ 639              		.cfi_def_cfa_offset 4
+ 640              	.LVL60:
+ 641              		.loc 1 299 1 view .LVU165
+ 642              		@ sp needed
+ 643 001a 5DF804FB 		ldr	pc, [sp], #4
+ 644              		.loc 1 299 1 view .LVU166
+ 645              		.cfi_endproc
+ 646              	.LFE1118:
+ 648              		.section	.text.SHCI_C2_THREAD_Init,"ax",%progbits
+ 649              		.align	1
+ 650              		.global	SHCI_C2_THREAD_Init
+ 651              		.syntax unified
+ 652              		.thumb
+ 653              		.thumb_func
+ 655              	SHCI_C2_THREAD_Init:
+ 656              	.LFB1119:
+ 300:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 301:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_THREAD_Init( void )
+ 302:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 657              		.loc 1 302 1 is_stmt 1 view -0
+ 658              		.cfi_startproc
+ 659              		@ args = 0, pretend = 0, frame = 16
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 661 0000 00B5     		push	{lr}
+ 662              		.cfi_def_cfa_offset 4
+ 663              		.cfi_offset 14, -4
+ 664 0002 85B0     		sub	sp, sp, #20
+ 665              		.cfi_def_cfa_offset 24
+ 303:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 304:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 305:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 306:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 666              		.loc 1 306 3 view .LVU168
+ 307:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 667              		.loc 1 307 3 view .LVU169
+ 308:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 309:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 668              		.loc 1 309 3 view .LVU170
+ 669              	.LVL61:
+ 310:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 311:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_THREAD_INIT,
+ 670              		.loc 1 311 3 view .LVU171
+ 671 0004 6B46     		mov	r3, sp
+ 672 0006 0022     		movs	r2, #0
+ 673 0008 1146     		mov	r1, r2
+ 674 000a 4FF66740 		movw	r0, #64615
+ 675 000e FFF7FEFF 		bl	shci_send
+ 676              	.LVL62:
+ 312:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 18
+
+
+ 313:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 314:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 315:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 316:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 677              		.loc 1 316 3 view .LVU172
+ 317:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 678              		.loc 1 317 1 is_stmt 0 view .LVU173
+ 679 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 680 0016 05B0     		add	sp, sp, #20
+ 681              		.cfi_def_cfa_offset 4
+ 682              	.LVL63:
+ 683              		.loc 1 317 1 view .LVU174
+ 684              		@ sp needed
+ 685 0018 5DF804FB 		ldr	pc, [sp], #4
+ 686              		.loc 1 317 1 view .LVU175
+ 687              		.cfi_endproc
+ 688              	.LFE1119:
+ 690              		.section	.text.SHCI_C2_LLDTESTS_Init,"ax",%progbits
+ 691              		.align	1
+ 692              		.global	SHCI_C2_LLDTESTS_Init
+ 693              		.syntax unified
+ 694              		.thumb
+ 695              		.thumb_func
+ 697              	SHCI_C2_LLDTESTS_Init:
+ 698              	.LVL64:
+ 699              	.LFB1120:
+ 318:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 319:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_LLDTESTS_Init( uint8_t param_size, uint8_t * p_param )
+ 320:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 700              		.loc 1 320 1 is_stmt 1 view -0
+ 701              		.cfi_startproc
+ 702              		@ args = 0, pretend = 0, frame = 16
+ 703              		@ frame_needed = 0, uses_anonymous_args = 0
+ 704              		.loc 1 320 1 is_stmt 0 view .LVU177
+ 705 0000 00B5     		push	{lr}
+ 706              		.cfi_def_cfa_offset 4
+ 707              		.cfi_offset 14, -4
+ 708 0002 85B0     		sub	sp, sp, #20
+ 709              		.cfi_def_cfa_offset 24
+ 710 0004 0A46     		mov	r2, r1
+ 321:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 322:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 323:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 324:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 711              		.loc 1 324 3 is_stmt 1 view .LVU178
+ 325:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 712              		.loc 1 325 3 view .LVU179
+ 326:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 327:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 713              		.loc 1 327 3 view .LVU180
+ 714              	.LVL65:
+ 328:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 329:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_LLD_TESTS_INIT,
+ 715              		.loc 1 329 3 view .LVU181
+ 716 0006 6B46     		mov	r3, sp
+ 717 0008 0146     		mov	r1, r0
+ 718              	.LVL66:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 19
+
+
+ 719              		.loc 1 329 3 is_stmt 0 view .LVU182
+ 720 000a 4FF67140 		movw	r0, #64625
+ 721              	.LVL67:
+ 722              		.loc 1 329 3 view .LVU183
+ 723 000e FFF7FEFF 		bl	shci_send
+ 724              	.LVL68:
+ 330:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              param_size,
+ 331:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_param,
+ 332:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 333:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 334:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 725              		.loc 1 334 3 is_stmt 1 view .LVU184
+ 335:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 726              		.loc 1 335 1 is_stmt 0 view .LVU185
+ 727 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 728 0016 05B0     		add	sp, sp, #20
+ 729              		.cfi_def_cfa_offset 4
+ 730              	.LVL69:
+ 731              		.loc 1 335 1 view .LVU186
+ 732              		@ sp needed
+ 733 0018 5DF804FB 		ldr	pc, [sp], #4
+ 734              		.loc 1 335 1 view .LVU187
+ 735              		.cfi_endproc
+ 736              	.LFE1120:
+ 738              		.section	.text.SHCI_C2_BLE_LLD_Init,"ax",%progbits
+ 739              		.align	1
+ 740              		.global	SHCI_C2_BLE_LLD_Init
+ 741              		.syntax unified
+ 742              		.thumb
+ 743              		.thumb_func
+ 745              	SHCI_C2_BLE_LLD_Init:
+ 746              	.LVL70:
+ 747              	.LFB1121:
+ 336:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 337:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_BLE_LLD_Init( uint8_t param_size, uint8_t * p_param )
+ 338:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 748              		.loc 1 338 1 is_stmt 1 view -0
+ 749              		.cfi_startproc
+ 750              		@ args = 0, pretend = 0, frame = 16
+ 751              		@ frame_needed = 0, uses_anonymous_args = 0
+ 752              		.loc 1 338 1 is_stmt 0 view .LVU189
+ 753 0000 00B5     		push	{lr}
+ 754              		.cfi_def_cfa_offset 4
+ 755              		.cfi_offset 14, -4
+ 756 0002 85B0     		sub	sp, sp, #20
+ 757              		.cfi_def_cfa_offset 24
+ 758 0004 0A46     		mov	r2, r1
+ 339:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 340:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 341:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 342:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 759              		.loc 1 342 3 is_stmt 1 view .LVU190
+ 343:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 760              		.loc 1 343 3 view .LVU191
+ 344:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 345:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 761              		.loc 1 345 3 view .LVU192
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 20
+
+
+ 762              	.LVL71:
+ 346:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 347:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_BLE_LLD_INIT,
+ 763              		.loc 1 347 3 view .LVU193
+ 764 0006 6B46     		mov	r3, sp
+ 765 0008 0146     		mov	r1, r0
+ 766              	.LVL72:
+ 767              		.loc 1 347 3 is_stmt 0 view .LVU194
+ 768 000a 4FF67440 		movw	r0, #64628
+ 769              	.LVL73:
+ 770              		.loc 1 347 3 view .LVU195
+ 771 000e FFF7FEFF 		bl	shci_send
+ 772              	.LVL74:
+ 348:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              param_size,
+ 349:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_param,
+ 350:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 351:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 352:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 773              		.loc 1 352 3 is_stmt 1 view .LVU196
+ 353:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 774              		.loc 1 353 1 is_stmt 0 view .LVU197
+ 775 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 776 0016 05B0     		add	sp, sp, #20
+ 777              		.cfi_def_cfa_offset 4
+ 778              	.LVL75:
+ 779              		.loc 1 353 1 view .LVU198
+ 780              		@ sp needed
+ 781 0018 5DF804FB 		ldr	pc, [sp], #4
+ 782              		.loc 1 353 1 view .LVU199
+ 783              		.cfi_endproc
+ 784              	.LFE1121:
+ 786              		.section	.text.SHCI_C2_ZIGBEE_Init,"ax",%progbits
+ 787              		.align	1
+ 788              		.global	SHCI_C2_ZIGBEE_Init
+ 789              		.syntax unified
+ 790              		.thumb
+ 791              		.thumb_func
+ 793              	SHCI_C2_ZIGBEE_Init:
+ 794              	.LFB1122:
+ 354:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 355:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_ZIGBEE_Init( void )
+ 356:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 795              		.loc 1 356 1 is_stmt 1 view -0
+ 796              		.cfi_startproc
+ 797              		@ args = 0, pretend = 0, frame = 16
+ 798              		@ frame_needed = 0, uses_anonymous_args = 0
+ 799 0000 00B5     		push	{lr}
+ 800              		.cfi_def_cfa_offset 4
+ 801              		.cfi_offset 14, -4
+ 802 0002 85B0     		sub	sp, sp, #20
+ 803              		.cfi_def_cfa_offset 24
+ 357:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 358:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 359:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 360:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 804              		.loc 1 360 3 view .LVU201
+ 361:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 21
+
+
+ 805              		.loc 1 361 3 view .LVU202
+ 362:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 363:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 806              		.loc 1 363 3 view .LVU203
+ 807              	.LVL76:
+ 364:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 365:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_ZIGBEE_INIT,
+ 808              		.loc 1 365 3 view .LVU204
+ 809 0004 6B46     		mov	r3, sp
+ 810 0006 0022     		movs	r2, #0
+ 811 0008 1146     		mov	r1, r2
+ 812 000a 4FF67040 		movw	r0, #64624
+ 813 000e FFF7FEFF 		bl	shci_send
+ 814              	.LVL77:
+ 366:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 367:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 368:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 369:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 370:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 815              		.loc 1 370 3 view .LVU205
+ 371:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 816              		.loc 1 371 1 is_stmt 0 view .LVU206
+ 817 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 818 0016 05B0     		add	sp, sp, #20
+ 819              		.cfi_def_cfa_offset 4
+ 820              	.LVL78:
+ 821              		.loc 1 371 1 view .LVU207
+ 822              		@ sp needed
+ 823 0018 5DF804FB 		ldr	pc, [sp], #4
+ 824              		.loc 1 371 1 view .LVU208
+ 825              		.cfi_endproc
+ 826              	.LFE1122:
+ 828              		.section	.text.SHCI_C2_DEBUG_Init,"ax",%progbits
+ 829              		.align	1
+ 830              		.global	SHCI_C2_DEBUG_Init
+ 831              		.syntax unified
+ 832              		.thumb
+ 833              		.thumb_func
+ 835              	SHCI_C2_DEBUG_Init:
+ 836              	.LVL79:
+ 837              	.LFB1123:
+ 372:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 373:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_DEBUG_Init( SHCI_C2_DEBUG_Init_Cmd_Packet_t *pCmdPacket  )
+ 374:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 838              		.loc 1 374 1 is_stmt 1 view -0
+ 839              		.cfi_startproc
+ 840              		@ args = 0, pretend = 0, frame = 16
+ 841              		@ frame_needed = 0, uses_anonymous_args = 0
+ 842              		.loc 1 374 1 is_stmt 0 view .LVU210
+ 843 0000 00B5     		push	{lr}
+ 844              		.cfi_def_cfa_offset 4
+ 845              		.cfi_offset 14, -4
+ 846 0002 85B0     		sub	sp, sp, #20
+ 847              		.cfi_def_cfa_offset 24
+ 375:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 376:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 377:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 22
+
+
+ 378:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 848              		.loc 1 378 3 is_stmt 1 view .LVU211
+ 379:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 849              		.loc 1 379 3 view .LVU212
+ 380:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 381:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 850              		.loc 1 381 3 view .LVU213
+ 851              	.LVL80:
+ 382:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 383:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_DEBUG_INIT,
+ 852              		.loc 1 383 3 view .LVU214
+ 853 0004 6B46     		mov	r3, sp
+ 854 0006 00F10C02 		add	r2, r0, #12
+ 855 000a 0F21     		movs	r1, #15
+ 856 000c 4FF66840 		movw	r0, #64616
+ 857              	.LVL81:
+ 858              		.loc 1 383 3 is_stmt 0 view .LVU215
+ 859 0010 FFF7FEFF 		bl	shci_send
+ 860              	.LVL82:
+ 384:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              sizeof( SHCI_C2_DEBUG_init_Cmd_Param_t ),
+ 385:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              (uint8_t*)&pCmdPacket->Param,
+ 386:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 387:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 388:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 861              		.loc 1 388 3 is_stmt 1 view .LVU216
+ 389:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 862              		.loc 1 389 1 is_stmt 0 view .LVU217
+ 863 0014 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 864 0018 05B0     		add	sp, sp, #20
+ 865              		.cfi_def_cfa_offset 4
+ 866              	.LVL83:
+ 867              		.loc 1 389 1 view .LVU218
+ 868              		@ sp needed
+ 869 001a 5DF804FB 		ldr	pc, [sp], #4
+ 870              		.loc 1 389 1 view .LVU219
+ 871              		.cfi_endproc
+ 872              	.LFE1123:
+ 874              		.section	.text.SHCI_C2_FLASH_EraseActivity,"ax",%progbits
+ 875              		.align	1
+ 876              		.global	SHCI_C2_FLASH_EraseActivity
+ 877              		.syntax unified
+ 878              		.thumb
+ 879              		.thumb_func
+ 881              	SHCI_C2_FLASH_EraseActivity:
+ 882              	.LVL84:
+ 883              	.LFB1124:
+ 390:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 391:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FLASH_EraseActivity( SHCI_EraseActivity_t erase_activity )
+ 392:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 884              		.loc 1 392 1 is_stmt 1 view -0
+ 885              		.cfi_startproc
+ 886              		@ args = 0, pretend = 0, frame = 16
+ 887              		@ frame_needed = 0, uses_anonymous_args = 0
+ 888              		.loc 1 392 1 is_stmt 0 view .LVU221
+ 889 0000 00B5     		push	{lr}
+ 890              		.cfi_def_cfa_offset 4
+ 891              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 23
+
+
+ 892 0002 85B0     		sub	sp, sp, #20
+ 893              		.cfi_def_cfa_offset 24
+ 393:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 394:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 395:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 396:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 894              		.loc 1 396 3 is_stmt 1 view .LVU222
+ 397:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 895              		.loc 1 397 3 view .LVU223
+ 398:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 399:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 896              		.loc 1 399 3 view .LVU224
+ 897              	.LVL85:
+ 400:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 401:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = erase_activity;
+ 898              		.loc 1 401 3 view .LVU225
+ 899              		.loc 1 401 19 is_stmt 0 view .LVU226
+ 900 0004 8DF80000 		strb	r0, [sp]
+ 402:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 403:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FLASH_ERASE_ACTIVITY,
+ 901              		.loc 1 403 3 is_stmt 1 view .LVU227
+ 902 0008 6B46     		mov	r3, sp
+ 903 000a 6A46     		mov	r2, sp
+ 904 000c 0121     		movs	r1, #1
+ 905 000e 4FF66940 		movw	r0, #64617
+ 906              	.LVL86:
+ 907              		.loc 1 403 3 is_stmt 0 view .LVU228
+ 908 0012 FFF7FEFF 		bl	shci_send
+ 909              	.LVL87:
+ 404:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 405:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 406:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 407:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 408:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 910              		.loc 1 408 3 is_stmt 1 view .LVU229
+ 409:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 911              		.loc 1 409 1 is_stmt 0 view .LVU230
+ 912 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 913 001a 05B0     		add	sp, sp, #20
+ 914              		.cfi_def_cfa_offset 4
+ 915              	.LVL88:
+ 916              		.loc 1 409 1 view .LVU231
+ 917              		@ sp needed
+ 918 001c 5DF804FB 		ldr	pc, [sp], #4
+ 919              		.loc 1 409 1 view .LVU232
+ 920              		.cfi_endproc
+ 921              	.LFE1124:
+ 923              		.section	.text.SHCI_C2_CONCURRENT_SetMode,"ax",%progbits
+ 924              		.align	1
+ 925              		.global	SHCI_C2_CONCURRENT_SetMode
+ 926              		.syntax unified
+ 927              		.thumb
+ 928              		.thumb_func
+ 930              	SHCI_C2_CONCURRENT_SetMode:
+ 931              	.LVL89:
+ 932              	.LFB1125:
+ 410:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 24
+
+
+ 411:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_CONCURRENT_SetMode( SHCI_C2_CONCURRENT_Mode_Param_t Mode )
+ 412:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 933              		.loc 1 412 1 is_stmt 1 view -0
+ 934              		.cfi_startproc
+ 935              		@ args = 0, pretend = 0, frame = 16
+ 936              		@ frame_needed = 0, uses_anonymous_args = 0
+ 937              		.loc 1 412 1 is_stmt 0 view .LVU234
+ 938 0000 00B5     		push	{lr}
+ 939              		.cfi_def_cfa_offset 4
+ 940              		.cfi_offset 14, -4
+ 941 0002 85B0     		sub	sp, sp, #20
+ 942              		.cfi_def_cfa_offset 24
+ 413:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 414:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 415:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 416:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 943              		.loc 1 416 3 is_stmt 1 view .LVU235
+ 417:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 944              		.loc 1 417 3 view .LVU236
+ 418:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 419:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 945              		.loc 1 419 3 view .LVU237
+ 946              	.LVL90:
+ 420:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 421:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = Mode;
+ 947              		.loc 1 421 3 view .LVU238
+ 948              		.loc 1 421 19 is_stmt 0 view .LVU239
+ 949 0004 8DF80000 		strb	r0, [sp]
+ 422:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 423:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_CONCURRENT_SET_MODE,
+ 950              		.loc 1 423 3 is_stmt 1 view .LVU240
+ 951 0008 6B46     		mov	r3, sp
+ 952 000a 6A46     		mov	r2, sp
+ 953 000c 0121     		movs	r1, #1
+ 954 000e 4FF66A40 		movw	r0, #64618
+ 955              	.LVL91:
+ 956              		.loc 1 423 3 is_stmt 0 view .LVU241
+ 957 0012 FFF7FEFF 		bl	shci_send
+ 958              	.LVL92:
+ 424:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 425:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 426:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 427:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 428:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 959              		.loc 1 428 3 is_stmt 1 view .LVU242
+ 429:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 960              		.loc 1 429 1 is_stmt 0 view .LVU243
+ 961 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 962 001a 05B0     		add	sp, sp, #20
+ 963              		.cfi_def_cfa_offset 4
+ 964              	.LVL93:
+ 965              		.loc 1 429 1 view .LVU244
+ 966              		@ sp needed
+ 967 001c 5DF804FB 		ldr	pc, [sp], #4
+ 968              		.loc 1 429 1 view .LVU245
+ 969              		.cfi_endproc
+ 970              	.LFE1125:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 25
+
+
+ 972              		.section	.text.SHCI_C2_CONCURRENT_GetNextBleEvtTime,"ax",%progbits
+ 973              		.align	1
+ 974              		.global	SHCI_C2_CONCURRENT_GetNextBleEvtTime
+ 975              		.syntax unified
+ 976              		.thumb
+ 977              		.thumb_func
+ 979              	SHCI_C2_CONCURRENT_GetNextBleEvtTime:
+ 980              	.LVL94:
+ 981              	.LFB1126:
+ 430:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 431:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_CONCURRENT_GetNextBleEvtTime( SHCI_C2_CONCURRENT_GetNextBleEvtTime_Param_t
+ 432:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 982              		.loc 1 432 1 is_stmt 1 view -0
+ 983              		.cfi_startproc
+ 984              		@ args = 0, pretend = 0, frame = 24
+ 985              		@ frame_needed = 0, uses_anonymous_args = 0
+ 986              		.loc 1 432 1 is_stmt 0 view .LVU247
+ 987 0000 10B5     		push	{r4, lr}
+ 988              		.cfi_def_cfa_offset 8
+ 989              		.cfi_offset 4, -8
+ 990              		.cfi_offset 14, -4
+ 991 0002 86B0     		sub	sp, sp, #24
+ 992              		.cfi_def_cfa_offset 32
+ 993 0004 0446     		mov	r4, r0
+ 433:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 434:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete with payload
+ 435:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 436:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE+4];
+ 994              		.loc 1 436 3 is_stmt 1 view .LVU248
+ 437:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 995              		.loc 1 437 3 view .LVU249
+ 438:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 439:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 996              		.loc 1 439 3 view .LVU250
+ 997              	.LVL95:
+ 440:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 441:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_CONCURRENT_GET_NEXT_BLE_EVT_TIME,
+ 998              		.loc 1 441 3 view .LVU251
+ 999 0006 01AB     		add	r3, sp, #4
+ 1000              	.LVL96:
+ 1001              		.loc 1 441 3 is_stmt 0 view .LVU252
+ 1002 0008 0022     		movs	r2, #0
+ 1003 000a 1146     		mov	r1, r2
+ 1004 000c 4FF67640 		movw	r0, #64630
+ 1005              	.LVL97:
+ 1006              		.loc 1 441 3 view .LVU253
+ 1007 0010 FFF7FEFF 		bl	shci_send
+ 1008              	.LVL98:
+ 442:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 443:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 444:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 445:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   
+ 446:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   memcpy((void*)&(pParam->relative_time), (void*)&((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->pa
+ 1009              		.loc 1 446 3 is_stmt 1 view .LVU254
+ 1010 0014 DDF81330 		ldr	r3, [sp, #19]	@ unaligned
+ 1011 0018 2360     		str	r3, [r4]	@ unaligned
+ 447:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 26
+
+
+ 448:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1012              		.loc 1 448 3 view .LVU255
+ 449:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1013              		.loc 1 449 1 is_stmt 0 view .LVU256
+ 1014 001a 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+ 1015 001e 06B0     		add	sp, sp, #24
+ 1016              		.cfi_def_cfa_offset 8
+ 1017              		@ sp needed
+ 1018 0020 10BD     		pop	{r4, pc}
+ 1019              		.loc 1 449 1 view .LVU257
+ 1020              		.cfi_endproc
+ 1021              	.LFE1126:
+ 1023              		.section	.text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification,"ax",%progbits
+ 1024              		.align	1
+ 1025              		.global	SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
+ 1026              		.syntax unified
+ 1027              		.thumb
+ 1028              		.thumb_func
+ 1030              	SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:
+ 1031              	.LFB1127:
+ 450:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   
+ 451:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification( void )
+ 452:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1032              		.loc 1 452 1 is_stmt 1 view -0
+ 1033              		.cfi_startproc
+ 1034              		@ args = 0, pretend = 0, frame = 16
+ 1035              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1036 0000 00B5     		push	{lr}
+ 1037              		.cfi_def_cfa_offset 4
+ 1038              		.cfi_offset 14, -4
+ 1039 0002 85B0     		sub	sp, sp, #20
+ 1040              		.cfi_def_cfa_offset 24
+ 453:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 454:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 455:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 456:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1041              		.loc 1 456 3 view .LVU259
+ 457:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1042              		.loc 1 457 3 view .LVU260
+ 458:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 459:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1043              		.loc 1 459 3 view .LVU261
+ 1044              	.LVL99:
+ 460:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 461:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_CONCURRENT_ENABLE_NEXT_802154_EVT_NOTIFICATION,
+ 1045              		.loc 1 461 3 view .LVU262
+ 1046 0004 6B46     		mov	r3, sp
+ 1047 0006 0022     		movs	r2, #0
+ 1048 0008 1146     		mov	r1, r2
+ 1049 000a 4FF67740 		movw	r0, #64631
+ 1050 000e FFF7FEFF 		bl	shci_send
+ 1051              	.LVL100:
+ 462:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 463:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 464:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 465:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 466:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 27
+
+
+ 1052              		.loc 1 466 3 view .LVU263
+ 467:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1053              		.loc 1 467 1 is_stmt 0 view .LVU264
+ 1054 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1055 0016 05B0     		add	sp, sp, #20
+ 1056              		.cfi_def_cfa_offset 4
+ 1057              	.LVL101:
+ 1058              		.loc 1 467 1 view .LVU265
+ 1059              		@ sp needed
+ 1060 0018 5DF804FB 		ldr	pc, [sp], #4
+ 1061              		.loc 1 467 1 view .LVU266
+ 1062              		.cfi_endproc
+ 1063              	.LFE1127:
+ 1065              		.section	.text.SHCI_C2_FLASH_StoreData,"ax",%progbits
+ 1066              		.align	1
+ 1067              		.global	SHCI_C2_FLASH_StoreData
+ 1068              		.syntax unified
+ 1069              		.thumb
+ 1070              		.thumb_func
+ 1072              	SHCI_C2_FLASH_StoreData:
+ 1073              	.LVL102:
+ 1074              	.LFB1128:
+ 468:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 469:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FLASH_StoreData( SHCI_C2_FLASH_Ip_t Ip )
+ 470:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1075              		.loc 1 470 1 is_stmt 1 view -0
+ 1076              		.cfi_startproc
+ 1077              		@ args = 0, pretend = 0, frame = 16
+ 1078              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1079              		.loc 1 470 1 is_stmt 0 view .LVU268
+ 1080 0000 00B5     		push	{lr}
+ 1081              		.cfi_def_cfa_offset 4
+ 1082              		.cfi_offset 14, -4
+ 1083 0002 85B0     		sub	sp, sp, #20
+ 1084              		.cfi_def_cfa_offset 24
+ 471:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 472:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 473:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 474:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1085              		.loc 1 474 3 is_stmt 1 view .LVU269
+ 475:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1086              		.loc 1 475 3 view .LVU270
+ 476:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 477:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1087              		.loc 1 477 3 view .LVU271
+ 1088              	.LVL103:
+ 478:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 479:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = Ip;
+ 1089              		.loc 1 479 3 view .LVU272
+ 1090              		.loc 1 479 19 is_stmt 0 view .LVU273
+ 1091 0004 8DF80000 		strb	r0, [sp]
+ 480:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 481:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FLASH_STORE_DATA,
+ 1092              		.loc 1 481 3 is_stmt 1 view .LVU274
+ 1093 0008 6B46     		mov	r3, sp
+ 1094 000a 6A46     		mov	r2, sp
+ 1095 000c 0121     		movs	r1, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 28
+
+
+ 1096 000e 4FF66B40 		movw	r0, #64619
+ 1097              	.LVL104:
+ 1098              		.loc 1 481 3 is_stmt 0 view .LVU275
+ 1099 0012 FFF7FEFF 		bl	shci_send
+ 1100              	.LVL105:
+ 482:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 483:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 484:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 485:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 486:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1101              		.loc 1 486 3 is_stmt 1 view .LVU276
+ 487:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1102              		.loc 1 487 1 is_stmt 0 view .LVU277
+ 1103 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1104 001a 05B0     		add	sp, sp, #20
+ 1105              		.cfi_def_cfa_offset 4
+ 1106              	.LVL106:
+ 1107              		.loc 1 487 1 view .LVU278
+ 1108              		@ sp needed
+ 1109 001c 5DF804FB 		ldr	pc, [sp], #4
+ 1110              		.loc 1 487 1 view .LVU279
+ 1111              		.cfi_endproc
+ 1112              	.LFE1128:
+ 1114              		.section	.text.SHCI_C2_FLASH_EraseData,"ax",%progbits
+ 1115              		.align	1
+ 1116              		.global	SHCI_C2_FLASH_EraseData
+ 1117              		.syntax unified
+ 1118              		.thumb
+ 1119              		.thumb_func
+ 1121              	SHCI_C2_FLASH_EraseData:
+ 1122              	.LVL107:
+ 1123              	.LFB1129:
+ 488:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 489:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_FLASH_EraseData( SHCI_C2_FLASH_Ip_t Ip )
+ 490:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1124              		.loc 1 490 1 is_stmt 1 view -0
+ 1125              		.cfi_startproc
+ 1126              		@ args = 0, pretend = 0, frame = 16
+ 1127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1128              		.loc 1 490 1 is_stmt 0 view .LVU281
+ 1129 0000 00B5     		push	{lr}
+ 1130              		.cfi_def_cfa_offset 4
+ 1131              		.cfi_offset 14, -4
+ 1132 0002 85B0     		sub	sp, sp, #20
+ 1133              		.cfi_def_cfa_offset 24
+ 491:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 492:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 493:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 494:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1134              		.loc 1 494 3 is_stmt 1 view .LVU282
+ 495:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1135              		.loc 1 495 3 view .LVU283
+ 496:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 497:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1136              		.loc 1 497 3 view .LVU284
+ 1137              	.LVL108:
+ 498:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 29
+
+
+ 499:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = Ip;
+ 1138              		.loc 1 499 3 view .LVU285
+ 1139              		.loc 1 499 19 is_stmt 0 view .LVU286
+ 1140 0004 8DF80000 		strb	r0, [sp]
+ 500:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 501:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_FLASH_ERASE_DATA,
+ 1141              		.loc 1 501 3 is_stmt 1 view .LVU287
+ 1142 0008 6B46     		mov	r3, sp
+ 1143 000a 6A46     		mov	r2, sp
+ 1144 000c 0121     		movs	r1, #1
+ 1145 000e 4FF66C40 		movw	r0, #64620
+ 1146              	.LVL109:
+ 1147              		.loc 1 501 3 is_stmt 0 view .LVU288
+ 1148 0012 FFF7FEFF 		bl	shci_send
+ 1149              	.LVL110:
+ 502:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 503:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 504:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 505:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 506:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1150              		.loc 1 506 3 is_stmt 1 view .LVU289
+ 507:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1151              		.loc 1 507 1 is_stmt 0 view .LVU290
+ 1152 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1153 001a 05B0     		add	sp, sp, #20
+ 1154              		.cfi_def_cfa_offset 4
+ 1155              	.LVL111:
+ 1156              		.loc 1 507 1 view .LVU291
+ 1157              		@ sp needed
+ 1158 001c 5DF804FB 		ldr	pc, [sp], #4
+ 1159              		.loc 1 507 1 view .LVU292
+ 1160              		.cfi_endproc
+ 1161              	.LFE1129:
+ 1163              		.section	.text.SHCI_C2_RADIO_AllowLowPower,"ax",%progbits
+ 1164              		.align	1
+ 1165              		.global	SHCI_C2_RADIO_AllowLowPower
+ 1166              		.syntax unified
+ 1167              		.thumb
+ 1168              		.thumb_func
+ 1170              	SHCI_C2_RADIO_AllowLowPower:
+ 1171              	.LVL112:
+ 1172              	.LFB1130:
+ 508:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 509:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_RADIO_AllowLowPower( SHCI_C2_FLASH_Ip_t Ip,uint8_t  FlagRadioLowPowerOn)
+ 510:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1173              		.loc 1 510 1 is_stmt 1 view -0
+ 1174              		.cfi_startproc
+ 1175              		@ args = 0, pretend = 0, frame = 16
+ 1176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1177              		.loc 1 510 1 is_stmt 0 view .LVU294
+ 1178 0000 00B5     		push	{lr}
+ 1179              		.cfi_def_cfa_offset 4
+ 1180              		.cfi_offset 14, -4
+ 1181 0002 85B0     		sub	sp, sp, #20
+ 1182              		.cfi_def_cfa_offset 24
+ 511:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 512:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 30
+
+
+ 513:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 514:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1183              		.loc 1 514 3 is_stmt 1 view .LVU295
+ 515:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1184              		.loc 1 515 3 view .LVU296
+ 516:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 517:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1185              		.loc 1 517 3 view .LVU297
+ 1186              	.LVL113:
+ 518:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 519:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = Ip;
+ 1187              		.loc 1 519 3 view .LVU298
+ 1188              		.loc 1 519 19 is_stmt 0 view .LVU299
+ 1189 0004 8DF80000 		strb	r0, [sp]
+ 520:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[1] = FlagRadioLowPowerOn;
+ 1190              		.loc 1 520 3 is_stmt 1 view .LVU300
+ 1191              		.loc 1 520 19 is_stmt 0 view .LVU301
+ 1192 0008 8DF80110 		strb	r1, [sp, #1]
+ 521:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 522:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_RADIO_ALLOW_LOW_POWER,
+ 1193              		.loc 1 522 3 is_stmt 1 view .LVU302
+ 1194 000c 6B46     		mov	r3, sp
+ 1195 000e 6A46     		mov	r2, sp
+ 1196 0010 0221     		movs	r1, #2
+ 1197              	.LVL114:
+ 1198              		.loc 1 522 3 is_stmt 0 view .LVU303
+ 1199 0012 4FF66D40 		movw	r0, #64621
+ 1200              	.LVL115:
+ 1201              		.loc 1 522 3 view .LVU304
+ 1202 0016 FFF7FEFF 		bl	shci_send
+ 1203              	.LVL116:
+ 523:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              2,
+ 524:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 525:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 526:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 527:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1204              		.loc 1 527 3 is_stmt 1 view .LVU305
+ 528:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1205              		.loc 1 528 1 is_stmt 0 view .LVU306
+ 1206 001a 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1207 001e 05B0     		add	sp, sp, #20
+ 1208              		.cfi_def_cfa_offset 4
+ 1209              	.LVL117:
+ 1210              		.loc 1 528 1 view .LVU307
+ 1211              		@ sp needed
+ 1212 0020 5DF804FB 		ldr	pc, [sp], #4
+ 1213              		.loc 1 528 1 view .LVU308
+ 1214              		.cfi_endproc
+ 1215              	.LFE1130:
+ 1217              		.section	.text.SHCI_C2_MAC_802_15_4_Init,"ax",%progbits
+ 1218              		.align	1
+ 1219              		.global	SHCI_C2_MAC_802_15_4_Init
+ 1220              		.syntax unified
+ 1221              		.thumb
+ 1222              		.thumb_func
+ 1224              	SHCI_C2_MAC_802_15_4_Init:
+ 1225              	.LFB1131:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 31
+
+
+ 529:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 530:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_MAC_802_15_4_Init( void )
+ 531:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1226              		.loc 1 531 1 is_stmt 1 view -0
+ 1227              		.cfi_startproc
+ 1228              		@ args = 0, pretend = 0, frame = 16
+ 1229              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1230 0000 00B5     		push	{lr}
+ 1231              		.cfi_def_cfa_offset 4
+ 1232              		.cfi_offset 14, -4
+ 1233 0002 85B0     		sub	sp, sp, #20
+ 1234              		.cfi_def_cfa_offset 24
+ 532:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 533:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 534:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 535:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1235              		.loc 1 535 3 view .LVU310
+ 536:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1236              		.loc 1 536 3 view .LVU311
+ 537:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 538:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1237              		.loc 1 538 3 view .LVU312
+ 1238              	.LVL118:
+ 539:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 540:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_MAC_802_15_4_INIT,
+ 1239              		.loc 1 540 3 view .LVU313
+ 1240 0004 6B46     		mov	r3, sp
+ 1241 0006 0022     		movs	r2, #0
+ 1242 0008 1146     		mov	r1, r2
+ 1243 000a 4FF66E40 		movw	r0, #64622
+ 1244 000e FFF7FEFF 		bl	shci_send
+ 1245              	.LVL119:
+ 541:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 542:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 543:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 544:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 545:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1246              		.loc 1 545 3 view .LVU314
+ 546:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1247              		.loc 1 546 1 is_stmt 0 view .LVU315
+ 1248 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1249 0016 05B0     		add	sp, sp, #20
+ 1250              		.cfi_def_cfa_offset 4
+ 1251              	.LVL120:
+ 1252              		.loc 1 546 1 view .LVU316
+ 1253              		@ sp needed
+ 1254 0018 5DF804FB 		ldr	pc, [sp], #4
+ 1255              		.loc 1 546 1 view .LVU317
+ 1256              		.cfi_endproc
+ 1257              	.LFE1131:
+ 1259              		.section	.text.SHCI_C2_Reinit,"ax",%progbits
+ 1260              		.align	1
+ 1261              		.global	SHCI_C2_Reinit
+ 1262              		.syntax unified
+ 1263              		.thumb
+ 1264              		.thumb_func
+ 1266              	SHCI_C2_Reinit:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 32
+
+
+ 1267              	.LFB1132:
+ 547:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 548:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_Reinit( void )
+ 549:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1268              		.loc 1 549 1 is_stmt 1 view -0
+ 1269              		.cfi_startproc
+ 1270              		@ args = 0, pretend = 0, frame = 16
+ 1271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1272 0000 00B5     		push	{lr}
+ 1273              		.cfi_def_cfa_offset 4
+ 1274              		.cfi_offset 14, -4
+ 1275 0002 85B0     		sub	sp, sp, #20
+ 1276              		.cfi_def_cfa_offset 24
+ 550:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 551:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 552:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 553:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1277              		.loc 1 553 3 view .LVU319
+ 554:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1278              		.loc 1 554 3 view .LVU320
+ 555:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 556:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1279              		.loc 1 556 3 view .LVU321
+ 1280              	.LVL121:
+ 557:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 558:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_REINIT,
+ 1281              		.loc 1 558 3 view .LVU322
+ 1282 0004 6B46     		mov	r3, sp
+ 1283 0006 0022     		movs	r2, #0
+ 1284 0008 1146     		mov	r1, r2
+ 1285 000a 4FF66F40 		movw	r0, #64623
+ 1286 000e FFF7FEFF 		bl	shci_send
+ 1287              	.LVL122:
+ 559:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 560:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 561:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 562:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 563:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1288              		.loc 1 563 3 view .LVU323
+ 564:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1289              		.loc 1 564 1 is_stmt 0 view .LVU324
+ 1290 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1291 0016 05B0     		add	sp, sp, #20
+ 1292              		.cfi_def_cfa_offset 4
+ 1293              	.LVL123:
+ 1294              		.loc 1 564 1 view .LVU325
+ 1295              		@ sp needed
+ 1296 0018 5DF804FB 		ldr	pc, [sp], #4
+ 1297              		.loc 1 564 1 view .LVU326
+ 1298              		.cfi_endproc
+ 1299              	.LFE1132:
+ 1301              		.section	.text.SHCI_C2_ExtpaConfig,"ax",%progbits
+ 1302              		.align	1
+ 1303              		.global	SHCI_C2_ExtpaConfig
+ 1304              		.syntax unified
+ 1305              		.thumb
+ 1306              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 33
+
+
+ 1308              	SHCI_C2_ExtpaConfig:
+ 1309              	.LVL124:
+ 1310              	.LFB1133:
+ 565:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 566:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_ExtpaConfig(uint32_t gpio_port, uint16_t gpio_pin_number, uint8_t gpio_pol
+ 567:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1311              		.loc 1 567 1 is_stmt 1 view -0
+ 1312              		.cfi_startproc
+ 1313              		@ args = 0, pretend = 0, frame = 16
+ 1314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1315              		.loc 1 567 1 is_stmt 0 view .LVU328
+ 1316 0000 00B5     		push	{lr}
+ 1317              		.cfi_def_cfa_offset 4
+ 1318              		.cfi_offset 14, -4
+ 1319 0002 85B0     		sub	sp, sp, #20
+ 1320              		.cfi_def_cfa_offset 24
+ 568:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 569:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * TL_BLEEVT_CC_BUFFER_SIZE is 16 bytes so it is large enough to hold the 8 bytes of command para
+ 570:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 571:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 572:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1321              		.loc 1 572 3 is_stmt 1 view .LVU329
+ 573:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1322              		.loc 1 573 3 view .LVU330
+ 574:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 575:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1323              		.loc 1 575 3 view .LVU331
+ 1324              	.LVL125:
+ 576:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 577:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   ((SHCI_C2_EXTPA_CONFIG_Cmd_Param_t*)local_buffer)->gpio_port = gpio_port;
+ 1325              		.loc 1 577 3 view .LVU332
+ 1326              		.loc 1 577 64 is_stmt 0 view .LVU333
+ 1327 0004 0090     		str	r0, [sp]
+ 578:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   ((SHCI_C2_EXTPA_CONFIG_Cmd_Param_t*)local_buffer)->gpio_pin_number = gpio_pin_number;
+ 1328              		.loc 1 578 3 is_stmt 1 view .LVU334
+ 1329              		.loc 1 578 70 is_stmt 0 view .LVU335
+ 1330 0006 ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 579:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   ((SHCI_C2_EXTPA_CONFIG_Cmd_Param_t*)local_buffer)->gpio_polarity = gpio_polarity;
+ 1331              		.loc 1 579 3 is_stmt 1 view .LVU336
+ 1332              		.loc 1 579 68 is_stmt 0 view .LVU337
+ 1333 000a 8DF80620 		strb	r2, [sp, #6]
+ 580:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   ((SHCI_C2_EXTPA_CONFIG_Cmd_Param_t*)local_buffer)->gpio_status = gpio_status;
+ 1334              		.loc 1 580 3 is_stmt 1 view .LVU338
+ 1335              		.loc 1 580 66 is_stmt 0 view .LVU339
+ 1336 000e 8DF80730 		strb	r3, [sp, #7]
+ 581:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 582:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_EXTPA_CONFIG,
+ 1337              		.loc 1 582 3 is_stmt 1 view .LVU340
+ 1338 0012 6B46     		mov	r3, sp
+ 1339              	.LVL126:
+ 1340              		.loc 1 582 3 is_stmt 0 view .LVU341
+ 1341 0014 6A46     		mov	r2, sp
+ 1342              	.LVL127:
+ 1343              		.loc 1 582 3 view .LVU342
+ 1344 0016 0821     		movs	r1, #8
+ 1345              	.LVL128:
+ 1346              		.loc 1 582 3 view .LVU343
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 34
+
+
+ 1347 0018 4FF67240 		movw	r0, #64626
+ 1348              	.LVL129:
+ 1349              		.loc 1 582 3 view .LVU344
+ 1350 001c FFF7FEFF 		bl	shci_send
+ 1351              	.LVL130:
+ 583:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              8,
+ 584:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 585:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 586:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 587:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1352              		.loc 1 587 3 is_stmt 1 view .LVU345
+ 588:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1353              		.loc 1 588 1 is_stmt 0 view .LVU346
+ 1354 0020 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1355 0024 05B0     		add	sp, sp, #20
+ 1356              		.cfi_def_cfa_offset 4
+ 1357              	.LVL131:
+ 1358              		.loc 1 588 1 view .LVU347
+ 1359              		@ sp needed
+ 1360 0026 5DF804FB 		ldr	pc, [sp], #4
+ 1361              		.loc 1 588 1 view .LVU348
+ 1362              		.cfi_endproc
+ 1363              	.LFE1133:
+ 1365              		.section	.text.SHCI_C2_SetFlashActivityControl,"ax",%progbits
+ 1366              		.align	1
+ 1367              		.global	SHCI_C2_SetFlashActivityControl
+ 1368              		.syntax unified
+ 1369              		.thumb
+ 1370              		.thumb_func
+ 1372              	SHCI_C2_SetFlashActivityControl:
+ 1373              	.LVL132:
+ 1374              	.LFB1134:
+ 589:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 590:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_SetFlashActivityControl(SHCI_C2_SET_FLASH_ACTIVITY_CONTROL_Source_t Source
+ 591:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1375              		.loc 1 591 1 is_stmt 1 view -0
+ 1376              		.cfi_startproc
+ 1377              		@ args = 0, pretend = 0, frame = 16
+ 1378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1379              		.loc 1 591 1 is_stmt 0 view .LVU350
+ 1380 0000 00B5     		push	{lr}
+ 1381              		.cfi_def_cfa_offset 4
+ 1382              		.cfi_offset 14, -4
+ 1383 0002 85B0     		sub	sp, sp, #20
+ 1384              		.cfi_def_cfa_offset 24
+ 592:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 593:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * TL_BLEEVT_CC_BUFFER_SIZE is 16 bytes so it is large enough to hold the 1 byte of command param
+ 594:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 595:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 596:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1385              		.loc 1 596 3 is_stmt 1 view .LVU351
+ 597:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1386              		.loc 1 597 3 view .LVU352
+ 598:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 599:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1387              		.loc 1 599 3 view .LVU353
+ 1388              	.LVL133:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 35
+
+
+ 600:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 601:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = (uint8_t)Source;
+ 1389              		.loc 1 601 3 view .LVU354
+ 1390              		.loc 1 601 19 is_stmt 0 view .LVU355
+ 1391 0004 8DF80000 		strb	r0, [sp]
+ 602:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 603:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_SET_FLASH_ACTIVITY_CONTROL,
+ 1392              		.loc 1 603 3 is_stmt 1 view .LVU356
+ 1393 0008 6B46     		mov	r3, sp
+ 1394 000a 6A46     		mov	r2, sp
+ 1395 000c 0121     		movs	r1, #1
+ 1396 000e 4FF67340 		movw	r0, #64627
+ 1397              	.LVL134:
+ 1398              		.loc 1 603 3 is_stmt 0 view .LVU357
+ 1399 0012 FFF7FEFF 		bl	shci_send
+ 1400              	.LVL135:
+ 604:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 605:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 606:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 607:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 608:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1401              		.loc 1 608 3 is_stmt 1 view .LVU358
+ 609:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1402              		.loc 1 609 1 is_stmt 0 view .LVU359
+ 1403 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1404 001a 05B0     		add	sp, sp, #20
+ 1405              		.cfi_def_cfa_offset 4
+ 1406              	.LVL136:
+ 1407              		.loc 1 609 1 view .LVU360
+ 1408              		@ sp needed
+ 1409 001c 5DF804FB 		ldr	pc, [sp], #4
+ 1410              		.loc 1 609 1 view .LVU361
+ 1411              		.cfi_endproc
+ 1412              	.LFE1134:
+ 1414              		.section	.text.SHCI_C2_Config,"ax",%progbits
+ 1415              		.align	1
+ 1416              		.global	SHCI_C2_Config
+ 1417              		.syntax unified
+ 1418              		.thumb
+ 1419              		.thumb_func
+ 1421              	SHCI_C2_Config:
+ 1422              	.LVL137:
+ 1423              	.LFB1135:
+ 610:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 611:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_Config(SHCI_C2_CONFIG_Cmd_Param_t *pCmdPacket)
+ 612:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1424              		.loc 1 612 1 is_stmt 1 view -0
+ 1425              		.cfi_startproc
+ 1426              		@ args = 0, pretend = 0, frame = 16
+ 1427              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1428              		.loc 1 612 1 is_stmt 0 view .LVU363
+ 1429 0000 00B5     		push	{lr}
+ 1430              		.cfi_def_cfa_offset 4
+ 1431              		.cfi_offset 14, -4
+ 1432 0002 85B0     		sub	sp, sp, #20
+ 1433              		.cfi_def_cfa_offset 24
+ 1434 0004 0246     		mov	r2, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 36
+
+
+ 613:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 614:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 615:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 616:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1435              		.loc 1 616 3 is_stmt 1 view .LVU364
+ 617:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1436              		.loc 1 617 3 view .LVU365
+ 618:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 619:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1437              		.loc 1 619 3 view .LVU366
+ 1438              	.LVL138:
+ 620:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 621:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_CONFIG,
+ 1439              		.loc 1 621 3 view .LVU367
+ 1440 0006 6B46     		mov	r3, sp
+ 1441 0008 1021     		movs	r1, #16
+ 1442 000a 4FF67540 		movw	r0, #64629
+ 1443              	.LVL139:
+ 1444              		.loc 1 621 3 is_stmt 0 view .LVU368
+ 1445 000e FFF7FEFF 		bl	shci_send
+ 1446              	.LVL140:
+ 622:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              sizeof(SHCI_C2_CONFIG_Cmd_Param_t),
+ 623:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              (uint8_t*)pCmdPacket,
+ 624:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 625:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 626:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1447              		.loc 1 626 3 is_stmt 1 view .LVU369
+ 627:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1448              		.loc 1 627 1 is_stmt 0 view .LVU370
+ 1449 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1450 0016 05B0     		add	sp, sp, #20
+ 1451              		.cfi_def_cfa_offset 4
+ 1452              	.LVL141:
+ 1453              		.loc 1 627 1 view .LVU371
+ 1454              		@ sp needed
+ 1455 0018 5DF804FB 		ldr	pc, [sp], #4
+ 1456              		.loc 1 627 1 view .LVU372
+ 1457              		.cfi_endproc
+ 1458              	.LFE1135:
+ 1460              		.section	.text.SHCI_C2_802_15_4_DeInit,"ax",%progbits
+ 1461              		.align	1
+ 1462              		.global	SHCI_C2_802_15_4_DeInit
+ 1463              		.syntax unified
+ 1464              		.thumb
+ 1465              		.thumb_func
+ 1467              	SHCI_C2_802_15_4_DeInit:
+ 1468              	.LFB1136:
+ 628:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 629:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_802_15_4_DeInit( void )
+ 630:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1469              		.loc 1 630 1 is_stmt 1 view -0
+ 1470              		.cfi_startproc
+ 1471              		@ args = 0, pretend = 0, frame = 16
+ 1472              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1473 0000 00B5     		push	{lr}
+ 1474              		.cfi_def_cfa_offset 4
+ 1475              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 37
+
+
+ 1476 0002 85B0     		sub	sp, sp, #20
+ 1477              		.cfi_def_cfa_offset 24
+ 631:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 632:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 633:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 634:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1478              		.loc 1 634 3 view .LVU374
+ 635:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1479              		.loc 1 635 3 view .LVU375
+ 636:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 637:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1480              		.loc 1 637 3 view .LVU376
+ 1481              	.LVL142:
+ 638:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 639:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_802_15_4_DEINIT,
+ 1482              		.loc 1 639 3 view .LVU377
+ 1483 0004 6B46     		mov	r3, sp
+ 1484 0006 0022     		movs	r2, #0
+ 1485 0008 1146     		mov	r1, r2
+ 1486 000a 4FF67840 		movw	r0, #64632
+ 1487 000e FFF7FEFF 		bl	shci_send
+ 1488              	.LVL143:
+ 640:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 641:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              0,
+ 642:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 643:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 644:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1489              		.loc 1 644 3 view .LVU378
+ 645:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1490              		.loc 1 645 1 is_stmt 0 view .LVU379
+ 1491 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1492 0016 05B0     		add	sp, sp, #20
+ 1493              		.cfi_def_cfa_offset 4
+ 1494              	.LVL144:
+ 1495              		.loc 1 645 1 view .LVU380
+ 1496              		@ sp needed
+ 1497 0018 5DF804FB 		ldr	pc, [sp], #4
+ 1498              		.loc 1 645 1 view .LVU381
+ 1499              		.cfi_endproc
+ 1500              	.LFE1136:
+ 1502              		.section	.text.SHCI_C2_SetSystemClock,"ax",%progbits
+ 1503              		.align	1
+ 1504              		.global	SHCI_C2_SetSystemClock
+ 1505              		.syntax unified
+ 1506              		.thumb
+ 1507              		.thumb_func
+ 1509              	SHCI_C2_SetSystemClock:
+ 1510              	.LVL145:
+ 1511              	.LFB1137:
+ 646:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 647:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_C2_SetSystemClock( SHCI_C2_SET_SYSTEM_CLOCK_Cmd_Param_t clockSel )
+ 648:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1512              		.loc 1 648 1 is_stmt 1 view -0
+ 1513              		.cfi_startproc
+ 1514              		@ args = 0, pretend = 0, frame = 16
+ 1515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1516              		.loc 1 648 1 is_stmt 0 view .LVU383
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 38
+
+
+ 1517 0000 00B5     		push	{lr}
+ 1518              		.cfi_def_cfa_offset 4
+ 1519              		.cfi_offset 14, -4
+ 1520 0002 85B0     		sub	sp, sp, #20
+ 1521              		.cfi_def_cfa_offset 24
+ 649:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 650:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Buffer is large enough to hold command complete without payload
+ 651:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 652:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint8_t local_buffer[TL_BLEEVT_CC_BUFFER_SIZE];
+ 1522              		.loc 1 652 3 is_stmt 1 view .LVU384
+ 653:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   TL_EvtPacket_t * p_rsp;
+ 1523              		.loc 1 653 3 view .LVU385
+ 654:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 655:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_rsp = (TL_EvtPacket_t *)local_buffer;
+ 1524              		.loc 1 655 3 view .LVU386
+ 1525              	.LVL146:
+ 656:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   
+ 657:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   local_buffer[0] = (uint8_t)clockSel;
+ 1526              		.loc 1 657 3 view .LVU387
+ 1527              		.loc 1 657 19 is_stmt 0 view .LVU388
+ 1528 0004 8DF80000 		strb	r0, [sp]
+ 658:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   shci_send( SHCI_OPCODE_C2_SET_SYSTEM_CLOCK,
+ 1529              		.loc 1 659 3 is_stmt 1 view .LVU389
+ 1530 0008 6B46     		mov	r3, sp
+ 1531 000a 6A46     		mov	r2, sp
+ 1532 000c 0121     		movs	r1, #1
+ 1533 000e 4FF67940 		movw	r0, #64633
+ 1534              	.LVL147:
+ 1535              		.loc 1 659 3 is_stmt 0 view .LVU390
+ 1536 0012 FFF7FEFF 		bl	shci_send
+ 1537              	.LVL148:
+ 660:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              1,
+ 661:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              local_buffer,
+ 662:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****              p_rsp );
+ 663:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 664:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_CmdStatus_t)(((TL_CcEvt_t*)(p_rsp->evtserial.evt.payload))->payload[0]);
+ 1538              		.loc 1 664 3 is_stmt 1 view .LVU391
+ 665:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1539              		.loc 1 665 1 is_stmt 0 view .LVU392
+ 1540 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 1541 001a 05B0     		add	sp, sp, #20
+ 1542              		.cfi_def_cfa_offset 4
+ 1543              	.LVL149:
+ 1544              		.loc 1 665 1 view .LVU393
+ 1545              		@ sp needed
+ 1546 001c 5DF804FB 		ldr	pc, [sp], #4
+ 1547              		.loc 1 665 1 view .LVU394
+ 1548              		.cfi_endproc
+ 1549              	.LFE1137:
+ 1551              		.section	.text.SHCI_GetWirelessFwInfo,"ax",%progbits
+ 1552              		.align	1
+ 1553              		.global	SHCI_GetWirelessFwInfo
+ 1554              		.syntax unified
+ 1555              		.thumb
+ 1556              		.thumb_func
+ 1558              	SHCI_GetWirelessFwInfo:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 39
+
+
+ 1559              	.LVL150:
+ 1560              	.LFB1138:
+ 666:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 667:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** /**
+ 668:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *  Local System COMMAND
+ 669:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  *  These commands are NOT sent to the CPU2
+ 670:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****  */
+ 671:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 672:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** SHCI_CmdStatus_t SHCI_GetWirelessFwInfo( WirelessFwInfo_t* pWirelessInfo )
+ 673:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** {
+ 1561              		.loc 1 673 1 is_stmt 1 view -0
+ 1562              		.cfi_startproc
+ 1563              		@ args = 0, pretend = 0, frame = 0
+ 1564              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1565              		@ link register save eliminated.
+ 1566              		.loc 1 673 1 is_stmt 0 view .LVU396
+ 1567 0000 30B4     		push	{r4, r5}
+ 1568              		.cfi_def_cfa_offset 8
+ 1569              		.cfi_offset 4, -8
+ 1570              		.cfi_offset 5, -4
+ 674:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t ipccdba = 0;
+ 1571              		.loc 1 674 3 is_stmt 1 view .LVU397
+ 1572              	.LVL151:
+ 675:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   MB_RefTable_t * p_RefTable = NULL;
+ 1573              		.loc 1 675 3 view .LVU398
+ 676:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t wireless_firmware_version = 0;
+ 1574              		.loc 1 676 3 view .LVU399
+ 677:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t wireless_firmware_memorySize = 0;
+ 1575              		.loc 1 677 3 view .LVU400
+ 678:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t wireless_firmware_infoStack = 0;
+ 1576              		.loc 1 678 3 view .LVU401
+ 679:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   MB_FUS_DeviceInfoTable_t * p_fus_device_info_table = NULL;
+ 1577              		.loc 1 679 3 view .LVU402
+ 680:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t fus_version = 0;
+ 1578              		.loc 1 680 3 view .LVU403
+ 681:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   uint32_t fus_memorySize = 0;
+ 1579              		.loc 1 681 3 view .LVU404
+ 682:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 683:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   ipccdba = READ_BIT( FLASH->IPCCBR, FLASH_IPCCBR_IPCCDBA );
+ 1580              		.loc 1 683 3 view .LVU405
+ 1581              		.loc 1 683 13 is_stmt 0 view .LVU406
+ 1582 0002 214B     		ldr	r3, .L75
+ 1583 0004 DB6B     		ldr	r3, [r3, #60]
+ 1584              		.loc 1 683 11 view .LVU407
+ 1585 0006 C3F30D03 		ubfx	r3, r3, #0, #14
+ 1586              	.LVL152:
+ 684:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 685:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 686:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * The Device Info Table mapping depends on which firmware is running on CPU2.
+ 687:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * If the FUS is running on CPU2, FUS_DEVICE_INFO_TABLE_VALIDITY_KEYWORD shall be written in the 
+ 688:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    * Otherwise, it means the Wireless Firmware is running on the CPU2
+ 689:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 690:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   p_fus_device_info_table = (MB_FUS_DeviceInfoTable_t*)(*(uint32_t*)((ipccdba<<2) + SRAM2A_BASE));
+ 1587              		.loc 1 690 3 is_stmt 1 view .LVU408
+ 1588              		.loc 1 690 78 is_stmt 0 view .LVU409
+ 1589 000a 9B00     		lsls	r3, r3, #2
+ 1590              	.LVL153:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 40
+
+
+ 1591              		.loc 1 690 83 view .LVU410
+ 1592 000c 03F10053 		add	r3, r3, #536870912
+ 1593 0010 03F54033 		add	r3, r3, #196608
+ 1594              		.loc 1 690 57 view .LVU411
+ 1595 0014 1A68     		ldr	r2, [r3]
+ 1596              	.LVL154:
+ 691:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 692:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   if(p_fus_device_info_table->DeviceInfoTableState == FUS_DEVICE_INFO_TABLE_VALIDITY_KEYWORD)
+ 1597              		.loc 1 692 3 is_stmt 1 view .LVU412
+ 1598              		.loc 1 692 29 is_stmt 0 view .LVU413
+ 1599 0016 1168     		ldr	r1, [r2]
+ 1600              		.loc 1 692 5 view .LVU414
+ 1601 0018 1C4B     		ldr	r3, .L75+4
+ 1602 001a 9942     		cmp	r1, r3
+ 1603 001c 2DD0     		beq	.L74
+ 693:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+ 694:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /* The FUS is running on CPU2 */
+ 695:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /**
+ 696:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  Retrieve the WirelessFwInfoTable
+ 697:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 698:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      */
+ 699:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_version =  p_fus_device_info_table->WirelessStackVersion;
+ 700:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_memorySize =  p_fus_device_info_table->WirelessStackMemorySize;
+ 701:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_infoStack =  p_fus_device_info_table->WirelessFirmwareBleInfo;
+ 702:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 703:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /**
+ 704:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  Retrieve the FusInfoTable
+ 705:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 706:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      */
+ 707:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_version =  p_fus_device_info_table->FusVersion;
+ 708:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_memorySize =  p_fus_device_info_table->FusMemorySize;
+ 709:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 710:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   else
+ 711:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   {
+ 712:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /* The Wireless Firmware is running on CPU2 */
+ 713:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     p_RefTable = (MB_RefTable_t*)((ipccdba<<2) + SRAM2A_BASE);
+ 1604              		.loc 1 713 5 is_stmt 1 view .LVU415
+ 1605              	.LVL155:
+ 714:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 715:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /**
+ 716:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  Retrieve the WirelessFwInfoTable
+ 717:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 718:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      */
+ 719:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_version =  p_RefTable->p_device_info_table->WirelessFwInfoTable.Version;
+ 1606              		.loc 1 719 5 view .LVU416
+ 1607              		.loc 1 719 31 is_stmt 0 view .LVU417
+ 1608 001e 1369     		ldr	r3, [r2, #16]	@ unaligned
+ 1609              	.LVL156:
+ 720:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_memorySize =  p_RefTable->p_device_info_table->WirelessFwInfoTable.MemorySize
+ 1610              		.loc 1 720 5 is_stmt 1 view .LVU418
+ 1611              		.loc 1 720 34 is_stmt 0 view .LVU419
+ 1612 0020 5469     		ldr	r4, [r2, #20]	@ unaligned
+ 1613              	.LVL157:
+ 721:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_infoStack =  p_RefTable->p_device_info_table->WirelessFwInfoTable.InfoStack;
+ 1614              		.loc 1 721 5 is_stmt 1 view .LVU420
+ 1615              		.loc 1 721 33 is_stmt 0 view .LVU421
+ 1616 0022 9569     		ldr	r5, [r2, #24]	@ unaligned
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 41
+
+
+ 1617              	.LVL158:
+ 722:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 723:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     /**
+ 724:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  Retrieve the FusInfoTable
+ 725:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 726:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****      */
+ 727:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_version =  p_RefTable->p_device_info_table->FusInfoTable.Version;
+ 1618              		.loc 1 727 5 is_stmt 1 view .LVU422
+ 1619              		.loc 1 727 17 is_stmt 0 view .LVU423
+ 1620 0024 5168     		ldr	r1, [r2, #4]	@ unaligned
+ 1621              	.LVL159:
+ 728:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_memorySize =  p_RefTable->p_device_info_table->FusInfoTable.MemorySize;
+ 1622              		.loc 1 728 5 is_stmt 1 view .LVU424
+ 1623              		.loc 1 728 20 is_stmt 0 view .LVU425
+ 1624 0026 9268     		ldr	r2, [r2, #8]	@ unaligned
+ 1625              	.LVL160:
+ 1626              	.L72:
+ 729:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 730:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 731:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 732:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    *  Retrieve the WirelessFwInfoTable
+ 733:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 734:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 735:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->VersionMajor       = ((wireless_firmware_version & INFO_VERSION_MAJOR_MASK) >> INF
+ 1627              		.loc 1 735 3 is_stmt 1 view .LVU426
+ 1628              		.loc 1 735 94 is_stmt 0 view .LVU427
+ 1629 0028 4FEA136C 		lsr	ip, r3, #24
+ 1630              		.loc 1 735 37 view .LVU428
+ 1631 002c 80F800C0 		strb	ip, [r0]
+ 736:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->VersionMinor       = ((wireless_firmware_version & INFO_VERSION_MINOR_MASK) >> INF
+ 1632              		.loc 1 736 3 is_stmt 1 view .LVU429
+ 1633              		.loc 1 736 94 is_stmt 0 view .LVU430
+ 1634 0030 4FEA134C 		lsr	ip, r3, #16
+ 1635              		.loc 1 736 37 view .LVU431
+ 1636 0034 80F801C0 		strb	ip, [r0, #1]
+ 737:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->VersionSub         = ((wireless_firmware_version & INFO_VERSION_SUB_MASK) >> INFO_
+ 1637              		.loc 1 737 3 is_stmt 1 view .LVU432
+ 1638              		.loc 1 737 92 is_stmt 0 view .LVU433
+ 1639 0038 4FEA132C 		lsr	ip, r3, #8
+ 1640              		.loc 1 737 37 view .LVU434
+ 1641 003c 80F802C0 		strb	ip, [r0, #2]
+ 738:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->VersionBranch      = ((wireless_firmware_version & INFO_VERSION_BRANCH_MASK) >> IN
+ 1642              		.loc 1 738 3 is_stmt 1 view .LVU435
+ 1643              		.loc 1 738 95 is_stmt 0 view .LVU436
+ 1644 0040 C3F3031C 		ubfx	ip, r3, #4, #4
+ 1645              		.loc 1 738 37 view .LVU437
+ 1646 0044 80F803C0 		strb	ip, [r0, #3]
+ 739:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->VersionReleaseType = ((wireless_firmware_version & INFO_VERSION_TYPE_MASK) >> INFO
+ 1647              		.loc 1 739 3 is_stmt 1 view .LVU438
+ 1648              		.loc 1 739 93 is_stmt 0 view .LVU439
+ 1649 0048 03F00F03 		and	r3, r3, #15
+ 1650              	.LVL161:
+ 1651              		.loc 1 739 37 view .LVU440
+ 1652 004c 0371     		strb	r3, [r0, #4]
+ 740:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 741:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->MemorySizeSram2B   = ((wireless_firmware_memorySize & INFO_SIZE_SRAM2B_MASK) >> IN
+ 1653              		.loc 1 741 3 is_stmt 1 view .LVU441
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 42
+
+
+ 1654              		.loc 1 741 95 is_stmt 0 view .LVU442
+ 1655 004e 230E     		lsrs	r3, r4, #24
+ 1656              		.loc 1 741 37 view .LVU443
+ 1657 0050 4371     		strb	r3, [r0, #5]
+ 742:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->MemorySizeSram2A   = ((wireless_firmware_memorySize & INFO_SIZE_SRAM2A_MASK) >> IN
+ 1658              		.loc 1 742 3 is_stmt 1 view .LVU444
+ 1659              		.loc 1 742 95 is_stmt 0 view .LVU445
+ 1660 0052 230C     		lsrs	r3, r4, #16
+ 1661              		.loc 1 742 37 view .LVU446
+ 1662 0054 8371     		strb	r3, [r0, #6]
+ 743:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->MemorySizeSram1    = ((wireless_firmware_memorySize & INFO_SIZE_SRAM1_MASK) >> INF
+ 1663              		.loc 1 743 3 is_stmt 1 view .LVU447
+ 1664              		.loc 1 743 94 is_stmt 0 view .LVU448
+ 1665 0056 230A     		lsrs	r3, r4, #8
+ 1666              		.loc 1 743 37 view .LVU449
+ 1667 0058 C371     		strb	r3, [r0, #7]
+ 744:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->MemorySizeFlash    = ((wireless_firmware_memorySize & INFO_SIZE_FLASH_MASK) >> INF
+ 1668              		.loc 1 744 3 is_stmt 1 view .LVU450
+ 1669              		.loc 1 744 37 is_stmt 0 view .LVU451
+ 1670 005a 0472     		strb	r4, [r0, #8]
+ 745:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 746:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->StackType          = ((wireless_firmware_infoStack & INFO_STACK_TYPE_MASK) >> INFO
+ 1671              		.loc 1 746 3 is_stmt 1 view .LVU452
+ 1672              		.loc 1 746 37 is_stmt 0 view .LVU453
+ 1673 005c 4572     		strb	r5, [r0, #9]
+ 747:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 748:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   /**
+ 749:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    *  Retrieve the FusInfoTable
+ 750:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    *  This table is stored in RAM at startup during the TL (transport layer) initialization
+ 751:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****    */
+ 752:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusVersionMajor       = ((fus_version & INFO_VERSION_MAJOR_MASK) >> INFO_VERSION_M
+ 1674              		.loc 1 752 3 is_stmt 1 view .LVU454
+ 1675              		.loc 1 752 83 is_stmt 0 view .LVU455
+ 1676 005e 0B0E     		lsrs	r3, r1, #24
+ 1677              		.loc 1 752 40 view .LVU456
+ 1678 0060 8372     		strb	r3, [r0, #10]
+ 753:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusVersionMinor       = ((fus_version & INFO_VERSION_MINOR_MASK) >> INFO_VERSION_M
+ 1679              		.loc 1 753 3 is_stmt 1 view .LVU457
+ 1680              		.loc 1 753 83 is_stmt 0 view .LVU458
+ 1681 0062 0B0C     		lsrs	r3, r1, #16
+ 1682              		.loc 1 753 40 view .LVU459
+ 1683 0064 C372     		strb	r3, [r0, #11]
+ 754:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusVersionSub         = ((fus_version & INFO_VERSION_SUB_MASK) >> INFO_VERSION_SUB
+ 1684              		.loc 1 754 3 is_stmt 1 view .LVU460
+ 1685              		.loc 1 754 81 is_stmt 0 view .LVU461
+ 1686 0066 090A     		lsrs	r1, r1, #8
+ 1687              	.LVL162:
+ 1688              		.loc 1 754 40 view .LVU462
+ 1689 0068 0173     		strb	r1, [r0, #12]
+ 755:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 756:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusMemorySizeSram2B   = ((fus_memorySize & INFO_SIZE_SRAM2B_MASK) >> INFO_SIZE_SRA
+ 1690              		.loc 1 756 3 is_stmt 1 view .LVU463
+ 1691              		.loc 1 756 84 is_stmt 0 view .LVU464
+ 1692 006a 130E     		lsrs	r3, r2, #24
+ 1693              		.loc 1 756 40 view .LVU465
+ 1694 006c 4373     		strb	r3, [r0, #13]
+ 757:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusMemorySizeSram2A   = ((fus_memorySize & INFO_SIZE_SRAM2A_MASK) >> INFO_SIZE_SRA
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 43
+
+
+ 1695              		.loc 1 757 3 is_stmt 1 view .LVU466
+ 1696              		.loc 1 757 84 is_stmt 0 view .LVU467
+ 1697 006e 130C     		lsrs	r3, r2, #16
+ 1698              		.loc 1 757 40 view .LVU468
+ 1699 0070 8373     		strb	r3, [r0, #14]
+ 758:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   pWirelessInfo->FusMemorySizeFlash    = ((fus_memorySize & INFO_SIZE_FLASH_MASK) >> INFO_SIZE_FLAS
+ 1700              		.loc 1 758 3 is_stmt 1 view .LVU469
+ 1701              		.loc 1 758 40 is_stmt 0 view .LVU470
+ 1702 0072 C273     		strb	r2, [r0, #15]
+ 759:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 760:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   return (SHCI_Success);
+ 1703              		.loc 1 760 3 is_stmt 1 view .LVU471
+ 761:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** }
+ 1704              		.loc 1 761 1 is_stmt 0 view .LVU472
+ 1705 0074 0020     		movs	r0, #0
+ 1706              	.LVL163:
+ 1707              		.loc 1 761 1 view .LVU473
+ 1708 0076 30BC     		pop	{r4, r5}
+ 1709              		.cfi_remember_state
+ 1710              		.cfi_restore 5
+ 1711              		.cfi_restore 4
+ 1712              		.cfi_def_cfa_offset 0
+ 1713              	.LVL164:
+ 1714              		.loc 1 761 1 view .LVU474
+ 1715 0078 7047     		bx	lr
+ 1716              	.LVL165:
+ 1717              	.L74:
+ 1718              		.cfi_restore_state
+ 699:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_memorySize =  p_fus_device_info_table->WirelessStackMemorySize;
+ 1719              		.loc 1 699 5 is_stmt 1 view .LVU475
+ 699:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_memorySize =  p_fus_device_info_table->WirelessStackMemorySize;
+ 1720              		.loc 1 699 31 is_stmt 0 view .LVU476
+ 1721 007a 5369     		ldr	r3, [r2, #20]
+ 1722              	.LVL166:
+ 700:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_infoStack =  p_fus_device_info_table->WirelessFirmwareBleInfo;
+ 1723              		.loc 1 700 5 is_stmt 1 view .LVU477
+ 700:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     wireless_firmware_infoStack =  p_fus_device_info_table->WirelessFirmwareBleInfo;
+ 1724              		.loc 1 700 34 is_stmt 0 view .LVU478
+ 1725 007c 9469     		ldr	r4, [r2, #24]
+ 1726              	.LVL167:
+ 701:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 1727              		.loc 1 701 5 is_stmt 1 view .LVU479
+ 701:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c **** 
+ 1728              		.loc 1 701 33 is_stmt 0 view .LVU480
+ 1729 007e D569     		ldr	r5, [r2, #28]
+ 1730              	.LVL168:
+ 707:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_memorySize =  p_fus_device_info_table->FusMemorySize;
+ 1731              		.loc 1 707 5 is_stmt 1 view .LVU481
+ 707:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****     fus_memorySize =  p_fus_device_info_table->FusMemorySize;
+ 1732              		.loc 1 707 17 is_stmt 0 view .LVU482
+ 1733 0080 D168     		ldr	r1, [r2, #12]
+ 1734              	.LVL169:
+ 708:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 1735              		.loc 1 708 5 is_stmt 1 view .LVU483
+ 708:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 1736              		.loc 1 708 20 is_stmt 0 view .LVU484
+ 1737 0082 1269     		ldr	r2, [r2, #16]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 44
+
+
+ 1738              	.LVL170:
+ 708:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c ****   }
+ 1739              		.loc 1 708 20 view .LVU485
+ 1740 0084 D0E7     		b	.L72
+ 1741              	.L76:
+ 1742 0086 00BF     		.align	2
+ 1743              	.L75:
+ 1744 0088 00400058 		.word	1476411392
+ 1745 008c B95646A9 		.word	-1455008071
+ 1746              		.cfi_endproc
+ 1747              	.LFE1138:
+ 1749              		.text
+ 1750              	.Letext0:
+ 1751              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1752              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1753              		.file 4 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
+ 1754              		.file 5 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/mbox_def.h"
+ 1755              		.file 6 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.h"
+ 1756              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1757              		.file 8 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/shci_tl.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 45
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 shci.c
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:21     .text.SHCI_C2_FUS_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:27     .text.SHCI_C2_FUS_GetState:00000000 SHCI_C2_FUS_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:78     .text.SHCI_C2_FUS_FwUpgrade:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:84     .text.SHCI_C2_FUS_FwUpgrade:00000000 SHCI_C2_FUS_FwUpgrade
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:164    .text.SHCI_C2_FUS_FwDelete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:170    .text.SHCI_C2_FUS_FwDelete:00000000 SHCI_C2_FUS_FwDelete
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:206    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:212    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 SHCI_C2_FUS_UpdateAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:252    .text.SHCI_C2_FUS_LockAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:258    .text.SHCI_C2_FUS_LockAuthKey:00000000 SHCI_C2_FUS_LockAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:294    .text.SHCI_C2_FUS_StoreUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:300    .text.SHCI_C2_FUS_StoreUsrKey:00000000 SHCI_C2_FUS_StoreUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:372    .text.SHCI_C2_FUS_LoadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:378    .text.SHCI_C2_FUS_LoadUsrKey:00000000 SHCI_C2_FUS_LoadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:421    .text.SHCI_C2_FUS_StartWs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:427    .text.SHCI_C2_FUS_StartWs:00000000 SHCI_C2_FUS_StartWs
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:463    .text.SHCI_C2_FUS_LockUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:469    .text.SHCI_C2_FUS_LockUsrKey:00000000 SHCI_C2_FUS_LockUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:512    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:518    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 SHCI_C2_FUS_UnloadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:561    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:567    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 SHCI_C2_FUS_ActivateAntiRollback
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:603    .text.SHCI_C2_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:609    .text.SHCI_C2_BLE_Init:00000000 SHCI_C2_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:649    .text.SHCI_C2_THREAD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:655    .text.SHCI_C2_THREAD_Init:00000000 SHCI_C2_THREAD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:691    .text.SHCI_C2_LLDTESTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:697    .text.SHCI_C2_LLDTESTS_Init:00000000 SHCI_C2_LLDTESTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:739    .text.SHCI_C2_BLE_LLD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:745    .text.SHCI_C2_BLE_LLD_Init:00000000 SHCI_C2_BLE_LLD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:787    .text.SHCI_C2_ZIGBEE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:793    .text.SHCI_C2_ZIGBEE_Init:00000000 SHCI_C2_ZIGBEE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:829    .text.SHCI_C2_DEBUG_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:835    .text.SHCI_C2_DEBUG_Init:00000000 SHCI_C2_DEBUG_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:875    .text.SHCI_C2_FLASH_EraseActivity:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:881    .text.SHCI_C2_FLASH_EraseActivity:00000000 SHCI_C2_FLASH_EraseActivity
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:924    .text.SHCI_C2_CONCURRENT_SetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:930    .text.SHCI_C2_CONCURRENT_SetMode:00000000 SHCI_C2_CONCURRENT_SetMode
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:973    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:979    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 SHCI_C2_CONCURRENT_GetNextBleEvtTime
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1024   .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1030   .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1066   .text.SHCI_C2_FLASH_StoreData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1072   .text.SHCI_C2_FLASH_StoreData:00000000 SHCI_C2_FLASH_StoreData
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1115   .text.SHCI_C2_FLASH_EraseData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1121   .text.SHCI_C2_FLASH_EraseData:00000000 SHCI_C2_FLASH_EraseData
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1164   .text.SHCI_C2_RADIO_AllowLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1170   .text.SHCI_C2_RADIO_AllowLowPower:00000000 SHCI_C2_RADIO_AllowLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1218   .text.SHCI_C2_MAC_802_15_4_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1224   .text.SHCI_C2_MAC_802_15_4_Init:00000000 SHCI_C2_MAC_802_15_4_Init
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1260   .text.SHCI_C2_Reinit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1266   .text.SHCI_C2_Reinit:00000000 SHCI_C2_Reinit
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1302   .text.SHCI_C2_ExtpaConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1308   .text.SHCI_C2_ExtpaConfig:00000000 SHCI_C2_ExtpaConfig
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1366   .text.SHCI_C2_SetFlashActivityControl:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s 			page 46
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1372   .text.SHCI_C2_SetFlashActivityControl:00000000 SHCI_C2_SetFlashActivityControl
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1415   .text.SHCI_C2_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1421   .text.SHCI_C2_Config:00000000 SHCI_C2_Config
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1461   .text.SHCI_C2_802_15_4_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1467   .text.SHCI_C2_802_15_4_DeInit:00000000 SHCI_C2_802_15_4_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1503   .text.SHCI_C2_SetSystemClock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1509   .text.SHCI_C2_SetSystemClock:00000000 SHCI_C2_SetSystemClock
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1552   .text.SHCI_GetWirelessFwInfo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1558   .text.SHCI_GetWirelessFwInfo:00000000 SHCI_GetWirelessFwInfo
+C:\Users\Nathan\AppData\Local\Temp\ccazP7TI.s:1744   .text.SHCI_GetWirelessFwInfo:00000088 $d
+
+UNDEFINED SYMBOLS
+shci_send

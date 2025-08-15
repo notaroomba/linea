@@ -1,0 +1,842 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_hsem.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c"
+  20              		.section	.text.HAL_HSEM_Take,"ax",%progbits
+  21              		.align	1
+  22              		.global	HAL_HSEM_Take
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	HAL_HSEM_Take:
+  28              	.LVL0:
+  29              	.LFB1104:
+   1:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+   2:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
+   3:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @file    stm32wbxx_hal_hsem.c
+   4:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @author  MCD Application Team
+   5:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief   HSEM HAL module driver.
+   6:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *          This file provides firmware functions to manage the following
+   7:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *          functionalities of the semaphore peripheral:
+   8:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Semaphore Take function (2-Step Procedure) , non blocking
+   9:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Semaphore FastTake function (1-Step Procedure) , non blocking
+  10:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Semaphore Status check
+  11:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Semaphore Clear Key Set and Get
+  12:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Release and release all functions
+  13:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + Semaphore notification enabling and disabling and callnack functions
+  14:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *           + IRQ handler management
+  15:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+  16:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+  17:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
+  18:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @attention
+  19:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+  20:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * Copyright (c) 2019 STMicroelectronics.
+  21:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * All rights reserved.
+  22:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+  23:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  24:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * in the root directory of this software component.
+  25:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  26:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+  27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
+  28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   @verbatim
+  29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 2
+
+
+  30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                      ##### How to use this driver #####
+  31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+  32:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   [..]
+  33:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#)Take a semaphore In 2-Step mode Using function HAL_HSEM_Take. This function takes as param
+  34:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the semaphore ID from 0 to 31
+  35:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the process ID from 0 to 255
+  36:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#) Fast Take semaphore In 1-Step mode Using function HAL_HSEM_FastTake. This function takes 
+  37:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the semaphore ID from 0_ID to 31. Note that the process ID value is implicitly assu
+  38:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#) Check if a semaphore is Taken using function HAL_HSEM_IsSemTaken. This function takes as 
+  39:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****           (++) the semaphore ID from 0_ID to 31
+  40:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****           (++) It returns 1 if the given semaphore is taken otherwise (Free) zero
+  41:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#)Release a semaphore using function with HAL_HSEM_Release. This function takes as parameter
+  42:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the semaphore ID from 0 to 31
+  43:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the process ID from 0 to 255:
+  44:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) Note: If ProcessID and MasterID match, semaphore is freed, and an interrupt
+  45:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          may be generated when enabled (notification activated). If ProcessID or MasterID does not 
+  46:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          semaphore remains taken (locked)
+  47:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  48:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#)Release all semaphores at once taken by a given Master using function HAL_HSEM_Release_All
+  49:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****           This function takes as parameters :
+  50:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the Release Key (value from 0 to 0xFFFF) can be Set or Get respectively by
+  51:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****               HAL_HSEM_SetClearKey() or HAL_HSEM_GetClearKey functions
+  52:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) the Master ID:
+  53:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            (++) Note: If the Key and MasterID match, all semaphores taken by the given CPU that cor
+  54:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            to MasterID  will be freed, and an interrupt may be generated when enabled (notification
+  55:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****            Key or the MasterID doesn't match, semaphores remains taken (locked)
+  56:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  57:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#)Semaphores Release all key functions:
+  58:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          (++)  HAL_HSEM_SetClearKey() to set semaphore release all Key
+  59:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          (++)  HAL_HSEM_GetClearKey() to get release all Key
+  60:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (#)Semaphores notification functions :
+  61:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          (++)  HAL_HSEM_ActivateNotification to activate a notification callback on
+  62:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                a given semaphores Mask (bitfield). When one or more semaphores defined by the mask 
+  63:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                the callback HAL_HSEM_FreeCallback will be asserted giving as parameters a mask of t
+  64:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                semaphores (bitfield).
+  65:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  66:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          (++)  HAL_HSEM_DeactivateNotification to deactivate the notification of a given semaphores
+  67:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****          (++) See the description of the macro __HAL_HSEM_SEMID_TO_MASK to check how to calculate a
+  68:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                 Used by the notification functions
+  69:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****      *** HSEM HAL driver macros list ***
+  70:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****      =============================================
+  71:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****      [..] Below the list of most used macros in HSEM HAL driver.
+  72:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  73:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_SEMID_TO_MASK: Helper macro to convert a Semaphore ID to a Mask.
+  74:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       [..] Example of use :
+  75:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       [..] mask = __HAL_HSEM_SEMID_TO_MASK(8)  |  __HAL_HSEM_SEMID_TO_MASK(21) | __HAL_HSEM_SEMID_T
+  76:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       [..] All next macros take as parameter a semaphore Mask (bitfiled) that can be constructed us
+  77:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_ENABLE_IT: Enable the specified semaphores Mask interrupts.
+  78:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_DISABLE_IT: Disable the specified semaphores Mask interrupts.
+  79:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_GET_IT: Checks whether the specified semaphore interrupt has occurred or not.
+  80:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_GET_FLAG: Get the semaphores status release flags.
+  81:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) __HAL_HSEM_CLEAR_FLAG: Clear the semaphores status release flags.
+  82:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  83:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   @endverbatim
+  84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
+  85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+  86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 3
+
+
+  87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Includes ------------------------------------------------------------------*/
+  88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #include "stm32wbxx_hal.h"
+  89:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  90:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @addtogroup STM32WBxx_HAL_Driver
+  91:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+  92:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+  93:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  94:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM HSEM
+  95:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief HSEM HAL module driver
+  96:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+  97:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+  98:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+  99:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #ifdef HAL_HSEM_MODULE_ENABLED
+ 100:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 101:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private typedef -----------------------------------------------------------*/
+ 102:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private define ------------------------------------------------------------*/
+ 103:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #if defined(DUAL_CORE)
+ 104:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Private_Constants  HSEM Private Constants
+ 105:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+ 106:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 107:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 108:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #ifndef HSEM_R_MASTERID
+ 109:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #define HSEM_R_MASTERID HSEM_R_COREID
+ 110:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #endif
+ 111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #ifndef HSEM_RLR_MASTERID
+ 113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #define HSEM_RLR_MASTERID HSEM_RLR_COREID
+ 114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #endif
+ 115:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 116:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #ifndef HSEM_CR_MASTERID
+ 117:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #define HSEM_CR_MASTERID HSEM_CR_COREID
+ 118:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #endif
+ 119:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 120:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 121:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @}
+ 122:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 123:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** #endif /* DUAL_CORE */
+ 124:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private macro -------------------------------------------------------------*/
+ 125:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private variables ---------------------------------------------------------*/
+ 126:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private function prototypes -----------------------------------------------*/
+ 127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Private functions ---------------------------------------------------------*/
+ 128:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Exported functions --------------------------------------------------------*/
+ 129:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 130:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions  HSEM Exported Functions
+ 131:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+ 132:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 133:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions_Group1 Take and Release functions
+ 135:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *  @brief    HSEM Take and Release functions
+ 136:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+ 137:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @verbatim
+ 138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****  ==============================================================================
+ 139:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****               ##### HSEM Take and Release functions #####
+ 140:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****  ==============================================================================
+ 141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** [..] This section provides functions allowing to:
+ 142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Take a semaphore with 2 Step method
+ 143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Fast Take a semaphore with 1 Step method
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 4
+
+
+ 144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Check semaphore state Taken or not
+ 145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Release a semaphore
+ 146:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Release all semaphore at once
+ 147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @endverbatim
+ 149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+ 150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 151:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 152:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 153:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 154:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Take a semaphore in 2 Step mode.
+ 155:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemID: semaphore ID from 0 to 31
+ 156:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  ProcessID: Process ID from 0 to 255
+ 157:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval HAL status
+ 158:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 159:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** HAL_StatusTypeDef  HAL_HSEM_Take(uint32_t SemID, uint32_t ProcessID)
+ 160:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+  30              		.loc 1 160 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+ 161:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Check the parameters */
+ 162:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_SEMID(SemID));
+  35              		.loc 1 162 3 view .LVU1
+ 163:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_PROCESSID(ProcessID));
+  36              		.loc 1 163 3 view .LVU2
+ 164:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 165:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* First step  write R register with MasterID, processID and take bit=1*/
+ 166:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM->R[SemID] = (ProcessID | HSEM_CR_COREID_CURRENT | HSEM_R_LOCK);
+  37              		.loc 1 166 3 view .LVU3
+  38              		.loc 1 166 56 is_stmt 0 view .LVU4
+  39 0000 41F00041 		orr	r1, r1, #-2147483648
+  40              	.LVL1:
+  41              		.loc 1 166 56 view .LVU5
+  42 0004 41F48061 		orr	r1, r1, #1024
+  43              		.loc 1 166 18 view .LVU6
+  44 0008 054B     		ldr	r3, .L4
+  45 000a 43F82010 		str	r1, [r3, r0, lsl #2]
+ 167:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* second step : read the R register . Take achieved if MasterID and processID match and take bit
+ 169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   if (HSEM->R[SemID] == (ProcessID | HSEM_CR_COREID_CURRENT | HSEM_R_LOCK))
+  46              		.loc 1 169 3 is_stmt 1 view .LVU7
+  47              		.loc 1 169 14 is_stmt 0 view .LVU8
+  48 000e 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  49              		.loc 1 169 6 view .LVU9
+  50 0012 9942     		cmp	r1, r3
+  51 0014 01D0     		beq	.L3
+ 170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   {
+ 171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     /*take success when MasterID and ProcessID match and take bit set*/
+ 172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     return HAL_OK;
+ 173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   }
+ 174:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 175:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Semaphore take fails*/
+ 176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return HAL_ERROR;
+  52              		.loc 1 176 10 view .LVU10
+  53 0016 0120     		movs	r0, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 5
+
+
+  54              	.LVL2:
+  55              		.loc 1 176 10 view .LVU11
+  56 0018 7047     		bx	lr
+  57              	.LVL3:
+  58              	.L3:
+ 172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   }
+  59              		.loc 1 172 12 view .LVU12
+  60 001a 0020     		movs	r0, #0
+  61              	.LVL4:
+ 177:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+  62              		.loc 1 177 1 view .LVU13
+  63 001c 7047     		bx	lr
+  64              	.L5:
+  65 001e 00BF     		.align	2
+  66              	.L4:
+  67 0020 00140058 		.word	1476400128
+  68              		.cfi_endproc
+  69              	.LFE1104:
+  71              		.section	.text.HAL_HSEM_FastTake,"ax",%progbits
+  72              		.align	1
+  73              		.global	HAL_HSEM_FastTake
+  74              		.syntax unified
+  75              		.thumb
+  76              		.thumb_func
+  78              	HAL_HSEM_FastTake:
+  79              	.LVL5:
+  80              	.LFB1105:
+ 178:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 180:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Fast Take a semaphore with 1 Step mode.
+ 181:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemID: semaphore ID from 0 to 31
+ 182:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval HAL status
+ 183:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 184:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** HAL_StatusTypeDef HAL_HSEM_FastTake(uint32_t SemID)
+ 185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+  81              		.loc 1 185 1 is_stmt 1 view -0
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+ 186:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Check the parameters */
+ 187:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_SEMID(SemID));
+  86              		.loc 1 187 3 view .LVU15
+ 188:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 189:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Read the RLR register to take the semaphore */
+ 190:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   if (HSEM->RLR[SemID] == (HSEM_CR_COREID_CURRENT | HSEM_RLR_LOCK))
+  87              		.loc 1 190 3 view .LVU16
+  88              		.loc 1 190 16 is_stmt 0 view .LVU17
+  89 0000 2030     		adds	r0, r0, #32
+  90              	.LVL6:
+  91              		.loc 1 190 16 view .LVU18
+  92 0002 054B     		ldr	r3, .L9
+  93 0004 53F82020 		ldr	r2, [r3, r0, lsl #2]
+  94              		.loc 1 190 6 view .LVU19
+  95 0008 044B     		ldr	r3, .L9+4
+  96 000a 9A42     		cmp	r2, r3
+  97 000c 01D0     		beq	.L8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 6
+
+
+ 191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   {
+ 192:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     /*take success when MasterID match and take bit set*/
+ 193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     return HAL_OK;
+ 194:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   }
+ 195:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 196:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Semaphore take fails */
+ 197:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return HAL_ERROR;
+  98              		.loc 1 197 10 view .LVU20
+  99 000e 0120     		movs	r0, #1
+ 100              	.LVL7:
+ 101              		.loc 1 197 10 view .LVU21
+ 102 0010 7047     		bx	lr
+ 103              	.L8:
+ 193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   }
+ 104              		.loc 1 193 12 view .LVU22
+ 105 0012 0020     		movs	r0, #0
+ 198:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 106              		.loc 1 198 1 view .LVU23
+ 107 0014 7047     		bx	lr
+ 108              	.L10:
+ 109 0016 00BF     		.align	2
+ 110              	.L9:
+ 111 0018 00140058 		.word	1476400128
+ 112 001c 00040080 		.word	-2147482624
+ 113              		.cfi_endproc
+ 114              	.LFE1105:
+ 116              		.section	.text.HAL_HSEM_IsSemTaken,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	HAL_HSEM_IsSemTaken
+ 119              		.syntax unified
+ 120              		.thumb
+ 121              		.thumb_func
+ 123              	HAL_HSEM_IsSemTaken:
+ 124              	.LVL8:
+ 125              	.LFB1106:
+ 199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Check semaphore state Taken or not.
+ 201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemID: semaphore ID
+ 202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval HAL HSEM state
+ 203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 204:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** uint32_t HAL_HSEM_IsSemTaken(uint32_t SemID)
+ 205:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 126              		.loc 1 205 1 is_stmt 1 view -0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		@ link register save eliminated.
+ 206:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return (((HSEM->R[SemID] & HSEM_R_LOCK) != 0U) ? 1UL : 0UL);
+ 131              		.loc 1 206 3 view .LVU25
+ 132              		.loc 1 206 20 is_stmt 0 view .LVU26
+ 133 0000 044B     		ldr	r3, .L15
+ 134 0002 53F82030 		ldr	r3, [r3, r0, lsl #2]
+ 135              		.loc 1 206 56 view .LVU27
+ 136 0006 002B     		cmp	r3, #0
+ 137 0008 01DB     		blt	.L14
+ 138              		.loc 1 206 56 discriminator 2 view .LVU28
+ 139 000a 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 7
+
+
+ 140              	.LVL9:
+ 207:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 141              		.loc 1 207 1 view .LVU29
+ 142 000c 7047     		bx	lr
+ 143              	.LVL10:
+ 144              	.L14:
+ 206:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return (((HSEM->R[SemID] & HSEM_R_LOCK) != 0U) ? 1UL : 0UL);
+ 145              		.loc 1 206 56 discriminator 1 view .LVU30
+ 146 000e 0120     		movs	r0, #1
+ 147              	.LVL11:
+ 206:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return (((HSEM->R[SemID] & HSEM_R_LOCK) != 0U) ? 1UL : 0UL);
+ 148              		.loc 1 206 56 discriminator 1 view .LVU31
+ 149 0010 7047     		bx	lr
+ 150              	.L16:
+ 151 0012 00BF     		.align	2
+ 152              	.L15:
+ 153 0014 00140058 		.word	1476400128
+ 154              		.cfi_endproc
+ 155              	.LFE1106:
+ 157              		.section	.text.HAL_HSEM_Release,"ax",%progbits
+ 158              		.align	1
+ 159              		.global	HAL_HSEM_Release
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	HAL_HSEM_Release:
+ 165              	.LVL12:
+ 166              	.LFB1107:
+ 208:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 209:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 210:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 211:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Release a semaphore.
+ 212:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemID: semaphore ID from 0 to 31
+ 213:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  ProcessID: Process ID from 0 to 255
+ 214:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
+ 215:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void  HAL_HSEM_Release(uint32_t SemID, uint32_t ProcessID)
+ 217:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 167              		.loc 1 217 1 is_stmt 1 view -0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 218:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Check the parameters */
+ 219:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_SEMID(SemID));
+ 172              		.loc 1 219 3 view .LVU33
+ 220:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_PROCESSID(ProcessID));
+ 173              		.loc 1 220 3 view .LVU34
+ 221:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 222:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Clear the semaphore by writing to the R register : the MasterID , the processID and take bit =
+ 223:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM->R[SemID] = (ProcessID | HSEM_CR_COREID_CURRENT);
+ 174              		.loc 1 223 3 view .LVU35
+ 175              		.loc 1 223 31 is_stmt 0 view .LVU36
+ 176 0000 41F48061 		orr	r1, r1, #1024
+ 177              	.LVL13:
+ 178              		.loc 1 223 18 view .LVU37
+ 179 0004 014B     		ldr	r3, .L18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 8
+
+
+ 180 0006 43F82010 		str	r1, [r3, r0, lsl #2]
+ 224:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 181              		.loc 1 225 1 view .LVU38
+ 182 000a 7047     		bx	lr
+ 183              	.L19:
+ 184              		.align	2
+ 185              	.L18:
+ 186 000c 00140058 		.word	1476400128
+ 187              		.cfi_endproc
+ 188              	.LFE1107:
+ 190              		.section	.text.HAL_HSEM_ReleaseAll,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	HAL_HSEM_ReleaseAll
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	HAL_HSEM_ReleaseAll:
+ 198              	.LVL14:
+ 199              	.LFB1108:
+ 226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Release All semaphore used by a given Master .
+ 229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  Key: Semaphore Key , value from 0 to 0xFFFF
+ 230:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  CoreID: CoreID of the CPU that is using semaphores to be released
+ 231:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
+ 232:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 233:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_ReleaseAll(uint32_t Key, uint32_t CoreID)
+ 234:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 200              		.loc 1 234 1 is_stmt 1 view -0
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 204              		@ link register save eliminated.
+ 235:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_KEY(Key));
+ 205              		.loc 1 235 3 view .LVU40
+ 236:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_COREID(CoreID));
+ 206              		.loc 1 236 3 view .LVU41
+ 237:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 238:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM->CR = ((Key << HSEM_CR_KEY_Pos) | (CoreID << HSEM_CR_COREID_Pos));
+ 207              		.loc 1 238 3 view .LVU42
+ 208              		.loc 1 238 50 is_stmt 0 view .LVU43
+ 209 0000 0902     		lsls	r1, r1, #8
+ 210              	.LVL15:
+ 211              		.loc 1 238 40 view .LVU44
+ 212 0002 41EA0041 		orr	r1, r1, r0, lsl #16
+ 213              		.loc 1 238 12 view .LVU45
+ 214 0006 024B     		ldr	r3, .L21
+ 215 0008 C3F84011 		str	r1, [r3, #320]
+ 239:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 216              		.loc 1 239 1 view .LVU46
+ 217 000c 7047     		bx	lr
+ 218              	.L22:
+ 219 000e 00BF     		.align	2
+ 220              	.L21:
+ 221 0010 00140058 		.word	1476400128
+ 222              		.cfi_endproc
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 9
+
+
+ 223              	.LFE1108:
+ 225              		.section	.text.HAL_HSEM_SetClearKey,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	HAL_HSEM_SetClearKey
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	HAL_HSEM_SetClearKey:
+ 233              	.LVL16:
+ 234              	.LFB1109:
+ 240:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 241:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 242:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @}
+ 243:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 244:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 245:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions_Group2 HSEM Set and Get Key functions
+ 246:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *  @brief    HSEM Set and Get Key functions.
+ 247:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+ 248:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @verbatim
+ 249:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+ 250:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****               ##### HSEM Set and Get Key functions #####
+ 251:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+ 252:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     [..]  This section provides functions allowing to:
+ 253:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Set semaphore Key
+ 254:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Get semaphore Key
+ 255:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @endverbatim
+ 256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+ 258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 260:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 261:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Set semaphore Key .
+ 262:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  Key: Semaphore Key , value from 0 to 0xFFFF
+ 263:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
+ 264:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 265:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void  HAL_HSEM_SetClearKey(uint32_t Key)
+ 266:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 235              		.loc 1 266 1 is_stmt 1 view -0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              		@ link register save eliminated.
+ 267:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   assert_param(IS_HSEM_KEY(Key));
+ 240              		.loc 1 267 3 view .LVU48
+ 268:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 269:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   MODIFY_REG(HSEM->KEYR, HSEM_KEYR_KEY, (Key << HSEM_KEYR_KEY_Pos));
+ 241              		.loc 1 269 3 view .LVU49
+ 242 0000 044A     		ldr	r2, .L24
+ 243 0002 D2F84431 		ldr	r3, [r2, #324]
+ 244 0006 9BB2     		uxth	r3, r3
+ 245 0008 43EA0043 		orr	r3, r3, r0, lsl #16
+ 246 000c C2F84431 		str	r3, [r2, #324]
+ 270:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 271:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 247              		.loc 1 271 1 is_stmt 0 view .LVU50
+ 248 0010 7047     		bx	lr
+ 249              	.L25:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 10
+
+
+ 250 0012 00BF     		.align	2
+ 251              	.L24:
+ 252 0014 00140058 		.word	1476400128
+ 253              		.cfi_endproc
+ 254              	.LFE1109:
+ 256              		.section	.text.HAL_HSEM_GetClearKey,"ax",%progbits
+ 257              		.align	1
+ 258              		.global	HAL_HSEM_GetClearKey
+ 259              		.syntax unified
+ 260              		.thumb
+ 261              		.thumb_func
+ 263              	HAL_HSEM_GetClearKey:
+ 264              	.LFB1110:
+ 272:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 273:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 274:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Get semaphore Key .
+ 275:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval Semaphore Key , value from 0 to 0xFFFF
+ 276:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 277:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** uint32_t HAL_HSEM_GetClearKey(void)
+ 278:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 265              		.loc 1 278 1 is_stmt 1 view -0
+ 266              		.cfi_startproc
+ 267              		@ args = 0, pretend = 0, frame = 0
+ 268              		@ frame_needed = 0, uses_anonymous_args = 0
+ 269              		@ link register save eliminated.
+ 279:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return (HSEM->KEYR >> HSEM_KEYR_KEY_Pos);
+ 270              		.loc 1 279 3 view .LVU52
+ 271              		.loc 1 279 15 is_stmt 0 view .LVU53
+ 272 0000 024B     		ldr	r3, .L27
+ 273 0002 D3F84401 		ldr	r0, [r3, #324]
+ 280:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 274              		.loc 1 280 1 view .LVU54
+ 275 0006 000C     		lsrs	r0, r0, #16
+ 276 0008 7047     		bx	lr
+ 277              	.L28:
+ 278 000a 00BF     		.align	2
+ 279              	.L27:
+ 280 000c 00140058 		.word	1476400128
+ 281              		.cfi_endproc
+ 282              	.LFE1110:
+ 284              		.section	.text.HAL_HSEM_ActivateNotification,"ax",%progbits
+ 285              		.align	1
+ 286              		.global	HAL_HSEM_ActivateNotification
+ 287              		.syntax unified
+ 288              		.thumb
+ 289              		.thumb_func
+ 291              	HAL_HSEM_ActivateNotification:
+ 292              	.LVL17:
+ 293              	.LFB1111:
+ 281:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @}
+ 284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 286:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions_Group3 HSEM IRQ handler management
+ 287:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *  @brief    HSEM Notification functions.
+ 288:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 11
+
+
+ 289:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @verbatim
+ 290:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+ 291:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       ##### HSEM IRQ handler management and Notification functions #####
+ 292:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
+ 293:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** [..]  This section provides HSEM IRQ handler and Notification function.
+ 294:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 295:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @endverbatim
+ 296:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @{
+ 297:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 298:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 299:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 300:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Activate Semaphore release Notification for a given Semaphores Mask .
+ 301:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemMask: Mask of Released semaphores
+ 302:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval Semaphore Key
+ 303:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 304:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_ActivateNotification(uint32_t SemMask)
+ 305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 294              		.loc 1 305 1 is_stmt 1 view -0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM_COMMON->IER |= SemMask;
+ 299              		.loc 1 306 3 view .LVU56
+ 300              		.loc 1 306 14 is_stmt 0 view .LVU57
+ 301 0000 024A     		ldr	r2, .L30
+ 302 0002 1368     		ldr	r3, [r2]
+ 303              		.loc 1 306 20 view .LVU58
+ 304 0004 0343     		orrs	r3, r3, r0
+ 305 0006 1360     		str	r3, [r2]
+ 307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 306              		.loc 1 307 1 view .LVU59
+ 307 0008 7047     		bx	lr
+ 308              	.L31:
+ 309 000a 00BF     		.align	2
+ 310              	.L30:
+ 311 000c 00150058 		.word	1476400384
+ 312              		.cfi_endproc
+ 313              	.LFE1111:
+ 315              		.section	.text.HAL_HSEM_DeactivateNotification,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	HAL_HSEM_DeactivateNotification
+ 318              		.syntax unified
+ 319              		.thumb
+ 320              		.thumb_func
+ 322              	HAL_HSEM_DeactivateNotification:
+ 323              	.LVL18:
+ 324              	.LFB1112:
+ 308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 309:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 310:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Deactivate Semaphore release Notification for a given Semaphores Mask .
+ 311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemMask: Mask of Released semaphores
+ 312:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval Semaphore Key
+ 313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_DeactivateNotification(uint32_t SemMask)
+ 315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 325              		.loc 1 315 1 is_stmt 1 view -0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 12
+
+
+ 326              		.cfi_startproc
+ 327              		@ args = 0, pretend = 0, frame = 0
+ 328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 329              		@ link register save eliminated.
+ 316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM_COMMON->IER &= ~SemMask;
+ 330              		.loc 1 316 3 view .LVU61
+ 331              		.loc 1 316 14 is_stmt 0 view .LVU62
+ 332 0000 024A     		ldr	r2, .L33
+ 333 0002 1368     		ldr	r3, [r2]
+ 334              		.loc 1 316 20 view .LVU63
+ 335 0004 23EA0003 		bic	r3, r3, r0
+ 336 0008 1360     		str	r3, [r2]
+ 317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 337              		.loc 1 317 1 view .LVU64
+ 338 000a 7047     		bx	lr
+ 339              	.L34:
+ 340              		.align	2
+ 341              	.L33:
+ 342 000c 00150058 		.word	1476400384
+ 343              		.cfi_endproc
+ 344              	.LFE1112:
+ 346              		.section	.text.HAL_HSEM_FreeCallback,"ax",%progbits
+ 347              		.align	1
+ 348              		.weak	HAL_HSEM_FreeCallback
+ 349              		.syntax unified
+ 350              		.thumb
+ 351              		.thumb_func
+ 353              	HAL_HSEM_FreeCallback:
+ 354              	.LVL19:
+ 355              	.LFB1114:
+ 318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 319:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 320:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  This function handles HSEM interrupt request
+ 321:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
+ 322:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 323:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_IRQHandler(void)
+ 324:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 325:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   uint32_t statusreg;
+ 326:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Get the list of masked freed semaphores*/
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   statusreg = HSEM_COMMON->MISR;
+ 328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 329:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /*Disable Interrupts*/
+ 330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM_COMMON->IER &= ~((uint32_t)statusreg);
+ 331:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 332:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /*Clear Flags*/
+ 333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HSEM_COMMON->ICR = ((uint32_t)statusreg);
+ 334:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 335:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Call FreeCallback */
+ 336:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   HAL_HSEM_FreeCallback(statusreg);
+ 337:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 338:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
+ 340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief Semaphore Released Callback.
+ 341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param SemMask: Mask of Released semaphores
+ 342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
+ 343:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
+ 344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** __weak void HAL_HSEM_FreeCallback(uint32_t SemMask)
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 13
+
+
+ 345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
+ 356              		.loc 1 345 1 is_stmt 1 view -0
+ 357              		.cfi_startproc
+ 358              		@ args = 0, pretend = 0, frame = 0
+ 359              		@ frame_needed = 0, uses_anonymous_args = 0
+ 360              		@ link register save eliminated.
+ 346:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Prevent unused argument(s) compilation warning */
+ 347:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   UNUSED(SemMask);
+ 361              		.loc 1 347 3 view .LVU66
+ 348:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 349:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* NOTE : This function should not be modified, when the callback is needed,
+ 350:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   the HAL_HSEM_FreeCallback can be implemented in the user file
+ 351:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****     */
+ 352:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 362              		.loc 1 352 1 is_stmt 0 view .LVU67
+ 363 0000 7047     		bx	lr
+ 364              		.cfi_endproc
+ 365              	.LFE1114:
+ 367              		.section	.text.HAL_HSEM_IRQHandler,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	HAL_HSEM_IRQHandler
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 374              	HAL_HSEM_IRQHandler:
+ 375              	.LFB1113:
+ 324:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   uint32_t statusreg;
+ 376              		.loc 1 324 1 is_stmt 1 view -0
+ 377              		.cfi_startproc
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381              		.cfi_def_cfa_offset 8
+ 382              		.cfi_offset 3, -8
+ 383              		.cfi_offset 14, -4
+ 325:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   /* Get the list of masked freed semaphores*/
+ 384              		.loc 1 325 3 view .LVU69
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 385              		.loc 1 327 3 view .LVU70
+ 327:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 386              		.loc 1 327 13 is_stmt 0 view .LVU71
+ 387 0002 054B     		ldr	r3, .L38
+ 388 0004 D868     		ldr	r0, [r3, #12]
+ 389              	.LVL20:
+ 330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 390              		.loc 1 330 3 is_stmt 1 view .LVU72
+ 330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 391              		.loc 1 330 14 is_stmt 0 view .LVU73
+ 392 0006 1A68     		ldr	r2, [r3]
+ 330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 393              		.loc 1 330 20 view .LVU74
+ 394 0008 22EA0002 		bic	r2, r2, r0
+ 395 000c 1A60     		str	r2, [r3]
+ 333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 396              		.loc 1 333 3 is_stmt 1 view .LVU75
+ 333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 397              		.loc 1 333 20 is_stmt 0 view .LVU76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 14
+
+
+ 398 000e 5860     		str	r0, [r3, #4]
+ 336:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** }
+ 399              		.loc 1 336 3 is_stmt 1 view .LVU77
+ 400 0010 FFF7FEFF 		bl	HAL_HSEM_FreeCallback
+ 401              	.LVL21:
+ 337:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
+ 402              		.loc 1 337 1 is_stmt 0 view .LVU78
+ 403 0014 08BD     		pop	{r3, pc}
+ 404              	.L39:
+ 405 0016 00BF     		.align	2
+ 406              	.L38:
+ 407 0018 00150058 		.word	1476400384
+ 408              		.cfi_endproc
+ 409              	.LFE1113:
+ 411              		.text
+ 412              	.Letext0:
+ 413              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 414              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 415              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 416              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_hsem.c
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:21     .text.HAL_HSEM_Take:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:27     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:67     .text.HAL_HSEM_Take:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:72     .text.HAL_HSEM_FastTake:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:78     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:111    .text.HAL_HSEM_FastTake:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:117    .text.HAL_HSEM_IsSemTaken:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:123    .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:153    .text.HAL_HSEM_IsSemTaken:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:158    .text.HAL_HSEM_Release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:164    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:186    .text.HAL_HSEM_Release:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:191    .text.HAL_HSEM_ReleaseAll:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:197    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:221    .text.HAL_HSEM_ReleaseAll:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:226    .text.HAL_HSEM_SetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:232    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:252    .text.HAL_HSEM_SetClearKey:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:257    .text.HAL_HSEM_GetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:263    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:280    .text.HAL_HSEM_GetClearKey:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:285    .text.HAL_HSEM_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:291    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:311    .text.HAL_HSEM_ActivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:316    .text.HAL_HSEM_DeactivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:322    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:342    .text.HAL_HSEM_DeactivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:347    .text.HAL_HSEM_FreeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:353    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:368    .text.HAL_HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:374    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc1JK7Ka.s:407    .text.HAL_HSEM_IRQHandler:00000018 $d
+
+NO UNDEFINED SYMBOLS
