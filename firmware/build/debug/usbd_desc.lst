@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
   27:USB_Device/App/usbd_desc.c **** 
   28:USB_Device/App/usbd_desc.c **** /* USER CODE END INCLUDE */
   29:USB_Device/App/usbd_desc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 2
 
 
   30:USB_Device/App/usbd_desc.c **** /* Private typedef -----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
   84:USB_Device/App/usbd_desc.c **** 
   85:USB_Device/App/usbd_desc.c **** /** @defgroup USBD_DESC_Private_Macros USBD_DESC_Private_Macros
   86:USB_Device/App/usbd_desc.c ****   * @brief Private macros.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 3
 
 
   87:USB_Device/App/usbd_desc.c ****   * @{
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  141:USB_Device/App/usbd_desc.c **** };
  142:USB_Device/App/usbd_desc.c **** 
  143:USB_Device/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /* IAR Compiler */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 4
 
 
  144:USB_Device/App/usbd_desc.c ****   #pragma data_alignment=4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  198:USB_Device/App/usbd_desc.c **** 
  199:USB_Device/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /*!< IAR Compiler */
  200:USB_Device/App/usbd_desc.c ****   #pragma data_alignment=4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 5
 
 
  201:USB_Device/App/usbd_desc.c **** #endif
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
   58              		.thumb_func
   60              	USBD_HID_LangIDStrDescriptor:
   61              	.LVL2:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 6
 
 
   62              	.LFB1109:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  251:USB_Device/App/usbd_desc.c ****   {
  252:USB_Device/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING, USBD_StrDesc, length);
  253:USB_Device/App/usbd_desc.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 7
 
 
  254:USB_Device/App/usbd_desc.c ****   else
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  308:USB_Device/App/usbd_desc.c ****   else
  309:USB_Device/App/usbd_desc.c ****   {
  310:USB_Device/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_CONFIGURATION_STRING, USBD_StrDesc, length);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 8
 
 
  311:USB_Device/App/usbd_desc.c ****   }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  365:USB_Device/App/usbd_desc.c **** static void IntToUnicode(uint32_t value, uint8_t * pbuf, uint8_t len)
  366:USB_Device/App/usbd_desc.c **** {
   95              		.loc 1 366 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 9
 
 
   96              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  132 0024 0133     		adds	r3, r3, #1
  133              	.LVL7:
  369:USB_Device/App/usbd_desc.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 10
 
 
  134              		.loc 1 369 31 is_stmt 0 discriminator 2 view .LVU30
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  180              		.cfi_offset 5, -8
  181              		.cfi_offset 14, -4
  341:USB_Device/App/usbd_desc.c ****   uint32_t deviceserial1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 11
 
 
  182              		.loc 1 341 3 view .LVU41
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  221 0028 FFF7FEFF 		bl	IntToUnicode
  222              	.LVL16:
  356:USB_Device/App/usbd_desc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 12
 
 
  223              		.loc 1 356 1 is_stmt 0 view .LVU57
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  272              		.align	2
  273              	.LC0:
  274 0000 53544D33 		.ascii	"STM32 Human interface\000"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 13
 
 
  274      32204875 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  316              	.LVL24:
  256:USB_Device/App/usbd_desc.c ****   }
  317              		.loc 1 256 5 is_stmt 0 view .LVU76
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 14
 
 
  318 0014 0248     		ldr	r0, .L31+4
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  363 0008 0348     		ldr	r0, .L35+4
  364              	.LVL29:
  270:USB_Device/App/usbd_desc.c ****   return USBD_StrDesc;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 15
 
 
  365              		.loc 1 270 3 view .LVU84
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  411 0008 0548     		ldr	r0, .L41+4
  412              	.LVL33:
  306:USB_Device/App/usbd_desc.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 16
 
 
  413              		.loc 1 306 5 view .LVU93
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  459              		@ frame_needed = 0, uses_anonymous_args = 0
  322:USB_Device/App/usbd_desc.c ****   if(speed == 0)
  460              		.loc 1 322 1 is_stmt 0 view .LVU101
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 17
 
 
  461 0000 08B5     		push	{r3, lr}
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  505              		.section	.data.USBD_StringSerial,"aw"
  506              		.align	2
  509              	USBD_StringSerial:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 18
 
 
  510 0000 1A0300   		.ascii	"\032\003\000"
@@ -1069,51 +1069,51 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 1
  552              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  553              		.file 5 "USB_Device/App/usbd_desc.h"
  554              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_desc.c
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:21     .text.USBD_HID_DeviceDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:27     .text.USBD_HID_DeviceDescriptor:00000000 USBD_HID_DeviceDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:49     .text.USBD_HID_DeviceDescriptor:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:531    .data.USBD_HID_DeviceDesc:00000000 USBD_HID_DeviceDesc
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:54     .text.USBD_HID_LangIDStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:60     .text.USBD_HID_LangIDStrDescriptor:00000000 USBD_HID_LangIDStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:82     .text.USBD_HID_LangIDStrDescriptor:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:524    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:87     .text.IntToUnicode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:92     .text.IntToUnicode:00000000 IntToUnicode
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:165    .text.Get_SerialNum:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:170    .text.Get_SerialNum:00000000 Get_SerialNum
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:228    .text.Get_SerialNum:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:509    .data.USBD_StringSerial:00000000 USBD_StringSerial
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:234    .text.USBD_HID_SerialStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:240    .text.USBD_HID_SerialStrDescriptor:00000000 USBD_HID_SerialStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:267    .text.USBD_HID_SerialStrDescriptor:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:272    .rodata.USBD_HID_ProductStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:276    .text.USBD_HID_ProductStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:282    .text.USBD_HID_ProductStrDescriptor:00000000 USBD_HID_ProductStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:328    .text.USBD_HID_ProductStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:517    .bss.USBD_StrDesc:00000000 USBD_StrDesc
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:334    .rodata.USBD_HID_ManufacturerStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:338    .text.USBD_HID_ManufacturerStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:344    .text.USBD_HID_ManufacturerStrDescriptor:00000000 USBD_HID_ManufacturerStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:375    .text.USBD_HID_ManufacturerStrDescriptor:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:381    .rodata.USBD_HID_ConfigStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:385    .text.USBD_HID_ConfigStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:391    .text.USBD_HID_ConfigStrDescriptor:00000000 USBD_HID_ConfigStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:437    .text.USBD_HID_ConfigStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:443    .rodata.USBD_HID_InterfaceStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:447    .text.USBD_HID_InterfaceStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:453    .text.USBD_HID_InterfaceStrDescriptor:00000000 USBD_HID_InterfaceStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:499    .text.USBD_HID_InterfaceStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:506    .data.USBD_StringSerial:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:514    .bss.USBD_StrDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:521    .data.USBD_LangIDDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:528    .data.USBD_HID_DeviceDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:539    .data.HID_Desc:00000000 HID_Desc
-C:\Users\Nathan\AppData\Local\Temp\ccTheYlt.s:536    .data.HID_Desc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:21     .text.USBD_HID_DeviceDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:27     .text.USBD_HID_DeviceDescriptor:00000000 USBD_HID_DeviceDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:49     .text.USBD_HID_DeviceDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:531    .data.USBD_HID_DeviceDesc:00000000 USBD_HID_DeviceDesc
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:54     .text.USBD_HID_LangIDStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:60     .text.USBD_HID_LangIDStrDescriptor:00000000 USBD_HID_LangIDStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:82     .text.USBD_HID_LangIDStrDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:524    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:87     .text.IntToUnicode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:92     .text.IntToUnicode:00000000 IntToUnicode
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:165    .text.Get_SerialNum:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:170    .text.Get_SerialNum:00000000 Get_SerialNum
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:228    .text.Get_SerialNum:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:509    .data.USBD_StringSerial:00000000 USBD_StringSerial
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:234    .text.USBD_HID_SerialStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:240    .text.USBD_HID_SerialStrDescriptor:00000000 USBD_HID_SerialStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:267    .text.USBD_HID_SerialStrDescriptor:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:272    .rodata.USBD_HID_ProductStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:276    .text.USBD_HID_ProductStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:282    .text.USBD_HID_ProductStrDescriptor:00000000 USBD_HID_ProductStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:328    .text.USBD_HID_ProductStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:517    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:334    .rodata.USBD_HID_ManufacturerStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:338    .text.USBD_HID_ManufacturerStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:344    .text.USBD_HID_ManufacturerStrDescriptor:00000000 USBD_HID_ManufacturerStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:375    .text.USBD_HID_ManufacturerStrDescriptor:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:381    .rodata.USBD_HID_ConfigStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:385    .text.USBD_HID_ConfigStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:391    .text.USBD_HID_ConfigStrDescriptor:00000000 USBD_HID_ConfigStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:437    .text.USBD_HID_ConfigStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:443    .rodata.USBD_HID_InterfaceStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:447    .text.USBD_HID_InterfaceStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:453    .text.USBD_HID_InterfaceStrDescriptor:00000000 USBD_HID_InterfaceStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:499    .text.USBD_HID_InterfaceStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:506    .data.USBD_StringSerial:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:514    .bss.USBD_StrDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:521    .data.USBD_LangIDDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:528    .data.USBD_HID_DeviceDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:539    .data.HID_Desc:00000000 HID_Desc
+C:\Users\Nathan\AppData\Local\Temp\ccum65c6.s:536    .data.HID_Desc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetString

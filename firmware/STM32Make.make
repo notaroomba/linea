@@ -144,7 +144,12 @@ USB_Device/App/usb_device.c \
 USB_Device/App/usbd_desc.c \
 USB_Device/Target/usbd_conf.c \
 Utilities/lpm/tiny_lpm/stm32_lpm.c \
-Utilities/sequencer/stm32_seq.c
+Utilities/sequencer/stm32_seq.c \
+linea/src/BCG.c \
+linea/src/linea.c \
+linea/src/linea_bsp_linea_v1.c \
+linea/src/linea_math.c \
+linea/src/linea_passive_pen.c
 
 
 CXX_SOURCES = \
@@ -259,7 +264,8 @@ C_INCLUDES =  \
 -IUSB_Device/App \
 -IUSB_Device/Target \
 -IUtilities/lpm/tiny_lpm \
--IUtilities/sequencer
+-IUtilities/sequencer \
+-Ilinea/inc
 
 
 

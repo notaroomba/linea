@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
   28:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /* Private macros ------------------------------------------------------------*/
   29:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /** @defgroup TINY_LPM_Private_macros TINY LPM private macros
   30:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 2
 
 
   31:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
   85:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   */
   86:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
   87:Utilities/lpm/tiny_lpm/stm32_lpm.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 3
 
 
   88:Utilities/lpm/tiny_lpm/stm32_lpm.c ****  * @brief value used to reset the LPM mode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
   44              		.loc 1 126 1 is_stmt 0 view .LVU6
   45 000a 7047     		bx	lr
   46              	.L3:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 4
 
 
   47              		.align	2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
    6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
    7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
    8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 5
 
 
    9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
   63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
   65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 6
 
 
   66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
  121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 7
 
 
  123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
  178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
  179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 8
 
 
  180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  234:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  235:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  236:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 9
 
 
  237:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control_ns" : "=r" (result) );
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  291:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  292:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  293:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 10
 
 
  294:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  348:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  349:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  350:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 11
 
 
  351:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  405:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  406:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer (non-secure)
  407:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 12
 
 
  408:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  100              	.LVL1:
  454:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  101              		.loc 2 454 3 view .LVU14
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 13
 
 
  102              		.loc 2 454 3 is_stmt 0 view .LVU15
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  154:Utilities/lpm/tiny_lpm/stm32_lpm.c ****   UTIL_LPM_EXIT_CRITICAL_SECTION( );
  135              		.loc 1 154 3 view .LVU24
  136              	.LBB30:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 14
 
 
  137              	.LBI30:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  160 0022 0A60     		str	r2, [r1]
  146:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
  161              		.loc 1 146 7 is_stmt 1 view .LVU31
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 15
 
 
  162 0024 F6E7     		b	.L7
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  208              		.loc 2 209 3 view .LVU41
  209              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 16
 
 
  210              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  243              	.LBE37:
  244              	.LBE36:
  180:Utilities/lpm/tiny_lpm/stm32_lpm.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 17
 
 
  245              		.loc 1 180 1 is_stmt 0 view .LVU50
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  288              		.syntax unified
  289              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  290 0000 EFF31083 		MRS r3, primask
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 18
 
 
  291              	@ 0 "" 2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  325              		.loc 1 202 21 view .LVU72
  326 0012 0120     		movs	r0, #1
  327 0014 00E0     		b	.L16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 19
 
 
  328              	.L17:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  370              	UTIL_LPM_EnterLowPower:
  371              	.LFB1417:
  214:Utilities/lpm/tiny_lpm/stm32_lpm.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 20
 
 
  215:Utilities/lpm/tiny_lpm/stm32_lpm.c **** void UTIL_LPM_EnterLowPower( void )
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  414              		.loc 1 219 3 view .LVU90
  415              		.loc 1 219 23 is_stmt 0 view .LVU91
  416 0008 0C4B     		ldr	r3, .L26
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 21
 
 
  417 000a 1B68     		ldr	r3, [r3]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  440              		.syntax unified
  441              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  442 0018 84F31088 		MSR primask, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 22
 
 
  443              	@ 0 "" 2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  482 0036 6B69     		ldr	r3, [r5, #20]
  245:Utilities/lpm/tiny_lpm/stm32_lpm.c ****     }
  483              		.loc 1 245 7 view .LVU117
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 23
 
 
  484 0038 9847     		blx	r3
@@ -1346,32 +1346,32 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 1
  511              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  512              		.file 5 "Utilities/lpm/tiny_lpm/stm32_lpm.h"
  513              		.file 6 "Core/Inc/app_conf.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_lpm.c
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:21     .text.UTIL_LPM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:27     .text.UTIL_LPM_Init:00000000 UTIL_LPM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:49     .text.UTIL_LPM_Init:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:506    .bss.StopModeDisable:00000000 StopModeDisable
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:500    .bss.OffModeDisable:00000000 OffModeDisable
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:55     .text.UTIL_LPM_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:61     .text.UTIL_LPM_DeInit:00000000 UTIL_LPM_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:74     .text.UTIL_LPM_SetStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:80     .text.UTIL_LPM_SetStopMode:00000000 UTIL_LPM_SetStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:166    .text.UTIL_LPM_SetStopMode:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:171    .text.UTIL_LPM_SetOffMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:177    .text.UTIL_LPM_SetOffMode:00000000 UTIL_LPM_SetOffMode
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:262    .text.UTIL_LPM_SetOffMode:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:267    .text.UTIL_LPM_GetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:273    .text.UTIL_LPM_GetMode:00000000 UTIL_LPM_GetMode
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:358    .text.UTIL_LPM_GetMode:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:364    .text.UTIL_LPM_EnterLowPower:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:370    .text.UTIL_LPM_EnterLowPower:00000000 UTIL_LPM_EnterLowPower
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:490    .text.UTIL_LPM_EnterLowPower:0000003c $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:497    .bss.OffModeDisable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccn2TEXk.s:503    .bss.StopModeDisable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:21     .text.UTIL_LPM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:27     .text.UTIL_LPM_Init:00000000 UTIL_LPM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:49     .text.UTIL_LPM_Init:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:506    .bss.StopModeDisable:00000000 StopModeDisable
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:500    .bss.OffModeDisable:00000000 OffModeDisable
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:55     .text.UTIL_LPM_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:61     .text.UTIL_LPM_DeInit:00000000 UTIL_LPM_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:74     .text.UTIL_LPM_SetStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:80     .text.UTIL_LPM_SetStopMode:00000000 UTIL_LPM_SetStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:166    .text.UTIL_LPM_SetStopMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:171    .text.UTIL_LPM_SetOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:177    .text.UTIL_LPM_SetOffMode:00000000 UTIL_LPM_SetOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:262    .text.UTIL_LPM_SetOffMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:267    .text.UTIL_LPM_GetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:273    .text.UTIL_LPM_GetMode:00000000 UTIL_LPM_GetMode
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:358    .text.UTIL_LPM_GetMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:364    .text.UTIL_LPM_EnterLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:370    .text.UTIL_LPM_EnterLowPower:00000000 UTIL_LPM_EnterLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:490    .text.UTIL_LPM_EnterLowPower:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:497    .bss.OffModeDisable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsEc3NI.s:503    .bss.StopModeDisable:00000000 $d
 
 UNDEFINED SYMBOLS
 UTIL_PowerDriver

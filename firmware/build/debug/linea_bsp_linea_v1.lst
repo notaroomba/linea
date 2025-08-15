@@ -1,0 +1,3205 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"linea_bsp_linea_v1.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "linea/src/linea_bsp_linea_v1.c"
+  20              		.section	.text.linea_coil_select,"ax",%progbits
+  21              		.align	1
+  22              		.global	linea_coil_select
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	linea_coil_select:
+  28              	.LVL0:
+  29              	.LFB1415:
+   1:linea/src/linea_bsp_linea_v1.c **** /*
+   2:linea/src/linea_bsp_linea_v1.c **** * Project Linea
+   3:linea/src/linea_bsp_linea_v1.c **** * Copyright (C) 2024 Anhang Li (thelithcore@gmail.com)
+   4:linea/src/linea_bsp_linea_v1.c **** * Adapted for STM32WB55 by Nathan
+   5:linea/src/linea_bsp_linea_v1.c **** *
+   6:linea/src/linea_bsp_linea_v1.c **** * This program is free software: you can redistribute it and/or modify
+   7:linea/src/linea_bsp_linea_v1.c **** * it under the terms of the GNU General Public License as published by
+   8:linea/src/linea_bsp_linea_v1.c **** * the Free Software Foundation, either version 3 of the License, or
+   9:linea/src/linea_bsp_linea_v1.c **** * (at your option) any later version.
+  10:linea/src/linea_bsp_linea_v1.c **** *
+  11:linea/src/linea_bsp_linea_v1.c **** * This program is distributed in the hope that it will be useful,
+  12:linea/src/linea_bsp_linea_v1.c **** * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:linea/src/linea_bsp_linea_v1.c **** * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:linea/src/linea_bsp_linea_v1.c **** * GNU General Public License for more details.
+  15:linea/src/linea_bsp_linea_v1.c **** *
+  16:linea/src/linea_bsp_linea_v1.c **** * You should have received a copy of the GNU General Public License
+  17:linea/src/linea_bsp_linea_v1.c **** * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  18:linea/src/linea_bsp_linea_v1.c **** */
+  19:linea/src/linea_bsp_linea_v1.c **** 
+  20:linea/src/linea_bsp_linea_v1.c **** #include "linea_config.h"
+  21:linea/src/linea_bsp_linea_v1.c **** #ifdef LINEA_PCB_LINEA_V1
+  22:linea/src/linea_bsp_linea_v1.c **** 
+  23:linea/src/linea_bsp_linea_v1.c **** #include "linea_bsp_linea_v1.h"
+  24:linea/src/linea_bsp_linea_v1.c **** #include "main.h"
+  25:linea/src/linea_bsp_linea_v1.c **** #include "math.h"
+  26:linea/src/linea_bsp_linea_v1.c **** #include "linea_math.h"
+  27:linea/src/linea_bsp_linea_v1.c **** #include "linea.h"
+  28:linea/src/linea_bsp_linea_v1.c **** #include "BCG.h"
+  29:linea/src/linea_bsp_linea_v1.c **** #include <stdint.h>
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 2
+
+
+  30:linea/src/linea_bsp_linea_v1.c **** #include <stdbool.h>
+  31:linea/src/linea_bsp_linea_v1.c **** 
+  32:linea/src/linea_bsp_linea_v1.c **** // ExN List for STM32WB55 Linea board
+  33:linea/src/linea_bsp_linea_v1.c **** #define LINEA_N_EXN (6u)
+  34:linea/src/linea_bsp_linea_v1.c **** GPIO_TypeDef* ExN_GPIO_Port[LINEA_N_EXN] = {
+  35:linea/src/linea_bsp_linea_v1.c ****     E0N_GPIO_Port, E1N_GPIO_Port, E2N_GPIO_Port,
+  36:linea/src/linea_bsp_linea_v1.c ****     E3N_GPIO_Port, E4N_GPIO_Port, E5N_GPIO_Port
+  37:linea/src/linea_bsp_linea_v1.c **** };
+  38:linea/src/linea_bsp_linea_v1.c **** uint16_t ExN_Pin[LINEA_N_EXN] = {
+  39:linea/src/linea_bsp_linea_v1.c ****     E0N_Pin, E1N_Pin, E2N_Pin,
+  40:linea/src/linea_bsp_linea_v1.c ****     E3N_Pin, E4N_Pin, E5N_Pin
+  41:linea/src/linea_bsp_linea_v1.c **** };
+  42:linea/src/linea_bsp_linea_v1.c **** 
+  43:linea/src/linea_bsp_linea_v1.c **** // Coil selection function for STM32WB55 Linea board
+  44:linea/src/linea_bsp_linea_v1.c **** void linea_coil_select(int id, bool x_yn){
+  30              		.loc 1 44 42 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 44 42 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 82B0     		sub	sp, sp, #8
+  40              		.cfi_def_cfa_offset 16
+  45:linea/src/linea_bsp_linea_v1.c ****     uint8_t S = 0;
+  41              		.loc 1 45 5 is_stmt 1 view .LVU2
+  42              	.LVL1:
+  46:linea/src/linea_bsp_linea_v1.c ****     GPIO_PinState ExN[LINEA_N_EXN];
+  43              		.loc 1 46 5 view .LVU3
+  47:linea/src/linea_bsp_linea_v1.c ****     
+  48:linea/src/linea_bsp_linea_v1.c ****     // Default state is high (disabled)
+  49:linea/src/linea_bsp_linea_v1.c ****     for (int i = 0; i < LINEA_N_EXN; i++) {
+  44              		.loc 1 49 5 view .LVU4
+  45              	.LBB11:
+  46              		.loc 1 49 10 view .LVU5
+  47              		.loc 1 49 14 is_stmt 0 view .LVU6
+  48 0004 0023     		movs	r3, #0
+  49              		.loc 1 49 5 view .LVU7
+  50 0006 06E0     		b	.L2
+  51              	.LVL2:
+  52              	.L3:
+  50:linea/src/linea_bsp_linea_v1.c ****         ExN[i] = GPIO_PIN_SET;
+  53              		.loc 1 50 9 is_stmt 1 view .LVU8
+  54              		.loc 1 50 16 is_stmt 0 view .LVU9
+  55 0008 03F10802 		add	r2, r3, #8
+  56 000c 6A44     		add	r2, sp, r2
+  57 000e 0124     		movs	r4, #1
+  58 0010 02F8084C 		strb	r4, [r2, #-8]
+  49:linea/src/linea_bsp_linea_v1.c ****         ExN[i] = GPIO_PIN_SET;
+  59              		.loc 1 49 39 is_stmt 1 discriminator 3 view .LVU10
+  60 0014 2344     		add	r3, r3, r4
+  61              	.LVL3:
+  62              	.L2:
+  49:linea/src/linea_bsp_linea_v1.c ****         ExN[i] = GPIO_PIN_SET;
+  63              		.loc 1 49 23 discriminator 1 view .LVU11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 3
+
+
+  64 0016 052B     		cmp	r3, #5
+  65 0018 F6D9     		bls	.L3
+  66              	.LBE11:
+  51:linea/src/linea_bsp_linea_v1.c ****     }
+  52:linea/src/linea_bsp_linea_v1.c **** 
+  53:linea/src/linea_bsp_linea_v1.c ****     if(x_yn) {
+  67              		.loc 1 53 5 view .LVU12
+  68              		.loc 1 53 7 is_stmt 0 view .LVU13
+  69 001a 0029     		cmp	r1, #0
+  70 001c 00F0D580 		beq	.L4
+  54:linea/src/linea_bsp_linea_v1.c ****         // X Coils
+  55:linea/src/linea_bsp_linea_v1.c ****         if(id >= LINEA_N_X_COIL) {
+  71              		.loc 1 55 9 is_stmt 1 view .LVU14
+  72              		.loc 1 55 11 is_stmt 0 view .LVU15
+  73 0020 2128     		cmp	r0, #33
+  74 0022 00F2DF81 		bhi	.L1
+  56:linea/src/linea_bsp_linea_v1.c ****             LINEA_ErrLog("Invalid X Coil ID: %d", id);
+  57:linea/src/linea_bsp_linea_v1.c ****             return;
+  58:linea/src/linea_bsp_linea_v1.c ****         }
+  59:linea/src/linea_bsp_linea_v1.c ****         
+  60:linea/src/linea_bsp_linea_v1.c ****         // X coil mapping for STM32WB55 Linea board
+  61:linea/src/linea_bsp_linea_v1.c ****         switch(id) {
+  75              		.loc 1 61 9 is_stmt 1 view .LVU16
+  76 0026 2128     		cmp	r0, #33
+  77 0028 00F2DC81 		bhi	.L1
+  78 002c DFE800F0 		tbb	[pc, r0]
+  79              	.LVL4:
+  80              	.L7:
+  81 0030 11       		.byte	(.L40-.L7)/2
+  82 0031 2C       		.byte	(.L39-.L7)/2
+  83 0032 31       		.byte	(.L38-.L7)/2
+  84 0033 36       		.byte	(.L37-.L7)/2
+  85 0034 3B       		.byte	(.L36-.L7)/2
+  86 0035 40       		.byte	(.L35-.L7)/2
+  87 0036 45       		.byte	(.L34-.L7)/2
+  88 0037 4A       		.byte	(.L33-.L7)/2
+  89 0038 4F       		.byte	(.L32-.L7)/2
+  90 0039 53       		.byte	(.L31-.L7)/2
+  91 003a 58       		.byte	(.L30-.L7)/2
+  92 003b 5D       		.byte	(.L29-.L7)/2
+  93 003c 62       		.byte	(.L28-.L7)/2
+  94 003d 67       		.byte	(.L27-.L7)/2
+  95 003e 6C       		.byte	(.L26-.L7)/2
+  96 003f 71       		.byte	(.L25-.L7)/2
+  97 0040 76       		.byte	(.L24-.L7)/2
+  98 0041 7A       		.byte	(.L23-.L7)/2
+  99 0042 7F       		.byte	(.L22-.L7)/2
+ 100 0043 84       		.byte	(.L21-.L7)/2
+ 101 0044 89       		.byte	(.L20-.L7)/2
+ 102 0045 8E       		.byte	(.L19-.L7)/2
+ 103 0046 93       		.byte	(.L18-.L7)/2
+ 104 0047 98       		.byte	(.L17-.L7)/2
+ 105 0048 9D       		.byte	(.L16-.L7)/2
+ 106 0049 A1       		.byte	(.L15-.L7)/2
+ 107 004a A6       		.byte	(.L14-.L7)/2
+ 108 004b AB       		.byte	(.L13-.L7)/2
+ 109 004c B0       		.byte	(.L12-.L7)/2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 4
+
+
+ 110 004d B5       		.byte	(.L11-.L7)/2
+ 111 004e BA       		.byte	(.L10-.L7)/2
+ 112 004f BF       		.byte	(.L9-.L7)/2
+ 113 0050 C4       		.byte	(.L8-.L7)/2
+ 114 0051 C8       		.byte	(.L6-.L7)/2
+ 115              		.p2align 1
+ 116              	.L40:
+  62:linea/src/linea_bsp_linea_v1.c ****             case 0:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U1
+ 117              		.loc 1 62 22 view .LVU17
+ 118              		.loc 1 62 29 is_stmt 0 view .LVU18
+ 119 0052 0024     		movs	r4, #0
+ 120 0054 8DF80040 		strb	r4, [sp]
+ 121              		.loc 1 62 47 is_stmt 1 view .LVU19
+ 122              		.loc 1 62 54 view .LVU20
+ 123              	.LVL5:
+ 124              	.L41:
+  63:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 1; break;
+  64:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+  65:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+  66:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+  67:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+  68:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+  69:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+  70:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+  71:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+  72:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+  73:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+  74:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+  75:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+  76:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+  77:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+  78:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+  79:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+  80:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+  81:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+  82:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+  83:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+  84:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+  85:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+  86:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+  87:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+  88:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+  89:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+  90:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+  91:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+  92:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+  93:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+  94:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+  95:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+  96:linea/src/linea_bsp_linea_v1.c ****             default: 
+  97:linea/src/linea_bsp_linea_v1.c ****                 LINEA_ErrLog("Invalid X Coil ID: %d", id); 
+  98:linea/src/linea_bsp_linea_v1.c ****                 return;
+  99:linea/src/linea_bsp_linea_v1.c ****         }
+ 100:linea/src/linea_bsp_linea_v1.c ****     } else {
+ 101:linea/src/linea_bsp_linea_v1.c ****         // Y Coils
+ 102:linea/src/linea_bsp_linea_v1.c ****         if(id >= LINEA_N_Y_COIL) {
+ 103:linea/src/linea_bsp_linea_v1.c ****             LINEA_ErrLog("Invalid Y Coil ID: %d", id);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 5
+
+
+ 104:linea/src/linea_bsp_linea_v1.c ****             return;
+ 105:linea/src/linea_bsp_linea_v1.c ****         }
+ 106:linea/src/linea_bsp_linea_v1.c ****         
+ 107:linea/src/linea_bsp_linea_v1.c ****         // Y coil mapping for STM32WB55 Linea board
+ 108:linea/src/linea_bsp_linea_v1.c ****         switch (id) {
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 0:  ExN[0] = GPIO_PIN_RESET; S = 2; break; // U1
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 115:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 123:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 131:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 139:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 147:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 153:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 154:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 155:linea/src/linea_bsp_linea_v1.c ****                 LINEA_ErrLog("Invalid Y Coil ID: %d", id);
+ 156:linea/src/linea_bsp_linea_v1.c ****                 return;
+ 157:linea/src/linea_bsp_linea_v1.c ****         }
+ 158:linea/src/linea_bsp_linea_v1.c ****     }
+ 159:linea/src/linea_bsp_linea_v1.c ****     
+ 160:linea/src/linea_bsp_linea_v1.c ****     // Set selection pins (S0, S1, S2)
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 6
+
+
+ 161:linea/src/linea_bsp_linea_v1.c ****     HAL_GPIO_WritePin(S0_GPIO_Port, S0_Pin, (S & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+ 125              		.loc 1 161 5 view .LVU21
+ 126 0058 04F00102 		and	r2, r4, #1
+ 127 005c 4FF48061 		mov	r1, #1024
+ 128              	.LVL6:
+ 129              		.loc 1 161 5 is_stmt 0 view .LVU22
+ 130 0060 B748     		ldr	r0, .L94
+ 131              	.LVL7:
+ 132              		.loc 1 161 5 view .LVU23
+ 133 0062 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 134              	.LVL8:
+ 162:linea/src/linea_bsp_linea_v1.c ****     HAL_GPIO_WritePin(S1_GPIO_Port, S1_Pin, ((S >> 1) & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+ 135              		.loc 1 162 5 is_stmt 1 view .LVU24
+ 136 0066 C4F34002 		ubfx	r2, r4, #1, #1
+ 137 006a 4FF40041 		mov	r1, #32768
+ 138 006e 4FF09040 		mov	r0, #1207959552
+ 139 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 140              	.LVL9:
+ 163:linea/src/linea_bsp_linea_v1.c ****     HAL_GPIO_WritePin(S2_GPIO_Port, S2_Pin, ((S >> 2) & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+ 141              		.loc 1 163 5 view .LVU25
+ 142 0076 A208     		lsrs	r2, r4, #2
+ 143 0078 4FF48041 		mov	r1, #16384
+ 144 007c 4FF09040 		mov	r0, #1207959552
+ 145 0080 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 146              	.LVL10:
+ 164:linea/src/linea_bsp_linea_v1.c ****     
+ 165:linea/src/linea_bsp_linea_v1.c ****     // Set enable pins (ExN)
+ 166:linea/src/linea_bsp_linea_v1.c ****     for (int i = 0; i < LINEA_N_EXN; i++) {
+ 147              		.loc 1 166 5 view .LVU26
+ 148              	.LBB12:
+ 149              		.loc 1 166 10 view .LVU27
+ 150              		.loc 1 166 14 is_stmt 0 view .LVU28
+ 151 0084 0024     		movs	r4, #0
+ 152              	.LVL11:
+ 153              		.loc 1 166 5 view .LVU29
+ 154 0086 ABE1     		b	.L88
+ 155              	.LVL12:
+ 156              	.L39:
+ 157              		.loc 1 166 5 view .LVU30
+ 158              	.LBE12:
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 159              		.loc 1 63 22 is_stmt 1 view .LVU31
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 160              		.loc 1 63 29 is_stmt 0 view .LVU32
+ 161 0088 0023     		movs	r3, #0
+ 162 008a 8DF80030 		strb	r3, [sp]
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 163              		.loc 1 63 47 is_stmt 1 view .LVU33
+ 164              	.LVL13:
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 165              		.loc 1 63 54 view .LVU34
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 166              		.loc 1 63 49 is_stmt 0 view .LVU35
+ 167 008e 0124     		movs	r4, #1
+  63:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 2; break;
+ 168              		.loc 1 63 54 view .LVU36
+ 169 0090 E2E7     		b	.L41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 7
+
+
+ 170              	.LVL14:
+ 171              	.L38:
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 172              		.loc 1 64 22 is_stmt 1 view .LVU37
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 173              		.loc 1 64 29 is_stmt 0 view .LVU38
+ 174 0092 0023     		movs	r3, #0
+ 175 0094 8DF80030 		strb	r3, [sp]
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 176              		.loc 1 64 47 is_stmt 1 view .LVU39
+ 177              	.LVL15:
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 178              		.loc 1 64 54 view .LVU40
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 179              		.loc 1 64 49 is_stmt 0 view .LVU41
+ 180 0098 0224     		movs	r4, #2
+  64:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 181              		.loc 1 64 54 view .LVU42
+ 182 009a DDE7     		b	.L41
+ 183              	.LVL16:
+ 184              	.L37:
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 185              		.loc 1 65 22 is_stmt 1 view .LVU43
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 186              		.loc 1 65 29 is_stmt 0 view .LVU44
+ 187 009c 0023     		movs	r3, #0
+ 188 009e 8DF80030 		strb	r3, [sp]
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 189              		.loc 1 65 47 is_stmt 1 view .LVU45
+ 190              	.LVL17:
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 191              		.loc 1 65 54 view .LVU46
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 192              		.loc 1 65 49 is_stmt 0 view .LVU47
+ 193 00a2 0324     		movs	r4, #3
+  65:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 194              		.loc 1 65 54 view .LVU48
+ 195 00a4 D8E7     		b	.L41
+ 196              	.LVL18:
+ 197              	.L36:
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 198              		.loc 1 66 22 is_stmt 1 view .LVU49
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 199              		.loc 1 66 29 is_stmt 0 view .LVU50
+ 200 00a6 0023     		movs	r3, #0
+ 201 00a8 8DF80030 		strb	r3, [sp]
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 202              		.loc 1 66 47 is_stmt 1 view .LVU51
+ 203              	.LVL19:
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 204              		.loc 1 66 54 view .LVU52
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 205              		.loc 1 66 49 is_stmt 0 view .LVU53
+ 206 00ac 0424     		movs	r4, #4
+  66:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 207              		.loc 1 66 54 view .LVU54
+ 208 00ae D3E7     		b	.L41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 8
+
+
+ 209              	.LVL20:
+ 210              	.L35:
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 211              		.loc 1 67 22 is_stmt 1 view .LVU55
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 212              		.loc 1 67 29 is_stmt 0 view .LVU56
+ 213 00b0 0023     		movs	r3, #0
+ 214 00b2 8DF80030 		strb	r3, [sp]
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 215              		.loc 1 67 47 is_stmt 1 view .LVU57
+ 216              	.LVL21:
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 217              		.loc 1 67 54 view .LVU58
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 218              		.loc 1 67 49 is_stmt 0 view .LVU59
+ 219 00b6 0524     		movs	r4, #5
+  67:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 220              		.loc 1 67 54 view .LVU60
+ 221 00b8 CEE7     		b	.L41
+ 222              	.LVL22:
+ 223              	.L34:
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 224              		.loc 1 68 22 is_stmt 1 view .LVU61
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 225              		.loc 1 68 29 is_stmt 0 view .LVU62
+ 226 00ba 0023     		movs	r3, #0
+ 227 00bc 8DF80030 		strb	r3, [sp]
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 228              		.loc 1 68 47 is_stmt 1 view .LVU63
+ 229              	.LVL23:
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 230              		.loc 1 68 54 view .LVU64
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 231              		.loc 1 68 49 is_stmt 0 view .LVU65
+ 232 00c0 0624     		movs	r4, #6
+  68:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 233              		.loc 1 68 54 view .LVU66
+ 234 00c2 C9E7     		b	.L41
+ 235              	.LVL24:
+ 236              	.L33:
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 237              		.loc 1 69 22 is_stmt 1 view .LVU67
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 238              		.loc 1 69 29 is_stmt 0 view .LVU68
+ 239 00c4 0023     		movs	r3, #0
+ 240 00c6 8DF80030 		strb	r3, [sp]
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 241              		.loc 1 69 47 is_stmt 1 view .LVU69
+ 242              	.LVL25:
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 243              		.loc 1 69 54 view .LVU70
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 244              		.loc 1 69 49 is_stmt 0 view .LVU71
+ 245 00ca 0724     		movs	r4, #7
+  69:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 246              		.loc 1 69 54 view .LVU72
+ 247 00cc C4E7     		b	.L41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 9
+
+
+ 248              	.LVL26:
+ 249              	.L32:
+  70:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 250              		.loc 1 70 22 is_stmt 1 view .LVU73
+  70:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 251              		.loc 1 70 29 is_stmt 0 view .LVU74
+ 252 00ce 0024     		movs	r4, #0
+ 253 00d0 8DF80140 		strb	r4, [sp, #1]
+  70:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 254              		.loc 1 70 47 is_stmt 1 view .LVU75
+  70:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 255              		.loc 1 70 54 view .LVU76
+ 256 00d4 C0E7     		b	.L41
+ 257              	.L31:
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 258              		.loc 1 71 22 view .LVU77
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 259              		.loc 1 71 29 is_stmt 0 view .LVU78
+ 260 00d6 0023     		movs	r3, #0
+ 261 00d8 8DF80130 		strb	r3, [sp, #1]
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 262              		.loc 1 71 47 is_stmt 1 view .LVU79
+ 263              	.LVL27:
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 264              		.loc 1 71 54 view .LVU80
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 265              		.loc 1 71 49 is_stmt 0 view .LVU81
+ 266 00dc 0124     		movs	r4, #1
+  71:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 267              		.loc 1 71 54 view .LVU82
+ 268 00de BBE7     		b	.L41
+ 269              	.LVL28:
+ 270              	.L30:
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 271              		.loc 1 72 22 is_stmt 1 view .LVU83
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 272              		.loc 1 72 29 is_stmt 0 view .LVU84
+ 273 00e0 0023     		movs	r3, #0
+ 274 00e2 8DF80130 		strb	r3, [sp, #1]
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 275              		.loc 1 72 47 is_stmt 1 view .LVU85
+ 276              	.LVL29:
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 277              		.loc 1 72 54 view .LVU86
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 278              		.loc 1 72 49 is_stmt 0 view .LVU87
+ 279 00e6 0224     		movs	r4, #2
+  72:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 280              		.loc 1 72 54 view .LVU88
+ 281 00e8 B6E7     		b	.L41
+ 282              	.LVL30:
+ 283              	.L29:
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 284              		.loc 1 73 22 is_stmt 1 view .LVU89
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 285              		.loc 1 73 29 is_stmt 0 view .LVU90
+ 286 00ea 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 10
+
+
+ 287 00ec 8DF80130 		strb	r3, [sp, #1]
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 288              		.loc 1 73 47 is_stmt 1 view .LVU91
+ 289              	.LVL31:
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 290              		.loc 1 73 54 view .LVU92
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 291              		.loc 1 73 49 is_stmt 0 view .LVU93
+ 292 00f0 0324     		movs	r4, #3
+  73:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 293              		.loc 1 73 54 view .LVU94
+ 294 00f2 B1E7     		b	.L41
+ 295              	.LVL32:
+ 296              	.L28:
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 297              		.loc 1 74 22 is_stmt 1 view .LVU95
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 298              		.loc 1 74 29 is_stmt 0 view .LVU96
+ 299 00f4 0023     		movs	r3, #0
+ 300 00f6 8DF80130 		strb	r3, [sp, #1]
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 301              		.loc 1 74 47 is_stmt 1 view .LVU97
+ 302              	.LVL33:
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 303              		.loc 1 74 54 view .LVU98
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 304              		.loc 1 74 49 is_stmt 0 view .LVU99
+ 305 00fa 0424     		movs	r4, #4
+  74:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 306              		.loc 1 74 54 view .LVU100
+ 307 00fc ACE7     		b	.L41
+ 308              	.LVL34:
+ 309              	.L27:
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 310              		.loc 1 75 22 is_stmt 1 view .LVU101
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 311              		.loc 1 75 29 is_stmt 0 view .LVU102
+ 312 00fe 0023     		movs	r3, #0
+ 313 0100 8DF80130 		strb	r3, [sp, #1]
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 314              		.loc 1 75 47 is_stmt 1 view .LVU103
+ 315              	.LVL35:
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 316              		.loc 1 75 54 view .LVU104
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 317              		.loc 1 75 49 is_stmt 0 view .LVU105
+ 318 0104 0524     		movs	r4, #5
+  75:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 319              		.loc 1 75 54 view .LVU106
+ 320 0106 A7E7     		b	.L41
+ 321              	.LVL36:
+ 322              	.L26:
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 323              		.loc 1 76 22 is_stmt 1 view .LVU107
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 324              		.loc 1 76 29 is_stmt 0 view .LVU108
+ 325 0108 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 11
+
+
+ 326 010a 8DF80130 		strb	r3, [sp, #1]
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 327              		.loc 1 76 47 is_stmt 1 view .LVU109
+ 328              	.LVL37:
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 329              		.loc 1 76 54 view .LVU110
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 330              		.loc 1 76 49 is_stmt 0 view .LVU111
+ 331 010e 0624     		movs	r4, #6
+  76:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 332              		.loc 1 76 54 view .LVU112
+ 333 0110 A2E7     		b	.L41
+ 334              	.LVL38:
+ 335              	.L25:
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 336              		.loc 1 77 22 is_stmt 1 view .LVU113
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 337              		.loc 1 77 29 is_stmt 0 view .LVU114
+ 338 0112 0023     		movs	r3, #0
+ 339 0114 8DF80130 		strb	r3, [sp, #1]
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 340              		.loc 1 77 47 is_stmt 1 view .LVU115
+ 341              	.LVL39:
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 342              		.loc 1 77 54 view .LVU116
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 343              		.loc 1 77 49 is_stmt 0 view .LVU117
+ 344 0118 0724     		movs	r4, #7
+  77:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 345              		.loc 1 77 54 view .LVU118
+ 346 011a 9DE7     		b	.L41
+ 347              	.LVL40:
+ 348              	.L24:
+  78:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 349              		.loc 1 78 22 is_stmt 1 view .LVU119
+  78:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 350              		.loc 1 78 29 is_stmt 0 view .LVU120
+ 351 011c 0024     		movs	r4, #0
+ 352 011e 8DF80240 		strb	r4, [sp, #2]
+  78:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 353              		.loc 1 78 47 is_stmt 1 view .LVU121
+  78:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 354              		.loc 1 78 54 view .LVU122
+ 355 0122 99E7     		b	.L41
+ 356              	.L23:
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 357              		.loc 1 79 22 view .LVU123
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 358              		.loc 1 79 29 is_stmt 0 view .LVU124
+ 359 0124 0023     		movs	r3, #0
+ 360 0126 8DF80230 		strb	r3, [sp, #2]
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 361              		.loc 1 79 47 is_stmt 1 view .LVU125
+ 362              	.LVL41:
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 363              		.loc 1 79 54 view .LVU126
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 12
+
+
+ 364              		.loc 1 79 49 is_stmt 0 view .LVU127
+ 365 012a 0124     		movs	r4, #1
+  79:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 366              		.loc 1 79 54 view .LVU128
+ 367 012c 94E7     		b	.L41
+ 368              	.LVL42:
+ 369              	.L22:
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 370              		.loc 1 80 22 is_stmt 1 view .LVU129
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 371              		.loc 1 80 29 is_stmt 0 view .LVU130
+ 372 012e 0023     		movs	r3, #0
+ 373 0130 8DF80230 		strb	r3, [sp, #2]
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 374              		.loc 1 80 47 is_stmt 1 view .LVU131
+ 375              	.LVL43:
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 376              		.loc 1 80 54 view .LVU132
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 377              		.loc 1 80 49 is_stmt 0 view .LVU133
+ 378 0134 0224     		movs	r4, #2
+  80:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 379              		.loc 1 80 54 view .LVU134
+ 380 0136 8FE7     		b	.L41
+ 381              	.LVL44:
+ 382              	.L21:
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 383              		.loc 1 81 22 is_stmt 1 view .LVU135
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 384              		.loc 1 81 29 is_stmt 0 view .LVU136
+ 385 0138 0023     		movs	r3, #0
+ 386 013a 8DF80230 		strb	r3, [sp, #2]
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 387              		.loc 1 81 47 is_stmt 1 view .LVU137
+ 388              	.LVL45:
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 389              		.loc 1 81 54 view .LVU138
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 390              		.loc 1 81 49 is_stmt 0 view .LVU139
+ 391 013e 0324     		movs	r4, #3
+  81:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 392              		.loc 1 81 54 view .LVU140
+ 393 0140 8AE7     		b	.L41
+ 394              	.LVL46:
+ 395              	.L20:
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 396              		.loc 1 82 22 is_stmt 1 view .LVU141
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 397              		.loc 1 82 29 is_stmt 0 view .LVU142
+ 398 0142 0023     		movs	r3, #0
+ 399 0144 8DF80230 		strb	r3, [sp, #2]
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 400              		.loc 1 82 47 is_stmt 1 view .LVU143
+ 401              	.LVL47:
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 402              		.loc 1 82 54 view .LVU144
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 13
+
+
+ 403              		.loc 1 82 49 is_stmt 0 view .LVU145
+ 404 0148 0424     		movs	r4, #4
+  82:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 405              		.loc 1 82 54 view .LVU146
+ 406 014a 85E7     		b	.L41
+ 407              	.LVL48:
+ 408              	.L19:
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 409              		.loc 1 83 22 is_stmt 1 view .LVU147
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 410              		.loc 1 83 29 is_stmt 0 view .LVU148
+ 411 014c 0023     		movs	r3, #0
+ 412 014e 8DF80230 		strb	r3, [sp, #2]
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 413              		.loc 1 83 47 is_stmt 1 view .LVU149
+ 414              	.LVL49:
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 415              		.loc 1 83 54 view .LVU150
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 416              		.loc 1 83 49 is_stmt 0 view .LVU151
+ 417 0152 0524     		movs	r4, #5
+  83:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 418              		.loc 1 83 54 view .LVU152
+ 419 0154 80E7     		b	.L41
+ 420              	.LVL50:
+ 421              	.L18:
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 422              		.loc 1 84 22 is_stmt 1 view .LVU153
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 423              		.loc 1 84 29 is_stmt 0 view .LVU154
+ 424 0156 0023     		movs	r3, #0
+ 425 0158 8DF80230 		strb	r3, [sp, #2]
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 426              		.loc 1 84 47 is_stmt 1 view .LVU155
+ 427              	.LVL51:
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 428              		.loc 1 84 54 view .LVU156
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 429              		.loc 1 84 49 is_stmt 0 view .LVU157
+ 430 015c 0624     		movs	r4, #6
+  84:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 431              		.loc 1 84 54 view .LVU158
+ 432 015e 7BE7     		b	.L41
+ 433              	.LVL52:
+ 434              	.L17:
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 435              		.loc 1 85 22 is_stmt 1 view .LVU159
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 436              		.loc 1 85 29 is_stmt 0 view .LVU160
+ 437 0160 0023     		movs	r3, #0
+ 438 0162 8DF80230 		strb	r3, [sp, #2]
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 439              		.loc 1 85 47 is_stmt 1 view .LVU161
+ 440              	.LVL53:
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 441              		.loc 1 85 54 view .LVU162
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 14
+
+
+ 442              		.loc 1 85 49 is_stmt 0 view .LVU163
+ 443 0166 0724     		movs	r4, #7
+  85:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 444              		.loc 1 85 54 view .LVU164
+ 445 0168 76E7     		b	.L41
+ 446              	.LVL54:
+ 447              	.L16:
+  86:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 448              		.loc 1 86 22 is_stmt 1 view .LVU165
+  86:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 449              		.loc 1 86 29 is_stmt 0 view .LVU166
+ 450 016a 0024     		movs	r4, #0
+ 451 016c 8DF80340 		strb	r4, [sp, #3]
+  86:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 452              		.loc 1 86 47 is_stmt 1 view .LVU167
+  86:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 453              		.loc 1 86 54 view .LVU168
+ 454 0170 72E7     		b	.L41
+ 455              	.L15:
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 456              		.loc 1 87 22 view .LVU169
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 457              		.loc 1 87 29 is_stmt 0 view .LVU170
+ 458 0172 0023     		movs	r3, #0
+ 459 0174 8DF80330 		strb	r3, [sp, #3]
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 460              		.loc 1 87 47 is_stmt 1 view .LVU171
+ 461              	.LVL55:
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 462              		.loc 1 87 54 view .LVU172
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 463              		.loc 1 87 49 is_stmt 0 view .LVU173
+ 464 0178 0124     		movs	r4, #1
+  87:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 465              		.loc 1 87 54 view .LVU174
+ 466 017a 6DE7     		b	.L41
+ 467              	.LVL56:
+ 468              	.L14:
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 469              		.loc 1 88 22 is_stmt 1 view .LVU175
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 470              		.loc 1 88 29 is_stmt 0 view .LVU176
+ 471 017c 0023     		movs	r3, #0
+ 472 017e 8DF80330 		strb	r3, [sp, #3]
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 473              		.loc 1 88 47 is_stmt 1 view .LVU177
+ 474              	.LVL57:
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 475              		.loc 1 88 54 view .LVU178
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 476              		.loc 1 88 49 is_stmt 0 view .LVU179
+ 477 0182 0224     		movs	r4, #2
+  88:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 478              		.loc 1 88 54 view .LVU180
+ 479 0184 68E7     		b	.L41
+ 480              	.LVL58:
+ 481              	.L13:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 15
+
+
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 482              		.loc 1 89 22 is_stmt 1 view .LVU181
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 483              		.loc 1 89 29 is_stmt 0 view .LVU182
+ 484 0186 0023     		movs	r3, #0
+ 485 0188 8DF80330 		strb	r3, [sp, #3]
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 486              		.loc 1 89 47 is_stmt 1 view .LVU183
+ 487              	.LVL59:
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 488              		.loc 1 89 54 view .LVU184
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 489              		.loc 1 89 49 is_stmt 0 view .LVU185
+ 490 018c 0324     		movs	r4, #3
+  89:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 491              		.loc 1 89 54 view .LVU186
+ 492 018e 63E7     		b	.L41
+ 493              	.LVL60:
+ 494              	.L12:
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 495              		.loc 1 90 22 is_stmt 1 view .LVU187
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 496              		.loc 1 90 29 is_stmt 0 view .LVU188
+ 497 0190 0023     		movs	r3, #0
+ 498 0192 8DF80330 		strb	r3, [sp, #3]
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 499              		.loc 1 90 47 is_stmt 1 view .LVU189
+ 500              	.LVL61:
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 501              		.loc 1 90 54 view .LVU190
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 502              		.loc 1 90 49 is_stmt 0 view .LVU191
+ 503 0196 0424     		movs	r4, #4
+  90:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 504              		.loc 1 90 54 view .LVU192
+ 505 0198 5EE7     		b	.L41
+ 506              	.LVL62:
+ 507              	.L11:
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 508              		.loc 1 91 22 is_stmt 1 view .LVU193
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 509              		.loc 1 91 29 is_stmt 0 view .LVU194
+ 510 019a 0023     		movs	r3, #0
+ 511 019c 8DF80330 		strb	r3, [sp, #3]
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 512              		.loc 1 91 47 is_stmt 1 view .LVU195
+ 513              	.LVL63:
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 514              		.loc 1 91 54 view .LVU196
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 515              		.loc 1 91 49 is_stmt 0 view .LVU197
+ 516 01a0 0524     		movs	r4, #5
+  91:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 517              		.loc 1 91 54 view .LVU198
+ 518 01a2 59E7     		b	.L41
+ 519              	.LVL64:
+ 520              	.L10:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 16
+
+
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 521              		.loc 1 92 22 is_stmt 1 view .LVU199
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 522              		.loc 1 92 29 is_stmt 0 view .LVU200
+ 523 01a4 0023     		movs	r3, #0
+ 524 01a6 8DF80330 		strb	r3, [sp, #3]
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 525              		.loc 1 92 47 is_stmt 1 view .LVU201
+ 526              	.LVL65:
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 527              		.loc 1 92 54 view .LVU202
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 528              		.loc 1 92 49 is_stmt 0 view .LVU203
+ 529 01aa 0624     		movs	r4, #6
+  92:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 530              		.loc 1 92 54 view .LVU204
+ 531 01ac 54E7     		b	.L41
+ 532              	.LVL66:
+ 533              	.L9:
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 534              		.loc 1 93 22 is_stmt 1 view .LVU205
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 535              		.loc 1 93 29 is_stmt 0 view .LVU206
+ 536 01ae 0023     		movs	r3, #0
+ 537 01b0 8DF80330 		strb	r3, [sp, #3]
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 538              		.loc 1 93 47 is_stmt 1 view .LVU207
+ 539              	.LVL67:
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 540              		.loc 1 93 54 view .LVU208
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 541              		.loc 1 93 49 is_stmt 0 view .LVU209
+ 542 01b4 0724     		movs	r4, #7
+  93:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 543              		.loc 1 93 54 view .LVU210
+ 544 01b6 4FE7     		b	.L41
+ 545              	.LVL68:
+ 546              	.L8:
+  94:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 547              		.loc 1 94 22 is_stmt 1 view .LVU211
+  94:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 548              		.loc 1 94 29 is_stmt 0 view .LVU212
+ 549 01b8 0024     		movs	r4, #0
+ 550 01ba 8DF80440 		strb	r4, [sp, #4]
+  94:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 551              		.loc 1 94 47 is_stmt 1 view .LVU213
+  94:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 552              		.loc 1 94 54 view .LVU214
+ 553 01be 4BE7     		b	.L41
+ 554              	.L6:
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 555              		.loc 1 95 22 view .LVU215
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 556              		.loc 1 95 29 is_stmt 0 view .LVU216
+ 557 01c0 0023     		movs	r3, #0
+ 558 01c2 8DF80430 		strb	r3, [sp, #4]
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 17
+
+
+ 559              		.loc 1 95 47 is_stmt 1 view .LVU217
+ 560              	.LVL69:
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 561              		.loc 1 95 54 view .LVU218
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 562              		.loc 1 95 49 is_stmt 0 view .LVU219
+ 563 01c6 0124     		movs	r4, #1
+  95:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 564              		.loc 1 95 54 view .LVU220
+ 565 01c8 46E7     		b	.L41
+ 566              	.LVL70:
+ 567              	.L4:
+ 102:linea/src/linea_bsp_linea_v1.c ****             LINEA_ErrLog("Invalid Y Coil ID: %d", id);
+ 568              		.loc 1 102 9 is_stmt 1 view .LVU221
+ 102:linea/src/linea_bsp_linea_v1.c ****             LINEA_ErrLog("Invalid Y Coil ID: %d", id);
+ 569              		.loc 1 102 11 is_stmt 0 view .LVU222
+ 570 01ca 2C28     		cmp	r0, #44
+ 571 01cc 00F20A81 		bhi	.L1
+ 108:linea/src/linea_bsp_linea_v1.c ****             case 0:  ExN[0] = GPIO_PIN_RESET; S = 2; break; // U1
+ 572              		.loc 1 108 9 is_stmt 1 view .LVU223
+ 573 01d0 2C28     		cmp	r0, #44
+ 574 01d2 00F20781 		bhi	.L1
+ 575 01d6 DFE800F0 		tbb	[pc, r0]
+ 576              	.LVL71:
+ 577              	.L43:
+ 578 01da 17       		.byte	(.L87-.L43)/2
+ 579 01db 1C       		.byte	(.L86-.L43)/2
+ 580 01dc 21       		.byte	(.L85-.L43)/2
+ 581 01dd 26       		.byte	(.L84-.L43)/2
+ 582 01de 2B       		.byte	(.L83-.L43)/2
+ 583 01df 30       		.byte	(.L82-.L43)/2
+ 584 01e0 35       		.byte	(.L81-.L43)/2
+ 585 01e1 39       		.byte	(.L80-.L43)/2
+ 586 01e2 3E       		.byte	(.L79-.L43)/2
+ 587 01e3 43       		.byte	(.L78-.L43)/2
+ 588 01e4 48       		.byte	(.L77-.L43)/2
+ 589 01e5 4D       		.byte	(.L76-.L43)/2
+ 590 01e6 52       		.byte	(.L75-.L43)/2
+ 591 01e7 57       		.byte	(.L74-.L43)/2
+ 592 01e8 5C       		.byte	(.L73-.L43)/2
+ 593 01e9 60       		.byte	(.L72-.L43)/2
+ 594 01ea 65       		.byte	(.L71-.L43)/2
+ 595 01eb 6A       		.byte	(.L70-.L43)/2
+ 596 01ec 6F       		.byte	(.L69-.L43)/2
+ 597 01ed 74       		.byte	(.L68-.L43)/2
+ 598 01ee 79       		.byte	(.L67-.L43)/2
+ 599 01ef 7E       		.byte	(.L66-.L43)/2
+ 600 01f0 83       		.byte	(.L65-.L43)/2
+ 601 01f1 87       		.byte	(.L64-.L43)/2
+ 602 01f2 8C       		.byte	(.L63-.L43)/2
+ 603 01f3 91       		.byte	(.L62-.L43)/2
+ 604 01f4 96       		.byte	(.L61-.L43)/2
+ 605 01f5 9B       		.byte	(.L60-.L43)/2
+ 606 01f6 A0       		.byte	(.L59-.L43)/2
+ 607 01f7 A5       		.byte	(.L58-.L43)/2
+ 608 01f8 AA       		.byte	(.L57-.L43)/2
+ 609 01f9 AE       		.byte	(.L56-.L43)/2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 18
+
+
+ 610 01fa B5       		.byte	(.L55-.L43)/2
+ 611 01fb BA       		.byte	(.L54-.L43)/2
+ 612 01fc BF       		.byte	(.L53-.L43)/2
+ 613 01fd C4       		.byte	(.L52-.L43)/2
+ 614 01fe C9       		.byte	(.L51-.L43)/2
+ 615 01ff CE       		.byte	(.L50-.L43)/2
+ 616 0200 D3       		.byte	(.L49-.L43)/2
+ 617 0201 D7       		.byte	(.L48-.L43)/2
+ 618 0202 DC       		.byte	(.L47-.L43)/2
+ 619 0203 E1       		.byte	(.L46-.L43)/2
+ 620 0204 E6       		.byte	(.L45-.L43)/2
+ 621 0205 EB       		.byte	(.L44-.L43)/2
+ 622 0206 F0       		.byte	(.L42-.L43)/2
+ 623 0207 00       		.p2align 1
+ 624              	.L87:
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 625              		.loc 1 109 22 view .LVU224
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 626              		.loc 1 109 29 is_stmt 0 view .LVU225
+ 627 0208 0023     		movs	r3, #0
+ 628 020a 8DF80030 		strb	r3, [sp]
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 629              		.loc 1 109 47 is_stmt 1 view .LVU226
+ 630              	.LVL72:
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 631              		.loc 1 109 54 view .LVU227
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 632              		.loc 1 109 49 is_stmt 0 view .LVU228
+ 633 020e 0224     		movs	r4, #2
+ 109:linea/src/linea_bsp_linea_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 3; break;
+ 634              		.loc 1 109 54 view .LVU229
+ 635 0210 22E7     		b	.L41
+ 636              	.LVL73:
+ 637              	.L86:
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 638              		.loc 1 110 22 is_stmt 1 view .LVU230
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 639              		.loc 1 110 29 is_stmt 0 view .LVU231
+ 640 0212 0023     		movs	r3, #0
+ 641 0214 8DF80030 		strb	r3, [sp]
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 642              		.loc 1 110 47 is_stmt 1 view .LVU232
+ 643              	.LVL74:
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 644              		.loc 1 110 54 view .LVU233
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 645              		.loc 1 110 49 is_stmt 0 view .LVU234
+ 646 0218 0324     		movs	r4, #3
+ 110:linea/src/linea_bsp_linea_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
+ 647              		.loc 1 110 54 view .LVU235
+ 648 021a 1DE7     		b	.L41
+ 649              	.LVL75:
+ 650              	.L85:
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 651              		.loc 1 111 22 is_stmt 1 view .LVU236
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 652              		.loc 1 111 29 is_stmt 0 view .LVU237
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 19
+
+
+ 653 021c 0023     		movs	r3, #0
+ 654 021e 8DF80030 		strb	r3, [sp]
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 655              		.loc 1 111 47 is_stmt 1 view .LVU238
+ 656              	.LVL76:
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 657              		.loc 1 111 54 view .LVU239
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 658              		.loc 1 111 49 is_stmt 0 view .LVU240
+ 659 0222 0424     		movs	r4, #4
+ 111:linea/src/linea_bsp_linea_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
+ 660              		.loc 1 111 54 view .LVU241
+ 661 0224 18E7     		b	.L41
+ 662              	.LVL77:
+ 663              	.L84:
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 664              		.loc 1 112 22 is_stmt 1 view .LVU242
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 665              		.loc 1 112 29 is_stmt 0 view .LVU243
+ 666 0226 0023     		movs	r3, #0
+ 667 0228 8DF80030 		strb	r3, [sp]
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 668              		.loc 1 112 47 is_stmt 1 view .LVU244
+ 669              	.LVL78:
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 670              		.loc 1 112 54 view .LVU245
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 671              		.loc 1 112 49 is_stmt 0 view .LVU246
+ 672 022c 0524     		movs	r4, #5
+ 112:linea/src/linea_bsp_linea_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
+ 673              		.loc 1 112 54 view .LVU247
+ 674 022e 13E7     		b	.L41
+ 675              	.LVL79:
+ 676              	.L83:
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 677              		.loc 1 113 22 is_stmt 1 view .LVU248
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 678              		.loc 1 113 29 is_stmt 0 view .LVU249
+ 679 0230 0023     		movs	r3, #0
+ 680 0232 8DF80030 		strb	r3, [sp]
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 681              		.loc 1 113 47 is_stmt 1 view .LVU250
+ 682              	.LVL80:
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 683              		.loc 1 113 54 view .LVU251
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 684              		.loc 1 113 49 is_stmt 0 view .LVU252
+ 685 0236 0624     		movs	r4, #6
+ 113:linea/src/linea_bsp_linea_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
+ 686              		.loc 1 113 54 view .LVU253
+ 687 0238 0EE7     		b	.L41
+ 688              	.LVL81:
+ 689              	.L82:
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 690              		.loc 1 114 22 is_stmt 1 view .LVU254
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 691              		.loc 1 114 29 is_stmt 0 view .LVU255
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 20
+
+
+ 692 023a 0023     		movs	r3, #0
+ 693 023c 8DF80030 		strb	r3, [sp]
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 694              		.loc 1 114 47 is_stmt 1 view .LVU256
+ 695              	.LVL82:
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 696              		.loc 1 114 54 view .LVU257
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 697              		.loc 1 114 49 is_stmt 0 view .LVU258
+ 698 0240 0724     		movs	r4, #7
+ 114:linea/src/linea_bsp_linea_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
+ 699              		.loc 1 114 54 view .LVU259
+ 700 0242 09E7     		b	.L41
+ 701              	.LVL83:
+ 702              	.L81:
+ 115:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 703              		.loc 1 115 22 is_stmt 1 view .LVU260
+ 115:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 704              		.loc 1 115 29 is_stmt 0 view .LVU261
+ 705 0244 0024     		movs	r4, #0
+ 706 0246 8DF80140 		strb	r4, [sp, #1]
+ 115:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 707              		.loc 1 115 47 is_stmt 1 view .LVU262
+ 115:linea/src/linea_bsp_linea_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
+ 708              		.loc 1 115 54 view .LVU263
+ 709 024a 05E7     		b	.L41
+ 710              	.L80:
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 711              		.loc 1 116 22 view .LVU264
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 712              		.loc 1 116 29 is_stmt 0 view .LVU265
+ 713 024c 0023     		movs	r3, #0
+ 714 024e 8DF80130 		strb	r3, [sp, #1]
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 715              		.loc 1 116 47 is_stmt 1 view .LVU266
+ 716              	.LVL84:
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 717              		.loc 1 116 54 view .LVU267
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 718              		.loc 1 116 49 is_stmt 0 view .LVU268
+ 719 0252 0124     		movs	r4, #1
+ 116:linea/src/linea_bsp_linea_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
+ 720              		.loc 1 116 54 view .LVU269
+ 721 0254 00E7     		b	.L41
+ 722              	.LVL85:
+ 723              	.L79:
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 724              		.loc 1 117 22 is_stmt 1 view .LVU270
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 725              		.loc 1 117 29 is_stmt 0 view .LVU271
+ 726 0256 0023     		movs	r3, #0
+ 727 0258 8DF80130 		strb	r3, [sp, #1]
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 728              		.loc 1 117 47 is_stmt 1 view .LVU272
+ 729              	.LVL86:
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 730              		.loc 1 117 54 view .LVU273
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 21
+
+
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 731              		.loc 1 117 49 is_stmt 0 view .LVU274
+ 732 025c 0224     		movs	r4, #2
+ 117:linea/src/linea_bsp_linea_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
+ 733              		.loc 1 117 54 view .LVU275
+ 734 025e FBE6     		b	.L41
+ 735              	.LVL87:
+ 736              	.L78:
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 737              		.loc 1 118 22 is_stmt 1 view .LVU276
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 738              		.loc 1 118 29 is_stmt 0 view .LVU277
+ 739 0260 0023     		movs	r3, #0
+ 740 0262 8DF80130 		strb	r3, [sp, #1]
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 741              		.loc 1 118 47 is_stmt 1 view .LVU278
+ 742              	.LVL88:
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 743              		.loc 1 118 54 view .LVU279
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 744              		.loc 1 118 49 is_stmt 0 view .LVU280
+ 745 0266 0324     		movs	r4, #3
+ 118:linea/src/linea_bsp_linea_v1.c ****             case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
+ 746              		.loc 1 118 54 view .LVU281
+ 747 0268 F6E6     		b	.L41
+ 748              	.LVL89:
+ 749              	.L77:
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 750              		.loc 1 119 22 is_stmt 1 view .LVU282
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 751              		.loc 1 119 29 is_stmt 0 view .LVU283
+ 752 026a 0023     		movs	r3, #0
+ 753 026c 8DF80130 		strb	r3, [sp, #1]
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 754              		.loc 1 119 47 is_stmt 1 view .LVU284
+ 755              	.LVL90:
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 756              		.loc 1 119 54 view .LVU285
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 757              		.loc 1 119 49 is_stmt 0 view .LVU286
+ 758 0270 0424     		movs	r4, #4
+ 119:linea/src/linea_bsp_linea_v1.c ****             case 11: ExN[1] = GPIO_PIN_RESET; S = 5; break;
+ 759              		.loc 1 119 54 view .LVU287
+ 760 0272 F1E6     		b	.L41
+ 761              	.LVL91:
+ 762              	.L76:
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 763              		.loc 1 120 22 is_stmt 1 view .LVU288
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 764              		.loc 1 120 29 is_stmt 0 view .LVU289
+ 765 0274 0023     		movs	r3, #0
+ 766 0276 8DF80130 		strb	r3, [sp, #1]
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 767              		.loc 1 120 47 is_stmt 1 view .LVU290
+ 768              	.LVL92:
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 769              		.loc 1 120 54 view .LVU291
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 22
+
+
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 770              		.loc 1 120 49 is_stmt 0 view .LVU292
+ 771 027a 0524     		movs	r4, #5
+ 120:linea/src/linea_bsp_linea_v1.c ****             case 12: ExN[1] = GPIO_PIN_RESET; S = 6; break;
+ 772              		.loc 1 120 54 view .LVU293
+ 773 027c ECE6     		b	.L41
+ 774              	.LVL93:
+ 775              	.L75:
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 776              		.loc 1 121 22 is_stmt 1 view .LVU294
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 777              		.loc 1 121 29 is_stmt 0 view .LVU295
+ 778 027e 0023     		movs	r3, #0
+ 779 0280 8DF80130 		strb	r3, [sp, #1]
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 780              		.loc 1 121 47 is_stmt 1 view .LVU296
+ 781              	.LVL94:
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 782              		.loc 1 121 54 view .LVU297
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 783              		.loc 1 121 49 is_stmt 0 view .LVU298
+ 784 0284 0624     		movs	r4, #6
+ 121:linea/src/linea_bsp_linea_v1.c ****             case 13: ExN[1] = GPIO_PIN_RESET; S = 7; break;
+ 785              		.loc 1 121 54 view .LVU299
+ 786 0286 E7E6     		b	.L41
+ 787              	.LVL95:
+ 788              	.L74:
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 789              		.loc 1 122 22 is_stmt 1 view .LVU300
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 790              		.loc 1 122 29 is_stmt 0 view .LVU301
+ 791 0288 0023     		movs	r3, #0
+ 792 028a 8DF80130 		strb	r3, [sp, #1]
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 793              		.loc 1 122 47 is_stmt 1 view .LVU302
+ 794              	.LVL96:
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 795              		.loc 1 122 54 view .LVU303
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 796              		.loc 1 122 49 is_stmt 0 view .LVU304
+ 797 028e 0724     		movs	r4, #7
+ 122:linea/src/linea_bsp_linea_v1.c ****             case 14: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
+ 798              		.loc 1 122 54 view .LVU305
+ 799 0290 E2E6     		b	.L41
+ 800              	.LVL97:
+ 801              	.L73:
+ 123:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 802              		.loc 1 123 22 is_stmt 1 view .LVU306
+ 123:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 803              		.loc 1 123 29 is_stmt 0 view .LVU307
+ 804 0292 0024     		movs	r4, #0
+ 805 0294 8DF80240 		strb	r4, [sp, #2]
+ 123:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 806              		.loc 1 123 47 is_stmt 1 view .LVU308
+ 123:linea/src/linea_bsp_linea_v1.c ****             case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 807              		.loc 1 123 54 view .LVU309
+ 808 0298 DEE6     		b	.L41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 23
+
+
+ 809              	.L72:
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 810              		.loc 1 124 22 view .LVU310
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 811              		.loc 1 124 29 is_stmt 0 view .LVU311
+ 812 029a 0023     		movs	r3, #0
+ 813 029c 8DF80230 		strb	r3, [sp, #2]
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 814              		.loc 1 124 47 is_stmt 1 view .LVU312
+ 815              	.LVL98:
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 816              		.loc 1 124 54 view .LVU313
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 817              		.loc 1 124 49 is_stmt 0 view .LVU314
+ 818 02a0 0124     		movs	r4, #1
+ 124:linea/src/linea_bsp_linea_v1.c ****             case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 819              		.loc 1 124 54 view .LVU315
+ 820 02a2 D9E6     		b	.L41
+ 821              	.LVL99:
+ 822              	.L71:
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 823              		.loc 1 125 22 is_stmt 1 view .LVU316
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 824              		.loc 1 125 29 is_stmt 0 view .LVU317
+ 825 02a4 0023     		movs	r3, #0
+ 826 02a6 8DF80230 		strb	r3, [sp, #2]
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 827              		.loc 1 125 47 is_stmt 1 view .LVU318
+ 828              	.LVL100:
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 829              		.loc 1 125 54 view .LVU319
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 830              		.loc 1 125 49 is_stmt 0 view .LVU320
+ 831 02aa 0224     		movs	r4, #2
+ 125:linea/src/linea_bsp_linea_v1.c ****             case 17: ExN[2] = GPIO_PIN_RESET; S = 3; break;
+ 832              		.loc 1 125 54 view .LVU321
+ 833 02ac D4E6     		b	.L41
+ 834              	.LVL101:
+ 835              	.L70:
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 836              		.loc 1 126 22 is_stmt 1 view .LVU322
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 837              		.loc 1 126 29 is_stmt 0 view .LVU323
+ 838 02ae 0023     		movs	r3, #0
+ 839 02b0 8DF80230 		strb	r3, [sp, #2]
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 840              		.loc 1 126 47 is_stmt 1 view .LVU324
+ 841              	.LVL102:
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 842              		.loc 1 126 54 view .LVU325
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 843              		.loc 1 126 49 is_stmt 0 view .LVU326
+ 844 02b4 0324     		movs	r4, #3
+ 126:linea/src/linea_bsp_linea_v1.c ****             case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 845              		.loc 1 126 54 view .LVU327
+ 846 02b6 CFE6     		b	.L41
+ 847              	.LVL103:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 24
+
+
+ 848              	.L69:
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 849              		.loc 1 127 22 is_stmt 1 view .LVU328
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 850              		.loc 1 127 29 is_stmt 0 view .LVU329
+ 851 02b8 0023     		movs	r3, #0
+ 852 02ba 8DF80230 		strb	r3, [sp, #2]
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 853              		.loc 1 127 47 is_stmt 1 view .LVU330
+ 854              	.LVL104:
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 855              		.loc 1 127 54 view .LVU331
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 856              		.loc 1 127 49 is_stmt 0 view .LVU332
+ 857 02be 0424     		movs	r4, #4
+ 127:linea/src/linea_bsp_linea_v1.c ****             case 19: ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 858              		.loc 1 127 54 view .LVU333
+ 859 02c0 CAE6     		b	.L41
+ 860              	.LVL105:
+ 861              	.L68:
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 862              		.loc 1 128 22 is_stmt 1 view .LVU334
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 863              		.loc 1 128 29 is_stmt 0 view .LVU335
+ 864 02c2 0023     		movs	r3, #0
+ 865 02c4 8DF80230 		strb	r3, [sp, #2]
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 866              		.loc 1 128 47 is_stmt 1 view .LVU336
+ 867              	.LVL106:
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 868              		.loc 1 128 54 view .LVU337
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 869              		.loc 1 128 49 is_stmt 0 view .LVU338
+ 870 02c8 0524     		movs	r4, #5
+ 128:linea/src/linea_bsp_linea_v1.c ****             case 20: ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 871              		.loc 1 128 54 view .LVU339
+ 872 02ca C5E6     		b	.L41
+ 873              	.LVL107:
+ 874              	.L67:
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 875              		.loc 1 129 22 is_stmt 1 view .LVU340
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 876              		.loc 1 129 29 is_stmt 0 view .LVU341
+ 877 02cc 0023     		movs	r3, #0
+ 878 02ce 8DF80230 		strb	r3, [sp, #2]
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 879              		.loc 1 129 47 is_stmt 1 view .LVU342
+ 880              	.LVL108:
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 881              		.loc 1 129 54 view .LVU343
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 882              		.loc 1 129 49 is_stmt 0 view .LVU344
+ 883 02d2 0624     		movs	r4, #6
+ 129:linea/src/linea_bsp_linea_v1.c ****             case 21: ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 884              		.loc 1 129 54 view .LVU345
+ 885 02d4 C0E6     		b	.L41
+ 886              	.LVL109:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 25
+
+
+ 887              	.L66:
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 888              		.loc 1 130 22 is_stmt 1 view .LVU346
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 889              		.loc 1 130 29 is_stmt 0 view .LVU347
+ 890 02d6 0023     		movs	r3, #0
+ 891 02d8 8DF80230 		strb	r3, [sp, #2]
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 892              		.loc 1 130 47 is_stmt 1 view .LVU348
+ 893              	.LVL110:
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 894              		.loc 1 130 54 view .LVU349
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 895              		.loc 1 130 49 is_stmt 0 view .LVU350
+ 896 02dc 0724     		movs	r4, #7
+ 130:linea/src/linea_bsp_linea_v1.c ****             case 22: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U4
+ 897              		.loc 1 130 54 view .LVU351
+ 898 02de BBE6     		b	.L41
+ 899              	.LVL111:
+ 900              	.L65:
+ 131:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 901              		.loc 1 131 22 is_stmt 1 view .LVU352
+ 131:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 902              		.loc 1 131 29 is_stmt 0 view .LVU353
+ 903 02e0 0024     		movs	r4, #0
+ 904 02e2 8DF80340 		strb	r4, [sp, #3]
+ 131:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 905              		.loc 1 131 47 is_stmt 1 view .LVU354
+ 131:linea/src/linea_bsp_linea_v1.c ****             case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 906              		.loc 1 131 54 view .LVU355
+ 907 02e6 B7E6     		b	.L41
+ 908              	.L64:
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 909              		.loc 1 132 22 view .LVU356
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 910              		.loc 1 132 29 is_stmt 0 view .LVU357
+ 911 02e8 0023     		movs	r3, #0
+ 912 02ea 8DF80330 		strb	r3, [sp, #3]
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 913              		.loc 1 132 47 is_stmt 1 view .LVU358
+ 914              	.LVL112:
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 915              		.loc 1 132 54 view .LVU359
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 916              		.loc 1 132 49 is_stmt 0 view .LVU360
+ 917 02ee 0124     		movs	r4, #1
+ 132:linea/src/linea_bsp_linea_v1.c ****             case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 918              		.loc 1 132 54 view .LVU361
+ 919 02f0 B2E6     		b	.L41
+ 920              	.LVL113:
+ 921              	.L63:
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 922              		.loc 1 133 22 is_stmt 1 view .LVU362
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 923              		.loc 1 133 29 is_stmt 0 view .LVU363
+ 924 02f2 0023     		movs	r3, #0
+ 925 02f4 8DF80330 		strb	r3, [sp, #3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 26
+
+
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 926              		.loc 1 133 47 is_stmt 1 view .LVU364
+ 927              	.LVL114:
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 928              		.loc 1 133 54 view .LVU365
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 929              		.loc 1 133 49 is_stmt 0 view .LVU366
+ 930 02f8 0224     		movs	r4, #2
+ 133:linea/src/linea_bsp_linea_v1.c ****             case 25: ExN[3] = GPIO_PIN_RESET; S = 3; break;
+ 931              		.loc 1 133 54 view .LVU367
+ 932 02fa ADE6     		b	.L41
+ 933              	.LVL115:
+ 934              	.L62:
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 935              		.loc 1 134 22 is_stmt 1 view .LVU368
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 936              		.loc 1 134 29 is_stmt 0 view .LVU369
+ 937 02fc 0023     		movs	r3, #0
+ 938 02fe 8DF80330 		strb	r3, [sp, #3]
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 939              		.loc 1 134 47 is_stmt 1 view .LVU370
+ 940              	.LVL116:
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 941              		.loc 1 134 54 view .LVU371
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 942              		.loc 1 134 49 is_stmt 0 view .LVU372
+ 943 0302 0324     		movs	r4, #3
+ 134:linea/src/linea_bsp_linea_v1.c ****             case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 944              		.loc 1 134 54 view .LVU373
+ 945 0304 A8E6     		b	.L41
+ 946              	.LVL117:
+ 947              	.L61:
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 948              		.loc 1 135 22 is_stmt 1 view .LVU374
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 949              		.loc 1 135 29 is_stmt 0 view .LVU375
+ 950 0306 0023     		movs	r3, #0
+ 951 0308 8DF80330 		strb	r3, [sp, #3]
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 952              		.loc 1 135 47 is_stmt 1 view .LVU376
+ 953              	.LVL118:
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 954              		.loc 1 135 54 view .LVU377
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 955              		.loc 1 135 49 is_stmt 0 view .LVU378
+ 956 030c 0424     		movs	r4, #4
+ 135:linea/src/linea_bsp_linea_v1.c ****             case 27: ExN[3] = GPIO_PIN_RESET; S = 5; break;
+ 957              		.loc 1 135 54 view .LVU379
+ 958 030e A3E6     		b	.L41
+ 959              	.LVL119:
+ 960              	.L60:
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 961              		.loc 1 136 22 is_stmt 1 view .LVU380
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 962              		.loc 1 136 29 is_stmt 0 view .LVU381
+ 963 0310 0023     		movs	r3, #0
+ 964 0312 8DF80330 		strb	r3, [sp, #3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 27
+
+
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 965              		.loc 1 136 47 is_stmt 1 view .LVU382
+ 966              	.LVL120:
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 967              		.loc 1 136 54 view .LVU383
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 968              		.loc 1 136 49 is_stmt 0 view .LVU384
+ 969 0316 0524     		movs	r4, #5
+ 136:linea/src/linea_bsp_linea_v1.c ****             case 28: ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 970              		.loc 1 136 54 view .LVU385
+ 971 0318 9EE6     		b	.L41
+ 972              	.LVL121:
+ 973              	.L59:
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 974              		.loc 1 137 22 is_stmt 1 view .LVU386
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 975              		.loc 1 137 29 is_stmt 0 view .LVU387
+ 976 031a 0023     		movs	r3, #0
+ 977 031c 8DF80330 		strb	r3, [sp, #3]
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 978              		.loc 1 137 47 is_stmt 1 view .LVU388
+ 979              	.LVL122:
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 980              		.loc 1 137 54 view .LVU389
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 981              		.loc 1 137 49 is_stmt 0 view .LVU390
+ 982 0320 0624     		movs	r4, #6
+ 137:linea/src/linea_bsp_linea_v1.c ****             case 29: ExN[3] = GPIO_PIN_RESET; S = 7; break;
+ 983              		.loc 1 137 54 view .LVU391
+ 984 0322 99E6     		b	.L41
+ 985              	.LVL123:
+ 986              	.L58:
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 987              		.loc 1 138 22 is_stmt 1 view .LVU392
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 988              		.loc 1 138 29 is_stmt 0 view .LVU393
+ 989 0324 0023     		movs	r3, #0
+ 990 0326 8DF80330 		strb	r3, [sp, #3]
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 991              		.loc 1 138 47 is_stmt 1 view .LVU394
+ 992              	.LVL124:
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 993              		.loc 1 138 54 view .LVU395
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 994              		.loc 1 138 49 is_stmt 0 view .LVU396
+ 995 032a 0724     		movs	r4, #7
+ 138:linea/src/linea_bsp_linea_v1.c ****             case 30: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U5
+ 996              		.loc 1 138 54 view .LVU397
+ 997 032c 94E6     		b	.L41
+ 998              	.LVL125:
+ 999              	.L57:
+ 139:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 1000              		.loc 1 139 22 is_stmt 1 view .LVU398
+ 139:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 1001              		.loc 1 139 29 is_stmt 0 view .LVU399
+ 1002 032e 0024     		movs	r4, #0
+ 1003 0330 8DF80440 		strb	r4, [sp, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 28
+
+
+ 139:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 1004              		.loc 1 139 47 is_stmt 1 view .LVU400
+ 139:linea/src/linea_bsp_linea_v1.c ****             case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 1005              		.loc 1 139 54 view .LVU401
+ 1006 0334 90E6     		b	.L41
+ 1007              	.L56:
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1008              		.loc 1 140 22 view .LVU402
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1009              		.loc 1 140 29 is_stmt 0 view .LVU403
+ 1010 0336 0023     		movs	r3, #0
+ 1011 0338 8DF80430 		strb	r3, [sp, #4]
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1012              		.loc 1 140 47 is_stmt 1 view .LVU404
+ 1013              	.LVL126:
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1014              		.loc 1 140 54 view .LVU405
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1015              		.loc 1 140 49 is_stmt 0 view .LVU406
+ 1016 033c 0124     		movs	r4, #1
+ 140:linea/src/linea_bsp_linea_v1.c ****             case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 1017              		.loc 1 140 54 view .LVU407
+ 1018 033e 8BE6     		b	.L41
+ 1019              	.L95:
+ 1020              		.align	2
+ 1021              	.L94:
+ 1022 0340 00080048 		.word	1207961600
+ 1023              	.LVL127:
+ 1024              	.L55:
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1025              		.loc 1 141 22 is_stmt 1 view .LVU408
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1026              		.loc 1 141 29 is_stmt 0 view .LVU409
+ 1027 0344 0023     		movs	r3, #0
+ 1028 0346 8DF80430 		strb	r3, [sp, #4]
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1029              		.loc 1 141 47 is_stmt 1 view .LVU410
+ 1030              	.LVL128:
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1031              		.loc 1 141 54 view .LVU411
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1032              		.loc 1 141 49 is_stmt 0 view .LVU412
+ 1033 034a 0224     		movs	r4, #2
+ 141:linea/src/linea_bsp_linea_v1.c ****             case 33: ExN[4] = GPIO_PIN_RESET; S = 3; break;
+ 1034              		.loc 1 141 54 view .LVU413
+ 1035 034c 84E6     		b	.L41
+ 1036              	.LVL129:
+ 1037              	.L54:
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1038              		.loc 1 142 22 is_stmt 1 view .LVU414
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1039              		.loc 1 142 29 is_stmt 0 view .LVU415
+ 1040 034e 0023     		movs	r3, #0
+ 1041 0350 8DF80430 		strb	r3, [sp, #4]
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1042              		.loc 1 142 47 is_stmt 1 view .LVU416
+ 1043              	.LVL130:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 29
+
+
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1044              		.loc 1 142 54 view .LVU417
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1045              		.loc 1 142 49 is_stmt 0 view .LVU418
+ 1046 0354 0324     		movs	r4, #3
+ 142:linea/src/linea_bsp_linea_v1.c ****             case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 1047              		.loc 1 142 54 view .LVU419
+ 1048 0356 7FE6     		b	.L41
+ 1049              	.LVL131:
+ 1050              	.L53:
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1051              		.loc 1 143 22 is_stmt 1 view .LVU420
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1052              		.loc 1 143 29 is_stmt 0 view .LVU421
+ 1053 0358 0023     		movs	r3, #0
+ 1054 035a 8DF80430 		strb	r3, [sp, #4]
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1055              		.loc 1 143 47 is_stmt 1 view .LVU422
+ 1056              	.LVL132:
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1057              		.loc 1 143 54 view .LVU423
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1058              		.loc 1 143 49 is_stmt 0 view .LVU424
+ 1059 035e 0424     		movs	r4, #4
+ 143:linea/src/linea_bsp_linea_v1.c ****             case 35: ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 1060              		.loc 1 143 54 view .LVU425
+ 1061 0360 7AE6     		b	.L41
+ 1062              	.LVL133:
+ 1063              	.L52:
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1064              		.loc 1 144 22 is_stmt 1 view .LVU426
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1065              		.loc 1 144 29 is_stmt 0 view .LVU427
+ 1066 0362 0023     		movs	r3, #0
+ 1067 0364 8DF80430 		strb	r3, [sp, #4]
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1068              		.loc 1 144 47 is_stmt 1 view .LVU428
+ 1069              	.LVL134:
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1070              		.loc 1 144 54 view .LVU429
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1071              		.loc 1 144 49 is_stmt 0 view .LVU430
+ 1072 0368 0524     		movs	r4, #5
+ 144:linea/src/linea_bsp_linea_v1.c ****             case 36: ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 1073              		.loc 1 144 54 view .LVU431
+ 1074 036a 75E6     		b	.L41
+ 1075              	.LVL135:
+ 1076              	.L51:
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1077              		.loc 1 145 22 is_stmt 1 view .LVU432
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1078              		.loc 1 145 29 is_stmt 0 view .LVU433
+ 1079 036c 0023     		movs	r3, #0
+ 1080 036e 8DF80430 		strb	r3, [sp, #4]
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1081              		.loc 1 145 47 is_stmt 1 view .LVU434
+ 1082              	.LVL136:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 30
+
+
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1083              		.loc 1 145 54 view .LVU435
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1084              		.loc 1 145 49 is_stmt 0 view .LVU436
+ 1085 0372 0624     		movs	r4, #6
+ 145:linea/src/linea_bsp_linea_v1.c ****             case 37: ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 1086              		.loc 1 145 54 view .LVU437
+ 1087 0374 70E6     		b	.L41
+ 1088              	.LVL137:
+ 1089              	.L50:
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1090              		.loc 1 146 22 is_stmt 1 view .LVU438
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1091              		.loc 1 146 29 is_stmt 0 view .LVU439
+ 1092 0376 0023     		movs	r3, #0
+ 1093 0378 8DF80430 		strb	r3, [sp, #4]
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1094              		.loc 1 146 47 is_stmt 1 view .LVU440
+ 1095              	.LVL138:
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1096              		.loc 1 146 54 view .LVU441
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1097              		.loc 1 146 49 is_stmt 0 view .LVU442
+ 1098 037c 0724     		movs	r4, #7
+ 146:linea/src/linea_bsp_linea_v1.c ****             case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U6
+ 1099              		.loc 1 146 54 view .LVU443
+ 1100 037e 6BE6     		b	.L41
+ 1101              	.LVL139:
+ 1102              	.L49:
+ 147:linea/src/linea_bsp_linea_v1.c ****             case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 1103              		.loc 1 147 22 is_stmt 1 view .LVU444
+ 147:linea/src/linea_bsp_linea_v1.c ****             case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 1104              		.loc 1 147 29 is_stmt 0 view .LVU445
+ 1105 0380 0024     		movs	r4, #0
+ 1106 0382 8DF80540 		strb	r4, [sp, #5]
+ 147:linea/src/linea_bsp_linea_v1.c ****             case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 1107              		.loc 1 147 47 is_stmt 1 view .LVU446
+ 147:linea/src/linea_bsp_linea_v1.c ****             case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 1108              		.loc 1 147 54 view .LVU447
+ 1109 0386 67E6     		b	.L41
+ 1110              	.L48:
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1111              		.loc 1 148 22 view .LVU448
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1112              		.loc 1 148 29 is_stmt 0 view .LVU449
+ 1113 0388 0023     		movs	r3, #0
+ 1114 038a 8DF80530 		strb	r3, [sp, #5]
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1115              		.loc 1 148 47 is_stmt 1 view .LVU450
+ 1116              	.LVL140:
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1117              		.loc 1 148 54 view .LVU451
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1118              		.loc 1 148 49 is_stmt 0 view .LVU452
+ 1119 038e 0124     		movs	r4, #1
+ 148:linea/src/linea_bsp_linea_v1.c ****             case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 1120              		.loc 1 148 54 view .LVU453
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 31
+
+
+ 1121 0390 62E6     		b	.L41
+ 1122              	.LVL141:
+ 1123              	.L47:
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1124              		.loc 1 149 22 is_stmt 1 view .LVU454
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1125              		.loc 1 149 29 is_stmt 0 view .LVU455
+ 1126 0392 0023     		movs	r3, #0
+ 1127 0394 8DF80530 		strb	r3, [sp, #5]
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1128              		.loc 1 149 47 is_stmt 1 view .LVU456
+ 1129              	.LVL142:
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1130              		.loc 1 149 54 view .LVU457
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1131              		.loc 1 149 49 is_stmt 0 view .LVU458
+ 1132 0398 0224     		movs	r4, #2
+ 149:linea/src/linea_bsp_linea_v1.c ****             case 41: ExN[5] = GPIO_PIN_RESET; S = 3; break;
+ 1133              		.loc 1 149 54 view .LVU459
+ 1134 039a 5DE6     		b	.L41
+ 1135              	.LVL143:
+ 1136              	.L46:
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1137              		.loc 1 150 22 is_stmt 1 view .LVU460
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1138              		.loc 1 150 29 is_stmt 0 view .LVU461
+ 1139 039c 0023     		movs	r3, #0
+ 1140 039e 8DF80530 		strb	r3, [sp, #5]
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1141              		.loc 1 150 47 is_stmt 1 view .LVU462
+ 1142              	.LVL144:
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1143              		.loc 1 150 54 view .LVU463
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1144              		.loc 1 150 49 is_stmt 0 view .LVU464
+ 1145 03a2 0324     		movs	r4, #3
+ 150:linea/src/linea_bsp_linea_v1.c ****             case 42: ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 1146              		.loc 1 150 54 view .LVU465
+ 1147 03a4 58E6     		b	.L41
+ 1148              	.LVL145:
+ 1149              	.L45:
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1150              		.loc 1 151 22 is_stmt 1 view .LVU466
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1151              		.loc 1 151 29 is_stmt 0 view .LVU467
+ 1152 03a6 0023     		movs	r3, #0
+ 1153 03a8 8DF80530 		strb	r3, [sp, #5]
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1154              		.loc 1 151 47 is_stmt 1 view .LVU468
+ 1155              	.LVL146:
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1156              		.loc 1 151 54 view .LVU469
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1157              		.loc 1 151 49 is_stmt 0 view .LVU470
+ 1158 03ac 0424     		movs	r4, #4
+ 151:linea/src/linea_bsp_linea_v1.c ****             case 43: ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 1159              		.loc 1 151 54 view .LVU471
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 32
+
+
+ 1160 03ae 53E6     		b	.L41
+ 1161              	.LVL147:
+ 1162              	.L44:
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1163              		.loc 1 152 22 is_stmt 1 view .LVU472
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1164              		.loc 1 152 29 is_stmt 0 view .LVU473
+ 1165 03b0 0023     		movs	r3, #0
+ 1166 03b2 8DF80530 		strb	r3, [sp, #5]
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1167              		.loc 1 152 47 is_stmt 1 view .LVU474
+ 1168              	.LVL148:
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1169              		.loc 1 152 54 view .LVU475
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1170              		.loc 1 152 49 is_stmt 0 view .LVU476
+ 1171 03b6 0524     		movs	r4, #5
+ 152:linea/src/linea_bsp_linea_v1.c ****             case 44: ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 1172              		.loc 1 152 54 view .LVU477
+ 1173 03b8 4EE6     		b	.L41
+ 1174              	.LVL149:
+ 1175              	.L42:
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1176              		.loc 1 153 22 is_stmt 1 view .LVU478
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1177              		.loc 1 153 29 is_stmt 0 view .LVU479
+ 1178 03ba 0023     		movs	r3, #0
+ 1179 03bc 8DF80530 		strb	r3, [sp, #5]
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1180              		.loc 1 153 47 is_stmt 1 view .LVU480
+ 1181              	.LVL150:
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1182              		.loc 1 153 54 view .LVU481
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1183              		.loc 1 153 49 is_stmt 0 view .LVU482
+ 1184 03c0 0624     		movs	r4, #6
+ 153:linea/src/linea_bsp_linea_v1.c ****             default: 
+ 1185              		.loc 1 153 54 view .LVU483
+ 1186 03c2 49E6     		b	.L41
+ 1187              	.LVL151:
+ 1188              	.L89:
+ 1189              	.LBB13:
+ 167:linea/src/linea_bsp_linea_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 1190              		.loc 1 167 9 is_stmt 1 view .LVU484
+ 1191 03c4 04F10803 		add	r3, r4, #8
+ 1192 03c8 6B44     		add	r3, sp, r3
+ 1193 03ca 13F8082C 		ldrb	r2, [r3, #-8]	@ zero_extendqisi2
+ 1194 03ce 064B     		ldr	r3, .L96
+ 1195 03d0 33F81410 		ldrh	r1, [r3, r4, lsl #1]
+ 1196 03d4 054B     		ldr	r3, .L96+4
+ 1197 03d6 53F82400 		ldr	r0, [r3, r4, lsl #2]
+ 1198 03da FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1199              	.LVL152:
+ 166:linea/src/linea_bsp_linea_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 1200              		.loc 1 166 39 discriminator 3 view .LVU485
+ 1201 03de 0134     		adds	r4, r4, #1
+ 1202              	.LVL153:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 33
+
+
+ 1203              	.L88:
+ 166:linea/src/linea_bsp_linea_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 1204              		.loc 1 166 23 discriminator 1 view .LVU486
+ 1205 03e0 052C     		cmp	r4, #5
+ 1206 03e2 EFD9     		bls	.L89
+ 1207              	.LVL154:
+ 1208              	.L1:
+ 166:linea/src/linea_bsp_linea_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 1209              		.loc 1 166 23 is_stmt 0 discriminator 1 view .LVU487
+ 1210              	.LBE13:
+ 168:linea/src/linea_bsp_linea_v1.c ****     }
+ 169:linea/src/linea_bsp_linea_v1.c **** }
+ 1211              		.loc 1 169 1 view .LVU488
+ 1212 03e4 02B0     		add	sp, sp, #8
+ 1213              		.cfi_def_cfa_offset 8
+ 1214              		@ sp needed
+ 1215 03e6 10BD     		pop	{r4, pc}
+ 1216              	.L97:
+ 1217              		.align	2
+ 1218              	.L96:
+ 1219 03e8 00000000 		.word	ExN_Pin
+ 1220 03ec 00000000 		.word	ExN_GPIO_Port
+ 1221              		.cfi_endproc
+ 1222              	.LFE1415:
+ 1224              		.section	.rodata.linea_TIM_init.str1.4,"aMS",%progbits,1
+ 1225              		.align	2
+ 1226              	.LC0:
+ 1227 0000 5B494E46 		.ascii	"[INFO]: \000"
+ 1227      4F5D3A20 
+ 1227      00
+ 1228 0009 000000   		.align	2
+ 1229              	.LC1:
+ 1230 000c 54494D31 		.ascii	"TIM1 initialized with frequency: %f Hz\000"
+ 1230      20696E69 
+ 1230      7469616C 
+ 1230      697A6564 
+ 1230      20776974 
+ 1231              		.section	.text.linea_TIM_init,"ax",%progbits
+ 1232              		.align	1
+ 1233              		.global	linea_TIM_init
+ 1234              		.syntax unified
+ 1235              		.thumb
+ 1236              		.thumb_func
+ 1238              	linea_TIM_init:
+ 1239              	.LFB1416:
+ 170:linea/src/linea_bsp_linea_v1.c **** 
+ 171:linea/src/linea_bsp_linea_v1.c **** // Timer initialization for STM32WB55
+ 172:linea/src/linea_bsp_linea_v1.c **** void linea_TIM_init(){
+ 1240              		.loc 1 172 22 is_stmt 1 view -0
+ 1241              		.cfi_startproc
+ 1242              		@ args = 0, pretend = 0, frame = 0
+ 1243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1244 0000 10B5     		push	{r4, lr}
+ 1245              		.cfi_def_cfa_offset 8
+ 1246              		.cfi_offset 4, -8
+ 1247              		.cfi_offset 14, -4
+ 173:linea/src/linea_bsp_linea_v1.c ****     // Start TIM1 for pulse generation
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 34
+
+
+ 174:linea/src/linea_bsp_linea_v1.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+ 1248              		.loc 1 174 5 view .LVU490
+ 1249 0002 0D4C     		ldr	r4, .L100+8
+ 1250 0004 0021     		movs	r1, #0
+ 1251 0006 2046     		mov	r0, r4
+ 1252 0008 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 1253              	.LVL155:
+ 175:linea/src/linea_bsp_linea_v1.c ****     
+ 176:linea/src/linea_bsp_linea_v1.c ****     // Set initial frequency
+ 177:linea/src/linea_bsp_linea_v1.c ****     float freq = LINEA_TIM_F_CENTER;
+ 1254              		.loc 1 177 5 view .LVU491
+ 178:linea/src/linea_bsp_linea_v1.c ****     uint16_t period = (uint16_t)(LINEA_TIM_FAST_CLK / freq);
+ 1255              		.loc 1 178 5 view .LVU492
+ 179:linea/src/linea_bsp_linea_v1.c ****     
+ 180:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->ARR = period;
+ 1256              		.loc 1 180 5 view .LVU493
+ 1257              		.loc 1 180 10 is_stmt 0 view .LVU494
+ 1258 000c 2368     		ldr	r3, [r4]
+ 1259              		.loc 1 180 25 view .LVU495
+ 1260 000e 8022     		movs	r2, #128
+ 1261 0010 DA62     		str	r2, [r3, #44]
+ 181:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CCR1 = period >> 1; // 50% duty cycle
+ 1262              		.loc 1 181 5 is_stmt 1 view .LVU496
+ 1263              		.loc 1 181 26 is_stmt 0 view .LVU497
+ 1264 0012 4022     		movs	r2, #64
+ 1265 0014 5A63     		str	r2, [r3, #52]
+ 182:linea/src/linea_bsp_linea_v1.c ****     
+ 183:linea/src/linea_bsp_linea_v1.c ****     LINEA_UsrLog("TIM1 initialized with frequency: %f Hz", freq);
+ 1266              		.loc 1 183 5 is_stmt 1 view .LVU498
+ 1267              		.loc 1 183 5 view .LVU499
+ 1268 0016 0948     		ldr	r0, .L100+12
+ 1269 0018 FFF7FEFF 		bl	printf
+ 1270              	.LVL156:
+ 1271              		.loc 1 183 5 discriminator 1 view .LVU500
+ 1272 001c 04A3     		adr	r3, .L100
+ 1273 001e D3E90023 		ldrd	r2, [r3]
+ 1274 0022 0748     		ldr	r0, .L100+16
+ 1275 0024 FFF7FEFF 		bl	printf
+ 1276              	.LVL157:
+ 1277              		.loc 1 183 5 discriminator 2 view .LVU501
+ 1278 0028 0A20     		movs	r0, #10
+ 1279 002a FFF7FEFF 		bl	putchar
+ 1280              	.LVL158:
+ 1281              		.loc 1 183 5 discriminator 3 view .LVU502
+ 184:linea/src/linea_bsp_linea_v1.c **** }
+ 1282              		.loc 1 184 1 is_stmt 0 view .LVU503
+ 1283 002e 10BD     		pop	{r4, pc}
+ 1284              	.L101:
+ 1285              		.align	3
+ 1286              	.L100:
+ 1287 0030 00000000 		.word	0
+ 1288 0034 80841E41 		.word	1092519040
+ 1289 0038 00000000 		.word	htim1
+ 1290 003c 00000000 		.word	.LC0
+ 1291 0040 0C000000 		.word	.LC1
+ 1292              		.cfi_endproc
+ 1293              	.LFE1416:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 35
+
+
+ 1295              		.section	.text.linea_TIM_trigger,"ax",%progbits
+ 1296              		.align	1
+ 1297              		.global	linea_TIM_trigger
+ 1298              		.syntax unified
+ 1299              		.thumb
+ 1300              		.thumb_func
+ 1302              	linea_TIM_trigger:
+ 1303              	.LFB1417:
+ 185:linea/src/linea_bsp_linea_v1.c **** 
+ 186:linea/src/linea_bsp_linea_v1.c **** // Trigger timer
+ 187:linea/src/linea_bsp_linea_v1.c **** void linea_TIM_trigger(){
+ 1304              		.loc 1 187 25 is_stmt 1 view -0
+ 1305              		.cfi_startproc
+ 1306              		@ args = 0, pretend = 0, frame = 0
+ 1307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1308              		@ link register save eliminated.
+ 188:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CR1 |= TIM_CR1_CEN; // Enable TIM1
+ 1309              		.loc 1 188 5 view .LVU505
+ 1310              		.loc 1 188 10 is_stmt 0 view .LVU506
+ 1311 0000 034B     		ldr	r3, .L103
+ 1312 0002 1A68     		ldr	r2, [r3]
+ 1313              		.loc 1 188 19 view .LVU507
+ 1314 0004 1368     		ldr	r3, [r2]
+ 1315              		.loc 1 188 25 view .LVU508
+ 1316 0006 43F00103 		orr	r3, r3, #1
+ 1317 000a 1360     		str	r3, [r2]
+ 189:linea/src/linea_bsp_linea_v1.c **** }
+ 1318              		.loc 1 189 1 view .LVU509
+ 1319 000c 7047     		bx	lr
+ 1320              	.L104:
+ 1321 000e 00BF     		.align	2
+ 1322              	.L103:
+ 1323 0010 00000000 		.word	htim1
+ 1324              		.cfi_endproc
+ 1325              	.LFE1417:
+ 1327              		.section	.rodata.linea_ADC_init.str1.4,"aMS",%progbits,1
+ 1328              		.align	2
+ 1329              	.LC2:
+ 1330 0000 41444320 		.ascii	"ADC initialized\000"
+ 1330      696E6974 
+ 1330      69616C69 
+ 1330      7A656400 
+ 1331              		.section	.text.linea_ADC_init,"ax",%progbits
+ 1332              		.align	1
+ 1333              		.global	linea_ADC_init
+ 1334              		.syntax unified
+ 1335              		.thumb
+ 1336              		.thumb_func
+ 1338              	linea_ADC_init:
+ 1339              	.LFB1418:
+ 190:linea/src/linea_bsp_linea_v1.c **** 
+ 191:linea/src/linea_bsp_linea_v1.c **** // ADC initialization
+ 192:linea/src/linea_bsp_linea_v1.c **** void linea_ADC_init(){
+ 1340              		.loc 1 192 22 is_stmt 1 view -0
+ 1341              		.cfi_startproc
+ 1342              		@ args = 0, pretend = 0, frame = 0
+ 1343              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 36
+
+
+ 1344 0000 08B5     		push	{r3, lr}
+ 1345              		.cfi_def_cfa_offset 8
+ 1346              		.cfi_offset 3, -8
+ 1347              		.cfi_offset 14, -4
+ 193:linea/src/linea_bsp_linea_v1.c ****     // ADC is already initialized in main.c
+ 194:linea/src/linea_bsp_linea_v1.c ****     LINEA_UsrLog("ADC initialized");
+ 1348              		.loc 1 194 5 view .LVU511
+ 1349              		.loc 1 194 5 view .LVU512
+ 1350 0002 0548     		ldr	r0, .L107
+ 1351 0004 FFF7FEFF 		bl	printf
+ 1352              	.LVL159:
+ 1353              		.loc 1 194 5 discriminator 1 view .LVU513
+ 1354 0008 0448     		ldr	r0, .L107+4
+ 1355 000a FFF7FEFF 		bl	printf
+ 1356              	.LVL160:
+ 1357              		.loc 1 194 5 discriminator 2 view .LVU514
+ 1358 000e 0A20     		movs	r0, #10
+ 1359 0010 FFF7FEFF 		bl	putchar
+ 1360              	.LVL161:
+ 1361              		.loc 1 194 5 discriminator 3 view .LVU515
+ 195:linea/src/linea_bsp_linea_v1.c **** }
+ 1362              		.loc 1 195 1 is_stmt 0 view .LVU516
+ 1363 0014 08BD     		pop	{r3, pc}
+ 1364              	.L108:
+ 1365 0016 00BF     		.align	2
+ 1366              	.L107:
+ 1367 0018 00000000 		.word	.LC0
+ 1368 001c 00000000 		.word	.LC2
+ 1369              		.cfi_endproc
+ 1370              	.LFE1418:
+ 1372              		.global	__aeabi_f2d
+ 1373              		.section	.rodata.linea_set_freq.str1.4,"aMS",%progbits,1
+ 1374              		.align	2
+ 1375              	.LC3:
+ 1376 0000 46726571 		.ascii	"Frequency set to: %f Hz\000"
+ 1376      75656E63 
+ 1376      79207365 
+ 1376      7420746F 
+ 1376      3A202566 
+ 1377              		.section	.text.linea_set_freq,"ax",%progbits
+ 1378              		.align	1
+ 1379              		.global	linea_set_freq
+ 1380              		.syntax unified
+ 1381              		.thumb
+ 1382              		.thumb_func
+ 1384              	linea_set_freq:
+ 1385              	.LVL162:
+ 1386              	.LFB1419:
+ 196:linea/src/linea_bsp_linea_v1.c **** 
+ 197:linea/src/linea_bsp_linea_v1.c **** // Set frequency for TIM1
+ 198:linea/src/linea_bsp_linea_v1.c **** void linea_set_freq(float freq){
+ 1387              		.loc 1 198 32 is_stmt 1 view -0
+ 1388              		.cfi_startproc
+ 1389              		@ args = 0, pretend = 0, frame = 0
+ 1390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199:linea/src/linea_bsp_linea_v1.c ****     if(freq < LINEA_TIM_F_MIN || freq > LINEA_TIM_F_MAX) {
+ 1391              		.loc 1 199 5 view .LVU518
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 37
+
+
+ 1392              		.loc 1 199 7 is_stmt 0 view .LVU519
+ 1393 0000 DFED1A7A 		vldr.32	s15, .L116
+ 1394 0004 B4EEE70A 		vcmpe.f32	s0, s15
+ 1395 0008 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1396 000c 2CD4     		bmi	.L112
+ 198:linea/src/linea_bsp_linea_v1.c ****     if(freq < LINEA_TIM_F_MIN || freq > LINEA_TIM_F_MAX) {
+ 1397              		.loc 1 198 32 view .LVU520
+ 1398 000e 08B5     		push	{r3, lr}
+ 1399              		.cfi_def_cfa_offset 8
+ 1400              		.cfi_offset 3, -8
+ 1401              		.cfi_offset 14, -4
+ 1402 0010 2DED028B 		vpush.64	{d8}
+ 1403              		.cfi_def_cfa_offset 16
+ 1404              		.cfi_offset 80, -16
+ 1405              		.cfi_offset 81, -12
+ 1406 0014 B0EE408A 		vmov.f32	s16, s0
+ 1407              		.loc 1 199 31 discriminator 1 view .LVU521
+ 1408 0018 DFED157A 		vldr.32	s15, .L116+4
+ 1409 001c B4EEE70A 		vcmpe.f32	s0, s15
+ 1410 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1411 0024 02DD     		ble	.L115
+ 1412              	.LVL163:
+ 1413              	.L109:
+ 200:linea/src/linea_bsp_linea_v1.c ****         LINEA_ErrLog("Frequency out of range: %f Hz", freq);
+ 201:linea/src/linea_bsp_linea_v1.c ****         return;
+ 202:linea/src/linea_bsp_linea_v1.c ****     }
+ 203:linea/src/linea_bsp_linea_v1.c ****     
+ 204:linea/src/linea_bsp_linea_v1.c ****     uint16_t period = (uint16_t)(LINEA_TIM_FAST_CLK / freq);
+ 205:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->ARR = period;
+ 206:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CCR1 = period >> 1; // 50% duty cycle
+ 207:linea/src/linea_bsp_linea_v1.c ****     
+ 208:linea/src/linea_bsp_linea_v1.c ****     LINEA_UsrLog("Frequency set to: %f Hz", freq);
+ 209:linea/src/linea_bsp_linea_v1.c **** }
+ 1414              		.loc 1 209 1 view .LVU522
+ 1415 0026 BDEC028B 		vldm	sp!, {d8}
+ 1416              		.cfi_remember_state
+ 1417              		.cfi_restore 80
+ 1418              		.cfi_restore 81
+ 1419              		.cfi_def_cfa_offset 8
+ 1420              	.LVL164:
+ 1421              		.loc 1 209 1 view .LVU523
+ 1422 002a 08BD     		pop	{r3, pc}
+ 1423              	.LVL165:
+ 1424              	.L115:
+ 1425              		.cfi_restore_state
+ 204:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->ARR = period;
+ 1426              		.loc 1 204 5 is_stmt 1 view .LVU524
+ 204:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->ARR = period;
+ 1427              		.loc 1 204 53 is_stmt 0 view .LVU525
+ 1428 002c 9FED117A 		vldr.32	s14, .L116+8
+ 1429 0030 C7EE007A 		vdiv.f32	s15, s14, s0
+ 204:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->ARR = period;
+ 1430              		.loc 1 204 14 view .LVU526
+ 1431 0034 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1432 0038 17EE903A 		vmov	r3, s15	@ int
+ 1433 003c 9BB2     		uxth	r3, r3
+ 1434              	.LVL166:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 38
+
+
+ 205:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CCR1 = period >> 1; // 50% duty cycle
+ 1435              		.loc 1 205 5 is_stmt 1 view .LVU527
+ 205:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CCR1 = period >> 1; // 50% duty cycle
+ 1436              		.loc 1 205 10 is_stmt 0 view .LVU528
+ 1437 003e 0E4A     		ldr	r2, .L116+12
+ 1438 0040 1268     		ldr	r2, [r2]
+ 205:linea/src/linea_bsp_linea_v1.c ****     htim1.Instance->CCR1 = period >> 1; // 50% duty cycle
+ 1439              		.loc 1 205 25 view .LVU529
+ 1440 0042 D362     		str	r3, [r2, #44]
+ 206:linea/src/linea_bsp_linea_v1.c ****     
+ 1441              		.loc 1 206 5 is_stmt 1 view .LVU530
+ 206:linea/src/linea_bsp_linea_v1.c ****     
+ 1442              		.loc 1 206 35 is_stmt 0 view .LVU531
+ 1443 0044 5B08     		lsrs	r3, r3, #1
+ 1444              	.LVL167:
+ 206:linea/src/linea_bsp_linea_v1.c ****     
+ 1445              		.loc 1 206 26 view .LVU532
+ 1446 0046 5363     		str	r3, [r2, #52]
+ 1447              	.LVL168:
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1448              		.loc 1 208 5 is_stmt 1 view .LVU533
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1449              		.loc 1 208 5 view .LVU534
+ 1450 0048 0C48     		ldr	r0, .L116+16
+ 1451 004a FFF7FEFF 		bl	printf
+ 1452              	.LVL169:
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1453              		.loc 1 208 5 discriminator 1 view .LVU535
+ 1454 004e 18EE100A 		vmov	r0, s16
+ 1455 0052 FFF7FEFF 		bl	__aeabi_f2d
+ 1456              	.LVL170:
+ 1457 0056 0246     		mov	r2, r0
+ 1458 0058 0B46     		mov	r3, r1
+ 1459 005a 0948     		ldr	r0, .L116+20
+ 1460 005c FFF7FEFF 		bl	printf
+ 1461              	.LVL171:
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1462              		.loc 1 208 5 discriminator 2 view .LVU536
+ 1463 0060 0A20     		movs	r0, #10
+ 1464 0062 FFF7FEFF 		bl	putchar
+ 1465              	.LVL172:
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1466              		.loc 1 208 5 discriminator 1 view .LVU537
+ 1467 0066 DEE7     		b	.L109
+ 1468              	.LVL173:
+ 1469              	.L112:
+ 1470              		.cfi_def_cfa_offset 0
+ 1471              		.cfi_restore 3
+ 1472              		.cfi_restore 14
+ 1473              		.cfi_restore 80
+ 1474              		.cfi_restore 81
+ 208:linea/src/linea_bsp_linea_v1.c **** }
+ 1475              		.loc 1 208 5 is_stmt 0 discriminator 1 view .LVU538
+ 1476 0068 7047     		bx	lr
+ 1477              	.L117:
+ 1478 006a 00BF     		.align	2
+ 1479              	.L116:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 39
+
+
+ 1480 006c 0050C347 		.word	1203982336
+ 1481 0070 00247449 		.word	1232348160
+ 1482 0074 0024744C 		.word	1282679808
+ 1483 0078 00000000 		.word	htim1
+ 1484 007c 00000000 		.word	.LC0
+ 1485 0080 00000000 		.word	.LC3
+ 1486              		.cfi_endproc
+ 1487              	.LFE1419:
+ 1489              		.section	.text._linea_adc_multisample,"ax",%progbits
+ 1490              		.align	1
+ 1491              		.global	_linea_adc_multisample
+ 1492              		.syntax unified
+ 1493              		.thumb
+ 1494              		.thumb_func
+ 1496              	_linea_adc_multisample:
+ 1497              	.LFB1420:
+ 210:linea/src/linea_bsp_linea_v1.c **** 
+ 211:linea/src/linea_bsp_linea_v1.c **** // Multi-sample ADC reading
+ 212:linea/src/linea_bsp_linea_v1.c **** uint16_t _linea_adc_multisample(){
+ 1498              		.loc 1 212 34 is_stmt 1 view -0
+ 1499              		.cfi_startproc
+ 1500              		@ args = 0, pretend = 0, frame = 8
+ 1501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1502 0000 30B5     		push	{r4, r5, lr}
+ 1503              		.cfi_def_cfa_offset 12
+ 1504              		.cfi_offset 4, -12
+ 1505              		.cfi_offset 5, -8
+ 1506              		.cfi_offset 14, -4
+ 1507 0002 83B0     		sub	sp, sp, #12
+ 1508              		.cfi_def_cfa_offset 24
+ 213:linea/src/linea_bsp_linea_v1.c ****     uint16_t sample[LINEA_ADC_NSAMPLE];
+ 1509              		.loc 1 213 5 view .LVU540
+ 214:linea/src/linea_bsp_linea_v1.c ****     uint16_t value;
+ 1510              		.loc 1 214 5 view .LVU541
+ 215:linea/src/linea_bsp_linea_v1.c ****     
+ 216:linea/src/linea_bsp_linea_v1.c ****     if(LINEA_ADC_NSAMPLE == 1){
+ 1511              		.loc 1 216 5 view .LVU542
+ 217:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_Start(&hadc1);
+ 218:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 219:linea/src/linea_bsp_linea_v1.c ****         value = HAL_ADC_GetValue(&hadc1);
+ 220:linea/src/linea_bsp_linea_v1.c ****     } else if (LINEA_ADC_NSAMPLE == 2) {
+ 1512              		.loc 1 220 12 view .LVU543
+ 1513              	.LBB14:
+ 221:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_Start(&hadc1);
+ 222:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 223:linea/src/linea_bsp_linea_v1.c ****         sample[0] = HAL_ADC_GetValue(&hadc1);
+ 224:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_Start(&hadc1);
+ 225:linea/src/linea_bsp_linea_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 226:linea/src/linea_bsp_linea_v1.c ****         sample[1] = HAL_ADC_GetValue(&hadc1);
+ 227:linea/src/linea_bsp_linea_v1.c ****         value = (sample[0] + sample[1]) / 2;
+ 228:linea/src/linea_bsp_linea_v1.c ****     } else {
+ 229:linea/src/linea_bsp_linea_v1.c ****         for(int i = 0; i < LINEA_ADC_NSAMPLE; i++) {
+ 1514              		.loc 1 229 9 view .LVU544
+ 1515              	.LBB15:
+ 1516              		.loc 1 229 13 view .LVU545
+ 1517              	.LVL174:
+ 1518              		.loc 1 229 17 is_stmt 0 view .LVU546
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 40
+
+
+ 1519 0004 0024     		movs	r4, #0
+ 1520              		.loc 1 229 9 view .LVU547
+ 1521 0006 11E0     		b	.L119
+ 1522              	.LVL175:
+ 1523              	.L120:
+ 230:linea/src/linea_bsp_linea_v1.c ****             HAL_ADC_Start(&hadc1);
+ 1524              		.loc 1 230 13 is_stmt 1 view .LVU548
+ 1525 0008 134D     		ldr	r5, .L124
+ 1526 000a 2846     		mov	r0, r5
+ 1527 000c FFF7FEFF 		bl	HAL_ADC_Start
+ 1528              	.LVL176:
+ 231:linea/src/linea_bsp_linea_v1.c ****             HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 1529              		.loc 1 231 13 view .LVU549
+ 1530 0010 4FF0FF31 		mov	r1, #-1
+ 1531 0014 2846     		mov	r0, r5
+ 1532 0016 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 1533              	.LVL177:
+ 232:linea/src/linea_bsp_linea_v1.c ****             sample[i] = HAL_ADC_GetValue(&hadc1);
+ 1534              		.loc 1 232 13 view .LVU550
+ 1535              		.loc 1 232 25 is_stmt 0 view .LVU551
+ 1536 001a 2846     		mov	r0, r5
+ 1537 001c FFF7FEFF 		bl	HAL_ADC_GetValue
+ 1538              	.LVL178:
+ 1539              		.loc 1 232 23 discriminator 1 view .LVU552
+ 1540 0020 02AB     		add	r3, sp, #8
+ 1541 0022 03EB4403 		add	r3, r3, r4, lsl #1
+ 1542 0026 23F8080C 		strh	r0, [r3, #-8]	@ movhi
+ 229:linea/src/linea_bsp_linea_v1.c ****             HAL_ADC_Start(&hadc1);
+ 1543              		.loc 1 229 48 is_stmt 1 discriminator 3 view .LVU553
+ 1544 002a 0134     		adds	r4, r4, #1
+ 1545              	.LVL179:
+ 1546              	.L119:
+ 229:linea/src/linea_bsp_linea_v1.c ****             HAL_ADC_Start(&hadc1);
+ 1547              		.loc 1 229 26 discriminator 1 view .LVU554
+ 1548 002c 022C     		cmp	r4, #2
+ 1549 002e EBD9     		bls	.L120
+ 1550              	.LBE15:
+ 1551              	.LBB16:
+ 233:linea/src/linea_bsp_linea_v1.c ****         }
+ 234:linea/src/linea_bsp_linea_v1.c ****         // Simple average for now (can be replaced with median filter)
+ 235:linea/src/linea_bsp_linea_v1.c ****         uint32_t sum = 0;
+ 236:linea/src/linea_bsp_linea_v1.c ****         for(int i = 0; i < LINEA_ADC_NSAMPLE; i++) {
+ 1552              		.loc 1 236 17 is_stmt 0 view .LVU555
+ 1553 0030 0023     		movs	r3, #0
+ 1554              	.LBE16:
+ 235:linea/src/linea_bsp_linea_v1.c ****         for(int i = 0; i < LINEA_ADC_NSAMPLE; i++) {
+ 1555              		.loc 1 235 18 view .LVU556
+ 1556 0032 1846     		mov	r0, r3
+ 1557 0034 06E0     		b	.L121
+ 1558              	.LVL180:
+ 1559              	.L122:
+ 1560              	.LBB17:
+ 237:linea/src/linea_bsp_linea_v1.c ****             sum += sample[i];
+ 1561              		.loc 1 237 13 is_stmt 1 view .LVU557
+ 1562              		.loc 1 237 26 is_stmt 0 view .LVU558
+ 1563 0036 02AA     		add	r2, sp, #8
+ 1564 0038 02EB4302 		add	r2, r2, r3, lsl #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 41
+
+
+ 1565 003c 32F8082C 		ldrh	r2, [r2, #-8]
+ 1566              		.loc 1 237 17 view .LVU559
+ 1567 0040 1044     		add	r0, r0, r2
+ 1568              	.LVL181:
+ 236:linea/src/linea_bsp_linea_v1.c ****             sum += sample[i];
+ 1569              		.loc 1 236 48 is_stmt 1 discriminator 3 view .LVU560
+ 1570 0042 0133     		adds	r3, r3, #1
+ 1571              	.LVL182:
+ 1572              	.L121:
+ 236:linea/src/linea_bsp_linea_v1.c ****             sum += sample[i];
+ 1573              		.loc 1 236 26 discriminator 1 view .LVU561
+ 1574 0044 022B     		cmp	r3, #2
+ 1575 0046 F6D9     		bls	.L122
+ 1576              	.LBE17:
+ 238:linea/src/linea_bsp_linea_v1.c ****         }
+ 239:linea/src/linea_bsp_linea_v1.c ****         value = (uint16_t)(sum / LINEA_ADC_NSAMPLE);
+ 1577              		.loc 1 239 9 view .LVU562
+ 1578              		.loc 1 239 32 is_stmt 0 view .LVU563
+ 1579 0048 044B     		ldr	r3, .L124+4
+ 1580              	.LVL183:
+ 1581              		.loc 1 239 32 view .LVU564
+ 1582 004a A3FB0030 		umull	r3, r0, r3, r0
+ 1583              	.LVL184:
+ 1584              		.loc 1 239 32 view .LVU565
+ 1585              	.LBE14:
+ 240:linea/src/linea_bsp_linea_v1.c ****     }
+ 241:linea/src/linea_bsp_linea_v1.c ****     
+ 242:linea/src/linea_bsp_linea_v1.c ****     return value;
+ 1586              		.loc 1 242 5 is_stmt 1 view .LVU566
+ 243:linea/src/linea_bsp_linea_v1.c **** }
+ 1587              		.loc 1 243 1 is_stmt 0 view .LVU567
+ 1588 004e C0F34F00 		ubfx	r0, r0, #1, #16
+ 1589              	.LVL185:
+ 1590              		.loc 1 243 1 view .LVU568
+ 1591 0052 03B0     		add	sp, sp, #12
+ 1592              		.cfi_def_cfa_offset 12
+ 1593              		@ sp needed
+ 1594 0054 30BD     		pop	{r4, r5, pc}
+ 1595              	.LVL186:
+ 1596              	.L125:
+ 1597              		.loc 1 243 1 view .LVU569
+ 1598 0056 00BF     		.align	2
+ 1599              	.L124:
+ 1600 0058 00000000 		.word	hadc1
+ 1601 005c ABAAAAAA 		.word	-1431655765
+ 1602              		.cfi_endproc
+ 1603              	.LFE1420:
+ 1605              		.section	.text.linea_simple_take_sample,"ax",%progbits
+ 1606              		.align	1
+ 1607              		.global	linea_simple_take_sample
+ 1608              		.syntax unified
+ 1609              		.thumb
+ 1610              		.thumb_func
+ 1612              	linea_simple_take_sample:
+ 1613              	.LVL187:
+ 1614              	.LFB1421:
+ 244:linea/src/linea_bsp_linea_v1.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 42
+
+
+ 245:linea/src/linea_bsp_linea_v1.c **** // Take sample with pen excitation
+ 246:linea/src/linea_bsp_linea_v1.c **** uint16_t linea_simple_take_sample(bool back_side, uint8_t fstep){
+ 1615              		.loc 1 246 65 is_stmt 1 view -0
+ 1616              		.cfi_startproc
+ 1617              		@ args = 0, pretend = 0, frame = 0
+ 1618              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1619              		.loc 1 246 65 is_stmt 0 view .LVU571
+ 1620 0000 38B5     		push	{r3, r4, r5, lr}
+ 1621              		.cfi_def_cfa_offset 16
+ 1622              		.cfi_offset 3, -16
+ 1623              		.cfi_offset 4, -12
+ 1624              		.cfi_offset 5, -8
+ 1625              		.cfi_offset 14, -4
+ 247:linea/src/linea_bsp_linea_v1.c ****     __disable_irq();
+ 1626              		.loc 1 247 5 is_stmt 1 view .LVU572
+ 1627              	.LBB18:
+ 1628              	.LBI18:
+ 1629              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.2.0
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     08. May 2019
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 43
+
+
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 44
+
+
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 45
+
+
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 1630              		.loc 2 207 27 view .LVU573
+ 1631              	.LBB19:
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 46
+
+
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 1632              		.loc 2 209 3 view .LVU574
+ 1633              		.syntax unified
+ 1634              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1635 0002 72B6     		cpsid i
+ 1636              	@ 0 "" 2
+ 1637              		.thumb
+ 1638              		.syntax unified
+ 1639              	.LBE19:
+ 1640              	.LBE18:
+ 248:linea/src/linea_bsp_linea_v1.c ****     
+ 249:linea/src/linea_bsp_linea_v1.c ****     // Enable exciter
+ 250:linea/src/linea_bsp_linea_v1.c ****     LINEA_EXCITER_HIGH();
+ 1641              		.loc 1 250 5 view .LVU575
+ 1642              		.loc 1 250 5 view .LVU576
+ 1643 0004 264B     		ldr	r3, .L140
+ 1644 0006 4022     		movs	r2, #64
+ 1645 0008 9A61     		str	r2, [r3, #24]
+ 1646              		.loc 1 250 5 view .LVU577
+ 251:linea/src/linea_bsp_linea_v1.c ****     
+ 252:linea/src/linea_bsp_linea_v1.c ****     // Wait for signal to settle
+ 253:linea/src/linea_bsp_linea_v1.c ****     if(!back_side) {
+ 1647              		.loc 1 253 5 view .LVU578
+ 1648              		.loc 1 253 7 is_stmt 0 view .LVU579
+ 1649 000a 30B9     		cbnz	r0, .L138
+ 1650              	.LBB20:
+ 254:linea/src/linea_bsp_linea_v1.c ****         for (int i = 0; i < 400; i++) asm volatile ("nop");
+ 1651              		.loc 1 254 18 view .LVU580
+ 1652 000c 0023     		movs	r3, #0
+ 1653              	.L128:
+ 1654              	.LVL188:
+ 1655              		.loc 1 254 27 is_stmt 1 discriminator 1 view .LVU581
+ 1656 000e B3F5C87F 		cmp	r3, #400
+ 1657 0012 08DA     		bge	.L130
+ 1658              		.loc 1 254 39 discriminator 3 view .LVU582
+ 1659              		.syntax unified
+ 1660              	@ 254 "linea/src/linea_bsp_linea_v1.c" 1
+ 1661 0014 00BF     		nop
+ 1662              	@ 0 "" 2
+ 1663              		.loc 1 254 35 discriminator 3 view .LVU583
+ 1664              		.thumb
+ 1665              		.syntax unified
+ 1666 0016 0133     		adds	r3, r3, #1
+ 1667              	.LVL189:
+ 1668              		.loc 1 254 35 is_stmt 0 discriminator 3 view .LVU584
+ 1669 0018 F9E7     		b	.L128
+ 1670              	.LVL190:
+ 1671              	.L138:
+ 1672              		.loc 1 254 35 discriminator 3 view .LVU585
+ 1673              	.LBE20:
+ 1674              	.LBB21:
+ 255:linea/src/linea_bsp_linea_v1.c ****     } else {
+ 256:linea/src/linea_bsp_linea_v1.c ****         for (int i = 0; i < 100; i++) asm volatile ("nop");
+ 1675              		.loc 1 256 18 view .LVU586
+ 1676 001a 0023     		movs	r3, #0
+ 1677              	.L127:
+ 1678              	.LVL191:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 47
+
+
+ 1679              		.loc 1 256 27 is_stmt 1 discriminator 1 view .LVU587
+ 1680 001c 632B     		cmp	r3, #99
+ 1681 001e 02DC     		bgt	.L130
+ 1682              		.loc 1 256 39 discriminator 3 view .LVU588
+ 1683              		.syntax unified
+ 1684              	@ 256 "linea/src/linea_bsp_linea_v1.c" 1
+ 1685 0020 00BF     		nop
+ 1686              	@ 0 "" 2
+ 1687              		.loc 1 256 35 discriminator 3 view .LVU589
+ 1688              		.thumb
+ 1689              		.syntax unified
+ 1690 0022 0133     		adds	r3, r3, #1
+ 1691              	.LVL192:
+ 1692              		.loc 1 256 35 is_stmt 0 discriminator 3 view .LVU590
+ 1693 0024 FAE7     		b	.L127
+ 1694              	.LVL193:
+ 1695              	.L130:
+ 1696              		.loc 1 256 35 discriminator 3 view .LVU591
+ 1697              	.LBE21:
+ 257:linea/src/linea_bsp_linea_v1.c ****     }
+ 258:linea/src/linea_bsp_linea_v1.c ****     
+ 259:linea/src/linea_bsp_linea_v1.c ****     // Discharge
+ 260:linea/src/linea_bsp_linea_v1.c ****     LINEA_DISCHARGE_DISABLE();
+ 1698              		.loc 1 260 5 is_stmt 1 view .LVU592
+ 1699              		.loc 1 260 5 view .LVU593
+ 1700 0026 4FF09043 		mov	r3, #1207959552
+ 1701 002a 4FF48032 		mov	r2, #65536
+ 1702 002e 9A61     		str	r2, [r3, #24]
+ 1703              		.loc 1 260 5 view .LVU594
+ 261:linea/src/linea_bsp_linea_v1.c ****     for (int i = 0; i < 5000; i++) asm volatile ("nop");
+ 1704              		.loc 1 261 5 view .LVU595
+ 1705              	.LBB22:
+ 1706              		.loc 1 261 10 view .LVU596
+ 1707              	.LVL194:
+ 1708              		.loc 1 261 14 is_stmt 0 view .LVU597
+ 1709 0030 0023     		movs	r3, #0
+ 1710              		.loc 1 261 5 view .LVU598
+ 1711 0032 01E0     		b	.L132
+ 1712              	.LVL195:
+ 1713              	.L133:
+ 1714              		.loc 1 261 36 is_stmt 1 discriminator 3 view .LVU599
+ 1715              		.syntax unified
+ 1716              	@ 261 "linea/src/linea_bsp_linea_v1.c" 1
+ 1717 0034 00BF     		nop
+ 1718              	@ 0 "" 2
+ 1719              		.loc 1 261 32 discriminator 3 view .LVU600
+ 1720              		.thumb
+ 1721              		.syntax unified
+ 1722 0036 0133     		adds	r3, r3, #1
+ 1723              	.LVL196:
+ 1724              	.L132:
+ 1725              		.loc 1 261 23 discriminator 1 view .LVU601
+ 1726 0038 41F28732 		movw	r2, #4999
+ 1727 003c 9342     		cmp	r3, r2
+ 1728 003e F9DD     		ble	.L133
+ 1729              	.LBE22:
+ 262:linea/src/linea_bsp_linea_v1.c ****     
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 48
+
+
+ 263:linea/src/linea_bsp_linea_v1.c ****     // Take sample
+ 264:linea/src/linea_bsp_linea_v1.c ****     uint16_t value = _linea_adc_multisample();
+ 1730              		.loc 1 264 5 view .LVU602
+ 1731              		.loc 1 264 22 is_stmt 0 view .LVU603
+ 1732 0040 FFF7FEFF 		bl	_linea_adc_multisample
+ 1733              	.LVL197:
+ 1734              		.loc 1 264 22 view .LVU604
+ 1735 0044 0446     		mov	r4, r0
+ 1736              	.LVL198:
+ 265:linea/src/linea_bsp_linea_v1.c ****     
+ 266:linea/src/linea_bsp_linea_v1.c **** #ifdef LINEA_CDS
+ 267:linea/src/linea_bsp_linea_v1.c ****     // Correlated Double Sampling
+ 268:linea/src/linea_bsp_linea_v1.c ****     LINEA_DISCHARGE_ENABLE();
+ 1737              		.loc 1 268 5 is_stmt 1 view .LVU605
+ 1738              		.loc 1 268 5 view .LVU606
+ 1739 0046 4FF09043 		mov	r3, #1207959552
+ 1740 004a 0122     		movs	r2, #1
+ 1741 004c 9A61     		str	r2, [r3, #24]
+ 1742              		.loc 1 268 5 view .LVU607
+ 269:linea/src/linea_bsp_linea_v1.c ****     for (int i = 0; i < 100; i++) asm volatile ("nop");
+ 1743              		.loc 1 269 5 view .LVU608
+ 1744              	.LBB23:
+ 1745              		.loc 1 269 10 view .LVU609
+ 1746              	.LVL199:
+ 1747              		.loc 1 269 14 is_stmt 0 view .LVU610
+ 1748 004e 0023     		movs	r3, #0
+ 1749              		.loc 1 269 5 view .LVU611
+ 1750 0050 01E0     		b	.L134
+ 1751              	.LVL200:
+ 1752              	.L135:
+ 1753              		.loc 1 269 35 is_stmt 1 discriminator 3 view .LVU612
+ 1754              		.syntax unified
+ 1755              	@ 269 "linea/src/linea_bsp_linea_v1.c" 1
+ 1756 0052 00BF     		nop
+ 1757              	@ 0 "" 2
+ 1758              		.loc 1 269 31 discriminator 3 view .LVU613
+ 1759              		.thumb
+ 1760              		.syntax unified
+ 1761 0054 0133     		adds	r3, r3, #1
+ 1762              	.LVL201:
+ 1763              	.L134:
+ 1764              		.loc 1 269 23 discriminator 1 view .LVU614
+ 1765 0056 632B     		cmp	r3, #99
+ 1766 0058 FBDD     		ble	.L135
+ 1767              	.LBE23:
+ 270:linea/src/linea_bsp_linea_v1.c ****     LINEA_DISCHARGE_DISABLE();
+ 1768              		.loc 1 270 5 view .LVU615
+ 1769              		.loc 1 270 5 view .LVU616
+ 1770 005a 4FF09043 		mov	r3, #1207959552
+ 1771              	.LVL202:
+ 1772              		.loc 1 270 5 is_stmt 0 view .LVU617
+ 1773 005e 4FF48032 		mov	r2, #65536
+ 1774 0062 9A61     		str	r2, [r3, #24]
+ 1775              		.loc 1 270 5 is_stmt 1 view .LVU618
+ 271:linea/src/linea_bsp_linea_v1.c ****     for (int i = 0; i < 200; i++) asm volatile ("nop");
+ 1776              		.loc 1 271 5 view .LVU619
+ 1777              	.LBB24:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 49
+
+
+ 1778              		.loc 1 271 10 view .LVU620
+ 1779              	.LVL203:
+ 1780              		.loc 1 271 14 is_stmt 0 view .LVU621
+ 1781 0064 0023     		movs	r3, #0
+ 1782              		.loc 1 271 5 view .LVU622
+ 1783 0066 01E0     		b	.L136
+ 1784              	.LVL204:
+ 1785              	.L137:
+ 1786              		.loc 1 271 35 is_stmt 1 discriminator 3 view .LVU623
+ 1787              		.syntax unified
+ 1788              	@ 271 "linea/src/linea_bsp_linea_v1.c" 1
+ 1789 0068 00BF     		nop
+ 1790              	@ 0 "" 2
+ 1791              		.loc 1 271 31 discriminator 3 view .LVU624
+ 1792              		.thumb
+ 1793              		.syntax unified
+ 1794 006a 0133     		adds	r3, r3, #1
+ 1795              	.LVL205:
+ 1796              	.L136:
+ 1797              		.loc 1 271 23 discriminator 1 view .LVU625
+ 1798 006c C72B     		cmp	r3, #199
+ 1799 006e FBDD     		ble	.L137
+ 1800              	.LBE24:
+ 272:linea/src/linea_bsp_linea_v1.c ****     
+ 273:linea/src/linea_bsp_linea_v1.c ****     HAL_ADC_Start(&hadc1);
+ 1801              		.loc 1 273 5 view .LVU626
+ 1802 0070 0C4D     		ldr	r5, .L140+4
+ 1803 0072 2846     		mov	r0, r5
+ 1804 0074 FFF7FEFF 		bl	HAL_ADC_Start
+ 1805              	.LVL206:
+ 274:linea/src/linea_bsp_linea_v1.c ****     HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 1806              		.loc 1 274 5 view .LVU627
+ 1807 0078 4FF0FF31 		mov	r1, #-1
+ 1808 007c 2846     		mov	r0, r5
+ 1809 007e FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 1810              	.LVL207:
+ 275:linea/src/linea_bsp_linea_v1.c ****     uint16_t base = HAL_ADC_GetValue(&hadc1);
+ 1811              		.loc 1 275 5 view .LVU628
+ 1812              		.loc 1 275 21 is_stmt 0 view .LVU629
+ 1813 0082 2846     		mov	r0, r5
+ 1814 0084 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 1815              	.LVL208:
+ 1816              		.loc 1 275 14 discriminator 1 view .LVU630
+ 1817 0088 83B2     		uxth	r3, r0
+ 1818              	.LVL209:
+ 276:linea/src/linea_bsp_linea_v1.c ****     
+ 277:linea/src/linea_bsp_linea_v1.c ****     // Return difference with offset
+ 278:linea/src/linea_bsp_linea_v1.c ****     value = value - base + (uint16_t)LINEA_DATA_OFFSET;
+ 1819              		.loc 1 278 5 is_stmt 1 view .LVU631
+ 1820              		.loc 1 278 19 is_stmt 0 view .LVU632
+ 1821 008a E01A     		subs	r0, r4, r3
+ 1822 008c 80B2     		uxth	r0, r0
+ 1823              		.loc 1 278 11 view .LVU633
+ 1824 008e 6430     		adds	r0, r0, #100
+ 1825 0090 80B2     		uxth	r0, r0
+ 1826              	.LVL210:
+ 279:linea/src/linea_bsp_linea_v1.c **** #endif
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 50
+
+
+ 280:linea/src/linea_bsp_linea_v1.c **** 
+ 281:linea/src/linea_bsp_linea_v1.c ****     __enable_irq();
+ 1827              		.loc 1 281 5 is_stmt 1 view .LVU634
+ 1828              	.LBB25:
+ 1829              	.LBI25:
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 1830              		.loc 2 196 27 view .LVU635
+ 1831              	.LBB26:
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 1832              		.loc 2 198 3 view .LVU636
+ 1833              		.syntax unified
+ 1834              	@ 198 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1835 0092 62B6     		cpsie i
+ 1836              	@ 0 "" 2
+ 1837              		.thumb
+ 1838              		.syntax unified
+ 1839              	.LBE26:
+ 1840              	.LBE25:
+ 282:linea/src/linea_bsp_linea_v1.c ****     
+ 283:linea/src/linea_bsp_linea_v1.c ****     // Re-enable discharge
+ 284:linea/src/linea_bsp_linea_v1.c ****     LINEA_DISCHARGE_ENABLE();
+ 1841              		.loc 1 284 5 view .LVU637
+ 1842              		.loc 1 284 5 view .LVU638
+ 1843 0094 4FF09043 		mov	r3, #1207959552
+ 1844              	.LVL211:
+ 1845              		.loc 1 284 5 is_stmt 0 view .LVU639
+ 1846 0098 0122     		movs	r2, #1
+ 1847 009a 9A61     		str	r2, [r3, #24]
+ 1848              		.loc 1 284 5 is_stmt 1 view .LVU640
+ 285:linea/src/linea_bsp_linea_v1.c ****     
+ 286:linea/src/linea_bsp_linea_v1.c ****     return value;
+ 1849              		.loc 1 286 5 view .LVU641
+ 287:linea/src/linea_bsp_linea_v1.c **** }
+ 1850              		.loc 1 287 1 is_stmt 0 view .LVU642
+ 1851 009c 38BD     		pop	{r3, r4, r5, pc}
+ 1852              	.L141:
+ 1853 009e 00BF     		.align	2
+ 1854              	.L140:
+ 1855 00a0 00040048 		.word	1207960576
+ 1856 00a4 00000000 		.word	hadc1
+ 1857              		.cfi_endproc
+ 1858              	.LFE1421:
+ 1860              		.section	.text.linea_led_on,"ax",%progbits
+ 1861              		.align	1
+ 1862              		.global	linea_led_on
+ 1863              		.syntax unified
+ 1864              		.thumb
+ 1865              		.thumb_func
+ 1867              	linea_led_on:
+ 1868              	.LFB1422:
+ 288:linea/src/linea_bsp_linea_v1.c **** 
+ 289:linea/src/linea_bsp_linea_v1.c **** // LED control (placeholder - no LED on STM32WB55 Linea board)
+ 290:linea/src/linea_bsp_linea_v1.c **** void linea_led_on(){
+ 1869              		.loc 1 290 20 is_stmt 1 view -0
+ 1870              		.cfi_startproc
+ 1871              		@ args = 0, pretend = 0, frame = 0
+ 1872              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 51
+
+
+ 1873              		@ link register save eliminated.
+ 291:linea/src/linea_bsp_linea_v1.c ****     // No LED available on this board
+ 292:linea/src/linea_bsp_linea_v1.c **** }
+ 1874              		.loc 1 292 1 view .LVU644
+ 1875 0000 7047     		bx	lr
+ 1876              		.cfi_endproc
+ 1877              	.LFE1422:
+ 1879              		.section	.text.linea_led_off,"ax",%progbits
+ 1880              		.align	1
+ 1881              		.global	linea_led_off
+ 1882              		.syntax unified
+ 1883              		.thumb
+ 1884              		.thumb_func
+ 1886              	linea_led_off:
+ 1887              	.LFB1423:
+ 293:linea/src/linea_bsp_linea_v1.c **** 
+ 294:linea/src/linea_bsp_linea_v1.c **** void linea_led_off(){
+ 1888              		.loc 1 294 21 view -0
+ 1889              		.cfi_startproc
+ 1890              		@ args = 0, pretend = 0, frame = 0
+ 1891              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1892              		@ link register save eliminated.
+ 295:linea/src/linea_bsp_linea_v1.c ****     // No LED available on this board
+ 296:linea/src/linea_bsp_linea_v1.c **** }
+ 1893              		.loc 1 296 1 view .LVU646
+ 1894 0000 7047     		bx	lr
+ 1895              		.cfi_endproc
+ 1896              	.LFE1423:
+ 1898              		.section	.rodata.linea_transmit.str1.4,"aMS",%progbits,1
+ 1899              		.align	2
+ 1900              	.LC4:
+ 1901 0000 5472616E 		.ascii	"Transmitting: X=%d, Y=%d, Tip=%d\000"
+ 1901      736D6974 
+ 1901      74696E67 
+ 1901      3A20583D 
+ 1901      25642C20 
+ 1902              		.section	.text.linea_transmit,"ax",%progbits
+ 1903              		.align	1
+ 1904              		.global	linea_transmit
+ 1905              		.syntax unified
+ 1906              		.thumb
+ 1907              		.thumb_func
+ 1909              	linea_transmit:
+ 1910              	.LVL212:
+ 1911              	.LFB1424:
+ 297:linea/src/linea_bsp_linea_v1.c **** 
+ 298:linea/src/linea_bsp_linea_v1.c **** // Transmit data via USB HID
+ 299:linea/src/linea_bsp_linea_v1.c **** bool linea_transmit(linea_report_t* report){
+ 1912              		.loc 1 299 44 view -0
+ 1913              		.cfi_startproc
+ 1914              		@ args = 0, pretend = 0, frame = 0
+ 1915              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1916              		.loc 1 299 44 is_stmt 0 view .LVU648
+ 1917 0000 10B5     		push	{r4, lr}
+ 1918              		.cfi_def_cfa_offset 8
+ 1919              		.cfi_offset 4, -8
+ 1920              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 52
+
+
+ 1921 0002 0446     		mov	r4, r0
+ 300:linea/src/linea_bsp_linea_v1.c ****     // This function will be implemented when USB HID is configured
+ 301:linea/src/linea_bsp_linea_v1.c ****     // For now, just log the data
+ 302:linea/src/linea_bsp_linea_v1.c ****     LINEA_UsrLog("Transmitting: X=%d, Y=%d, Tip=%d", 
+ 1922              		.loc 1 302 5 is_stmt 1 view .LVU649
+ 1923              		.loc 1 302 5 view .LVU650
+ 1924 0004 0648     		ldr	r0, .L146
+ 1925              	.LVL213:
+ 1926              		.loc 1 302 5 is_stmt 0 view .LVU651
+ 1927 0006 FFF7FEFF 		bl	printf
+ 1928              	.LVL214:
+ 1929              		.loc 1 302 5 is_stmt 1 discriminator 1 view .LVU652
+ 1930 000a 6389     		ldrh	r3, [r4, #10]
+ 1931 000c 6288     		ldrh	r2, [r4, #2]
+ 1932 000e 2188     		ldrh	r1, [r4]
+ 1933 0010 0448     		ldr	r0, .L146+4
+ 1934 0012 FFF7FEFF 		bl	printf
+ 1935              	.LVL215:
+ 1936              		.loc 1 302 5 discriminator 2 view .LVU653
+ 1937 0016 0A20     		movs	r0, #10
+ 1938 0018 FFF7FEFF 		bl	putchar
+ 1939              	.LVL216:
+ 1940              		.loc 1 302 5 discriminator 3 view .LVU654
+ 303:linea/src/linea_bsp_linea_v1.c ****                   report->xpos, report->ypos, report->tip);
+ 304:linea/src/linea_bsp_linea_v1.c ****     
+ 305:linea/src/linea_bsp_linea_v1.c ****     return true;
+ 1941              		.loc 1 305 5 view .LVU655
+ 306:linea/src/linea_bsp_linea_v1.c **** }
+ 1942              		.loc 1 306 1 is_stmt 0 view .LVU656
+ 1943 001c 0120     		movs	r0, #1
+ 1944 001e 10BD     		pop	{r4, pc}
+ 1945              	.LVL217:
+ 1946              	.L147:
+ 1947              		.loc 1 306 1 view .LVU657
+ 1948              		.align	2
+ 1949              	.L146:
+ 1950 0020 00000000 		.word	.LC0
+ 1951 0024 00000000 		.word	.LC4
+ 1952              		.cfi_endproc
+ 1953              	.LFE1424:
+ 1955              		.global	ExN_Pin
+ 1956              		.section	.data.ExN_Pin,"aw"
+ 1957              		.align	2
+ 1960              	ExN_Pin:
+ 1961 0000 2000     		.short	32
+ 1962 0002 1000     		.short	16
+ 1963 0004 0800     		.short	8
+ 1964 0006 0200     		.short	2
+ 1965 0008 0100     		.short	1
+ 1966 000a 0010     		.short	4096
+ 1967              		.global	ExN_GPIO_Port
+ 1968              		.section	.data.ExN_GPIO_Port,"aw"
+ 1969              		.align	2
+ 1972              	ExN_GPIO_Port:
+ 1973 0000 00040048 		.word	1207960576
+ 1974 0004 00040048 		.word	1207960576
+ 1975 0008 00040048 		.word	1207960576
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 53
+
+
+ 1976 000c 000C0048 		.word	1207962624
+ 1977 0010 000C0048 		.word	1207962624
+ 1978 0014 00080048 		.word	1207961600
+ 1979              		.text
+ 1980              	.Letext0:
+ 1981              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1982              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1983              		.file 5 "linea/inc/linea.h"
+ 1984              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1985              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wbxx.h"
+ 1986              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1987              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 1988              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc.h"
+ 1989              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ 1990              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
+ 1991              		.file 13 "linea/inc/linea_bsp_linea_v1.h"
+ 1992              		.file 14 "Core/Inc/app_conf.h"
+ 1993              		.file 15 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
+ 1994              		.file 16 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 54
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 linea_bsp_linea_v1.c
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:21     .text.linea_coil_select:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:27     .text.linea_coil_select:00000000 linea_coil_select
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:81     .text.linea_coil_select:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:115    .text.linea_coil_select:00000052 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:578    .text.linea_coil_select:000001da $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1022   .text.linea_coil_select:00000340 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1027   .text.linea_coil_select:00000344 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1219   .text.linea_coil_select:000003e8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1960   .data.ExN_Pin:00000000 ExN_Pin
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1972   .data.ExN_GPIO_Port:00000000 ExN_GPIO_Port
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1225   .rodata.linea_TIM_init.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1232   .text.linea_TIM_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1238   .text.linea_TIM_init:00000000 linea_TIM_init
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1287   .text.linea_TIM_init:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1296   .text.linea_TIM_trigger:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1302   .text.linea_TIM_trigger:00000000 linea_TIM_trigger
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1323   .text.linea_TIM_trigger:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1328   .rodata.linea_ADC_init.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1332   .text.linea_ADC_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1338   .text.linea_ADC_init:00000000 linea_ADC_init
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1367   .text.linea_ADC_init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1374   .rodata.linea_set_freq.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1378   .text.linea_set_freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1384   .text.linea_set_freq:00000000 linea_set_freq
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1480   .text.linea_set_freq:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1490   .text._linea_adc_multisample:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1496   .text._linea_adc_multisample:00000000 _linea_adc_multisample
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1600   .text._linea_adc_multisample:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1606   .text.linea_simple_take_sample:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1612   .text.linea_simple_take_sample:00000000 linea_simple_take_sample
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1855   .text.linea_simple_take_sample:000000a0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1861   .text.linea_led_on:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1867   .text.linea_led_on:00000000 linea_led_on
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1880   .text.linea_led_off:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1886   .text.linea_led_off:00000000 linea_led_off
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1899   .rodata.linea_transmit.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1903   .text.linea_transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1909   .text.linea_transmit:00000000 linea_transmit
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1950   .text.linea_transmit:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1957   .data.ExN_Pin:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:1969   .data.ExN_GPIO_Port:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:623    .text.linea_coil_select:00000207 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s:623    .text.linea_coil_select:00000208 $t
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_TIM_PWM_Start
+printf
+putchar
+htim1
+__aeabi_f2d
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+hadc1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwqhCog.s 			page 55
+
+

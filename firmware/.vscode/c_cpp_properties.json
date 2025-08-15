@@ -25,7 +25,8 @@
         "USB_Device/App",
         "USB_Device/Target",
         "Utilities/lpm/tiny_lpm",
-        "Utilities/sequencer"
+        "Utilities/sequencer",
+        "linea/inc"
       ],
       "defines": [
         "STM32WB55xx",

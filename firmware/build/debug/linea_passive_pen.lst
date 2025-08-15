@@ -1,0 +1,266 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"linea_passive_pen.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "linea/src/linea_passive_pen.c"
+  20              		.section	.text.linea_pen_default_tx,"ax",%progbits
+  21              		.align	1
+  22              		.global	linea_pen_default_tx
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	linea_pen_default_tx:
+  28              	.LFB4:
+   1:linea/src/linea_passive_pen.c **** /*
+   2:linea/src/linea_passive_pen.c **** * Project Linea
+   3:linea/src/linea_passive_pen.c **** * Copyright (C) 2024 Anhang Li (thelithcore@gmail.com)
+   4:linea/src/linea_passive_pen.c **** * Adapted for STM32WB55 by Nathan
+   5:linea/src/linea_passive_pen.c **** *
+   6:linea/src/linea_passive_pen.c **** * This program is free software: you can redistribute it and/or modify
+   7:linea/src/linea_passive_pen.c **** * it under the terms of the GNU General Public License as published by
+   8:linea/src/linea_passive_pen.c **** * the Free Software Foundation, either version 3 of the License, or
+   9:linea/src/linea_passive_pen.c **** * (at your option) any later version.
+  10:linea/src/linea_passive_pen.c **** *
+  11:linea/src/linea_passive_pen.c **** * This program is distributed in the hope that it will be useful,
+  12:linea/src/linea_passive_pen.c **** * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:linea/src/linea_passive_pen.c **** * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:linea/src/linea_passive_pen.c **** * GNU General Public License for more details.
+  15:linea/src/linea_passive_pen.c **** *
+  16:linea/src/linea_passive_pen.c **** * You should have received a copy of the GNU General Public License
+  17:linea/src/linea_passive_pen.c **** * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  18:linea/src/linea_passive_pen.c **** */
+  19:linea/src/linea_passive_pen.c **** 
+  20:linea/src/linea_passive_pen.c **** #include "linea_passive_pen.h"
+  21:linea/src/linea_passive_pen.c **** #include "linea_config.h"
+  22:linea/src/linea_passive_pen.c **** #include <stdint.h>
+  23:linea/src/linea_passive_pen.c **** #include <stdbool.h>
+  24:linea/src/linea_passive_pen.c **** 
+  25:linea/src/linea_passive_pen.c **** // Global pen transmission object
+  26:linea/src/linea_passive_pen.c **** linea_tx_t linea_pen_pw100;
+  27:linea/src/linea_passive_pen.c **** 
+  28:linea/src/linea_passive_pen.c **** // Initialize pen transmission functions
+  29:linea/src/linea_passive_pen.c **** void linea_pen_init() {
+  30:linea/src/linea_passive_pen.c ****     // Initialize the function pointer table
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 2
+
+
+  31:linea/src/linea_passive_pen.c ****     for (int i = 0; i < LINEA_TIM_N_STEP; i++) {
+  32:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  33:linea/src/linea_passive_pen.c ****     }
+  34:linea/src/linea_passive_pen.c **** }
+  35:linea/src/linea_passive_pen.c **** 
+  36:linea/src/linea_passive_pen.c **** // Default pen transmission function
+  37:linea/src/linea_passive_pen.c **** void linea_pen_default_tx() {
+  29              		.loc 1 37 29 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  38:linea/src/linea_passive_pen.c ****     // Default transmission behavior
+  39:linea/src/linea_passive_pen.c ****     // This can be customized for different pen types
+  40:linea/src/linea_passive_pen.c **** }
+  34              		.loc 1 40 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE4:
+  39              		.section	.text.linea_pen_init,"ax",%progbits
+  40              		.align	1
+  41              		.global	linea_pen_init
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  46              	linea_pen_init:
+  47              	.LFB3:
+  29:linea/src/linea_passive_pen.c ****     // Initialize the function pointer table
+  48              		.loc 1 29 23 view -0
+  49              		.cfi_startproc
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  53              		.loc 1 31 5 view .LVU3
+  54              	.LBB2:
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  55              		.loc 1 31 10 view .LVU4
+  56              	.LVL0:
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  57              		.loc 1 31 14 is_stmt 0 view .LVU5
+  58 0000 0023     		movs	r3, #0
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  59              		.loc 1 31 5 view .LVU6
+  60 0002 04E0     		b	.L3
+  61              	.LVL1:
+  62              	.L4:
+  32:linea/src/linea_passive_pen.c ****     }
+  63              		.loc 1 32 9 is_stmt 1 view .LVU7
+  32:linea/src/linea_passive_pen.c ****     }
+  64              		.loc 1 32 42 is_stmt 0 view .LVU8
+  65 0004 034A     		ldr	r2, .L5
+  66 0006 0449     		ldr	r1, .L5+4
+  67 0008 42F82310 		str	r1, [r2, r3, lsl #2]
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  68              		.loc 1 31 44 is_stmt 1 discriminator 3 view .LVU9
+  69 000c 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 3
+
+
+  70              	.LVL2:
+  71              	.L3:
+  31:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[i] = linea_pen_default_tx;
+  72              		.loc 1 31 23 discriminator 1 view .LVU10
+  73 000e 122B     		cmp	r3, #18
+  74 0010 F8D9     		bls	.L4
+  75              	.LBE2:
+  34:linea/src/linea_passive_pen.c **** 
+  76              		.loc 1 34 1 is_stmt 0 view .LVU11
+  77 0012 7047     		bx	lr
+  78              	.L6:
+  79              		.align	2
+  80              	.L5:
+  81 0014 00000000 		.word	linea_pen_pw100
+  82 0018 00000000 		.word	linea_pen_default_tx
+  83              		.cfi_endproc
+  84              	.LFE3:
+  86              		.section	.text.linea_pen_set_tx_function,"ax",%progbits
+  87              		.align	1
+  88              		.global	linea_pen_set_tx_function
+  89              		.syntax unified
+  90              		.thumb
+  91              		.thumb_func
+  93              	linea_pen_set_tx_function:
+  94              	.LVL3:
+  95              	.LFB5:
+  41:linea/src/linea_passive_pen.c **** 
+  42:linea/src/linea_passive_pen.c **** // Set specific transmission function for a frequency step
+  43:linea/src/linea_passive_pen.c **** void linea_pen_set_tx_function(uint8_t fstep, linea_tx_fptr_t func) {
+  96              		.loc 1 43 69 is_stmt 1 view -0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100              		@ link register save eliminated.
+  44:linea/src/linea_passive_pen.c ****     if (fstep < LINEA_TIM_N_STEP && func != NULL) {
+ 101              		.loc 1 44 5 view .LVU13
+ 102              		.loc 1 44 8 is_stmt 0 view .LVU14
+ 103 0000 1228     		cmp	r0, #18
+ 104 0002 03D8     		bhi	.L7
+ 105              		.loc 1 44 34 discriminator 1 view .LVU15
+ 106 0004 11B1     		cbz	r1, .L7
+  45:linea/src/linea_passive_pen.c ****         linea_pen_pw100.tx_fptr_table[fstep] = func;
+ 107              		.loc 1 45 9 is_stmt 1 view .LVU16
+ 108              		.loc 1 45 46 is_stmt 0 view .LVU17
+ 109 0006 024B     		ldr	r3, .L9
+ 110 0008 43F82010 		str	r1, [r3, r0, lsl #2]
+ 111              	.L7:
+  46:linea/src/linea_passive_pen.c ****     }
+  47:linea/src/linea_passive_pen.c **** }
+ 112              		.loc 1 47 1 view .LVU18
+ 113 000c 7047     		bx	lr
+ 114              	.L10:
+ 115 000e 00BF     		.align	2
+ 116              	.L9:
+ 117 0010 00000000 		.word	linea_pen_pw100
+ 118              		.cfi_endproc
+ 119              	.LFE5:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 4
+
+
+ 121              		.section	.text.linea_pen_get_tx_function,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	linea_pen_get_tx_function
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	linea_pen_get_tx_function:
+ 129              	.LVL4:
+ 130              	.LFB6:
+  48:linea/src/linea_passive_pen.c **** 
+  49:linea/src/linea_passive_pen.c **** // Get transmission function for a frequency step
+  50:linea/src/linea_passive_pen.c **** linea_tx_fptr_t linea_pen_get_tx_function(uint8_t fstep) {
+ 131              		.loc 1 50 58 is_stmt 1 view -0
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              		@ link register save eliminated.
+  51:linea/src/linea_passive_pen.c ****     if (fstep < LINEA_TIM_N_STEP) {
+ 136              		.loc 1 51 5 view .LVU20
+ 137              		.loc 1 51 8 is_stmt 0 view .LVU21
+ 138 0000 1228     		cmp	r0, #18
+ 139 0002 03D8     		bhi	.L13
+  52:linea/src/linea_passive_pen.c ****         return linea_pen_pw100.tx_fptr_table[fstep];
+ 140              		.loc 1 52 9 is_stmt 1 view .LVU22
+ 141              		.loc 1 52 45 is_stmt 0 view .LVU23
+ 142 0004 024B     		ldr	r3, .L14
+ 143 0006 53F82000 		ldr	r0, [r3, r0, lsl #2]
+ 144              	.LVL5:
+ 145              		.loc 1 52 45 view .LVU24
+ 146 000a 7047     		bx	lr
+ 147              	.LVL6:
+ 148              	.L13:
+  53:linea/src/linea_passive_pen.c ****     }
+  54:linea/src/linea_passive_pen.c ****     return NULL;
+ 149              		.loc 1 54 12 view .LVU25
+ 150 000c 0020     		movs	r0, #0
+ 151              	.LVL7:
+  55:linea/src/linea_passive_pen.c **** }
+ 152              		.loc 1 55 1 view .LVU26
+ 153 000e 7047     		bx	lr
+ 154              	.L15:
+ 155              		.align	2
+ 156              	.L14:
+ 157 0010 00000000 		.word	linea_pen_pw100
+ 158              		.cfi_endproc
+ 159              	.LFE6:
+ 161              		.global	linea_pen_pw100
+ 162              		.section	.bss.linea_pen_pw100,"aw",%nobits
+ 163              		.align	2
+ 166              	linea_pen_pw100:
+ 167 0000 00000000 		.space	76
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 167      00000000 
+ 168              		.text
+ 169              	.Letext0:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 5
+
+
+ 170              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 171              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 172              		.file 4 "linea/inc/linea_passive_pen.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 linea_passive_pen.c
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:21     .text.linea_pen_default_tx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:27     .text.linea_pen_default_tx:00000000 linea_pen_default_tx
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:40     .text.linea_pen_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:46     .text.linea_pen_init:00000000 linea_pen_init
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:81     .text.linea_pen_init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:166    .bss.linea_pen_pw100:00000000 linea_pen_pw100
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:87     .text.linea_pen_set_tx_function:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:93     .text.linea_pen_set_tx_function:00000000 linea_pen_set_tx_function
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:117    .text.linea_pen_set_tx_function:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:122    .text.linea_pen_get_tx_function:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:128    .text.linea_pen_get_tx_function:00000000 linea_pen_get_tx_function
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:157    .text.linea_pen_get_tx_function:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwuoErq.s:163    .bss.linea_pen_pw100:00000000 $d
+
+NO UNDEFINED SYMBOLS

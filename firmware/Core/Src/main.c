@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "linea.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -128,7 +128,8 @@ int main(void)
   MX_RTC_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
-
+  // Initialize Linea library
+  linea_init();
   /* USER CODE END 2 */
 
   /* Init code for STM32_WPAN */
@@ -142,6 +143,8 @@ int main(void)
     MX_APPE_Process();
 
     /* USER CODE BEGIN 3 */
+    // Process Linea library
+    linea_cycle();
   }
   /* USER CODE END 3 */
 }

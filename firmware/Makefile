@@ -43,6 +43,11 @@ Core/Src/hw_timerserver.c \
 Core/Src/stm32_lpm_if.c \
 Core/Src/stm32wbxx_it.c \
 Core/Src/stm32wbxx_hal_msp.c \
+linea/src/linea.c \
+linea/src/linea_bsp_linea_v1.c \
+linea/src/linea_math.c \
+linea/src/BCG.c \
+linea/src/linea_passive_pen.c \
 USB_Device/Target/usbd_conf.c \
 USB_Device/App/usb_device.c \
 USB_Device/App/usbd_desc.c \
@@ -164,6 +169,7 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
+-Ilinea/inc \
 -ISTM32_WPAN/App \
 -IUSB_Device/App \
 -IUSB_Device/Target \
@@ -209,7 +215,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 LDSCRIPT = stm32wb55xx_flash_cm4.ld
 
 # libraries
-LIBS = -lc -lm -lnosys 
+LIBS = -lc -lm -lnosys
 LIBDIR = 
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
