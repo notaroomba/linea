@@ -238,6 +238,11 @@ void HAL_IPCC_MspInit(IPCC_HandleTypeDef* hipcc)
     /* USER CODE END IPCC_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_IPCC_CLK_ENABLE();
+    /* IPCC interrupt Init */
+    HAL_NVIC_SetPriority(IPCC_C1_RX_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(IPCC_C1_RX_IRQn);
+    HAL_NVIC_SetPriority(IPCC_C1_TX_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(IPCC_C1_TX_IRQn);
     /* USER CODE BEGIN IPCC_MspInit 1 */
 
     /* USER CODE END IPCC_MspInit 1 */
@@ -261,6 +266,10 @@ void HAL_IPCC_MspDeInit(IPCC_HandleTypeDef* hipcc)
     /* USER CODE END IPCC_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_IPCC_CLK_DISABLE();
+
+    /* IPCC interrupt DeInit */
+    HAL_NVIC_DisableIRQ(IPCC_C1_RX_IRQn);
+    HAL_NVIC_DisableIRQ(IPCC_C1_TX_IRQn);
     /* USER CODE BEGIN IPCC_MspDeInit 1 */
 
     /* USER CODE END IPCC_MspDeInit 1 */
@@ -299,6 +308,9 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
     /* Peripheral clock enable */
     __HAL_RCC_RTC_ENABLE();
     __HAL_RCC_RTCAPB_CLK_ENABLE();
+    /* RTC interrupt Init */
+    HAL_NVIC_SetPriority(RTC_WKUP_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(RTC_WKUP_IRQn);
     /* USER CODE BEGIN RTC_MspInit 1 */
 
     /* USER CODE END RTC_MspInit 1 */
@@ -323,6 +335,9 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
     /* Peripheral clock disable */
     __HAL_RCC_RTC_DISABLE();
     __HAL_RCC_RTCAPB_CLK_DISABLE();
+
+    /* RTC interrupt DeInit */
+    HAL_NVIC_DisableIRQ(RTC_WKUP_IRQn);
     /* USER CODE BEGIN RTC_MspDeInit 1 */
 
     /* USER CODE END RTC_MspDeInit 1 */
@@ -438,7 +453,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
     PA1     ------> TIM2_CH2
     PA2     ------> TIM2_CH3
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2;
+    GPIO_InitStruct.Pin = DISCHARGE_Pin|GPIO_PIN_1|GPIO_PIN_2;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -459,12 +474,12 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
     /**TIM16 GPIO Configuration
     PB6     ------> TIM16_CH1N
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_6;
+    GPIO_InitStruct.Pin = EXCITER_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF14_TIM16;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    HAL_GPIO_Init(EXCITER_GPIO_Port, &GPIO_InitStruct);
 
     /* USER CODE BEGIN TIM16_MspPostInit 1 */
 

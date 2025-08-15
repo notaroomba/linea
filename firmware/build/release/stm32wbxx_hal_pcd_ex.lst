@@ -1,0 +1,306 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_pcd_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_PCDEx_PMAConfig,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_PCDEx_PMAConfig
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_PCDEx_PMAConfig:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 11F0800F 		tst	r1, #128
+  29 0004 0BD0     		beq	.L2
+  30 0006 01F00701 		and	r1, r1, #7
+  31 000a 01EB8101 		add	r1, r1, r1, lsl #2
+  32 000e C900     		lsls	r1, r1, #3
+  33 0010 1031     		adds	r1, r1, #16
+  34 0012 0844     		add	r0, r0, r1
+  35              	.L3:
+  36 0014 52B9     		cbnz	r2, .L4
+  37 0016 0273     		strb	r2, [r0, #12]
+  38 0018 C380     		strh	r3, [r0, #6]	@ movhi
+  39              	.L5:
+  40 001a 0020     		movs	r0, #0
+  41 001c 7047     		bx	lr
+  42              	.L2:
+  43 001e 01EB8101 		add	r1, r1, r1, lsl #2
+  44 0022 C900     		lsls	r1, r1, #3
+  45 0024 01F5A871 		add	r1, r1, #336
+  46 0028 0844     		add	r0, r0, r1
+  47 002a F3E7     		b	.L3
+  48              	.L4:
+  49 002c 0122     		movs	r2, #1
+  50 002e 0273     		strb	r2, [r0, #12]
+  51 0030 0381     		strh	r3, [r0, #8]	@ movhi
+  52 0032 1B0C     		lsrs	r3, r3, #16
+  53 0034 4381     		strh	r3, [r0, #10]	@ movhi
+  54 0036 F0E7     		b	.L5
+  56              		.section	.text.HAL_PCDEx_ActivateBCD,"ax",%progbits
+  57              		.align	1
+  58              		.global	HAL_PCDEx_ActivateBCD
+  59              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 2
+
+
+  60              		.thumb
+  61              		.thumb_func
+  63              	HAL_PCDEx_ActivateBCD:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 0368     		ldr	r3, [r0]
+  68 0002 0122     		movs	r2, #1
+  69 0004 C0F8D422 		str	r2, [r0, #724]
+  70 0008 B3F85820 		ldrh	r2, [r3, #88]
+  71 000c 92B2     		uxth	r2, r2
+  72 000e 42F00102 		orr	r2, r2, #1
+  73 0012 A3F85820 		strh	r2, [r3, #88]	@ movhi
+  74 0016 B3F85820 		ldrh	r2, [r3, #88]
+  75 001a 92B2     		uxth	r2, r2
+  76 001c 22F00402 		bic	r2, r2, #4
+  77 0020 92B2     		uxth	r2, r2
+  78 0022 A3F85820 		strh	r2, [r3, #88]	@ movhi
+  79 0026 B3F85820 		ldrh	r2, [r3, #88]
+  80 002a 92B2     		uxth	r2, r2
+  81 002c 22F00802 		bic	r2, r2, #8
+  82 0030 92B2     		uxth	r2, r2
+  83 0032 A3F85820 		strh	r2, [r3, #88]	@ movhi
+  84 0036 B3F85820 		ldrh	r2, [r3, #88]
+  85 003a 92B2     		uxth	r2, r2
+  86 003c 42F00202 		orr	r2, r2, #2
+  87 0040 A3F85820 		strh	r2, [r3, #88]	@ movhi
+  88 0044 0020     		movs	r0, #0
+  89 0046 7047     		bx	lr
+  91              		.section	.text.HAL_PCDEx_DeActivateBCD,"ax",%progbits
+  92              		.align	1
+  93              		.global	HAL_PCDEx_DeActivateBCD
+  94              		.syntax unified
+  95              		.thumb
+  96              		.thumb_func
+  98              	HAL_PCDEx_DeActivateBCD:
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              		@ link register save eliminated.
+ 102 0000 0346     		mov	r3, r0
+ 103 0002 0268     		ldr	r2, [r0]
+ 104 0004 0020     		movs	r0, #0
+ 105 0006 C3F8D402 		str	r0, [r3, #724]
+ 106 000a B2F85830 		ldrh	r3, [r2, #88]
+ 107 000e 9BB2     		uxth	r3, r3
+ 108 0010 23F00103 		bic	r3, r3, #1
+ 109 0014 9BB2     		uxth	r3, r3
+ 110 0016 A2F85830 		strh	r3, [r2, #88]	@ movhi
+ 111 001a 7047     		bx	lr
+ 113              		.section	.text.HAL_PCDEx_ActivateLPM,"ax",%progbits
+ 114              		.align	1
+ 115              		.global	HAL_PCDEx_ActivateLPM
+ 116              		.syntax unified
+ 117              		.thumb
+ 118              		.thumb_func
+ 120              	HAL_PCDEx_ActivateLPM:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 3
+
+
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123              		@ link register save eliminated.
+ 124 0000 0346     		mov	r3, r0
+ 125 0002 0268     		ldr	r2, [r0]
+ 126 0004 0121     		movs	r1, #1
+ 127 0006 C0F8D012 		str	r1, [r0, #720]
+ 128 000a 0020     		movs	r0, #0
+ 129 000c 83F8C802 		strb	r0, [r3, #712]
+ 130 0010 B2F85430 		ldrh	r3, [r2, #84]
+ 131 0014 9BB2     		uxth	r3, r3
+ 132 0016 0B43     		orrs	r3, r3, r1
+ 133 0018 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 134 001c B2F85430 		ldrh	r3, [r2, #84]
+ 135 0020 9BB2     		uxth	r3, r3
+ 136 0022 43F00203 		orr	r3, r3, #2
+ 137 0026 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 138 002a 7047     		bx	lr
+ 140              		.section	.text.HAL_PCDEx_DeActivateLPM,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	HAL_PCDEx_DeActivateLPM
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 147              	HAL_PCDEx_DeActivateLPM:
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151 0000 0346     		mov	r3, r0
+ 152 0002 0268     		ldr	r2, [r0]
+ 153 0004 0020     		movs	r0, #0
+ 154 0006 C3F8D002 		str	r0, [r3, #720]
+ 155 000a B2F85430 		ldrh	r3, [r2, #84]
+ 156 000e 9BB2     		uxth	r3, r3
+ 157 0010 23F00103 		bic	r3, r3, #1
+ 158 0014 9BB2     		uxth	r3, r3
+ 159 0016 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 160 001a B2F85430 		ldrh	r3, [r2, #84]
+ 161 001e 9BB2     		uxth	r3, r3
+ 162 0020 23F00203 		bic	r3, r3, #2
+ 163 0024 9BB2     		uxth	r3, r3
+ 164 0026 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 165 002a 7047     		bx	lr
+ 167              		.section	.text.HAL_PCDEx_LPM_Callback,"ax",%progbits
+ 168              		.align	1
+ 169              		.weak	HAL_PCDEx_LPM_Callback
+ 170              		.syntax unified
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	HAL_PCDEx_LPM_Callback:
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 178 0000 7047     		bx	lr
+ 180              		.section	.text.HAL_PCDEx_BCD_Callback,"ax",%progbits
+ 181              		.align	1
+ 182              		.weak	HAL_PCDEx_BCD_Callback
+ 183              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 4
+
+
+ 184              		.thumb
+ 185              		.thumb_func
+ 187              	HAL_PCDEx_BCD_Callback:
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		@ link register save eliminated.
+ 191 0000 7047     		bx	lr
+ 193              		.section	.text.HAL_PCDEx_BCD_VBUSDetect,"ax",%progbits
+ 194              		.align	1
+ 195              		.global	HAL_PCDEx_BCD_VBUSDetect
+ 196              		.syntax unified
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	HAL_PCDEx_BCD_VBUSDetect:
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203 0000 70B5     		push	{r4, r5, r6, lr}
+ 204 0002 0546     		mov	r5, r0
+ 205 0004 0468     		ldr	r4, [r0]
+ 206 0006 FFF7FEFF 		bl	HAL_GetTick
+ 207 000a 0646     		mov	r6, r0
+ 208 000c 4FF49670 		mov	r0, #300
+ 209 0010 FFF7FEFF 		bl	HAL_Delay
+ 210 0014 B4F85830 		ldrh	r3, [r4, #88]
+ 211 0018 13F0100F 		tst	r3, #16
+ 212 001c 38D1     		bne	.L20
+ 213              	.L13:
+ 214 001e B4F85830 		ldrh	r3, [r4, #88]
+ 215 0022 9BB2     		uxth	r3, r3
+ 216 0024 23F00203 		bic	r3, r3, #2
+ 217 0028 9BB2     		uxth	r3, r3
+ 218 002a A4F85830 		strh	r3, [r4, #88]	@ movhi
+ 219 002e 3220     		movs	r0, #50
+ 220 0030 FFF7FEFF 		bl	HAL_Delay
+ 221 0034 B4F85830 		ldrh	r3, [r4, #88]
+ 222 0038 9BB2     		uxth	r3, r3
+ 223 003a 43F00403 		orr	r3, r3, #4
+ 224 003e A4F85830 		strh	r3, [r4, #88]	@ movhi
+ 225 0042 3220     		movs	r0, #50
+ 226 0044 FFF7FEFF 		bl	HAL_Delay
+ 227 0048 B4F85830 		ldrh	r3, [r4, #88]
+ 228 004c 13F0200F 		tst	r3, #32
+ 229 0050 28D0     		beq	.L14
+ 230 0052 B4F85830 		ldrh	r3, [r4, #88]
+ 231 0056 9BB2     		uxth	r3, r3
+ 232 0058 23F00403 		bic	r3, r3, #4
+ 233 005c 9BB2     		uxth	r3, r3
+ 234 005e A4F85830 		strh	r3, [r4, #88]	@ movhi
+ 235 0062 3220     		movs	r0, #50
+ 236 0064 FFF7FEFF 		bl	HAL_Delay
+ 237 0068 B4F85830 		ldrh	r3, [r4, #88]
+ 238 006c 9BB2     		uxth	r3, r3
+ 239 006e 43F00803 		orr	r3, r3, #8
+ 240 0072 A4F85830 		strh	r3, [r4, #88]	@ movhi
+ 241 0076 3220     		movs	r0, #50
+ 242 0078 FFF7FEFF 		bl	HAL_Delay
+ 243 007c B4F85830 		ldrh	r3, [r4, #88]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 5
+
+
+ 244 0080 13F0400F 		tst	r3, #64
+ 245 0084 09D0     		beq	.L15
+ 246 0086 FB21     		movs	r1, #251
+ 247 0088 2846     		mov	r0, r5
+ 248 008a FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 249 008e 0DE0     		b	.L16
+ 250              	.L20:
+ 251 0090 FE21     		movs	r1, #254
+ 252 0092 2846     		mov	r0, r5
+ 253 0094 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 254 0098 C1E7     		b	.L13
+ 255              	.L15:
+ 256 009a FC21     		movs	r1, #252
+ 257 009c 2846     		mov	r0, r5
+ 258 009e FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 259 00a2 03E0     		b	.L16
+ 260              	.L14:
+ 261 00a4 FD21     		movs	r1, #253
+ 262 00a6 2846     		mov	r0, r5
+ 263 00a8 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 264              	.L16:
+ 265 00ac 2846     		mov	r0, r5
+ 266 00ae FFF7FEFF 		bl	HAL_PCDEx_DeActivateBCD
+ 267 00b2 FFF7FEFF 		bl	HAL_GetTick
+ 268 00b6 801B     		subs	r0, r0, r6
+ 269 00b8 B0F57A7F 		cmp	r0, #1000
+ 270 00bc 04D9     		bls	.L17
+ 271 00be FF21     		movs	r1, #255
+ 272 00c0 2846     		mov	r0, r5
+ 273 00c2 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 274              	.L12:
+ 275 00c6 70BD     		pop	{r4, r5, r6, pc}
+ 276              	.L17:
+ 277 00c8 0021     		movs	r1, #0
+ 278 00ca 2846     		mov	r0, r5
+ 279 00cc FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 280 00d0 F9E7     		b	.L12
+ 282              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_pcd_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:18     .text.HAL_PCDEx_PMAConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:24     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:57     .text.HAL_PCDEx_ActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:63     .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:92     .text.HAL_PCDEx_DeActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:98     .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:114    .text.HAL_PCDEx_ActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:120    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:141    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:147    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:168    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:174    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:181    .text.HAL_PCDEx_BCD_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:187    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:194    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdEyWWS.s:200    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
+
+UNDEFINED SYMBOLS
+HAL_GetTick
+HAL_Delay

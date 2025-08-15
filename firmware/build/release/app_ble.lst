@@ -1,0 +1,885 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"app_ble.c"
+  16              		.text
+  17              		.section	.text.Switch_OFF_GPIO,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	Switch_OFF_GPIO:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 7047     		bx	lr
+  29              		.section	.text.Adv_Cancel_Req,"ax",%progbits
+  30              		.align	1
+  31              		.syntax unified
+  32              		.thumb
+  33              		.thumb_func
+  35              	Adv_Cancel_Req:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38 0000 08B5     		push	{r3, lr}
+  39 0002 0021     		movs	r1, #0
+  40 0004 0120     		movs	r0, #1
+  41 0006 FFF7FEFF 		bl	UTIL_SEQ_SetTask
+  42 000a 08BD     		pop	{r3, pc}
+  44              		.section	.text.Adv_Cancel,"ax",%progbits
+  45              		.align	1
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	Adv_Cancel:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53 0000 08B5     		push	{r3, lr}
+  54 0002 064B     		ldr	r3, .L8
+  55 0004 93F88030 		ldrb	r3, [r3, #128]	@ zero_extendqisi2
+  56 0008 052B     		cmp	r3, #5
+  57 000a 00D1     		bne	.L7
+  58              	.L4:
+  59 000c 08BD     		pop	{r3, pc}
+  60              	.L7:
+  61 000e FFF7FEFF 		bl	aci_gap_set_non_discoverable
+  62 0012 024B     		ldr	r3, .L8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 2
+
+
+  63 0014 0022     		movs	r2, #0
+  64 0016 83F88020 		strb	r2, [r3, #128]
+  65 001a F7E7     		b	.L4
+  66              	.L9:
+  67              		.align	2
+  68              	.L8:
+  69 001c 00000000 		.word	BleApplicationContext
+  71              		.section	.text.Ble_Tl_Init,"ax",%progbits
+  72              		.align	1
+  73              		.syntax unified
+  74              		.thumb
+  75              		.thumb_func
+  77              	Ble_Tl_Init:
+  78              		@ args = 0, pretend = 0, frame = 8
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 00B5     		push	{lr}
+  81 0002 83B0     		sub	sp, sp, #12
+  82 0004 054B     		ldr	r3, .L12
+  83 0006 0093     		str	r3, [sp]
+  84 0008 054B     		ldr	r3, .L12+4
+  85 000a 0193     		str	r3, [sp, #4]
+  86 000c 6946     		mov	r1, sp
+  87 000e 0548     		ldr	r0, .L12+8
+  88 0010 FFF7FEFF 		bl	hci_init
+  89 0014 03B0     		add	sp, sp, #12
+  90              		@ sp needed
+  91 0016 5DF804FB 		ldr	pc, [sp], #4
+  92              	.L13:
+  93 001a 00BF     		.align	2
+  94              	.L12:
+  95 001c 00000000 		.word	BleCmdBuffer
+  96 0020 00000000 		.word	BLE_StatusNot
+  97 0024 00000000 		.word	BLE_UserEvtRx
+  99              		.section	.text.BLE_UserEvtRx,"ax",%progbits
+ 100              		.align	1
+ 101              		.syntax unified
+ 102              		.thumb
+ 103              		.thumb_func
+ 105              	BLE_UserEvtRx:
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 0000 10B5     		push	{r4, lr}
+ 109 0002 0446     		mov	r4, r0
+ 110 0004 4068     		ldr	r0, [r0, #4]
+ 111 0006 0830     		adds	r0, r0, #8
+ 112 0008 FFF7FEFF 		bl	SVCCTL_UserEvtRx
+ 113 000c 10B1     		cbz	r0, .L15
+ 114 000e 0123     		movs	r3, #1
+ 115 0010 2370     		strb	r3, [r4]
+ 116              	.L14:
+ 117 0012 10BD     		pop	{r4, pc}
+ 118              	.L15:
+ 119 0014 0023     		movs	r3, #0
+ 120 0016 2370     		strb	r3, [r4]
+ 121 0018 FBE7     		b	.L14
+ 123              		.section	.text.BLE_StatusNot,"ax",%progbits
+ 124              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 3
+
+
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	BLE_StatusNot:
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 08B5     		push	{r3, lr}
+ 133 0002 28B1     		cbz	r0, .L19
+ 134 0004 0128     		cmp	r0, #1
+ 135 0006 06D1     		bne	.L18
+ 136 0008 0320     		movs	r0, #3
+ 137 000a FFF7FEFF 		bl	UTIL_SEQ_ResumeTask
+ 138 000e 02E0     		b	.L18
+ 139              	.L19:
+ 140 0010 0320     		movs	r0, #3
+ 141 0012 FFF7FEFF 		bl	UTIL_SEQ_PauseTask
+ 142              	.L18:
+ 143 0016 08BD     		pop	{r3, pc}
+ 145              		.section	.text.BleGetBdAddress,"ax",%progbits
+ 146              		.align	1
+ 147              		.syntax unified
+ 148              		.thumb
+ 149              		.thumb_func
+ 151              	BleGetBdAddress:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 08B5     		push	{r3, lr}
+ 155 0002 0F4B     		ldr	r3, .L28
+ 156 0004 D3F88025 		ldr	r2, [r3, #1408]
+ 157 0008 B2F1FF3F 		cmp	r2, #-1
+ 158 000c 10D0     		beq	.L24
+ 159 000e D3F88435 		ldr	r3, [r3, #1412]
+ 160 0012 0C48     		ldr	r0, .L28+4
+ 161 0014 0270     		strb	r2, [r0]
+ 162 0016 C2F30722 		ubfx	r2, r2, #8, #8
+ 163 001a 4270     		strb	r2, [r0, #1]
+ 164 001c 8370     		strb	r3, [r0, #2]
+ 165 001e C3F30722 		ubfx	r2, r3, #8, #8
+ 166 0022 C270     		strb	r2, [r0, #3]
+ 167 0024 C3F30742 		ubfx	r2, r3, #16, #8
+ 168 0028 0271     		strb	r2, [r0, #4]
+ 169 002a 1B0E     		lsrs	r3, r3, #24
+ 170 002c 4371     		strb	r3, [r0, #5]
+ 171              	.L23:
+ 172 002e 08BD     		pop	{r3, pc}
+ 173              	.L24:
+ 174 0030 0020     		movs	r0, #0
+ 175 0032 FFF7FEFF 		bl	OTP_Read
+ 176 0036 0028     		cmp	r0, #0
+ 177 0038 F9D1     		bne	.L23
+ 178 003a 0348     		ldr	r0, .L28+8
+ 179 003c F7E7     		b	.L23
+ 180              	.L29:
+ 181 003e 00BF     		.align	2
+ 182              	.L28:
+ 183 0040 0070FF1F 		.word	536834048
+ 184 0044 00000000 		.word	a_BdAddrUdn
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 4
+
+
+ 185 0048 00000000 		.word	a_MBdAddr
+ 187              		.section	.rodata.Ble_Hci_Gap_Gatt_Init.str1.4,"aMS",%progbits,1
+ 188              		.align	2
+ 189              	.LC1:
+ 190 0000 4C696E65 		.ascii	"Linea\000"
+ 190      6100
+ 191              		.section	.text.Ble_Hci_Gap_Gatt_Init,"ax",%progbits
+ 192              		.align	1
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	Ble_Hci_Gap_Gatt_Init:
+ 198              		@ args = 0, pretend = 0, frame = 8
+ 199              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200 0000 70B5     		push	{r4, r5, r6, lr}
+ 201 0002 88B0     		sub	sp, sp, #32
+ 202 0004 0024     		movs	r4, #0
+ 203 0006 ADF81840 		strh	r4, [sp, #24]	@ movhi
+ 204 000a FFF7FEFF 		bl	hci_reset
+ 205 000e FFF7FEFF 		bl	BleGetBdAddress
+ 206 0012 0546     		mov	r5, r0
+ 207 0014 0246     		mov	r2, r0
+ 208 0016 0621     		movs	r1, #6
+ 209 0018 2046     		mov	r0, r4
+ 210 001a FFF7FEFF 		bl	aci_hal_write_config_data
+ 211 001e 6A79     		ldrb	r2, [r5, #5]	@ zero_extendqisi2
+ 212 0020 304B     		ldr	r3, .L34
+ 213 0022 1A72     		strb	r2, [r3, #8]
+ 214 0024 2A79     		ldrb	r2, [r5, #4]	@ zero_extendqisi2
+ 215 0026 5A72     		strb	r2, [r3, #9]
+ 216 0028 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 217 002a 9A72     		strb	r2, [r3, #10]
+ 218 002c AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 219 002e DA72     		strb	r2, [r3, #11]
+ 220 0030 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
+ 221 0032 1A73     		strb	r2, [r3, #12]
+ 222 0034 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 223 0036 5A73     		strb	r2, [r3, #13]
+ 224 0038 2B4A     		ldr	r2, .L34+4
+ 225 003a 1021     		movs	r1, #16
+ 226 003c 1820     		movs	r0, #24
+ 227 003e FFF7FEFF 		bl	aci_hal_write_config_data
+ 228 0042 2A4A     		ldr	r2, .L34+8
+ 229 0044 1021     		movs	r1, #16
+ 230 0046 0820     		movs	r0, #8
+ 231 0048 FFF7FEFF 		bl	aci_hal_write_config_data
+ 232 004c 1821     		movs	r1, #24
+ 233 004e 0120     		movs	r0, #1
+ 234 0050 FFF7FEFF 		bl	aci_hal_set_tx_power_level
+ 235 0054 FFF7FEFF 		bl	aci_gatt_init
+ 236 0058 0DF11A03 		add	r3, sp, #26
+ 237 005c 0193     		str	r3, [sp, #4]
+ 238 005e 07AB     		add	r3, sp, #28
+ 239 0060 0093     		str	r3, [sp]
+ 240 0062 0DF11E03 		add	r3, sp, #30
+ 241 0066 0522     		movs	r2, #5
+ 242 0068 2146     		mov	r1, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 5
+
+
+ 243 006a 0120     		movs	r0, #1
+ 244 006c FFF7FEFF 		bl	aci_gap_init
+ 245 0070 1F4B     		ldr	r3, .L34+12
+ 246 0072 0093     		str	r3, [sp]
+ 247 0074 0523     		movs	r3, #5
+ 248 0076 2246     		mov	r2, r4
+ 249 0078 BDF81C10 		ldrh	r1, [sp, #28]
+ 250 007c BDF81E00 		ldrh	r0, [sp, #30]
+ 251 0080 FFF7FEFF 		bl	aci_gatt_update_char_value
+ 252 0084 06AB     		add	r3, sp, #24
+ 253 0086 0093     		str	r3, [sp]
+ 254 0088 0223     		movs	r3, #2
+ 255 008a 2246     		mov	r2, r4
+ 256 008c BDF81A10 		ldrh	r1, [sp, #26]
+ 257 0090 BDF81E00 		ldrh	r0, [sp, #30]
+ 258 0094 FFF7FEFF 		bl	aci_gatt_update_char_value
+ 259 0098 0222     		movs	r2, #2
+ 260 009a 1146     		mov	r1, r2
+ 261 009c 2046     		mov	r0, r4
+ 262 009e FFF7FEFF 		bl	hci_le_set_default_phy
+ 263 00a2 144D     		ldr	r5, .L34+16
+ 264 00a4 0126     		movs	r6, #1
+ 265 00a6 2E70     		strb	r6, [r5]
+ 266 00a8 3046     		mov	r0, r6
+ 267 00aa FFF7FEFF 		bl	aci_gap_set_io_capability
+ 268 00ae 6E70     		strb	r6, [r5, #1]
+ 269 00b0 0823     		movs	r3, #8
+ 270 00b2 2B71     		strb	r3, [r5, #4]
+ 271 00b4 1022     		movs	r2, #16
+ 272 00b6 6A71     		strb	r2, [r5, #5]
+ 273 00b8 EC70     		strb	r4, [r5, #3]
+ 274 00ba 0F49     		ldr	r1, .L34+20
+ 275 00bc A960     		str	r1, [r5, #8]
+ 276 00be AE70     		strb	r6, [r5, #2]
+ 277 00c0 0494     		str	r4, [sp, #16]
+ 278 00c2 0391     		str	r1, [sp, #12]
+ 279 00c4 0294     		str	r4, [sp, #8]
+ 280 00c6 0192     		str	r2, [sp, #4]
+ 281 00c8 0093     		str	r3, [sp]
+ 282 00ca 2346     		mov	r3, r4
+ 283 00cc 3246     		mov	r2, r6
+ 284 00ce 3146     		mov	r1, r6
+ 285 00d0 3046     		mov	r0, r6
+ 286 00d2 FFF7FEFF 		bl	aci_gap_set_authentication_requirement
+ 287 00d6 AB78     		ldrb	r3, [r5, #2]	@ zero_extendqisi2
+ 288 00d8 0BB9     		cbnz	r3, .L33
+ 289              	.L30:
+ 290 00da 08B0     		add	sp, sp, #32
+ 291              		@ sp needed
+ 292 00dc 70BD     		pop	{r4, r5, r6, pc}
+ 293              	.L33:
+ 294 00de FFF7FEFF 		bl	aci_gap_configure_filter_accept_list
+ 295 00e2 FAE7     		b	.L30
+ 296              	.L35:
+ 297              		.align	2
+ 298              	.L34:
+ 299 00e4 00000000 		.word	a_ManufData
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 6
+
+
+ 300 00e8 00000000 		.word	a_BLE_CfgIrValue
+ 301 00ec 00000000 		.word	a_BLE_CfgErValue
+ 302 00f0 00000000 		.word	.LC1
+ 303 00f4 00000000 		.word	BleApplicationContext
+ 304 00f8 07B20100 		.word	111111
+ 306              		.section	.text.Adv_Request,"ax",%progbits
+ 307              		.align	1
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	Adv_Request:
+ 313              		@ args = 0, pretend = 0, frame = 0
+ 314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 315 0000 70B5     		push	{r4, r5, r6, lr}
+ 316 0002 88B0     		sub	sp, sp, #32
+ 317 0004 0446     		mov	r4, r0
+ 318 0006 0128     		cmp	r0, #1
+ 319 0008 28D0     		beq	.L42
+ 320 000a 4FF47A66 		mov	r6, #4000
+ 321 000e 4FF4C865 		mov	r5, #1600
+ 322              	.L37:
+ 323 0012 1D4B     		ldr	r3, .L45
+ 324 0014 93F88100 		ldrb	r0, [r3, #129]	@ zero_extendqisi2
+ 325 0018 FFF7FEFF 		bl	HW_TS_Stop
+ 326 001c 022C     		cmp	r4, #2
+ 327 001e 22D0     		beq	.L43
+ 328              	.L38:
+ 329 0020 194B     		ldr	r3, .L45
+ 330 0022 83F88040 		strb	r4, [r3, #128]
+ 331 0026 0020     		movs	r0, #0
+ 332 0028 0690     		str	r0, [sp, #24]
+ 333 002a 0590     		str	r0, [sp, #20]
+ 334 002c 03F11902 		add	r2, r3, #25
+ 335 0030 0492     		str	r2, [sp, #16]
+ 336 0032 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
+ 337 0034 0393     		str	r3, [sp, #12]
+ 338 0036 154B     		ldr	r3, .L45+4
+ 339 0038 0293     		str	r3, [sp, #8]
+ 340 003a 0623     		movs	r3, #6
+ 341 003c 0193     		str	r3, [sp, #4]
+ 342 003e 0090     		str	r0, [sp]
+ 343 0040 0346     		mov	r3, r0
+ 344 0042 3246     		mov	r2, r6
+ 345 0044 2946     		mov	r1, r5
+ 346 0046 FFF7FEFF 		bl	aci_gap_set_discoverable
+ 347 004a 1149     		ldr	r1, .L45+8
+ 348 004c 0E20     		movs	r0, #14
+ 349 004e FFF7FEFF 		bl	aci_gap_update_adv_data
+ 350 0052 08B9     		cbnz	r0, .L36
+ 351 0054 012C     		cmp	r4, #1
+ 352 0056 10D0     		beq	.L44
+ 353              	.L36:
+ 354 0058 08B0     		add	sp, sp, #32
+ 355              		@ sp needed
+ 356 005a 70BD     		pop	{r4, r5, r6, pc}
+ 357              	.L42:
+ 358 005c 0D4B     		ldr	r3, .L45+12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 7
+
+
+ 359 005e 1D88     		ldrh	r5, [r3]
+ 360 0060 0D4B     		ldr	r3, .L45+16
+ 361 0062 1E88     		ldrh	r6, [r3]
+ 362 0064 D5E7     		b	.L37
+ 363              	.L43:
+ 364 0066 084B     		ldr	r3, .L45
+ 365 0068 93F88030 		ldrb	r3, [r3, #128]	@ zero_extendqisi2
+ 366 006c 013B     		subs	r3, r3, #1
+ 367 006e DBB2     		uxtb	r3, r3
+ 368 0070 012B     		cmp	r3, #1
+ 369 0072 D5D8     		bhi	.L38
+ 370 0074 FFF7FEFF 		bl	aci_gap_set_non_discoverable
+ 371 0078 D2E7     		b	.L38
+ 372              	.L44:
+ 373 007a 0849     		ldr	r1, .L45+20
+ 374 007c 024B     		ldr	r3, .L45
+ 375 007e 93F88100 		ldrb	r0, [r3, #129]	@ zero_extendqisi2
+ 376 0082 FFF7FEFF 		bl	HW_TS_Start
+ 377 0086 E7E7     		b	.L36
+ 378              	.L46:
+ 379              		.align	2
+ 380              	.L45:
+ 381 0088 00000000 		.word	BleApplicationContext
+ 382 008c 00000000 		.word	a_LocalName
+ 383 0090 00000000 		.word	a_ManufData
+ 384 0094 00000000 		.word	AdvIntervalMin
+ 385 0098 00000000 		.word	AdvIntervalMax
+ 386 009c 46E00100 		.word	122950
+ 388              		.section	.text.APP_BLE_Init,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	APP_BLE_Init
+ 391              		.syntax unified
+ 392              		.thumb
+ 393              		.thumb_func
+ 395              	APP_BLE_Init:
+ 396              		@ args = 0, pretend = 0, frame = 64
+ 397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 398 0000 30B5     		push	{r4, r5, lr}
+ 399 0002 91B0     		sub	sp, sp, #68
+ 400 0004 0DF1040C 		add	ip, sp, #4
+ 401 0008 284C     		ldr	r4, .L51
+ 402 000a 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 403 000c ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 404 0010 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 405 0012 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 406 0016 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 407 0018 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 408 001c 94E80700 		ldm	r4, {r0, r1, r2}
+ 409 0020 ACE80300 		stmia	ip!, {r0, r1}
+ 410 0024 ACF80020 		strh	r2, [ip]	@ movhi
+ 411 0028 FFF7FEFF 		bl	Ble_Tl_Init
+ 412 002c 0121     		movs	r1, #1
+ 413 002e 0220     		movs	r0, #2
+ 414 0030 FFF7FEFF 		bl	UTIL_LPM_SetOffMode
+ 415 0034 1E4A     		ldr	r2, .L51+4
+ 416 0036 0021     		movs	r1, #0
+ 417 0038 0220     		movs	r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 8
+
+
+ 418 003a FFF7FEFF 		bl	UTIL_SEQ_RegTask
+ 419 003e 01A8     		add	r0, sp, #4
+ 420 0040 FFF7FEFF 		bl	SHCI_C2_BLE_Init
+ 421 0044 78BB     		cbnz	r0, .L50
+ 422              	.L48:
+ 423 0046 FFF7FEFF 		bl	Ble_Hci_Gap_Gatt_Init
+ 424 004a FFF7FEFF 		bl	SVCCTL_Init
+ 425 004e 194D     		ldr	r5, .L51+8
+ 426 0050 0024     		movs	r4, #0
+ 427 0052 85F88040 		strb	r4, [r5, #128]
+ 428 0056 4FF6FF73 		movw	r3, #65535
+ 429 005a EB82     		strh	r3, [r5, #22]	@ movhi
+ 430 005c 164A     		ldr	r2, .L51+12
+ 431 005e 2146     		mov	r1, r4
+ 432 0060 0120     		movs	r0, #1
+ 433 0062 FFF7FEFF 		bl	UTIL_SEQ_RegTask
+ 434 0066 0620     		movs	r0, #6
+ 435 0068 FFF7FEFF 		bl	aci_hal_set_radio_activity_mask
+ 436 006c FFF7FEFF 		bl	P2PS_APP_Init
+ 437 0070 124B     		ldr	r3, .L51+16
+ 438 0072 2246     		mov	r2, r4
+ 439 0074 05F18101 		add	r1, r5, #129
+ 440 0078 2046     		mov	r0, r4
+ 441 007a FFF7FEFF 		bl	HW_TS_Create
+ 442 007e 104B     		ldr	r3, .L51+20
+ 443 0080 2246     		mov	r2, r4
+ 444 0082 05F18201 		add	r1, r5, #130
+ 445 0086 2046     		mov	r0, r4
+ 446 0088 FFF7FEFF 		bl	HW_TS_Create
+ 447 008c 6C76     		strb	r4, [r5, #25]
+ 448 008e 2C76     		strb	r4, [r5, #24]
+ 449 0090 0C4B     		ldr	r3, .L51+24
+ 450 0092 8022     		movs	r2, #128
+ 451 0094 1A80     		strh	r2, [r3]	@ movhi
+ 452 0096 0C4B     		ldr	r3, .L51+28
+ 453 0098 A022     		movs	r2, #160
+ 454 009a 1A80     		strh	r2, [r3]	@ movhi
+ 455 009c 0120     		movs	r0, #1
+ 456 009e FFF7FEFF 		bl	Adv_Request
+ 457 00a2 11B0     		add	sp, sp, #68
+ 458              		@ sp needed
+ 459 00a4 30BD     		pop	{r4, r5, pc}
+ 460              	.L50:
+ 461 00a6 FFF7FEFF 		bl	Error_Handler
+ 462 00aa CCE7     		b	.L48
+ 463              	.L52:
+ 464              		.align	2
+ 465              	.L51:
+ 466 00ac 00000000 		.word	.LANCHOR0
+ 467 00b0 00000000 		.word	hci_user_evt_proc
+ 468 00b4 00000000 		.word	BleApplicationContext
+ 469 00b8 00000000 		.word	Adv_Cancel
+ 470 00bc 00000000 		.word	Adv_Cancel_Req
+ 471 00c0 00000000 		.word	Switch_OFF_GPIO
+ 472 00c4 00000000 		.word	AdvIntervalMin
+ 473 00c8 00000000 		.word	AdvIntervalMax
+ 475              		.section	.text.SVCCTL_App_Notification,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 9
+
+
+ 476              		.align	1
+ 477              		.global	SVCCTL_App_Notification
+ 478              		.syntax unified
+ 479              		.thumb
+ 480              		.thumb_func
+ 482              	SVCCTL_App_Notification:
+ 483              		@ args = 0, pretend = 0, frame = 8
+ 484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 485 0000 30B5     		push	{r4, r5, lr}
+ 486 0002 83B0     		sub	sp, sp, #12
+ 487 0004 0446     		mov	r4, r0
+ 488 0006 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 489 0008 3E2B     		cmp	r3, #62
+ 490 000a 1CD0     		beq	.L54
+ 491 000c FF2B     		cmp	r3, #255
+ 492 000e 44D0     		beq	.L55
+ 493 0010 052B     		cmp	r3, #5
+ 494 0012 0FD1     		bne	.L56
+ 495 0014 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 496 0016 264B     		ldr	r3, .L64
+ 497 0018 DB8A     		ldrh	r3, [r3, #22]
+ 498 001a 9A42     		cmp	r2, r3
+ 499 001c 0DD0     		beq	.L62
+ 500              	.L57:
+ 501 001e 0120     		movs	r0, #1
+ 502 0020 FFF7FEFF 		bl	Adv_Request
+ 503 0024 2348     		ldr	r0, .L64+4
+ 504 0026 0123     		movs	r3, #1
+ 505 0028 0370     		strb	r3, [r0]
+ 506 002a 214B     		ldr	r3, .L64
+ 507 002c DB8A     		ldrh	r3, [r3, #22]
+ 508 002e 4380     		strh	r3, [r0, #2]	@ movhi
+ 509 0030 FFF7FEFF 		bl	P2PS_APP_Notification
+ 510              	.L56:
+ 511 0034 0120     		movs	r0, #1
+ 512 0036 03B0     		add	sp, sp, #12
+ 513              		@ sp needed
+ 514 0038 30BD     		pop	{r4, r5, pc}
+ 515              	.L62:
+ 516 003a 1D4B     		ldr	r3, .L64
+ 517 003c 0022     		movs	r2, #0
+ 518 003e DA82     		strh	r2, [r3, #22]	@ movhi
+ 519 0040 83F88020 		strb	r2, [r3, #128]
+ 520 0044 EBE7     		b	.L57
+ 521              	.L54:
+ 522 0046 C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
+ 523 0048 012B     		cmp	r3, #1
+ 524 004a 0AD0     		beq	.L58
+ 525 004c 0C2B     		cmp	r3, #12
+ 526 004e F1D1     		bne	.L56
+ 527 0050 0DF10602 		add	r2, sp, #6
+ 528 0054 0DF10701 		add	r1, sp, #7
+ 529 0058 154B     		ldr	r3, .L64
+ 530 005a D88A     		ldrh	r0, [r3, #22]
+ 531 005c FFF7FEFF 		bl	hci_le_read_phy
+ 532 0060 E8E7     		b	.L56
+ 533              	.L58:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 10
+
+
+ 534 0062 134D     		ldr	r5, .L64
+ 535 0064 95F88100 		ldrb	r0, [r5, #129]	@ zero_extendqisi2
+ 536 0068 FFF7FEFF 		bl	HW_TS_Stop
+ 537 006c 95F88030 		ldrb	r3, [r5, #128]	@ zero_extendqisi2
+ 538 0070 042B     		cmp	r3, #4
+ 539 0072 0ED0     		beq	.L63
+ 540 0074 0E4B     		ldr	r3, .L64
+ 541 0076 0522     		movs	r2, #5
+ 542 0078 83F88020 		strb	r2, [r3, #128]
+ 543              	.L60:
+ 544 007c B4F80530 		ldrh	r3, [r4, #5]	@ unaligned
+ 545 0080 0B4A     		ldr	r2, .L64
+ 546 0082 D382     		strh	r3, [r2, #22]	@ movhi
+ 547 0084 0B48     		ldr	r0, .L64+4
+ 548 0086 0022     		movs	r2, #0
+ 549 0088 0270     		strb	r2, [r0]
+ 550 008a 4380     		strh	r3, [r0, #2]	@ movhi
+ 551 008c FFF7FEFF 		bl	P2PS_APP_Notification
+ 552 0090 D0E7     		b	.L56
+ 553              	.L63:
+ 554 0092 0622     		movs	r2, #6
+ 555 0094 85F88020 		strb	r2, [r5, #128]
+ 556 0098 F0E7     		b	.L60
+ 557              	.L55:
+ 558 009a B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+ 559 009e 40F60E43 		movw	r3, #3086
+ 560 00a2 9A42     		cmp	r2, r3
+ 561 00a4 C6D1     		bne	.L56
+ 562 00a6 024B     		ldr	r3, .L64
+ 563 00a8 D88A     		ldrh	r0, [r3, #22]
+ 564 00aa FFF7FEFF 		bl	aci_gatt_confirm_indication
+ 565 00ae C1E7     		b	.L56
+ 566              	.L65:
+ 567              		.align	2
+ 568              	.L64:
+ 569 00b0 00000000 		.word	BleApplicationContext
+ 570 00b4 00000000 		.word	HandleNotification
+ 572              		.section	.text.APP_BLE_Get_Server_Connection_Status,"ax",%progbits
+ 573              		.align	1
+ 574              		.global	APP_BLE_Get_Server_Connection_Status
+ 575              		.syntax unified
+ 576              		.thumb
+ 577              		.thumb_func
+ 579              	APP_BLE_Get_Server_Connection_Status:
+ 580              		@ args = 0, pretend = 0, frame = 0
+ 581              		@ frame_needed = 0, uses_anonymous_args = 0
+ 582              		@ link register save eliminated.
+ 583 0000 014B     		ldr	r3, .L67
+ 584 0002 93F88000 		ldrb	r0, [r3, #128]	@ zero_extendqisi2
+ 585 0006 7047     		bx	lr
+ 586              	.L68:
+ 587              		.align	2
+ 588              	.L67:
+ 589 0008 00000000 		.word	BleApplicationContext
+ 591              		.section	.text.hci_notify_asynch_evt,"ax",%progbits
+ 592              		.align	1
+ 593              		.global	hci_notify_asynch_evt
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 11
+
+
+ 594              		.syntax unified
+ 595              		.thumb
+ 596              		.thumb_func
+ 598              	hci_notify_asynch_evt:
+ 599              		@ args = 0, pretend = 0, frame = 0
+ 600              		@ frame_needed = 0, uses_anonymous_args = 0
+ 601 0000 08B5     		push	{r3, lr}
+ 602 0002 0021     		movs	r1, #0
+ 603 0004 0220     		movs	r0, #2
+ 604 0006 FFF7FEFF 		bl	UTIL_SEQ_SetTask
+ 605 000a 08BD     		pop	{r3, pc}
+ 607              		.section	.text.hci_cmd_resp_release,"ax",%progbits
+ 608              		.align	1
+ 609              		.global	hci_cmd_resp_release
+ 610              		.syntax unified
+ 611              		.thumb
+ 612              		.thumb_func
+ 614              	hci_cmd_resp_release:
+ 615              		@ args = 0, pretend = 0, frame = 0
+ 616              		@ frame_needed = 0, uses_anonymous_args = 0
+ 617 0000 08B5     		push	{r3, lr}
+ 618 0002 0120     		movs	r0, #1
+ 619 0004 FFF7FEFF 		bl	UTIL_SEQ_SetEvt
+ 620 0008 08BD     		pop	{r3, pc}
+ 622              		.section	.text.hci_cmd_resp_wait,"ax",%progbits
+ 623              		.align	1
+ 624              		.global	hci_cmd_resp_wait
+ 625              		.syntax unified
+ 626              		.thumb
+ 627              		.thumb_func
+ 629              	hci_cmd_resp_wait:
+ 630              		@ args = 0, pretend = 0, frame = 0
+ 631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 632 0000 08B5     		push	{r3, lr}
+ 633 0002 0120     		movs	r0, #1
+ 634 0004 FFF7FEFF 		bl	UTIL_SEQ_WaitEvt
+ 635 0008 08BD     		pop	{r3, pc}
+ 637              		.section	.text.SVCCTL_ResumeUserEventFlow,"ax",%progbits
+ 638              		.align	1
+ 639              		.global	SVCCTL_ResumeUserEventFlow
+ 640              		.syntax unified
+ 641              		.thumb
+ 642              		.thumb_func
+ 644              	SVCCTL_ResumeUserEventFlow:
+ 645              		@ args = 0, pretend = 0, frame = 0
+ 646              		@ frame_needed = 0, uses_anonymous_args = 0
+ 647 0000 08B5     		push	{r3, lr}
+ 648 0002 FFF7FEFF 		bl	hci_resume_flow
+ 649 0006 08BD     		pop	{r3, pc}
+ 651              		.global	a_ManufData
+ 652              		.section	.data.a_ManufData,"aw"
+ 653              		.align	2
+ 656              	a_ManufData:
+ 657 0000 0DFF0183 		.ascii	"\015\377\001\203\000\000\000\000\000\000\000\000\000"
+ 657      00000000 
+ 657      00000000 
+ 657      00
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 12
+
+
+ 658 000d 00       		.ascii	"\000"
+ 659              		.section	.rodata.a_LocalName,"a"
+ 660              		.align	2
+ 663              	a_LocalName:
+ 664 0000 094C696E 		.ascii	"\011Linea"
+ 664      6561
+ 665              		.global	HandleNotification
+ 666              		.section	.bss.HandleNotification,"aw",%nobits
+ 667              		.align	2
+ 670              	HandleNotification:
+ 671 0000 00000000 		.space	4
+ 672              		.section	.bss.AdvIntervalMax,"aw",%nobits
+ 673              		.align	1
+ 676              	AdvIntervalMax:
+ 677 0000 0000     		.space	2
+ 678              		.section	.bss.AdvIntervalMin,"aw",%nobits
+ 679              		.align	1
+ 682              	AdvIntervalMin:
+ 683 0000 0000     		.space	2
+ 684              		.section	.bss.BleApplicationContext,"aw",%nobits
+ 685              		.align	2
+ 688              	BleApplicationContext:
+ 689 0000 00000000 		.space	132
+ 689      00000000 
+ 689      00000000 
+ 689      00000000 
+ 689      00000000 
+ 690              		.global	MagicKeywordAddress
+ 691              		.section	TAG_OTA_START,"a"
+ 692              		.align	2
+ 695              	MagicKeywordAddress:
+ 696 0000 00000000 		.word	MagicKeywordValue
+ 697              		.global	MagicKeywordValue
+ 698              		.section	TAG_OTA_END,"a"
+ 699              		.align	2
+ 702              	MagicKeywordValue:
+ 703 0000 298A4494 		.word	-1807447511
+ 704              		.section	.rodata.a_BLE_CfgErValue,"a"
+ 705              		.align	2
+ 708              	a_BLE_CfgErValue:
+ 709 0000 FEDCBA09 		.ascii	"\376\334\272\011\207eC!\376\334\272\011\207eC!"
+ 709      87654321 
+ 709      FEDCBA09 
+ 709      87654321 
+ 710              		.section	.rodata.a_BLE_CfgIrValue,"a"
+ 711              		.align	2
+ 714              	a_BLE_CfgIrValue:
+ 715 0000 12345678 		.ascii	"\0224Vx\232\274\336\360\0224Vx\232\274\336\360"
+ 715      9ABCDEF0 
+ 715      12345678 
+ 715      9ABCDEF0 
+ 716              		.section	.bss.a_BdAddrUdn,"aw",%nobits
+ 717              		.align	2
+ 720              	a_BdAddrUdn:
+ 721 0000 00000000 		.space	6
+ 721      0000
+ 722              		.section	.rodata.a_MBdAddr,"a"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 13
+
+
+ 723              		.align	2
+ 726              	a_MBdAddr:
+ 727 0000 EEDDCCBB 		.ascii	"\356\335\314\273\252\021"
+ 727      AA11
+ 728              		.section	MB_MEM1,"aw"
+ 729              		.align	2
+ 732              	BleCmdBuffer:
+ 733 0000 00000000 		.space	267
+ 733      00000000 
+ 733      00000000 
+ 733      00000000 
+ 733      00000000 
+ 734              		.section	.rodata
+ 735              		.align	2
+ 736              		.set	.LANCHOR0,. + 0
+ 737              	.LC0:
+ 738 0000 00000000 		.word	0
+ 739 0004 00000000 		.word	0
+ 740 0008 00000000 		.word	0
+ 741 000c 00000000 		.word	0
+ 742 0010 00000000 		.word	0
+ 743 0014 4400     		.short	68
+ 744 0016 0800     		.short	8
+ 745 0018 4005     		.short	1344
+ 746 001a 02       		.byte	2
+ 747 001b 01       		.byte	1
+ 748 001c 12       		.byte	18
+ 749 001d 29       		.byte	41
+ 750 001e 9C00     		.short	156
+ 751 0020 F401     		.short	500
+ 752 0022 00       		.byte	0
+ 753 0023 04       		.byte	4
+ 754 0024 FFFFFFFF 		.word	-1
+ 755 0028 4801     		.short	328
+ 756 002a 01       		.byte	1
+ 757 002b 00       		.byte	0
+ 758 002c 00       		.byte	0
+ 759 002d 20       		.byte	32
+ 760 002e 00       		.byte	0
+ 761 002f 00       		.byte	0
+ 762 0030 00       		.byte	0
+ 763 0031 03       		.byte	3
+ 764 0032 7206     		.short	1650
+ 765 0034 0000     		.short	0
+ 766 0036 0000     		.short	0
+ 767 0038 0D       		.byte	13
+ 768 0039 00       		.byte	0
+ 769              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app_ble.c
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:18     .text.Switch_OFF_GPIO:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:23     .text.Switch_OFF_GPIO:00000000 Switch_OFF_GPIO
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:30     .text.Adv_Cancel_Req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:35     .text.Adv_Cancel_Req:00000000 Adv_Cancel_Req
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:45     .text.Adv_Cancel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:50     .text.Adv_Cancel:00000000 Adv_Cancel
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:69     .text.Adv_Cancel:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:688    .bss.BleApplicationContext:00000000 BleApplicationContext
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:72     .text.Ble_Tl_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:77     .text.Ble_Tl_Init:00000000 Ble_Tl_Init
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:95     .text.Ble_Tl_Init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:732    MB_MEM1:00000000 BleCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:129    .text.BLE_StatusNot:00000000 BLE_StatusNot
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:105    .text.BLE_UserEvtRx:00000000 BLE_UserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:100    .text.BLE_UserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:124    .text.BLE_StatusNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:146    .text.BleGetBdAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:151    .text.BleGetBdAddress:00000000 BleGetBdAddress
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:183    .text.BleGetBdAddress:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:720    .bss.a_BdAddrUdn:00000000 a_BdAddrUdn
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:726    .rodata.a_MBdAddr:00000000 a_MBdAddr
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:188    .rodata.Ble_Hci_Gap_Gatt_Init.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:192    .text.Ble_Hci_Gap_Gatt_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:197    .text.Ble_Hci_Gap_Gatt_Init:00000000 Ble_Hci_Gap_Gatt_Init
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:299    .text.Ble_Hci_Gap_Gatt_Init:000000e4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:656    .data.a_ManufData:00000000 a_ManufData
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:714    .rodata.a_BLE_CfgIrValue:00000000 a_BLE_CfgIrValue
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:708    .rodata.a_BLE_CfgErValue:00000000 a_BLE_CfgErValue
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:307    .text.Adv_Request:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:312    .text.Adv_Request:00000000 Adv_Request
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:381    .text.Adv_Request:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:663    .rodata.a_LocalName:00000000 a_LocalName
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:682    .bss.AdvIntervalMin:00000000 AdvIntervalMin
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:676    .bss.AdvIntervalMax:00000000 AdvIntervalMax
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:389    .text.APP_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:395    .text.APP_BLE_Init:00000000 APP_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:466    .text.APP_BLE_Init:000000ac $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:476    .text.SVCCTL_App_Notification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:482    .text.SVCCTL_App_Notification:00000000 SVCCTL_App_Notification
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:569    .text.SVCCTL_App_Notification:000000b0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:670    .bss.HandleNotification:00000000 HandleNotification
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:573    .text.APP_BLE_Get_Server_Connection_Status:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:579    .text.APP_BLE_Get_Server_Connection_Status:00000000 APP_BLE_Get_Server_Connection_Status
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:589    .text.APP_BLE_Get_Server_Connection_Status:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:592    .text.hci_notify_asynch_evt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:598    .text.hci_notify_asynch_evt:00000000 hci_notify_asynch_evt
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:608    .text.hci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:614    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:623    .text.hci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:629    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:638    .text.SVCCTL_ResumeUserEventFlow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:644    .text.SVCCTL_ResumeUserEventFlow:00000000 SVCCTL_ResumeUserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:653    .data.a_ManufData:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:660    .rodata.a_LocalName:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:667    .bss.HandleNotification:00000000 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s 			page 15
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:673    .bss.AdvIntervalMax:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:679    .bss.AdvIntervalMin:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:685    .bss.BleApplicationContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:695    TAG_OTA_START:00000000 MagicKeywordAddress
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:692    TAG_OTA_START:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:702    TAG_OTA_END:00000000 MagicKeywordValue
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:699    TAG_OTA_END:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:705    .rodata.a_BLE_CfgErValue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:711    .rodata.a_BLE_CfgIrValue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:717    .bss.a_BdAddrUdn:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:723    .rodata.a_MBdAddr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:729    MB_MEM1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEclGGJ.s:735    .rodata:00000000 $d
+
+UNDEFINED SYMBOLS
+UTIL_SEQ_SetTask
+aci_gap_set_non_discoverable
+hci_init
+SVCCTL_UserEvtRx
+UTIL_SEQ_ResumeTask
+UTIL_SEQ_PauseTask
+OTP_Read
+hci_reset
+aci_hal_write_config_data
+aci_hal_set_tx_power_level
+aci_gatt_init
+aci_gap_init
+aci_gatt_update_char_value
+hci_le_set_default_phy
+aci_gap_set_io_capability
+aci_gap_set_authentication_requirement
+aci_gap_configure_filter_accept_list
+HW_TS_Stop
+aci_gap_set_discoverable
+aci_gap_update_adv_data
+HW_TS_Start
+UTIL_LPM_SetOffMode
+UTIL_SEQ_RegTask
+SHCI_C2_BLE_Init
+SVCCTL_Init
+aci_hal_set_radio_activity_mask
+P2PS_APP_Init
+HW_TS_Create
+Error_Handler
+hci_user_evt_proc
+P2PS_APP_Notification
+hci_le_read_phy
+aci_gatt_confirm_indication
+UTIL_SEQ_SetEvt
+UTIL_SEQ_WaitEvt
+hci_resume_flow

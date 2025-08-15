@@ -1,0 +1,506 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_gpio.c"
+  16              		.text
+  17              		.section	.text.HAL_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_GPIO_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_GPIO_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  28 0002 0023     		movs	r3, #0
+  29 0004 66E0     		b	.L2
+  30              	.L20:
+  31 0006 8568     		ldr	r5, [r0, #8]
+  32 0008 5E00     		lsls	r6, r3, #1
+  33 000a 0324     		movs	r4, #3
+  34 000c B440     		lsls	r4, r4, r6
+  35 000e 25EA0405 		bic	r5, r5, r4
+  36 0012 CC68     		ldr	r4, [r1, #12]
+  37 0014 B440     		lsls	r4, r4, r6
+  38 0016 2C43     		orrs	r4, r4, r5
+  39 0018 8460     		str	r4, [r0, #8]
+  40 001a 4568     		ldr	r5, [r0, #4]
+  41 001c 25EA0C05 		bic	r5, r5, ip
+  42 0020 4C68     		ldr	r4, [r1, #4]
+  43 0022 C4F30014 		ubfx	r4, r4, #4, #1
+  44 0026 9C40     		lsls	r4, r4, r3
+  45 0028 2C43     		orrs	r4, r4, r5
+  46 002a 4460     		str	r4, [r0, #4]
+  47 002c 63E0     		b	.L4
+  48              	.L21:
+  49 002e DD08     		lsrs	r5, r3, #3
+  50 0030 0835     		adds	r5, r5, #8
+  51 0032 50F82540 		ldr	r4, [r0, r5, lsl #2]
+  52 0036 03F0070C 		and	ip, r3, #7
+  53 003a 4FEA8C0C 		lsl	ip, ip, #2
+  54 003e 4FF00F0E 		mov	lr, #15
+  55 0042 0EFA0CFE 		lsl	lr, lr, ip
+  56 0046 24EA0E0E 		bic	lr, r4, lr
+  57 004a 0C69     		ldr	r4, [r1, #16]
+  58 004c 04FA0CF4 		lsl	r4, r4, ip
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 2
+
+
+  59 0050 44EA0E04 		orr	r4, r4, lr
+  60 0054 40F82540 		str	r4, [r0, r5, lsl #2]
+  61 0058 64E0     		b	.L6
+  62              	.L22:
+  63 005a 0424     		movs	r4, #4
+  64 005c 00E0     		b	.L7
+  65              	.L13:
+  66 005e 0024     		movs	r4, #0
+  67              	.L7:
+  68 0060 04FA0EF4 		lsl	r4, r4, lr
+  69 0064 2C43     		orrs	r4, r4, r5
+  70 0066 0CF1020C 		add	ip, ip, #2
+  71 006a 4F4D     		ldr	r5, .L23
+  72 006c 45F82C40 		str	r4, [r5, ip, lsl #2]
+  73 0070 4E4C     		ldr	r4, .L23+4
+  74 0072 2568     		ldr	r5, [r4]
+  75 0074 D443     		mvns	r4, r2
+  76 0076 25EA0206 		bic	r6, r5, r2
+  77 007a 4F68     		ldr	r7, [r1, #4]
+  78 007c 17F4801F 		tst	r7, #1048576
+  79 0080 01D0     		beq	.L8
+  80 0082 42EA0506 		orr	r6, r2, r5
+  81              	.L8:
+  82 0086 494D     		ldr	r5, .L23+4
+  83 0088 2E60     		str	r6, [r5]
+  84 008a 6D68     		ldr	r5, [r5, #4]
+  85 008c 04EA0506 		and	r6, r4, r5
+  86 0090 4F68     		ldr	r7, [r1, #4]
+  87 0092 17F4001F 		tst	r7, #2097152
+  88 0096 01D0     		beq	.L9
+  89 0098 42EA0506 		orr	r6, r2, r5
+  90              	.L9:
+  91 009c 434D     		ldr	r5, .L23+4
+  92 009e 6E60     		str	r6, [r5, #4]
+  93 00a0 D5F88050 		ldr	r5, [r5, #128]
+  94 00a4 04EA0506 		and	r6, r4, r5
+  95 00a8 4F68     		ldr	r7, [r1, #4]
+  96 00aa 17F4803F 		tst	r7, #65536
+  97 00ae 01D0     		beq	.L10
+  98 00b0 42EA0506 		orr	r6, r2, r5
+  99              	.L10:
+ 100 00b4 3D4D     		ldr	r5, .L23+4
+ 101 00b6 C5F88060 		str	r6, [r5, #128]
+ 102 00ba D5F88450 		ldr	r5, [r5, #132]
+ 103 00be 2C40     		ands	r4, r4, r5
+ 104 00c0 4E68     		ldr	r6, [r1, #4]
+ 105 00c2 16F4003F 		tst	r6, #131072
+ 106 00c6 01D0     		beq	.L11
+ 107 00c8 42EA0504 		orr	r4, r2, r5
+ 108              	.L11:
+ 109 00cc 374A     		ldr	r2, .L23+4
+ 110 00ce C2F88440 		str	r4, [r2, #132]
+ 111              	.L3:
+ 112 00d2 0133     		adds	r3, r3, #1
+ 113              	.L2:
+ 114 00d4 0A68     		ldr	r2, [r1]
+ 115 00d6 32FA03F4 		lsrs	r4, r2, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 3
+
+
+ 116 00da 64D0     		beq	.L19
+ 117 00dc 4FF0010C 		mov	ip, #1
+ 118 00e0 0CFA03FC 		lsl	ip, ip, r3
+ 119 00e4 1CEA0202 		ands	r2, ip, r2
+ 120 00e8 F3D0     		beq	.L3
+ 121 00ea 4C68     		ldr	r4, [r1, #4]
+ 122 00ec 04F00304 		and	r4, r4, #3
+ 123 00f0 013C     		subs	r4, r4, #1
+ 124 00f2 012C     		cmp	r4, #1
+ 125 00f4 87D9     		bls	.L20
+ 126              	.L4:
+ 127 00f6 4C68     		ldr	r4, [r1, #4]
+ 128 00f8 04F00304 		and	r4, r4, #3
+ 129 00fc 032C     		cmp	r4, #3
+ 130 00fe 0CD0     		beq	.L5
+ 131 0100 C468     		ldr	r4, [r0, #12]
+ 132 0102 5D00     		lsls	r5, r3, #1
+ 133 0104 4FF0030C 		mov	ip, #3
+ 134 0108 0CFA05FC 		lsl	ip, ip, r5
+ 135 010c 24EA0C0C 		bic	ip, r4, ip
+ 136 0110 8C68     		ldr	r4, [r1, #8]
+ 137 0112 AC40     		lsls	r4, r4, r5
+ 138 0114 44EA0C04 		orr	r4, r4, ip
+ 139 0118 C460     		str	r4, [r0, #12]
+ 140              	.L5:
+ 141 011a 4C68     		ldr	r4, [r1, #4]
+ 142 011c 04F00304 		and	r4, r4, #3
+ 143 0120 022C     		cmp	r4, #2
+ 144 0122 84D0     		beq	.L21
+ 145              	.L6:
+ 146 0124 0468     		ldr	r4, [r0]
+ 147 0126 4FEA430E 		lsl	lr, r3, #1
+ 148 012a 4FF0030C 		mov	ip, #3
+ 149 012e 0CFA0EFC 		lsl	ip, ip, lr
+ 150 0132 24EA0C0C 		bic	ip, r4, ip
+ 151 0136 4C68     		ldr	r4, [r1, #4]
+ 152 0138 04F00304 		and	r4, r4, #3
+ 153 013c 04FA0EF4 		lsl	r4, r4, lr
+ 154 0140 44EA0C04 		orr	r4, r4, ip
+ 155 0144 0460     		str	r4, [r0]
+ 156 0146 4C68     		ldr	r4, [r1, #4]
+ 157 0148 14F4403F 		tst	r4, #196608
+ 158 014c C1D0     		beq	.L3
+ 159 014e 4FEA930C 		lsr	ip, r3, #2
+ 160 0152 0CF10205 		add	r5, ip, #2
+ 161 0156 144C     		ldr	r4, .L23
+ 162 0158 54F82550 		ldr	r5, [r4, r5, lsl #2]
+ 163 015c 03F0030E 		and	lr, r3, #3
+ 164 0160 4FEA8E0E 		lsl	lr, lr, #2
+ 165 0164 0F24     		movs	r4, #15
+ 166 0166 04FA0EF4 		lsl	r4, r4, lr
+ 167 016a 25EA0405 		bic	r5, r5, r4
+ 168 016e B0F1904F 		cmp	r0, #1207959552
+ 169 0172 3FF474AF 		beq	.L13
+ 170 0176 0E4C     		ldr	r4, .L23+8
+ 171 0178 A042     		cmp	r0, r4
+ 172 017a 0ED0     		beq	.L14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 4
+
+
+ 173 017c 04F58064 		add	r4, r4, #1024
+ 174 0180 A042     		cmp	r0, r4
+ 175 0182 0CD0     		beq	.L15
+ 176 0184 04F58064 		add	r4, r4, #1024
+ 177 0188 A042     		cmp	r0, r4
+ 178 018a 0AD0     		beq	.L16
+ 179 018c 04F58064 		add	r4, r4, #1024
+ 180 0190 A042     		cmp	r0, r4
+ 181 0192 3FF462AF 		beq	.L22
+ 182 0196 0724     		movs	r4, #7
+ 183 0198 62E7     		b	.L7
+ 184              	.L14:
+ 185 019a 0124     		movs	r4, #1
+ 186 019c 60E7     		b	.L7
+ 187              	.L15:
+ 188 019e 0224     		movs	r4, #2
+ 189 01a0 5EE7     		b	.L7
+ 190              	.L16:
+ 191 01a2 0324     		movs	r4, #3
+ 192 01a4 5CE7     		b	.L7
+ 193              	.L19:
+ 194 01a6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 195              	.L24:
+ 196              		.align	2
+ 197              	.L23:
+ 198 01a8 00000140 		.word	1073807360
+ 199 01ac 00080058 		.word	1476397056
+ 200 01b0 00040048 		.word	1207960576
+ 202              		.section	.text.HAL_GPIO_DeInit,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HAL_GPIO_DeInit
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	HAL_GPIO_DeInit:
+ 210              		@ args = 0, pretend = 0, frame = 0
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212 0000 0023     		movs	r3, #0
+ 213 0002 31FA03F2 		lsrs	r2, r1, r3
+ 214 0006 7ED0     		beq	.L39
+ 215 0008 F0B5     		push	{r4, r5, r6, r7, lr}
+ 216 000a 2EE0     		b	.L30
+ 217              	.L42:
+ 218 000c 0425     		movs	r5, #4
+ 219 000e 00E0     		b	.L28
+ 220              	.L31:
+ 221 0010 0025     		movs	r5, #0
+ 222              	.L28:
+ 223 0012 05FA0CF5 		lsl	r5, r5, ip
+ 224 0016 A542     		cmp	r5, r4
+ 225 0018 55D0     		beq	.L40
+ 226              	.L29:
+ 227 001a 0468     		ldr	r4, [r0]
+ 228 001c 5D00     		lsls	r5, r3, #1
+ 229 001e 4FF0030C 		mov	ip, #3
+ 230 0022 0CFA05FC 		lsl	ip, ip, r5
+ 231 0026 44EA0C04 		orr	r4, r4, ip
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 5
+
+
+ 232 002a 0460     		str	r4, [r0]
+ 233 002c 4FEAD30E 		lsr	lr, r3, #3
+ 234 0030 0EF1080E 		add	lr, lr, #8
+ 235 0034 50F82E40 		ldr	r4, [r0, lr, lsl #2]
+ 236 0038 03F00706 		and	r6, r3, #7
+ 237 003c B600     		lsls	r6, r6, #2
+ 238 003e 0F25     		movs	r5, #15
+ 239 0040 B540     		lsls	r5, r5, r6
+ 240 0042 24EA0504 		bic	r4, r4, r5
+ 241 0046 40F82E40 		str	r4, [r0, lr, lsl #2]
+ 242 004a C468     		ldr	r4, [r0, #12]
+ 243 004c 24EA0C04 		bic	r4, r4, ip
+ 244 0050 C460     		str	r4, [r0, #12]
+ 245 0052 4468     		ldr	r4, [r0, #4]
+ 246 0054 24EA0202 		bic	r2, r4, r2
+ 247 0058 4260     		str	r2, [r0, #4]
+ 248 005a 8268     		ldr	r2, [r0, #8]
+ 249 005c 22EA0C02 		bic	r2, r2, ip
+ 250 0060 8260     		str	r2, [r0, #8]
+ 251              	.L27:
+ 252 0062 0133     		adds	r3, r3, #1
+ 253 0064 31FA03F2 		lsrs	r2, r1, r3
+ 254 0068 4CD0     		beq	.L41
+ 255              	.L30:
+ 256 006a 0122     		movs	r2, #1
+ 257 006c 9A40     		lsls	r2, r2, r3
+ 258 006e 12EA0107 		ands	r7, r2, r1
+ 259 0072 F6D0     		beq	.L27
+ 260 0074 4FEA930E 		lsr	lr, r3, #2
+ 261 0078 0EF10205 		add	r5, lr, #2
+ 262 007c 224C     		ldr	r4, .L43
+ 263 007e 54F82540 		ldr	r4, [r4, r5, lsl #2]
+ 264 0082 03F0030C 		and	ip, r3, #3
+ 265 0086 4FEA8C0C 		lsl	ip, ip, #2
+ 266 008a 0F25     		movs	r5, #15
+ 267 008c 05FA0CF6 		lsl	r6, r5, ip
+ 268 0090 3440     		ands	r4, r4, r6
+ 269 0092 B0F1904F 		cmp	r0, #1207959552
+ 270 0096 BBD0     		beq	.L31
+ 271 0098 1C4D     		ldr	r5, .L43+4
+ 272 009a A842     		cmp	r0, r5
+ 273 009c 0DD0     		beq	.L32
+ 274 009e 05F58065 		add	r5, r5, #1024
+ 275 00a2 A842     		cmp	r0, r5
+ 276 00a4 0BD0     		beq	.L33
+ 277 00a6 05F58065 		add	r5, r5, #1024
+ 278 00aa A842     		cmp	r0, r5
+ 279 00ac 09D0     		beq	.L34
+ 280 00ae 05F58065 		add	r5, r5, #1024
+ 281 00b2 A842     		cmp	r0, r5
+ 282 00b4 AAD0     		beq	.L42
+ 283 00b6 0725     		movs	r5, #7
+ 284 00b8 ABE7     		b	.L28
+ 285              	.L32:
+ 286 00ba 0125     		movs	r5, #1
+ 287 00bc A9E7     		b	.L28
+ 288              	.L33:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 6
+
+
+ 289 00be 0225     		movs	r5, #2
+ 290 00c0 A7E7     		b	.L28
+ 291              	.L34:
+ 292 00c2 0325     		movs	r5, #3
+ 293 00c4 A5E7     		b	.L28
+ 294              	.L40:
+ 295 00c6 124C     		ldr	r4, .L43+8
+ 296 00c8 D4F88050 		ldr	r5, [r4, #128]
+ 297 00cc 25EA0705 		bic	r5, r5, r7
+ 298 00d0 C4F88050 		str	r5, [r4, #128]
+ 299 00d4 D4F88450 		ldr	r5, [r4, #132]
+ 300 00d8 25EA0705 		bic	r5, r5, r7
+ 301 00dc C4F88450 		str	r5, [r4, #132]
+ 302 00e0 2568     		ldr	r5, [r4]
+ 303 00e2 25EA0705 		bic	r5, r5, r7
+ 304 00e6 2560     		str	r5, [r4]
+ 305 00e8 6568     		ldr	r5, [r4, #4]
+ 306 00ea 25EA0705 		bic	r5, r5, r7
+ 307 00ee 6560     		str	r5, [r4, #4]
+ 308 00f0 054F     		ldr	r7, .L43
+ 309 00f2 0EF10204 		add	r4, lr, #2
+ 310 00f6 57F82450 		ldr	r5, [r7, r4, lsl #2]
+ 311 00fa 25EA0605 		bic	r5, r5, r6
+ 312 00fe 47F82450 		str	r5, [r7, r4, lsl #2]
+ 313 0102 8AE7     		b	.L29
+ 314              	.L41:
+ 315 0104 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 316              	.L39:
+ 317 0106 7047     		bx	lr
+ 318              	.L44:
+ 319              		.align	2
+ 320              	.L43:
+ 321 0108 00000140 		.word	1073807360
+ 322 010c 00040048 		.word	1207960576
+ 323 0110 00080058 		.word	1476397056
+ 325              		.section	.text.HAL_GPIO_ReadPin,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	HAL_GPIO_ReadPin
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 332              	HAL_GPIO_ReadPin:
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335              		@ link register save eliminated.
+ 336 0000 0369     		ldr	r3, [r0, #16]
+ 337 0002 1942     		tst	r1, r3
+ 338 0004 01D0     		beq	.L47
+ 339 0006 0120     		movs	r0, #1
+ 340 0008 7047     		bx	lr
+ 341              	.L47:
+ 342 000a 0020     		movs	r0, #0
+ 343 000c 7047     		bx	lr
+ 345              		.section	.text.HAL_GPIO_WritePin,"ax",%progbits
+ 346              		.align	1
+ 347              		.global	HAL_GPIO_WritePin
+ 348              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 7
+
+
+ 349              		.thumb
+ 350              		.thumb_func
+ 352              	HAL_GPIO_WritePin:
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355              		@ link register save eliminated.
+ 356 0000 0AB1     		cbz	r2, .L49
+ 357 0002 8161     		str	r1, [r0, #24]
+ 358 0004 7047     		bx	lr
+ 359              	.L49:
+ 360 0006 8162     		str	r1, [r0, #40]
+ 361 0008 7047     		bx	lr
+ 363              		.section	.text.HAL_GPIO_WriteMultipleStatePin,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	HAL_GPIO_WriteMultipleStatePin
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 370              	HAL_GPIO_WriteMultipleStatePin:
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+ 374 0000 42EA0142 		orr	r2, r2, r1, lsl #16
+ 375 0004 8261     		str	r2, [r0, #24]
+ 376 0006 7047     		bx	lr
+ 378              		.section	.text.HAL_GPIO_TogglePin,"ax",%progbits
+ 379              		.align	1
+ 380              		.global	HAL_GPIO_TogglePin
+ 381              		.syntax unified
+ 382              		.thumb
+ 383              		.thumb_func
+ 385              	HAL_GPIO_TogglePin:
+ 386              		@ args = 0, pretend = 0, frame = 0
+ 387              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388              		@ link register save eliminated.
+ 389 0000 4369     		ldr	r3, [r0, #20]
+ 390 0002 01EA0302 		and	r2, r1, r3
+ 391 0006 21EA0301 		bic	r1, r1, r3
+ 392 000a 41EA0241 		orr	r1, r1, r2, lsl #16
+ 393 000e 8161     		str	r1, [r0, #24]
+ 394 0010 7047     		bx	lr
+ 396              		.section	.text.HAL_GPIO_LockPin,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	HAL_GPIO_LockPin
+ 399              		.syntax unified
+ 400              		.thumb
+ 401              		.thumb_func
+ 403              	HAL_GPIO_LockPin:
+ 404              		@ args = 0, pretend = 0, frame = 8
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406              		@ link register save eliminated.
+ 407 0000 82B0     		sub	sp, sp, #8
+ 408 0002 4FF48033 		mov	r3, #65536
+ 409 0006 0193     		str	r3, [sp, #4]
+ 410 0008 019B     		ldr	r3, [sp, #4]
+ 411 000a 0B43     		orrs	r3, r3, r1
+ 412 000c 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 8
+
+
+ 413 000e 019B     		ldr	r3, [sp, #4]
+ 414 0010 C361     		str	r3, [r0, #28]
+ 415 0012 C161     		str	r1, [r0, #28]
+ 416 0014 019B     		ldr	r3, [sp, #4]
+ 417 0016 C361     		str	r3, [r0, #28]
+ 418 0018 C369     		ldr	r3, [r0, #28]
+ 419 001a 0193     		str	r3, [sp, #4]
+ 420 001c C369     		ldr	r3, [r0, #28]
+ 421 001e 13F4803F 		tst	r3, #65536
+ 422 0022 02D0     		beq	.L55
+ 423 0024 0020     		movs	r0, #0
+ 424              	.L54:
+ 425 0026 02B0     		add	sp, sp, #8
+ 426              		@ sp needed
+ 427 0028 7047     		bx	lr
+ 428              	.L55:
+ 429 002a 0120     		movs	r0, #1
+ 430 002c FBE7     		b	.L54
+ 432              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 433              		.align	1
+ 434              		.weak	HAL_GPIO_EXTI_Callback
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 439              	HAL_GPIO_EXTI_Callback:
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442              		@ link register save eliminated.
+ 443 0000 7047     		bx	lr
+ 445              		.section	.text.HAL_GPIO_EXTI_IRQHandler,"ax",%progbits
+ 446              		.align	1
+ 447              		.global	HAL_GPIO_EXTI_IRQHandler
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ 452              	HAL_GPIO_EXTI_IRQHandler:
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 08B5     		push	{r3, lr}
+ 456 0002 054B     		ldr	r3, .L62
+ 457 0004 DB68     		ldr	r3, [r3, #12]
+ 458 0006 0342     		tst	r3, r0
+ 459 0008 00D1     		bne	.L61
+ 460              	.L58:
+ 461 000a 08BD     		pop	{r3, pc}
+ 462              	.L61:
+ 463 000c 024B     		ldr	r3, .L62
+ 464 000e D860     		str	r0, [r3, #12]
+ 465 0010 FFF7FEFF 		bl	HAL_GPIO_EXTI_Callback
+ 466 0014 F9E7     		b	.L58
+ 467              	.L63:
+ 468 0016 00BF     		.align	2
+ 469              	.L62:
+ 470 0018 00080058 		.word	1476397056
+ 472              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_gpio.c
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:18     .text.HAL_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:198    .text.HAL_GPIO_Init:000001a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:203    .text.HAL_GPIO_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:209    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:321    .text.HAL_GPIO_DeInit:00000108 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:326    .text.HAL_GPIO_ReadPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:332    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:346    .text.HAL_GPIO_WritePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:352    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:364    .text.HAL_GPIO_WriteMultipleStatePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:370    .text.HAL_GPIO_WriteMultipleStatePin:00000000 HAL_GPIO_WriteMultipleStatePin
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:379    .text.HAL_GPIO_TogglePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:385    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:397    .text.HAL_GPIO_LockPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:403    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:433    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:439    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:446    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:452    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccvtaXAH.s:470    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
+
+NO UNDEFINED SYMBOLS

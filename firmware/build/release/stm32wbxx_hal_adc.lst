@@ -1,0 +1,2981 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_adc.c"
+  16              		.text
+  17              		.section	.text.LL_ADC_REG_SetSequencerRanks,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	LL_ADC_REG_SetSequencerRanks:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 10B4     		push	{r4}
+  28 0002 3030     		adds	r0, r0, #48
+  29 0004 0B0A     		lsrs	r3, r1, #8
+  30 0006 9B00     		lsls	r3, r3, #2
+  31 0008 03F00C03 		and	r3, r3, #12
+  32 000c C458     		ldr	r4, [r0, r3]
+  33 000e 01F01F01 		and	r1, r1, #31
+  34 0012 4FF01F0C 		mov	ip, #31
+  35 0016 0CFA01FC 		lsl	ip, ip, r1
+  36 001a 24EA0C0C 		bic	ip, r4, ip
+  37 001e C2F38462 		ubfx	r2, r2, #26, #5
+  38 0022 8A40     		lsls	r2, r2, r1
+  39 0024 4CEA0202 		orr	r2, ip, r2
+  40 0028 C250     		str	r2, [r0, r3]
+  41 002a 5DF8044B 		ldr	r4, [sp], #4
+  42 002e 7047     		bx	lr
+  44              		.section	.text.LL_ADC_SetChannelSamplingTime,"ax",%progbits
+  45              		.align	1
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	LL_ADC_SetChannelSamplingTime:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54 0000 10B4     		push	{r4}
+  55 0002 1430     		adds	r0, r0, #20
+  56 0004 4B0E     		lsrs	r3, r1, #25
+  57 0006 9B00     		lsls	r3, r3, #2
+  58 0008 03F00403 		and	r3, r3, #4
+  59 000c C458     		ldr	r4, [r0, r3]
+  60 000e C1F30451 		ubfx	r1, r1, #20, #5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 2
+
+
+  61 0012 4FF0070C 		mov	ip, #7
+  62 0016 0CFA01FC 		lsl	ip, ip, r1
+  63 001a 24EA0C0C 		bic	ip, r4, ip
+  64 001e 8A40     		lsls	r2, r2, r1
+  65 0020 4CEA0202 		orr	r2, ip, r2
+  66 0024 C250     		str	r2, [r0, r3]
+  67 0026 5DF8044B 		ldr	r4, [sp], #4
+  68 002a 7047     		bx	lr
+  70              		.section	.text.LL_ADC_SetAnalogWDMonitChannels,"ax",%progbits
+  71              		.align	1
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	LL_ADC_SetAnalogWDMonitChannels:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79 0000 00B5     		push	{lr}
+  80 0002 0C30     		adds	r0, r0, #12
+  81 0004 C1F3015C 		ubfx	ip, r1, #20, #2
+  82 0008 01F00103 		and	r3, r1, #1
+  83 000c 03EBC303 		add	r3, r3, r3, lsl #3
+  84 0010 0CEB830C 		add	ip, ip, r3, lsl #2
+  85 0014 50F82C30 		ldr	r3, [r0, ip, lsl #2]
+  86 0018 21F0024E 		bic	lr, r1, #-2113929216
+  87 001c 2EF4601E 		bic	lr, lr, #3670016
+  88 0020 23EA0E03 		bic	r3, r3, lr
+  89 0024 1140     		ands	r1, r1, r2
+  90 0026 0B43     		orrs	r3, r3, r1
+  91 0028 40F82C30 		str	r3, [r0, ip, lsl #2]
+  92 002c 5DF804FB 		ldr	pc, [sp], #4
+  94              		.section	.text.HAL_ADC_MspInit,"ax",%progbits
+  95              		.align	1
+  96              		.weak	HAL_ADC_MspInit
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	HAL_ADC_MspInit:
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              		@ link register save eliminated.
+ 105 0000 7047     		bx	lr
+ 107              		.section	.text.HAL_ADC_Init,"ax",%progbits
+ 108              		.align	1
+ 109              		.global	HAL_ADC_Init
+ 110              		.syntax unified
+ 111              		.thumb
+ 112              		.thumb_func
+ 114              	HAL_ADC_Init:
+ 115              		@ args = 0, pretend = 0, frame = 8
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117 0000 30B5     		push	{r4, r5, lr}
+ 118 0002 83B0     		sub	sp, sp, #12
+ 119 0004 0023     		movs	r3, #0
+ 120 0006 0193     		str	r3, [sp, #4]
+ 121 0008 0028     		cmp	r0, #0
+ 122 000a 00F0D880 		beq	.L27
+ 123 000e 0446     		mov	r4, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 3
+
+
+ 124 0010 436D     		ldr	r3, [r0, #84]
+ 125 0012 13B3     		cbz	r3, .L30
+ 126              	.L10:
+ 127 0014 2368     		ldr	r3, [r4]
+ 128 0016 9A68     		ldr	r2, [r3, #8]
+ 129 0018 12F0005F 		tst	r2, #536870912
+ 130 001c 05D0     		beq	.L11
+ 131 001e 9A68     		ldr	r2, [r3, #8]
+ 132 0020 22F02042 		bic	r2, r2, #-1610612736
+ 133 0024 22F03F02 		bic	r2, r2, #63
+ 134 0028 9A60     		str	r2, [r3, #8]
+ 135              	.L11:
+ 136 002a 2268     		ldr	r2, [r4]
+ 137 002c 9368     		ldr	r3, [r2, #8]
+ 138 002e 13F0805F 		tst	r3, #268435456
+ 139 0032 1FD1     		bne	.L12
+ 140 0034 9368     		ldr	r3, [r2, #8]
+ 141 0036 23F01043 		bic	r3, r3, #-1879048192
+ 142 003a 23F03F03 		bic	r3, r3, #63
+ 143 003e 43F08053 		orr	r3, r3, #268435456
+ 144 0042 9360     		str	r3, [r2, #8]
+ 145 0044 5F4B     		ldr	r3, .L34
+ 146 0046 1B68     		ldr	r3, [r3]
+ 147 0048 9B09     		lsrs	r3, r3, #6
+ 148 004a 5F4A     		ldr	r2, .L34+4
+ 149 004c A2FB0323 		umull	r2, r3, r2, r3
+ 150 0050 9B09     		lsrs	r3, r3, #6
+ 151 0052 0133     		adds	r3, r3, #1
+ 152 0054 5B00     		lsls	r3, r3, #1
+ 153 0056 0193     		str	r3, [sp, #4]
+ 154 0058 09E0     		b	.L13
+ 155              	.L30:
+ 156 005a FFF7FEFF 		bl	HAL_ADC_MspInit
+ 157 005e 0023     		movs	r3, #0
+ 158 0060 A365     		str	r3, [r4, #88]
+ 159 0062 84F85030 		strb	r3, [r4, #80]
+ 160 0066 D5E7     		b	.L10
+ 161              	.L14:
+ 162 0068 019B     		ldr	r3, [sp, #4]
+ 163 006a 013B     		subs	r3, r3, #1
+ 164 006c 0193     		str	r3, [sp, #4]
+ 165              	.L13:
+ 166 006e 019B     		ldr	r3, [sp, #4]
+ 167 0070 002B     		cmp	r3, #0
+ 168 0072 F9D1     		bne	.L14
+ 169              	.L12:
+ 170 0074 2268     		ldr	r2, [r4]
+ 171 0076 9368     		ldr	r3, [r2, #8]
+ 172 0078 13F0805F 		tst	r3, #268435456
+ 173 007c 78D1     		bne	.L28
+ 174 007e 636D     		ldr	r3, [r4, #84]
+ 175 0080 43F01003 		orr	r3, r3, #16
+ 176 0084 6365     		str	r3, [r4, #84]
+ 177 0086 A36D     		ldr	r3, [r4, #88]
+ 178 0088 43F00103 		orr	r3, r3, #1
+ 179 008c A365     		str	r3, [r4, #88]
+ 180 008e 0120     		movs	r0, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 4
+
+
+ 181              	.L15:
+ 182 0090 9368     		ldr	r3, [r2, #8]
+ 183 0092 13F00403 		ands	r3, r3, #4
+ 184 0096 00D0     		beq	.L16
+ 185 0098 0123     		movs	r3, #1
+ 186              	.L16:
+ 187 009a 616D     		ldr	r1, [r4, #84]
+ 188 009c 11F0100F 		tst	r1, #16
+ 189 00a0 40F08680 		bne	.L17
+ 190 00a4 002B     		cmp	r3, #0
+ 191 00a6 40F08380 		bne	.L17
+ 192 00aa 636D     		ldr	r3, [r4, #84]
+ 193 00ac 23F48173 		bic	r3, r3, #258
+ 194 00b0 43F00203 		orr	r3, r3, #2
+ 195 00b4 6365     		str	r3, [r4, #84]
+ 196 00b6 9368     		ldr	r3, [r2, #8]
+ 197 00b8 13F0010F 		tst	r3, #1
+ 198 00bc 0BD1     		bne	.L18
+ 199 00be 434B     		ldr	r3, .L34+8
+ 200 00c0 9B68     		ldr	r3, [r3, #8]
+ 201 00c2 13F0010F 		tst	r3, #1
+ 202 00c6 06D1     		bne	.L18
+ 203 00c8 6368     		ldr	r3, [r4, #4]
+ 204 00ca 4149     		ldr	r1, .L34+12
+ 205 00cc 8A68     		ldr	r2, [r1, #8]
+ 206 00ce 22F47C12 		bic	r2, r2, #4128768
+ 207 00d2 1343     		orrs	r3, r3, r2
+ 208 00d4 8B60     		str	r3, [r1, #8]
+ 209              	.L18:
+ 210 00d6 627E     		ldrb	r2, [r4, #25]	@ zero_extendqisi2
+ 211 00d8 636B     		ldr	r3, [r4, #52]
+ 212 00da 43EA4233 		orr	r3, r3, r2, lsl #13
+ 213 00de E268     		ldr	r2, [r4, #12]
+ 214 00e0 1343     		orrs	r3, r3, r2
+ 215 00e2 A268     		ldr	r2, [r4, #8]
+ 216 00e4 1343     		orrs	r3, r3, r2
+ 217 00e6 94F82020 		ldrb	r2, [r4, #32]	@ zero_extendqisi2
+ 218 00ea 43EA0243 		orr	r3, r3, r2, lsl #16
+ 219 00ee 012A     		cmp	r2, #1
+ 220 00f0 40D0     		beq	.L31
+ 221              	.L19:
+ 222 00f2 A26A     		ldr	r2, [r4, #40]
+ 223 00f4 22B1     		cbz	r2, .L20
+ 224 00f6 02F47072 		and	r2, r2, #960
+ 225 00fa E16A     		ldr	r1, [r4, #44]
+ 226 00fc 0A43     		orrs	r2, r2, r1
+ 227 00fe 1343     		orrs	r3, r3, r2
+ 228              	.L20:
+ 229 0100 2168     		ldr	r1, [r4]
+ 230 0102 CD68     		ldr	r5, [r1, #12]
+ 231 0104 334A     		ldr	r2, .L34+16
+ 232 0106 2A40     		ands	r2, r2, r5
+ 233 0108 1A43     		orrs	r2, r2, r3
+ 234 010a CA60     		str	r2, [r1, #12]
+ 235 010c 2168     		ldr	r1, [r4]
+ 236 010e 8B68     		ldr	r3, [r1, #8]
+ 237 0110 13F00403 		ands	r3, r3, #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 5
+
+
+ 238 0114 00D0     		beq	.L21
+ 239 0116 0123     		movs	r3, #1
+ 240              	.L21:
+ 241 0118 8A68     		ldr	r2, [r1, #8]
+ 242 011a 12F00802 		ands	r2, r2, #8
+ 243 011e 00D0     		beq	.L22
+ 244 0120 0122     		movs	r2, #1
+ 245              	.L22:
+ 246 0122 B3B9     		cbnz	r3, .L23
+ 247 0124 AAB9     		cbnz	r2, .L23
+ 248 0126 237E     		ldrb	r3, [r4, #24]	@ zero_extendqisi2
+ 249 0128 94F83020 		ldrb	r2, [r4, #48]	@ zero_extendqisi2
+ 250 012c 5200     		lsls	r2, r2, #1
+ 251 012e 42EA8332 		orr	r2, r2, r3, lsl #14
+ 252 0132 CB68     		ldr	r3, [r1, #12]
+ 253 0134 23F48043 		bic	r3, r3, #16384
+ 254 0138 23F00203 		bic	r3, r3, #2
+ 255 013c 1343     		orrs	r3, r3, r2
+ 256 013e CB60     		str	r3, [r1, #12]
+ 257 0140 94F83830 		ldrb	r3, [r4, #56]	@ zero_extendqisi2
+ 258 0144 012B     		cmp	r3, #1
+ 259 0146 1AD0     		beq	.L32
+ 260 0148 2268     		ldr	r2, [r4]
+ 261 014a 1369     		ldr	r3, [r2, #16]
+ 262 014c 23F00103 		bic	r3, r3, #1
+ 263 0150 1361     		str	r3, [r2, #16]
+ 264              	.L23:
+ 265 0152 2369     		ldr	r3, [r4, #16]
+ 266 0154 012B     		cmp	r3, #1
+ 267 0156 22D0     		beq	.L33
+ 268 0158 2268     		ldr	r2, [r4]
+ 269 015a 136B     		ldr	r3, [r2, #48]
+ 270 015c 23F00F03 		bic	r3, r3, #15
+ 271 0160 1363     		str	r3, [r2, #48]
+ 272              	.L26:
+ 273 0162 636D     		ldr	r3, [r4, #84]
+ 274 0164 23F00303 		bic	r3, r3, #3
+ 275 0168 43F00103 		orr	r3, r3, #1
+ 276 016c 6365     		str	r3, [r4, #84]
+ 277 016e 24E0     		b	.L9
+ 278              	.L28:
+ 279 0170 0020     		movs	r0, #0
+ 280 0172 8DE7     		b	.L15
+ 281              	.L31:
+ 282 0174 626A     		ldr	r2, [r4, #36]
+ 283 0176 013A     		subs	r2, r2, #1
+ 284 0178 43EA4243 		orr	r3, r3, r2, lsl #17
+ 285 017c B9E7     		b	.L19
+ 286              	.L32:
+ 287 017e 2168     		ldr	r1, [r4]
+ 288 0180 0B69     		ldr	r3, [r1, #16]
+ 289 0182 6FF38A03 		bfc	r3, #2, #9
+ 290 0186 E26B     		ldr	r2, [r4, #60]
+ 291 0188 256C     		ldr	r5, [r4, #64]
+ 292 018a 2A43     		orrs	r2, r2, r5
+ 293 018c 656C     		ldr	r5, [r4, #68]
+ 294 018e 2A43     		orrs	r2, r2, r5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 6
+
+
+ 295 0190 A56C     		ldr	r5, [r4, #72]
+ 296 0192 2A43     		orrs	r2, r2, r5
+ 297 0194 1343     		orrs	r3, r3, r2
+ 298 0196 43F00103 		orr	r3, r3, #1
+ 299 019a 0B61     		str	r3, [r1, #16]
+ 300 019c D9E7     		b	.L23
+ 301              	.L33:
+ 302 019e 2168     		ldr	r1, [r4]
+ 303 01a0 0B6B     		ldr	r3, [r1, #48]
+ 304 01a2 23F00F03 		bic	r3, r3, #15
+ 305 01a6 E269     		ldr	r2, [r4, #28]
+ 306 01a8 013A     		subs	r2, r2, #1
+ 307 01aa 1343     		orrs	r3, r3, r2
+ 308 01ac 0B63     		str	r3, [r1, #48]
+ 309 01ae D8E7     		b	.L26
+ 310              	.L17:
+ 311 01b0 636D     		ldr	r3, [r4, #84]
+ 312 01b2 43F01003 		orr	r3, r3, #16
+ 313 01b6 6365     		str	r3, [r4, #84]
+ 314 01b8 0120     		movs	r0, #1
+ 315              	.L9:
+ 316 01ba 03B0     		add	sp, sp, #12
+ 317              		@ sp needed
+ 318 01bc 30BD     		pop	{r4, r5, pc}
+ 319              	.L27:
+ 320 01be 0120     		movs	r0, #1
+ 321 01c0 FBE7     		b	.L9
+ 322              	.L35:
+ 323 01c2 00BF     		.align	2
+ 324              	.L34:
+ 325 01c4 00000000 		.word	SystemCoreClock
+ 326 01c8 632D3E05 		.word	87960931
+ 327 01cc 00000450 		.word	1342439424
+ 328 01d0 00030450 		.word	1342440192
+ 329 01d4 07C0F0FF 		.word	-999417
+ 331              		.section	.text.HAL_ADC_MspDeInit,"ax",%progbits
+ 332              		.align	1
+ 333              		.weak	HAL_ADC_MspDeInit
+ 334              		.syntax unified
+ 335              		.thumb
+ 336              		.thumb_func
+ 338              	HAL_ADC_MspDeInit:
+ 339              		@ args = 0, pretend = 0, frame = 0
+ 340              		@ frame_needed = 0, uses_anonymous_args = 0
+ 341              		@ link register save eliminated.
+ 342 0000 7047     		bx	lr
+ 344              		.section	.text.HAL_ADC_PollForConversion,"ax",%progbits
+ 345              		.align	1
+ 346              		.global	HAL_ADC_PollForConversion
+ 347              		.syntax unified
+ 348              		.thumb
+ 349              		.thumb_func
+ 351              	HAL_ADC_PollForConversion:
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 354 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 355 0002 0446     		mov	r4, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 7
+
+
+ 356 0004 0E46     		mov	r6, r1
+ 357 0006 4569     		ldr	r5, [r0, #20]
+ 358 0008 082D     		cmp	r5, #8
+ 359 000a 05D0     		beq	.L38
+ 360 000c 0368     		ldr	r3, [r0]
+ 361 000e DB68     		ldr	r3, [r3, #12]
+ 362 0010 13F0010F 		tst	r3, #1
+ 363 0014 1ED1     		bne	.L49
+ 364 0016 0425     		movs	r5, #4
+ 365              	.L38:
+ 366 0018 FFF7FEFF 		bl	HAL_GetTick
+ 367 001c 0746     		mov	r7, r0
+ 368              	.L41:
+ 369 001e 2368     		ldr	r3, [r4]
+ 370 0020 1A68     		ldr	r2, [r3]
+ 371 0022 2A42     		tst	r2, r5
+ 372 0024 1CD1     		bne	.L50
+ 373 0026 B6F1FF3F 		cmp	r6, #-1
+ 374 002a F8D0     		beq	.L41
+ 375 002c FFF7FEFF 		bl	HAL_GetTick
+ 376 0030 C31B     		subs	r3, r0, r7
+ 377 0032 B342     		cmp	r3, r6
+ 378 0034 01D8     		bhi	.L42
+ 379 0036 002E     		cmp	r6, #0
+ 380 0038 F1D1     		bne	.L41
+ 381              	.L42:
+ 382 003a 2368     		ldr	r3, [r4]
+ 383 003c 1B68     		ldr	r3, [r3]
+ 384 003e 2B42     		tst	r3, r5
+ 385 0040 EDD1     		bne	.L41
+ 386 0042 636D     		ldr	r3, [r4, #84]
+ 387 0044 43F00403 		orr	r3, r3, #4
+ 388 0048 6365     		str	r3, [r4, #84]
+ 389 004a 0023     		movs	r3, #0
+ 390 004c 84F85030 		strb	r3, [r4, #80]
+ 391 0050 0320     		movs	r0, #3
+ 392 0052 04E0     		b	.L39
+ 393              	.L49:
+ 394 0054 436D     		ldr	r3, [r0, #84]
+ 395 0056 43F02003 		orr	r3, r3, #32
+ 396 005a 4365     		str	r3, [r0, #84]
+ 397 005c 0120     		movs	r0, #1
+ 398              	.L39:
+ 399 005e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 400              	.L50:
+ 401 0060 626D     		ldr	r2, [r4, #84]
+ 402 0062 42F40072 		orr	r2, r2, #512
+ 403 0066 6265     		str	r2, [r4, #84]
+ 404 0068 DA68     		ldr	r2, [r3, #12]
+ 405 006a 12F4406F 		tst	r2, #3072
+ 406 006e 11D1     		bne	.L44
+ 407 0070 627E     		ldrb	r2, [r4, #25]	@ zero_extendqisi2
+ 408 0072 7AB9     		cbnz	r2, .L44
+ 409 0074 1A68     		ldr	r2, [r3]
+ 410 0076 12F0080F 		tst	r2, #8
+ 411 007a 0BD0     		beq	.L44
+ 412 007c 626D     		ldr	r2, [r4, #84]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 8
+
+
+ 413 007e 22F48072 		bic	r2, r2, #256
+ 414 0082 6265     		str	r2, [r4, #84]
+ 415 0084 626D     		ldr	r2, [r4, #84]
+ 416 0086 12F4805F 		tst	r2, #4096
+ 417 008a 03D1     		bne	.L44
+ 418 008c 626D     		ldr	r2, [r4, #84]
+ 419 008e 42F00102 		orr	r2, r2, #1
+ 420 0092 6265     		str	r2, [r4, #84]
+ 421              	.L44:
+ 422 0094 082D     		cmp	r5, #8
+ 423 0096 07D0     		beq	.L51
+ 424 0098 DA68     		ldr	r2, [r3, #12]
+ 425 009a 12F4804F 		tst	r2, #16384
+ 426 009e 07D1     		bne	.L47
+ 427 00a0 0C22     		movs	r2, #12
+ 428 00a2 1A60     		str	r2, [r3]
+ 429 00a4 0020     		movs	r0, #0
+ 430 00a6 DAE7     		b	.L39
+ 431              	.L51:
+ 432 00a8 0822     		movs	r2, #8
+ 433 00aa 1A60     		str	r2, [r3]
+ 434 00ac 0020     		movs	r0, #0
+ 435 00ae D6E7     		b	.L39
+ 436              	.L47:
+ 437 00b0 0020     		movs	r0, #0
+ 438 00b2 D4E7     		b	.L39
+ 440              		.section	.text.HAL_ADC_PollForEvent,"ax",%progbits
+ 441              		.align	1
+ 442              		.global	HAL_ADC_PollForEvent
+ 443              		.syntax unified
+ 444              		.thumb
+ 445              		.thumb_func
+ 447              	HAL_ADC_PollForEvent:
+ 448              		@ args = 0, pretend = 0, frame = 0
+ 449              		@ frame_needed = 0, uses_anonymous_args = 0
+ 450 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 451 0004 0646     		mov	r6, r0
+ 452 0006 0D46     		mov	r5, r1
+ 453 0008 1746     		mov	r7, r2
+ 454 000a FFF7FEFF 		bl	HAL_GetTick
+ 455 000e 8046     		mov	r8, r0
+ 456              	.L54:
+ 457 0010 3468     		ldr	r4, [r6]
+ 458 0012 2368     		ldr	r3, [r4]
+ 459 0014 35EA0303 		bics	r3, r5, r3
+ 460 0018 18D0     		beq	.L67
+ 461 001a B7F1FF3F 		cmp	r7, #-1
+ 462 001e F7D0     		beq	.L54
+ 463 0020 FFF7FEFF 		bl	HAL_GetTick
+ 464 0024 A0EB0800 		sub	r0, r0, r8
+ 465 0028 B842     		cmp	r0, r7
+ 466 002a 01D8     		bhi	.L55
+ 467 002c 002F     		cmp	r7, #0
+ 468 002e EFD1     		bne	.L54
+ 469              	.L55:
+ 470 0030 3368     		ldr	r3, [r6]
+ 471 0032 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 9
+
+
+ 472 0034 35EA0303 		bics	r3, r5, r3
+ 473 0038 EAD0     		beq	.L54
+ 474 003a 736D     		ldr	r3, [r6, #84]
+ 475 003c 43F00403 		orr	r3, r3, #4
+ 476 0040 7365     		str	r3, [r6, #84]
+ 477 0042 0023     		movs	r3, #0
+ 478 0044 86F85030 		strb	r3, [r6, #80]
+ 479 0048 0320     		movs	r0, #3
+ 480 004a 29E0     		b	.L56
+ 481              	.L67:
+ 482 004c B5F5807F 		cmp	r5, #256
+ 483 0050 28D0     		beq	.L58
+ 484 0052 12D9     		bls	.L68
+ 485 0054 B5F5007F 		cmp	r5, #512
+ 486 0058 2DD0     		beq	.L63
+ 487 005a B5F5806F 		cmp	r5, #1024
+ 488 005e 33D1     		bne	.L62
+ 489 0060 736D     		ldr	r3, [r6, #84]
+ 490 0062 43F48043 		orr	r3, r3, #16384
+ 491 0066 7365     		str	r3, [r6, #84]
+ 492 0068 B36D     		ldr	r3, [r6, #88]
+ 493 006a 43F00803 		orr	r3, r3, #8
+ 494 006e B365     		str	r3, [r6, #88]
+ 495 0070 4FF48063 		mov	r3, #1024
+ 496 0074 2360     		str	r3, [r4]
+ 497 0076 0020     		movs	r0, #0
+ 498 0078 12E0     		b	.L56
+ 499              	.L68:
+ 500 007a 022D     		cmp	r5, #2
+ 501 007c 09D0     		beq	.L60
+ 502 007e 802D     		cmp	r5, #128
+ 503 0080 22D1     		bne	.L62
+ 504 0082 736D     		ldr	r3, [r6, #84]
+ 505 0084 43F48033 		orr	r3, r3, #65536
+ 506 0088 7365     		str	r3, [r6, #84]
+ 507 008a 8023     		movs	r3, #128
+ 508 008c 2360     		str	r3, [r4]
+ 509 008e 0020     		movs	r0, #0
+ 510 0090 06E0     		b	.L56
+ 511              	.L60:
+ 512 0092 736D     		ldr	r3, [r6, #84]
+ 513 0094 43F40063 		orr	r3, r3, #2048
+ 514 0098 7365     		str	r3, [r6, #84]
+ 515 009a 0223     		movs	r3, #2
+ 516 009c 2360     		str	r3, [r4]
+ 517 009e 0020     		movs	r0, #0
+ 518              	.L56:
+ 519 00a0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 520              	.L58:
+ 521 00a4 736D     		ldr	r3, [r6, #84]
+ 522 00a6 43F40033 		orr	r3, r3, #131072
+ 523 00aa 7365     		str	r3, [r6, #84]
+ 524 00ac 4FF48073 		mov	r3, #256
+ 525 00b0 2360     		str	r3, [r4]
+ 526 00b2 0020     		movs	r0, #0
+ 527 00b4 F4E7     		b	.L56
+ 528              	.L63:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 10
+
+
+ 529 00b6 736D     		ldr	r3, [r6, #84]
+ 530 00b8 43F48023 		orr	r3, r3, #262144
+ 531 00bc 7365     		str	r3, [r6, #84]
+ 532 00be 4FF40073 		mov	r3, #512
+ 533 00c2 2360     		str	r3, [r4]
+ 534 00c4 0020     		movs	r0, #0
+ 535 00c6 EBE7     		b	.L56
+ 536              	.L62:
+ 537 00c8 736B     		ldr	r3, [r6, #52]
+ 538 00ca 4BB9     		cbnz	r3, .L65
+ 539 00cc 736D     		ldr	r3, [r6, #84]
+ 540 00ce 43F48063 		orr	r3, r3, #1024
+ 541 00d2 7365     		str	r3, [r6, #84]
+ 542 00d4 B36D     		ldr	r3, [r6, #88]
+ 543 00d6 43F00203 		orr	r3, r3, #2
+ 544 00da B365     		str	r3, [r6, #88]
+ 545 00dc 0020     		movs	r0, #0
+ 546 00de DFE7     		b	.L56
+ 547              	.L65:
+ 548 00e0 1023     		movs	r3, #16
+ 549 00e2 2360     		str	r3, [r4]
+ 550 00e4 0020     		movs	r0, #0
+ 551 00e6 DBE7     		b	.L56
+ 553              		.section	.text.HAL_ADC_GetValue,"ax",%progbits
+ 554              		.align	1
+ 555              		.global	HAL_ADC_GetValue
+ 556              		.syntax unified
+ 557              		.thumb
+ 558              		.thumb_func
+ 560              	HAL_ADC_GetValue:
+ 561              		@ args = 0, pretend = 0, frame = 0
+ 562              		@ frame_needed = 0, uses_anonymous_args = 0
+ 563              		@ link register save eliminated.
+ 564 0000 0368     		ldr	r3, [r0]
+ 565 0002 186C     		ldr	r0, [r3, #64]
+ 566 0004 7047     		bx	lr
+ 568              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 569              		.align	1
+ 570              		.weak	HAL_ADC_ConvCpltCallback
+ 571              		.syntax unified
+ 572              		.thumb
+ 573              		.thumb_func
+ 575              	HAL_ADC_ConvCpltCallback:
+ 576              		@ args = 0, pretend = 0, frame = 0
+ 577              		@ frame_needed = 0, uses_anonymous_args = 0
+ 578              		@ link register save eliminated.
+ 579 0000 7047     		bx	lr
+ 581              		.section	.text.HAL_ADC_ConvHalfCpltCallback,"ax",%progbits
+ 582              		.align	1
+ 583              		.weak	HAL_ADC_ConvHalfCpltCallback
+ 584              		.syntax unified
+ 585              		.thumb
+ 586              		.thumb_func
+ 588              	HAL_ADC_ConvHalfCpltCallback:
+ 589              		@ args = 0, pretend = 0, frame = 0
+ 590              		@ frame_needed = 0, uses_anonymous_args = 0
+ 591              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 11
+
+
+ 592 0000 7047     		bx	lr
+ 594              		.section	.text.ADC_DMAHalfConvCplt,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	ADC_DMAHalfConvCplt
+ 597              		.syntax unified
+ 598              		.thumb
+ 599              		.thumb_func
+ 601              	ADC_DMAHalfConvCplt:
+ 602              		@ args = 0, pretend = 0, frame = 0
+ 603              		@ frame_needed = 0, uses_anonymous_args = 0
+ 604 0000 08B5     		push	{r3, lr}
+ 605 0002 806A     		ldr	r0, [r0, #40]
+ 606 0004 FFF7FEFF 		bl	HAL_ADC_ConvHalfCpltCallback
+ 607 0008 08BD     		pop	{r3, pc}
+ 609              		.section	.text.HAL_ADC_LevelOutOfWindowCallback,"ax",%progbits
+ 610              		.align	1
+ 611              		.weak	HAL_ADC_LevelOutOfWindowCallback
+ 612              		.syntax unified
+ 613              		.thumb
+ 614              		.thumb_func
+ 616              	HAL_ADC_LevelOutOfWindowCallback:
+ 617              		@ args = 0, pretend = 0, frame = 0
+ 618              		@ frame_needed = 0, uses_anonymous_args = 0
+ 619              		@ link register save eliminated.
+ 620 0000 7047     		bx	lr
+ 622              		.section	.text.HAL_ADC_ErrorCallback,"ax",%progbits
+ 623              		.align	1
+ 624              		.weak	HAL_ADC_ErrorCallback
+ 625              		.syntax unified
+ 626              		.thumb
+ 627              		.thumb_func
+ 629              	HAL_ADC_ErrorCallback:
+ 630              		@ args = 0, pretend = 0, frame = 0
+ 631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 632              		@ link register save eliminated.
+ 633 0000 7047     		bx	lr
+ 635              		.section	.text.HAL_ADC_IRQHandler,"ax",%progbits
+ 636              		.align	1
+ 637              		.global	HAL_ADC_IRQHandler
+ 638              		.syntax unified
+ 639              		.thumb
+ 640              		.thumb_func
+ 642              	HAL_ADC_IRQHandler:
+ 643              		@ args = 0, pretend = 0, frame = 0
+ 644              		@ frame_needed = 0, uses_anonymous_args = 0
+ 645 0000 70B5     		push	{r4, r5, r6, lr}
+ 646 0002 0446     		mov	r4, r0
+ 647 0004 0368     		ldr	r3, [r0]
+ 648 0006 1E68     		ldr	r6, [r3]
+ 649 0008 5D68     		ldr	r5, [r3, #4]
+ 650 000a 16F0020F 		tst	r6, #2
+ 651 000e 10D0     		beq	.L77
+ 652 0010 15F0020F 		tst	r5, #2
+ 653 0014 0DD0     		beq	.L77
+ 654 0016 436D     		ldr	r3, [r0, #84]
+ 655 0018 13F0100F 		tst	r3, #16
+ 656 001c 03D1     		bne	.L78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 12
+
+
+ 657 001e 436D     		ldr	r3, [r0, #84]
+ 658 0020 43F40063 		orr	r3, r3, #2048
+ 659 0024 4365     		str	r3, [r0, #84]
+ 660              	.L78:
+ 661 0026 2046     		mov	r0, r4
+ 662 0028 FFF7FEFF 		bl	HAL_ADCEx_EndOfSamplingCallback
+ 663 002c 2368     		ldr	r3, [r4]
+ 664 002e 0222     		movs	r2, #2
+ 665 0030 1A60     		str	r2, [r3]
+ 666              	.L77:
+ 667 0032 16F0040F 		tst	r6, #4
+ 668 0036 02D0     		beq	.L79
+ 669 0038 15F0040F 		tst	r5, #4
+ 670 003c 05D1     		bne	.L80
+ 671              	.L79:
+ 672 003e 16F0080F 		tst	r6, #8
+ 673 0042 3AD0     		beq	.L81
+ 674 0044 15F0080F 		tst	r5, #8
+ 675 0048 37D0     		beq	.L81
+ 676              	.L80:
+ 677 004a 636D     		ldr	r3, [r4, #84]
+ 678 004c 13F0100F 		tst	r3, #16
+ 679 0050 03D1     		bne	.L82
+ 680 0052 636D     		ldr	r3, [r4, #84]
+ 681 0054 43F40073 		orr	r3, r3, #512
+ 682 0058 6365     		str	r3, [r4, #84]
+ 683              	.L82:
+ 684 005a 2368     		ldr	r3, [r4]
+ 685 005c DA68     		ldr	r2, [r3, #12]
+ 686 005e 12F4406F 		tst	r2, #3072
+ 687 0062 24D1     		bne	.L83
+ 688 0064 DA68     		ldr	r2, [r3, #12]
+ 689 0066 12F4005F 		tst	r2, #8192
+ 690 006a 20D1     		bne	.L83
+ 691 006c 1A68     		ldr	r2, [r3]
+ 692 006e 12F0080F 		tst	r2, #8
+ 693 0072 1CD0     		beq	.L83
+ 694 0074 9A68     		ldr	r2, [r3, #8]
+ 695 0076 12F0040F 		tst	r2, #4
+ 696 007a 10D1     		bne	.L84
+ 697 007c 5A68     		ldr	r2, [r3, #4]
+ 698 007e 22F00C02 		bic	r2, r2, #12
+ 699 0082 5A60     		str	r2, [r3, #4]
+ 700 0084 636D     		ldr	r3, [r4, #84]
+ 701 0086 23F48073 		bic	r3, r3, #256
+ 702 008a 6365     		str	r3, [r4, #84]
+ 703 008c 636D     		ldr	r3, [r4, #84]
+ 704 008e 13F4805F 		tst	r3, #4096
+ 705 0092 0CD1     		bne	.L83
+ 706 0094 636D     		ldr	r3, [r4, #84]
+ 707 0096 43F00103 		orr	r3, r3, #1
+ 708 009a 6365     		str	r3, [r4, #84]
+ 709 009c 07E0     		b	.L83
+ 710              	.L84:
+ 711 009e 636D     		ldr	r3, [r4, #84]
+ 712 00a0 43F01003 		orr	r3, r3, #16
+ 713 00a4 6365     		str	r3, [r4, #84]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 13
+
+
+ 714 00a6 A36D     		ldr	r3, [r4, #88]
+ 715 00a8 43F00103 		orr	r3, r3, #1
+ 716 00ac A365     		str	r3, [r4, #88]
+ 717              	.L83:
+ 718 00ae 2046     		mov	r0, r4
+ 719 00b0 FFF7FEFF 		bl	HAL_ADC_ConvCpltCallback
+ 720 00b4 2368     		ldr	r3, [r4]
+ 721 00b6 0C22     		movs	r2, #12
+ 722 00b8 1A60     		str	r2, [r3]
+ 723              	.L81:
+ 724 00ba 16F0200F 		tst	r6, #32
+ 725 00be 02D0     		beq	.L86
+ 726 00c0 15F0200F 		tst	r5, #32
+ 727 00c4 05D1     		bne	.L87
+ 728              	.L86:
+ 729 00c6 16F0400F 		tst	r6, #64
+ 730 00ca 4DD0     		beq	.L88
+ 731 00cc 15F0400F 		tst	r5, #64
+ 732 00d0 4AD0     		beq	.L88
+ 733              	.L87:
+ 734 00d2 636D     		ldr	r3, [r4, #84]
+ 735 00d4 13F0100F 		tst	r3, #16
+ 736 00d8 03D1     		bne	.L89
+ 737 00da 636D     		ldr	r3, [r4, #84]
+ 738 00dc 43F40053 		orr	r3, r3, #8192
+ 739 00e0 6365     		str	r3, [r4, #84]
+ 740              	.L89:
+ 741 00e2 2368     		ldr	r3, [r4]
+ 742 00e4 DA6C     		ldr	r2, [r3, #76]
+ 743 00e6 12F0C00F 		tst	r2, #192
+ 744 00ea 2BD1     		bne	.L103
+ 745 00ec 0121     		movs	r1, #1
+ 746              	.L90:
+ 747 00ee DA68     		ldr	r2, [r3, #12]
+ 748 00f0 12F4406F 		tst	r2, #3072
+ 749 00f4 28D1     		bne	.L104
+ 750 00f6 0120     		movs	r0, #1
+ 751              	.L91:
+ 752 00f8 DA68     		ldr	r2, [r3, #12]
+ 753 00fa 79B3     		cbz	r1, .L92
+ 754 00fc 12F0007F 		tst	r2, #33554432
+ 755 0100 03D0     		beq	.L93
+ 756 0102 58B3     		cbz	r0, .L92
+ 757 0104 12F4005F 		tst	r2, #8192
+ 758 0108 28D1     		bne	.L92
+ 759              	.L93:
+ 760 010a 1A68     		ldr	r2, [r3]
+ 761 010c 12F0400F 		tst	r2, #64
+ 762 0110 24D0     		beq	.L92
+ 763 0112 DA68     		ldr	r2, [r3, #12]
+ 764 0114 12F4001F 		tst	r2, #2097152
+ 765 0118 20D1     		bne	.L92
+ 766 011a 9A68     		ldr	r2, [r3, #8]
+ 767 011c 12F0080F 		tst	r2, #8
+ 768 0120 14D1     		bne	.L94
+ 769 0122 5A68     		ldr	r2, [r3, #4]
+ 770 0124 22F06002 		bic	r2, r2, #96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 14
+
+
+ 771 0128 5A60     		str	r2, [r3, #4]
+ 772 012a 636D     		ldr	r3, [r4, #84]
+ 773 012c 23F48053 		bic	r3, r3, #4096
+ 774 0130 6365     		str	r3, [r4, #84]
+ 775 0132 636D     		ldr	r3, [r4, #84]
+ 776 0134 13F4807F 		tst	r3, #256
+ 777 0138 10D1     		bne	.L92
+ 778 013a 636D     		ldr	r3, [r4, #84]
+ 779 013c 43F00103 		orr	r3, r3, #1
+ 780 0140 6365     		str	r3, [r4, #84]
+ 781 0142 0BE0     		b	.L92
+ 782              	.L103:
+ 783 0144 0021     		movs	r1, #0
+ 784 0146 D2E7     		b	.L90
+ 785              	.L104:
+ 786 0148 0020     		movs	r0, #0
+ 787 014a D5E7     		b	.L91
+ 788              	.L94:
+ 789 014c 636D     		ldr	r3, [r4, #84]
+ 790 014e 43F01003 		orr	r3, r3, #16
+ 791 0152 6365     		str	r3, [r4, #84]
+ 792 0154 A36D     		ldr	r3, [r4, #88]
+ 793 0156 43F00103 		orr	r3, r3, #1
+ 794 015a A365     		str	r3, [r4, #88]
+ 795              	.L92:
+ 796 015c 2046     		mov	r0, r4
+ 797 015e FFF7FEFF 		bl	HAL_ADCEx_InjectedConvCpltCallback
+ 798 0162 2368     		ldr	r3, [r4]
+ 799 0164 6022     		movs	r2, #96
+ 800 0166 1A60     		str	r2, [r3]
+ 801              	.L88:
+ 802 0168 16F0800F 		tst	r6, #128
+ 803 016c 02D0     		beq	.L96
+ 804 016e 15F0800F 		tst	r5, #128
+ 805 0172 2DD1     		bne	.L106
+ 806              	.L96:
+ 807 0174 16F4807F 		tst	r6, #256
+ 808 0178 02D0     		beq	.L97
+ 809 017a 15F4807F 		tst	r5, #256
+ 810 017e 32D1     		bne	.L107
+ 811              	.L97:
+ 812 0180 16F4007F 		tst	r6, #512
+ 813 0184 02D0     		beq	.L98
+ 814 0186 15F4007F 		tst	r5, #512
+ 815 018a 38D1     		bne	.L108
+ 816              	.L98:
+ 817 018c 16F0100F 		tst	r6, #16
+ 818 0190 17D0     		beq	.L99
+ 819 0192 15F0100F 		tst	r5, #16
+ 820 0196 14D0     		beq	.L99
+ 821 0198 636B     		ldr	r3, [r4, #52]
+ 822 019a 23B1     		cbz	r3, .L100
+ 823 019c 2368     		ldr	r3, [r4]
+ 824 019e DB68     		ldr	r3, [r3, #12]
+ 825 01a0 13F0030F 		tst	r3, #3
+ 826 01a4 0AD0     		beq	.L101
+ 827              	.L100:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 15
+
+
+ 828 01a6 636D     		ldr	r3, [r4, #84]
+ 829 01a8 43F48063 		orr	r3, r3, #1024
+ 830 01ac 6365     		str	r3, [r4, #84]
+ 831 01ae A36D     		ldr	r3, [r4, #88]
+ 832 01b0 43F00203 		orr	r3, r3, #2
+ 833 01b4 A365     		str	r3, [r4, #88]
+ 834 01b6 2046     		mov	r0, r4
+ 835 01b8 FFF7FEFF 		bl	HAL_ADC_ErrorCallback
+ 836              	.L101:
+ 837 01bc 2368     		ldr	r3, [r4]
+ 838 01be 1022     		movs	r2, #16
+ 839 01c0 1A60     		str	r2, [r3]
+ 840              	.L99:
+ 841 01c2 16F4806F 		tst	r6, #1024
+ 842 01c6 02D0     		beq	.L76
+ 843 01c8 15F4806F 		tst	r5, #1024
+ 844 01cc 23D1     		bne	.L109
+ 845              	.L76:
+ 846 01ce 70BD     		pop	{r4, r5, r6, pc}
+ 847              	.L106:
+ 848 01d0 636D     		ldr	r3, [r4, #84]
+ 849 01d2 43F48033 		orr	r3, r3, #65536
+ 850 01d6 6365     		str	r3, [r4, #84]
+ 851 01d8 2046     		mov	r0, r4
+ 852 01da FFF7FEFF 		bl	HAL_ADC_LevelOutOfWindowCallback
+ 853 01de 2368     		ldr	r3, [r4]
+ 854 01e0 8022     		movs	r2, #128
+ 855 01e2 1A60     		str	r2, [r3]
+ 856 01e4 C6E7     		b	.L96
+ 857              	.L107:
+ 858 01e6 636D     		ldr	r3, [r4, #84]
+ 859 01e8 43F40033 		orr	r3, r3, #131072
+ 860 01ec 6365     		str	r3, [r4, #84]
+ 861 01ee 2046     		mov	r0, r4
+ 862 01f0 FFF7FEFF 		bl	HAL_ADCEx_LevelOutOfWindow2Callback
+ 863 01f4 2368     		ldr	r3, [r4]
+ 864 01f6 4FF48072 		mov	r2, #256
+ 865 01fa 1A60     		str	r2, [r3]
+ 866 01fc C0E7     		b	.L97
+ 867              	.L108:
+ 868 01fe 636D     		ldr	r3, [r4, #84]
+ 869 0200 43F48023 		orr	r3, r3, #262144
+ 870 0204 6365     		str	r3, [r4, #84]
+ 871 0206 2046     		mov	r0, r4
+ 872 0208 FFF7FEFF 		bl	HAL_ADCEx_LevelOutOfWindow3Callback
+ 873 020c 2368     		ldr	r3, [r4]
+ 874 020e 4FF40072 		mov	r2, #512
+ 875 0212 1A60     		str	r2, [r3]
+ 876 0214 BAE7     		b	.L98
+ 877              	.L109:
+ 878 0216 636D     		ldr	r3, [r4, #84]
+ 879 0218 43F48043 		orr	r3, r3, #16384
+ 880 021c 6365     		str	r3, [r4, #84]
+ 881 021e A36D     		ldr	r3, [r4, #88]
+ 882 0220 43F00803 		orr	r3, r3, #8
+ 883 0224 A365     		str	r3, [r4, #88]
+ 884 0226 2368     		ldr	r3, [r4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 16
+
+
+ 885 0228 4FF48062 		mov	r2, #1024
+ 886 022c 1A60     		str	r2, [r3]
+ 887 022e 2046     		mov	r0, r4
+ 888 0230 FFF7FEFF 		bl	HAL_ADCEx_InjectedQueueOverflowCallback
+ 889 0234 CBE7     		b	.L76
+ 891              		.section	.text.ADC_DMAConvCplt,"ax",%progbits
+ 892              		.align	1
+ 893              		.global	ADC_DMAConvCplt
+ 894              		.syntax unified
+ 895              		.thumb
+ 896              		.thumb_func
+ 898              	ADC_DMAConvCplt:
+ 899              		@ args = 0, pretend = 0, frame = 0
+ 900              		@ frame_needed = 0, uses_anonymous_args = 0
+ 901 0000 08B5     		push	{r3, lr}
+ 902 0002 0346     		mov	r3, r0
+ 903 0004 806A     		ldr	r0, [r0, #40]
+ 904 0006 426D     		ldr	r2, [r0, #84]
+ 905 0008 12F0500F 		tst	r2, #80
+ 906 000c 30D1     		bne	.L111
+ 907 000e 436D     		ldr	r3, [r0, #84]
+ 908 0010 43F40073 		orr	r3, r3, #512
+ 909 0014 4365     		str	r3, [r0, #84]
+ 910 0016 0368     		ldr	r3, [r0]
+ 911 0018 1A68     		ldr	r2, [r3]
+ 912 001a 12F0080F 		tst	r2, #8
+ 913 001e 14D0     		beq	.L112
+ 914 0020 DA68     		ldr	r2, [r3, #12]
+ 915 0022 12F4406F 		tst	r2, #3072
+ 916 0026 20D1     		bne	.L113
+ 917 0028 DB68     		ldr	r3, [r3, #12]
+ 918 002a 13F4005F 		tst	r3, #8192
+ 919 002e 1CD1     		bne	.L113
+ 920 0030 436D     		ldr	r3, [r0, #84]
+ 921 0032 23F48073 		bic	r3, r3, #256
+ 922 0036 4365     		str	r3, [r0, #84]
+ 923 0038 436D     		ldr	r3, [r0, #84]
+ 924 003a 13F4805F 		tst	r3, #4096
+ 925 003e 14D1     		bne	.L113
+ 926 0040 436D     		ldr	r3, [r0, #84]
+ 927 0042 43F00103 		orr	r3, r3, #1
+ 928 0046 4365     		str	r3, [r0, #84]
+ 929 0048 0FE0     		b	.L113
+ 930              	.L112:
+ 931 004a DB68     		ldr	r3, [r3, #12]
+ 932 004c 13F0020F 		tst	r3, #2
+ 933 0050 0BD1     		bne	.L113
+ 934 0052 436D     		ldr	r3, [r0, #84]
+ 935 0054 23F48073 		bic	r3, r3, #256
+ 936 0058 4365     		str	r3, [r0, #84]
+ 937 005a 436D     		ldr	r3, [r0, #84]
+ 938 005c 13F4805F 		tst	r3, #4096
+ 939 0060 03D1     		bne	.L113
+ 940 0062 436D     		ldr	r3, [r0, #84]
+ 941 0064 43F00103 		orr	r3, r3, #1
+ 942 0068 4365     		str	r3, [r0, #84]
+ 943              	.L113:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 17
+
+
+ 944 006a FFF7FEFF 		bl	HAL_ADC_ConvCpltCallback
+ 945              	.L110:
+ 946 006e 08BD     		pop	{r3, pc}
+ 947              	.L111:
+ 948 0070 426D     		ldr	r2, [r0, #84]
+ 949 0072 12F0100F 		tst	r2, #16
+ 950 0076 04D1     		bne	.L117
+ 951 0078 C26C     		ldr	r2, [r0, #76]
+ 952 007a 526B     		ldr	r2, [r2, #52]
+ 953 007c 1846     		mov	r0, r3
+ 954 007e 9047     		blx	r2
+ 955 0080 F5E7     		b	.L110
+ 956              	.L117:
+ 957 0082 FFF7FEFF 		bl	HAL_ADC_ErrorCallback
+ 958 0086 F2E7     		b	.L110
+ 960              		.section	.text.ADC_DMAError,"ax",%progbits
+ 961              		.align	1
+ 962              		.global	ADC_DMAError
+ 963              		.syntax unified
+ 964              		.thumb
+ 965              		.thumb_func
+ 967              	ADC_DMAError:
+ 968              		@ args = 0, pretend = 0, frame = 0
+ 969              		@ frame_needed = 0, uses_anonymous_args = 0
+ 970 0000 08B5     		push	{r3, lr}
+ 971 0002 806A     		ldr	r0, [r0, #40]
+ 972 0004 436D     		ldr	r3, [r0, #84]
+ 973 0006 43F04003 		orr	r3, r3, #64
+ 974 000a 4365     		str	r3, [r0, #84]
+ 975 000c 836D     		ldr	r3, [r0, #88]
+ 976 000e 43F00403 		orr	r3, r3, #4
+ 977 0012 8365     		str	r3, [r0, #88]
+ 978 0014 FFF7FEFF 		bl	HAL_ADC_ErrorCallback
+ 979 0018 08BD     		pop	{r3, pc}
+ 981              		.section	.text.HAL_ADC_ConfigChannel,"ax",%progbits
+ 982              		.align	1
+ 983              		.global	HAL_ADC_ConfigChannel
+ 984              		.syntax unified
+ 985              		.thumb
+ 986              		.thumb_func
+ 988              	HAL_ADC_ConfigChannel:
+ 989              		@ args = 0, pretend = 0, frame = 8
+ 990              		@ frame_needed = 0, uses_anonymous_args = 0
+ 991 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 992 0002 83B0     		sub	sp, sp, #12
+ 993 0004 0023     		movs	r3, #0
+ 994 0006 0193     		str	r3, [sp, #4]
+ 995 0008 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 996 000c 012B     		cmp	r3, #1
+ 997 000e 00F00282 		beq	.L173
+ 998 0012 0446     		mov	r4, r0
+ 999 0014 0D46     		mov	r5, r1
+ 1000 0016 0123     		movs	r3, #1
+ 1001 0018 80F85030 		strb	r3, [r0, #80]
+ 1002 001c 0068     		ldr	r0, [r0]
+ 1003 001e 8368     		ldr	r3, [r0, #8]
+ 1004 0020 13F0040F 		tst	r3, #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 18
+
+
+ 1005 0024 09D0     		beq	.L122
+ 1006 0026 636D     		ldr	r3, [r4, #84]
+ 1007 0028 43F02003 		orr	r3, r3, #32
+ 1008 002c 6365     		str	r3, [r4, #84]
+ 1009 002e 0120     		movs	r0, #1
+ 1010              	.L123:
+ 1011 0030 0023     		movs	r3, #0
+ 1012 0032 84F85030 		strb	r3, [r4, #80]
+ 1013              	.L121:
+ 1014 0036 03B0     		add	sp, sp, #12
+ 1015              		@ sp needed
+ 1016 0038 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1017              	.L122:
+ 1018 003a 0A68     		ldr	r2, [r1]
+ 1019 003c 4968     		ldr	r1, [r1, #4]
+ 1020 003e FFF7FEFF 		bl	LL_ADC_REG_SetSequencerRanks
+ 1021 0042 2068     		ldr	r0, [r4]
+ 1022 0044 8368     		ldr	r3, [r0, #8]
+ 1023 0046 13F00403 		ands	r3, r3, #4
+ 1024 004a 00D0     		beq	.L124
+ 1025 004c 0123     		movs	r3, #1
+ 1026              	.L124:
+ 1027 004e 8268     		ldr	r2, [r0, #8]
+ 1028 0050 12F00802 		ands	r2, r2, #8
+ 1029 0054 00D0     		beq	.L125
+ 1030 0056 0122     		movs	r2, #1
+ 1031              	.L125:
+ 1032 0058 0BB9     		cbnz	r3, .L126
+ 1033 005a 002A     		cmp	r2, #0
+ 1034 005c 3AD0     		beq	.L193
+ 1035              	.L126:
+ 1036 005e 2268     		ldr	r2, [r4]
+ 1037 0060 9368     		ldr	r3, [r2, #8]
+ 1038 0062 13F0010F 		tst	r3, #1
+ 1039 0066 40F0D081 		bne	.L178
+ 1040 006a 2B68     		ldr	r3, [r5]
+ 1041 006c E868     		ldr	r0, [r5, #12]
+ 1042 006e D2F8B010 		ldr	r1, [r2, #176]
+ 1043 0072 C3F31206 		ubfx	r6, r3, #0, #19
+ 1044 0076 21EA0601 		bic	r1, r1, r6
+ 1045 007a 00F0180C 		and	ip, r0, #24
+ 1046 007e A748     		ldr	r0, .L204
+ 1047 0080 20FA0CF0 		lsr	r0, r0, ip
+ 1048 0084 0340     		ands	r3, r3, r0
+ 1049 0086 C3F31203 		ubfx	r3, r3, #0, #19
+ 1050 008a 0B43     		orrs	r3, r3, r1
+ 1051 008c C2F8B030 		str	r3, [r2, #176]
+ 1052 0090 EA68     		ldr	r2, [r5, #12]
+ 1053 0092 A34B     		ldr	r3, .L204+4
+ 1054 0094 9A42     		cmp	r2, r3
+ 1055 0096 00F0A280 		beq	.L194
+ 1056              	.L143:
+ 1057 009a 2B68     		ldr	r3, [r5]
+ 1058 009c A14A     		ldr	r2, .L204+8
+ 1059 009e 1342     		tst	r3, r2
+ 1060 00a0 00F0B581 		beq	.L186
+ 1061 00a4 A04A     		ldr	r2, .L204+12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 19
+
+
+ 1062 00a6 9268     		ldr	r2, [r2, #8]
+ 1063 00a8 02F0E070 		and	r0, r2, #29360128
+ 1064 00ac 9F49     		ldr	r1, .L204+16
+ 1065 00ae 8968     		ldr	r1, [r1, #8]
+ 1066 00b0 11F0010F 		tst	r1, #1
+ 1067 00b4 40F05581 		bne	.L167
+ 1068 00b8 9D49     		ldr	r1, .L204+20
+ 1069 00ba 8B42     		cmp	r3, r1
+ 1070 00bc 00F05781 		beq	.L195
+ 1071              	.L169:
+ 1072 00c0 9C49     		ldr	r1, .L204+24
+ 1073 00c2 8B42     		cmp	r3, r1
+ 1074 00c4 00F07A81 		beq	.L196
+ 1075              	.L172:
+ 1076 00c8 9B49     		ldr	r1, .L204+28
+ 1077 00ca 8B42     		cmp	r3, r1
+ 1078 00cc 00F08A81 		beq	.L197
+ 1079 00d0 0020     		movs	r0, #0
+ 1080 00d2 ADE7     		b	.L123
+ 1081              	.L193:
+ 1082 00d4 AA68     		ldr	r2, [r5, #8]
+ 1083 00d6 2968     		ldr	r1, [r5]
+ 1084 00d8 FFF7FEFF 		bl	LL_ADC_SetChannelSamplingTime
+ 1085 00dc 6969     		ldr	r1, [r5, #20]
+ 1086 00de 2268     		ldr	r2, [r4]
+ 1087 00e0 D368     		ldr	r3, [r2, #12]
+ 1088 00e2 C3F3C103 		ubfx	r3, r3, #3, #2
+ 1089 00e6 5B00     		lsls	r3, r3, #1
+ 1090 00e8 9940     		lsls	r1, r1, r3
+ 1091 00ea 2869     		ldr	r0, [r5, #16]
+ 1092 00ec 0428     		cmp	r0, #4
+ 1093 00ee 0ED0     		beq	.L127
+ 1094 00f0 2E68     		ldr	r6, [r5]
+ 1095 00f2 6032     		adds	r2, r2, #96
+ 1096 00f4 52F82070 		ldr	r7, [r2, r0, lsl #2]
+ 1097 00f8 904B     		ldr	r3, .L204+32
+ 1098 00fa 3B40     		ands	r3, r3, r7
+ 1099 00fc 06F0F846 		and	r6, r6, #2080374784
+ 1100 0100 3143     		orrs	r1, r1, r6
+ 1101 0102 0B43     		orrs	r3, r3, r1
+ 1102 0104 43F00043 		orr	r3, r3, #-2147483648
+ 1103 0108 42F82030 		str	r3, [r2, r0, lsl #2]
+ 1104 010c A7E7     		b	.L126
+ 1105              	.L127:
+ 1106 010e 136E     		ldr	r3, [r2, #96]
+ 1107 0110 116E     		ldr	r1, [r2, #96]
+ 1108 0112 C1F38461 		ubfx	r1, r1, #26, #5
+ 1109 0116 2B68     		ldr	r3, [r5]
+ 1110 0118 C3F31200 		ubfx	r0, r3, #0, #19
+ 1111 011c 80BB     		cbnz	r0, .L128
+ 1112 011e C3F38463 		ubfx	r3, r3, #26, #5
+ 1113              	.L129:
+ 1114 0122 9942     		cmp	r1, r3
+ 1115 0124 34D0     		beq	.L198
+ 1116              	.L131:
+ 1117 0126 2168     		ldr	r1, [r4]
+ 1118 0128 4B6E     		ldr	r3, [r1, #100]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 20
+
+
+ 1119 012a 4A6E     		ldr	r2, [r1, #100]
+ 1120 012c C2F38462 		ubfx	r2, r2, #26, #5
+ 1121 0130 2B68     		ldr	r3, [r5]
+ 1122 0132 C3F31200 		ubfx	r0, r3, #0, #19
+ 1123 0136 80BB     		cbnz	r0, .L132
+ 1124 0138 C3F38463 		ubfx	r3, r3, #26, #5
+ 1125              	.L133:
+ 1126 013c 9A42     		cmp	r2, r3
+ 1127 013e 34D0     		beq	.L199
+ 1128              	.L135:
+ 1129 0140 2168     		ldr	r1, [r4]
+ 1130 0142 8B6E     		ldr	r3, [r1, #104]
+ 1131 0144 8A6E     		ldr	r2, [r1, #104]
+ 1132 0146 C2F38462 		ubfx	r2, r2, #26, #5
+ 1133 014a 2B68     		ldr	r3, [r5]
+ 1134 014c C3F31200 		ubfx	r0, r3, #0, #19
+ 1135 0150 80BB     		cbnz	r0, .L136
+ 1136 0152 C3F38463 		ubfx	r3, r3, #26, #5
+ 1137              	.L137:
+ 1138 0156 9A42     		cmp	r2, r3
+ 1139 0158 34D0     		beq	.L200
+ 1140              	.L139:
+ 1141 015a 2168     		ldr	r1, [r4]
+ 1142 015c CB6E     		ldr	r3, [r1, #108]
+ 1143 015e CA6E     		ldr	r2, [r1, #108]
+ 1144 0160 C2F38462 		ubfx	r2, r2, #26, #5
+ 1145 0164 2B68     		ldr	r3, [r5]
+ 1146 0166 C3F31200 		ubfx	r0, r3, #0, #19
+ 1147 016a 80BB     		cbnz	r0, .L140
+ 1148 016c C3F38463 		ubfx	r3, r3, #26, #5
+ 1149              	.L141:
+ 1150 0170 9A42     		cmp	r2, r3
+ 1151 0172 7FF474AF 		bne	.L126
+ 1152 0176 CB6E     		ldr	r3, [r1, #108]
+ 1153 0178 23F00043 		bic	r3, r3, #-2147483648
+ 1154 017c CB66     		str	r3, [r1, #108]
+ 1155 017e 6EE7     		b	.L126
+ 1156              	.L128:
+ 1157              		.syntax unified
+ 1158              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1159 0180 93FAA3F3 		rbit r3, r3
+ 1160              	@ 0 "" 2
+ 1161              		.thumb
+ 1162              		.syntax unified
+ 1163 0184 13B1     		cbz	r3, .L174
+ 1164 0186 B3FA83F3 		clz	r3, r3
+ 1165 018a CAE7     		b	.L129
+ 1166              	.L174:
+ 1167 018c 2023     		movs	r3, #32
+ 1168 018e C8E7     		b	.L129
+ 1169              	.L198:
+ 1170 0190 136E     		ldr	r3, [r2, #96]
+ 1171 0192 23F00043 		bic	r3, r3, #-2147483648
+ 1172 0196 1366     		str	r3, [r2, #96]
+ 1173 0198 C5E7     		b	.L131
+ 1174              	.L132:
+ 1175              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 21
+
+
+ 1176              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1177 019a 93FAA3F3 		rbit r3, r3
+ 1178              	@ 0 "" 2
+ 1179              		.thumb
+ 1180              		.syntax unified
+ 1181 019e 13B1     		cbz	r3, .L175
+ 1182 01a0 B3FA83F3 		clz	r3, r3
+ 1183 01a4 CAE7     		b	.L133
+ 1184              	.L175:
+ 1185 01a6 2023     		movs	r3, #32
+ 1186 01a8 C8E7     		b	.L133
+ 1187              	.L199:
+ 1188 01aa 4B6E     		ldr	r3, [r1, #100]
+ 1189 01ac 23F00043 		bic	r3, r3, #-2147483648
+ 1190 01b0 4B66     		str	r3, [r1, #100]
+ 1191 01b2 C5E7     		b	.L135
+ 1192              	.L136:
+ 1193              		.syntax unified
+ 1194              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1195 01b4 93FAA3F3 		rbit r3, r3
+ 1196              	@ 0 "" 2
+ 1197              		.thumb
+ 1198              		.syntax unified
+ 1199 01b8 13B1     		cbz	r3, .L176
+ 1200 01ba B3FA83F3 		clz	r3, r3
+ 1201 01be CAE7     		b	.L137
+ 1202              	.L176:
+ 1203 01c0 2023     		movs	r3, #32
+ 1204 01c2 C8E7     		b	.L137
+ 1205              	.L200:
+ 1206 01c4 8B6E     		ldr	r3, [r1, #104]
+ 1207 01c6 23F00043 		bic	r3, r3, #-2147483648
+ 1208 01ca 8B66     		str	r3, [r1, #104]
+ 1209 01cc C5E7     		b	.L139
+ 1210              	.L140:
+ 1211              		.syntax unified
+ 1212              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1213 01ce 93FAA3F3 		rbit r3, r3
+ 1214              	@ 0 "" 2
+ 1215              		.thumb
+ 1216              		.syntax unified
+ 1217 01d2 13B1     		cbz	r3, .L177
+ 1218 01d4 B3FA83F3 		clz	r3, r3
+ 1219 01d8 CAE7     		b	.L141
+ 1220              	.L177:
+ 1221 01da 2023     		movs	r3, #32
+ 1222 01dc C8E7     		b	.L141
+ 1223              	.L194:
+ 1224 01de 2068     		ldr	r0, [r4]
+ 1225 01e0 2B68     		ldr	r3, [r5]
+ 1226 01e2 C3F31206 		ubfx	r6, r3, #0, #19
+ 1227 01e6 3EBB     		cbnz	r6, .L144
+ 1228 01e8 9A0E     		lsrs	r2, r3, #26
+ 1229 01ea 0132     		adds	r2, r2, #1
+ 1230 01ec 02F01F02 		and	r2, r2, #31
+ 1231 01f0 092A     		cmp	r2, #9
+ 1232 01f2 8CBF     		ite	hi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 22
+
+
+ 1233 01f4 0022     		movhi	r2, #0
+ 1234 01f6 0122     		movls	r2, #1
+ 1235              	.L145:
+ 1236 01f8 002A     		cmp	r2, #0
+ 1237 01fa 55D0     		beq	.L147
+ 1238 01fc 5EBB     		cbnz	r6, .L148
+ 1239 01fe 990E     		lsrs	r1, r3, #26
+ 1240 0200 0131     		adds	r1, r1, #1
+ 1241 0202 8906     		lsls	r1, r1, #26
+ 1242 0204 01F0F841 		and	r1, r1, #2080374784
+ 1243              	.L149:
+ 1244 0208 8EBB     		cbnz	r6, .L151
+ 1245 020a 4FEA936C 		lsr	ip, r3, #26
+ 1246 020e 0CF1010C 		add	ip, ip, #1
+ 1247 0212 0CF01F0C 		and	ip, ip, #31
+ 1248 0216 0122     		movs	r2, #1
+ 1249 0218 02FA0CF2 		lsl	r2, r2, ip
+ 1250              	.L152:
+ 1251 021c 1143     		orrs	r1, r1, r2
+ 1252 021e AEBB     		cbnz	r6, .L154
+ 1253 0220 9B0E     		lsrs	r3, r3, #26
+ 1254 0222 0133     		adds	r3, r3, #1
+ 1255 0224 03F01F03 		and	r3, r3, #31
+ 1256 0228 03EB4303 		add	r3, r3, r3, lsl #1
+ 1257 022c 1B05     		lsls	r3, r3, #20
+ 1258              	.L155:
+ 1259 022e 1943     		orrs	r1, r1, r3
+ 1260              	.L157:
+ 1261 0230 AA68     		ldr	r2, [r5, #8]
+ 1262 0232 FFF7FEFF 		bl	LL_ADC_SetChannelSamplingTime
+ 1263 0236 30E7     		b	.L143
+ 1264              	.L144:
+ 1265              		.syntax unified
+ 1266              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1267 0238 93FAA3F2 		rbit r2, r3
+ 1268              	@ 0 "" 2
+ 1269              		.thumb
+ 1270              		.syntax unified
+ 1271 023c 4AB1     		cbz	r2, .L179
+ 1272 023e B2FA82F2 		clz	r2, r2
+ 1273              	.L146:
+ 1274 0242 0132     		adds	r2, r2, #1
+ 1275 0244 02F01F02 		and	r2, r2, #31
+ 1276 0248 092A     		cmp	r2, #9
+ 1277 024a 8CBF     		ite	hi
+ 1278 024c 0022     		movhi	r2, #0
+ 1279 024e 0122     		movls	r2, #1
+ 1280 0250 D2E7     		b	.L145
+ 1281              	.L179:
+ 1282 0252 2022     		movs	r2, #32
+ 1283 0254 F5E7     		b	.L146
+ 1284              	.L148:
+ 1285              		.syntax unified
+ 1286              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1287 0256 93FAA3F1 		rbit r1, r3
+ 1288              	@ 0 "" 2
+ 1289              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 23
+
+
+ 1290              		.syntax unified
+ 1291 025a 31B1     		cbz	r1, .L180
+ 1292 025c B1FA81F1 		clz	r1, r1
+ 1293              	.L150:
+ 1294 0260 0131     		adds	r1, r1, #1
+ 1295 0262 8906     		lsls	r1, r1, #26
+ 1296 0264 01F0F841 		and	r1, r1, #2080374784
+ 1297 0268 CEE7     		b	.L149
+ 1298              	.L180:
+ 1299 026a 2021     		movs	r1, #32
+ 1300 026c F8E7     		b	.L150
+ 1301              	.L151:
+ 1302              		.syntax unified
+ 1303              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1304 026e 93FAA3F2 		rbit r2, r3
+ 1305              	@ 0 "" 2
+ 1306              		.thumb
+ 1307              		.syntax unified
+ 1308 0272 4AB1     		cbz	r2, .L181
+ 1309 0274 B2FA82F2 		clz	r2, r2
+ 1310              	.L153:
+ 1311 0278 0132     		adds	r2, r2, #1
+ 1312 027a 02F01F02 		and	r2, r2, #31
+ 1313 027e 4FF0010C 		mov	ip, #1
+ 1314 0282 0CFA02F2 		lsl	r2, ip, r2
+ 1315 0286 C9E7     		b	.L152
+ 1316              	.L181:
+ 1317 0288 2022     		movs	r2, #32
+ 1318 028a F5E7     		b	.L153
+ 1319              	.L154:
+ 1320              		.syntax unified
+ 1321              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1322 028c 93FAA3F3 		rbit r3, r3
+ 1323              	@ 0 "" 2
+ 1324              		.thumb
+ 1325              		.syntax unified
+ 1326 0290 43B1     		cbz	r3, .L182
+ 1327 0292 B3FA83F3 		clz	r3, r3
+ 1328              	.L156:
+ 1329 0296 0133     		adds	r3, r3, #1
+ 1330 0298 03F01F03 		and	r3, r3, #31
+ 1331 029c 03EB4303 		add	r3, r3, r3, lsl #1
+ 1332 02a0 1B05     		lsls	r3, r3, #20
+ 1333 02a2 C4E7     		b	.L155
+ 1334              	.L182:
+ 1335 02a4 2023     		movs	r3, #32
+ 1336 02a6 F6E7     		b	.L156
+ 1337              	.L147:
+ 1338 02a8 E6B9     		cbnz	r6, .L158
+ 1339 02aa 990E     		lsrs	r1, r3, #26
+ 1340 02ac 0131     		adds	r1, r1, #1
+ 1341 02ae 8906     		lsls	r1, r1, #26
+ 1342 02b0 01F0F841 		and	r1, r1, #2080374784
+ 1343              	.L159:
+ 1344 02b4 16BB     		cbnz	r6, .L161
+ 1345 02b6 4FEA936C 		lsr	ip, r3, #26
+ 1346 02ba 0CF1010C 		add	ip, ip, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 24
+
+
+ 1347 02be 0CF01F0C 		and	ip, ip, #31
+ 1348 02c2 0122     		movs	r2, #1
+ 1349 02c4 02FA0CF2 		lsl	r2, r2, ip
+ 1350              	.L162:
+ 1351 02c8 1143     		orrs	r1, r1, r2
+ 1352 02ca CEBB     		cbnz	r6, .L164
+ 1353 02cc 9B0E     		lsrs	r3, r3, #26
+ 1354 02ce 0133     		adds	r3, r3, #1
+ 1355 02d0 03F01F03 		and	r3, r3, #31
+ 1356 02d4 03EB4303 		add	r3, r3, r3, lsl #1
+ 1357 02d8 1E3B     		subs	r3, r3, #30
+ 1358 02da 1B05     		lsls	r3, r3, #20
+ 1359 02dc 43F00073 		orr	r3, r3, #33554432
+ 1360              	.L165:
+ 1361 02e0 1943     		orrs	r1, r1, r3
+ 1362 02e2 A5E7     		b	.L157
+ 1363              	.L158:
+ 1364              		.syntax unified
+ 1365              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1366 02e4 93FAA3F1 		rbit r1, r3
+ 1367              	@ 0 "" 2
+ 1368              		.thumb
+ 1369              		.syntax unified
+ 1370 02e8 31B1     		cbz	r1, .L183
+ 1371 02ea B1FA81F1 		clz	r1, r1
+ 1372              	.L160:
+ 1373 02ee 0131     		adds	r1, r1, #1
+ 1374 02f0 8906     		lsls	r1, r1, #26
+ 1375 02f2 01F0F841 		and	r1, r1, #2080374784
+ 1376 02f6 DDE7     		b	.L159
+ 1377              	.L183:
+ 1378 02f8 2021     		movs	r1, #32
+ 1379 02fa F8E7     		b	.L160
+ 1380              	.L161:
+ 1381              		.syntax unified
+ 1382              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1383 02fc 93FAA3F2 		rbit r2, r3
+ 1384              	@ 0 "" 2
+ 1385              		.thumb
+ 1386              		.syntax unified
+ 1387 0300 4AB1     		cbz	r2, .L184
+ 1388 0302 B2FA82F2 		clz	r2, r2
+ 1389              	.L163:
+ 1390 0306 0132     		adds	r2, r2, #1
+ 1391 0308 02F01F02 		and	r2, r2, #31
+ 1392 030c 4FF0010C 		mov	ip, #1
+ 1393 0310 0CFA02F2 		lsl	r2, ip, r2
+ 1394 0314 D8E7     		b	.L162
+ 1395              	.L184:
+ 1396 0316 2022     		movs	r2, #32
+ 1397 0318 F5E7     		b	.L163
+ 1398              	.L205:
+ 1399 031a 00BF     		.align	2
+ 1400              	.L204:
+ 1401 031c FFFF0700 		.word	524287
+ 1402 0320 00007F40 		.word	1082064896
+ 1403 0324 00000880 		.word	-2146959360
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 25
+
+
+ 1404 0328 00030450 		.word	1342440192
+ 1405 032c 00000450 		.word	1342439424
+ 1406 0330 000052C7 		.word	-950927360
+ 1407 0334 000084CB 		.word	-880541696
+ 1408 0338 01000080 		.word	-2147483647
+ 1409 033c 00F0FF03 		.word	67104768
+ 1410              	.L164:
+ 1411              		.syntax unified
+ 1412              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1413 0340 93FAA3F3 		rbit r3, r3
+ 1414              	@ 0 "" 2
+ 1415              		.thumb
+ 1416              		.syntax unified
+ 1417 0344 5BB1     		cbz	r3, .L185
+ 1418 0346 B3FA83F3 		clz	r3, r3
+ 1419              	.L166:
+ 1420 034a 0133     		adds	r3, r3, #1
+ 1421 034c 03F01F03 		and	r3, r3, #31
+ 1422 0350 03EB4303 		add	r3, r3, r3, lsl #1
+ 1423 0354 1E3B     		subs	r3, r3, #30
+ 1424 0356 1B05     		lsls	r3, r3, #20
+ 1425 0358 43F00073 		orr	r3, r3, #33554432
+ 1426 035c C0E7     		b	.L165
+ 1427              	.L185:
+ 1428 035e 2023     		movs	r3, #32
+ 1429 0360 F3E7     		b	.L166
+ 1430              	.L167:
+ 1431 0362 636D     		ldr	r3, [r4, #84]
+ 1432 0364 43F02003 		orr	r3, r3, #32
+ 1433 0368 6365     		str	r3, [r4, #84]
+ 1434 036a 0120     		movs	r0, #1
+ 1435 036c 60E6     		b	.L123
+ 1436              	.L195:
+ 1437 036e 12F4000F 		tst	r2, #8388608
+ 1438 0372 7FF4A5AE 		bne	.L169
+ 1439 0376 2268     		ldr	r2, [r4]
+ 1440 0378 284B     		ldr	r3, .L206
+ 1441 037a 9A42     		cmp	r2, r3
+ 1442 037c 01D0     		beq	.L201
+ 1443 037e 0020     		movs	r0, #0
+ 1444 0380 56E6     		b	.L123
+ 1445              	.L201:
+ 1446 0382 40F40003 		orr	r3, r0, #8388608
+ 1447 0386 2649     		ldr	r1, .L206+4
+ 1448 0388 8A68     		ldr	r2, [r1, #8]
+ 1449 038a 22F0E072 		bic	r2, r2, #29360128
+ 1450 038e 1343     		orrs	r3, r3, r2
+ 1451 0390 8B60     		str	r3, [r1, #8]
+ 1452 0392 244B     		ldr	r3, .L206+8
+ 1453 0394 1B68     		ldr	r3, [r3]
+ 1454 0396 9B09     		lsrs	r3, r3, #6
+ 1455 0398 234A     		ldr	r2, .L206+12
+ 1456 039a A2FB0323 		umull	r2, r3, r2, r3
+ 1457 039e 9B09     		lsrs	r3, r3, #6
+ 1458 03a0 0133     		adds	r3, r3, #1
+ 1459 03a2 03EB4303 		add	r3, r3, r3, lsl #1
+ 1460 03a6 9B00     		lsls	r3, r3, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 26
+
+
+ 1461 03a8 0193     		str	r3, [sp, #4]
+ 1462 03aa 02E0     		b	.L170
+ 1463              	.L171:
+ 1464 03ac 019B     		ldr	r3, [sp, #4]
+ 1465 03ae 013B     		subs	r3, r3, #1
+ 1466 03b0 0193     		str	r3, [sp, #4]
+ 1467              	.L170:
+ 1468 03b2 019B     		ldr	r3, [sp, #4]
+ 1469 03b4 002B     		cmp	r3, #0
+ 1470 03b6 F9D1     		bne	.L171
+ 1471 03b8 0020     		movs	r0, #0
+ 1472 03ba 39E6     		b	.L123
+ 1473              	.L196:
+ 1474 03bc 12F0807F 		tst	r2, #16777216
+ 1475 03c0 7FF482AE 		bne	.L172
+ 1476 03c4 2268     		ldr	r2, [r4]
+ 1477 03c6 154B     		ldr	r3, .L206
+ 1478 03c8 9A42     		cmp	r2, r3
+ 1479 03ca 01D0     		beq	.L202
+ 1480 03cc 0020     		movs	r0, #0
+ 1481 03ce 2FE6     		b	.L123
+ 1482              	.L202:
+ 1483 03d0 40F08073 		orr	r3, r0, #16777216
+ 1484 03d4 1249     		ldr	r1, .L206+4
+ 1485 03d6 8A68     		ldr	r2, [r1, #8]
+ 1486 03d8 22F0E072 		bic	r2, r2, #29360128
+ 1487 03dc 1343     		orrs	r3, r3, r2
+ 1488 03de 8B60     		str	r3, [r1, #8]
+ 1489 03e0 0020     		movs	r0, #0
+ 1490 03e2 25E6     		b	.L123
+ 1491              	.L197:
+ 1492 03e4 12F4800F 		tst	r2, #4194304
+ 1493 03e8 13D1     		bne	.L190
+ 1494 03ea 2268     		ldr	r2, [r4]
+ 1495 03ec 0B4B     		ldr	r3, .L206
+ 1496 03ee 9A42     		cmp	r2, r3
+ 1497 03f0 01D0     		beq	.L203
+ 1498 03f2 0020     		movs	r0, #0
+ 1499 03f4 1CE6     		b	.L123
+ 1500              	.L203:
+ 1501 03f6 40F48003 		orr	r3, r0, #4194304
+ 1502 03fa 0949     		ldr	r1, .L206+4
+ 1503 03fc 8A68     		ldr	r2, [r1, #8]
+ 1504 03fe 22F0E072 		bic	r2, r2, #29360128
+ 1505 0402 1343     		orrs	r3, r3, r2
+ 1506 0404 8B60     		str	r3, [r1, #8]
+ 1507 0406 0020     		movs	r0, #0
+ 1508 0408 12E6     		b	.L123
+ 1509              	.L178:
+ 1510 040a 0020     		movs	r0, #0
+ 1511 040c 10E6     		b	.L123
+ 1512              	.L186:
+ 1513 040e 0020     		movs	r0, #0
+ 1514 0410 0EE6     		b	.L123
+ 1515              	.L190:
+ 1516 0412 0020     		movs	r0, #0
+ 1517 0414 0CE6     		b	.L123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 27
+
+
+ 1518              	.L173:
+ 1519 0416 0220     		movs	r0, #2
+ 1520 0418 0DE6     		b	.L121
+ 1521              	.L207:
+ 1522 041a 00BF     		.align	2
+ 1523              	.L206:
+ 1524 041c 00000450 		.word	1342439424
+ 1525 0420 00030450 		.word	1342440192
+ 1526 0424 00000000 		.word	SystemCoreClock
+ 1527 0428 632D3E05 		.word	87960931
+ 1529              		.section	.text.HAL_ADC_AnalogWDGConfig,"ax",%progbits
+ 1530              		.align	1
+ 1531              		.global	HAL_ADC_AnalogWDGConfig
+ 1532              		.syntax unified
+ 1533              		.thumb
+ 1534              		.thumb_func
+ 1536              	HAL_ADC_AnalogWDGConfig:
+ 1537              		@ args = 0, pretend = 0, frame = 0
+ 1538              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1539 0000 38B5     		push	{r3, r4, r5, lr}
+ 1540 0002 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 1541 0006 012B     		cmp	r3, #1
+ 1542 0008 00F07881 		beq	.L244
+ 1543 000c 0446     		mov	r4, r0
+ 1544 000e 0D46     		mov	r5, r1
+ 1545 0010 0123     		movs	r3, #1
+ 1546 0012 80F85030 		strb	r3, [r0, #80]
+ 1547 0016 0068     		ldr	r0, [r0]
+ 1548 0018 8368     		ldr	r3, [r0, #8]
+ 1549 001a 13F00403 		ands	r3, r3, #4
+ 1550 001e 00D0     		beq	.L210
+ 1551 0020 0123     		movs	r3, #1
+ 1552              	.L210:
+ 1553 0022 8268     		ldr	r2, [r0, #8]
+ 1554 0024 12F00802 		ands	r2, r2, #8
+ 1555 0028 00D0     		beq	.L211
+ 1556 002a 0122     		movs	r2, #1
+ 1557              	.L211:
+ 1558 002c 002B     		cmp	r3, #0
+ 1559 002e 40F05C81 		bne	.L212
+ 1560 0032 002A     		cmp	r2, #0
+ 1561 0034 40F05981 		bne	.L212
+ 1562 0038 2968     		ldr	r1, [r5]
+ 1563 003a B14B     		ldr	r3, .L254
+ 1564 003c 9942     		cmp	r1, r3
+ 1565 003e 5BD0     		beq	.L248
+ 1566 0040 6B68     		ldr	r3, [r5, #4]
+ 1567 0042 B3F1A07F 		cmp	r3, #20971520
+ 1568 0046 00F0F280 		beq	.L225
+ 1569 004a 00F2E580 		bhi	.L226
+ 1570 004e B3F5400F 		cmp	r3, #12582912
+ 1571 0052 00F0EC80 		beq	.L225
+ 1572 0056 B3F1807F 		cmp	r3, #16777216
+ 1573 005a 03D0     		beq	.L227
+ 1574 005c B3F5000F 		cmp	r3, #8388608
+ 1575 0060 40F0E180 		bne	.L228
+ 1576              	.L227:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 28
+
+
+ 1577 0064 A74A     		ldr	r2, .L254+4
+ 1578 0066 FFF7FEFF 		bl	LL_ADC_SetAnalogWDMonitChannels
+ 1579              	.L233:
+ 1580 006a 2268     		ldr	r2, [r4]
+ 1581 006c D368     		ldr	r3, [r2, #12]
+ 1582 006e 03F01803 		and	r3, r3, #24
+ 1583 0072 182B     		cmp	r3, #24
+ 1584 0074 00F01281 		beq	.L237
+ 1585 0078 2869     		ldr	r0, [r5, #16]
+ 1586 007a D368     		ldr	r3, [r2, #12]
+ 1587 007c C3F3C103 		ubfx	r3, r3, #3, #2
+ 1588 0080 C3F10203 		rsb	r3, r3, #2
+ 1589 0084 5B00     		lsls	r3, r3, #1
+ 1590 0086 03F01E03 		and	r3, r3, #30
+ 1591 008a D840     		lsrs	r0, r0, r3
+ 1592              	.L238:
+ 1593 008c D368     		ldr	r3, [r2, #12]
+ 1594 008e 03F01803 		and	r3, r3, #24
+ 1595 0092 182B     		cmp	r3, #24
+ 1596 0094 00F00581 		beq	.L239
+ 1597 0098 6969     		ldr	r1, [r5, #20]
+ 1598 009a D368     		ldr	r3, [r2, #12]
+ 1599 009c C3F3C103 		ubfx	r3, r3, #3, #2
+ 1600 00a0 C3F10203 		rsb	r3, r3, #2
+ 1601 00a4 5B00     		lsls	r3, r3, #1
+ 1602 00a6 03F01E03 		and	r3, r3, #30
+ 1603 00aa 21FA03FC 		lsr	ip, r1, r3
+ 1604              	.L240:
+ 1605 00ae 2B68     		ldr	r3, [r5]
+ 1606 00b0 2032     		adds	r2, r2, #32
+ 1607 00b2 1B0D     		lsrs	r3, r3, #20
+ 1608 00b4 9B00     		lsls	r3, r3, #2
+ 1609 00b6 03F00C03 		and	r3, r3, #12
+ 1610 00ba D158     		ldr	r1, [r2, r3]
+ 1611 00bc 01F0F021 		and	r1, r1, #-268374016
+ 1612 00c0 4CEA0040 		orr	r0, ip, r0, lsl #16
+ 1613 00c4 0143     		orrs	r1, r1, r0
+ 1614 00c6 D150     		str	r1, [r2, r3]
+ 1615 00c8 2A68     		ldr	r2, [r5]
+ 1616 00ca 8F4B     		ldr	r3, .L254+8
+ 1617 00cc 9A42     		cmp	r2, r3
+ 1618 00ce 00F0EC80 		beq	.L249
+ 1619 00d2 636D     		ldr	r3, [r4, #84]
+ 1620 00d4 23F48023 		bic	r3, r3, #262144
+ 1621 00d8 6365     		str	r3, [r4, #84]
+ 1622 00da 2368     		ldr	r3, [r4]
+ 1623 00dc 4FF40072 		mov	r2, #512
+ 1624 00e0 1A60     		str	r2, [r3]
+ 1625 00e2 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+ 1626 00e4 012B     		cmp	r3, #1
+ 1627 00e6 00F0F980 		beq	.L250
+ 1628 00ea 2268     		ldr	r2, [r4]
+ 1629 00ec 5368     		ldr	r3, [r2, #4]
+ 1630 00ee 23F40073 		bic	r3, r3, #512
+ 1631 00f2 5360     		str	r3, [r2, #4]
+ 1632 00f4 0020     		movs	r0, #0
+ 1633 00f6 FDE0     		b	.L224
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 29
+
+
+ 1634              	.L248:
+ 1635 00f8 6B68     		ldr	r3, [r5, #4]
+ 1636 00fa B3F1A07F 		cmp	r3, #20971520
+ 1637 00fe 5ED0     		beq	.L214
+ 1638 0100 11D8     		bhi	.L215
+ 1639 0102 B3F5400F 		cmp	r3, #12582912
+ 1640 0106 21D0     		beq	.L216
+ 1641 0108 B3F1807F 		cmp	r3, #16777216
+ 1642 010c 64D0     		beq	.L217
+ 1643 010e B3F5000F 		cmp	r3, #8388608
+ 1644 0112 73D1     		bne	.L219
+ 1645 0114 C368     		ldr	r3, [r0, #12]
+ 1646 0116 23F0FB43 		bic	r3, r3, #2105540608
+ 1647 011a 23F48003 		bic	r3, r3, #4194304
+ 1648 011e 43F40003 		orr	r3, r3, #8388608
+ 1649 0122 C360     		str	r3, [r0, #12]
+ 1650 0124 1EE0     		b	.L222
+ 1651              	.L215:
+ 1652 0126 B3F1C07F 		cmp	r3, #25165824
+ 1653 012a 5ED0     		beq	.L220
+ 1654 012c B3F1E07F 		cmp	r3, #29360128
+ 1655 0130 64D1     		bne	.L219
+ 1656 0132 AA68     		ldr	r2, [r5, #8]
+ 1657 0134 C368     		ldr	r3, [r0, #12]
+ 1658 0136 23F0FB43 		bic	r3, r3, #2105540608
+ 1659 013a 23F48003 		bic	r3, r3, #4194304
+ 1660 013e 02F0F842 		and	r2, r2, #2080374784
+ 1661 0142 42F0E072 		orr	r2, r2, #29360128
+ 1662 0146 1343     		orrs	r3, r3, r2
+ 1663 0148 C360     		str	r3, [r0, #12]
+ 1664 014a 0BE0     		b	.L222
+ 1665              	.L216:
+ 1666 014c AA68     		ldr	r2, [r5, #8]
+ 1667 014e C368     		ldr	r3, [r0, #12]
+ 1668 0150 23F0FB43 		bic	r3, r3, #2105540608
+ 1669 0154 23F48003 		bic	r3, r3, #4194304
+ 1670 0158 02F0F842 		and	r2, r2, #2080374784
+ 1671 015c 42F44002 		orr	r2, r2, #12582912
+ 1672 0160 1343     		orrs	r3, r3, r2
+ 1673 0162 C360     		str	r3, [r0, #12]
+ 1674              	.L222:
+ 1675 0164 2969     		ldr	r1, [r5, #16]
+ 1676 0166 2268     		ldr	r2, [r4]
+ 1677 0168 D368     		ldr	r3, [r2, #12]
+ 1678 016a C3F3C103 		ubfx	r3, r3, #3, #2
+ 1679 016e 5B00     		lsls	r3, r3, #1
+ 1680 0170 01FA03FC 		lsl	ip, r1, r3
+ 1681 0174 6B69     		ldr	r3, [r5, #20]
+ 1682 0176 D168     		ldr	r1, [r2, #12]
+ 1683 0178 C1F3C101 		ubfx	r1, r1, #3, #2
+ 1684 017c 4900     		lsls	r1, r1, #1
+ 1685 017e 03FA01F0 		lsl	r0, r3, r1
+ 1686 0182 2B68     		ldr	r3, [r5]
+ 1687 0184 2032     		adds	r2, r2, #32
+ 1688 0186 1B0D     		lsrs	r3, r3, #20
+ 1689 0188 9B00     		lsls	r3, r3, #2
+ 1690 018a 03F00C03 		and	r3, r3, #12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 30
+
+
+ 1691 018e D158     		ldr	r1, [r2, r3]
+ 1692 0190 01F0F021 		and	r1, r1, #-268374016
+ 1693 0194 40EA0C40 		orr	r0, r0, ip, lsl #16
+ 1694 0198 0143     		orrs	r1, r1, r0
+ 1695 019a D150     		str	r1, [r2, r3]
+ 1696 019c 636D     		ldr	r3, [r4, #84]
+ 1697 019e 23F48033 		bic	r3, r3, #65536
+ 1698 01a2 6365     		str	r3, [r4, #84]
+ 1699 01a4 2368     		ldr	r3, [r4]
+ 1700 01a6 8022     		movs	r2, #128
+ 1701 01a8 1A60     		str	r2, [r3]
+ 1702 01aa 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+ 1703 01ac 012B     		cmp	r3, #1
+ 1704 01ae 2CD0     		beq	.L251
+ 1705 01b0 2268     		ldr	r2, [r4]
+ 1706 01b2 5368     		ldr	r3, [r2, #4]
+ 1707 01b4 23F08003 		bic	r3, r3, #128
+ 1708 01b8 5360     		str	r3, [r2, #4]
+ 1709 01ba 0020     		movs	r0, #0
+ 1710 01bc 9AE0     		b	.L224
+ 1711              	.L214:
+ 1712 01be AA68     		ldr	r2, [r5, #8]
+ 1713 01c0 C368     		ldr	r3, [r0, #12]
+ 1714 01c2 23F0FB43 		bic	r3, r3, #2105540608
+ 1715 01c6 23F48003 		bic	r3, r3, #4194304
+ 1716 01ca 02F0F842 		and	r2, r2, #2080374784
+ 1717 01ce 42F0A072 		orr	r2, r2, #20971520
+ 1718 01d2 1343     		orrs	r3, r3, r2
+ 1719 01d4 C360     		str	r3, [r0, #12]
+ 1720 01d6 C5E7     		b	.L222
+ 1721              	.L217:
+ 1722 01d8 C368     		ldr	r3, [r0, #12]
+ 1723 01da 23F0FB43 		bic	r3, r3, #2105540608
+ 1724 01de 23F48003 		bic	r3, r3, #4194304
+ 1725 01e2 43F08073 		orr	r3, r3, #16777216
+ 1726 01e6 C360     		str	r3, [r0, #12]
+ 1727 01e8 BCE7     		b	.L222
+ 1728              	.L220:
+ 1729 01ea C368     		ldr	r3, [r0, #12]
+ 1730 01ec 23F0FB43 		bic	r3, r3, #2105540608
+ 1731 01f0 23F48003 		bic	r3, r3, #4194304
+ 1732 01f4 43F0C073 		orr	r3, r3, #25165824
+ 1733 01f8 C360     		str	r3, [r0, #12]
+ 1734 01fa B3E7     		b	.L222
+ 1735              	.L219:
+ 1736 01fc C368     		ldr	r3, [r0, #12]
+ 1737 01fe 23F0FB43 		bic	r3, r3, #2105540608
+ 1738 0202 23F48003 		bic	r3, r3, #4194304
+ 1739 0206 C360     		str	r3, [r0, #12]
+ 1740 0208 ACE7     		b	.L222
+ 1741              	.L251:
+ 1742 020a 2268     		ldr	r2, [r4]
+ 1743 020c 5368     		ldr	r3, [r2, #4]
+ 1744 020e 43F08003 		orr	r3, r3, #128
+ 1745 0212 5360     		str	r3, [r2, #4]
+ 1746 0214 0020     		movs	r0, #0
+ 1747 0216 6DE0     		b	.L224
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 31
+
+
+ 1748              	.L226:
+ 1749 0218 B3F1C07F 		cmp	r3, #25165824
+ 1750 021c 3FF422AF 		beq	.L227
+ 1751 0220 B3F1E07F 		cmp	r3, #29360128
+ 1752 0224 03D0     		beq	.L225
+ 1753              	.L228:
+ 1754 0226 0022     		movs	r2, #0
+ 1755 0228 FFF7FEFF 		bl	LL_ADC_SetAnalogWDMonitChannels
+ 1756 022c 1DE7     		b	.L233
+ 1757              	.L225:
+ 1758 022e 364B     		ldr	r3, .L254+8
+ 1759 0230 9942     		cmp	r1, r3
+ 1760 0232 0DD0     		beq	.L252
+ 1761 0234 AB68     		ldr	r3, [r5, #8]
+ 1762 0236 C3F31202 		ubfx	r2, r3, #0, #19
+ 1763 023a 1ABB     		cbnz	r2, .L234
+ 1764 023c C3F38463 		ubfx	r3, r3, #26, #5
+ 1765 0240 0122     		movs	r2, #1
+ 1766 0242 9A40     		lsls	r2, r2, r3
+ 1767              	.L235:
+ 1768 0244 D0F8A430 		ldr	r3, [r0, #164]
+ 1769 0248 1343     		orrs	r3, r3, r2
+ 1770 024a C0F8A430 		str	r3, [r0, #164]
+ 1771 024e 0CE7     		b	.L233
+ 1772              	.L252:
+ 1773 0250 AB68     		ldr	r3, [r5, #8]
+ 1774 0252 C3F31202 		ubfx	r2, r3, #0, #19
+ 1775 0256 4AB9     		cbnz	r2, .L230
+ 1776 0258 C3F38463 		ubfx	r3, r3, #26, #5
+ 1777 025c 0122     		movs	r2, #1
+ 1778 025e 9A40     		lsls	r2, r2, r3
+ 1779              	.L231:
+ 1780 0260 D0F8A030 		ldr	r3, [r0, #160]
+ 1781 0264 1343     		orrs	r3, r3, r2
+ 1782 0266 C0F8A030 		str	r3, [r0, #160]
+ 1783 026a FEE6     		b	.L233
+ 1784              	.L230:
+ 1785              		.syntax unified
+ 1786              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1787 026c 93FAA3F3 		rbit r3, r3
+ 1788              	@ 0 "" 2
+ 1789              		.thumb
+ 1790              		.syntax unified
+ 1791 0270 33B1     		cbz	r3, .L245
+ 1792 0272 B3FA83F3 		clz	r3, r3
+ 1793              	.L232:
+ 1794 0276 03F01F03 		and	r3, r3, #31
+ 1795 027a 0122     		movs	r2, #1
+ 1796 027c 9A40     		lsls	r2, r2, r3
+ 1797 027e EFE7     		b	.L231
+ 1798              	.L245:
+ 1799 0280 2023     		movs	r3, #32
+ 1800 0282 F8E7     		b	.L232
+ 1801              	.L234:
+ 1802              		.syntax unified
+ 1803              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1804 0284 93FAA3F3 		rbit r3, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 32
+
+
+ 1805              	@ 0 "" 2
+ 1806              		.thumb
+ 1807              		.syntax unified
+ 1808 0288 33B1     		cbz	r3, .L246
+ 1809 028a B3FA83F3 		clz	r3, r3
+ 1810              	.L236:
+ 1811 028e 03F01F03 		and	r3, r3, #31
+ 1812 0292 0122     		movs	r2, #1
+ 1813 0294 9A40     		lsls	r2, r2, r3
+ 1814 0296 D5E7     		b	.L235
+ 1815              	.L246:
+ 1816 0298 2023     		movs	r3, #32
+ 1817 029a F8E7     		b	.L236
+ 1818              	.L237:
+ 1819 029c 2869     		ldr	r0, [r5, #16]
+ 1820 029e 8000     		lsls	r0, r0, #2
+ 1821 02a0 F4E6     		b	.L238
+ 1822              	.L239:
+ 1823 02a2 6969     		ldr	r1, [r5, #20]
+ 1824 02a4 4FEA810C 		lsl	ip, r1, #2
+ 1825 02a8 01E7     		b	.L240
+ 1826              	.L249:
+ 1827 02aa 636D     		ldr	r3, [r4, #84]
+ 1828 02ac 23F40033 		bic	r3, r3, #131072
+ 1829 02b0 6365     		str	r3, [r4, #84]
+ 1830 02b2 2368     		ldr	r3, [r4]
+ 1831 02b4 4FF48072 		mov	r2, #256
+ 1832 02b8 1A60     		str	r2, [r3]
+ 1833 02ba 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+ 1834 02bc 012B     		cmp	r3, #1
+ 1835 02be 06D0     		beq	.L253
+ 1836 02c0 2268     		ldr	r2, [r4]
+ 1837 02c2 5368     		ldr	r3, [r2, #4]
+ 1838 02c4 23F48073 		bic	r3, r3, #256
+ 1839 02c8 5360     		str	r3, [r2, #4]
+ 1840 02ca 0020     		movs	r0, #0
+ 1841 02cc 12E0     		b	.L224
+ 1842              	.L253:
+ 1843 02ce 2268     		ldr	r2, [r4]
+ 1844 02d0 5368     		ldr	r3, [r2, #4]
+ 1845 02d2 43F48073 		orr	r3, r3, #256
+ 1846 02d6 5360     		str	r3, [r2, #4]
+ 1847 02d8 0020     		movs	r0, #0
+ 1848 02da 0BE0     		b	.L224
+ 1849              	.L250:
+ 1850 02dc 2268     		ldr	r2, [r4]
+ 1851 02de 5368     		ldr	r3, [r2, #4]
+ 1852 02e0 43F40073 		orr	r3, r3, #512
+ 1853 02e4 5360     		str	r3, [r2, #4]
+ 1854 02e6 0020     		movs	r0, #0
+ 1855 02e8 04E0     		b	.L224
+ 1856              	.L212:
+ 1857 02ea 636D     		ldr	r3, [r4, #84]
+ 1858 02ec 43F02003 		orr	r3, r3, #32
+ 1859 02f0 6365     		str	r3, [r4, #84]
+ 1860 02f2 0120     		movs	r0, #1
+ 1861              	.L224:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 33
+
+
+ 1862 02f4 0023     		movs	r3, #0
+ 1863 02f6 84F85030 		strb	r3, [r4, #80]
+ 1864              	.L209:
+ 1865 02fa 38BD     		pop	{r3, r4, r5, pc}
+ 1866              	.L244:
+ 1867 02fc 0220     		movs	r0, #2
+ 1868 02fe FCE7     		b	.L209
+ 1869              	.L255:
+ 1870              		.align	2
+ 1871              	.L254:
+ 1872 0300 0000C07D 		.word	2109734912
+ 1873 0304 FFFF8701 		.word	25690111
+ 1874 0308 FFFF1700 		.word	1572863
+ 1876              		.section	.text.HAL_ADC_GetState,"ax",%progbits
+ 1877              		.align	1
+ 1878              		.global	HAL_ADC_GetState
+ 1879              		.syntax unified
+ 1880              		.thumb
+ 1881              		.thumb_func
+ 1883              	HAL_ADC_GetState:
+ 1884              		@ args = 0, pretend = 0, frame = 0
+ 1885              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1886              		@ link register save eliminated.
+ 1887 0000 406D     		ldr	r0, [r0, #84]
+ 1888 0002 7047     		bx	lr
+ 1890              		.section	.text.HAL_ADC_GetError,"ax",%progbits
+ 1891              		.align	1
+ 1892              		.global	HAL_ADC_GetError
+ 1893              		.syntax unified
+ 1894              		.thumb
+ 1895              		.thumb_func
+ 1897              	HAL_ADC_GetError:
+ 1898              		@ args = 0, pretend = 0, frame = 0
+ 1899              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1900              		@ link register save eliminated.
+ 1901 0000 806D     		ldr	r0, [r0, #88]
+ 1902 0002 7047     		bx	lr
+ 1904              		.section	.text.ADC_ConversionStop,"ax",%progbits
+ 1905              		.align	1
+ 1906              		.global	ADC_ConversionStop
+ 1907              		.syntax unified
+ 1908              		.thumb
+ 1909              		.thumb_func
+ 1911              	ADC_ConversionStop:
+ 1912              		@ args = 0, pretend = 0, frame = 0
+ 1913              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1914 0000 70B5     		push	{r4, r5, r6, lr}
+ 1915 0002 0446     		mov	r4, r0
+ 1916 0004 0368     		ldr	r3, [r0]
+ 1917 0006 9A68     		ldr	r2, [r3, #8]
+ 1918 0008 12F00402 		ands	r2, r2, #4
+ 1919 000c 00D0     		beq	.L259
+ 1920 000e 0122     		movs	r2, #1
+ 1921              	.L259:
+ 1922 0010 9868     		ldr	r0, [r3, #8]
+ 1923 0012 10F00800 		ands	r0, r0, #8
+ 1924 0016 00D0     		beq	.L260
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 34
+
+
+ 1925 0018 0120     		movs	r0, #1
+ 1926              	.L260:
+ 1927 001a 0AB9     		cbnz	r2, .L261
+ 1928 001c 0028     		cmp	r0, #0
+ 1929 001e 6DD0     		beq	.L274
+ 1930              	.L261:
+ 1931 0020 DA68     		ldr	r2, [r3, #12]
+ 1932 0022 12F0007F 		tst	r2, #33554432
+ 1933 0026 04D0     		beq	.L263
+ 1934 0028 208B     		ldrh	r0, [r4, #24]
+ 1935 002a 40F20112 		movw	r2, #257
+ 1936 002e 9042     		cmp	r0, r2
+ 1937 0030 4ED0     		beq	.L280
+ 1938              	.L263:
+ 1939 0032 0229     		cmp	r1, #2
+ 1940 0034 12D0     		beq	.L268
+ 1941              	.L267:
+ 1942 0036 2368     		ldr	r3, [r4]
+ 1943 0038 9A68     		ldr	r2, [r3, #8]
+ 1944 003a 12F0040F 		tst	r2, #4
+ 1945 003e 0BD0     		beq	.L269
+ 1946 0040 9A68     		ldr	r2, [r3, #8]
+ 1947 0042 12F0020F 		tst	r2, #2
+ 1948 0046 07D1     		bne	.L269
+ 1949 0048 9A68     		ldr	r2, [r3, #8]
+ 1950 004a 22F00042 		bic	r2, r2, #-2147483648
+ 1951 004e 22F03F02 		bic	r2, r2, #63
+ 1952 0052 42F01002 		orr	r2, r2, #16
+ 1953 0056 9A60     		str	r2, [r3, #8]
+ 1954              	.L269:
+ 1955 0058 0129     		cmp	r1, #1
+ 1956 005a 47D0     		beq	.L276
+ 1957              	.L268:
+ 1958 005c 2368     		ldr	r3, [r4]
+ 1959 005e 9A68     		ldr	r2, [r3, #8]
+ 1960 0060 12F0080F 		tst	r2, #8
+ 1961 0064 0BD0     		beq	.L271
+ 1962 0066 9A68     		ldr	r2, [r3, #8]
+ 1963 0068 12F0020F 		tst	r2, #2
+ 1964 006c 07D1     		bne	.L271
+ 1965 006e 9A68     		ldr	r2, [r3, #8]
+ 1966 0070 22F00042 		bic	r2, r2, #-2147483648
+ 1967 0074 22F03F02 		bic	r2, r2, #63
+ 1968 0078 42F02002 		orr	r2, r2, #32
+ 1969 007c 9A60     		str	r2, [r3, #8]
+ 1970              	.L271:
+ 1971 007e 0229     		cmp	r1, #2
+ 1972 0080 36D0     		beq	.L277
+ 1973 0082 0329     		cmp	r1, #3
+ 1974 0084 36D1     		bne	.L278
+ 1975 0086 0C25     		movs	r5, #12
+ 1976              	.L270:
+ 1977 0088 FFF7FEFF 		bl	HAL_GetTick
+ 1978 008c 0646     		mov	r6, r0
+ 1979              	.L272:
+ 1980 008e 2368     		ldr	r3, [r4]
+ 1981 0090 9B68     		ldr	r3, [r3, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 35
+
+
+ 1982 0092 2B42     		tst	r3, r5
+ 1983 0094 30D0     		beq	.L281
+ 1984 0096 FFF7FEFF 		bl	HAL_GetTick
+ 1985 009a 801B     		subs	r0, r0, r6
+ 1986 009c 0528     		cmp	r0, #5
+ 1987 009e F6D9     		bls	.L272
+ 1988 00a0 2368     		ldr	r3, [r4]
+ 1989 00a2 9B68     		ldr	r3, [r3, #8]
+ 1990 00a4 2B42     		tst	r3, r5
+ 1991 00a6 F2D0     		beq	.L272
+ 1992 00a8 636D     		ldr	r3, [r4, #84]
+ 1993 00aa 43F01003 		orr	r3, r3, #16
+ 1994 00ae 6365     		str	r3, [r4, #84]
+ 1995 00b0 A36D     		ldr	r3, [r4, #88]
+ 1996 00b2 43F00103 		orr	r3, r3, #1
+ 1997 00b6 A365     		str	r3, [r4, #88]
+ 1998 00b8 0120     		movs	r0, #1
+ 1999 00ba 1EE0     		b	.L262
+ 2000              	.L283:
+ 2001 00bc 636D     		ldr	r3, [r4, #84]
+ 2002 00be 43F01003 		orr	r3, r3, #16
+ 2003 00c2 6365     		str	r3, [r4, #84]
+ 2004 00c4 A36D     		ldr	r3, [r4, #88]
+ 2005 00c6 43F00103 		orr	r3, r3, #1
+ 2006 00ca A365     		str	r3, [r4, #88]
+ 2007 00cc 0120     		movs	r0, #1
+ 2008 00ce 14E0     		b	.L262
+ 2009              	.L280:
+ 2010 00d0 0022     		movs	r2, #0
+ 2011              	.L264:
+ 2012 00d2 1968     		ldr	r1, [r3]
+ 2013 00d4 11F0400F 		tst	r1, #64
+ 2014 00d8 04D1     		bne	.L282
+ 2015 00da 0949     		ldr	r1, .L284
+ 2016 00dc 8A42     		cmp	r2, r1
+ 2017 00de EDD8     		bhi	.L283
+ 2018 00e0 0132     		adds	r2, r2, #1
+ 2019 00e2 F6E7     		b	.L264
+ 2020              	.L282:
+ 2021 00e4 4022     		movs	r2, #64
+ 2022 00e6 1A60     		str	r2, [r3]
+ 2023 00e8 0121     		movs	r1, #1
+ 2024 00ea A4E7     		b	.L267
+ 2025              	.L276:
+ 2026 00ec 0425     		movs	r5, #4
+ 2027 00ee CBE7     		b	.L270
+ 2028              	.L277:
+ 2029 00f0 0825     		movs	r5, #8
+ 2030 00f2 C9E7     		b	.L270
+ 2031              	.L278:
+ 2032 00f4 0425     		movs	r5, #4
+ 2033 00f6 C7E7     		b	.L270
+ 2034              	.L281:
+ 2035 00f8 0020     		movs	r0, #0
+ 2036              	.L262:
+ 2037 00fa 70BD     		pop	{r4, r5, r6, pc}
+ 2038              	.L274:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 36
+
+
+ 2039 00fc 0020     		movs	r0, #0
+ 2040 00fe FCE7     		b	.L262
+ 2041              	.L285:
+ 2042              		.align	2
+ 2043              	.L284:
+ 2044 0100 FFFF3FA3 		.word	-1556086785
+ 2046              		.section	.text.ADC_Enable,"ax",%progbits
+ 2047              		.align	1
+ 2048              		.global	ADC_Enable
+ 2049              		.syntax unified
+ 2050              		.thumb
+ 2051              		.thumb_func
+ 2053              	ADC_Enable:
+ 2054              		@ args = 0, pretend = 0, frame = 8
+ 2055              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2056 0000 30B5     		push	{r4, r5, lr}
+ 2057 0002 83B0     		sub	sp, sp, #12
+ 2058 0004 0023     		movs	r3, #0
+ 2059 0006 0193     		str	r3, [sp, #4]
+ 2060 0008 0368     		ldr	r3, [r0]
+ 2061 000a 9A68     		ldr	r2, [r3, #8]
+ 2062 000c 12F0010F 		tst	r2, #1
+ 2063 0010 52D1     		bne	.L295
+ 2064 0012 0446     		mov	r4, r0
+ 2065 0014 9968     		ldr	r1, [r3, #8]
+ 2066 0016 2A4A     		ldr	r2, .L300
+ 2067 0018 1142     		tst	r1, r2
+ 2068 001a 16D1     		bne	.L297
+ 2069 001c 9A68     		ldr	r2, [r3, #8]
+ 2070 001e 22F00042 		bic	r2, r2, #-2147483648
+ 2071 0022 22F03F02 		bic	r2, r2, #63
+ 2072 0026 42F00102 		orr	r2, r2, #1
+ 2073 002a 9A60     		str	r2, [r3, #8]
+ 2074 002c 254B     		ldr	r3, .L300+4
+ 2075 002e 9B68     		ldr	r3, [r3, #8]
+ 2076 0030 13F4000F 		tst	r3, #8388608
+ 2077 0034 19D0     		beq	.L289
+ 2078 0036 244B     		ldr	r3, .L300+8
+ 2079 0038 1B68     		ldr	r3, [r3]
+ 2080 003a 9B09     		lsrs	r3, r3, #6
+ 2081 003c 234A     		ldr	r2, .L300+12
+ 2082 003e A2FB0323 		umull	r2, r3, r2, r3
+ 2083 0042 9B09     		lsrs	r3, r3, #6
+ 2084 0044 0133     		adds	r3, r3, #1
+ 2085 0046 0193     		str	r3, [sp, #4]
+ 2086 0048 0CE0     		b	.L290
+ 2087              	.L297:
+ 2088 004a 436D     		ldr	r3, [r0, #84]
+ 2089 004c 43F01003 		orr	r3, r3, #16
+ 2090 0050 4365     		str	r3, [r0, #84]
+ 2091 0052 836D     		ldr	r3, [r0, #88]
+ 2092 0054 43F00103 		orr	r3, r3, #1
+ 2093 0058 8365     		str	r3, [r0, #88]
+ 2094 005a 0120     		movs	r0, #1
+ 2095 005c 2DE0     		b	.L287
+ 2096              	.L291:
+ 2097 005e 019B     		ldr	r3, [sp, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 37
+
+
+ 2098 0060 013B     		subs	r3, r3, #1
+ 2099 0062 0193     		str	r3, [sp, #4]
+ 2100              	.L290:
+ 2101 0064 019B     		ldr	r3, [sp, #4]
+ 2102 0066 002B     		cmp	r3, #0
+ 2103 0068 F9D1     		bne	.L291
+ 2104              	.L289:
+ 2105 006a FFF7FEFF 		bl	HAL_GetTick
+ 2106 006e 0546     		mov	r5, r0
+ 2107 0070 04E0     		b	.L292
+ 2108              	.L293:
+ 2109 0072 FFF7FEFF 		bl	HAL_GetTick
+ 2110 0076 431B     		subs	r3, r0, r5
+ 2111 0078 022B     		cmp	r3, #2
+ 2112 007a 11D8     		bhi	.L298
+ 2113              	.L292:
+ 2114 007c 2368     		ldr	r3, [r4]
+ 2115 007e 1A68     		ldr	r2, [r3]
+ 2116 0080 12F0010F 		tst	r2, #1
+ 2117 0084 16D1     		bne	.L299
+ 2118 0086 9A68     		ldr	r2, [r3, #8]
+ 2119 0088 12F0010F 		tst	r2, #1
+ 2120 008c F1D1     		bne	.L293
+ 2121 008e 9A68     		ldr	r2, [r3, #8]
+ 2122 0090 22F00042 		bic	r2, r2, #-2147483648
+ 2123 0094 22F03F02 		bic	r2, r2, #63
+ 2124 0098 42F00102 		orr	r2, r2, #1
+ 2125 009c 9A60     		str	r2, [r3, #8]
+ 2126 009e E8E7     		b	.L293
+ 2127              	.L298:
+ 2128 00a0 636D     		ldr	r3, [r4, #84]
+ 2129 00a2 43F01003 		orr	r3, r3, #16
+ 2130 00a6 6365     		str	r3, [r4, #84]
+ 2131 00a8 A36D     		ldr	r3, [r4, #88]
+ 2132 00aa 43F00103 		orr	r3, r3, #1
+ 2133 00ae A365     		str	r3, [r4, #88]
+ 2134 00b0 0120     		movs	r0, #1
+ 2135 00b2 02E0     		b	.L287
+ 2136              	.L299:
+ 2137 00b4 0020     		movs	r0, #0
+ 2138 00b6 00E0     		b	.L287
+ 2139              	.L295:
+ 2140 00b8 0020     		movs	r0, #0
+ 2141              	.L287:
+ 2142 00ba 03B0     		add	sp, sp, #12
+ 2143              		@ sp needed
+ 2144 00bc 30BD     		pop	{r4, r5, pc}
+ 2145              	.L301:
+ 2146 00be 00BF     		.align	2
+ 2147              	.L300:
+ 2148 00c0 3F000080 		.word	-2147483585
+ 2149 00c4 00030450 		.word	1342440192
+ 2150 00c8 00000000 		.word	SystemCoreClock
+ 2151 00cc 632D3E05 		.word	87960931
+ 2153              		.section	.text.HAL_ADC_Start,"ax",%progbits
+ 2154              		.align	1
+ 2155              		.global	HAL_ADC_Start
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 38
+
+
+ 2156              		.syntax unified
+ 2157              		.thumb
+ 2158              		.thumb_func
+ 2160              	HAL_ADC_Start:
+ 2161              		@ args = 0, pretend = 0, frame = 0
+ 2162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2163 0000 0368     		ldr	r3, [r0]
+ 2164 0002 9B68     		ldr	r3, [r3, #8]
+ 2165 0004 13F0040F 		tst	r3, #4
+ 2166 0008 32D1     		bne	.L307
+ 2167 000a 10B5     		push	{r4, lr}
+ 2168 000c 0446     		mov	r4, r0
+ 2169 000e 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 2170 0012 012B     		cmp	r3, #1
+ 2171 0014 2ED0     		beq	.L308
+ 2172 0016 0123     		movs	r3, #1
+ 2173 0018 80F85030 		strb	r3, [r0, #80]
+ 2174 001c FFF7FEFF 		bl	ADC_Enable
+ 2175 0020 10BB     		cbnz	r0, .L304
+ 2176 0022 636D     		ldr	r3, [r4, #84]
+ 2177 0024 23F47063 		bic	r3, r3, #3840
+ 2178 0028 23F00103 		bic	r3, r3, #1
+ 2179 002c 43F48073 		orr	r3, r3, #256
+ 2180 0030 6365     		str	r3, [r4, #84]
+ 2181 0032 636D     		ldr	r3, [r4, #84]
+ 2182 0034 13F4805F 		tst	r3, #4096
+ 2183 0038 13D0     		beq	.L305
+ 2184 003a A36D     		ldr	r3, [r4, #88]
+ 2185 003c 23F00603 		bic	r3, r3, #6
+ 2186 0040 A365     		str	r3, [r4, #88]
+ 2187              	.L306:
+ 2188 0042 2368     		ldr	r3, [r4]
+ 2189 0044 1C22     		movs	r2, #28
+ 2190 0046 1A60     		str	r2, [r3]
+ 2191 0048 0023     		movs	r3, #0
+ 2192 004a 84F85030 		strb	r3, [r4, #80]
+ 2193 004e 2268     		ldr	r2, [r4]
+ 2194 0050 9368     		ldr	r3, [r2, #8]
+ 2195 0052 23F00043 		bic	r3, r3, #-2147483648
+ 2196 0056 23F03F03 		bic	r3, r3, #63
+ 2197 005a 43F00403 		orr	r3, r3, #4
+ 2198 005e 9360     		str	r3, [r2, #8]
+ 2199              	.L303:
+ 2200 0060 10BD     		pop	{r4, pc}
+ 2201              	.L305:
+ 2202 0062 0023     		movs	r3, #0
+ 2203 0064 A365     		str	r3, [r4, #88]
+ 2204 0066 ECE7     		b	.L306
+ 2205              	.L304:
+ 2206 0068 0023     		movs	r3, #0
+ 2207 006a 84F85030 		strb	r3, [r4, #80]
+ 2208 006e F7E7     		b	.L303
+ 2209              	.L307:
+ 2210 0070 0220     		movs	r0, #2
+ 2211 0072 7047     		bx	lr
+ 2212              	.L308:
+ 2213 0074 0220     		movs	r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 39
+
+
+ 2214 0076 F3E7     		b	.L303
+ 2216              		.section	.text.HAL_ADC_Start_IT,"ax",%progbits
+ 2217              		.align	1
+ 2218              		.global	HAL_ADC_Start_IT
+ 2219              		.syntax unified
+ 2220              		.thumb
+ 2221              		.thumb_func
+ 2223              	HAL_ADC_Start_IT:
+ 2224              		@ args = 0, pretend = 0, frame = 0
+ 2225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2226 0000 0368     		ldr	r3, [r0]
+ 2227 0002 9B68     		ldr	r3, [r3, #8]
+ 2228 0004 13F0040F 		tst	r3, #4
+ 2229 0008 4DD1     		bne	.L321
+ 2230 000a 10B5     		push	{r4, lr}
+ 2231 000c 0446     		mov	r4, r0
+ 2232 000e 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 2233 0012 012B     		cmp	r3, #1
+ 2234 0014 49D0     		beq	.L322
+ 2235 0016 0123     		movs	r3, #1
+ 2236 0018 80F85030 		strb	r3, [r0, #80]
+ 2237 001c FFF7FEFF 		bl	ADC_Enable
+ 2238 0020 0028     		cmp	r0, #0
+ 2239 0022 3CD1     		bne	.L315
+ 2240 0024 636D     		ldr	r3, [r4, #84]
+ 2241 0026 23F47063 		bic	r3, r3, #3840
+ 2242 002a 23F00103 		bic	r3, r3, #1
+ 2243 002e 43F48073 		orr	r3, r3, #256
+ 2244 0032 6365     		str	r3, [r4, #84]
+ 2245 0034 636D     		ldr	r3, [r4, #84]
+ 2246 0036 13F4805F 		tst	r3, #4096
+ 2247 003a 27D0     		beq	.L316
+ 2248 003c A36D     		ldr	r3, [r4, #88]
+ 2249 003e 23F00603 		bic	r3, r3, #6
+ 2250 0042 A365     		str	r3, [r4, #88]
+ 2251              	.L317:
+ 2252 0044 2368     		ldr	r3, [r4]
+ 2253 0046 1C22     		movs	r2, #28
+ 2254 0048 1A60     		str	r2, [r3]
+ 2255 004a 0023     		movs	r3, #0
+ 2256 004c 84F85030 		strb	r3, [r4, #80]
+ 2257 0050 2268     		ldr	r2, [r4]
+ 2258 0052 5368     		ldr	r3, [r2, #4]
+ 2259 0054 23F01C03 		bic	r3, r3, #28
+ 2260 0058 5360     		str	r3, [r2, #4]
+ 2261 005a 6369     		ldr	r3, [r4, #20]
+ 2262 005c 082B     		cmp	r3, #8
+ 2263 005e 18D0     		beq	.L327
+ 2264 0060 2268     		ldr	r2, [r4]
+ 2265 0062 5368     		ldr	r3, [r2, #4]
+ 2266 0064 43F00403 		orr	r3, r3, #4
+ 2267 0068 5360     		str	r3, [r2, #4]
+ 2268              	.L319:
+ 2269 006a 636B     		ldr	r3, [r4, #52]
+ 2270 006c 23B9     		cbnz	r3, .L320
+ 2271 006e 2268     		ldr	r2, [r4]
+ 2272 0070 5368     		ldr	r3, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 40
+
+
+ 2273 0072 43F01003 		orr	r3, r3, #16
+ 2274 0076 5360     		str	r3, [r2, #4]
+ 2275              	.L320:
+ 2276 0078 2268     		ldr	r2, [r4]
+ 2277 007a 9368     		ldr	r3, [r2, #8]
+ 2278 007c 23F00043 		bic	r3, r3, #-2147483648
+ 2279 0080 23F03F03 		bic	r3, r3, #63
+ 2280 0084 43F00403 		orr	r3, r3, #4
+ 2281 0088 9360     		str	r3, [r2, #8]
+ 2282              	.L314:
+ 2283 008a 10BD     		pop	{r4, pc}
+ 2284              	.L316:
+ 2285 008c 0023     		movs	r3, #0
+ 2286 008e A365     		str	r3, [r4, #88]
+ 2287 0090 D8E7     		b	.L317
+ 2288              	.L327:
+ 2289 0092 2268     		ldr	r2, [r4]
+ 2290 0094 5368     		ldr	r3, [r2, #4]
+ 2291 0096 43F00803 		orr	r3, r3, #8
+ 2292 009a 5360     		str	r3, [r2, #4]
+ 2293 009c E5E7     		b	.L319
+ 2294              	.L315:
+ 2295 009e 0023     		movs	r3, #0
+ 2296 00a0 84F85030 		strb	r3, [r4, #80]
+ 2297 00a4 F1E7     		b	.L314
+ 2298              	.L321:
+ 2299 00a6 0220     		movs	r0, #2
+ 2300 00a8 7047     		bx	lr
+ 2301              	.L322:
+ 2302 00aa 0220     		movs	r0, #2
+ 2303 00ac EDE7     		b	.L314
+ 2305              		.section	.text.HAL_ADC_Start_DMA,"ax",%progbits
+ 2306              		.align	1
+ 2307              		.global	HAL_ADC_Start_DMA
+ 2308              		.syntax unified
+ 2309              		.thumb
+ 2310              		.thumb_func
+ 2312              	HAL_ADC_Start_DMA:
+ 2313              		@ args = 0, pretend = 0, frame = 0
+ 2314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2315 0000 70B5     		push	{r4, r5, r6, lr}
+ 2316 0002 0446     		mov	r4, r0
+ 2317 0004 0068     		ldr	r0, [r0]
+ 2318 0006 8068     		ldr	r0, [r0, #8]
+ 2319 0008 10F0040F 		tst	r0, #4
+ 2320 000c 4ED1     		bne	.L333
+ 2321 000e 0E46     		mov	r6, r1
+ 2322 0010 1546     		mov	r5, r2
+ 2323 0012 94F85030 		ldrb	r3, [r4, #80]	@ zero_extendqisi2
+ 2324 0016 012B     		cmp	r3, #1
+ 2325 0018 4AD0     		beq	.L334
+ 2326 001a 0123     		movs	r3, #1
+ 2327 001c 84F85030 		strb	r3, [r4, #80]
+ 2328 0020 2046     		mov	r0, r4
+ 2329 0022 FFF7FEFF 		bl	ADC_Enable
+ 2330 0026 0028     		cmp	r0, #0
+ 2331 0028 3CD1     		bne	.L330
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 41
+
+
+ 2332 002a 636D     		ldr	r3, [r4, #84]
+ 2333 002c 23F47063 		bic	r3, r3, #3840
+ 2334 0030 23F00103 		bic	r3, r3, #1
+ 2335 0034 43F48073 		orr	r3, r3, #256
+ 2336 0038 6365     		str	r3, [r4, #84]
+ 2337 003a 636D     		ldr	r3, [r4, #84]
+ 2338 003c 13F4805F 		tst	r3, #4096
+ 2339 0040 2DD0     		beq	.L331
+ 2340 0042 A36D     		ldr	r3, [r4, #88]
+ 2341 0044 23F00603 		bic	r3, r3, #6
+ 2342 0048 A365     		str	r3, [r4, #88]
+ 2343              	.L332:
+ 2344 004a E36C     		ldr	r3, [r4, #76]
+ 2345 004c 194A     		ldr	r2, .L336
+ 2346 004e DA62     		str	r2, [r3, #44]
+ 2347 0050 E36C     		ldr	r3, [r4, #76]
+ 2348 0052 194A     		ldr	r2, .L336+4
+ 2349 0054 1A63     		str	r2, [r3, #48]
+ 2350 0056 E36C     		ldr	r3, [r4, #76]
+ 2351 0058 184A     		ldr	r2, .L336+8
+ 2352 005a 5A63     		str	r2, [r3, #52]
+ 2353 005c 2368     		ldr	r3, [r4]
+ 2354 005e 1C22     		movs	r2, #28
+ 2355 0060 1A60     		str	r2, [r3]
+ 2356 0062 0023     		movs	r3, #0
+ 2357 0064 84F85030 		strb	r3, [r4, #80]
+ 2358 0068 2268     		ldr	r2, [r4]
+ 2359 006a 5368     		ldr	r3, [r2, #4]
+ 2360 006c 43F01003 		orr	r3, r3, #16
+ 2361 0070 5360     		str	r3, [r2, #4]
+ 2362 0072 2268     		ldr	r2, [r4]
+ 2363 0074 D368     		ldr	r3, [r2, #12]
+ 2364 0076 43F00103 		orr	r3, r3, #1
+ 2365 007a D360     		str	r3, [r2, #12]
+ 2366 007c 2168     		ldr	r1, [r4]
+ 2367 007e 2B46     		mov	r3, r5
+ 2368 0080 3246     		mov	r2, r6
+ 2369 0082 4031     		adds	r1, r1, #64
+ 2370 0084 E06C     		ldr	r0, [r4, #76]
+ 2371 0086 FFF7FEFF 		bl	HAL_DMA_Start_IT
+ 2372 008a 2268     		ldr	r2, [r4]
+ 2373 008c 9368     		ldr	r3, [r2, #8]
+ 2374 008e 23F00043 		bic	r3, r3, #-2147483648
+ 2375 0092 23F03F03 		bic	r3, r3, #63
+ 2376 0096 43F00403 		orr	r3, r3, #4
+ 2377 009a 9360     		str	r3, [r2, #8]
+ 2378 009c 07E0     		b	.L329
+ 2379              	.L331:
+ 2380 009e 0023     		movs	r3, #0
+ 2381 00a0 A365     		str	r3, [r4, #88]
+ 2382 00a2 D2E7     		b	.L332
+ 2383              	.L330:
+ 2384 00a4 0023     		movs	r3, #0
+ 2385 00a6 84F85030 		strb	r3, [r4, #80]
+ 2386 00aa 00E0     		b	.L329
+ 2387              	.L333:
+ 2388 00ac 0220     		movs	r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 42
+
+
+ 2389              	.L329:
+ 2390 00ae 70BD     		pop	{r4, r5, r6, pc}
+ 2391              	.L334:
+ 2392 00b0 0220     		movs	r0, #2
+ 2393 00b2 FCE7     		b	.L329
+ 2394              	.L337:
+ 2395              		.align	2
+ 2396              	.L336:
+ 2397 00b4 00000000 		.word	ADC_DMAConvCplt
+ 2398 00b8 00000000 		.word	ADC_DMAHalfConvCplt
+ 2399 00bc 00000000 		.word	ADC_DMAError
+ 2401              		.section	.text.ADC_Disable,"ax",%progbits
+ 2402              		.align	1
+ 2403              		.global	ADC_Disable
+ 2404              		.syntax unified
+ 2405              		.thumb
+ 2406              		.thumb_func
+ 2408              	ADC_Disable:
+ 2409              		@ args = 0, pretend = 0, frame = 0
+ 2410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2411 0000 38B5     		push	{r3, r4, r5, lr}
+ 2412 0002 0446     		mov	r4, r0
+ 2413 0004 0268     		ldr	r2, [r0]
+ 2414 0006 9368     		ldr	r3, [r2, #8]
+ 2415 0008 13F00203 		ands	r3, r3, #2
+ 2416 000c 00D0     		beq	.L339
+ 2417 000e 0123     		movs	r3, #1
+ 2418              	.L339:
+ 2419 0010 9168     		ldr	r1, [r2, #8]
+ 2420 0012 11F0010F 		tst	r1, #1
+ 2421 0016 39D0     		beq	.L344
+ 2422 0018 002B     		cmp	r3, #0
+ 2423 001a 39D1     		bne	.L345
+ 2424 001c 9368     		ldr	r3, [r2, #8]
+ 2425 001e 03F00D03 		and	r3, r3, #13
+ 2426 0022 012B     		cmp	r3, #1
+ 2427 0024 09D0     		beq	.L347
+ 2428 0026 636D     		ldr	r3, [r4, #84]
+ 2429 0028 43F01003 		orr	r3, r3, #16
+ 2430 002c 6365     		str	r3, [r4, #84]
+ 2431 002e A36D     		ldr	r3, [r4, #88]
+ 2432 0030 43F00103 		orr	r3, r3, #1
+ 2433 0034 A365     		str	r3, [r4, #88]
+ 2434 0036 0120     		movs	r0, #1
+ 2435 0038 29E0     		b	.L340
+ 2436              	.L347:
+ 2437 003a 9368     		ldr	r3, [r2, #8]
+ 2438 003c 23F00043 		bic	r3, r3, #-2147483648
+ 2439 0040 23F03F03 		bic	r3, r3, #63
+ 2440 0044 43F00203 		orr	r3, r3, #2
+ 2441 0048 9360     		str	r3, [r2, #8]
+ 2442 004a 2368     		ldr	r3, [r4]
+ 2443 004c 0322     		movs	r2, #3
+ 2444 004e 1A60     		str	r2, [r3]
+ 2445 0050 FFF7FEFF 		bl	HAL_GetTick
+ 2446 0054 0546     		mov	r5, r0
+ 2447              	.L342:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 43
+
+
+ 2448 0056 2368     		ldr	r3, [r4]
+ 2449 0058 9B68     		ldr	r3, [r3, #8]
+ 2450 005a 13F0010F 		tst	r3, #1
+ 2451 005e 13D0     		beq	.L348
+ 2452 0060 FFF7FEFF 		bl	HAL_GetTick
+ 2453 0064 401B     		subs	r0, r0, r5
+ 2454 0066 0228     		cmp	r0, #2
+ 2455 0068 F5D9     		bls	.L342
+ 2456 006a 2368     		ldr	r3, [r4]
+ 2457 006c 9B68     		ldr	r3, [r3, #8]
+ 2458 006e 13F0010F 		tst	r3, #1
+ 2459 0072 F0D0     		beq	.L342
+ 2460 0074 636D     		ldr	r3, [r4, #84]
+ 2461 0076 43F01003 		orr	r3, r3, #16
+ 2462 007a 6365     		str	r3, [r4, #84]
+ 2463 007c A36D     		ldr	r3, [r4, #88]
+ 2464 007e 43F00103 		orr	r3, r3, #1
+ 2465 0082 A365     		str	r3, [r4, #88]
+ 2466 0084 0120     		movs	r0, #1
+ 2467 0086 02E0     		b	.L340
+ 2468              	.L348:
+ 2469 0088 0020     		movs	r0, #0
+ 2470 008a 00E0     		b	.L340
+ 2471              	.L344:
+ 2472 008c 0020     		movs	r0, #0
+ 2473              	.L340:
+ 2474 008e 38BD     		pop	{r3, r4, r5, pc}
+ 2475              	.L345:
+ 2476 0090 0020     		movs	r0, #0
+ 2477 0092 FCE7     		b	.L340
+ 2479              		.section	.text.HAL_ADC_DeInit,"ax",%progbits
+ 2480              		.align	1
+ 2481              		.global	HAL_ADC_DeInit
+ 2482              		.syntax unified
+ 2483              		.thumb
+ 2484              		.thumb_func
+ 2486              	HAL_ADC_DeInit:
+ 2487              		@ args = 0, pretend = 0, frame = 0
+ 2488              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2489 0000 38B5     		push	{r3, r4, r5, lr}
+ 2490 0002 0028     		cmp	r0, #0
+ 2491 0004 00F0B680 		beq	.L353
+ 2492 0008 0446     		mov	r4, r0
+ 2493 000a 436D     		ldr	r3, [r0, #84]
+ 2494 000c 43F00203 		orr	r3, r3, #2
+ 2495 0010 4365     		str	r3, [r0, #84]
+ 2496 0012 0321     		movs	r1, #3
+ 2497 0014 FFF7FEFF 		bl	ADC_ConversionStop
+ 2498 0018 2268     		ldr	r2, [r4]
+ 2499 001a D368     		ldr	r3, [r2, #12]
+ 2500 001c 43F40013 		orr	r3, r3, #2097152
+ 2501 0020 D360     		str	r3, [r2, #12]
+ 2502 0022 0546     		mov	r5, r0
+ 2503 0024 0028     		cmp	r0, #0
+ 2504 0026 00F09B80 		beq	.L355
+ 2505              	.L351:
+ 2506 002a 2268     		ldr	r2, [r4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 44
+
+
+ 2507 002c 5368     		ldr	r3, [r2, #4]
+ 2508 002e 23F4FC63 		bic	r3, r3, #2016
+ 2509 0032 5360     		str	r3, [r2, #4]
+ 2510 0034 2268     		ldr	r2, [r4]
+ 2511 0036 5368     		ldr	r3, [r2, #4]
+ 2512 0038 23F01F03 		bic	r3, r3, #31
+ 2513 003c 5360     		str	r3, [r2, #4]
+ 2514 003e 2368     		ldr	r3, [r4]
+ 2515 0040 4FF4FC62 		mov	r2, #2016
+ 2516 0044 1A60     		str	r2, [r3]
+ 2517 0046 2368     		ldr	r3, [r4]
+ 2518 0048 1F22     		movs	r2, #31
+ 2519 004a 1A60     		str	r2, [r3]
+ 2520 004c 2268     		ldr	r2, [r4]
+ 2521 004e 9368     		ldr	r3, [r2, #8]
+ 2522 0050 23F0A043 		bic	r3, r3, #1342177280
+ 2523 0054 9360     		str	r3, [r2, #8]
+ 2524 0056 2268     		ldr	r2, [r4]
+ 2525 0058 9368     		ldr	r3, [r2, #8]
+ 2526 005a 43F00053 		orr	r3, r3, #536870912
+ 2527 005e 9360     		str	r3, [r2, #8]
+ 2528 0060 2268     		ldr	r2, [r4]
+ 2529 0062 D168     		ldr	r1, [r2, #12]
+ 2530 0064 444B     		ldr	r3, .L356
+ 2531 0066 0B40     		ands	r3, r3, r1
+ 2532 0068 D360     		str	r3, [r2, #12]
+ 2533 006a 2268     		ldr	r2, [r4]
+ 2534 006c D368     		ldr	r3, [r2, #12]
+ 2535 006e 43F00043 		orr	r3, r3, #-2147483648
+ 2536 0072 D360     		str	r3, [r2, #12]
+ 2537 0074 2268     		ldr	r2, [r4]
+ 2538 0076 1369     		ldr	r3, [r2, #16]
+ 2539 0078 6FF30A03 		bfc	r3, #0, #11
+ 2540 007c 1361     		str	r3, [r2, #16]
+ 2541 007e 2268     		ldr	r2, [r4]
+ 2542 0080 5369     		ldr	r3, [r2, #20]
+ 2543 0082 03F04043 		and	r3, r3, #-1073741824
+ 2544 0086 5361     		str	r3, [r2, #20]
+ 2545 0088 2268     		ldr	r2, [r4]
+ 2546 008a 9369     		ldr	r3, [r2, #24]
+ 2547 008c 03F07843 		and	r3, r3, #-134217728
+ 2548 0090 9361     		str	r3, [r2, #24]
+ 2549 0092 2268     		ldr	r2, [r4]
+ 2550 0094 136A     		ldr	r3, [r2, #32]
+ 2551 0096 03F0F023 		and	r3, r3, #-268374016
+ 2552 009a 1362     		str	r3, [r2, #32]
+ 2553 009c 2268     		ldr	r2, [r4]
+ 2554 009e 536A     		ldr	r3, [r2, #36]
+ 2555 00a0 03F0FF23 		and	r3, r3, #-16711936
+ 2556 00a4 5362     		str	r3, [r2, #36]
+ 2557 00a6 2268     		ldr	r2, [r4]
+ 2558 00a8 936A     		ldr	r3, [r2, #40]
+ 2559 00aa 03F0FF23 		and	r3, r3, #-16711936
+ 2560 00ae 9362     		str	r3, [r2, #40]
+ 2561 00b0 2268     		ldr	r2, [r4]
+ 2562 00b2 116B     		ldr	r1, [r2, #48]
+ 2563 00b4 314B     		ldr	r3, .L356+4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 45
+
+
+ 2564 00b6 0B40     		ands	r3, r3, r1
+ 2565 00b8 1363     		str	r3, [r2, #48]
+ 2566 00ba 2268     		ldr	r2, [r4]
+ 2567 00bc 536B     		ldr	r3, [r2, #52]
+ 2568 00be 3049     		ldr	r1, .L356+8
+ 2569 00c0 0B40     		ands	r3, r3, r1
+ 2570 00c2 5363     		str	r3, [r2, #52]
+ 2571 00c4 2268     		ldr	r2, [r4]
+ 2572 00c6 936B     		ldr	r3, [r2, #56]
+ 2573 00c8 0B40     		ands	r3, r3, r1
+ 2574 00ca 9363     		str	r3, [r2, #56]
+ 2575 00cc 2268     		ldr	r2, [r4]
+ 2576 00ce D36B     		ldr	r3, [r2, #60]
+ 2577 00d0 23F4FB63 		bic	r3, r3, #2008
+ 2578 00d4 23F00703 		bic	r3, r3, #7
+ 2579 00d8 D363     		str	r3, [r2, #60]
+ 2580 00da 2168     		ldr	r1, [r4]
+ 2581 00dc 0A6E     		ldr	r2, [r1, #96]
+ 2582 00de 294B     		ldr	r3, .L356+12
+ 2583 00e0 1A40     		ands	r2, r2, r3
+ 2584 00e2 0A66     		str	r2, [r1, #96]
+ 2585 00e4 2168     		ldr	r1, [r4]
+ 2586 00e6 4A6E     		ldr	r2, [r1, #100]
+ 2587 00e8 1A40     		ands	r2, r2, r3
+ 2588 00ea 4A66     		str	r2, [r1, #100]
+ 2589 00ec 2168     		ldr	r1, [r4]
+ 2590 00ee 8A6E     		ldr	r2, [r1, #104]
+ 2591 00f0 1A40     		ands	r2, r2, r3
+ 2592 00f2 8A66     		str	r2, [r1, #104]
+ 2593 00f4 2168     		ldr	r1, [r4]
+ 2594 00f6 CA6E     		ldr	r2, [r1, #108]
+ 2595 00f8 1340     		ands	r3, r3, r2
+ 2596 00fa CB66     		str	r3, [r1, #108]
+ 2597 00fc 2268     		ldr	r2, [r4]
+ 2598 00fe D2F8A030 		ldr	r3, [r2, #160]
+ 2599 0102 6FF31203 		bfc	r3, #0, #19
+ 2600 0106 C2F8A030 		str	r3, [r2, #160]
+ 2601 010a 2268     		ldr	r2, [r4]
+ 2602 010c D2F8A430 		ldr	r3, [r2, #164]
+ 2603 0110 6FF31203 		bfc	r3, #0, #19
+ 2604 0114 C2F8A430 		str	r3, [r2, #164]
+ 2605 0118 2268     		ldr	r2, [r4]
+ 2606 011a D2F8B030 		ldr	r3, [r2, #176]
+ 2607 011e 6FF31203 		bfc	r3, #0, #19
+ 2608 0122 C2F8B030 		str	r3, [r2, #176]
+ 2609 0126 2268     		ldr	r2, [r4]
+ 2610 0128 D2F8B430 		ldr	r3, [r2, #180]
+ 2611 012c 23F07F13 		bic	r3, r3, #8323199
+ 2612 0130 C2F8B430 		str	r3, [r2, #180]
+ 2613 0134 144B     		ldr	r3, .L356+16
+ 2614 0136 9B68     		ldr	r3, [r3, #8]
+ 2615 0138 13F0010F 		tst	r3, #1
+ 2616 013c 04D1     		bne	.L352
+ 2617 013e 134A     		ldr	r2, .L356+20
+ 2618 0140 9368     		ldr	r3, [r2, #8]
+ 2619 0142 6FF31843 		bfc	r3, #16, #9
+ 2620 0146 9360     		str	r3, [r2, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 46
+
+
+ 2621              	.L352:
+ 2622 0148 2046     		mov	r0, r4
+ 2623 014a FFF7FEFF 		bl	HAL_ADC_MspDeInit
+ 2624 014e 0023     		movs	r3, #0
+ 2625 0150 A365     		str	r3, [r4, #88]
+ 2626 0152 E365     		str	r3, [r4, #92]
+ 2627 0154 2366     		str	r3, [r4, #96]
+ 2628 0156 6365     		str	r3, [r4, #84]
+ 2629 0158 84F85030 		strb	r3, [r4, #80]
+ 2630              	.L350:
+ 2631 015c 2846     		mov	r0, r5
+ 2632 015e 38BD     		pop	{r3, r4, r5, pc}
+ 2633              	.L355:
+ 2634 0160 2046     		mov	r0, r4
+ 2635 0162 FFF7FEFF 		bl	ADC_Disable
+ 2636 0166 0546     		mov	r5, r0
+ 2637 0168 0028     		cmp	r0, #0
+ 2638 016a 7FF45EAF 		bne	.L351
+ 2639 016e 0123     		movs	r3, #1
+ 2640 0170 6365     		str	r3, [r4, #84]
+ 2641 0172 5AE7     		b	.L351
+ 2642              	.L353:
+ 2643 0174 0125     		movs	r5, #1
+ 2644 0176 F1E7     		b	.L350
+ 2645              	.L357:
+ 2646              		.align	2
+ 2647              	.L356:
+ 2648 0178 04800080 		.word	-2147450876
+ 2649 017c 300882E0 		.word	-528349136
+ 2650 0180 200882E0 		.word	-528349152
+ 2651 0184 00F0FF03 		.word	67104768
+ 2652 0188 00000450 		.word	1342439424
+ 2653 018c 00030450 		.word	1342440192
+ 2655              		.section	.text.HAL_ADC_Stop,"ax",%progbits
+ 2656              		.align	1
+ 2657              		.global	HAL_ADC_Stop
+ 2658              		.syntax unified
+ 2659              		.thumb
+ 2660              		.thumb_func
+ 2662              	HAL_ADC_Stop:
+ 2663              		@ args = 0, pretend = 0, frame = 0
+ 2664              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2665 0000 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 2666 0004 012B     		cmp	r3, #1
+ 2667 0006 1AD0     		beq	.L361
+ 2668 0008 10B5     		push	{r4, lr}
+ 2669 000a 0446     		mov	r4, r0
+ 2670 000c 0123     		movs	r3, #1
+ 2671 000e 80F85030 		strb	r3, [r0, #80]
+ 2672 0012 0321     		movs	r1, #3
+ 2673 0014 FFF7FEFF 		bl	ADC_ConversionStop
+ 2674 0018 18B1     		cbz	r0, .L366
+ 2675              	.L360:
+ 2676 001a 0023     		movs	r3, #0
+ 2677 001c 84F85030 		strb	r3, [r4, #80]
+ 2678 0020 10BD     		pop	{r4, pc}
+ 2679              	.L366:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 47
+
+
+ 2680 0022 2046     		mov	r0, r4
+ 2681 0024 FFF7FEFF 		bl	ADC_Disable
+ 2682 0028 0028     		cmp	r0, #0
+ 2683 002a F6D1     		bne	.L360
+ 2684 002c 636D     		ldr	r3, [r4, #84]
+ 2685 002e 23F48853 		bic	r3, r3, #4352
+ 2686 0032 23F00103 		bic	r3, r3, #1
+ 2687 0036 43F00103 		orr	r3, r3, #1
+ 2688 003a 6365     		str	r3, [r4, #84]
+ 2689 003c EDE7     		b	.L360
+ 2690              	.L361:
+ 2691 003e 0220     		movs	r0, #2
+ 2692 0040 7047     		bx	lr
+ 2694              		.section	.text.HAL_ADC_Stop_IT,"ax",%progbits
+ 2695              		.align	1
+ 2696              		.global	HAL_ADC_Stop_IT
+ 2697              		.syntax unified
+ 2698              		.thumb
+ 2699              		.thumb_func
+ 2701              	HAL_ADC_Stop_IT:
+ 2702              		@ args = 0, pretend = 0, frame = 0
+ 2703              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2704 0000 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 2705 0004 012B     		cmp	r3, #1
+ 2706 0006 1FD0     		beq	.L370
+ 2707 0008 10B5     		push	{r4, lr}
+ 2708 000a 0446     		mov	r4, r0
+ 2709 000c 0123     		movs	r3, #1
+ 2710 000e 80F85030 		strb	r3, [r0, #80]
+ 2711 0012 0321     		movs	r1, #3
+ 2712 0014 FFF7FEFF 		bl	ADC_ConversionStop
+ 2713 0018 18B1     		cbz	r0, .L375
+ 2714              	.L369:
+ 2715 001a 0023     		movs	r3, #0
+ 2716 001c 84F85030 		strb	r3, [r4, #80]
+ 2717 0020 10BD     		pop	{r4, pc}
+ 2718              	.L375:
+ 2719 0022 2268     		ldr	r2, [r4]
+ 2720 0024 5368     		ldr	r3, [r2, #4]
+ 2721 0026 23F01C03 		bic	r3, r3, #28
+ 2722 002a 5360     		str	r3, [r2, #4]
+ 2723 002c 2046     		mov	r0, r4
+ 2724 002e FFF7FEFF 		bl	ADC_Disable
+ 2725 0032 0028     		cmp	r0, #0
+ 2726 0034 F1D1     		bne	.L369
+ 2727 0036 636D     		ldr	r3, [r4, #84]
+ 2728 0038 23F48853 		bic	r3, r3, #4352
+ 2729 003c 23F00103 		bic	r3, r3, #1
+ 2730 0040 43F00103 		orr	r3, r3, #1
+ 2731 0044 6365     		str	r3, [r4, #84]
+ 2732 0046 E8E7     		b	.L369
+ 2733              	.L370:
+ 2734 0048 0220     		movs	r0, #2
+ 2735 004a 7047     		bx	lr
+ 2737              		.section	.text.HAL_ADC_Stop_DMA,"ax",%progbits
+ 2738              		.align	1
+ 2739              		.global	HAL_ADC_Stop_DMA
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 48
+
+
+ 2740              		.syntax unified
+ 2741              		.thumb
+ 2742              		.thumb_func
+ 2744              	HAL_ADC_Stop_DMA:
+ 2745              		@ args = 0, pretend = 0, frame = 0
+ 2746              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2747 0000 38B5     		push	{r3, r4, r5, lr}
+ 2748 0002 90F85030 		ldrb	r3, [r0, #80]	@ zero_extendqisi2
+ 2749 0006 012B     		cmp	r3, #1
+ 2750 0008 39D0     		beq	.L382
+ 2751 000a 0446     		mov	r4, r0
+ 2752 000c 0123     		movs	r3, #1
+ 2753 000e 80F85030 		strb	r3, [r0, #80]
+ 2754 0012 0321     		movs	r1, #3
+ 2755 0014 FFF7FEFF 		bl	ADC_ConversionStop
+ 2756 0018 0546     		mov	r5, r0
+ 2757 001a E8B9     		cbnz	r0, .L378
+ 2758 001c 2268     		ldr	r2, [r4]
+ 2759 001e D368     		ldr	r3, [r2, #12]
+ 2760 0020 23F00103 		bic	r3, r3, #1
+ 2761 0024 D360     		str	r3, [r2, #12]
+ 2762 0026 E06C     		ldr	r0, [r4, #76]
+ 2763 0028 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+ 2764 002c DBB2     		uxtb	r3, r3
+ 2765 002e 022B     		cmp	r3, #2
+ 2766 0030 17D0     		beq	.L384
+ 2767              	.L379:
+ 2768 0032 2268     		ldr	r2, [r4]
+ 2769 0034 5368     		ldr	r3, [r2, #4]
+ 2770 0036 23F01003 		bic	r3, r3, #16
+ 2771 003a 5360     		str	r3, [r2, #4]
+ 2772 003c DDB9     		cbnz	r5, .L380
+ 2773 003e 2046     		mov	r0, r4
+ 2774 0040 FFF7FEFF 		bl	ADC_Disable
+ 2775 0044 0546     		mov	r5, r0
+ 2776              	.L381:
+ 2777 0046 3DB9     		cbnz	r5, .L378
+ 2778 0048 636D     		ldr	r3, [r4, #84]
+ 2779 004a 23F48853 		bic	r3, r3, #4352
+ 2780 004e 23F00103 		bic	r3, r3, #1
+ 2781 0052 43F00103 		orr	r3, r3, #1
+ 2782 0056 6365     		str	r3, [r4, #84]
+ 2783              	.L378:
+ 2784 0058 0023     		movs	r3, #0
+ 2785 005a 84F85030 		strb	r3, [r4, #80]
+ 2786              	.L377:
+ 2787 005e 2846     		mov	r0, r5
+ 2788 0060 38BD     		pop	{r3, r4, r5, pc}
+ 2789              	.L384:
+ 2790 0062 FFF7FEFF 		bl	HAL_DMA_Abort
+ 2791 0066 0546     		mov	r5, r0
+ 2792 0068 0028     		cmp	r0, #0
+ 2793 006a E2D0     		beq	.L379
+ 2794 006c 636D     		ldr	r3, [r4, #84]
+ 2795 006e 43F04003 		orr	r3, r3, #64
+ 2796 0072 6365     		str	r3, [r4, #84]
+ 2797 0074 DDE7     		b	.L379
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 49
+
+
+ 2798              	.L380:
+ 2799 0076 2046     		mov	r0, r4
+ 2800 0078 FFF7FEFF 		bl	ADC_Disable
+ 2801 007c E3E7     		b	.L381
+ 2802              	.L382:
+ 2803 007e 0225     		movs	r5, #2
+ 2804 0080 EDE7     		b	.L377
+ 2806              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 50
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_adc.c
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:18     .text.LL_ADC_REG_SetSequencerRanks:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:23     .text.LL_ADC_REG_SetSequencerRanks:00000000 LL_ADC_REG_SetSequencerRanks
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:45     .text.LL_ADC_SetChannelSamplingTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:50     .text.LL_ADC_SetChannelSamplingTime:00000000 LL_ADC_SetChannelSamplingTime
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:71     .text.LL_ADC_SetAnalogWDMonitChannels:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:76     .text.LL_ADC_SetAnalogWDMonitChannels:00000000 LL_ADC_SetAnalogWDMonitChannels
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:95     .text.HAL_ADC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:101    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:108    .text.HAL_ADC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:114    .text.HAL_ADC_Init:00000000 HAL_ADC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:325    .text.HAL_ADC_Init:000001c4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:332    .text.HAL_ADC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:338    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:345    .text.HAL_ADC_PollForConversion:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:351    .text.HAL_ADC_PollForConversion:00000000 HAL_ADC_PollForConversion
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:441    .text.HAL_ADC_PollForEvent:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:447    .text.HAL_ADC_PollForEvent:00000000 HAL_ADC_PollForEvent
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:554    .text.HAL_ADC_GetValue:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:560    .text.HAL_ADC_GetValue:00000000 HAL_ADC_GetValue
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:569    .text.HAL_ADC_ConvCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:575    .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:582    .text.HAL_ADC_ConvHalfCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:588    .text.HAL_ADC_ConvHalfCpltCallback:00000000 HAL_ADC_ConvHalfCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:595    .text.ADC_DMAHalfConvCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:601    .text.ADC_DMAHalfConvCplt:00000000 ADC_DMAHalfConvCplt
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:610    .text.HAL_ADC_LevelOutOfWindowCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:616    .text.HAL_ADC_LevelOutOfWindowCallback:00000000 HAL_ADC_LevelOutOfWindowCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:623    .text.HAL_ADC_ErrorCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:629    .text.HAL_ADC_ErrorCallback:00000000 HAL_ADC_ErrorCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:636    .text.HAL_ADC_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:642    .text.HAL_ADC_IRQHandler:00000000 HAL_ADC_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:892    .text.ADC_DMAConvCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:898    .text.ADC_DMAConvCplt:00000000 ADC_DMAConvCplt
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:961    .text.ADC_DMAError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:967    .text.ADC_DMAError:00000000 ADC_DMAError
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:982    .text.HAL_ADC_ConfigChannel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:988    .text.HAL_ADC_ConfigChannel:00000000 HAL_ADC_ConfigChannel
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1401   .text.HAL_ADC_ConfigChannel:0000031c $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1413   .text.HAL_ADC_ConfigChannel:00000340 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1524   .text.HAL_ADC_ConfigChannel:0000041c $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1530   .text.HAL_ADC_AnalogWDGConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1536   .text.HAL_ADC_AnalogWDGConfig:00000000 HAL_ADC_AnalogWDGConfig
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1872   .text.HAL_ADC_AnalogWDGConfig:00000300 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1877   .text.HAL_ADC_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1883   .text.HAL_ADC_GetState:00000000 HAL_ADC_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1891   .text.HAL_ADC_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1897   .text.HAL_ADC_GetError:00000000 HAL_ADC_GetError
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1905   .text.ADC_ConversionStop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:1911   .text.ADC_ConversionStop:00000000 ADC_ConversionStop
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2044   .text.ADC_ConversionStop:00000100 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2047   .text.ADC_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2053   .text.ADC_Enable:00000000 ADC_Enable
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2148   .text.ADC_Enable:000000c0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2154   .text.HAL_ADC_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2160   .text.HAL_ADC_Start:00000000 HAL_ADC_Start
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s 			page 51
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2217   .text.HAL_ADC_Start_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2223   .text.HAL_ADC_Start_IT:00000000 HAL_ADC_Start_IT
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2306   .text.HAL_ADC_Start_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2312   .text.HAL_ADC_Start_DMA:00000000 HAL_ADC_Start_DMA
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2397   .text.HAL_ADC_Start_DMA:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2402   .text.ADC_Disable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2408   .text.ADC_Disable:00000000 ADC_Disable
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2480   .text.HAL_ADC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2486   .text.HAL_ADC_DeInit:00000000 HAL_ADC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2648   .text.HAL_ADC_DeInit:00000178 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2656   .text.HAL_ADC_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2662   .text.HAL_ADC_Stop:00000000 HAL_ADC_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2695   .text.HAL_ADC_Stop_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2701   .text.HAL_ADC_Stop_IT:00000000 HAL_ADC_Stop_IT
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2738   .text.HAL_ADC_Stop_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRGLYxj.s:2744   .text.HAL_ADC_Stop_DMA:00000000 HAL_ADC_Stop_DMA
+
+UNDEFINED SYMBOLS
+SystemCoreClock
+HAL_GetTick
+HAL_ADCEx_EndOfSamplingCallback
+HAL_ADCEx_InjectedConvCpltCallback
+HAL_ADCEx_LevelOutOfWindow2Callback
+HAL_ADCEx_LevelOutOfWindow3Callback
+HAL_ADCEx_InjectedQueueOverflowCallback
+HAL_DMA_Start_IT
+HAL_DMA_Abort

@@ -1,0 +1,856 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_msp.c"
+  16              		.text
+  17              		.section	.text.HAL_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_MspInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_MspInit:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 00B5     		push	{lr}
+  28 0002 83B0     		sub	sp, sp, #12
+  29 0004 4FF0B043 		mov	r3, #1476395008
+  30 0008 1A6D     		ldr	r2, [r3, #80]
+  31 000a 42F40022 		orr	r2, r2, #524288
+  32 000e 1A65     		str	r2, [r3, #80]
+  33 0010 1B6D     		ldr	r3, [r3, #80]
+  34 0012 03F40023 		and	r3, r3, #524288
+  35 0016 0193     		str	r3, [sp, #4]
+  36 0018 019B     		ldr	r3, [sp, #4]
+  37 001a 0022     		movs	r2, #0
+  38 001c 1146     		mov	r1, r2
+  39 001e 2E20     		movs	r0, #46
+  40 0020 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  41 0024 2E20     		movs	r0, #46
+  42 0026 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  43 002a 03B0     		add	sp, sp, #12
+  44              		@ sp needed
+  45 002c 5DF804FB 		ldr	pc, [sp], #4
+  47              		.section	.text.HAL_ADC_MspInit,"ax",%progbits
+  48              		.align	1
+  49              		.global	HAL_ADC_MspInit
+  50              		.syntax unified
+  51              		.thumb
+  52              		.thumb_func
+  54              	HAL_ADC_MspInit:
+  55              		@ args = 0, pretend = 0, frame = 32
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 00B5     		push	{lr}
+  58 0002 89B0     		sub	sp, sp, #36
+  59 0004 0023     		movs	r3, #0
+  60 0006 0393     		str	r3, [sp, #12]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 2
+
+
+  61 0008 0493     		str	r3, [sp, #16]
+  62 000a 0593     		str	r3, [sp, #20]
+  63 000c 0693     		str	r3, [sp, #24]
+  64 000e 0793     		str	r3, [sp, #28]
+  65 0010 0268     		ldr	r2, [r0]
+  66 0012 114B     		ldr	r3, .L7
+  67 0014 9A42     		cmp	r2, r3
+  68 0016 02D0     		beq	.L6
+  69              	.L3:
+  70 0018 09B0     		add	sp, sp, #36
+  71              		@ sp needed
+  72 001a 5DF804FB 		ldr	pc, [sp], #4
+  73              	.L6:
+  74 001e 4FF0B043 		mov	r3, #1476395008
+  75 0022 DA6C     		ldr	r2, [r3, #76]
+  76 0024 42F40052 		orr	r2, r2, #8192
+  77 0028 DA64     		str	r2, [r3, #76]
+  78 002a DA6C     		ldr	r2, [r3, #76]
+  79 002c 02F40052 		and	r2, r2, #8192
+  80 0030 0292     		str	r2, [sp, #8]
+  81 0032 029A     		ldr	r2, [sp, #8]
+  82 0034 DA6C     		ldr	r2, [r3, #76]
+  83 0036 42F00402 		orr	r2, r2, #4
+  84 003a DA64     		str	r2, [r3, #76]
+  85 003c DB6C     		ldr	r3, [r3, #76]
+  86 003e 03F00403 		and	r3, r3, #4
+  87 0042 0193     		str	r3, [sp, #4]
+  88 0044 019B     		ldr	r3, [sp, #4]
+  89 0046 0423     		movs	r3, #4
+  90 0048 0393     		str	r3, [sp, #12]
+  91 004a 0323     		movs	r3, #3
+  92 004c 0493     		str	r3, [sp, #16]
+  93 004e 03A9     		add	r1, sp, #12
+  94 0050 0248     		ldr	r0, .L7+4
+  95 0052 FFF7FEFF 		bl	HAL_GPIO_Init
+  96 0056 DFE7     		b	.L3
+  97              	.L8:
+  98              		.align	2
+  99              	.L7:
+ 100 0058 00000450 		.word	1342439424
+ 101 005c 00080048 		.word	1207961600
+ 103              		.section	.text.HAL_ADC_MspDeInit,"ax",%progbits
+ 104              		.align	1
+ 105              		.global	HAL_ADC_MspDeInit
+ 106              		.syntax unified
+ 107              		.thumb
+ 108              		.thumb_func
+ 110              	HAL_ADC_MspDeInit:
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 0000 08B5     		push	{r3, lr}
+ 114 0002 0268     		ldr	r2, [r0]
+ 115 0004 074B     		ldr	r3, .L13
+ 116 0006 9A42     		cmp	r2, r3
+ 117 0008 00D0     		beq	.L12
+ 118              	.L9:
+ 119 000a 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 3
+
+
+ 120              	.L12:
+ 121 000c 4FF0B042 		mov	r2, #1476395008
+ 122 0010 D36C     		ldr	r3, [r2, #76]
+ 123 0012 23F40053 		bic	r3, r3, #8192
+ 124 0016 D364     		str	r3, [r2, #76]
+ 125 0018 0421     		movs	r1, #4
+ 126 001a 0348     		ldr	r0, .L13+4
+ 127 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 128 0020 F3E7     		b	.L9
+ 129              	.L14:
+ 130 0022 00BF     		.align	2
+ 131              	.L13:
+ 132 0024 00000450 		.word	1342439424
+ 133 0028 00080048 		.word	1207961600
+ 135              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	HAL_I2C_MspInit
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	HAL_I2C_MspInit:
+ 143              		@ args = 0, pretend = 0, frame = 112
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145 0000 10B5     		push	{r4, lr}
+ 146 0002 9CB0     		sub	sp, sp, #112
+ 147 0004 0446     		mov	r4, r0
+ 148 0006 0021     		movs	r1, #0
+ 149 0008 1791     		str	r1, [sp, #92]
+ 150 000a 1891     		str	r1, [sp, #96]
+ 151 000c 1991     		str	r1, [sp, #100]
+ 152 000e 1A91     		str	r1, [sp, #104]
+ 153 0010 1B91     		str	r1, [sp, #108]
+ 154 0012 5022     		movs	r2, #80
+ 155 0014 03A8     		add	r0, sp, #12
+ 156 0016 FFF7FEFF 		bl	memset
+ 157 001a 2268     		ldr	r2, [r4]
+ 158 001c 194B     		ldr	r3, .L21
+ 159 001e 9A42     		cmp	r2, r3
+ 160 0020 01D0     		beq	.L19
+ 161              	.L15:
+ 162 0022 1CB0     		add	sp, sp, #112
+ 163              		@ sp needed
+ 164 0024 10BD     		pop	{r4, pc}
+ 165              	.L19:
+ 166 0026 0423     		movs	r3, #4
+ 167 0028 0393     		str	r3, [sp, #12]
+ 168 002a 4FF44033 		mov	r3, #196608
+ 169 002e 0B93     		str	r3, [sp, #44]
+ 170 0030 03A8     		add	r0, sp, #12
+ 171 0032 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 172 0036 10BB     		cbnz	r0, .L20
+ 173              	.L17:
+ 174 0038 4FF0B044 		mov	r4, #1476395008
+ 175 003c E36C     		ldr	r3, [r4, #76]
+ 176 003e 43F00203 		orr	r3, r3, #2
+ 177 0042 E364     		str	r3, [r4, #76]
+ 178 0044 E36C     		ldr	r3, [r4, #76]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 4
+
+
+ 179 0046 03F00203 		and	r3, r3, #2
+ 180 004a 0293     		str	r3, [sp, #8]
+ 181 004c 029B     		ldr	r3, [sp, #8]
+ 182 004e 4FF44073 		mov	r3, #768
+ 183 0052 1793     		str	r3, [sp, #92]
+ 184 0054 1223     		movs	r3, #18
+ 185 0056 1893     		str	r3, [sp, #96]
+ 186 0058 0023     		movs	r3, #0
+ 187 005a 1993     		str	r3, [sp, #100]
+ 188 005c 1A93     		str	r3, [sp, #104]
+ 189 005e 0423     		movs	r3, #4
+ 190 0060 1B93     		str	r3, [sp, #108]
+ 191 0062 17A9     		add	r1, sp, #92
+ 192 0064 0848     		ldr	r0, .L21+4
+ 193 0066 FFF7FEFF 		bl	HAL_GPIO_Init
+ 194 006a A36D     		ldr	r3, [r4, #88]
+ 195 006c 43F40013 		orr	r3, r3, #2097152
+ 196 0070 A365     		str	r3, [r4, #88]
+ 197 0072 A36D     		ldr	r3, [r4, #88]
+ 198 0074 03F40013 		and	r3, r3, #2097152
+ 199 0078 0193     		str	r3, [sp, #4]
+ 200 007a 019B     		ldr	r3, [sp, #4]
+ 201 007c D1E7     		b	.L15
+ 202              	.L20:
+ 203 007e FFF7FEFF 		bl	Error_Handler
+ 204 0082 D9E7     		b	.L17
+ 205              	.L22:
+ 206              		.align	2
+ 207              	.L21:
+ 208 0084 00540040 		.word	1073763328
+ 209 0088 00040048 		.word	1207960576
+ 211              		.section	.text.HAL_I2C_MspDeInit,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	HAL_I2C_MspDeInit
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 218              	HAL_I2C_MspDeInit:
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221 0000 0268     		ldr	r2, [r0]
+ 222 0002 0B4B     		ldr	r3, .L30
+ 223 0004 9A42     		cmp	r2, r3
+ 224 0006 00D0     		beq	.L29
+ 225 0008 7047     		bx	lr
+ 226              	.L29:
+ 227 000a 10B5     		push	{r4, lr}
+ 228 000c 4FF0B042 		mov	r2, #1476395008
+ 229 0010 936D     		ldr	r3, [r2, #88]
+ 230 0012 23F40013 		bic	r3, r3, #2097152
+ 231 0016 9365     		str	r3, [r2, #88]
+ 232 0018 064C     		ldr	r4, .L30+4
+ 233 001a 4FF48071 		mov	r1, #256
+ 234 001e 2046     		mov	r0, r4
+ 235 0020 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 236 0024 4FF40071 		mov	r1, #512
+ 237 0028 2046     		mov	r0, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 5
+
+
+ 238 002a FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 239 002e 10BD     		pop	{r4, pc}
+ 240              	.L31:
+ 241              		.align	2
+ 242              	.L30:
+ 243 0030 00540040 		.word	1073763328
+ 244 0034 00040048 		.word	1207960576
+ 246              		.section	.text.HAL_IPCC_MspInit,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	HAL_IPCC_MspInit
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	HAL_IPCC_MspInit:
+ 254              		@ args = 0, pretend = 0, frame = 8
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257 0000 0268     		ldr	r2, [r0]
+ 258 0002 094B     		ldr	r3, .L39
+ 259 0004 9A42     		cmp	r2, r3
+ 260 0006 00D0     		beq	.L38
+ 261 0008 7047     		bx	lr
+ 262              	.L38:
+ 263 000a 82B0     		sub	sp, sp, #8
+ 264 000c 4FF0B043 		mov	r3, #1476395008
+ 265 0010 1A6D     		ldr	r2, [r3, #80]
+ 266 0012 42F48012 		orr	r2, r2, #1048576
+ 267 0016 1A65     		str	r2, [r3, #80]
+ 268 0018 1B6D     		ldr	r3, [r3, #80]
+ 269 001a 03F48013 		and	r3, r3, #1048576
+ 270 001e 0193     		str	r3, [sp, #4]
+ 271 0020 019B     		ldr	r3, [sp, #4]
+ 272 0022 02B0     		add	sp, sp, #8
+ 273              		@ sp needed
+ 274 0024 7047     		bx	lr
+ 275              	.L40:
+ 276 0026 00BF     		.align	2
+ 277              	.L39:
+ 278 0028 000C0058 		.word	1476398080
+ 280              		.section	.text.HAL_IPCC_MspDeInit,"ax",%progbits
+ 281              		.align	1
+ 282              		.global	HAL_IPCC_MspDeInit
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ 287              	HAL_IPCC_MspDeInit:
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              		@ link register save eliminated.
+ 291 0000 0268     		ldr	r2, [r0]
+ 292 0002 054B     		ldr	r3, .L44
+ 293 0004 9A42     		cmp	r2, r3
+ 294 0006 00D0     		beq	.L43
+ 295              	.L41:
+ 296 0008 7047     		bx	lr
+ 297              	.L43:
+ 298 000a 4FF0B042 		mov	r2, #1476395008
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 6
+
+
+ 299 000e 136D     		ldr	r3, [r2, #80]
+ 300 0010 23F48013 		bic	r3, r3, #1048576
+ 301 0014 1365     		str	r3, [r2, #80]
+ 302 0016 F7E7     		b	.L41
+ 303              	.L45:
+ 304              		.align	2
+ 305              	.L44:
+ 306 0018 000C0058 		.word	1476398080
+ 308              		.section	.text.HAL_RTC_MspInit,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	HAL_RTC_MspInit
+ 311              		.syntax unified
+ 312              		.thumb
+ 313              		.thumb_func
+ 315              	HAL_RTC_MspInit:
+ 316              		@ args = 0, pretend = 0, frame = 88
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318 0000 10B5     		push	{r4, lr}
+ 319 0002 96B0     		sub	sp, sp, #88
+ 320 0004 0446     		mov	r4, r0
+ 321 0006 5022     		movs	r2, #80
+ 322 0008 0021     		movs	r1, #0
+ 323 000a 02A8     		add	r0, sp, #8
+ 324 000c FFF7FEFF 		bl	memset
+ 325 0010 2268     		ldr	r2, [r4]
+ 326 0012 134B     		ldr	r3, .L52
+ 327 0014 9A42     		cmp	r2, r3
+ 328 0016 01D0     		beq	.L50
+ 329              	.L46:
+ 330 0018 16B0     		add	sp, sp, #88
+ 331              		@ sp needed
+ 332 001a 10BD     		pop	{r4, pc}
+ 333              	.L50:
+ 334 001c FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
+ 335 0020 4FF40063 		mov	r3, #2048
+ 336 0024 0293     		str	r3, [sp, #8]
+ 337 0026 4FF40073 		mov	r3, #512
+ 338 002a 1293     		str	r3, [sp, #72]
+ 339 002c 02A8     		add	r0, sp, #8
+ 340 002e FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 341 0032 88B9     		cbnz	r0, .L51
+ 342              	.L48:
+ 343 0034 4FF0B043 		mov	r3, #1476395008
+ 344 0038 D3F89020 		ldr	r2, [r3, #144]
+ 345 003c 42F40042 		orr	r2, r2, #32768
+ 346 0040 C3F89020 		str	r2, [r3, #144]
+ 347 0044 9A6D     		ldr	r2, [r3, #88]
+ 348 0046 42F48062 		orr	r2, r2, #1024
+ 349 004a 9A65     		str	r2, [r3, #88]
+ 350 004c 9B6D     		ldr	r3, [r3, #88]
+ 351 004e 03F48063 		and	r3, r3, #1024
+ 352 0052 0193     		str	r3, [sp, #4]
+ 353 0054 019B     		ldr	r3, [sp, #4]
+ 354 0056 DFE7     		b	.L46
+ 355              	.L51:
+ 356 0058 FFF7FEFF 		bl	Error_Handler
+ 357 005c EAE7     		b	.L48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 7
+
+
+ 358              	.L53:
+ 359 005e 00BF     		.align	2
+ 360              	.L52:
+ 361 0060 00280040 		.word	1073752064
+ 363              		.section	.text.HAL_RTC_MspDeInit,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	HAL_RTC_MspDeInit
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 370              	HAL_RTC_MspDeInit:
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+ 374 0000 0268     		ldr	r2, [r0]
+ 375 0002 084B     		ldr	r3, .L57
+ 376 0004 9A42     		cmp	r2, r3
+ 377 0006 00D0     		beq	.L56
+ 378              	.L54:
+ 379 0008 7047     		bx	lr
+ 380              	.L56:
+ 381 000a 4FF0B043 		mov	r3, #1476395008
+ 382 000e D3F89020 		ldr	r2, [r3, #144]
+ 383 0012 22F40042 		bic	r2, r2, #32768
+ 384 0016 C3F89020 		str	r2, [r3, #144]
+ 385 001a 9A6D     		ldr	r2, [r3, #88]
+ 386 001c 22F48062 		bic	r2, r2, #1024
+ 387 0020 9A65     		str	r2, [r3, #88]
+ 388 0022 F1E7     		b	.L54
+ 389              	.L58:
+ 390              		.align	2
+ 391              	.L57:
+ 392 0024 00280040 		.word	1073752064
+ 394              		.section	.text.HAL_TIM_Base_MspInit,"ax",%progbits
+ 395              		.align	1
+ 396              		.global	HAL_TIM_Base_MspInit
+ 397              		.syntax unified
+ 398              		.thumb
+ 399              		.thumb_func
+ 401              	HAL_TIM_Base_MspInit:
+ 402              		@ args = 0, pretend = 0, frame = 8
+ 403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 404 0000 00B5     		push	{lr}
+ 405 0002 83B0     		sub	sp, sp, #12
+ 406 0004 0368     		ldr	r3, [r0]
+ 407 0006 184A     		ldr	r2, .L65
+ 408 0008 9342     		cmp	r3, r2
+ 409 000a 05D0     		beq	.L63
+ 410 000c 174A     		ldr	r2, .L65+4
+ 411 000e 9342     		cmp	r3, r2
+ 412 0010 16D0     		beq	.L64
+ 413              	.L59:
+ 414 0012 03B0     		add	sp, sp, #12
+ 415              		@ sp needed
+ 416 0014 5DF804FB 		ldr	pc, [sp], #4
+ 417              	.L63:
+ 418 0018 4FF0B043 		mov	r3, #1476395008
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 8
+
+
+ 419 001c 1A6E     		ldr	r2, [r3, #96]
+ 420 001e 42F40062 		orr	r2, r2, #2048
+ 421 0022 1A66     		str	r2, [r3, #96]
+ 422 0024 1B6E     		ldr	r3, [r3, #96]
+ 423 0026 03F40063 		and	r3, r3, #2048
+ 424 002a 0093     		str	r3, [sp]
+ 425 002c 009B     		ldr	r3, [sp]
+ 426 002e 0022     		movs	r2, #0
+ 427 0030 1146     		mov	r1, r2
+ 428 0032 1920     		movs	r0, #25
+ 429 0034 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 430 0038 1920     		movs	r0, #25
+ 431 003a FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 432 003e E8E7     		b	.L59
+ 433              	.L64:
+ 434 0040 4FF0B043 		mov	r3, #1476395008
+ 435 0044 1A6E     		ldr	r2, [r3, #96]
+ 436 0046 42F40032 		orr	r2, r2, #131072
+ 437 004a 1A66     		str	r2, [r3, #96]
+ 438 004c 1B6E     		ldr	r3, [r3, #96]
+ 439 004e 03F40033 		and	r3, r3, #131072
+ 440 0052 0193     		str	r3, [sp, #4]
+ 441 0054 019B     		ldr	r3, [sp, #4]
+ 442 0056 0022     		movs	r2, #0
+ 443 0058 1146     		mov	r1, r2
+ 444 005a 1920     		movs	r0, #25
+ 445 005c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 446 0060 1920     		movs	r0, #25
+ 447 0062 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 448 0066 D4E7     		b	.L59
+ 449              	.L66:
+ 450              		.align	2
+ 451              	.L65:
+ 452 0068 002C0140 		.word	1073818624
+ 453 006c 00440140 		.word	1073824768
+ 455              		.section	.text.HAL_TIM_PWM_MspInit,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	HAL_TIM_PWM_MspInit
+ 458              		.syntax unified
+ 459              		.thumb
+ 460              		.thumb_func
+ 462              	HAL_TIM_PWM_MspInit:
+ 463              		@ args = 0, pretend = 0, frame = 8
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465              		@ link register save eliminated.
+ 466 0000 0368     		ldr	r3, [r0]
+ 467 0002 B3F1804F 		cmp	r3, #1073741824
+ 468 0006 00D0     		beq	.L73
+ 469 0008 7047     		bx	lr
+ 470              	.L73:
+ 471 000a 82B0     		sub	sp, sp, #8
+ 472 000c 4FF0B043 		mov	r3, #1476395008
+ 473 0010 9A6D     		ldr	r2, [r3, #88]
+ 474 0012 42F00102 		orr	r2, r2, #1
+ 475 0016 9A65     		str	r2, [r3, #88]
+ 476 0018 9B6D     		ldr	r3, [r3, #88]
+ 477 001a 03F00103 		and	r3, r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 9
+
+
+ 478 001e 0193     		str	r3, [sp, #4]
+ 479 0020 019B     		ldr	r3, [sp, #4]
+ 480 0022 02B0     		add	sp, sp, #8
+ 481              		@ sp needed
+ 482 0024 7047     		bx	lr
+ 484              		.section	.text.HAL_TIM_MspPostInit,"ax",%progbits
+ 485              		.align	1
+ 486              		.global	HAL_TIM_MspPostInit
+ 487              		.syntax unified
+ 488              		.thumb
+ 489              		.thumb_func
+ 491              	HAL_TIM_MspPostInit:
+ 492              		@ args = 0, pretend = 0, frame = 40
+ 493              		@ frame_needed = 0, uses_anonymous_args = 0
+ 494 0000 30B5     		push	{r4, r5, lr}
+ 495 0002 8BB0     		sub	sp, sp, #44
+ 496 0004 0023     		movs	r3, #0
+ 497 0006 0593     		str	r3, [sp, #20]
+ 498 0008 0693     		str	r3, [sp, #24]
+ 499 000a 0793     		str	r3, [sp, #28]
+ 500 000c 0893     		str	r3, [sp, #32]
+ 501 000e 0993     		str	r3, [sp, #36]
+ 502 0010 0368     		ldr	r3, [r0]
+ 503 0012 324A     		ldr	r2, .L82
+ 504 0014 9342     		cmp	r3, r2
+ 505 0016 07D0     		beq	.L79
+ 506 0018 B3F1804F 		cmp	r3, #1073741824
+ 507 001c 31D0     		beq	.L80
+ 508 001e 304A     		ldr	r2, .L82+4
+ 509 0020 9342     		cmp	r3, r2
+ 510 0022 45D0     		beq	.L81
+ 511              	.L74:
+ 512 0024 0BB0     		add	sp, sp, #44
+ 513              		@ sp needed
+ 514 0026 30BD     		pop	{r4, r5, pc}
+ 515              	.L79:
+ 516 0028 4FF0B043 		mov	r3, #1476395008
+ 517 002c DA6C     		ldr	r2, [r3, #76]
+ 518 002e 42F00102 		orr	r2, r2, #1
+ 519 0032 DA64     		str	r2, [r3, #76]
+ 520 0034 DA6C     		ldr	r2, [r3, #76]
+ 521 0036 02F00102 		and	r2, r2, #1
+ 522 003a 0292     		str	r2, [sp, #8]
+ 523 003c 029A     		ldr	r2, [sp, #8]
+ 524 003e DA6C     		ldr	r2, [r3, #76]
+ 525 0040 42F00202 		orr	r2, r2, #2
+ 526 0044 DA64     		str	r2, [r3, #76]
+ 527 0046 DB6C     		ldr	r3, [r3, #76]
+ 528 0048 03F00203 		and	r3, r3, #2
+ 529 004c 0193     		str	r3, [sp, #4]
+ 530 004e 019B     		ldr	r3, [sp, #4]
+ 531 0050 4FF4B063 		mov	r3, #1408
+ 532 0054 0593     		str	r3, [sp, #20]
+ 533 0056 0225     		movs	r5, #2
+ 534 0058 0695     		str	r5, [sp, #24]
+ 535 005a 0124     		movs	r4, #1
+ 536 005c 0994     		str	r4, [sp, #36]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 10
+
+
+ 537 005e 05A9     		add	r1, sp, #20
+ 538 0060 4FF09040 		mov	r0, #1207959552
+ 539 0064 FFF7FEFF 		bl	HAL_GPIO_Init
+ 540 0068 4FF40043 		mov	r3, #32768
+ 541 006c 0593     		str	r3, [sp, #20]
+ 542 006e 0695     		str	r5, [sp, #24]
+ 543 0070 0023     		movs	r3, #0
+ 544 0072 0793     		str	r3, [sp, #28]
+ 545 0074 0893     		str	r3, [sp, #32]
+ 546 0076 0994     		str	r4, [sp, #36]
+ 547 0078 05A9     		add	r1, sp, #20
+ 548 007a 1A48     		ldr	r0, .L82+8
+ 549 007c FFF7FEFF 		bl	HAL_GPIO_Init
+ 550 0080 D0E7     		b	.L74
+ 551              	.L80:
+ 552 0082 4FF0B043 		mov	r3, #1476395008
+ 553 0086 DA6C     		ldr	r2, [r3, #76]
+ 554 0088 42F00102 		orr	r2, r2, #1
+ 555 008c DA64     		str	r2, [r3, #76]
+ 556 008e DB6C     		ldr	r3, [r3, #76]
+ 557 0090 03F00103 		and	r3, r3, #1
+ 558 0094 0393     		str	r3, [sp, #12]
+ 559 0096 039B     		ldr	r3, [sp, #12]
+ 560 0098 0723     		movs	r3, #7
+ 561 009a 0593     		str	r3, [sp, #20]
+ 562 009c 0223     		movs	r3, #2
+ 563 009e 0693     		str	r3, [sp, #24]
+ 564 00a0 0123     		movs	r3, #1
+ 565 00a2 0993     		str	r3, [sp, #36]
+ 566 00a4 05A9     		add	r1, sp, #20
+ 567 00a6 4FF09040 		mov	r0, #1207959552
+ 568 00aa FFF7FEFF 		bl	HAL_GPIO_Init
+ 569 00ae B9E7     		b	.L74
+ 570              	.L81:
+ 571 00b0 4FF0B043 		mov	r3, #1476395008
+ 572 00b4 DA6C     		ldr	r2, [r3, #76]
+ 573 00b6 42F00202 		orr	r2, r2, #2
+ 574 00ba DA64     		str	r2, [r3, #76]
+ 575 00bc DB6C     		ldr	r3, [r3, #76]
+ 576 00be 03F00203 		and	r3, r3, #2
+ 577 00c2 0493     		str	r3, [sp, #16]
+ 578 00c4 049B     		ldr	r3, [sp, #16]
+ 579 00c6 4023     		movs	r3, #64
+ 580 00c8 0593     		str	r3, [sp, #20]
+ 581 00ca 0223     		movs	r3, #2
+ 582 00cc 0693     		str	r3, [sp, #24]
+ 583 00ce 0E23     		movs	r3, #14
+ 584 00d0 0993     		str	r3, [sp, #36]
+ 585 00d2 05A9     		add	r1, sp, #20
+ 586 00d4 0348     		ldr	r0, .L82+8
+ 587 00d6 FFF7FEFF 		bl	HAL_GPIO_Init
+ 588 00da A3E7     		b	.L74
+ 589              	.L83:
+ 590              		.align	2
+ 591              	.L82:
+ 592 00dc 002C0140 		.word	1073818624
+ 593 00e0 00440140 		.word	1073824768
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 11
+
+
+ 594 00e4 00040048 		.word	1207960576
+ 596              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
+ 597              		.align	1
+ 598              		.global	HAL_TIM_Base_MspDeInit
+ 599              		.syntax unified
+ 600              		.thumb
+ 601              		.thumb_func
+ 603              	HAL_TIM_Base_MspDeInit:
+ 604              		@ args = 0, pretend = 0, frame = 0
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606              		@ link register save eliminated.
+ 607 0000 0368     		ldr	r3, [r0]
+ 608 0002 0A4A     		ldr	r2, .L89
+ 609 0004 9342     		cmp	r3, r2
+ 610 0006 03D0     		beq	.L87
+ 611 0008 094A     		ldr	r2, .L89+4
+ 612 000a 9342     		cmp	r3, r2
+ 613 000c 07D0     		beq	.L88
+ 614              	.L84:
+ 615 000e 7047     		bx	lr
+ 616              	.L87:
+ 617 0010 4FF0B042 		mov	r2, #1476395008
+ 618 0014 136E     		ldr	r3, [r2, #96]
+ 619 0016 23F40063 		bic	r3, r3, #2048
+ 620 001a 1366     		str	r3, [r2, #96]
+ 621 001c 7047     		bx	lr
+ 622              	.L88:
+ 623 001e 4FF0B042 		mov	r2, #1476395008
+ 624 0022 136E     		ldr	r3, [r2, #96]
+ 625 0024 23F40033 		bic	r3, r3, #131072
+ 626 0028 1366     		str	r3, [r2, #96]
+ 627 002a F0E7     		b	.L84
+ 628              	.L90:
+ 629              		.align	2
+ 630              	.L89:
+ 631 002c 002C0140 		.word	1073818624
+ 632 0030 00440140 		.word	1073824768
+ 634              		.section	.text.HAL_TIM_PWM_MspDeInit,"ax",%progbits
+ 635              		.align	1
+ 636              		.global	HAL_TIM_PWM_MspDeInit
+ 637              		.syntax unified
+ 638              		.thumb
+ 639              		.thumb_func
+ 641              	HAL_TIM_PWM_MspDeInit:
+ 642              		@ args = 0, pretend = 0, frame = 0
+ 643              		@ frame_needed = 0, uses_anonymous_args = 0
+ 644              		@ link register save eliminated.
+ 645 0000 0368     		ldr	r3, [r0]
+ 646 0002 B3F1804F 		cmp	r3, #1073741824
+ 647 0006 00D0     		beq	.L93
+ 648              	.L91:
+ 649 0008 7047     		bx	lr
+ 650              	.L93:
+ 651 000a 4FF0B042 		mov	r2, #1476395008
+ 652 000e 936D     		ldr	r3, [r2, #88]
+ 653 0010 23F00103 		bic	r3, r3, #1
+ 654 0014 9365     		str	r3, [r2, #88]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 12
+
+
+ 655 0016 F7E7     		b	.L91
+ 657              		.section	.text.HAL_UART_MspInit,"ax",%progbits
+ 658              		.align	1
+ 659              		.global	HAL_UART_MspInit
+ 660              		.syntax unified
+ 661              		.thumb
+ 662              		.thumb_func
+ 664              	HAL_UART_MspInit:
+ 665              		@ args = 0, pretend = 0, frame = 112
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667 0000 70B5     		push	{r4, r5, r6, lr}
+ 668 0002 9CB0     		sub	sp, sp, #112
+ 669 0004 0446     		mov	r4, r0
+ 670 0006 0021     		movs	r1, #0
+ 671 0008 1791     		str	r1, [sp, #92]
+ 672 000a 1891     		str	r1, [sp, #96]
+ 673 000c 1991     		str	r1, [sp, #100]
+ 674 000e 1A91     		str	r1, [sp, #104]
+ 675 0010 1B91     		str	r1, [sp, #108]
+ 676 0012 5022     		movs	r2, #80
+ 677 0014 03A8     		add	r0, sp, #12
+ 678 0016 FFF7FEFF 		bl	memset
+ 679 001a 2268     		ldr	r2, [r4]
+ 680 001c 224B     		ldr	r3, .L100
+ 681 001e 9A42     		cmp	r2, r3
+ 682 0020 01D0     		beq	.L98
+ 683              	.L94:
+ 684 0022 1CB0     		add	sp, sp, #112
+ 685              		@ sp needed
+ 686 0024 70BD     		pop	{r4, r5, r6, pc}
+ 687              	.L98:
+ 688 0026 0123     		movs	r3, #1
+ 689 0028 0393     		str	r3, [sp, #12]
+ 690 002a 03A8     		add	r0, sp, #12
+ 691 002c FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 692 0030 0028     		cmp	r0, #0
+ 693 0032 36D1     		bne	.L99
+ 694              	.L96:
+ 695 0034 4FF0B043 		mov	r3, #1476395008
+ 696 0038 1A6E     		ldr	r2, [r3, #96]
+ 697 003a 42F48042 		orr	r2, r2, #16384
+ 698 003e 1A66     		str	r2, [r3, #96]
+ 699 0040 1A6E     		ldr	r2, [r3, #96]
+ 700 0042 02F48042 		and	r2, r2, #16384
+ 701 0046 0292     		str	r2, [sp, #8]
+ 702 0048 029A     		ldr	r2, [sp, #8]
+ 703 004a DA6C     		ldr	r2, [r3, #76]
+ 704 004c 42F00102 		orr	r2, r2, #1
+ 705 0050 DA64     		str	r2, [r3, #76]
+ 706 0052 DA6C     		ldr	r2, [r3, #76]
+ 707 0054 02F00102 		and	r2, r2, #1
+ 708 0058 0192     		str	r2, [sp, #4]
+ 709 005a 019A     		ldr	r2, [sp, #4]
+ 710 005c DA6C     		ldr	r2, [r3, #76]
+ 711 005e 42F00202 		orr	r2, r2, #2
+ 712 0062 DA64     		str	r2, [r3, #76]
+ 713 0064 DB6C     		ldr	r3, [r3, #76]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 13
+
+
+ 714 0066 03F00203 		and	r3, r3, #2
+ 715 006a 0093     		str	r3, [sp]
+ 716 006c 009B     		ldr	r3, [sp]
+ 717 006e 4FF40073 		mov	r3, #512
+ 718 0072 1793     		str	r3, [sp, #92]
+ 719 0074 0226     		movs	r6, #2
+ 720 0076 1896     		str	r6, [sp, #96]
+ 721 0078 0024     		movs	r4, #0
+ 722 007a 1994     		str	r4, [sp, #100]
+ 723 007c 1A94     		str	r4, [sp, #104]
+ 724 007e 0725     		movs	r5, #7
+ 725 0080 1B95     		str	r5, [sp, #108]
+ 726 0082 17A9     		add	r1, sp, #92
+ 727 0084 4FF09040 		mov	r0, #1207959552
+ 728 0088 FFF7FEFF 		bl	HAL_GPIO_Init
+ 729 008c 8023     		movs	r3, #128
+ 730 008e 1793     		str	r3, [sp, #92]
+ 731 0090 1896     		str	r6, [sp, #96]
+ 732 0092 1994     		str	r4, [sp, #100]
+ 733 0094 1A94     		str	r4, [sp, #104]
+ 734 0096 1B95     		str	r5, [sp, #108]
+ 735 0098 17A9     		add	r1, sp, #92
+ 736 009a 0448     		ldr	r0, .L100+4
+ 737 009c FFF7FEFF 		bl	HAL_GPIO_Init
+ 738 00a0 BFE7     		b	.L94
+ 739              	.L99:
+ 740 00a2 FFF7FEFF 		bl	Error_Handler
+ 741 00a6 C5E7     		b	.L96
+ 742              	.L101:
+ 743              		.align	2
+ 744              	.L100:
+ 745 00a8 00380140 		.word	1073821696
+ 746 00ac 00040048 		.word	1207960576
+ 748              		.section	.text.HAL_UART_MspDeInit,"ax",%progbits
+ 749              		.align	1
+ 750              		.global	HAL_UART_MspDeInit
+ 751              		.syntax unified
+ 752              		.thumb
+ 753              		.thumb_func
+ 755              	HAL_UART_MspDeInit:
+ 756              		@ args = 0, pretend = 0, frame = 0
+ 757              		@ frame_needed = 0, uses_anonymous_args = 0
+ 758 0000 08B5     		push	{r3, lr}
+ 759 0002 0268     		ldr	r2, [r0]
+ 760 0004 0A4B     		ldr	r3, .L106
+ 761 0006 9A42     		cmp	r2, r3
+ 762 0008 00D0     		beq	.L105
+ 763              	.L102:
+ 764 000a 08BD     		pop	{r3, pc}
+ 765              	.L105:
+ 766 000c 4FF0B042 		mov	r2, #1476395008
+ 767 0010 136E     		ldr	r3, [r2, #96]
+ 768 0012 23F48043 		bic	r3, r3, #16384
+ 769 0016 1366     		str	r3, [r2, #96]
+ 770 0018 4FF40071 		mov	r1, #512
+ 771 001c 4FF09040 		mov	r0, #1207959552
+ 772 0020 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 14
+
+
+ 773 0024 8021     		movs	r1, #128
+ 774 0026 0348     		ldr	r0, .L106+4
+ 775 0028 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 776 002c EDE7     		b	.L102
+ 777              	.L107:
+ 778 002e 00BF     		.align	2
+ 779              	.L106:
+ 780 0030 00380140 		.word	1073821696
+ 781 0034 00040048 		.word	1207960576
+ 783              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_msp.c
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:48     .text.HAL_ADC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:54     .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:100    .text.HAL_ADC_MspInit:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:104    .text.HAL_ADC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:110    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:132    .text.HAL_ADC_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:136    .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:142    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:208    .text.HAL_I2C_MspInit:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:212    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:218    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:243    .text.HAL_I2C_MspDeInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:247    .text.HAL_IPCC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:253    .text.HAL_IPCC_MspInit:00000000 HAL_IPCC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:278    .text.HAL_IPCC_MspInit:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:281    .text.HAL_IPCC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:287    .text.HAL_IPCC_MspDeInit:00000000 HAL_IPCC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:306    .text.HAL_IPCC_MspDeInit:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:309    .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:315    .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:361    .text.HAL_RTC_MspInit:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:364    .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:370    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:392    .text.HAL_RTC_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:395    .text.HAL_TIM_Base_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:401    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:452    .text.HAL_TIM_Base_MspInit:00000068 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:456    .text.HAL_TIM_PWM_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:462    .text.HAL_TIM_PWM_MspInit:00000000 HAL_TIM_PWM_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:485    .text.HAL_TIM_MspPostInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:491    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:592    .text.HAL_TIM_MspPostInit:000000dc $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:597    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:603    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:631    .text.HAL_TIM_Base_MspDeInit:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:635    .text.HAL_TIM_PWM_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:641    .text.HAL_TIM_PWM_MspDeInit:00000000 HAL_TIM_PWM_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:658    .text.HAL_UART_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:664    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:745    .text.HAL_UART_MspInit:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:749    .text.HAL_UART_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:755    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s:780    .text.HAL_UART_MspDeInit:00000030 $d
+
+UNDEFINED SYMBOLS
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_GPIO_Init
+HAL_GPIO_DeInit
+memset
+HAL_RCCEx_PeriphCLKConfig
+Error_Handler
+HAL_PWR_EnableBkUpAccess
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNIkGwU.s 			page 16
+
+

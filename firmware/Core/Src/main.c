@@ -240,7 +240,7 @@ void PeriphCommonClock_Config(void)
     Error_Handler();
   }
   /* USER CODE BEGIN Smps */
-
+  LL_HSEM_1StepLock(HSEM, 5);
   /* USER CODE END Smps */
 }
 
@@ -430,7 +430,7 @@ static void MX_RTC_Init(void)
 
   /** Enable the WakeUp
   */
-  if (HAL_RTCEx_SetWakeUpTimer(&hrtc, 0, RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK)
+  if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 0, RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK)
   {
     Error_Handler();
   }

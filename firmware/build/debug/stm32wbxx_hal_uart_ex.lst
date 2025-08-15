@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     (#) Declare a UART_HandleTypeDef handle structure.
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     (#) For the UART RS485 Driver Enable mode, initialize the UART registers
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****         by calling the HAL_RS485Ex_Init() API.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** /** @defgroup UARTEx_Exported_Functions  UARTEx Exported Functions
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @{
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     +-----------------------------------------------------------------------+
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     }
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     /* Init the low level hardware */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     huart->MspInitCallback(huart);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     [..]
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     This subsection provides a set of Wakeup and FIFO mode related callback functions.
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     (#) Wakeup from Stop mode Callback:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****         (++) HAL_UARTEx_WakeupCallback()
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @}
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   */
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** /** @defgroup UARTEx_Exported_Functions_Group3 Peripheral Control functions
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** @endverbatim
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @{
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   uint32_t tickstart;
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   /* check the wake-up from stop mode UART instance */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   /* Set UESM bit */
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   ATOMIC_SET_BIT(huart->Instance->CR1, USART_CR1_UESM);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   WRITE_REG(huart->Instance->CR1, tmpcr1);
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   /* Determine the number of data to process during RX/TX ISR execution */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   UARTEx_SetNbDataToProcess(huart);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_1_4
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_1_2
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_3_4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   *            @arg @ref UART_TXFIFO_THRESHOLD_7_8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** {
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   uint32_t tmpcr1;
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   /* Check the parameters */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @param pData   Pointer to data buffer (uint8_t or uint16_t data elements).
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @param Size    Amount of data elements (uint8_t or uint16_t) to be received.
  714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @param RxLen   Number of data elements finally received
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 14
 
 
  715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   *                (could be lower than Size, in case reception ends on IDLE event)
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  769:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       if (__HAL_UART_GET_FLAG(huart, UART_FLAG_IDLE))
  770:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       {
  771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****         /* Clear IDLE flag in ISR */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 15
 
 
  772:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****         __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_IDLEF);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  826:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** }
  827:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  828:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 16
 
 
  829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @brief Receive an amount of data in interrupt mode till either the expected number of data
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   }
  884:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   else
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 17
 
 
  886:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     return HAL_BUSY;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  940:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       }
  941:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       else
  942:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 18
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****         /* In case of errors already pending when reception is started,
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   */
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 19
 
 
 1000:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @brief Initialize the UART wake-up from stop mode parameters when triggered by address detectio
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
   70              	.LFB1121:
 1015:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
 1016:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 20
 
 
 1017:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   * @brief Calculate the number of data to process in RX/TX ISR.
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  101              		.loc 1 1039 5 is_stmt 1 view .LVU21
  102              	.LVL2:
 1040:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     tx_fifo_depth = TX_FIFO_DEPTH;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 21
 
 
  103              		.loc 1 1040 5 view .LVU22
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  145              		.cfi_restore 5
  146              		.cfi_restore 4
  147              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 22
 
 
  148 0040 7047     		bx	lr
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  188:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   {
  194              		.loc 1 188 12 is_stmt 0 view .LVU52
  195 000e D0F88830 		ldr	r3, [r0, #136]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 23
 
 
  196              	.LVL8:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  235:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR1, (USART_CR1_DEDT | USART_CR1_DEAT), temp);
  237              		.loc 1 235 3 view .LVU66
  235:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR1, (USART_CR1_DEDT | USART_CR1_DEAT), temp);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 24
 
 
  238              		.loc 1 235 28 is_stmt 0 view .LVU67
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  280 007c D4E7     		b	.L14
  281              	.LVL19:
  282              	.L15:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 25
 
 
  283              		.cfi_def_cfa_offset 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  334              		.loc 1 290 3 view .LVU86
  295:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  335              		.loc 1 295 1 is_stmt 0 view .LVU87
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 26
 
 
  336 0000 7047     		bx	lr
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  385              		.loc 1 398 3 view .LVU96
  398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  386              		.loc 1 398 17 is_stmt 0 view .LVU97
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 27
 
 
  387 0006 2422     		movs	r2, #36
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  432              		.syntax unified
  433              		.thumb
  434              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 28
 
 
  436              	HAL_UARTEx_StopModeWakeUpSourceConfig:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  476              		.loc 1 444 3 view .LVU121
  477 002a 0168     		ldr	r1, [r0]
  478 002c 8B68     		ldr	r3, [r1, #8]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 29
 
 
  479 002e 23F44013 		bic	r3, r3, #3145728
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  521 0068 13E90600 		ldmdb	r3, {r1, r2}
  522 006c FFF7FEFF 		bl	UARTEx_Wakeup_AddressConfig
  523              	.LVL38:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 30
 
 
  448:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   }
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  570              		@ frame_needed = 0, uses_anonymous_args = 0
  571              		@ link register save eliminated.
  483:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 31
 
 
  572              		.loc 1 483 3 view .LVU144
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
   28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
   30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 32
 
 
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
   85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
   87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 33
 
 
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
  143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 34
 
 
  145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 35
 
 
  202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  256:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register (non-secure)
  257:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the non-secure Control Register when in secure state.
  258:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 36
 
 
  259:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  313:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  314:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_PSP(void)
  315:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 37
 
 
  316:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  370:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  371:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  372:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp" : "=r" (result) );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 38
 
 
  373:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  427:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, sp_ns" : "=r" (result) );
  428:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  429:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 39
 
 
  430:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  484:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  485:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  486:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 40
 
 
  487:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask (non-secure)
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  541:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Base Priority register value
  542:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  543:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_BASEPRI_NS(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 41
 
 
  544:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  598:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
  599:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  600:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 42
 
 
  601:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  655:Drivers/CMSIS/Include/cmsis_gcc.h ****   
  656:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
  657:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSPLIM Register value
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 43
 
 
  658:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  712:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  713:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  714:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 44
 
 
  715:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  769:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSPLIM_NS(void)
  770:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  771:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 45
 
 
  772:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  826:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  827:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  828:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 46
 
 
  829:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get FPSCR
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  883:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
  884:Drivers/CMSIS/Include/cmsis_gcc.h **** */
  885:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 47
 
 
  886:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  940:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Data Synchronization Barrier
  941:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
  942:Drivers/CMSIS/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 48
 
 
  943:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  997:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the byte order in a 16-bit value and returns the signed 16-bit result. For exam
  998:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
  999:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 49
 
 
 1000:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
 1054:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
 1055:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("rbit %0, %1" : "=r" (result) : "r" (value) );
 1056:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 50
 
 
 1057:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t s = (4U /*sizeof(v)*/ * 8U) - 1U; /* extra shift needed at end */
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
 1111:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
 1112:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("ldrexb %0, %1" : "=r" (result) : "Q" (*addr) );
 1113:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 51
 
 
 1114:Drivers/CMSIS/Include/cmsis_gcc.h ****     /* Prior to GCC 4.8, "Q" will be expanded to [rx, #0] which is not
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  603              		.thumb
  604              		.syntax unified
  605              	.LBE24:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 52
 
 
  606              	.LBE23:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
 1202:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
  613              		.loc 2 1202 31 view .LVU159
  614              	.LBB26:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 53
 
 
 1203:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  653              		.cfi_endproc
  654              	.LFE1110:
  656              		.section	.text.HAL_UARTEx_DisableStopMode,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 54
 
 
  657              		.align	1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  699              		.loc 2 1156 4 view .LVU187
 1156:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  700              		.loc 2 1156 4 is_stmt 0 view .LVU188
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 55
 
 
  701              		.thumb
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** }
  742              		.loc 1 510 10 view .LVU204
  743 0028 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 56
 
 
  744              	.LVL60:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  788 0014 C0F88830 		str	r3, [r0, #136]
  531:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  789              		.loc 1 531 3 is_stmt 1 view .LVU217
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 57
 
 
  531:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  526:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  829              		.loc 1 526 3 discriminator 1 view .LVU233
  830 0044 0220     		movs	r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 58
 
 
  831              	.LVL67:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  873              		.loc 1 575 3 is_stmt 1 view .LVU247
  874 0018 1968     		ldr	r1, [r3]
  875 001a 21F00101 		bic	r1, r1, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 59
 
 
  876 001e 1960     		str	r1, [r3]
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  916              		.global	HAL_UARTEx_SetTxFifoThreshold
  917              		.syntax unified
  918              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 60
 
 
  919              		.thumb_func
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  959 001c 1A68     		ldr	r2, [r3]
  960 001e 22F00102 		bic	r2, r2, #1
  961 0022 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 61
 
 
  625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1004              		.thumb
  1005              		.thumb_func
  1007              	HAL_UARTEx_SetRxFifoThreshold:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 62
 
 
  1008              	.LVL83:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1047 0022 1A60     		str	r2, [r3]
  674:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
  1048              		.loc 1 674 3 view .LVU306
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 63
 
 
  1049 0024 0268     		ldr	r2, [r0]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1093              	HAL_UARTEx_ReceiveToIdle:
  1094              	.LVL90:
  1095              	.LFB1116:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 64
 
 
  721:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   uint8_t  *pdata8bits;
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1136              		.loc 1 732 15 view .LVU332
  1137 0022 9AE0     		b	.L67
  1138              	.LVL93:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 65
 
 
  1139              	.L90:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  747:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     uhMask = huart->Mask;
  1175              		.loc 1 747 5 discriminator 2 view .LVU351
  1176 004c A3B9     		cbnz	r3, .L71
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 66
 
 
  747:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     uhMask = huart->Mask;
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1218 008c 0ED0     		beq	.L93
  759:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     }
  1219              		.loc 1 759 19 view .LVU365
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 67
 
 
  1220 008e 4FF0000A 		mov	r10, #0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1261              	.LVL102:
  1262              	.L96:
  778:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****           huart->RxState = HAL_UART_STATE_READY;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 68
 
 
  1263              		.loc 1 778 11 is_stmt 1 view .LVU379
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  804:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       {
  1301              		.loc 1 804 10 is_stmt 0 view .LVU396
  1302 00e8 B6F1FF3F 		cmp	r6, #-1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 69
 
 
  1303 00ec 1BD1     		bne	.L94
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1340              		.loc 1 795 50 is_stmt 0 view .LVU413
  1341 0118 5A6A     		ldr	r2, [r3, #36]
  795:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****           pdata8bits++;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 70
 
 
  1342              		.loc 1 795 58 view .LVU414
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1380 0148 92B2     		uxth	r2, r2
  816:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     /* At end of Rx process, restore huart->RxState to Ready */
  1381              		.loc 1 816 32 view .LVU431
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 71
 
 
  1382 014a 9B1A     		subs	r3, r3, r2
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1426              		.loc 1 855 3 view .LVU443
  855:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****   {
  1427              		.loc 1 855 12 is_stmt 0 view .LVU444
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 72
 
 
  1428 0000 D0F88C30 		ldr	r3, [r0, #140]
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1466              		.loc 1 868 8 view .LVU460
  1467 0022 012B     		cmp	r3, #1
  1468 0024 01D0     		beq	.L111
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 73
 
 
  879:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     }
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  871:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****     }
  1509              		.loc 1 871 7 is_stmt 1 discriminator 1 view .LVU475
  1510              	.LBB35:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 74
 
 
  1511              	.LBI35:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1555              		.loc 1 859 14 view .LVU487
  1556 004c E1E7     		b	.L99
  1557              		.cfi_endproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 75
 
 
  1558              	.LFE1117:
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1601              		.loc 1 928 26 is_stmt 0 view .LVU500
  1602 0014 0123     		movs	r3, #1
  1603 0016 C366     		str	r3, [r0, #108]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 76
 
 
  929:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1641              	.LVL130:
  1642              	.LBB39:
  1643              	.LBI39:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 77
 
 
 1151:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1687              		.cfi_restore 4
  1688              		.cfi_restore 14
  939:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c ****       }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 78
 
 
  1689              		.loc 1 939 9 discriminator 1 view .LVU531
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1739              		.section	.rodata.numerator.1,"a"
  1740              		.align	2
  1743              	numerator.1:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 79
 
 
  1744 0000 01010103 		.ascii	"\001\001\001\003\007\001\000\000"
@@ -4694,52 +4694,52 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 1
  1753              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
  1754              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h"
  1755              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s 			page 80
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_uart_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:21     .text.UARTEx_Wakeup_AddressConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:26     .text.UARTEx_Wakeup_AddressConfig:00000000 UARTEx_Wakeup_AddressConfig
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:63     .text.UARTEx_SetNbDataToProcess:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:68     .text.UARTEx_SetNbDataToProcess:00000000 UARTEx_SetNbDataToProcess
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:152    .text.UARTEx_SetNbDataToProcess:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1743   .rodata.numerator.1:00000000 numerator.1
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1737   .rodata.denominator.0:00000000 denominator.0
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:158    .text.HAL_RS485Ex_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:164    .text.HAL_RS485Ex_Init:00000000 HAL_RS485Ex_Init
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:299    .text.HAL_UARTEx_WakeupCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:305    .text.HAL_UARTEx_WakeupCallback:00000000 HAL_UARTEx_WakeupCallback
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:320    .text.HAL_UARTEx_RxFifoFullCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:326    .text.HAL_UARTEx_RxFifoFullCallback:00000000 HAL_UARTEx_RxFifoFullCallback
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:341    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:347    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 HAL_UARTEx_TxFifoEmptyCallback
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:362    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:368    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 HAL_MultiProcessorEx_AddressLength_Set
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:430    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:436    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 HAL_UARTEx_StopModeWakeUpSourceConfig
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:558    .text.HAL_UARTEx_EnableStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:564    .text.HAL_UARTEx_EnableStopMode:00000000 HAL_UARTEx_EnableStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:657    .text.HAL_UARTEx_DisableStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:663    .text.HAL_UARTEx_DisableStopMode:00000000 HAL_UARTEx_DisableStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:755    .text.HAL_UARTEx_EnableFifoMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:761    .text.HAL_UARTEx_EnableFifoMode:00000000 HAL_UARTEx_EnableFifoMode
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:838    .text.HAL_UARTEx_DisableFifoMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:844    .text.HAL_UARTEx_DisableFifoMode:00000000 HAL_UARTEx_DisableFifoMode
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:915    .text.HAL_UARTEx_SetTxFifoThreshold:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:921    .text.HAL_UARTEx_SetTxFifoThreshold:00000000 HAL_UARTEx_SetTxFifoThreshold
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1001   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1007   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 HAL_UARTEx_SetRxFifoThreshold
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1087   .text.HAL_UARTEx_ReceiveToIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1093   .text.HAL_UARTEx_ReceiveToIdle:00000000 HAL_UARTEx_ReceiveToIdle
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1412   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1418   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 HAL_UARTEx_ReceiveToIdle_IT
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1561   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1567   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 HAL_UARTEx_ReceiveToIdle_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1710   .text.HAL_UARTEx_GetRxEventType:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1716   .text.HAL_UARTEx_GetRxEventType:00000000 HAL_UARTEx_GetRxEventType
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1734   .rodata.denominator.0:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccvhq55V.s:1740   .rodata.numerator.1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:21     .text.UARTEx_Wakeup_AddressConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:26     .text.UARTEx_Wakeup_AddressConfig:00000000 UARTEx_Wakeup_AddressConfig
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:63     .text.UARTEx_SetNbDataToProcess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:68     .text.UARTEx_SetNbDataToProcess:00000000 UARTEx_SetNbDataToProcess
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:152    .text.UARTEx_SetNbDataToProcess:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1743   .rodata.numerator.1:00000000 numerator.1
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1737   .rodata.denominator.0:00000000 denominator.0
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:158    .text.HAL_RS485Ex_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:164    .text.HAL_RS485Ex_Init:00000000 HAL_RS485Ex_Init
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:299    .text.HAL_UARTEx_WakeupCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:305    .text.HAL_UARTEx_WakeupCallback:00000000 HAL_UARTEx_WakeupCallback
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:320    .text.HAL_UARTEx_RxFifoFullCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:326    .text.HAL_UARTEx_RxFifoFullCallback:00000000 HAL_UARTEx_RxFifoFullCallback
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:341    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:347    .text.HAL_UARTEx_TxFifoEmptyCallback:00000000 HAL_UARTEx_TxFifoEmptyCallback
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:362    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:368    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 HAL_MultiProcessorEx_AddressLength_Set
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:430    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:436    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 HAL_UARTEx_StopModeWakeUpSourceConfig
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:558    .text.HAL_UARTEx_EnableStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:564    .text.HAL_UARTEx_EnableStopMode:00000000 HAL_UARTEx_EnableStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:657    .text.HAL_UARTEx_DisableStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:663    .text.HAL_UARTEx_DisableStopMode:00000000 HAL_UARTEx_DisableStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:755    .text.HAL_UARTEx_EnableFifoMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:761    .text.HAL_UARTEx_EnableFifoMode:00000000 HAL_UARTEx_EnableFifoMode
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:838    .text.HAL_UARTEx_DisableFifoMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:844    .text.HAL_UARTEx_DisableFifoMode:00000000 HAL_UARTEx_DisableFifoMode
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:915    .text.HAL_UARTEx_SetTxFifoThreshold:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:921    .text.HAL_UARTEx_SetTxFifoThreshold:00000000 HAL_UARTEx_SetTxFifoThreshold
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1001   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1007   .text.HAL_UARTEx_SetRxFifoThreshold:00000000 HAL_UARTEx_SetRxFifoThreshold
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1087   .text.HAL_UARTEx_ReceiveToIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1093   .text.HAL_UARTEx_ReceiveToIdle:00000000 HAL_UARTEx_ReceiveToIdle
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1412   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1418   .text.HAL_UARTEx_ReceiveToIdle_IT:00000000 HAL_UARTEx_ReceiveToIdle_IT
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1561   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1567   .text.HAL_UARTEx_ReceiveToIdle_DMA:00000000 HAL_UARTEx_ReceiveToIdle_DMA
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1710   .text.HAL_UARTEx_GetRxEventType:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1716   .text.HAL_UARTEx_GetRxEventType:00000000 HAL_UARTEx_GetRxEventType
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1734   .rodata.denominator.0:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCB4udB.s:1740   .rodata.numerator.1:00000000 $d
 
 UNDEFINED SYMBOLS
 UART_SetConfig

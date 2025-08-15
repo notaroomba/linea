@@ -1,0 +1,1436 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"custom_stm.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "STM32_WPAN/App/custom_stm.c"
+  20              		.section	.text.Custom_STM_Event_Handler,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	Custom_STM_Event_Handler:
+  27              	.LVL0:
+  28              	.LFB1417:
+   1:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN Header */
+   2:STM32_WPAN/App/custom_stm.c **** /**
+   3:STM32_WPAN/App/custom_stm.c ****   ******************************************************************************
+   4:STM32_WPAN/App/custom_stm.c ****   * @file    App/custom_stm.c
+   5:STM32_WPAN/App/custom_stm.c ****   * @author  MCD Application Team
+   6:STM32_WPAN/App/custom_stm.c ****   * @brief   Custom Example Service.
+   7:STM32_WPAN/App/custom_stm.c ****   ******************************************************************************
+   8:STM32_WPAN/App/custom_stm.c ****   * @attention
+   9:STM32_WPAN/App/custom_stm.c ****   *
+  10:STM32_WPAN/App/custom_stm.c ****   * Copyright (c) 2025 STMicroelectronics.
+  11:STM32_WPAN/App/custom_stm.c ****   * All rights reserved.
+  12:STM32_WPAN/App/custom_stm.c ****   *
+  13:STM32_WPAN/App/custom_stm.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:STM32_WPAN/App/custom_stm.c ****   * in the root directory of this software component.
+  15:STM32_WPAN/App/custom_stm.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:STM32_WPAN/App/custom_stm.c ****   *
+  17:STM32_WPAN/App/custom_stm.c ****   ******************************************************************************
+  18:STM32_WPAN/App/custom_stm.c ****   */
+  19:STM32_WPAN/App/custom_stm.c **** /* USER CODE END Header */
+  20:STM32_WPAN/App/custom_stm.c **** 
+  21:STM32_WPAN/App/custom_stm.c **** /* Includes ------------------------------------------------------------------*/
+  22:STM32_WPAN/App/custom_stm.c **** #include "common_blesvc.h"
+  23:STM32_WPAN/App/custom_stm.c **** #include "custom_stm.h"
+  24:STM32_WPAN/App/custom_stm.c **** 
+  25:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN Includes */
+  26:STM32_WPAN/App/custom_stm.c **** 
+  27:STM32_WPAN/App/custom_stm.c **** /* USER CODE END Includes */
+  28:STM32_WPAN/App/custom_stm.c **** 
+  29:STM32_WPAN/App/custom_stm.c **** /* Private typedef -----------------------------------------------------------*/
+  30:STM32_WPAN/App/custom_stm.c **** typedef struct{
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 2
+
+
+  31:STM32_WPAN/App/custom_stm.c ****   uint16_t  CustomLinsrvHdle;                    /**< LineaService handle */
+  32:STM32_WPAN/App/custom_stm.c ****   uint16_t  CustomCharwriteHdle;                  /**< charWrite handle */
+  33:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN Context */
+  34:STM32_WPAN/App/custom_stm.c ****   /* Place holder for Characteristic Descriptors Handle*/
+  35:STM32_WPAN/App/custom_stm.c **** 
+  36:STM32_WPAN/App/custom_stm.c **** /* USER CODE END Context */
+  37:STM32_WPAN/App/custom_stm.c **** }CustomContext_t;
+  38:STM32_WPAN/App/custom_stm.c **** 
+  39:STM32_WPAN/App/custom_stm.c **** extern uint16_t Connection_Handle;
+  40:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PTD */
+  41:STM32_WPAN/App/custom_stm.c **** 
+  42:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PTD */
+  43:STM32_WPAN/App/custom_stm.c **** 
+  44:STM32_WPAN/App/custom_stm.c **** /* Private defines -----------------------------------------------------------*/
+  45:STM32_WPAN/App/custom_stm.c **** #define UUID_128_SUPPORTED  1
+  46:STM32_WPAN/App/custom_stm.c **** 
+  47:STM32_WPAN/App/custom_stm.c **** #if (UUID_128_SUPPORTED == 1)
+  48:STM32_WPAN/App/custom_stm.c **** #define BM_UUID_LENGTH  UUID_TYPE_128
+  49:STM32_WPAN/App/custom_stm.c **** #else
+  50:STM32_WPAN/App/custom_stm.c **** #define BM_UUID_LENGTH  UUID_TYPE_16
+  51:STM32_WPAN/App/custom_stm.c **** #endif
+  52:STM32_WPAN/App/custom_stm.c **** 
+  53:STM32_WPAN/App/custom_stm.c **** #define BM_REQ_CHAR_SIZE    (3)
+  54:STM32_WPAN/App/custom_stm.c **** 
+  55:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PD */
+  56:STM32_WPAN/App/custom_stm.c **** 
+  57:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PD */
+  58:STM32_WPAN/App/custom_stm.c **** 
+  59:STM32_WPAN/App/custom_stm.c **** /* Private macros ------------------------------------------------------------*/
+  60:STM32_WPAN/App/custom_stm.c **** #define CHARACTERISTIC_DESCRIPTOR_ATTRIBUTE_OFFSET         2
+  61:STM32_WPAN/App/custom_stm.c **** #define CHARACTERISTIC_VALUE_ATTRIBUTE_OFFSET              1
+  62:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PM */
+  63:STM32_WPAN/App/custom_stm.c **** 
+  64:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PM */
+  65:STM32_WPAN/App/custom_stm.c **** 
+  66:STM32_WPAN/App/custom_stm.c **** /* Private variables ---------------------------------------------------------*/
+  67:STM32_WPAN/App/custom_stm.c **** uint16_t SizeCharwrite = 1;
+  68:STM32_WPAN/App/custom_stm.c **** 
+  69:STM32_WPAN/App/custom_stm.c **** /**
+  70:STM32_WPAN/App/custom_stm.c ****  * START of Section BLE_DRIVER_CONTEXT
+  71:STM32_WPAN/App/custom_stm.c ****  */
+  72:STM32_WPAN/App/custom_stm.c **** static CustomContext_t CustomContext;
+  73:STM32_WPAN/App/custom_stm.c **** 
+  74:STM32_WPAN/App/custom_stm.c **** /**
+  75:STM32_WPAN/App/custom_stm.c ****  * END of Section BLE_DRIVER_CONTEXT
+  76:STM32_WPAN/App/custom_stm.c ****  */
+  77:STM32_WPAN/App/custom_stm.c **** 
+  78:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PV */
+  79:STM32_WPAN/App/custom_stm.c **** 
+  80:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PV */
+  81:STM32_WPAN/App/custom_stm.c **** 
+  82:STM32_WPAN/App/custom_stm.c **** /* Private function prototypes -----------------------------------------------*/
+  83:STM32_WPAN/App/custom_stm.c **** static SVCCTL_EvtAckStatus_t Custom_STM_Event_Handler(void *pckt);
+  84:STM32_WPAN/App/custom_stm.c **** 
+  85:STM32_WPAN/App/custom_stm.c **** static tBleStatus Generic_STM_App_Update_Char_Ext(uint16_t ConnectionHandle, uint16_t ServiceHandle
+  86:STM32_WPAN/App/custom_stm.c **** 
+  87:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PFP */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 3
+
+
+  88:STM32_WPAN/App/custom_stm.c **** 
+  89:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PFP */
+  90:STM32_WPAN/App/custom_stm.c **** 
+  91:STM32_WPAN/App/custom_stm.c **** /* Functions Definition ------------------------------------------------------*/
+  92:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PFD */
+  93:STM32_WPAN/App/custom_stm.c **** 
+  94:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PFD */
+  95:STM32_WPAN/App/custom_stm.c **** 
+  96:STM32_WPAN/App/custom_stm.c **** /* Private functions ----------------------------------------------------------*/
+  97:STM32_WPAN/App/custom_stm.c **** 
+  98:STM32_WPAN/App/custom_stm.c **** #define COPY_UUID_128(uuid_struct, uuid_15, uuid_14, uuid_13, uuid_12, uuid_11, uuid_10, uuid_9, uu
+  99:STM32_WPAN/App/custom_stm.c **** do {\
+ 100:STM32_WPAN/App/custom_stm.c ****     uuid_struct[0] = uuid_0; uuid_struct[1] = uuid_1; uuid_struct[2] = uuid_2; uuid_struct[3] = uui
+ 101:STM32_WPAN/App/custom_stm.c ****     uuid_struct[4] = uuid_4; uuid_struct[5] = uuid_5; uuid_struct[6] = uuid_6; uuid_struct[7] = uui
+ 102:STM32_WPAN/App/custom_stm.c ****     uuid_struct[8] = uuid_8; uuid_struct[9] = uuid_9; uuid_struct[10] = uuid_10; uuid_struct[11] = 
+ 103:STM32_WPAN/App/custom_stm.c ****     uuid_struct[12] = uuid_12; uuid_struct[13] = uuid_13; uuid_struct[14] = uuid_14; uuid_struct[15
+ 104:STM32_WPAN/App/custom_stm.c **** }while(0)
+ 105:STM32_WPAN/App/custom_stm.c **** 
+ 106:STM32_WPAN/App/custom_stm.c **** #define COPY_LINEASERVICE_UUID(uuid_struct)          COPY_UUID_128(uuid_struct,0x00,0x00,0x00,0x00,
+ 107:STM32_WPAN/App/custom_stm.c **** #define COPY_CHARWRITE_UUID(uuid_struct)    COPY_UUID_128(uuid_struct,0x00,0x00,0x00,0x00,0x8e,0x22
+ 108:STM32_WPAN/App/custom_stm.c **** 
+ 109:STM32_WPAN/App/custom_stm.c **** /* USER CODE BEGIN PF */
+ 110:STM32_WPAN/App/custom_stm.c **** 
+ 111:STM32_WPAN/App/custom_stm.c **** /* USER CODE END PF */
+ 112:STM32_WPAN/App/custom_stm.c **** 
+ 113:STM32_WPAN/App/custom_stm.c **** /**
+ 114:STM32_WPAN/App/custom_stm.c ****  * @brief  Event handler
+ 115:STM32_WPAN/App/custom_stm.c ****  * @param  Event: Address of the buffer holding the Event
+ 116:STM32_WPAN/App/custom_stm.c ****  * @retval Ack: Return whether the Event has been managed or not
+ 117:STM32_WPAN/App/custom_stm.c ****  */
+ 118:STM32_WPAN/App/custom_stm.c **** static SVCCTL_EvtAckStatus_t Custom_STM_Event_Handler(void *Event)
+ 119:STM32_WPAN/App/custom_stm.c **** {
+  29              		.loc 1 119 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 24
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120:STM32_WPAN/App/custom_stm.c ****   SVCCTL_EvtAckStatus_t return_value;
+  33              		.loc 1 120 3 view .LVU1
+ 121:STM32_WPAN/App/custom_stm.c ****   hci_event_pckt *event_pckt;
+  34              		.loc 1 121 3 view .LVU2
+ 122:STM32_WPAN/App/custom_stm.c ****   evt_blecore_aci *blecore_evt;
+  35              		.loc 1 122 3 view .LVU3
+ 123:STM32_WPAN/App/custom_stm.c ****   aci_gatt_attribute_modified_event_rp0 *attribute_modified;
+  36              		.loc 1 123 3 view .LVU4
+ 124:STM32_WPAN/App/custom_stm.c ****   aci_gatt_write_permit_req_event_rp0   *write_perm_req;
+  37              		.loc 1 124 3 view .LVU5
+ 125:STM32_WPAN/App/custom_stm.c ****   aci_gatt_notification_complete_event_rp0    *notification_complete;
+  38              		.loc 1 125 3 view .LVU6
+ 126:STM32_WPAN/App/custom_stm.c ****   Custom_STM_App_Notification_evt_t     Notification;
+  39              		.loc 1 126 3 view .LVU7
+ 127:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_Event_Handler_1 */
+ 128:STM32_WPAN/App/custom_stm.c **** 
+ 129:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_Event_Handler_1 */
+ 130:STM32_WPAN/App/custom_stm.c **** 
+ 131:STM32_WPAN/App/custom_stm.c ****   return_value = SVCCTL_EvtNotAck;
+  40              		.loc 1 131 3 view .LVU8
+ 132:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 4
+
+
+  41              		.loc 1 132 3 view .LVU9
+ 133:STM32_WPAN/App/custom_stm.c **** 
+ 134:STM32_WPAN/App/custom_stm.c ****   switch (event_pckt->evt)
+  42              		.loc 1 134 3 view .LVU10
+  43              		.loc 1 134 21 is_stmt 0 view .LVU11
+  44 0000 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  45              		.loc 1 134 3 view .LVU12
+  46 0002 FF2B     		cmp	r3, #255
+  47 0004 01D0     		beq	.L12
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+  48              		.loc 1 131 16 view .LVU13
+  49 0006 0020     		movs	r0, #0
+  50              	.LVL1:
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+  51              		.loc 1 131 16 view .LVU14
+  52 0008 7047     		bx	lr
+  53              	.LVL2:
+  54              	.L12:
+ 135:STM32_WPAN/App/custom_stm.c ****   {
+ 136:STM32_WPAN/App/custom_stm.c ****     case HCI_VENDOR_SPECIFIC_DEBUG_EVT_CODE:
+ 137:STM32_WPAN/App/custom_stm.c ****       blecore_evt = (evt_blecore_aci*)event_pckt->data;
+  55              		.loc 1 137 7 is_stmt 1 view .LVU15
+ 138:STM32_WPAN/App/custom_stm.c ****       switch (blecore_evt->ecode)
+  56              		.loc 1 138 7 view .LVU16
+  57              		.loc 1 138 26 is_stmt 0 view .LVU17
+  58 000a B0F80330 		ldrh	r3, [r0, #3]	@ unaligned
+  59              		.loc 1 138 7 view .LVU18
+  60 000e 40F61342 		movw	r2, #3091
+  61 0012 9342     		cmp	r3, r2
+  62 0014 10D0     		beq	.L3
+  63 0016 40F61B42 		movw	r2, #3099
+  64 001a 9342     		cmp	r3, r2
+  65 001c 15D0     		beq	.L4
+  66 001e 40F60142 		movw	r2, #3073
+  67 0022 9342     		cmp	r3, r2
+  68 0024 21D1     		bne	.L6
+ 139:STM32_WPAN/App/custom_stm.c ****       {
+ 140:STM32_WPAN/App/custom_stm.c ****         case ACI_GATT_ATTRIBUTE_MODIFIED_VSEVT_CODE:
+ 141:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_ATTRIBUTE_MODIFIED_BEGIN */
+ 142:STM32_WPAN/App/custom_stm.c **** 
+ 143:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_ATTRIBUTE_MODIFIED_BEGIN */
+ 144:STM32_WPAN/App/custom_stm.c ****           attribute_modified = (aci_gatt_attribute_modified_event_rp0*)blecore_evt->data;
+  69              		.loc 1 144 11 is_stmt 1 view .LVU19
+  70              	.LVL3:
+ 145:STM32_WPAN/App/custom_stm.c ****           if (attribute_modified->Attr_Handle == (CustomContext.CustomCharwriteHdle + CHARACTERISTI
+  71              		.loc 1 145 11 view .LVU20
+  72              		.loc 1 145 33 is_stmt 0 view .LVU21
+  73 0026 B0F80720 		ldrh	r2, [r0, #7]	@ unaligned
+  74              		.loc 1 145 64 view .LVU22
+  75 002a 134B     		ldr	r3, .L13
+  76 002c 5B88     		ldrh	r3, [r3, #2]
+  77              		.loc 1 145 85 view .LVU23
+  78 002e 0133     		adds	r3, r3, #1
+  79              		.loc 1 145 14 view .LVU24
+  80 0030 9A42     		cmp	r2, r3
+  81 0032 1CD0     		beq	.L7
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 5
+
+
+  82              		.loc 1 131 16 view .LVU25
+  83 0034 0020     		movs	r0, #0
+  84              	.LVL4:
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+  85              		.loc 1 131 16 view .LVU26
+  86 0036 7047     		bx	lr
+  87              	.LVL5:
+  88              	.L3:
+ 146:STM32_WPAN/App/custom_stm.c ****           {
+ 147:STM32_WPAN/App/custom_stm.c ****             return_value = SVCCTL_EvtAckFlowEnable;
+ 148:STM32_WPAN/App/custom_stm.c ****             /* USER CODE BEGIN CUSTOM_STM_Service_1_Char_1_ACI_GATT_ATTRIBUTE_MODIFIED_VSEVT_CODE *
+ 149:STM32_WPAN/App/custom_stm.c **** 
+ 150:STM32_WPAN/App/custom_stm.c ****             /* USER CODE END CUSTOM_STM_Service_1_Char_1_ACI_GATT_ATTRIBUTE_MODIFIED_VSEVT_CODE */
+ 151:STM32_WPAN/App/custom_stm.c ****           } /* if (attribute_modified->Attr_Handle == (CustomContext.CustomCharwriteHdle + CHARACTE
+ 152:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_ATTRIBUTE_MODIFIED_END */
+ 153:STM32_WPAN/App/custom_stm.c **** 
+ 154:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_ATTRIBUTE_MODIFIED_END */
+ 155:STM32_WPAN/App/custom_stm.c ****           break;
+ 156:STM32_WPAN/App/custom_stm.c **** 
+ 157:STM32_WPAN/App/custom_stm.c ****         case ACI_GATT_READ_PERMIT_REQ_VSEVT_CODE :
+ 158:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_READ_PERMIT_REQ_BEGIN */
+ 159:STM32_WPAN/App/custom_stm.c **** 
+ 160:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_READ_PERMIT_REQ_BEGIN */
+ 161:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_READ_PERMIT_REQ_END */
+ 162:STM32_WPAN/App/custom_stm.c **** 
+ 163:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_READ_PERMIT_REQ_END */
+ 164:STM32_WPAN/App/custom_stm.c ****           break;
+ 165:STM32_WPAN/App/custom_stm.c **** 
+ 166:STM32_WPAN/App/custom_stm.c ****         case ACI_GATT_WRITE_PERMIT_REQ_VSEVT_CODE:
+ 167:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_WRITE_PERMIT_REQ_BEGIN */
+ 168:STM32_WPAN/App/custom_stm.c **** 
+ 169:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_WRITE_PERMIT_REQ_BEGIN */
+ 170:STM32_WPAN/App/custom_stm.c ****           write_perm_req = (aci_gatt_write_permit_req_event_rp0*)blecore_evt->data;
+  89              		.loc 1 170 11 is_stmt 1 view .LVU27
+ 171:STM32_WPAN/App/custom_stm.c ****           if (write_perm_req->Attribute_Handle == (CustomContext.CustomCharwriteHdle + CHARACTERIST
+  90              		.loc 1 171 11 view .LVU28
+  91              		.loc 1 171 29 is_stmt 0 view .LVU29
+  92 0038 B0F80720 		ldrh	r2, [r0, #7]	@ unaligned
+  93              		.loc 1 171 65 view .LVU30
+  94 003c 0E4B     		ldr	r3, .L13
+  95 003e 5B88     		ldrh	r3, [r3, #2]
+  96              		.loc 1 171 86 view .LVU31
+  97 0040 0133     		adds	r3, r3, #1
+  98              		.loc 1 171 14 view .LVU32
+  99 0042 9A42     		cmp	r2, r3
+ 100 0044 15D0     		beq	.L8
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+ 101              		.loc 1 131 16 view .LVU33
+ 102 0046 0020     		movs	r0, #0
+ 103              	.LVL6:
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+ 104              		.loc 1 131 16 view .LVU34
+ 105 0048 7047     		bx	lr
+ 106              	.LVL7:
+ 107              	.L4:
+ 119:STM32_WPAN/App/custom_stm.c ****   SVCCTL_EvtAckStatus_t return_value;
+ 108              		.loc 1 119 1 view .LVU35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 6
+
+
+ 109 004a 00B5     		push	{lr}
+ 110              		.cfi_def_cfa_offset 4
+ 111              		.cfi_offset 14, -4
+ 112 004c 87B0     		sub	sp, sp, #28
+ 113              		.cfi_def_cfa_offset 32
+ 172:STM32_WPAN/App/custom_stm.c ****           {
+ 173:STM32_WPAN/App/custom_stm.c ****             return_value = SVCCTL_EvtAckFlowEnable;
+ 174:STM32_WPAN/App/custom_stm.c ****             /* Allow or reject a write request from a client using aci_gatt_write_resp(...) functio
+ 175:STM32_WPAN/App/custom_stm.c ****             /*USER CODE BEGIN CUSTOM_STM_Service_1_Char_1_ACI_GATT_WRITE_PERMIT_REQ_VSEVT_CODE */
+ 176:STM32_WPAN/App/custom_stm.c **** 
+ 177:STM32_WPAN/App/custom_stm.c ****             /*USER CODE END CUSTOM_STM_Service_1_Char_1_ACI_GATT_WRITE_PERMIT_REQ_VSEVT_CODE*/
+ 178:STM32_WPAN/App/custom_stm.c ****           } /*if (write_perm_req->Attribute_Handle == (CustomContext.CustomCharwriteHdle + CHARACTE
+ 179:STM32_WPAN/App/custom_stm.c **** 
+ 180:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_WRITE_PERMIT_REQ_END */
+ 181:STM32_WPAN/App/custom_stm.c **** 
+ 182:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_WRITE_PERMIT_REQ_END */
+ 183:STM32_WPAN/App/custom_stm.c ****           break;
+ 184:STM32_WPAN/App/custom_stm.c **** 
+ 185:STM32_WPAN/App/custom_stm.c **** 		case ACI_GATT_NOTIFICATION_COMPLETE_VSEVT_CODE:
+ 186:STM32_WPAN/App/custom_stm.c ****         {
+ 187:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_NOTIFICATION_COMPLETE_BEGIN */
+ 188:STM32_WPAN/App/custom_stm.c **** 
+ 189:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_NOTIFICATION_COMPLETE_BEGIN */
+ 190:STM32_WPAN/App/custom_stm.c ****           notification_complete = (aci_gatt_notification_complete_event_rp0*)blecore_evt->data;
+ 114              		.loc 1 190 11 is_stmt 1 view .LVU36
+ 115              	.LVL8:
+ 191:STM32_WPAN/App/custom_stm.c ****           Notification.Custom_Evt_Opcode = CUSTOM_STM_NOTIFICATION_COMPLETE_EVT;
+ 116              		.loc 1 191 11 view .LVU37
+ 117              		.loc 1 191 42 is_stmt 0 view .LVU38
+ 118 004e 0123     		movs	r3, #1
+ 119 0050 8DF80430 		strb	r3, [sp, #4]
+ 192:STM32_WPAN/App/custom_stm.c ****           Notification.AttrHandle = notification_complete->Attr_Handle;
+ 120              		.loc 1 192 11 is_stmt 1 view .LVU39
+ 121              		.loc 1 192 58 is_stmt 0 view .LVU40
+ 122 0054 B0F80530 		ldrh	r3, [r0, #5]	@ unaligned
+ 123              		.loc 1 192 35 view .LVU41
+ 124 0058 ADF81430 		strh	r3, [sp, #20]	@ movhi
+ 193:STM32_WPAN/App/custom_stm.c ****           Custom_STM_App_Notification(&Notification);
+ 125              		.loc 1 193 11 is_stmt 1 view .LVU42
+ 126 005c 01A8     		add	r0, sp, #4
+ 127              	.LVL9:
+ 128              		.loc 1 193 11 is_stmt 0 view .LVU43
+ 129 005e FFF7FEFF 		bl	Custom_STM_App_Notification
+ 130              	.LVL10:
+ 194:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_BLUE_GATT_NOTIFICATION_COMPLETE_END */
+ 195:STM32_WPAN/App/custom_stm.c **** 
+ 196:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_BLUE_GATT_NOTIFICATION_COMPLETE_END */
+ 197:STM32_WPAN/App/custom_stm.c ****           break;
+ 131              		.loc 1 197 11 is_stmt 1 view .LVU44
+ 131:STM32_WPAN/App/custom_stm.c ****   event_pckt = (hci_event_pckt *)(((hci_uart_pckt*)Event)->data);
+ 132              		.loc 1 131 16 is_stmt 0 view .LVU45
+ 133 0062 0020     		movs	r0, #0
+ 134              	.LVL11:
+ 198:STM32_WPAN/App/custom_stm.c ****         }
+ 199:STM32_WPAN/App/custom_stm.c **** 
+ 200:STM32_WPAN/App/custom_stm.c ****         /* USER CODE BEGIN BLECORE_EVT */
+ 201:STM32_WPAN/App/custom_stm.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 7
+
+
+ 202:STM32_WPAN/App/custom_stm.c ****         /* USER CODE END BLECORE_EVT */
+ 203:STM32_WPAN/App/custom_stm.c ****         default:
+ 204:STM32_WPAN/App/custom_stm.c ****           /* USER CODE BEGIN EVT_DEFAULT */
+ 205:STM32_WPAN/App/custom_stm.c **** 
+ 206:STM32_WPAN/App/custom_stm.c ****           /* USER CODE END EVT_DEFAULT */
+ 207:STM32_WPAN/App/custom_stm.c ****           break;
+ 208:STM32_WPAN/App/custom_stm.c ****       }
+ 209:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN EVT_VENDOR*/
+ 210:STM32_WPAN/App/custom_stm.c **** 
+ 211:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END EVT_VENDOR*/
+ 212:STM32_WPAN/App/custom_stm.c ****       break; /* HCI_VENDOR_SPECIFIC_DEBUG_EVT_CODE */
+ 213:STM32_WPAN/App/custom_stm.c **** 
+ 214:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN EVENT_PCKT_CASES*/
+ 215:STM32_WPAN/App/custom_stm.c **** 
+ 216:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END EVENT_PCKT_CASES*/
+ 217:STM32_WPAN/App/custom_stm.c **** 
+ 218:STM32_WPAN/App/custom_stm.c ****     default:
+ 219:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN EVENT_PCKT*/
+ 220:STM32_WPAN/App/custom_stm.c **** 
+ 221:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END EVENT_PCKT*/
+ 222:STM32_WPAN/App/custom_stm.c ****       break;
+ 223:STM32_WPAN/App/custom_stm.c ****   }
+ 224:STM32_WPAN/App/custom_stm.c **** 
+ 225:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_Event_Handler_2 */
+ 226:STM32_WPAN/App/custom_stm.c **** 
+ 227:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_Event_Handler_2 */
+ 228:STM32_WPAN/App/custom_stm.c **** 
+ 229:STM32_WPAN/App/custom_stm.c ****   return(return_value);
+ 135              		.loc 1 229 3 is_stmt 1 view .LVU46
+ 230:STM32_WPAN/App/custom_stm.c **** }/* end Custom_STM_Event_Handler */
+ 136              		.loc 1 230 1 is_stmt 0 view .LVU47
+ 137 0064 07B0     		add	sp, sp, #28
+ 138              		.cfi_def_cfa_offset 4
+ 139              		@ sp needed
+ 140 0066 5DF804FB 		ldr	pc, [sp], #4
+ 141              	.LVL12:
+ 142              	.L6:
+ 143              		.cfi_def_cfa_offset 0
+ 144              		.cfi_restore 14
+ 138:STM32_WPAN/App/custom_stm.c ****       {
+ 145              		.loc 1 138 7 view .LVU48
+ 146 006a 0020     		movs	r0, #0
+ 147              	.LVL13:
+ 138:STM32_WPAN/App/custom_stm.c ****       {
+ 148              		.loc 1 138 7 view .LVU49
+ 149 006c 7047     		bx	lr
+ 150              	.LVL14:
+ 151              	.L7:
+ 147:STM32_WPAN/App/custom_stm.c ****             /* USER CODE BEGIN CUSTOM_STM_Service_1_Char_1_ACI_GATT_ATTRIBUTE_MODIFIED_VSEVT_CODE *
+ 152              		.loc 1 147 26 view .LVU50
+ 153 006e 0120     		movs	r0, #1
+ 154              	.LVL15:
+ 147:STM32_WPAN/App/custom_stm.c ****             /* USER CODE BEGIN CUSTOM_STM_Service_1_Char_1_ACI_GATT_ATTRIBUTE_MODIFIED_VSEVT_CODE *
+ 155              		.loc 1 147 26 view .LVU51
+ 156 0070 7047     		bx	lr
+ 157              	.LVL16:
+ 158              	.L8:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 8
+
+
+ 173:STM32_WPAN/App/custom_stm.c ****             /* Allow or reject a write request from a client using aci_gatt_write_resp(...) functio
+ 159              		.loc 1 173 26 view .LVU52
+ 160 0072 0120     		movs	r0, #1
+ 161              	.LVL17:
+ 229:STM32_WPAN/App/custom_stm.c **** }/* end Custom_STM_Event_Handler */
+ 162              		.loc 1 229 3 is_stmt 1 view .LVU53
+ 163              		.loc 1 230 1 is_stmt 0 view .LVU54
+ 164 0074 7047     		bx	lr
+ 165              	.L14:
+ 166 0076 00BF     		.align	2
+ 167              	.L13:
+ 168 0078 00000000 		.word	CustomContext
+ 169              		.cfi_endproc
+ 170              	.LFE1417:
+ 172              		.section	.text.Generic_STM_App_Update_Char_Ext,"ax",%progbits
+ 173              		.align	1
+ 174              		.syntax unified
+ 175              		.thumb
+ 176              		.thumb_func
+ 178              	Generic_STM_App_Update_Char_Ext:
+ 179              	.LVL18:
+ 180              	.LFB1422:
+ 231:STM32_WPAN/App/custom_stm.c **** 
+ 232:STM32_WPAN/App/custom_stm.c **** /* Public functions ----------------------------------------------------------*/
+ 233:STM32_WPAN/App/custom_stm.c **** 
+ 234:STM32_WPAN/App/custom_stm.c **** /**
+ 235:STM32_WPAN/App/custom_stm.c ****  * @brief  Service initialization
+ 236:STM32_WPAN/App/custom_stm.c ****  * @param  None
+ 237:STM32_WPAN/App/custom_stm.c ****  * @retval None
+ 238:STM32_WPAN/App/custom_stm.c ****  */
+ 239:STM32_WPAN/App/custom_stm.c **** void SVCCTL_InitCustomSvc(void)
+ 240:STM32_WPAN/App/custom_stm.c **** {
+ 241:STM32_WPAN/App/custom_stm.c **** 
+ 242:STM32_WPAN/App/custom_stm.c ****   Char_UUID_t  uuid;
+ 243:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 244:STM32_WPAN/App/custom_stm.c ****   uint8_t max_attr_record;
+ 245:STM32_WPAN/App/custom_stm.c **** 
+ 246:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN SVCCTL_InitCustomSvc_1 */
+ 247:STM32_WPAN/App/custom_stm.c **** 
+ 248:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END SVCCTL_InitCustomSvc_1 */
+ 249:STM32_WPAN/App/custom_stm.c **** 
+ 250:STM32_WPAN/App/custom_stm.c ****   /**
+ 251:STM32_WPAN/App/custom_stm.c ****    *  Register the event handler to the BLE controller
+ 252:STM32_WPAN/App/custom_stm.c ****    */
+ 253:STM32_WPAN/App/custom_stm.c ****   SVCCTL_RegisterSvcHandler(Custom_STM_Event_Handler);
+ 254:STM32_WPAN/App/custom_stm.c **** 
+ 255:STM32_WPAN/App/custom_stm.c ****   /**
+ 256:STM32_WPAN/App/custom_stm.c ****    *          LineaService
+ 257:STM32_WPAN/App/custom_stm.c ****    *
+ 258:STM32_WPAN/App/custom_stm.c ****    * Max_Attribute_Records = 1 + 2*1 + 1*no_of_char_with_notify_or_indicate_property + 1*no_of_char
+ 259:STM32_WPAN/App/custom_stm.c ****    * service_max_attribute_record = 1 for LineaService +
+ 260:STM32_WPAN/App/custom_stm.c ****    *                                2 for charWrite +
+ 261:STM32_WPAN/App/custom_stm.c ****    *                              = 3
+ 262:STM32_WPAN/App/custom_stm.c ****    *
+ 263:STM32_WPAN/App/custom_stm.c ****    * This value doesn't take into account number of descriptors manually added
+ 264:STM32_WPAN/App/custom_stm.c ****    * In case of descriptors added, please update the max_attr_record value accordingly in the next 
+ 265:STM32_WPAN/App/custom_stm.c ****    */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 9
+
+
+ 266:STM32_WPAN/App/custom_stm.c ****   max_attr_record = 3;
+ 267:STM32_WPAN/App/custom_stm.c **** 
+ 268:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN SVCCTL_InitService1 */
+ 269:STM32_WPAN/App/custom_stm.c ****   /* max_attr_record to be updated if descriptors have been added */
+ 270:STM32_WPAN/App/custom_stm.c **** 
+ 271:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END SVCCTL_InitService1 */
+ 272:STM32_WPAN/App/custom_stm.c **** 
+ 273:STM32_WPAN/App/custom_stm.c ****   COPY_LINEASERVICE_UUID(uuid.Char_UUID_128);
+ 274:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 275:STM32_WPAN/App/custom_stm.c ****                              (Service_UUID_t *) &uuid,
+ 276:STM32_WPAN/App/custom_stm.c ****                              PRIMARY_SERVICE,
+ 277:STM32_WPAN/App/custom_stm.c ****                              max_attr_record,
+ 278:STM32_WPAN/App/custom_stm.c ****                              &(CustomContext.CustomLinsrvHdle));
+ 279:STM32_WPAN/App/custom_stm.c ****   if (ret != BLE_STATUS_SUCCESS)
+ 280:STM32_WPAN/App/custom_stm.c ****   {
+ 281:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Fail   : aci_gatt_add_service command: LinSrv, error code: 0x%x \n\r", ret);
+ 282:STM32_WPAN/App/custom_stm.c ****   }
+ 283:STM32_WPAN/App/custom_stm.c ****   else
+ 284:STM32_WPAN/App/custom_stm.c ****   {
+ 285:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Success: aci_gatt_add_service command: LinSrv \n\r");
+ 286:STM32_WPAN/App/custom_stm.c ****   }
+ 287:STM32_WPAN/App/custom_stm.c **** 
+ 288:STM32_WPAN/App/custom_stm.c ****   /**
+ 289:STM32_WPAN/App/custom_stm.c ****    *  charWrite
+ 290:STM32_WPAN/App/custom_stm.c ****    */
+ 291:STM32_WPAN/App/custom_stm.c ****   COPY_CHARWRITE_UUID(uuid.Char_UUID_128);
+ 292:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 293:STM32_WPAN/App/custom_stm.c ****                           UUID_TYPE_128, &uuid,
+ 294:STM32_WPAN/App/custom_stm.c ****                           SizeCharwrite,
+ 295:STM32_WPAN/App/custom_stm.c ****                           CHAR_PROP_WRITE,
+ 296:STM32_WPAN/App/custom_stm.c ****                           ATTR_PERMISSION_NONE,
+ 297:STM32_WPAN/App/custom_stm.c ****                           GATT_NOTIFY_ATTRIBUTE_WRITE | GATT_NOTIFY_WRITE_REQ_AND_WAIT_FOR_APPL_RES
+ 298:STM32_WPAN/App/custom_stm.c ****                           0x10,
+ 299:STM32_WPAN/App/custom_stm.c ****                           CHAR_VALUE_LEN_CONSTANT,
+ 300:STM32_WPAN/App/custom_stm.c ****                           &(CustomContext.CustomCharwriteHdle));
+ 301:STM32_WPAN/App/custom_stm.c ****   if (ret != BLE_STATUS_SUCCESS)
+ 302:STM32_WPAN/App/custom_stm.c ****   {
+ 303:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Fail   : aci_gatt_add_char command   : CHARWRITE, error code: 0x%x \n\r", ret);
+ 304:STM32_WPAN/App/custom_stm.c ****   }
+ 305:STM32_WPAN/App/custom_stm.c ****   else
+ 306:STM32_WPAN/App/custom_stm.c ****   {
+ 307:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Success: aci_gatt_add_char command   : CHARWRITE \n\r");
+ 308:STM32_WPAN/App/custom_stm.c ****   }
+ 309:STM32_WPAN/App/custom_stm.c **** 
+ 310:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN SVCCTL_Init_Service1_Char1 */
+ 311:STM32_WPAN/App/custom_stm.c ****   /* Place holder for Characteristic Descriptors */
+ 312:STM32_WPAN/App/custom_stm.c **** 
+ 313:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END SVCCTL_Init_Service1_Char1 */
+ 314:STM32_WPAN/App/custom_stm.c **** 
+ 315:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN SVCCTL_InitCustomSvc_2 */
+ 316:STM32_WPAN/App/custom_stm.c **** 
+ 317:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END SVCCTL_InitCustomSvc_2 */
+ 318:STM32_WPAN/App/custom_stm.c **** 
+ 319:STM32_WPAN/App/custom_stm.c ****   return;
+ 320:STM32_WPAN/App/custom_stm.c **** }
+ 321:STM32_WPAN/App/custom_stm.c **** 
+ 322:STM32_WPAN/App/custom_stm.c **** /**
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 10
+
+
+ 323:STM32_WPAN/App/custom_stm.c ****  * @brief  Characteristic update
+ 324:STM32_WPAN/App/custom_stm.c ****  * @param  CharOpcode: Characteristic identifier
+ 325:STM32_WPAN/App/custom_stm.c ****  * @param  Service_Instance: Instance of the service to which the characteristic belongs
+ 326:STM32_WPAN/App/custom_stm.c ****  *
+ 327:STM32_WPAN/App/custom_stm.c ****  */
+ 328:STM32_WPAN/App/custom_stm.c **** tBleStatus Custom_STM_App_Update_Char(Custom_STM_Char_Opcode_t CharOpcode, uint8_t *pPayload)
+ 329:STM32_WPAN/App/custom_stm.c **** {
+ 330:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 331:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_1 */
+ 332:STM32_WPAN/App/custom_stm.c **** 
+ 333:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_1 */
+ 334:STM32_WPAN/App/custom_stm.c **** 
+ 335:STM32_WPAN/App/custom_stm.c ****   switch (CharOpcode)
+ 336:STM32_WPAN/App/custom_stm.c ****   {
+ 337:STM32_WPAN/App/custom_stm.c **** 
+ 338:STM32_WPAN/App/custom_stm.c ****     case CUSTOM_STM_CHARWRITE:
+ 339:STM32_WPAN/App/custom_stm.c ****       ret = aci_gatt_update_char_value(CustomContext.CustomLinsrvHdle,
+ 340:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 341:STM32_WPAN/App/custom_stm.c ****                                        0, /* charValOffset */
+ 342:STM32_WPAN/App/custom_stm.c ****                                        SizeCharwrite, /* charValueLen */
+ 343:STM32_WPAN/App/custom_stm.c ****                                        (uint8_t *)  pPayload);
+ 344:STM32_WPAN/App/custom_stm.c ****       if (ret != BLE_STATUS_SUCCESS)
+ 345:STM32_WPAN/App/custom_stm.c ****       {
+ 346:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Fail   : aci_gatt_update_char_value CHARWRITE command, result : 0x%x \n\r", 
+ 347:STM32_WPAN/App/custom_stm.c ****       }
+ 348:STM32_WPAN/App/custom_stm.c ****       else
+ 349:STM32_WPAN/App/custom_stm.c ****       {
+ 350:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Success: aci_gatt_update_char_value CHARWRITE command\n\r");
+ 351:STM32_WPAN/App/custom_stm.c ****       }
+ 352:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN CUSTOM_STM_App_Update_Service_1_Char_1*/
+ 353:STM32_WPAN/App/custom_stm.c **** 
+ 354:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END CUSTOM_STM_App_Update_Service_1_Char_1*/
+ 355:STM32_WPAN/App/custom_stm.c ****       break;
+ 356:STM32_WPAN/App/custom_stm.c **** 
+ 357:STM32_WPAN/App/custom_stm.c ****     default:
+ 358:STM32_WPAN/App/custom_stm.c ****       break;
+ 359:STM32_WPAN/App/custom_stm.c ****   }
+ 360:STM32_WPAN/App/custom_stm.c **** 
+ 361:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_2 */
+ 362:STM32_WPAN/App/custom_stm.c **** 
+ 363:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_2 */
+ 364:STM32_WPAN/App/custom_stm.c **** 
+ 365:STM32_WPAN/App/custom_stm.c ****   return ret;
+ 366:STM32_WPAN/App/custom_stm.c **** }
+ 367:STM32_WPAN/App/custom_stm.c **** 
+ 368:STM32_WPAN/App/custom_stm.c **** /**
+ 369:STM32_WPAN/App/custom_stm.c ****  * @brief  Characteristic update
+ 370:STM32_WPAN/App/custom_stm.c ****  * @param  CharOpcode: Characteristic identifier
+ 371:STM32_WPAN/App/custom_stm.c ****  * @param  pPayload: Characteristic value
+ 372:STM32_WPAN/App/custom_stm.c ****  * @param  size: Length of the characteristic value in octets
+ 373:STM32_WPAN/App/custom_stm.c ****  *
+ 374:STM32_WPAN/App/custom_stm.c ****  */
+ 375:STM32_WPAN/App/custom_stm.c **** tBleStatus Custom_STM_App_Update_Char_Variable_Length(Custom_STM_Char_Opcode_t CharOpcode, uint8_t 
+ 376:STM32_WPAN/App/custom_stm.c **** {
+ 377:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 378:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Variable_Length_1 */
+ 379:STM32_WPAN/App/custom_stm.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 11
+
+
+ 380:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_Variable_Length_1 */
+ 381:STM32_WPAN/App/custom_stm.c **** 
+ 382:STM32_WPAN/App/custom_stm.c ****   switch (CharOpcode)
+ 383:STM32_WPAN/App/custom_stm.c ****   {
+ 384:STM32_WPAN/App/custom_stm.c **** 
+ 385:STM32_WPAN/App/custom_stm.c ****     case CUSTOM_STM_CHARWRITE:
+ 386:STM32_WPAN/App/custom_stm.c ****       ret = aci_gatt_update_char_value(CustomContext.CustomLinsrvHdle,
+ 387:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 388:STM32_WPAN/App/custom_stm.c ****                                        0, /* charValOffset */
+ 389:STM32_WPAN/App/custom_stm.c ****                                        size, /* charValueLen */
+ 390:STM32_WPAN/App/custom_stm.c ****                                        (uint8_t *)  pPayload);
+ 391:STM32_WPAN/App/custom_stm.c ****       if (ret != BLE_STATUS_SUCCESS)
+ 392:STM32_WPAN/App/custom_stm.c ****       {
+ 393:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Fail   : aci_gatt_update_char_value CHARWRITE command, result : 0x%x \n\r", 
+ 394:STM32_WPAN/App/custom_stm.c ****       }
+ 395:STM32_WPAN/App/custom_stm.c ****       else
+ 396:STM32_WPAN/App/custom_stm.c ****       {
+ 397:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Success: aci_gatt_update_char_value CHARWRITE command\n\r");
+ 398:STM32_WPAN/App/custom_stm.c ****       }
+ 399:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN Custom_STM_App_Update_Char_Variable_Length_Service_1_Char_1*/
+ 400:STM32_WPAN/App/custom_stm.c **** 
+ 401:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END Custom_STM_App_Update_Char_Variable_Length_Service_1_Char_1*/
+ 402:STM32_WPAN/App/custom_stm.c ****       break;
+ 403:STM32_WPAN/App/custom_stm.c **** 
+ 404:STM32_WPAN/App/custom_stm.c ****     default:
+ 405:STM32_WPAN/App/custom_stm.c ****       break;
+ 406:STM32_WPAN/App/custom_stm.c ****   }
+ 407:STM32_WPAN/App/custom_stm.c **** 
+ 408:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Variable_Length_2 */
+ 409:STM32_WPAN/App/custom_stm.c **** 
+ 410:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_Variable_Length_2 */
+ 411:STM32_WPAN/App/custom_stm.c **** 
+ 412:STM32_WPAN/App/custom_stm.c ****   return ret;
+ 413:STM32_WPAN/App/custom_stm.c **** }
+ 414:STM32_WPAN/App/custom_stm.c **** 
+ 415:STM32_WPAN/App/custom_stm.c **** /**
+ 416:STM32_WPAN/App/custom_stm.c ****  * @brief  Characteristic update
+ 417:STM32_WPAN/App/custom_stm.c ****  * @param  Connection_Handle
+ 418:STM32_WPAN/App/custom_stm.c ****  * @param  CharOpcode: Characteristic identifier
+ 419:STM32_WPAN/App/custom_stm.c ****  * @param  pPayload: Characteristic value
+ 420:STM32_WPAN/App/custom_stm.c ****  *
+ 421:STM32_WPAN/App/custom_stm.c ****  */
+ 422:STM32_WPAN/App/custom_stm.c **** tBleStatus Custom_STM_App_Update_Char_Ext(uint16_t Connection_Handle, Custom_STM_Char_Opcode_t Char
+ 423:STM32_WPAN/App/custom_stm.c **** {
+ 424:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 425:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Ext_1 */
+ 426:STM32_WPAN/App/custom_stm.c **** 
+ 427:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_Ext_1 */
+ 428:STM32_WPAN/App/custom_stm.c **** 
+ 429:STM32_WPAN/App/custom_stm.c ****   switch (CharOpcode)
+ 430:STM32_WPAN/App/custom_stm.c ****   {
+ 431:STM32_WPAN/App/custom_stm.c **** 
+ 432:STM32_WPAN/App/custom_stm.c ****     case CUSTOM_STM_CHARWRITE:
+ 433:STM32_WPAN/App/custom_stm.c ****       /* USER CODE BEGIN Updated_Length_Service_1_Char_1*/
+ 434:STM32_WPAN/App/custom_stm.c **** 
+ 435:STM32_WPAN/App/custom_stm.c ****       /* USER CODE END Updated_Length_Service_1_Char_1*/
+ 436:STM32_WPAN/App/custom_stm.c ****       ret = Generic_STM_App_Update_Char_Ext(Connection_Handle, CustomContext.CustomLinsrvHdle, Cust
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 12
+
+
+ 437:STM32_WPAN/App/custom_stm.c **** 
+ 438:STM32_WPAN/App/custom_stm.c ****       if (ret != BLE_STATUS_SUCCESS)
+ 439:STM32_WPAN/App/custom_stm.c ****       {
+ 440:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Fail   : Generic_STM_App_Update_Char_Ext command, result : 0x%x \n\r", ret);
+ 441:STM32_WPAN/App/custom_stm.c ****       }
+ 442:STM32_WPAN/App/custom_stm.c ****       else
+ 443:STM32_WPAN/App/custom_stm.c ****       {
+ 444:STM32_WPAN/App/custom_stm.c ****         APP_DBG_MSG("  Success: Generic_STM_App_Update_Char_Ext command\n\r");
+ 445:STM32_WPAN/App/custom_stm.c ****       }
+ 446:STM32_WPAN/App/custom_stm.c ****       break;
+ 447:STM32_WPAN/App/custom_stm.c **** 
+ 448:STM32_WPAN/App/custom_stm.c ****     default:
+ 449:STM32_WPAN/App/custom_stm.c ****       break;
+ 450:STM32_WPAN/App/custom_stm.c ****   }
+ 451:STM32_WPAN/App/custom_stm.c **** 
+ 452:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Ext_2 */
+ 453:STM32_WPAN/App/custom_stm.c **** 
+ 454:STM32_WPAN/App/custom_stm.c ****   /* USER CODE END Custom_STM_App_Update_Char_Ext_2 */
+ 455:STM32_WPAN/App/custom_stm.c **** 
+ 456:STM32_WPAN/App/custom_stm.c ****   return ret;
+ 457:STM32_WPAN/App/custom_stm.c **** }
+ 458:STM32_WPAN/App/custom_stm.c **** 
+ 459:STM32_WPAN/App/custom_stm.c **** static tBleStatus Generic_STM_App_Update_Char_Ext(uint16_t ConnectionHandle, uint16_t ServiceHandle
+ 460:STM32_WPAN/App/custom_stm.c **** {
+ 181              		.loc 1 460 1 is_stmt 1 view -0
+ 182              		.cfi_startproc
+ 183              		@ args = 4, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 185              		.loc 1 460 1 is_stmt 0 view .LVU56
+ 186 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 187              		.cfi_def_cfa_offset 24
+ 188              		.cfi_offset 4, -24
+ 189              		.cfi_offset 5, -20
+ 190              		.cfi_offset 6, -16
+ 191              		.cfi_offset 7, -12
+ 192              		.cfi_offset 8, -8
+ 193              		.cfi_offset 14, -4
+ 194 0004 84B0     		sub	sp, sp, #16
+ 195              		.cfi_def_cfa_offset 40
+ 196 0006 0646     		mov	r6, r0
+ 197 0008 0F46     		mov	r7, r1
+ 198 000a 9046     		mov	r8, r2
+ 199 000c 1C46     		mov	r4, r3
+ 200 000e 0A9D     		ldr	r5, [sp, #40]
+ 461:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 201              		.loc 1 461 3 is_stmt 1 view .LVU57
+ 202              	.LVL19:
+ 462:STM32_WPAN/App/custom_stm.c **** 
+ 463:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_update_char_value_ext(ConnectionHandle,
+ 203              		.loc 1 463 3 view .LVU58
+ 204              		.loc 1 463 9 is_stmt 0 view .LVU59
+ 205 0010 0395     		str	r5, [sp, #12]
+ 206 0012 F323     		movs	r3, #243
+ 207              	.LVL20:
+ 208              		.loc 1 463 9 view .LVU60
+ 209 0014 0293     		str	r3, [sp, #8]
+ 210 0016 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 13
+
+
+ 211 0018 0193     		str	r3, [sp, #4]
+ 212 001a 0094     		str	r4, [sp]
+ 213 001c FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 214              	.LVL21:
+ 464:STM32_WPAN/App/custom_stm.c ****                                        ServiceHandle,
+ 465:STM32_WPAN/App/custom_stm.c ****                                        CharHandle,
+ 466:STM32_WPAN/App/custom_stm.c ****                                        0, /* update type:0 do not notify, 1 notify, 2 indicate */
+ 467:STM32_WPAN/App/custom_stm.c ****                                        CharValueLen, /* charValueLen */
+ 468:STM32_WPAN/App/custom_stm.c ****                                        0, /* value offset */
+ 469:STM32_WPAN/App/custom_stm.c ****                                        243, /* value length */
+ 470:STM32_WPAN/App/custom_stm.c ****                                        (uint8_t *)  pPayload);
+ 471:STM32_WPAN/App/custom_stm.c ****   if (ret != BLE_STATUS_SUCCESS)
+ 215              		.loc 1 471 3 is_stmt 1 view .LVU61
+ 472:STM32_WPAN/App/custom_stm.c ****   {
+ 473:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Fail   : aci_gatt_update_char_value_ext command, part 1, result : 0x%x \n\r", re
+ 216              		.loc 1 473 102 view .LVU62
+ 474:STM32_WPAN/App/custom_stm.c ****   }
+ 475:STM32_WPAN/App/custom_stm.c ****   else
+ 476:STM32_WPAN/App/custom_stm.c ****   {
+ 477:STM32_WPAN/App/custom_stm.c ****     APP_DBG_MSG("  Success: aci_gatt_update_char_value_ext command, part 1\n\r");
+ 217              		.loc 1 477 81 view .LVU63
+ 478:STM32_WPAN/App/custom_stm.c ****   }
+ 479:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Ext_Service_1_Char_1*/
+ 480:STM32_WPAN/App/custom_stm.c **** 
+ 481:STM32_WPAN/App/custom_stm.c ****   if (CharValueLen-243<=243)
+ 218              		.loc 1 481 3 view .LVU64
+ 219              		.loc 1 481 6 is_stmt 0 view .LVU65
+ 220 0020 B4F5F37F 		cmp	r4, #486
+ 221 0024 11D8     		bhi	.L16
+ 482:STM32_WPAN/App/custom_stm.c ****   {
+ 483:STM32_WPAN/App/custom_stm.c ****     ret = aci_gatt_update_char_value_ext(ConnectionHandle,
+ 222              		.loc 1 483 5 is_stmt 1 view .LVU66
+ 484:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 485:STM32_WPAN/App/custom_stm.c ****                                          CharHandle,
+ 486:STM32_WPAN/App/custom_stm.c ****                                          1, /* update type:0 do not notify, 1 notify, 2 indicate */
+ 487:STM32_WPAN/App/custom_stm.c ****                                          CharValueLen, /* charValueLen */
+ 488:STM32_WPAN/App/custom_stm.c ****                                          243, /* value offset */
+ 489:STM32_WPAN/App/custom_stm.c ****                                          CharValueLen-243, /* value length */
+ 490:STM32_WPAN/App/custom_stm.c ****                                          (uint8_t *)  ((pPayload)+243));
+ 223              		.loc 1 490 42 is_stmt 0 view .LVU67
+ 224 0026 F335     		adds	r5, r5, #243
+ 483:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 225              		.loc 1 483 11 view .LVU68
+ 226 0028 0395     		str	r5, [sp, #12]
+ 227 002a 04F10D03 		add	r3, r4, #13
+ 228 002e DBB2     		uxtb	r3, r3
+ 229 0030 0293     		str	r3, [sp, #8]
+ 230 0032 F323     		movs	r3, #243
+ 231 0034 0193     		str	r3, [sp, #4]
+ 232 0036 0094     		str	r4, [sp]
+ 233 0038 0123     		movs	r3, #1
+ 234 003a 4246     		mov	r2, r8
+ 235 003c 3946     		mov	r1, r7
+ 236 003e 3046     		mov	r0, r6
+ 237 0040 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 238              	.LVL22:
+ 491:STM32_WPAN/App/custom_stm.c ****     if (ret != BLE_STATUS_SUCCESS)
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 14
+
+
+ 239              		.loc 1 491 5 is_stmt 1 view .LVU69
+ 492:STM32_WPAN/App/custom_stm.c ****     {
+ 493:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Fail   : aci_gatt_update_char_value_ext command, part 2, result : 0x%x \n\r", 
+ 240              		.loc 1 493 104 view .LVU70
+ 494:STM32_WPAN/App/custom_stm.c ****     }
+ 495:STM32_WPAN/App/custom_stm.c ****     else
+ 496:STM32_WPAN/App/custom_stm.c ****     {
+ 497:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Success: aci_gatt_update_char_value_ext command, part 2\n\r");
+ 241              		.loc 1 497 83 view .LVU71
+ 242              	.L17:
+ 498:STM32_WPAN/App/custom_stm.c ****     }
+ 499:STM32_WPAN/App/custom_stm.c ****   }
+ 500:STM32_WPAN/App/custom_stm.c ****   else
+ 501:STM32_WPAN/App/custom_stm.c ****   {
+ 502:STM32_WPAN/App/custom_stm.c ****     ret = aci_gatt_update_char_value_ext(ConnectionHandle,
+ 503:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 504:STM32_WPAN/App/custom_stm.c ****                                          CharHandle,
+ 505:STM32_WPAN/App/custom_stm.c ****                                          0, /* update type:0 do not notify, 1 notify, 2 indicate */
+ 506:STM32_WPAN/App/custom_stm.c ****                                          CharValueLen, /* charValueLen */
+ 507:STM32_WPAN/App/custom_stm.c ****                                          243, /* value offset */
+ 508:STM32_WPAN/App/custom_stm.c ****                                          243, /* value length */
+ 509:STM32_WPAN/App/custom_stm.c ****                                          (uint8_t *)  ((pPayload)+243));
+ 510:STM32_WPAN/App/custom_stm.c ****     if (ret != BLE_STATUS_SUCCESS)
+ 511:STM32_WPAN/App/custom_stm.c ****     {
+ 512:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Fail   : aci_gatt_update_char_value_ext command, part 3, result : 0x%x \n\r", 
+ 513:STM32_WPAN/App/custom_stm.c ****     }
+ 514:STM32_WPAN/App/custom_stm.c ****     else
+ 515:STM32_WPAN/App/custom_stm.c ****     {
+ 516:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Success: aci_gatt_update_char_value_ext command, part 3\n\r");
+ 517:STM32_WPAN/App/custom_stm.c ****     }
+ 518:STM32_WPAN/App/custom_stm.c ****     ret = aci_gatt_update_char_value_ext(ConnectionHandle,
+ 519:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 520:STM32_WPAN/App/custom_stm.c ****                                          CharHandle,
+ 521:STM32_WPAN/App/custom_stm.c ****                                          1, /* update type:0 do not notify, 1 notify, 2 indicate */
+ 522:STM32_WPAN/App/custom_stm.c ****                                          CharValueLen, /* charValueLen */
+ 523:STM32_WPAN/App/custom_stm.c ****                                          243+243, /* value offset */
+ 524:STM32_WPAN/App/custom_stm.c ****                                          CharValueLen-243-243, /* value length */
+ 525:STM32_WPAN/App/custom_stm.c ****                                          (uint8_t *)  ((pPayload)+243+243));
+ 526:STM32_WPAN/App/custom_stm.c ****     if (ret != BLE_STATUS_SUCCESS)
+ 527:STM32_WPAN/App/custom_stm.c ****     {
+ 528:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Fail   : aci_gatt_update_char_value_ext command, part 4, result : 0x%x \n\r", 
+ 529:STM32_WPAN/App/custom_stm.c ****     }
+ 530:STM32_WPAN/App/custom_stm.c ****     else
+ 531:STM32_WPAN/App/custom_stm.c ****     {
+ 532:STM32_WPAN/App/custom_stm.c ****       APP_DBG_MSG("  Success: aci_gatt_update_char_value_ext command, part 4\n\r");
+ 243              		.loc 1 532 83 view .LVU72
+ 533:STM32_WPAN/App/custom_stm.c ****     }
+ 534:STM32_WPAN/App/custom_stm.c ****   }
+ 535:STM32_WPAN/App/custom_stm.c ****   return ret;
+ 244              		.loc 1 535 3 view .LVU73
+ 536:STM32_WPAN/App/custom_stm.c **** }
+ 245              		.loc 1 536 1 is_stmt 0 view .LVU74
+ 246 0044 04B0     		add	sp, sp, #16
+ 247              		.cfi_remember_state
+ 248              		.cfi_def_cfa_offset 24
+ 249              		@ sp needed
+ 250 0046 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 15
+
+
+ 251              	.LVL23:
+ 252              	.L16:
+ 253              		.cfi_restore_state
+ 502:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 254              		.loc 1 502 5 is_stmt 1 view .LVU75
+ 509:STM32_WPAN/App/custom_stm.c ****     if (ret != BLE_STATUS_SUCCESS)
+ 255              		.loc 1 509 42 is_stmt 0 view .LVU76
+ 256 004a 05F1F303 		add	r3, r5, #243
+ 502:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 257              		.loc 1 502 11 view .LVU77
+ 258 004e 0393     		str	r3, [sp, #12]
+ 259 0050 F323     		movs	r3, #243
+ 260 0052 0293     		str	r3, [sp, #8]
+ 261 0054 0193     		str	r3, [sp, #4]
+ 262 0056 0094     		str	r4, [sp]
+ 263 0058 0023     		movs	r3, #0
+ 264 005a 4246     		mov	r2, r8
+ 265 005c 3946     		mov	r1, r7
+ 266 005e 3046     		mov	r0, r6
+ 267 0060 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 268              	.LVL24:
+ 510:STM32_WPAN/App/custom_stm.c ****     {
+ 269              		.loc 1 510 5 is_stmt 1 view .LVU78
+ 512:STM32_WPAN/App/custom_stm.c ****     }
+ 270              		.loc 1 512 104 view .LVU79
+ 516:STM32_WPAN/App/custom_stm.c ****     }
+ 271              		.loc 1 516 83 view .LVU80
+ 518:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 272              		.loc 1 518 5 view .LVU81
+ 525:STM32_WPAN/App/custom_stm.c ****     if (ret != BLE_STATUS_SUCCESS)
+ 273              		.loc 1 525 42 is_stmt 0 view .LVU82
+ 274 0064 05F5F375 		add	r5, r5, #486
+ 518:STM32_WPAN/App/custom_stm.c ****                                          ServiceHandle,
+ 275              		.loc 1 518 11 view .LVU83
+ 276 0068 0395     		str	r5, [sp, #12]
+ 277 006a 04F11A03 		add	r3, r4, #26
+ 278 006e DBB2     		uxtb	r3, r3
+ 279 0070 0293     		str	r3, [sp, #8]
+ 280 0072 4FF4F373 		mov	r3, #486
+ 281 0076 0193     		str	r3, [sp, #4]
+ 282 0078 0094     		str	r4, [sp]
+ 283 007a 0123     		movs	r3, #1
+ 284 007c 4246     		mov	r2, r8
+ 285 007e 3946     		mov	r1, r7
+ 286 0080 3046     		mov	r0, r6
+ 287 0082 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 288              	.LVL25:
+ 526:STM32_WPAN/App/custom_stm.c ****     {
+ 289              		.loc 1 526 5 is_stmt 1 view .LVU84
+ 528:STM32_WPAN/App/custom_stm.c ****     }
+ 290              		.loc 1 528 104 view .LVU85
+ 291 0086 DDE7     		b	.L17
+ 292              		.cfi_endproc
+ 293              	.LFE1422:
+ 295              		.section	.text.SVCCTL_InitCustomSvc,"ax",%progbits
+ 296              		.align	1
+ 297              		.global	SVCCTL_InitCustomSvc
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 16
+
+
+ 298              		.syntax unified
+ 299              		.thumb
+ 300              		.thumb_func
+ 302              	SVCCTL_InitCustomSvc:
+ 303              	.LFB1418:
+ 240:STM32_WPAN/App/custom_stm.c **** 
+ 304              		.loc 1 240 1 view -0
+ 305              		.cfi_startproc
+ 306              		@ args = 0, pretend = 0, frame = 16
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308 0000 30B5     		push	{r4, r5, lr}
+ 309              		.cfi_def_cfa_offset 12
+ 310              		.cfi_offset 4, -12
+ 311              		.cfi_offset 5, -8
+ 312              		.cfi_offset 14, -4
+ 313 0002 8BB0     		sub	sp, sp, #44
+ 314              		.cfi_def_cfa_offset 56
+ 242:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 315              		.loc 1 242 3 view .LVU87
+ 243:STM32_WPAN/App/custom_stm.c ****   uint8_t max_attr_record;
+ 316              		.loc 1 243 3 view .LVU88
+ 317              	.LVL26:
+ 244:STM32_WPAN/App/custom_stm.c **** 
+ 318              		.loc 1 244 3 view .LVU89
+ 253:STM32_WPAN/App/custom_stm.c **** 
+ 319              		.loc 1 253 3 view .LVU90
+ 320 0004 3A48     		ldr	r0, .L21
+ 321 0006 FFF7FEFF 		bl	SVCCTL_RegisterSvcHandler
+ 322              	.LVL27:
+ 266:STM32_WPAN/App/custom_stm.c **** 
+ 323              		.loc 1 266 3 view .LVU91
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 324              		.loc 1 273 3 view .LVU92
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 325              		.loc 1 273 3 view .LVU93
+ 326 000a 8F23     		movs	r3, #143
+ 327 000c 8DF81830 		strb	r3, [sp, #24]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 328              		.loc 1 273 3 view .LVU94
+ 329 0010 E523     		movs	r3, #229
+ 330 0012 8DF81930 		strb	r3, [sp, #25]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 331              		.loc 1 273 3 view .LVU95
+ 332 0016 B323     		movs	r3, #179
+ 333 0018 8DF81A30 		strb	r3, [sp, #26]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 334              		.loc 1 273 3 view .LVU96
+ 335 001c D523     		movs	r3, #213
+ 336 001e 8DF81B30 		strb	r3, [sp, #27]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 337              		.loc 1 273 3 view .LVU97
+ 338 0022 2E23     		movs	r3, #46
+ 339 0024 8DF81C30 		strb	r3, [sp, #28]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 340              		.loc 1 273 3 view .LVU98
+ 341 0028 7F23     		movs	r3, #127
+ 342 002a 8DF81D30 		strb	r3, [sp, #29]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 17
+
+
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 343              		.loc 1 273 3 view .LVU99
+ 344 002e 4A23     		movs	r3, #74
+ 345 0030 8DF81E30 		strb	r3, [sp, #30]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 346              		.loc 1 273 3 view .LVU100
+ 347 0034 9823     		movs	r3, #152
+ 348 0036 8DF81F30 		strb	r3, [sp, #31]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 349              		.loc 1 273 3 view .LVU101
+ 350 003a 2A23     		movs	r3, #42
+ 351 003c 8DF82030 		strb	r3, [sp, #32]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 352              		.loc 1 273 3 view .LVU102
+ 353 0040 4823     		movs	r3, #72
+ 354 0042 8DF82130 		strb	r3, [sp, #33]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 355              		.loc 1 273 3 view .LVU103
+ 356 0046 7A23     		movs	r3, #122
+ 357 0048 8DF82230 		strb	r3, [sp, #34]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 358              		.loc 1 273 3 view .LVU104
+ 359 004c CC23     		movs	r3, #204
+ 360 004e 8DF82330 		strb	r3, [sp, #35]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 361              		.loc 1 273 3 view .LVU105
+ 362 0052 0024     		movs	r4, #0
+ 363 0054 8DF82440 		strb	r4, [sp, #36]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 364              		.loc 1 273 3 view .LVU106
+ 365 0058 8DF82540 		strb	r4, [sp, #37]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 366              		.loc 1 273 3 view .LVU107
+ 367 005c 8DF82640 		strb	r4, [sp, #38]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 368              		.loc 1 273 3 view .LVU108
+ 369 0060 8DF82740 		strb	r4, [sp, #39]
+ 273:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_service(UUID_TYPE_128,
+ 370              		.loc 1 273 3 view .LVU109
+ 274:STM32_WPAN/App/custom_stm.c ****                              (Service_UUID_t *) &uuid,
+ 371              		.loc 1 274 3 view .LVU110
+ 274:STM32_WPAN/App/custom_stm.c ****                              (Service_UUID_t *) &uuid,
+ 372              		.loc 1 274 9 is_stmt 0 view .LVU111
+ 373 0064 234D     		ldr	r5, .L21+4
+ 374 0066 0095     		str	r5, [sp]
+ 375 0068 0323     		movs	r3, #3
+ 376 006a 0122     		movs	r2, #1
+ 377 006c 06A9     		add	r1, sp, #24
+ 378 006e 0220     		movs	r0, #2
+ 379 0070 FFF7FEFF 		bl	aci_gatt_add_service
+ 380              	.LVL28:
+ 279:STM32_WPAN/App/custom_stm.c ****   {
+ 381              		.loc 1 279 3 is_stmt 1 view .LVU112
+ 281:STM32_WPAN/App/custom_stm.c ****   }
+ 382              		.loc 1 281 95 view .LVU113
+ 285:STM32_WPAN/App/custom_stm.c ****   }
+ 383              		.loc 1 285 72 view .LVU114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 18
+
+
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 384              		.loc 1 291 3 view .LVU115
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 385              		.loc 1 291 3 view .LVU116
+ 386 0074 1923     		movs	r3, #25
+ 387 0076 8DF81830 		strb	r3, [sp, #24]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 388              		.loc 1 291 3 view .LVU117
+ 389 007a ED23     		movs	r3, #237
+ 390 007c 8DF81930 		strb	r3, [sp, #25]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 391              		.loc 1 291 3 view .LVU118
+ 392 0080 8222     		movs	r2, #130
+ 393 0082 8DF81A20 		strb	r2, [sp, #26]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 394              		.loc 1 291 3 view .LVU119
+ 395 0086 AE22     		movs	r2, #174
+ 396 0088 8DF81B20 		strb	r2, [sp, #27]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 397              		.loc 1 291 3 view .LVU120
+ 398 008c 8DF81C30 		strb	r3, [sp, #28]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 399              		.loc 1 291 3 view .LVU121
+ 400 0090 2123     		movs	r3, #33
+ 401 0092 8DF81D30 		strb	r3, [sp, #29]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 402              		.loc 1 291 3 view .LVU122
+ 403 0096 4C23     		movs	r3, #76
+ 404 0098 8DF81E30 		strb	r3, [sp, #30]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 405              		.loc 1 291 3 view .LVU123
+ 406 009c 9D23     		movs	r3, #157
+ 407 009e 8DF81F30 		strb	r3, [sp, #31]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 408              		.loc 1 291 3 view .LVU124
+ 409 00a2 4123     		movs	r3, #65
+ 410 00a4 8DF82030 		strb	r3, [sp, #32]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 411              		.loc 1 291 3 view .LVU125
+ 412 00a8 4523     		movs	r3, #69
+ 413 00aa 8DF82130 		strb	r3, [sp, #33]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 414              		.loc 1 291 3 view .LVU126
+ 415 00ae 2223     		movs	r3, #34
+ 416 00b0 8DF82230 		strb	r3, [sp, #34]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 417              		.loc 1 291 3 view .LVU127
+ 418 00b4 8E23     		movs	r3, #142
+ 419 00b6 8DF82330 		strb	r3, [sp, #35]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 420              		.loc 1 291 3 view .LVU128
+ 421 00ba 8DF82440 		strb	r4, [sp, #36]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 422              		.loc 1 291 3 view .LVU129
+ 423 00be 8DF82540 		strb	r4, [sp, #37]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 424              		.loc 1 291 3 view .LVU130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 19
+
+
+ 425 00c2 8DF82640 		strb	r4, [sp, #38]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 426              		.loc 1 291 3 view .LVU131
+ 427 00c6 8DF82740 		strb	r4, [sp, #39]
+ 291:STM32_WPAN/App/custom_stm.c ****   ret = aci_gatt_add_char(CustomContext.CustomLinsrvHdle,
+ 428              		.loc 1 291 3 view .LVU132
+ 292:STM32_WPAN/App/custom_stm.c ****                           UUID_TYPE_128, &uuid,
+ 429              		.loc 1 292 3 view .LVU133
+ 292:STM32_WPAN/App/custom_stm.c ****                           UUID_TYPE_128, &uuid,
+ 430              		.loc 1 292 9 is_stmt 0 view .LVU134
+ 431 00ca 35F8020B 		ldrh	r0, [r5], #2
+ 432 00ce 0595     		str	r5, [sp, #20]
+ 433 00d0 0494     		str	r4, [sp, #16]
+ 434 00d2 1023     		movs	r3, #16
+ 435 00d4 0393     		str	r3, [sp, #12]
+ 436 00d6 0723     		movs	r3, #7
+ 437 00d8 0293     		str	r3, [sp, #8]
+ 438 00da 0194     		str	r4, [sp, #4]
+ 439 00dc 0823     		movs	r3, #8
+ 440 00de 0093     		str	r3, [sp]
+ 441 00e0 054B     		ldr	r3, .L21+8
+ 442 00e2 1B88     		ldrh	r3, [r3]
+ 443 00e4 06AA     		add	r2, sp, #24
+ 444 00e6 0221     		movs	r1, #2
+ 445 00e8 FFF7FEFF 		bl	aci_gatt_add_char
+ 446              	.LVL29:
+ 301:STM32_WPAN/App/custom_stm.c ****   {
+ 447              		.loc 1 301 3 is_stmt 1 view .LVU135
+ 303:STM32_WPAN/App/custom_stm.c ****   }
+ 448              		.loc 1 303 98 view .LVU136
+ 307:STM32_WPAN/App/custom_stm.c ****   }
+ 449              		.loc 1 307 75 view .LVU137
+ 319:STM32_WPAN/App/custom_stm.c **** }
+ 450              		.loc 1 319 3 view .LVU138
+ 320:STM32_WPAN/App/custom_stm.c **** 
+ 451              		.loc 1 320 1 is_stmt 0 view .LVU139
+ 452 00ec 0BB0     		add	sp, sp, #44
+ 453              		.cfi_def_cfa_offset 12
+ 454              		@ sp needed
+ 455 00ee 30BD     		pop	{r4, r5, pc}
+ 456              	.L22:
+ 457              		.align	2
+ 458              	.L21:
+ 459 00f0 00000000 		.word	Custom_STM_Event_Handler
+ 460 00f4 00000000 		.word	CustomContext
+ 461 00f8 00000000 		.word	SizeCharwrite
+ 462              		.cfi_endproc
+ 463              	.LFE1418:
+ 465              		.section	.text.Custom_STM_App_Update_Char,"ax",%progbits
+ 466              		.align	1
+ 467              		.global	Custom_STM_App_Update_Char
+ 468              		.syntax unified
+ 469              		.thumb
+ 470              		.thumb_func
+ 472              	Custom_STM_App_Update_Char:
+ 473              	.LVL30:
+ 474              	.LFB1419:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 20
+
+
+ 329:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 475              		.loc 1 329 1 is_stmt 1 view -0
+ 476              		.cfi_startproc
+ 477              		@ args = 0, pretend = 0, frame = 0
+ 478              		@ frame_needed = 0, uses_anonymous_args = 0
+ 330:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_1 */
+ 479              		.loc 1 330 3 view .LVU141
+ 335:STM32_WPAN/App/custom_stm.c ****   {
+ 480              		.loc 1 335 3 view .LVU142
+ 481 0000 08B1     		cbz	r0, .L30
+ 330:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_1 */
+ 482              		.loc 1 330 14 is_stmt 0 view .LVU143
+ 483 0002 9220     		movs	r0, #146
+ 484              	.LVL31:
+ 365:STM32_WPAN/App/custom_stm.c **** }
+ 485              		.loc 1 365 3 is_stmt 1 view .LVU144
+ 366:STM32_WPAN/App/custom_stm.c **** 
+ 486              		.loc 1 366 1 is_stmt 0 view .LVU145
+ 487 0004 7047     		bx	lr
+ 488              	.LVL32:
+ 489              	.L30:
+ 329:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 490              		.loc 1 329 1 view .LVU146
+ 491 0006 00B5     		push	{lr}
+ 492              		.cfi_def_cfa_offset 4
+ 493              		.cfi_offset 14, -4
+ 494 0008 83B0     		sub	sp, sp, #12
+ 495              		.cfi_def_cfa_offset 16
+ 339:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 496              		.loc 1 339 7 is_stmt 1 view .LVU147
+ 339:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 497              		.loc 1 339 13 is_stmt 0 view .LVU148
+ 498 000a 0648     		ldr	r0, .L31
+ 499              	.LVL33:
+ 339:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 500              		.loc 1 339 13 view .LVU149
+ 501 000c 0091     		str	r1, [sp]
+ 502 000e 064B     		ldr	r3, .L31+4
+ 503 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 504 0012 0022     		movs	r2, #0
+ 505 0014 4188     		ldrh	r1, [r0, #2]
+ 506              	.LVL34:
+ 339:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 507              		.loc 1 339 13 view .LVU150
+ 508 0016 0088     		ldrh	r0, [r0]
+ 509 0018 FFF7FEFF 		bl	aci_gatt_update_char_value
+ 510              	.LVL35:
+ 344:STM32_WPAN/App/custom_stm.c ****       {
+ 511              		.loc 1 344 7 is_stmt 1 view .LVU151
+ 346:STM32_WPAN/App/custom_stm.c ****       }
+ 512              		.loc 1 346 104 view .LVU152
+ 350:STM32_WPAN/App/custom_stm.c ****       }
+ 513              		.loc 1 350 83 view .LVU153
+ 355:STM32_WPAN/App/custom_stm.c **** 
+ 514              		.loc 1 355 7 view .LVU154
+ 365:STM32_WPAN/App/custom_stm.c **** }
+ 515              		.loc 1 365 3 view .LVU155
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 21
+
+
+ 366:STM32_WPAN/App/custom_stm.c **** 
+ 516              		.loc 1 366 1 is_stmt 0 view .LVU156
+ 517 001c 03B0     		add	sp, sp, #12
+ 518              		.cfi_def_cfa_offset 4
+ 519              		@ sp needed
+ 520 001e 5DF804FB 		ldr	pc, [sp], #4
+ 521              	.L32:
+ 522 0022 00BF     		.align	2
+ 523              	.L31:
+ 524 0024 00000000 		.word	CustomContext
+ 525 0028 00000000 		.word	SizeCharwrite
+ 526              		.cfi_endproc
+ 527              	.LFE1419:
+ 529              		.section	.text.Custom_STM_App_Update_Char_Variable_Length,"ax",%progbits
+ 530              		.align	1
+ 531              		.global	Custom_STM_App_Update_Char_Variable_Length
+ 532              		.syntax unified
+ 533              		.thumb
+ 534              		.thumb_func
+ 536              	Custom_STM_App_Update_Char_Variable_Length:
+ 537              	.LVL36:
+ 538              	.LFB1420:
+ 376:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 539              		.loc 1 376 1 is_stmt 1 view -0
+ 540              		.cfi_startproc
+ 541              		@ args = 0, pretend = 0, frame = 0
+ 542              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Variable_Length_1 */
+ 543              		.loc 1 377 3 view .LVU158
+ 382:STM32_WPAN/App/custom_stm.c ****   {
+ 544              		.loc 1 382 3 view .LVU159
+ 545 0000 08B1     		cbz	r0, .L40
+ 377:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Variable_Length_1 */
+ 546              		.loc 1 377 14 is_stmt 0 view .LVU160
+ 547 0002 9220     		movs	r0, #146
+ 548              	.LVL37:
+ 412:STM32_WPAN/App/custom_stm.c **** }
+ 549              		.loc 1 412 3 is_stmt 1 view .LVU161
+ 413:STM32_WPAN/App/custom_stm.c **** 
+ 550              		.loc 1 413 1 is_stmt 0 view .LVU162
+ 551 0004 7047     		bx	lr
+ 552              	.LVL38:
+ 553              	.L40:
+ 376:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 554              		.loc 1 376 1 view .LVU163
+ 555 0006 00B5     		push	{lr}
+ 556              		.cfi_def_cfa_offset 4
+ 557              		.cfi_offset 14, -4
+ 558 0008 83B0     		sub	sp, sp, #12
+ 559              		.cfi_def_cfa_offset 16
+ 386:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 560              		.loc 1 386 7 is_stmt 1 view .LVU164
+ 386:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 561              		.loc 1 386 13 is_stmt 0 view .LVU165
+ 562 000a 0548     		ldr	r0, .L41
+ 563              	.LVL39:
+ 386:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 22
+
+
+ 564              		.loc 1 386 13 view .LVU166
+ 565 000c 0091     		str	r1, [sp]
+ 566 000e 1346     		mov	r3, r2
+ 567 0010 0022     		movs	r2, #0
+ 568              	.LVL40:
+ 386:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 569              		.loc 1 386 13 view .LVU167
+ 570 0012 4188     		ldrh	r1, [r0, #2]
+ 571              	.LVL41:
+ 386:STM32_WPAN/App/custom_stm.c ****                                        CustomContext.CustomCharwriteHdle,
+ 572              		.loc 1 386 13 view .LVU168
+ 573 0014 0088     		ldrh	r0, [r0]
+ 574 0016 FFF7FEFF 		bl	aci_gatt_update_char_value
+ 575              	.LVL42:
+ 391:STM32_WPAN/App/custom_stm.c ****       {
+ 576              		.loc 1 391 7 is_stmt 1 view .LVU169
+ 393:STM32_WPAN/App/custom_stm.c ****       }
+ 577              		.loc 1 393 104 view .LVU170
+ 397:STM32_WPAN/App/custom_stm.c ****       }
+ 578              		.loc 1 397 83 view .LVU171
+ 402:STM32_WPAN/App/custom_stm.c **** 
+ 579              		.loc 1 402 7 view .LVU172
+ 412:STM32_WPAN/App/custom_stm.c **** }
+ 580              		.loc 1 412 3 view .LVU173
+ 413:STM32_WPAN/App/custom_stm.c **** 
+ 581              		.loc 1 413 1 is_stmt 0 view .LVU174
+ 582 001a 03B0     		add	sp, sp, #12
+ 583              		.cfi_def_cfa_offset 4
+ 584              		@ sp needed
+ 585 001c 5DF804FB 		ldr	pc, [sp], #4
+ 586              	.L42:
+ 587              		.align	2
+ 588              	.L41:
+ 589 0020 00000000 		.word	CustomContext
+ 590              		.cfi_endproc
+ 591              	.LFE1420:
+ 593              		.section	.text.Custom_STM_App_Update_Char_Ext,"ax",%progbits
+ 594              		.align	1
+ 595              		.global	Custom_STM_App_Update_Char_Ext
+ 596              		.syntax unified
+ 597              		.thumb
+ 598              		.thumb_func
+ 600              	Custom_STM_App_Update_Char_Ext:
+ 601              	.LVL43:
+ 602              	.LFB1421:
+ 423:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 603              		.loc 1 423 1 is_stmt 1 view -0
+ 604              		.cfi_startproc
+ 605              		@ args = 0, pretend = 0, frame = 0
+ 606              		@ frame_needed = 0, uses_anonymous_args = 0
+ 424:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Ext_1 */
+ 607              		.loc 1 424 3 view .LVU176
+ 429:STM32_WPAN/App/custom_stm.c ****   {
+ 608              		.loc 1 429 3 view .LVU177
+ 609 0000 09B1     		cbz	r1, .L50
+ 424:STM32_WPAN/App/custom_stm.c ****   /* USER CODE BEGIN Custom_STM_App_Update_Char_Ext_1 */
+ 610              		.loc 1 424 14 is_stmt 0 view .LVU178
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 23
+
+
+ 611 0002 9220     		movs	r0, #146
+ 612              	.LVL44:
+ 456:STM32_WPAN/App/custom_stm.c **** }
+ 613              		.loc 1 456 3 is_stmt 1 view .LVU179
+ 457:STM32_WPAN/App/custom_stm.c **** 
+ 614              		.loc 1 457 1 is_stmt 0 view .LVU180
+ 615 0004 7047     		bx	lr
+ 616              	.LVL45:
+ 617              	.L50:
+ 423:STM32_WPAN/App/custom_stm.c ****   tBleStatus ret = BLE_STATUS_INVALID_PARAMS;
+ 618              		.loc 1 423 1 view .LVU181
+ 619 0006 00B5     		push	{lr}
+ 620              		.cfi_def_cfa_offset 4
+ 621              		.cfi_offset 14, -4
+ 622 0008 83B0     		sub	sp, sp, #12
+ 623              		.cfi_def_cfa_offset 16
+ 436:STM32_WPAN/App/custom_stm.c **** 
+ 624              		.loc 1 436 7 is_stmt 1 view .LVU182
+ 436:STM32_WPAN/App/custom_stm.c **** 
+ 625              		.loc 1 436 13 is_stmt 0 view .LVU183
+ 626 000a 0549     		ldr	r1, .L51
+ 627              	.LVL46:
+ 436:STM32_WPAN/App/custom_stm.c **** 
+ 628              		.loc 1 436 13 view .LVU184
+ 629 000c 0092     		str	r2, [sp]
+ 630 000e 054B     		ldr	r3, .L51+4
+ 631 0010 1B88     		ldrh	r3, [r3]
+ 632 0012 4A88     		ldrh	r2, [r1, #2]
+ 633              	.LVL47:
+ 436:STM32_WPAN/App/custom_stm.c **** 
+ 634              		.loc 1 436 13 view .LVU185
+ 635 0014 0988     		ldrh	r1, [r1]
+ 636 0016 FFF7FEFF 		bl	Generic_STM_App_Update_Char_Ext
+ 637              	.LVL48:
+ 438:STM32_WPAN/App/custom_stm.c ****       {
+ 638              		.loc 1 438 7 is_stmt 1 view .LVU186
+ 440:STM32_WPAN/App/custom_stm.c ****       }
+ 639              		.loc 1 440 99 view .LVU187
+ 444:STM32_WPAN/App/custom_stm.c ****       }
+ 640              		.loc 1 444 78 view .LVU188
+ 446:STM32_WPAN/App/custom_stm.c **** 
+ 641              		.loc 1 446 7 view .LVU189
+ 456:STM32_WPAN/App/custom_stm.c **** }
+ 642              		.loc 1 456 3 view .LVU190
+ 457:STM32_WPAN/App/custom_stm.c **** 
+ 643              		.loc 1 457 1 is_stmt 0 view .LVU191
+ 644 001a 03B0     		add	sp, sp, #12
+ 645              		.cfi_def_cfa_offset 4
+ 646              		@ sp needed
+ 647 001c 5DF804FB 		ldr	pc, [sp], #4
+ 648              	.L52:
+ 649              		.align	2
+ 650              	.L51:
+ 651 0020 00000000 		.word	CustomContext
+ 652 0024 00000000 		.word	SizeCharwrite
+ 653              		.cfi_endproc
+ 654              	.LFE1421:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 24
+
+
+ 656              		.section	.bss.CustomContext,"aw",%nobits
+ 657              		.align	2
+ 660              	CustomContext:
+ 661 0000 00000000 		.space	4
+ 662              		.global	SizeCharwrite
+ 663              		.section	.data.SizeCharwrite,"aw"
+ 664              		.align	1
+ 667              	SizeCharwrite:
+ 668 0000 0100     		.short	1
+ 669              		.text
+ 670              	.Letext0:
+ 671              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 672              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 673              		.file 4 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
+ 674              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
+ 675              		.file 6 "Core/Inc/app_conf.h"
+ 676              		.file 7 "Middlewares/ST/STM32_WPAN/ble/svc/Inc/svc_ctl.h"
+ 677              		.file 8 "STM32_WPAN/App/custom_stm.h"
+ 678              		.file 9 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 custom_stm.c
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:21     .text.Custom_STM_Event_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:26     .text.Custom_STM_Event_Handler:00000000 Custom_STM_Event_Handler
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:168    .text.Custom_STM_Event_Handler:00000078 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:660    .bss.CustomContext:00000000 CustomContext
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:173    .text.Generic_STM_App_Update_Char_Ext:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:178    .text.Generic_STM_App_Update_Char_Ext:00000000 Generic_STM_App_Update_Char_Ext
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:296    .text.SVCCTL_InitCustomSvc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:302    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:459    .text.SVCCTL_InitCustomSvc:000000f0 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:667    .data.SizeCharwrite:00000000 SizeCharwrite
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:466    .text.Custom_STM_App_Update_Char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:472    .text.Custom_STM_App_Update_Char:00000000 Custom_STM_App_Update_Char
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:524    .text.Custom_STM_App_Update_Char:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:530    .text.Custom_STM_App_Update_Char_Variable_Length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:536    .text.Custom_STM_App_Update_Char_Variable_Length:00000000 Custom_STM_App_Update_Char_Variable_Length
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:589    .text.Custom_STM_App_Update_Char_Variable_Length:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:594    .text.Custom_STM_App_Update_Char_Ext:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:600    .text.Custom_STM_App_Update_Char_Ext:00000000 Custom_STM_App_Update_Char_Ext
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:651    .text.Custom_STM_App_Update_Char_Ext:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:657    .bss.CustomContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4qcTXP.s:664    .data.SizeCharwrite:00000000 $d
+
+UNDEFINED SYMBOLS
+Custom_STM_App_Notification
+aci_gatt_update_char_value_ext
+SVCCTL_RegisterSvcHandler
+aci_gatt_add_service
+aci_gatt_add_char
+aci_gatt_update_char_value

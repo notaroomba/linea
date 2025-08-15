@@ -1,0 +1,2046 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_rtc_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_RTCEx_SetTimeStamp,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_RTCEx_SetTimeStamp
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_RTCEx_SetTimeStamp:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+  29 0004 012A     		cmp	r2, #1
+  30 0006 31D0     		beq	.L3
+  31 0008 10B4     		push	{r4}
+  32 000a 0346     		mov	r3, r0
+  33 000c 0120     		movs	r0, #1
+  34 000e 83F82000 		strb	r0, [r3, #32]
+  35 0012 0222     		movs	r2, #2
+  36 0014 83F82120 		strb	r2, [r3, #33]
+  37 0018 1C68     		ldr	r4, [r3]
+  38 001a A268     		ldr	r2, [r4, #8]
+  39 001c 22F40062 		bic	r2, r2, #2048
+  40 0020 22F00802 		bic	r2, r2, #8
+  41 0024 0A43     		orrs	r2, r2, r1
+  42 0026 CA21     		movs	r1, #202
+  43 0028 6162     		str	r1, [r4, #36]
+  44 002a 1968     		ldr	r1, [r3]
+  45 002c 5324     		movs	r4, #83
+  46 002e 4C62     		str	r4, [r1, #36]
+  47 0030 1968     		ldr	r1, [r3]
+  48 0032 8A60     		str	r2, [r1, #8]
+  49 0034 1968     		ldr	r1, [r3]
+  50 0036 CA68     		ldr	r2, [r1, #12]
+  51 0038 D2B2     		uxtb	r2, r2
+  52 003a 62F40862 		orn	r2, r2, #2176
+  53 003e CA60     		str	r2, [r1, #12]
+  54 0040 1968     		ldr	r1, [r3]
+  55 0042 CA68     		ldr	r2, [r1, #12]
+  56 0044 D2B2     		uxtb	r2, r2
+  57 0046 62F48452 		orn	r2, r2, #4224
+  58 004a CA60     		str	r2, [r1, #12]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 2
+
+
+  59 004c 1968     		ldr	r1, [r3]
+  60 004e 8A68     		ldr	r2, [r1, #8]
+  61 0050 42F40062 		orr	r2, r2, #2048
+  62 0054 8A60     		str	r2, [r1, #8]
+  63 0056 1A68     		ldr	r2, [r3]
+  64 0058 FF21     		movs	r1, #255
+  65 005a 5162     		str	r1, [r2, #36]
+  66 005c 83F82100 		strb	r0, [r3, #33]
+  67 0060 0020     		movs	r0, #0
+  68 0062 83F82000 		strb	r0, [r3, #32]
+  69 0066 5DF8044B 		ldr	r4, [sp], #4
+  70 006a 7047     		bx	lr
+  71              	.L3:
+  72 006c 0220     		movs	r0, #2
+  73 006e 7047     		bx	lr
+  75              		.section	.text.HAL_RTCEx_SetTimeStamp_IT,"ax",%progbits
+  76              		.align	1
+  77              		.global	HAL_RTCEx_SetTimeStamp_IT
+  78              		.syntax unified
+  79              		.thumb
+  80              		.thumb_func
+  82              	HAL_RTCEx_SetTimeStamp_IT:
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+  86 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+  87 0004 012A     		cmp	r2, #1
+  88 0006 41D0     		beq	.L10
+  89 0008 10B4     		push	{r4}
+  90 000a 0346     		mov	r3, r0
+  91 000c 0120     		movs	r0, #1
+  92 000e 83F82000 		strb	r0, [r3, #32]
+  93 0012 0222     		movs	r2, #2
+  94 0014 83F82120 		strb	r2, [r3, #33]
+  95 0018 1C68     		ldr	r4, [r3]
+  96 001a A268     		ldr	r2, [r4, #8]
+  97 001c 22F40062 		bic	r2, r2, #2048
+  98 0020 22F00802 		bic	r2, r2, #8
+  99 0024 0A43     		orrs	r2, r2, r1
+ 100 0026 CA21     		movs	r1, #202
+ 101 0028 6162     		str	r1, [r4, #36]
+ 102 002a 1968     		ldr	r1, [r3]
+ 103 002c 5324     		movs	r4, #83
+ 104 002e 4C62     		str	r4, [r1, #36]
+ 105 0030 1968     		ldr	r1, [r3]
+ 106 0032 8A60     		str	r2, [r1, #8]
+ 107 0034 1968     		ldr	r1, [r3]
+ 108 0036 CA68     		ldr	r2, [r1, #12]
+ 109 0038 D2B2     		uxtb	r2, r2
+ 110 003a 62F40862 		orn	r2, r2, #2176
+ 111 003e CA60     		str	r2, [r1, #12]
+ 112 0040 1968     		ldr	r1, [r3]
+ 113 0042 CA68     		ldr	r2, [r1, #12]
+ 114 0044 D2B2     		uxtb	r2, r2
+ 115 0046 62F48452 		orn	r2, r2, #4224
+ 116 004a CA60     		str	r2, [r1, #12]
+ 117 004c 1968     		ldr	r1, [r3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 3
+
+
+ 118 004e 8A68     		ldr	r2, [r1, #8]
+ 119 0050 42F40062 		orr	r2, r2, #2048
+ 120 0054 8A60     		str	r2, [r1, #8]
+ 121 0056 1968     		ldr	r1, [r3]
+ 122 0058 8A68     		ldr	r2, [r1, #8]
+ 123 005a 42F40042 		orr	r2, r2, #32768
+ 124 005e 8A60     		str	r2, [r1, #8]
+ 125 0060 1A68     		ldr	r2, [r3]
+ 126 0062 FF21     		movs	r1, #255
+ 127 0064 5162     		str	r1, [r2, #36]
+ 128 0066 0A4A     		ldr	r2, .L15
+ 129 0068 D2F88010 		ldr	r1, [r2, #128]
+ 130 006c 41F48021 		orr	r1, r1, #262144
+ 131 0070 C2F88010 		str	r1, [r2, #128]
+ 132 0074 1168     		ldr	r1, [r2]
+ 133 0076 41F48021 		orr	r1, r1, #262144
+ 134 007a 1160     		str	r1, [r2]
+ 135 007c 83F82100 		strb	r0, [r3, #33]
+ 136 0080 0020     		movs	r0, #0
+ 137 0082 83F82000 		strb	r0, [r3, #32]
+ 138 0086 5DF8044B 		ldr	r4, [sp], #4
+ 139 008a 7047     		bx	lr
+ 140              	.L10:
+ 141 008c 0220     		movs	r0, #2
+ 142 008e 7047     		bx	lr
+ 143              	.L16:
+ 144              		.align	2
+ 145              	.L15:
+ 146 0090 00080058 		.word	1476397056
+ 148              		.section	.text.HAL_RTCEx_DeactivateTimeStamp,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	HAL_RTCEx_DeactivateTimeStamp
+ 151              		.syntax unified
+ 152              		.thumb
+ 153              		.thumb_func
+ 155              	HAL_RTCEx_DeactivateTimeStamp:
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
+ 159 0000 0346     		mov	r3, r0
+ 160 0002 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 161 0006 012A     		cmp	r2, #1
+ 162 0008 20D0     		beq	.L19
+ 163 000a 0121     		movs	r1, #1
+ 164 000c 80F82010 		strb	r1, [r0, #32]
+ 165 0010 0222     		movs	r2, #2
+ 166 0012 80F82120 		strb	r2, [r0, #33]
+ 167 0016 0268     		ldr	r2, [r0]
+ 168 0018 CA20     		movs	r0, #202
+ 169 001a 5062     		str	r0, [r2, #36]
+ 170 001c 1A68     		ldr	r2, [r3]
+ 171 001e 5320     		movs	r0, #83
+ 172 0020 5062     		str	r0, [r2, #36]
+ 173 0022 1868     		ldr	r0, [r3]
+ 174 0024 8268     		ldr	r2, [r0, #8]
+ 175 0026 22F40042 		bic	r2, r2, #32768
+ 176 002a 8260     		str	r2, [r0, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 4
+
+
+ 177 002c 1868     		ldr	r0, [r3]
+ 178 002e 8268     		ldr	r2, [r0, #8]
+ 179 0030 22F40062 		bic	r2, r2, #2048
+ 180 0034 22F00802 		bic	r2, r2, #8
+ 181 0038 8260     		str	r2, [r0, #8]
+ 182 003a 1A68     		ldr	r2, [r3]
+ 183 003c FF20     		movs	r0, #255
+ 184 003e 5062     		str	r0, [r2, #36]
+ 185 0040 83F82110 		strb	r1, [r3, #33]
+ 186 0044 0020     		movs	r0, #0
+ 187 0046 83F82000 		strb	r0, [r3, #32]
+ 188 004a 7047     		bx	lr
+ 189              	.L19:
+ 190 004c 0220     		movs	r0, #2
+ 191 004e 7047     		bx	lr
+ 193              		.section	.text.HAL_RTCEx_SetInternalTimeStamp,"ax",%progbits
+ 194              		.align	1
+ 195              		.global	HAL_RTCEx_SetInternalTimeStamp
+ 196              		.syntax unified
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	HAL_RTCEx_SetInternalTimeStamp:
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 205 0004 012A     		cmp	r2, #1
+ 206 0006 23D0     		beq	.L22
+ 207 0008 10B4     		push	{r4}
+ 208 000a 0346     		mov	r3, r0
+ 209 000c 0120     		movs	r0, #1
+ 210 000e 83F82000 		strb	r0, [r3, #32]
+ 211 0012 0222     		movs	r2, #2
+ 212 0014 83F82120 		strb	r2, [r3, #33]
+ 213 0018 1A68     		ldr	r2, [r3]
+ 214 001a CA21     		movs	r1, #202
+ 215 001c 5162     		str	r1, [r2, #36]
+ 216 001e 1A68     		ldr	r2, [r3]
+ 217 0020 5321     		movs	r1, #83
+ 218 0022 5162     		str	r1, [r2, #36]
+ 219 0024 1C68     		ldr	r4, [r3]
+ 220 0026 E168     		ldr	r1, [r4, #12]
+ 221 0028 C9B2     		uxtb	r1, r1
+ 222 002a 0A4A     		ldr	r2, .L27
+ 223 002c 0A43     		orrs	r2, r2, r1
+ 224 002e E260     		str	r2, [r4, #12]
+ 225 0030 1968     		ldr	r1, [r3]
+ 226 0032 8A68     		ldr	r2, [r1, #8]
+ 227 0034 42F08072 		orr	r2, r2, #16777216
+ 228 0038 8A60     		str	r2, [r1, #8]
+ 229 003a 1A68     		ldr	r2, [r3]
+ 230 003c FF21     		movs	r1, #255
+ 231 003e 5162     		str	r1, [r2, #36]
+ 232 0040 83F82100 		strb	r0, [r3, #33]
+ 233 0044 0020     		movs	r0, #0
+ 234 0046 83F82000 		strb	r0, [r3, #32]
+ 235 004a 5DF8044B 		ldr	r4, [sp], #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 5
+
+
+ 236 004e 7047     		bx	lr
+ 237              	.L22:
+ 238 0050 0220     		movs	r0, #2
+ 239 0052 7047     		bx	lr
+ 240              	.L28:
+ 241              		.align	2
+ 242              	.L27:
+ 243 0054 7FFFFDFF 		.word	-131201
+ 245              		.section	.text.HAL_RTCEx_DeactivateInternalTimeStamp,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	HAL_RTCEx_DeactivateInternalTimeStamp
+ 248              		.syntax unified
+ 249              		.thumb
+ 250              		.thumb_func
+ 252              	HAL_RTCEx_DeactivateInternalTimeStamp:
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		@ link register save eliminated.
+ 256 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 257 0004 012B     		cmp	r3, #1
+ 258 0006 1AD0     		beq	.L31
+ 259 0008 0122     		movs	r2, #1
+ 260 000a 80F82020 		strb	r2, [r0, #32]
+ 261 000e 0223     		movs	r3, #2
+ 262 0010 80F82130 		strb	r3, [r0, #33]
+ 263 0014 0368     		ldr	r3, [r0]
+ 264 0016 CA21     		movs	r1, #202
+ 265 0018 5962     		str	r1, [r3, #36]
+ 266 001a 0368     		ldr	r3, [r0]
+ 267 001c 5321     		movs	r1, #83
+ 268 001e 5962     		str	r1, [r3, #36]
+ 269 0020 0168     		ldr	r1, [r0]
+ 270 0022 8B68     		ldr	r3, [r1, #8]
+ 271 0024 23F08073 		bic	r3, r3, #16777216
+ 272 0028 8B60     		str	r3, [r1, #8]
+ 273 002a 0368     		ldr	r3, [r0]
+ 274 002c FF21     		movs	r1, #255
+ 275 002e 5962     		str	r1, [r3, #36]
+ 276 0030 80F82120 		strb	r2, [r0, #33]
+ 277 0034 0023     		movs	r3, #0
+ 278 0036 80F82030 		strb	r3, [r0, #32]
+ 279 003a 1846     		mov	r0, r3
+ 280 003c 7047     		bx	lr
+ 281              	.L31:
+ 282 003e 0220     		movs	r0, #2
+ 283 0040 7047     		bx	lr
+ 285              		.section	.text.HAL_RTCEx_GetTimeStamp,"ax",%progbits
+ 286              		.align	1
+ 287              		.global	HAL_RTCEx_GetTimeStamp
+ 288              		.syntax unified
+ 289              		.thumb
+ 290              		.thumb_func
+ 292              	HAL_RTCEx_GetTimeStamp:
+ 293              		@ args = 0, pretend = 0, frame = 0
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295 0000 70B5     		push	{r4, r5, r6, lr}
+ 296 0002 0646     		mov	r6, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 6
+
+
+ 297 0004 0C46     		mov	r4, r1
+ 298 0006 1546     		mov	r5, r2
+ 299 0008 0168     		ldr	r1, [r0]
+ 300 000a 0A6B     		ldr	r2, [r1, #48]
+ 301 000c 496B     		ldr	r1, [r1, #52]
+ 302 000e C2F30540 		ubfx	r0, r2, #16, #6
+ 303 0012 2070     		strb	r0, [r4]
+ 304 0014 C2F30620 		ubfx	r0, r2, #8, #7
+ 305 0018 6070     		strb	r0, [r4, #1]
+ 306 001a 02F07F00 		and	r0, r2, #127
+ 307 001e A070     		strb	r0, [r4, #2]
+ 308 0020 C2F38052 		ubfx	r2, r2, #22, #1
+ 309 0024 E270     		strb	r2, [r4, #3]
+ 310 0026 3268     		ldr	r2, [r6]
+ 311 0028 926B     		ldr	r2, [r2, #56]
+ 312 002a 6260     		str	r2, [r4, #4]
+ 313 002c 0022     		movs	r2, #0
+ 314 002e EA70     		strb	r2, [r5, #3]
+ 315 0030 C1F30422 		ubfx	r2, r1, #8, #5
+ 316 0034 6A70     		strb	r2, [r5, #1]
+ 317 0036 01F03F02 		and	r2, r1, #63
+ 318 003a AA70     		strb	r2, [r5, #2]
+ 319 003c C1F34231 		ubfx	r1, r1, #13, #3
+ 320 0040 2970     		strb	r1, [r5]
+ 321 0042 6BB1     		cbz	r3, .L35
+ 322              	.L33:
+ 323 0044 3168     		ldr	r1, [r6]
+ 324 0046 CA68     		ldr	r2, [r1, #12]
+ 325 0048 D2B2     		uxtb	r2, r2
+ 326 004a 124B     		ldr	r3, .L36
+ 327 004c 1343     		orrs	r3, r3, r2
+ 328 004e CB60     		str	r3, [r1, #12]
+ 329 0050 3268     		ldr	r2, [r6]
+ 330 0052 D368     		ldr	r3, [r2, #12]
+ 331 0054 DBB2     		uxtb	r3, r3
+ 332 0056 63F40863 		orn	r3, r3, #2176
+ 333 005a D360     		str	r3, [r2, #12]
+ 334 005c 0020     		movs	r0, #0
+ 335 005e 70BD     		pop	{r4, r5, r6, pc}
+ 336              	.L35:
+ 337 0060 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 338 0062 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 339 0066 2070     		strb	r0, [r4]
+ 340 0068 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+ 341 006a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 342 006e 6070     		strb	r0, [r4, #1]
+ 343 0070 A078     		ldrb	r0, [r4, #2]	@ zero_extendqisi2
+ 344 0072 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 345 0076 A070     		strb	r0, [r4, #2]
+ 346 0078 6878     		ldrb	r0, [r5, #1]	@ zero_extendqisi2
+ 347 007a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 348 007e 6870     		strb	r0, [r5, #1]
+ 349 0080 A878     		ldrb	r0, [r5, #2]	@ zero_extendqisi2
+ 350 0082 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 351 0086 A870     		strb	r0, [r5, #2]
+ 352 0088 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 353 008a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 7
+
+
+ 354 008e 2870     		strb	r0, [r5]
+ 355 0090 D8E7     		b	.L33
+ 356              	.L37:
+ 357 0092 00BF     		.align	2
+ 358              	.L36:
+ 359 0094 7FFFFDFF 		.word	-131201
+ 361              		.section	.text.HAL_RTCEx_SetTamper,"ax",%progbits
+ 362              		.align	1
+ 363              		.global	HAL_RTCEx_SetTamper
+ 364              		.syntax unified
+ 365              		.thumb
+ 366              		.thumb_func
+ 368              	HAL_RTCEx_SetTamper:
+ 369              		@ args = 0, pretend = 0, frame = 0
+ 370              		@ frame_needed = 0, uses_anonymous_args = 0
+ 371              		@ link register save eliminated.
+ 372 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 373 0004 012B     		cmp	r3, #1
+ 374 0006 7FD0     		beq	.L57
+ 375 0008 30B4     		push	{r4, r5}
+ 376 000a 8446     		mov	ip, r0
+ 377 000c 0123     		movs	r3, #1
+ 378 000e 80F82030 		strb	r3, [r0, #32]
+ 379 0012 0223     		movs	r3, #2
+ 380 0014 80F82130 		strb	r3, [r0, #33]
+ 381 0018 0068     		ldr	r0, [r0]
+ 382 001a 036C     		ldr	r3, [r0, #64]
+ 383 001c 0C68     		ldr	r4, [r1]
+ 384 001e 2343     		orrs	r3, r3, r4
+ 385 0020 8A68     		ldr	r2, [r1, #8]
+ 386 0022 022A     		cmp	r2, #2
+ 387 0024 4DD0     		beq	.L62
+ 388 0026 23EA4403 		bic	r3, r3, r4, lsl #1
+ 389              	.L41:
+ 390 002a CA68     		ldr	r2, [r1, #12]
+ 391 002c 002A     		cmp	r2, #0
+ 392 002e 4BD0     		beq	.L42
+ 393 0030 14F0010F 		tst	r4, #1
+ 394 0034 01D0     		beq	.L43
+ 395 0036 43F40033 		orr	r3, r3, #131072
+ 396              	.L43:
+ 397 003a 14F0080F 		tst	r4, #8
+ 398 003e 01D0     		beq	.L44
+ 399 0040 43F48013 		orr	r3, r3, #1048576
+ 400              	.L44:
+ 401 0044 14F0200F 		tst	r4, #32
+ 402 0048 01D0     		beq	.L45
+ 403 004a 43F40003 		orr	r3, r3, #8388608
+ 404              	.L45:
+ 405 004e 0A69     		ldr	r2, [r1, #16]
+ 406 0050 002A     		cmp	r2, #0
+ 407 0052 49D0     		beq	.L48
+ 408 0054 14F0010F 		tst	r4, #1
+ 409 0058 01D0     		beq	.L49
+ 410 005a 43F48023 		orr	r3, r3, #262144
+ 411              	.L49:
+ 412 005e 14F0080F 		tst	r4, #8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 8
+
+
+ 413 0062 01D0     		beq	.L50
+ 414 0064 43F40013 		orr	r3, r3, #2097152
+ 415              	.L50:
+ 416 0068 14F0200F 		tst	r4, #32
+ 417 006c 01D0     		beq	.L51
+ 418 006e 43F08073 		orr	r3, r3, #16777216
+ 419              	.L51:
+ 420 0072 23F47F42 		bic	r2, r3, #65280
+ 421 0076 22F08002 		bic	r2, r2, #128
+ 422 007a 4B69     		ldr	r3, [r1, #20]
+ 423 007c 8D69     		ldr	r5, [r1, #24]
+ 424 007e 2B43     		orrs	r3, r3, r5
+ 425 0080 CD69     		ldr	r5, [r1, #28]
+ 426 0082 2B43     		orrs	r3, r3, r5
+ 427 0084 0D6A     		ldr	r5, [r1, #32]
+ 428 0086 2B43     		orrs	r3, r3, r5
+ 429 0088 496A     		ldr	r1, [r1, #36]
+ 430 008a 0B43     		orrs	r3, r3, r1
+ 431 008c 1343     		orrs	r3, r3, r2
+ 432 008e 14F0010F 		tst	r4, #1
+ 433 0092 01D0     		beq	.L54
+ 434 0094 23F48033 		bic	r3, r3, #65536
+ 435              	.L54:
+ 436 0098 14F0080F 		tst	r4, #8
+ 437 009c 01D0     		beq	.L55
+ 438 009e 23F40023 		bic	r3, r3, #524288
+ 439              	.L55:
+ 440 00a2 14F0200F 		tst	r4, #32
+ 441 00a6 01D0     		beq	.L56
+ 442 00a8 23F48003 		bic	r3, r3, #4194304
+ 443              	.L56:
+ 444 00ac 23F00403 		bic	r3, r3, #4
+ 445 00b0 0364     		str	r3, [r0, #64]
+ 446 00b2 0123     		movs	r3, #1
+ 447 00b4 8CF82130 		strb	r3, [ip, #33]
+ 448 00b8 0020     		movs	r0, #0
+ 449 00ba 8CF82000 		strb	r0, [ip, #32]
+ 450 00be 30BC     		pop	{r4, r5}
+ 451 00c0 7047     		bx	lr
+ 452              	.L62:
+ 453 00c2 43EA4403 		orr	r3, r3, r4, lsl #1
+ 454 00c6 B0E7     		b	.L41
+ 455              	.L42:
+ 456 00c8 14F0010F 		tst	r4, #1
+ 457 00cc 01D0     		beq	.L46
+ 458 00ce 23F40033 		bic	r3, r3, #131072
+ 459              	.L46:
+ 460 00d2 14F0080F 		tst	r4, #8
+ 461 00d6 01D0     		beq	.L47
+ 462 00d8 23F48013 		bic	r3, r3, #1048576
+ 463              	.L47:
+ 464 00dc 14F0200F 		tst	r4, #32
+ 465 00e0 B5D0     		beq	.L45
+ 466 00e2 23F40003 		bic	r3, r3, #8388608
+ 467 00e6 B2E7     		b	.L45
+ 468              	.L48:
+ 469 00e8 14F0010F 		tst	r4, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 9
+
+
+ 470 00ec 01D0     		beq	.L52
+ 471 00ee 23F48023 		bic	r3, r3, #262144
+ 472              	.L52:
+ 473 00f2 14F0080F 		tst	r4, #8
+ 474 00f6 01D0     		beq	.L53
+ 475 00f8 23F40013 		bic	r3, r3, #2097152
+ 476              	.L53:
+ 477 00fc 14F0200F 		tst	r4, #32
+ 478 0100 B7D0     		beq	.L51
+ 479 0102 23F08073 		bic	r3, r3, #16777216
+ 480 0106 B4E7     		b	.L51
+ 481              	.L57:
+ 482 0108 0220     		movs	r0, #2
+ 483 010a 7047     		bx	lr
+ 485              		.section	.text.HAL_RTCEx_SetTamper_IT,"ax",%progbits
+ 486              		.align	1
+ 487              		.global	HAL_RTCEx_SetTamper_IT
+ 488              		.syntax unified
+ 489              		.thumb
+ 490              		.thumb_func
+ 492              	HAL_RTCEx_SetTamper_IT:
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 0, uses_anonymous_args = 0
+ 495              		@ link register save eliminated.
+ 496 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 497 0004 012B     		cmp	r3, #1
+ 498 0006 7AD0     		beq	.L79
+ 499 0008 10B4     		push	{r4}
+ 500 000a 8446     		mov	ip, r0
+ 501 000c 0123     		movs	r3, #1
+ 502 000e 80F82030 		strb	r3, [r0, #32]
+ 503 0012 0223     		movs	r3, #2
+ 504 0014 80F82130 		strb	r3, [r0, #33]
+ 505 0018 0068     		ldr	r0, [r0]
+ 506 001a 036C     		ldr	r3, [r0, #64]
+ 507 001c 0A68     		ldr	r2, [r1]
+ 508 001e 1343     		orrs	r3, r3, r2
+ 509 0020 8C68     		ldr	r4, [r1, #8]
+ 510 0022 022C     		cmp	r4, #2
+ 511 0024 48D0     		beq	.L84
+ 512 0026 23EA4203 		bic	r3, r3, r2, lsl #1
+ 513              	.L66:
+ 514 002a CC68     		ldr	r4, [r1, #12]
+ 515 002c 002C     		cmp	r4, #0
+ 516 002e 46D0     		beq	.L67
+ 517 0030 12F0010F 		tst	r2, #1
+ 518 0034 01D0     		beq	.L68
+ 519 0036 43F40033 		orr	r3, r3, #131072
+ 520              	.L68:
+ 521 003a 12F0080F 		tst	r2, #8
+ 522 003e 01D0     		beq	.L69
+ 523 0040 43F48013 		orr	r3, r3, #1048576
+ 524              	.L69:
+ 525 0044 12F0200F 		tst	r2, #32
+ 526 0048 01D0     		beq	.L70
+ 527 004a 43F40003 		orr	r3, r3, #8388608
+ 528              	.L70:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 10
+
+
+ 529 004e 0C69     		ldr	r4, [r1, #16]
+ 530 0050 002C     		cmp	r4, #0
+ 531 0052 44D0     		beq	.L73
+ 532 0054 12F0010F 		tst	r2, #1
+ 533 0058 01D0     		beq	.L74
+ 534 005a 43F48023 		orr	r3, r3, #262144
+ 535              	.L74:
+ 536 005e 12F0080F 		tst	r2, #8
+ 537 0062 01D0     		beq	.L75
+ 538 0064 43F40013 		orr	r3, r3, #2097152
+ 539              	.L75:
+ 540 0068 12F0200F 		tst	r2, #32
+ 541 006c 01D0     		beq	.L76
+ 542 006e 43F08073 		orr	r3, r3, #16777216
+ 543              	.L76:
+ 544 0072 6FF3CF13 		bfc	r3, #7, #9
+ 545 0076 4A69     		ldr	r2, [r1, #20]
+ 546 0078 8C69     		ldr	r4, [r1, #24]
+ 547 007a 2243     		orrs	r2, r2, r4
+ 548 007c CC69     		ldr	r4, [r1, #28]
+ 549 007e 2243     		orrs	r2, r2, r4
+ 550 0080 0C6A     		ldr	r4, [r1, #32]
+ 551 0082 2243     		orrs	r2, r2, r4
+ 552 0084 4C6A     		ldr	r4, [r1, #36]
+ 553 0086 2243     		orrs	r2, r2, r4
+ 554 0088 1343     		orrs	r3, r3, r2
+ 555 008a 4A68     		ldr	r2, [r1, #4]
+ 556 008c 1343     		orrs	r3, r3, r2
+ 557 008e 0364     		str	r3, [r0, #64]
+ 558 0090 1C4B     		ldr	r3, .L85
+ 559 0092 D3F88020 		ldr	r2, [r3, #128]
+ 560 0096 42F48022 		orr	r2, r2, #262144
+ 561 009a C3F88020 		str	r2, [r3, #128]
+ 562 009e 1A68     		ldr	r2, [r3]
+ 563 00a0 42F48022 		orr	r2, r2, #262144
+ 564 00a4 1A60     		str	r2, [r3]
+ 565 00a6 0123     		movs	r3, #1
+ 566 00a8 8CF82130 		strb	r3, [ip, #33]
+ 567 00ac 0020     		movs	r0, #0
+ 568 00ae 8CF82000 		strb	r0, [ip, #32]
+ 569 00b2 5DF8044B 		ldr	r4, [sp], #4
+ 570 00b6 7047     		bx	lr
+ 571              	.L84:
+ 572 00b8 43EA4203 		orr	r3, r3, r2, lsl #1
+ 573 00bc B5E7     		b	.L66
+ 574              	.L67:
+ 575 00be 12F0010F 		tst	r2, #1
+ 576 00c2 01D0     		beq	.L71
+ 577 00c4 23F40033 		bic	r3, r3, #131072
+ 578              	.L71:
+ 579 00c8 12F0080F 		tst	r2, #8
+ 580 00cc 01D0     		beq	.L72
+ 581 00ce 23F48013 		bic	r3, r3, #1048576
+ 582              	.L72:
+ 583 00d2 12F0200F 		tst	r2, #32
+ 584 00d6 BAD0     		beq	.L70
+ 585 00d8 23F40003 		bic	r3, r3, #8388608
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 11
+
+
+ 586 00dc B7E7     		b	.L70
+ 587              	.L73:
+ 588 00de 12F0010F 		tst	r2, #1
+ 589 00e2 01D0     		beq	.L77
+ 590 00e4 23F48023 		bic	r3, r3, #262144
+ 591              	.L77:
+ 592 00e8 12F0080F 		tst	r2, #8
+ 593 00ec 01D0     		beq	.L78
+ 594 00ee 23F40013 		bic	r3, r3, #2097152
+ 595              	.L78:
+ 596 00f2 12F0200F 		tst	r2, #32
+ 597 00f6 BCD0     		beq	.L76
+ 598 00f8 23F08073 		bic	r3, r3, #16777216
+ 599 00fc B9E7     		b	.L76
+ 600              	.L79:
+ 601 00fe 0220     		movs	r0, #2
+ 602 0100 7047     		bx	lr
+ 603              	.L86:
+ 604 0102 00BF     		.align	2
+ 605              	.L85:
+ 606 0104 00080058 		.word	1476397056
+ 608              		.section	.text.HAL_RTCEx_DeactivateTamper,"ax",%progbits
+ 609              		.align	1
+ 610              		.global	HAL_RTCEx_DeactivateTamper
+ 611              		.syntax unified
+ 612              		.thumb
+ 613              		.thumb_func
+ 615              	HAL_RTCEx_DeactivateTamper:
+ 616              		@ args = 0, pretend = 0, frame = 0
+ 617              		@ frame_needed = 0, uses_anonymous_args = 0
+ 618              		@ link register save eliminated.
+ 619 0000 0346     		mov	r3, r0
+ 620 0002 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 621 0006 012A     		cmp	r2, #1
+ 622 0008 2FD0     		beq	.L92
+ 623 000a 0122     		movs	r2, #1
+ 624 000c 80F82020 		strb	r2, [r0, #32]
+ 625 0010 0222     		movs	r2, #2
+ 626 0012 80F82120 		strb	r2, [r0, #33]
+ 627 0016 0068     		ldr	r0, [r0]
+ 628 0018 026C     		ldr	r2, [r0, #64]
+ 629 001a 22EA0102 		bic	r2, r2, r1
+ 630 001e 0264     		str	r2, [r0, #64]
+ 631 0020 11F0010F 		tst	r1, #1
+ 632 0024 06D0     		beq	.L89
+ 633 0026 1868     		ldr	r0, [r3]
+ 634 0028 026C     		ldr	r2, [r0, #64]
+ 635 002a 22F48032 		bic	r2, r2, #65536
+ 636 002e 22F00402 		bic	r2, r2, #4
+ 637 0032 0264     		str	r2, [r0, #64]
+ 638              	.L89:
+ 639 0034 11F0080F 		tst	r1, #8
+ 640 0038 06D0     		beq	.L90
+ 641 003a 1868     		ldr	r0, [r3]
+ 642 003c 026C     		ldr	r2, [r0, #64]
+ 643 003e 22F40022 		bic	r2, r2, #524288
+ 644 0042 22F00402 		bic	r2, r2, #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 12
+
+
+ 645 0046 0264     		str	r2, [r0, #64]
+ 646              	.L90:
+ 647 0048 11F0200F 		tst	r1, #32
+ 648 004c 06D0     		beq	.L91
+ 649 004e 1968     		ldr	r1, [r3]
+ 650 0050 0A6C     		ldr	r2, [r1, #64]
+ 651 0052 22F48002 		bic	r2, r2, #4194304
+ 652 0056 22F00402 		bic	r2, r2, #4
+ 653 005a 0A64     		str	r2, [r1, #64]
+ 654              	.L91:
+ 655 005c 0122     		movs	r2, #1
+ 656 005e 83F82120 		strb	r2, [r3, #33]
+ 657 0062 0020     		movs	r0, #0
+ 658 0064 83F82000 		strb	r0, [r3, #32]
+ 659 0068 7047     		bx	lr
+ 660              	.L92:
+ 661 006a 0220     		movs	r0, #2
+ 662 006c 7047     		bx	lr
+ 664              		.section	.text.HAL_RTCEx_TimeStampEventCallback,"ax",%progbits
+ 665              		.align	1
+ 666              		.weak	HAL_RTCEx_TimeStampEventCallback
+ 667              		.syntax unified
+ 668              		.thumb
+ 669              		.thumb_func
+ 671              	HAL_RTCEx_TimeStampEventCallback:
+ 672              		@ args = 0, pretend = 0, frame = 0
+ 673              		@ frame_needed = 0, uses_anonymous_args = 0
+ 674              		@ link register save eliminated.
+ 675 0000 7047     		bx	lr
+ 677              		.section	.text.HAL_RTCEx_Tamper1EventCallback,"ax",%progbits
+ 678              		.align	1
+ 679              		.weak	HAL_RTCEx_Tamper1EventCallback
+ 680              		.syntax unified
+ 681              		.thumb
+ 682              		.thumb_func
+ 684              	HAL_RTCEx_Tamper1EventCallback:
+ 685              		@ args = 0, pretend = 0, frame = 0
+ 686              		@ frame_needed = 0, uses_anonymous_args = 0
+ 687              		@ link register save eliminated.
+ 688 0000 7047     		bx	lr
+ 690              		.section	.text.HAL_RTCEx_Tamper2EventCallback,"ax",%progbits
+ 691              		.align	1
+ 692              		.weak	HAL_RTCEx_Tamper2EventCallback
+ 693              		.syntax unified
+ 694              		.thumb
+ 695              		.thumb_func
+ 697              	HAL_RTCEx_Tamper2EventCallback:
+ 698              		@ args = 0, pretend = 0, frame = 0
+ 699              		@ frame_needed = 0, uses_anonymous_args = 0
+ 700              		@ link register save eliminated.
+ 701 0000 7047     		bx	lr
+ 703              		.section	.text.HAL_RTCEx_Tamper3EventCallback,"ax",%progbits
+ 704              		.align	1
+ 705              		.weak	HAL_RTCEx_Tamper3EventCallback
+ 706              		.syntax unified
+ 707              		.thumb
+ 708              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 13
+
+
+ 710              	HAL_RTCEx_Tamper3EventCallback:
+ 711              		@ args = 0, pretend = 0, frame = 0
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713              		@ link register save eliminated.
+ 714 0000 7047     		bx	lr
+ 716              		.section	.text.HAL_RTCEx_TamperTimeStampIRQHandler,"ax",%progbits
+ 717              		.align	1
+ 718              		.global	HAL_RTCEx_TamperTimeStampIRQHandler
+ 719              		.syntax unified
+ 720              		.thumb
+ 721              		.thumb_func
+ 723              	HAL_RTCEx_TamperTimeStampIRQHandler:
+ 724              		@ args = 0, pretend = 0, frame = 0
+ 725              		@ frame_needed = 0, uses_anonymous_args = 0
+ 726 0000 10B5     		push	{r4, lr}
+ 727 0002 0446     		mov	r4, r0
+ 728 0004 2A4B     		ldr	r3, .L107
+ 729 0006 4FF48022 		mov	r2, #262144
+ 730 000a DA60     		str	r2, [r3, #12]
+ 731 000c 0368     		ldr	r3, [r0]
+ 732 000e 9A68     		ldr	r2, [r3, #8]
+ 733 0010 12F4004F 		tst	r2, #32768
+ 734 0014 03D0     		beq	.L98
+ 735 0016 DB68     		ldr	r3, [r3, #12]
+ 736 0018 13F4006F 		tst	r3, #2048
+ 737 001c 1ED1     		bne	.L103
+ 738              	.L98:
+ 739 001e 2268     		ldr	r2, [r4]
+ 740 0020 116C     		ldr	r1, [r2, #64]
+ 741 0022 244B     		ldr	r3, .L107+4
+ 742 0024 0B40     		ands	r3, r3, r1
+ 743 0026 1BB1     		cbz	r3, .L99
+ 744 0028 D368     		ldr	r3, [r2, #12]
+ 745 002a 13F4005F 		tst	r3, #8192
+ 746 002e 1ED1     		bne	.L104
+ 747              	.L99:
+ 748 0030 2268     		ldr	r2, [r4]
+ 749 0032 116C     		ldr	r1, [r2, #64]
+ 750 0034 204B     		ldr	r3, .L107+8
+ 751 0036 0B40     		ands	r3, r3, r1
+ 752 0038 1BB1     		cbz	r3, .L100
+ 753 003a D368     		ldr	r3, [r2, #12]
+ 754 003c 13F4804F 		tst	r3, #16384
+ 755 0040 1ED1     		bne	.L105
+ 756              	.L100:
+ 757 0042 2268     		ldr	r2, [r4]
+ 758 0044 116C     		ldr	r1, [r2, #64]
+ 759 0046 1D4B     		ldr	r3, .L107+12
+ 760 0048 0B40     		ands	r3, r3, r1
+ 761 004a 1BB1     		cbz	r3, .L101
+ 762 004c D368     		ldr	r3, [r2, #12]
+ 763 004e 13F4004F 		tst	r3, #32768
+ 764 0052 1ED1     		bne	.L106
+ 765              	.L101:
+ 766 0054 0123     		movs	r3, #1
+ 767 0056 84F82130 		strb	r3, [r4, #33]
+ 768 005a 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 14
+
+
+ 769              	.L103:
+ 770 005c FFF7FEFF 		bl	HAL_RTCEx_TimeStampEventCallback
+ 771 0060 2268     		ldr	r2, [r4]
+ 772 0062 D368     		ldr	r3, [r2, #12]
+ 773 0064 DBB2     		uxtb	r3, r3
+ 774 0066 63F40863 		orn	r3, r3, #2176
+ 775 006a D360     		str	r3, [r2, #12]
+ 776 006c D7E7     		b	.L98
+ 777              	.L104:
+ 778 006e D368     		ldr	r3, [r2, #12]
+ 779 0070 DBB2     		uxtb	r3, r3
+ 780 0072 63F40253 		orn	r3, r3, #8320
+ 781 0076 D360     		str	r3, [r2, #12]
+ 782 0078 2046     		mov	r0, r4
+ 783 007a FFF7FEFF 		bl	HAL_RTCEx_Tamper1EventCallback
+ 784 007e D7E7     		b	.L99
+ 785              	.L105:
+ 786 0080 D368     		ldr	r3, [r2, #12]
+ 787 0082 DBB2     		uxtb	r3, r3
+ 788 0084 63F48143 		orn	r3, r3, #16512
+ 789 0088 D360     		str	r3, [r2, #12]
+ 790 008a 2046     		mov	r0, r4
+ 791 008c FFF7FEFF 		bl	HAL_RTCEx_Tamper2EventCallback
+ 792 0090 D7E7     		b	.L100
+ 793              	.L106:
+ 794 0092 D368     		ldr	r3, [r2, #12]
+ 795 0094 DBB2     		uxtb	r3, r3
+ 796 0096 43F07F43 		orr	r3, r3, #-16777216
+ 797 009a 43F47F03 		orr	r3, r3, #16711680
+ 798 009e 43F4FE43 		orr	r3, r3, #32512
+ 799 00a2 43F07F03 		orr	r3, r3, #127
+ 800 00a6 D360     		str	r3, [r2, #12]
+ 801 00a8 2046     		mov	r0, r4
+ 802 00aa FFF7FEFF 		bl	HAL_RTCEx_Tamper3EventCallback
+ 803 00ae D1E7     		b	.L101
+ 804              	.L108:
+ 805              		.align	2
+ 806              	.L107:
+ 807 00b0 00080058 		.word	1476397056
+ 808 00b4 04000100 		.word	65540
+ 809 00b8 04000800 		.word	524292
+ 810 00bc 04004000 		.word	4194308
+ 812              		.section	.text.HAL_RTCEx_PollForTimeStampEvent,"ax",%progbits
+ 813              		.align	1
+ 814              		.global	HAL_RTCEx_PollForTimeStampEvent
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 819              	HAL_RTCEx_PollForTimeStampEvent:
+ 820              		@ args = 0, pretend = 0, frame = 0
+ 821              		@ frame_needed = 0, uses_anonymous_args = 0
+ 822 0000 70B5     		push	{r4, r5, r6, lr}
+ 823 0002 0546     		mov	r5, r0
+ 824 0004 0C46     		mov	r4, r1
+ 825 0006 FFF7FEFF 		bl	HAL_GetTick
+ 826 000a 0646     		mov	r6, r0
+ 827 000c 04E0     		b	.L110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 15
+
+
+ 828              	.L111:
+ 829 000e 2B68     		ldr	r3, [r5]
+ 830 0010 DA68     		ldr	r2, [r3, #12]
+ 831 0012 12F4805F 		tst	r2, #4096
+ 832 0016 11D1     		bne	.L116
+ 833              	.L110:
+ 834 0018 2B68     		ldr	r3, [r5]
+ 835 001a DB68     		ldr	r3, [r3, #12]
+ 836 001c 13F4006F 		tst	r3, #2048
+ 837 0020 16D1     		bne	.L117
+ 838 0022 B4F1FF3F 		cmp	r4, #-1
+ 839 0026 F2D0     		beq	.L111
+ 840 0028 24B1     		cbz	r4, .L112
+ 841 002a FFF7FEFF 		bl	HAL_GetTick
+ 842 002e 831B     		subs	r3, r0, r6
+ 843 0030 A342     		cmp	r3, r4
+ 844 0032 ECD9     		bls	.L111
+ 845              	.L112:
+ 846 0034 0320     		movs	r0, #3
+ 847 0036 85F82100 		strb	r0, [r5, #33]
+ 848              	.L113:
+ 849 003a 70BD     		pop	{r4, r5, r6, pc}
+ 850              	.L116:
+ 851 003c DA68     		ldr	r2, [r3, #12]
+ 852 003e D2B2     		uxtb	r2, r2
+ 853 0040 62F48452 		orn	r2, r2, #4224
+ 854 0044 DA60     		str	r2, [r3, #12]
+ 855 0046 0423     		movs	r3, #4
+ 856 0048 85F82130 		strb	r3, [r5, #33]
+ 857 004c 0120     		movs	r0, #1
+ 858 004e F4E7     		b	.L113
+ 859              	.L117:
+ 860 0050 0123     		movs	r3, #1
+ 861 0052 85F82130 		strb	r3, [r5, #33]
+ 862 0056 0020     		movs	r0, #0
+ 863 0058 EFE7     		b	.L113
+ 865              		.section	.text.HAL_RTCEx_PollForTamper1Event,"ax",%progbits
+ 866              		.align	1
+ 867              		.global	HAL_RTCEx_PollForTamper1Event
+ 868              		.syntax unified
+ 869              		.thumb
+ 870              		.thumb_func
+ 872              	HAL_RTCEx_PollForTamper1Event:
+ 873              		@ args = 0, pretend = 0, frame = 0
+ 874              		@ frame_needed = 0, uses_anonymous_args = 0
+ 875 0000 70B5     		push	{r4, r5, r6, lr}
+ 876 0002 0446     		mov	r4, r0
+ 877 0004 0D46     		mov	r5, r1
+ 878 0006 FFF7FEFF 		bl	HAL_GetTick
+ 879 000a 0646     		mov	r6, r0
+ 880              	.L120:
+ 881 000c 2368     		ldr	r3, [r4]
+ 882 000e DA68     		ldr	r2, [r3, #12]
+ 883 0010 12F4005F 		tst	r2, #8192
+ 884 0014 0CD1     		bne	.L125
+ 885 0016 B5F1FF3F 		cmp	r5, #-1
+ 886 001a F7D0     		beq	.L120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 16
+
+
+ 887 001c 25B1     		cbz	r5, .L121
+ 888 001e FFF7FEFF 		bl	HAL_GetTick
+ 889 0022 801B     		subs	r0, r0, r6
+ 890 0024 A842     		cmp	r0, r5
+ 891 0026 F1D9     		bls	.L120
+ 892              	.L121:
+ 893 0028 0320     		movs	r0, #3
+ 894 002a 84F82100 		strb	r0, [r4, #33]
+ 895 002e 08E0     		b	.L122
+ 896              	.L125:
+ 897 0030 DA68     		ldr	r2, [r3, #12]
+ 898 0032 D2B2     		uxtb	r2, r2
+ 899 0034 62F40252 		orn	r2, r2, #8320
+ 900 0038 DA60     		str	r2, [r3, #12]
+ 901 003a 0123     		movs	r3, #1
+ 902 003c 84F82130 		strb	r3, [r4, #33]
+ 903 0040 0020     		movs	r0, #0
+ 904              	.L122:
+ 905 0042 70BD     		pop	{r4, r5, r6, pc}
+ 907              		.section	.text.HAL_RTCEx_PollForTamper2Event,"ax",%progbits
+ 908              		.align	1
+ 909              		.global	HAL_RTCEx_PollForTamper2Event
+ 910              		.syntax unified
+ 911              		.thumb
+ 912              		.thumb_func
+ 914              	HAL_RTCEx_PollForTamper2Event:
+ 915              		@ args = 0, pretend = 0, frame = 0
+ 916              		@ frame_needed = 0, uses_anonymous_args = 0
+ 917 0000 70B5     		push	{r4, r5, r6, lr}
+ 918 0002 0446     		mov	r4, r0
+ 919 0004 0D46     		mov	r5, r1
+ 920 0006 FFF7FEFF 		bl	HAL_GetTick
+ 921 000a 0646     		mov	r6, r0
+ 922              	.L128:
+ 923 000c 2368     		ldr	r3, [r4]
+ 924 000e DA68     		ldr	r2, [r3, #12]
+ 925 0010 12F4804F 		tst	r2, #16384
+ 926 0014 0CD1     		bne	.L133
+ 927 0016 B5F1FF3F 		cmp	r5, #-1
+ 928 001a F7D0     		beq	.L128
+ 929 001c 25B1     		cbz	r5, .L129
+ 930 001e FFF7FEFF 		bl	HAL_GetTick
+ 931 0022 801B     		subs	r0, r0, r6
+ 932 0024 A842     		cmp	r0, r5
+ 933 0026 F1D9     		bls	.L128
+ 934              	.L129:
+ 935 0028 0320     		movs	r0, #3
+ 936 002a 84F82100 		strb	r0, [r4, #33]
+ 937 002e 08E0     		b	.L130
+ 938              	.L133:
+ 939 0030 DA68     		ldr	r2, [r3, #12]
+ 940 0032 D2B2     		uxtb	r2, r2
+ 941 0034 62F48142 		orn	r2, r2, #16512
+ 942 0038 DA60     		str	r2, [r3, #12]
+ 943 003a 0123     		movs	r3, #1
+ 944 003c 84F82130 		strb	r3, [r4, #33]
+ 945 0040 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 17
+
+
+ 946              	.L130:
+ 947 0042 70BD     		pop	{r4, r5, r6, pc}
+ 949              		.section	.text.HAL_RTCEx_PollForTamper3Event,"ax",%progbits
+ 950              		.align	1
+ 951              		.global	HAL_RTCEx_PollForTamper3Event
+ 952              		.syntax unified
+ 953              		.thumb
+ 954              		.thumb_func
+ 956              	HAL_RTCEx_PollForTamper3Event:
+ 957              		@ args = 0, pretend = 0, frame = 0
+ 958              		@ frame_needed = 0, uses_anonymous_args = 0
+ 959 0000 70B5     		push	{r4, r5, r6, lr}
+ 960 0002 0446     		mov	r4, r0
+ 961 0004 0D46     		mov	r5, r1
+ 962 0006 FFF7FEFF 		bl	HAL_GetTick
+ 963 000a 0646     		mov	r6, r0
+ 964              	.L136:
+ 965 000c 2368     		ldr	r3, [r4]
+ 966 000e DA68     		ldr	r2, [r3, #12]
+ 967 0010 12F4004F 		tst	r2, #32768
+ 968 0014 0CD1     		bne	.L141
+ 969 0016 B5F1FF3F 		cmp	r5, #-1
+ 970 001a F7D0     		beq	.L136
+ 971 001c 25B1     		cbz	r5, .L137
+ 972 001e FFF7FEFF 		bl	HAL_GetTick
+ 973 0022 801B     		subs	r0, r0, r6
+ 974 0024 A842     		cmp	r0, r5
+ 975 0026 F1D9     		bls	.L136
+ 976              	.L137:
+ 977 0028 0320     		movs	r0, #3
+ 978 002a 84F82100 		strb	r0, [r4, #33]
+ 979 002e 0EE0     		b	.L138
+ 980              	.L141:
+ 981 0030 DA68     		ldr	r2, [r3, #12]
+ 982 0032 D2B2     		uxtb	r2, r2
+ 983 0034 42F07F42 		orr	r2, r2, #-16777216
+ 984 0038 42F47F02 		orr	r2, r2, #16711680
+ 985 003c 42F4FE42 		orr	r2, r2, #32512
+ 986 0040 42F07F02 		orr	r2, r2, #127
+ 987 0044 DA60     		str	r2, [r3, #12]
+ 988 0046 0123     		movs	r3, #1
+ 989 0048 84F82130 		strb	r3, [r4, #33]
+ 990 004c 0020     		movs	r0, #0
+ 991              	.L138:
+ 992 004e 70BD     		pop	{r4, r5, r6, pc}
+ 994              		.section	.text.HAL_RTCEx_SetWakeUpTimer,"ax",%progbits
+ 995              		.align	1
+ 996              		.global	HAL_RTCEx_SetWakeUpTimer
+ 997              		.syntax unified
+ 998              		.thumb
+ 999              		.thumb_func
+ 1001              	HAL_RTCEx_SetWakeUpTimer:
+ 1002              		@ args = 0, pretend = 0, frame = 0
+ 1003              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1004 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1005 0002 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1006 0006 012B     		cmp	r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 18
+
+
+ 1007 0008 67D0     		beq	.L149
+ 1008 000a 0446     		mov	r4, r0
+ 1009 000c 0D46     		mov	r5, r1
+ 1010 000e 1646     		mov	r6, r2
+ 1011 0010 0123     		movs	r3, #1
+ 1012 0012 80F82030 		strb	r3, [r0, #32]
+ 1013 0016 0223     		movs	r3, #2
+ 1014 0018 80F82130 		strb	r3, [r0, #33]
+ 1015 001c 0368     		ldr	r3, [r0]
+ 1016 001e CA22     		movs	r2, #202
+ 1017 0020 5A62     		str	r2, [r3, #36]
+ 1018 0022 0368     		ldr	r3, [r0]
+ 1019 0024 5322     		movs	r2, #83
+ 1020 0026 5A62     		str	r2, [r3, #36]
+ 1021 0028 0368     		ldr	r3, [r0]
+ 1022 002a 9B68     		ldr	r3, [r3, #8]
+ 1023 002c 13F4806F 		tst	r3, #1024
+ 1024 0030 17D0     		beq	.L144
+ 1025 0032 FFF7FEFF 		bl	HAL_GetTick
+ 1026 0036 0746     		mov	r7, r0
+ 1027              	.L145:
+ 1028 0038 2368     		ldr	r3, [r4]
+ 1029 003a DB68     		ldr	r3, [r3, #12]
+ 1030 003c 13F0040F 		tst	r3, #4
+ 1031 0040 0FD0     		beq	.L144
+ 1032 0042 FFF7FEFF 		bl	HAL_GetTick
+ 1033 0046 C01B     		subs	r0, r0, r7
+ 1034 0048 B0F57A7F 		cmp	r0, #1000
+ 1035 004c F4D9     		bls	.L145
+ 1036 004e 2368     		ldr	r3, [r4]
+ 1037 0050 FF22     		movs	r2, #255
+ 1038 0052 5A62     		str	r2, [r3, #36]
+ 1039 0054 0320     		movs	r0, #3
+ 1040 0056 84F82100 		strb	r0, [r4, #33]
+ 1041 005a 0023     		movs	r3, #0
+ 1042 005c 84F82030 		strb	r3, [r4, #32]
+ 1043 0060 3AE0     		b	.L143
+ 1044              	.L144:
+ 1045 0062 2268     		ldr	r2, [r4]
+ 1046 0064 9368     		ldr	r3, [r2, #8]
+ 1047 0066 23F48063 		bic	r3, r3, #1024
+ 1048 006a 9360     		str	r3, [r2, #8]
+ 1049 006c 2268     		ldr	r2, [r4]
+ 1050 006e D368     		ldr	r3, [r2, #12]
+ 1051 0070 DBB2     		uxtb	r3, r3
+ 1052 0072 63F49063 		orn	r3, r3, #1152
+ 1053 0076 D360     		str	r3, [r2, #12]
+ 1054 0078 FFF7FEFF 		bl	HAL_GetTick
+ 1055 007c 0746     		mov	r7, r0
+ 1056              	.L147:
+ 1057 007e 2368     		ldr	r3, [r4]
+ 1058 0080 DA68     		ldr	r2, [r3, #12]
+ 1059 0082 12F0040F 		tst	r2, #4
+ 1060 0086 0FD1     		bne	.L151
+ 1061 0088 FFF7FEFF 		bl	HAL_GetTick
+ 1062 008c C01B     		subs	r0, r0, r7
+ 1063 008e B0F57A7F 		cmp	r0, #1000
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 19
+
+
+ 1064 0092 F4D9     		bls	.L147
+ 1065 0094 2368     		ldr	r3, [r4]
+ 1066 0096 FF22     		movs	r2, #255
+ 1067 0098 5A62     		str	r2, [r3, #36]
+ 1068 009a 0320     		movs	r0, #3
+ 1069 009c 84F82100 		strb	r0, [r4, #33]
+ 1070 00a0 0023     		movs	r3, #0
+ 1071 00a2 84F82030 		strb	r3, [r4, #32]
+ 1072 00a6 17E0     		b	.L143
+ 1073              	.L151:
+ 1074 00a8 9A68     		ldr	r2, [r3, #8]
+ 1075 00aa 22F00702 		bic	r2, r2, #7
+ 1076 00ae 9A60     		str	r2, [r3, #8]
+ 1077 00b0 2268     		ldr	r2, [r4]
+ 1078 00b2 9368     		ldr	r3, [r2, #8]
+ 1079 00b4 3343     		orrs	r3, r3, r6
+ 1080 00b6 9360     		str	r3, [r2, #8]
+ 1081 00b8 2368     		ldr	r3, [r4]
+ 1082 00ba 5D61     		str	r5, [r3, #20]
+ 1083 00bc 2268     		ldr	r2, [r4]
+ 1084 00be 9368     		ldr	r3, [r2, #8]
+ 1085 00c0 43F48063 		orr	r3, r3, #1024
+ 1086 00c4 9360     		str	r3, [r2, #8]
+ 1087 00c6 2368     		ldr	r3, [r4]
+ 1088 00c8 FF22     		movs	r2, #255
+ 1089 00ca 5A62     		str	r2, [r3, #36]
+ 1090 00cc 0123     		movs	r3, #1
+ 1091 00ce 84F82130 		strb	r3, [r4, #33]
+ 1092 00d2 0020     		movs	r0, #0
+ 1093 00d4 84F82000 		strb	r0, [r4, #32]
+ 1094              	.L143:
+ 1095 00d8 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1096              	.L149:
+ 1097 00da 0220     		movs	r0, #2
+ 1098 00dc FCE7     		b	.L143
+ 1100              		.section	.text.HAL_RTCEx_SetWakeUpTimer_IT,"ax",%progbits
+ 1101              		.align	1
+ 1102              		.global	HAL_RTCEx_SetWakeUpTimer_IT
+ 1103              		.syntax unified
+ 1104              		.thumb
+ 1105              		.thumb_func
+ 1107              	HAL_RTCEx_SetWakeUpTimer_IT:
+ 1108              		@ args = 0, pretend = 0, frame = 8
+ 1109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1110              		@ link register save eliminated.
+ 1111 0000 10B4     		push	{r4}
+ 1112 0002 83B0     		sub	sp, sp, #12
+ 1113 0004 8446     		mov	ip, r0
+ 1114 0006 464B     		ldr	r3, .L163
+ 1115 0008 1868     		ldr	r0, [r3]
+ 1116 000a 464B     		ldr	r3, .L163+4
+ 1117 000c A3FB0030 		umull	r3, r0, r3, r0
+ 1118 0010 C00A     		lsrs	r0, r0, #11
+ 1119 0012 4FF47A73 		mov	r3, #1000
+ 1120 0016 03FB00F0 		mul	r0, r3, r0
+ 1121 001a 0190     		str	r0, [sp, #4]
+ 1122 001c 9CF82030 		ldrb	r3, [ip, #32]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 20
+
+
+ 1123 0020 012B     		cmp	r3, #1
+ 1124 0022 7AD0     		beq	.L159
+ 1125 0024 0123     		movs	r3, #1
+ 1126 0026 8CF82030 		strb	r3, [ip, #32]
+ 1127 002a 0223     		movs	r3, #2
+ 1128 002c 8CF82130 		strb	r3, [ip, #33]
+ 1129 0030 DCF80030 		ldr	r3, [ip]
+ 1130 0034 CA24     		movs	r4, #202
+ 1131 0036 5C62     		str	r4, [r3, #36]
+ 1132 0038 DCF80030 		ldr	r3, [ip]
+ 1133 003c 5324     		movs	r4, #83
+ 1134 003e 5C62     		str	r4, [r3, #36]
+ 1135 0040 DCF80040 		ldr	r4, [ip]
+ 1136 0044 A368     		ldr	r3, [r4, #8]
+ 1137 0046 13F4806F 		tst	r3, #1024
+ 1138 004a 09D0     		beq	.L154
+ 1139              	.L156:
+ 1140 004c 019B     		ldr	r3, [sp, #4]
+ 1141 004e 013B     		subs	r3, r3, #1
+ 1142 0050 0193     		str	r3, [sp, #4]
+ 1143 0052 019B     		ldr	r3, [sp, #4]
+ 1144 0054 002B     		cmp	r3, #0
+ 1145 0056 49D0     		beq	.L161
+ 1146 0058 E368     		ldr	r3, [r4, #12]
+ 1147 005a 13F0040F 		tst	r3, #4
+ 1148 005e F5D1     		bne	.L156
+ 1149              	.L154:
+ 1150 0060 A368     		ldr	r3, [r4, #8]
+ 1151 0062 23F48063 		bic	r3, r3, #1024
+ 1152 0066 A360     		str	r3, [r4, #8]
+ 1153 0068 DCF80040 		ldr	r4, [ip]
+ 1154 006c E368     		ldr	r3, [r4, #12]
+ 1155 006e DBB2     		uxtb	r3, r3
+ 1156 0070 63F49063 		orn	r3, r3, #1152
+ 1157 0074 E360     		str	r3, [r4, #12]
+ 1158 0076 0190     		str	r0, [sp, #4]
+ 1159              	.L158:
+ 1160 0078 019B     		ldr	r3, [sp, #4]
+ 1161 007a 013B     		subs	r3, r3, #1
+ 1162 007c 0193     		str	r3, [sp, #4]
+ 1163 007e 019B     		ldr	r3, [sp, #4]
+ 1164 0080 002B     		cmp	r3, #0
+ 1165 0082 3CD0     		beq	.L162
+ 1166 0084 DCF80030 		ldr	r3, [ip]
+ 1167 0088 D868     		ldr	r0, [r3, #12]
+ 1168 008a 10F0040F 		tst	r0, #4
+ 1169 008e F3D0     		beq	.L158
+ 1170 0090 9868     		ldr	r0, [r3, #8]
+ 1171 0092 20F00700 		bic	r0, r0, #7
+ 1172 0096 9860     		str	r0, [r3, #8]
+ 1173 0098 DCF80000 		ldr	r0, [ip]
+ 1174 009c 8368     		ldr	r3, [r0, #8]
+ 1175 009e 1343     		orrs	r3, r3, r2
+ 1176 00a0 8360     		str	r3, [r0, #8]
+ 1177 00a2 DCF80030 		ldr	r3, [ip]
+ 1178 00a6 5961     		str	r1, [r3, #20]
+ 1179 00a8 1F4B     		ldr	r3, .L163+8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 21
+
+
+ 1180 00aa D3F88020 		ldr	r2, [r3, #128]
+ 1181 00ae 42F40022 		orr	r2, r2, #524288
+ 1182 00b2 C3F88020 		str	r2, [r3, #128]
+ 1183 00b6 1A68     		ldr	r2, [r3]
+ 1184 00b8 42F40022 		orr	r2, r2, #524288
+ 1185 00bc 1A60     		str	r2, [r3]
+ 1186 00be DCF80020 		ldr	r2, [ip]
+ 1187 00c2 9368     		ldr	r3, [r2, #8]
+ 1188 00c4 43F48043 		orr	r3, r3, #16384
+ 1189 00c8 9360     		str	r3, [r2, #8]
+ 1190 00ca DCF80020 		ldr	r2, [ip]
+ 1191 00ce 9368     		ldr	r3, [r2, #8]
+ 1192 00d0 43F48063 		orr	r3, r3, #1024
+ 1193 00d4 9360     		str	r3, [r2, #8]
+ 1194 00d6 DCF80030 		ldr	r3, [ip]
+ 1195 00da FF22     		movs	r2, #255
+ 1196 00dc 5A62     		str	r2, [r3, #36]
+ 1197 00de 0123     		movs	r3, #1
+ 1198 00e0 8CF82130 		strb	r3, [ip, #33]
+ 1199 00e4 0020     		movs	r0, #0
+ 1200 00e6 8CF82000 		strb	r0, [ip, #32]
+ 1201 00ea 12E0     		b	.L153
+ 1202              	.L161:
+ 1203 00ec FF23     		movs	r3, #255
+ 1204 00ee 6362     		str	r3, [r4, #36]
+ 1205 00f0 0320     		movs	r0, #3
+ 1206 00f2 8CF82100 		strb	r0, [ip, #33]
+ 1207 00f6 0023     		movs	r3, #0
+ 1208 00f8 8CF82030 		strb	r3, [ip, #32]
+ 1209 00fc 09E0     		b	.L153
+ 1210              	.L162:
+ 1211 00fe DCF80030 		ldr	r3, [ip]
+ 1212 0102 FF22     		movs	r2, #255
+ 1213 0104 5A62     		str	r2, [r3, #36]
+ 1214 0106 0320     		movs	r0, #3
+ 1215 0108 8CF82100 		strb	r0, [ip, #33]
+ 1216 010c 0023     		movs	r3, #0
+ 1217 010e 8CF82030 		strb	r3, [ip, #32]
+ 1218              	.L153:
+ 1219 0112 03B0     		add	sp, sp, #12
+ 1220              		@ sp needed
+ 1221 0114 5DF8044B 		ldr	r4, [sp], #4
+ 1222 0118 7047     		bx	lr
+ 1223              	.L159:
+ 1224 011a 0220     		movs	r0, #2
+ 1225 011c F9E7     		b	.L153
+ 1226              	.L164:
+ 1227 011e 00BF     		.align	2
+ 1228              	.L163:
+ 1229 0120 00000000 		.word	SystemCoreClock
+ 1230 0124 D34D6210 		.word	274877907
+ 1231 0128 00080058 		.word	1476397056
+ 1233              		.section	.text.HAL_RTCEx_DeactivateWakeUpTimer,"ax",%progbits
+ 1234              		.align	1
+ 1235              		.global	HAL_RTCEx_DeactivateWakeUpTimer
+ 1236              		.syntax unified
+ 1237              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 22
+
+
+ 1238              		.thumb_func
+ 1240              	HAL_RTCEx_DeactivateWakeUpTimer:
+ 1241              		@ args = 0, pretend = 0, frame = 0
+ 1242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1243 0000 38B5     		push	{r3, r4, r5, lr}
+ 1244 0002 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1245 0006 012B     		cmp	r3, #1
+ 1246 0008 37D0     		beq	.L169
+ 1247 000a 0446     		mov	r4, r0
+ 1248 000c 0123     		movs	r3, #1
+ 1249 000e 80F82030 		strb	r3, [r0, #32]
+ 1250 0012 0223     		movs	r3, #2
+ 1251 0014 80F82130 		strb	r3, [r0, #33]
+ 1252 0018 0368     		ldr	r3, [r0]
+ 1253 001a CA22     		movs	r2, #202
+ 1254 001c 5A62     		str	r2, [r3, #36]
+ 1255 001e 0368     		ldr	r3, [r0]
+ 1256 0020 5322     		movs	r2, #83
+ 1257 0022 5A62     		str	r2, [r3, #36]
+ 1258 0024 0268     		ldr	r2, [r0]
+ 1259 0026 9368     		ldr	r3, [r2, #8]
+ 1260 0028 23F48063 		bic	r3, r3, #1024
+ 1261 002c 9360     		str	r3, [r2, #8]
+ 1262 002e 0268     		ldr	r2, [r0]
+ 1263 0030 9368     		ldr	r3, [r2, #8]
+ 1264 0032 23F48043 		bic	r3, r3, #16384
+ 1265 0036 9360     		str	r3, [r2, #8]
+ 1266 0038 FFF7FEFF 		bl	HAL_GetTick
+ 1267 003c 0546     		mov	r5, r0
+ 1268              	.L167:
+ 1269 003e 2368     		ldr	r3, [r4]
+ 1270 0040 DA68     		ldr	r2, [r3, #12]
+ 1271 0042 12F0040F 		tst	r2, #4
+ 1272 0046 0FD1     		bne	.L171
+ 1273 0048 FFF7FEFF 		bl	HAL_GetTick
+ 1274 004c 431B     		subs	r3, r0, r5
+ 1275 004e B3F57A7F 		cmp	r3, #1000
+ 1276 0052 F4D9     		bls	.L167
+ 1277 0054 2368     		ldr	r3, [r4]
+ 1278 0056 FF22     		movs	r2, #255
+ 1279 0058 5A62     		str	r2, [r3, #36]
+ 1280 005a 0320     		movs	r0, #3
+ 1281 005c 84F82100 		strb	r0, [r4, #33]
+ 1282 0060 0023     		movs	r3, #0
+ 1283 0062 84F82030 		strb	r3, [r4, #32]
+ 1284 0066 07E0     		b	.L166
+ 1285              	.L171:
+ 1286 0068 FF22     		movs	r2, #255
+ 1287 006a 5A62     		str	r2, [r3, #36]
+ 1288 006c 0123     		movs	r3, #1
+ 1289 006e 84F82130 		strb	r3, [r4, #33]
+ 1290 0072 0020     		movs	r0, #0
+ 1291 0074 84F82000 		strb	r0, [r4, #32]
+ 1292              	.L166:
+ 1293 0078 38BD     		pop	{r3, r4, r5, pc}
+ 1294              	.L169:
+ 1295 007a 0220     		movs	r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 23
+
+
+ 1296 007c FCE7     		b	.L166
+ 1298              		.section	.text.HAL_RTCEx_GetWakeUpTimer,"ax",%progbits
+ 1299              		.align	1
+ 1300              		.global	HAL_RTCEx_GetWakeUpTimer
+ 1301              		.syntax unified
+ 1302              		.thumb
+ 1303              		.thumb_func
+ 1305              	HAL_RTCEx_GetWakeUpTimer:
+ 1306              		@ args = 0, pretend = 0, frame = 0
+ 1307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1308              		@ link register save eliminated.
+ 1309 0000 0368     		ldr	r3, [r0]
+ 1310 0002 5869     		ldr	r0, [r3, #20]
+ 1311 0004 80B2     		uxth	r0, r0
+ 1312 0006 7047     		bx	lr
+ 1314              		.section	.text.HAL_RTCEx_WakeUpTimerEventCallback,"ax",%progbits
+ 1315              		.align	1
+ 1316              		.weak	HAL_RTCEx_WakeUpTimerEventCallback
+ 1317              		.syntax unified
+ 1318              		.thumb
+ 1319              		.thumb_func
+ 1321              	HAL_RTCEx_WakeUpTimerEventCallback:
+ 1322              		@ args = 0, pretend = 0, frame = 0
+ 1323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1324              		@ link register save eliminated.
+ 1325 0000 7047     		bx	lr
+ 1327              		.section	.text.HAL_RTCEx_WakeUpTimerIRQHandler,"ax",%progbits
+ 1328              		.align	1
+ 1329              		.global	HAL_RTCEx_WakeUpTimerIRQHandler
+ 1330              		.syntax unified
+ 1331              		.thumb
+ 1332              		.thumb_func
+ 1334              	HAL_RTCEx_WakeUpTimerIRQHandler:
+ 1335              		@ args = 0, pretend = 0, frame = 0
+ 1336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1337 0000 10B5     		push	{r4, lr}
+ 1338 0002 0446     		mov	r4, r0
+ 1339 0004 0A4B     		ldr	r3, .L178
+ 1340 0006 4FF40022 		mov	r2, #524288
+ 1341 000a DA60     		str	r2, [r3, #12]
+ 1342 000c 0368     		ldr	r3, [r0]
+ 1343 000e DA68     		ldr	r2, [r3, #12]
+ 1344 0010 12F4806F 		tst	r2, #1024
+ 1345 0014 03D1     		bne	.L177
+ 1346              	.L175:
+ 1347 0016 0123     		movs	r3, #1
+ 1348 0018 84F82130 		strb	r3, [r4, #33]
+ 1349 001c 10BD     		pop	{r4, pc}
+ 1350              	.L177:
+ 1351 001e DA68     		ldr	r2, [r3, #12]
+ 1352 0020 D2B2     		uxtb	r2, r2
+ 1353 0022 62F49062 		orn	r2, r2, #1152
+ 1354 0026 DA60     		str	r2, [r3, #12]
+ 1355 0028 FFF7FEFF 		bl	HAL_RTCEx_WakeUpTimerEventCallback
+ 1356 002c F3E7     		b	.L175
+ 1357              	.L179:
+ 1358 002e 00BF     		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 24
+
+
+ 1359              	.L178:
+ 1360 0030 00080058 		.word	1476397056
+ 1362              		.section	.text.HAL_RTCEx_PollForWakeUpTimerEvent,"ax",%progbits
+ 1363              		.align	1
+ 1364              		.global	HAL_RTCEx_PollForWakeUpTimerEvent
+ 1365              		.syntax unified
+ 1366              		.thumb
+ 1367              		.thumb_func
+ 1369              	HAL_RTCEx_PollForWakeUpTimerEvent:
+ 1370              		@ args = 0, pretend = 0, frame = 0
+ 1371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1372 0000 70B5     		push	{r4, r5, r6, lr}
+ 1373 0002 0446     		mov	r4, r0
+ 1374 0004 0D46     		mov	r5, r1
+ 1375 0006 FFF7FEFF 		bl	HAL_GetTick
+ 1376 000a 0646     		mov	r6, r0
+ 1377              	.L182:
+ 1378 000c 2368     		ldr	r3, [r4]
+ 1379 000e DA68     		ldr	r2, [r3, #12]
+ 1380 0010 12F4806F 		tst	r2, #1024
+ 1381 0014 0CD1     		bne	.L187
+ 1382 0016 B5F1FF3F 		cmp	r5, #-1
+ 1383 001a F7D0     		beq	.L182
+ 1384 001c 25B1     		cbz	r5, .L183
+ 1385 001e FFF7FEFF 		bl	HAL_GetTick
+ 1386 0022 801B     		subs	r0, r0, r6
+ 1387 0024 A842     		cmp	r0, r5
+ 1388 0026 F1D9     		bls	.L182
+ 1389              	.L183:
+ 1390 0028 0320     		movs	r0, #3
+ 1391 002a 84F82100 		strb	r0, [r4, #33]
+ 1392 002e 08E0     		b	.L184
+ 1393              	.L187:
+ 1394 0030 DA68     		ldr	r2, [r3, #12]
+ 1395 0032 D2B2     		uxtb	r2, r2
+ 1396 0034 62F49062 		orn	r2, r2, #1152
+ 1397 0038 DA60     		str	r2, [r3, #12]
+ 1398 003a 0123     		movs	r3, #1
+ 1399 003c 84F82130 		strb	r3, [r4, #33]
+ 1400 0040 0020     		movs	r0, #0
+ 1401              	.L184:
+ 1402 0042 70BD     		pop	{r4, r5, r6, pc}
+ 1404              		.section	.text.HAL_RTCEx_BKUPWrite,"ax",%progbits
+ 1405              		.align	1
+ 1406              		.global	HAL_RTCEx_BKUPWrite
+ 1407              		.syntax unified
+ 1408              		.thumb
+ 1409              		.thumb_func
+ 1411              	HAL_RTCEx_BKUPWrite:
+ 1412              		@ args = 0, pretend = 0, frame = 0
+ 1413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1414              		@ link register save eliminated.
+ 1415 0000 0368     		ldr	r3, [r0]
+ 1416 0002 5033     		adds	r3, r3, #80
+ 1417 0004 43F82120 		str	r2, [r3, r1, lsl #2]
+ 1418 0008 7047     		bx	lr
+ 1420              		.section	.text.HAL_RTCEx_BKUPRead,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 25
+
+
+ 1421              		.align	1
+ 1422              		.global	HAL_RTCEx_BKUPRead
+ 1423              		.syntax unified
+ 1424              		.thumb
+ 1425              		.thumb_func
+ 1427              	HAL_RTCEx_BKUPRead:
+ 1428              		@ args = 0, pretend = 0, frame = 0
+ 1429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1430              		@ link register save eliminated.
+ 1431 0000 0368     		ldr	r3, [r0]
+ 1432 0002 5033     		adds	r3, r3, #80
+ 1433 0004 53F82100 		ldr	r0, [r3, r1, lsl #2]
+ 1434 0008 7047     		bx	lr
+ 1436              		.section	.text.HAL_RTCEx_SetSmoothCalib,"ax",%progbits
+ 1437              		.align	1
+ 1438              		.global	HAL_RTCEx_SetSmoothCalib
+ 1439              		.syntax unified
+ 1440              		.thumb
+ 1441              		.thumb_func
+ 1443              	HAL_RTCEx_SetSmoothCalib:
+ 1444              		@ args = 0, pretend = 0, frame = 0
+ 1445              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1446 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1447 0004 1E46     		mov	r6, r3
+ 1448 0006 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1449 000a 012B     		cmp	r3, #1
+ 1450 000c 3BD0     		beq	.L195
+ 1451 000e 0446     		mov	r4, r0
+ 1452 0010 0D46     		mov	r5, r1
+ 1453 0012 1746     		mov	r7, r2
+ 1454 0014 0123     		movs	r3, #1
+ 1455 0016 80F82030 		strb	r3, [r0, #32]
+ 1456 001a 0223     		movs	r3, #2
+ 1457 001c 80F82130 		strb	r3, [r0, #33]
+ 1458 0020 0368     		ldr	r3, [r0]
+ 1459 0022 CA22     		movs	r2, #202
+ 1460 0024 5A62     		str	r2, [r3, #36]
+ 1461 0026 0368     		ldr	r3, [r0]
+ 1462 0028 5322     		movs	r2, #83
+ 1463 002a 5A62     		str	r2, [r3, #36]
+ 1464 002c 0368     		ldr	r3, [r0]
+ 1465 002e DB68     		ldr	r3, [r3, #12]
+ 1466 0030 13F4803F 		tst	r3, #65536
+ 1467 0034 0ED1     		bne	.L197
+ 1468              	.L192:
+ 1469 0036 3D43     		orrs	r5, r5, r7
+ 1470 0038 2368     		ldr	r3, [r4]
+ 1471 003a 3543     		orrs	r5, r5, r6
+ 1472 003c DD63     		str	r5, [r3, #60]
+ 1473 003e 2368     		ldr	r3, [r4]
+ 1474 0040 FF22     		movs	r2, #255
+ 1475 0042 5A62     		str	r2, [r3, #36]
+ 1476 0044 0123     		movs	r3, #1
+ 1477 0046 84F82130 		strb	r3, [r4, #33]
+ 1478 004a 0020     		movs	r0, #0
+ 1479 004c 84F82000 		strb	r0, [r4, #32]
+ 1480              	.L191:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 26
+
+
+ 1481 0050 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1482              	.L197:
+ 1483 0054 FFF7FEFF 		bl	HAL_GetTick
+ 1484 0058 8046     		mov	r8, r0
+ 1485              	.L193:
+ 1486 005a 2368     		ldr	r3, [r4]
+ 1487 005c D968     		ldr	r1, [r3, #12]
+ 1488 005e 11F4803F 		tst	r1, #65536
+ 1489 0062 E8D0     		beq	.L192
+ 1490 0064 FFF7FEFF 		bl	HAL_GetTick
+ 1491 0068 A0EB0800 		sub	r0, r0, r8
+ 1492 006c B0F57A7F 		cmp	r0, #1000
+ 1493 0070 F3D9     		bls	.L193
+ 1494 0072 2368     		ldr	r3, [r4]
+ 1495 0074 FF22     		movs	r2, #255
+ 1496 0076 5A62     		str	r2, [r3, #36]
+ 1497 0078 0320     		movs	r0, #3
+ 1498 007a 84F82100 		strb	r0, [r4, #33]
+ 1499 007e 0023     		movs	r3, #0
+ 1500 0080 84F82030 		strb	r3, [r4, #32]
+ 1501 0084 E4E7     		b	.L191
+ 1502              	.L195:
+ 1503 0086 0220     		movs	r0, #2
+ 1504 0088 E2E7     		b	.L191
+ 1506              		.section	.text.HAL_RTCEx_SetSynchroShift,"ax",%progbits
+ 1507              		.align	1
+ 1508              		.global	HAL_RTCEx_SetSynchroShift
+ 1509              		.syntax unified
+ 1510              		.thumb
+ 1511              		.thumb_func
+ 1513              	HAL_RTCEx_SetSynchroShift:
+ 1514              		@ args = 0, pretend = 0, frame = 0
+ 1515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1516 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1517 0004 012B     		cmp	r3, #1
+ 1518 0006 59D0     		beq	.L204
+ 1519 0008 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 1520 000c 0446     		mov	r4, r0
+ 1521 000e 8846     		mov	r8, r1
+ 1522 0010 1746     		mov	r7, r2
+ 1523 0012 0123     		movs	r3, #1
+ 1524 0014 80F82030 		strb	r3, [r0, #32]
+ 1525 0018 0223     		movs	r3, #2
+ 1526 001a 80F82130 		strb	r3, [r0, #33]
+ 1527 001e 0368     		ldr	r3, [r0]
+ 1528 0020 CA22     		movs	r2, #202
+ 1529 0022 5A62     		str	r2, [r3, #36]
+ 1530 0024 0368     		ldr	r3, [r0]
+ 1531 0026 5322     		movs	r2, #83
+ 1532 0028 5A62     		str	r2, [r3, #36]
+ 1533 002a FFF7FEFF 		bl	HAL_GetTick
+ 1534 002e 0646     		mov	r6, r0
+ 1535              	.L200:
+ 1536 0030 2368     		ldr	r3, [r4]
+ 1537 0032 DD68     		ldr	r5, [r3, #12]
+ 1538 0034 15F0080F 		tst	r5, #8
+ 1539 0038 10D0     		beq	.L209
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 27
+
+
+ 1540 003a FFF7FEFF 		bl	HAL_GetTick
+ 1541 003e 831B     		subs	r3, r0, r6
+ 1542 0040 B3F57A7F 		cmp	r3, #1000
+ 1543 0044 F4D9     		bls	.L200
+ 1544 0046 2368     		ldr	r3, [r4]
+ 1545 0048 FF22     		movs	r2, #255
+ 1546 004a 5A62     		str	r2, [r3, #36]
+ 1547 004c 0320     		movs	r0, #3
+ 1548 004e 84F82100 		strb	r0, [r4, #33]
+ 1549 0052 0023     		movs	r3, #0
+ 1550 0054 84F82030 		strb	r3, [r4, #32]
+ 1551              	.L199:
+ 1552 0058 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1553              	.L209:
+ 1554 005c 9A68     		ldr	r2, [r3, #8]
+ 1555 005e 12F0100F 		tst	r2, #16
+ 1556 0062 21D1     		bne	.L202
+ 1557 0064 47EA0807 		orr	r7, r7, r8
+ 1558 0068 DF62     		str	r7, [r3, #44]
+ 1559 006a 2368     		ldr	r3, [r4]
+ 1560 006c 9B68     		ldr	r3, [r3, #8]
+ 1561 006e 13F0200F 		tst	r3, #32
+ 1562 0072 09D0     		beq	.L210
+ 1563              	.L203:
+ 1564 0074 2368     		ldr	r3, [r4]
+ 1565 0076 FF22     		movs	r2, #255
+ 1566 0078 5A62     		str	r2, [r3, #36]
+ 1567 007a 0123     		movs	r3, #1
+ 1568 007c 84F82130 		strb	r3, [r4, #33]
+ 1569 0080 0020     		movs	r0, #0
+ 1570 0082 84F82000 		strb	r0, [r4, #32]
+ 1571 0086 E7E7     		b	.L199
+ 1572              	.L210:
+ 1573 0088 2046     		mov	r0, r4
+ 1574 008a FFF7FEFF 		bl	HAL_RTC_WaitForSynchro
+ 1575 008e 0028     		cmp	r0, #0
+ 1576 0090 F0D0     		beq	.L203
+ 1577 0092 2368     		ldr	r3, [r4]
+ 1578 0094 FF22     		movs	r2, #255
+ 1579 0096 5A62     		str	r2, [r3, #36]
+ 1580 0098 0423     		movs	r3, #4
+ 1581 009a 84F82130 		strb	r3, [r4, #33]
+ 1582 009e 0023     		movs	r3, #0
+ 1583 00a0 84F82030 		strb	r3, [r4, #32]
+ 1584 00a4 0120     		movs	r0, #1
+ 1585 00a6 D7E7     		b	.L199
+ 1586              	.L202:
+ 1587 00a8 FF22     		movs	r2, #255
+ 1588 00aa 5A62     		str	r2, [r3, #36]
+ 1589 00ac 0423     		movs	r3, #4
+ 1590 00ae 84F82130 		strb	r3, [r4, #33]
+ 1591 00b2 0023     		movs	r3, #0
+ 1592 00b4 84F82030 		strb	r3, [r4, #32]
+ 1593 00b8 0120     		movs	r0, #1
+ 1594 00ba CDE7     		b	.L199
+ 1595              	.L204:
+ 1596 00bc 0220     		movs	r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 28
+
+
+ 1597 00be 7047     		bx	lr
+ 1599              		.section	.text.HAL_RTCEx_SetCalibrationOutPut,"ax",%progbits
+ 1600              		.align	1
+ 1601              		.global	HAL_RTCEx_SetCalibrationOutPut
+ 1602              		.syntax unified
+ 1603              		.thumb
+ 1604              		.thumb_func
+ 1606              	HAL_RTCEx_SetCalibrationOutPut:
+ 1607              		@ args = 0, pretend = 0, frame = 0
+ 1608              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1609              		@ link register save eliminated.
+ 1610 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 1611 0004 012A     		cmp	r2, #1
+ 1612 0006 26D0     		beq	.L213
+ 1613 0008 10B4     		push	{r4}
+ 1614 000a 0346     		mov	r3, r0
+ 1615 000c 0120     		movs	r0, #1
+ 1616 000e 83F82000 		strb	r0, [r3, #32]
+ 1617 0012 0222     		movs	r2, #2
+ 1618 0014 83F82120 		strb	r2, [r3, #33]
+ 1619 0018 1A68     		ldr	r2, [r3]
+ 1620 001a CA24     		movs	r4, #202
+ 1621 001c 5462     		str	r4, [r2, #36]
+ 1622 001e 1A68     		ldr	r2, [r3]
+ 1623 0020 5324     		movs	r4, #83
+ 1624 0022 5462     		str	r4, [r2, #36]
+ 1625 0024 1C68     		ldr	r4, [r3]
+ 1626 0026 A268     		ldr	r2, [r4, #8]
+ 1627 0028 22F40022 		bic	r2, r2, #524288
+ 1628 002c A260     		str	r2, [r4, #8]
+ 1629 002e 1C68     		ldr	r4, [r3]
+ 1630 0030 A268     		ldr	r2, [r4, #8]
+ 1631 0032 0A43     		orrs	r2, r2, r1
+ 1632 0034 A260     		str	r2, [r4, #8]
+ 1633 0036 1968     		ldr	r1, [r3]
+ 1634 0038 8A68     		ldr	r2, [r1, #8]
+ 1635 003a 42F40002 		orr	r2, r2, #8388608
+ 1636 003e 8A60     		str	r2, [r1, #8]
+ 1637 0040 1A68     		ldr	r2, [r3]
+ 1638 0042 FF21     		movs	r1, #255
+ 1639 0044 5162     		str	r1, [r2, #36]
+ 1640 0046 83F82100 		strb	r0, [r3, #33]
+ 1641 004a 0020     		movs	r0, #0
+ 1642 004c 83F82000 		strb	r0, [r3, #32]
+ 1643 0050 5DF8044B 		ldr	r4, [sp], #4
+ 1644 0054 7047     		bx	lr
+ 1645              	.L213:
+ 1646 0056 0220     		movs	r0, #2
+ 1647 0058 7047     		bx	lr
+ 1649              		.section	.text.HAL_RTCEx_DeactivateCalibrationOutPut,"ax",%progbits
+ 1650              		.align	1
+ 1651              		.global	HAL_RTCEx_DeactivateCalibrationOutPut
+ 1652              		.syntax unified
+ 1653              		.thumb
+ 1654              		.thumb_func
+ 1656              	HAL_RTCEx_DeactivateCalibrationOutPut:
+ 1657              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 29
+
+
+ 1658              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1659              		@ link register save eliminated.
+ 1660 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1661 0004 012B     		cmp	r3, #1
+ 1662 0006 1AD0     		beq	.L220
+ 1663 0008 0122     		movs	r2, #1
+ 1664 000a 80F82020 		strb	r2, [r0, #32]
+ 1665 000e 0223     		movs	r3, #2
+ 1666 0010 80F82130 		strb	r3, [r0, #33]
+ 1667 0014 0368     		ldr	r3, [r0]
+ 1668 0016 CA21     		movs	r1, #202
+ 1669 0018 5962     		str	r1, [r3, #36]
+ 1670 001a 0368     		ldr	r3, [r0]
+ 1671 001c 5321     		movs	r1, #83
+ 1672 001e 5962     		str	r1, [r3, #36]
+ 1673 0020 0168     		ldr	r1, [r0]
+ 1674 0022 8B68     		ldr	r3, [r1, #8]
+ 1675 0024 23F40003 		bic	r3, r3, #8388608
+ 1676 0028 8B60     		str	r3, [r1, #8]
+ 1677 002a 0368     		ldr	r3, [r0]
+ 1678 002c FF21     		movs	r1, #255
+ 1679 002e 5962     		str	r1, [r3, #36]
+ 1680 0030 80F82120 		strb	r2, [r0, #33]
+ 1681 0034 0023     		movs	r3, #0
+ 1682 0036 80F82030 		strb	r3, [r0, #32]
+ 1683 003a 1846     		mov	r0, r3
+ 1684 003c 7047     		bx	lr
+ 1685              	.L220:
+ 1686 003e 0220     		movs	r0, #2
+ 1687 0040 7047     		bx	lr
+ 1689              		.section	.text.HAL_RTCEx_SetRefClock,"ax",%progbits
+ 1690              		.align	1
+ 1691              		.global	HAL_RTCEx_SetRefClock
+ 1692              		.syntax unified
+ 1693              		.thumb
+ 1694              		.thumb_func
+ 1696              	HAL_RTCEx_SetRefClock:
+ 1697              		@ args = 0, pretend = 0, frame = 0
+ 1698              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1699 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1700 0004 012B     		cmp	r3, #1
+ 1701 0006 25D0     		beq	.L224
+ 1702 0008 10B5     		push	{r4, lr}
+ 1703 000a 0446     		mov	r4, r0
+ 1704 000c 0123     		movs	r3, #1
+ 1705 000e 80F82030 		strb	r3, [r0, #32]
+ 1706 0012 0223     		movs	r3, #2
+ 1707 0014 80F82130 		strb	r3, [r0, #33]
+ 1708 0018 0368     		ldr	r3, [r0]
+ 1709 001a CA22     		movs	r2, #202
+ 1710 001c 5A62     		str	r2, [r3, #36]
+ 1711 001e 0368     		ldr	r3, [r0]
+ 1712 0020 5322     		movs	r2, #83
+ 1713 0022 5A62     		str	r2, [r3, #36]
+ 1714 0024 FFF7FEFF 		bl	RTC_EnterInitMode
+ 1715 0028 30B1     		cbz	r0, .L229
+ 1716              	.L223:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 30
+
+
+ 1717 002a 2368     		ldr	r3, [r4]
+ 1718 002c FF22     		movs	r2, #255
+ 1719 002e 5A62     		str	r2, [r3, #36]
+ 1720 0030 0023     		movs	r3, #0
+ 1721 0032 84F82030 		strb	r3, [r4, #32]
+ 1722 0036 10BD     		pop	{r4, pc}
+ 1723              	.L229:
+ 1724 0038 2268     		ldr	r2, [r4]
+ 1725 003a 9368     		ldr	r3, [r2, #8]
+ 1726 003c 43F01003 		orr	r3, r3, #16
+ 1727 0040 9360     		str	r3, [r2, #8]
+ 1728 0042 2046     		mov	r0, r4
+ 1729 0044 FFF7FEFF 		bl	RTC_ExitInitMode
+ 1730 0048 0028     		cmp	r0, #0
+ 1731 004a EED1     		bne	.L223
+ 1732 004c 0123     		movs	r3, #1
+ 1733 004e 84F82130 		strb	r3, [r4, #33]
+ 1734 0052 EAE7     		b	.L223
+ 1735              	.L224:
+ 1736 0054 0220     		movs	r0, #2
+ 1737 0056 7047     		bx	lr
+ 1739              		.section	.text.HAL_RTCEx_DeactivateRefClock,"ax",%progbits
+ 1740              		.align	1
+ 1741              		.global	HAL_RTCEx_DeactivateRefClock
+ 1742              		.syntax unified
+ 1743              		.thumb
+ 1744              		.thumb_func
+ 1746              	HAL_RTCEx_DeactivateRefClock:
+ 1747              		@ args = 0, pretend = 0, frame = 0
+ 1748              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1749 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1750 0004 012B     		cmp	r3, #1
+ 1751 0006 25D0     		beq	.L233
+ 1752 0008 10B5     		push	{r4, lr}
+ 1753 000a 0446     		mov	r4, r0
+ 1754 000c 0123     		movs	r3, #1
+ 1755 000e 80F82030 		strb	r3, [r0, #32]
+ 1756 0012 0223     		movs	r3, #2
+ 1757 0014 80F82130 		strb	r3, [r0, #33]
+ 1758 0018 0368     		ldr	r3, [r0]
+ 1759 001a CA22     		movs	r2, #202
+ 1760 001c 5A62     		str	r2, [r3, #36]
+ 1761 001e 0368     		ldr	r3, [r0]
+ 1762 0020 5322     		movs	r2, #83
+ 1763 0022 5A62     		str	r2, [r3, #36]
+ 1764 0024 FFF7FEFF 		bl	RTC_EnterInitMode
+ 1765 0028 30B1     		cbz	r0, .L238
+ 1766              	.L232:
+ 1767 002a 2368     		ldr	r3, [r4]
+ 1768 002c FF22     		movs	r2, #255
+ 1769 002e 5A62     		str	r2, [r3, #36]
+ 1770 0030 0023     		movs	r3, #0
+ 1771 0032 84F82030 		strb	r3, [r4, #32]
+ 1772 0036 10BD     		pop	{r4, pc}
+ 1773              	.L238:
+ 1774 0038 2268     		ldr	r2, [r4]
+ 1775 003a 9368     		ldr	r3, [r2, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 31
+
+
+ 1776 003c 23F01003 		bic	r3, r3, #16
+ 1777 0040 9360     		str	r3, [r2, #8]
+ 1778 0042 2046     		mov	r0, r4
+ 1779 0044 FFF7FEFF 		bl	RTC_ExitInitMode
+ 1780 0048 0028     		cmp	r0, #0
+ 1781 004a EED1     		bne	.L232
+ 1782 004c 0123     		movs	r3, #1
+ 1783 004e 84F82130 		strb	r3, [r4, #33]
+ 1784 0052 EAE7     		b	.L232
+ 1785              	.L233:
+ 1786 0054 0220     		movs	r0, #2
+ 1787 0056 7047     		bx	lr
+ 1789              		.section	.text.HAL_RTCEx_EnableBypassShadow,"ax",%progbits
+ 1790              		.align	1
+ 1791              		.global	HAL_RTCEx_EnableBypassShadow
+ 1792              		.syntax unified
+ 1793              		.thumb
+ 1794              		.thumb_func
+ 1796              	HAL_RTCEx_EnableBypassShadow:
+ 1797              		@ args = 0, pretend = 0, frame = 0
+ 1798              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1799              		@ link register save eliminated.
+ 1800 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1801 0004 012B     		cmp	r3, #1
+ 1802 0006 1AD0     		beq	.L241
+ 1803 0008 0122     		movs	r2, #1
+ 1804 000a 80F82020 		strb	r2, [r0, #32]
+ 1805 000e 0223     		movs	r3, #2
+ 1806 0010 80F82130 		strb	r3, [r0, #33]
+ 1807 0014 0368     		ldr	r3, [r0]
+ 1808 0016 CA21     		movs	r1, #202
+ 1809 0018 5962     		str	r1, [r3, #36]
+ 1810 001a 0368     		ldr	r3, [r0]
+ 1811 001c 5321     		movs	r1, #83
+ 1812 001e 5962     		str	r1, [r3, #36]
+ 1813 0020 0168     		ldr	r1, [r0]
+ 1814 0022 8B68     		ldr	r3, [r1, #8]
+ 1815 0024 43F02003 		orr	r3, r3, #32
+ 1816 0028 8B60     		str	r3, [r1, #8]
+ 1817 002a 0368     		ldr	r3, [r0]
+ 1818 002c FF21     		movs	r1, #255
+ 1819 002e 5962     		str	r1, [r3, #36]
+ 1820 0030 80F82120 		strb	r2, [r0, #33]
+ 1821 0034 0023     		movs	r3, #0
+ 1822 0036 80F82030 		strb	r3, [r0, #32]
+ 1823 003a 1846     		mov	r0, r3
+ 1824 003c 7047     		bx	lr
+ 1825              	.L241:
+ 1826 003e 0220     		movs	r0, #2
+ 1827 0040 7047     		bx	lr
+ 1829              		.section	.text.HAL_RTCEx_DisableBypassShadow,"ax",%progbits
+ 1830              		.align	1
+ 1831              		.global	HAL_RTCEx_DisableBypassShadow
+ 1832              		.syntax unified
+ 1833              		.thumb
+ 1834              		.thumb_func
+ 1836              	HAL_RTCEx_DisableBypassShadow:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 32
+
+
+ 1837              		@ args = 0, pretend = 0, frame = 0
+ 1838              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1839              		@ link register save eliminated.
+ 1840 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1841 0004 012B     		cmp	r3, #1
+ 1842 0006 1AD0     		beq	.L244
+ 1843 0008 0122     		movs	r2, #1
+ 1844 000a 80F82020 		strb	r2, [r0, #32]
+ 1845 000e 0223     		movs	r3, #2
+ 1846 0010 80F82130 		strb	r3, [r0, #33]
+ 1847 0014 0368     		ldr	r3, [r0]
+ 1848 0016 CA21     		movs	r1, #202
+ 1849 0018 5962     		str	r1, [r3, #36]
+ 1850 001a 0368     		ldr	r3, [r0]
+ 1851 001c 5321     		movs	r1, #83
+ 1852 001e 5962     		str	r1, [r3, #36]
+ 1853 0020 0168     		ldr	r1, [r0]
+ 1854 0022 8B68     		ldr	r3, [r1, #8]
+ 1855 0024 23F02003 		bic	r3, r3, #32
+ 1856 0028 8B60     		str	r3, [r1, #8]
+ 1857 002a 0368     		ldr	r3, [r0]
+ 1858 002c FF21     		movs	r1, #255
+ 1859 002e 5962     		str	r1, [r3, #36]
+ 1860 0030 80F82120 		strb	r2, [r0, #33]
+ 1861 0034 0023     		movs	r3, #0
+ 1862 0036 80F82030 		strb	r3, [r0, #32]
+ 1863 003a 1846     		mov	r0, r3
+ 1864 003c 7047     		bx	lr
+ 1865              	.L244:
+ 1866 003e 0220     		movs	r0, #2
+ 1867 0040 7047     		bx	lr
+ 1869              		.section	.text.HAL_RTCEx_AlarmBEventCallback,"ax",%progbits
+ 1870              		.align	1
+ 1871              		.weak	HAL_RTCEx_AlarmBEventCallback
+ 1872              		.syntax unified
+ 1873              		.thumb
+ 1874              		.thumb_func
+ 1876              	HAL_RTCEx_AlarmBEventCallback:
+ 1877              		@ args = 0, pretend = 0, frame = 0
+ 1878              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1879              		@ link register save eliminated.
+ 1880 0000 7047     		bx	lr
+ 1882              		.section	.text.HAL_RTCEx_PollForAlarmBEvent,"ax",%progbits
+ 1883              		.align	1
+ 1884              		.global	HAL_RTCEx_PollForAlarmBEvent
+ 1885              		.syntax unified
+ 1886              		.thumb
+ 1887              		.thumb_func
+ 1889              	HAL_RTCEx_PollForAlarmBEvent:
+ 1890              		@ args = 0, pretend = 0, frame = 0
+ 1891              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1892 0000 70B5     		push	{r4, r5, r6, lr}
+ 1893 0002 0446     		mov	r4, r0
+ 1894 0004 0D46     		mov	r5, r1
+ 1895 0006 FFF7FEFF 		bl	HAL_GetTick
+ 1896 000a 0646     		mov	r6, r0
+ 1897              	.L248:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 33
+
+
+ 1898 000c 2368     		ldr	r3, [r4]
+ 1899 000e DA68     		ldr	r2, [r3, #12]
+ 1900 0010 12F4007F 		tst	r2, #512
+ 1901 0014 0CD1     		bne	.L253
+ 1902 0016 B5F1FF3F 		cmp	r5, #-1
+ 1903 001a F7D0     		beq	.L248
+ 1904 001c 25B1     		cbz	r5, .L249
+ 1905 001e FFF7FEFF 		bl	HAL_GetTick
+ 1906 0022 801B     		subs	r0, r0, r6
+ 1907 0024 A842     		cmp	r0, r5
+ 1908 0026 F1D9     		bls	.L248
+ 1909              	.L249:
+ 1910 0028 0320     		movs	r0, #3
+ 1911 002a 84F82100 		strb	r0, [r4, #33]
+ 1912 002e 08E0     		b	.L250
+ 1913              	.L253:
+ 1914 0030 DA68     		ldr	r2, [r3, #12]
+ 1915 0032 D2B2     		uxtb	r2, r2
+ 1916 0034 62F42072 		orn	r2, r2, #640
+ 1917 0038 DA60     		str	r2, [r3, #12]
+ 1918 003a 0123     		movs	r3, #1
+ 1919 003c 84F82130 		strb	r3, [r4, #33]
+ 1920 0040 0020     		movs	r0, #0
+ 1921              	.L250:
+ 1922 0042 70BD     		pop	{r4, r5, r6, pc}
+ 1924              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_rtc_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:18     .text.HAL_RTCEx_SetTimeStamp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:24     .text.HAL_RTCEx_SetTimeStamp:00000000 HAL_RTCEx_SetTimeStamp
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:76     .text.HAL_RTCEx_SetTimeStamp_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:82     .text.HAL_RTCEx_SetTimeStamp_IT:00000000 HAL_RTCEx_SetTimeStamp_IT
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:146    .text.HAL_RTCEx_SetTimeStamp_IT:00000090 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:149    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:155    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 HAL_RTCEx_DeactivateTimeStamp
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:194    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:200    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 HAL_RTCEx_SetInternalTimeStamp
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:243    .text.HAL_RTCEx_SetInternalTimeStamp:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:246    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:252    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 HAL_RTCEx_DeactivateInternalTimeStamp
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:286    .text.HAL_RTCEx_GetTimeStamp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:292    .text.HAL_RTCEx_GetTimeStamp:00000000 HAL_RTCEx_GetTimeStamp
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:359    .text.HAL_RTCEx_GetTimeStamp:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:362    .text.HAL_RTCEx_SetTamper:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:368    .text.HAL_RTCEx_SetTamper:00000000 HAL_RTCEx_SetTamper
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:486    .text.HAL_RTCEx_SetTamper_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:492    .text.HAL_RTCEx_SetTamper_IT:00000000 HAL_RTCEx_SetTamper_IT
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:606    .text.HAL_RTCEx_SetTamper_IT:00000104 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:609    .text.HAL_RTCEx_DeactivateTamper:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:615    .text.HAL_RTCEx_DeactivateTamper:00000000 HAL_RTCEx_DeactivateTamper
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:665    .text.HAL_RTCEx_TimeStampEventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:671    .text.HAL_RTCEx_TimeStampEventCallback:00000000 HAL_RTCEx_TimeStampEventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:678    .text.HAL_RTCEx_Tamper1EventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:684    .text.HAL_RTCEx_Tamper1EventCallback:00000000 HAL_RTCEx_Tamper1EventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:691    .text.HAL_RTCEx_Tamper2EventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:697    .text.HAL_RTCEx_Tamper2EventCallback:00000000 HAL_RTCEx_Tamper2EventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:704    .text.HAL_RTCEx_Tamper3EventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:710    .text.HAL_RTCEx_Tamper3EventCallback:00000000 HAL_RTCEx_Tamper3EventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:717    .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:723    .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 HAL_RTCEx_TamperTimeStampIRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:807    .text.HAL_RTCEx_TamperTimeStampIRQHandler:000000b0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:813    .text.HAL_RTCEx_PollForTimeStampEvent:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:819    .text.HAL_RTCEx_PollForTimeStampEvent:00000000 HAL_RTCEx_PollForTimeStampEvent
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:866    .text.HAL_RTCEx_PollForTamper1Event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:872    .text.HAL_RTCEx_PollForTamper1Event:00000000 HAL_RTCEx_PollForTamper1Event
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:908    .text.HAL_RTCEx_PollForTamper2Event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:914    .text.HAL_RTCEx_PollForTamper2Event:00000000 HAL_RTCEx_PollForTamper2Event
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:950    .text.HAL_RTCEx_PollForTamper3Event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:956    .text.HAL_RTCEx_PollForTamper3Event:00000000 HAL_RTCEx_PollForTamper3Event
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:995    .text.HAL_RTCEx_SetWakeUpTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1001   .text.HAL_RTCEx_SetWakeUpTimer:00000000 HAL_RTCEx_SetWakeUpTimer
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1101   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1107   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 HAL_RTCEx_SetWakeUpTimer_IT
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1229   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000120 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1234   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1240   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 HAL_RTCEx_DeactivateWakeUpTimer
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1299   .text.HAL_RTCEx_GetWakeUpTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1305   .text.HAL_RTCEx_GetWakeUpTimer:00000000 HAL_RTCEx_GetWakeUpTimer
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1315   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1321   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 HAL_RTCEx_WakeUpTimerEventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1328   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1334   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 HAL_RTCEx_WakeUpTimerIRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1360   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000030 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s 			page 35
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1363   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1369   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 HAL_RTCEx_PollForWakeUpTimerEvent
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1405   .text.HAL_RTCEx_BKUPWrite:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1411   .text.HAL_RTCEx_BKUPWrite:00000000 HAL_RTCEx_BKUPWrite
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1421   .text.HAL_RTCEx_BKUPRead:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1427   .text.HAL_RTCEx_BKUPRead:00000000 HAL_RTCEx_BKUPRead
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1437   .text.HAL_RTCEx_SetSmoothCalib:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1443   .text.HAL_RTCEx_SetSmoothCalib:00000000 HAL_RTCEx_SetSmoothCalib
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1507   .text.HAL_RTCEx_SetSynchroShift:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1513   .text.HAL_RTCEx_SetSynchroShift:00000000 HAL_RTCEx_SetSynchroShift
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1600   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1606   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 HAL_RTCEx_SetCalibrationOutPut
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1650   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1656   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 HAL_RTCEx_DeactivateCalibrationOutPut
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1690   .text.HAL_RTCEx_SetRefClock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1696   .text.HAL_RTCEx_SetRefClock:00000000 HAL_RTCEx_SetRefClock
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1740   .text.HAL_RTCEx_DeactivateRefClock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1746   .text.HAL_RTCEx_DeactivateRefClock:00000000 HAL_RTCEx_DeactivateRefClock
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1790   .text.HAL_RTCEx_EnableBypassShadow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1796   .text.HAL_RTCEx_EnableBypassShadow:00000000 HAL_RTCEx_EnableBypassShadow
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1830   .text.HAL_RTCEx_DisableBypassShadow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1836   .text.HAL_RTCEx_DisableBypassShadow:00000000 HAL_RTCEx_DisableBypassShadow
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1870   .text.HAL_RTCEx_AlarmBEventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1876   .text.HAL_RTCEx_AlarmBEventCallback:00000000 HAL_RTCEx_AlarmBEventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1883   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrTOnEX.s:1889   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 HAL_RTCEx_PollForAlarmBEvent
+
+UNDEFINED SYMBOLS
+RTC_Bcd2ToByte
+HAL_GetTick
+SystemCoreClock
+HAL_RTC_WaitForSynchro
+RTC_EnterInitMode
+RTC_ExitInitMode

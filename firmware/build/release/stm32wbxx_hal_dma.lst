@@ -1,0 +1,1051 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_dma.c"
+  16              		.text
+  17              		.section	.text.DMA_SetConfig,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	DMA_SetConfig:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 30B4     		push	{r4, r5}
+  28 0002 C46C     		ldr	r4, [r0, #76]
+  29 0004 056D     		ldr	r5, [r0, #80]
+  30 0006 6560     		str	r5, [r4, #4]
+  31 0008 446D     		ldr	r4, [r0, #84]
+  32 000a 14B1     		cbz	r4, .L2
+  33 000c 846D     		ldr	r4, [r0, #88]
+  34 000e C56D     		ldr	r5, [r0, #92]
+  35 0010 6560     		str	r5, [r4, #4]
+  36              	.L2:
+  37 0012 446C     		ldr	r4, [r0, #68]
+  38 0014 04F01C0C 		and	ip, r4, #28
+  39 0018 0124     		movs	r4, #1
+  40 001a 04FA0CF4 		lsl	r4, r4, ip
+  41 001e 056C     		ldr	r5, [r0, #64]
+  42 0020 6C60     		str	r4, [r5, #4]
+  43 0022 0468     		ldr	r4, [r0]
+  44 0024 6360     		str	r3, [r4, #4]
+  45 0026 8368     		ldr	r3, [r0, #8]
+  46 0028 102B     		cmp	r3, #16
+  47 002a 05D0     		beq	.L6
+  48 002c 0368     		ldr	r3, [r0]
+  49 002e 9960     		str	r1, [r3, #8]
+  50 0030 0368     		ldr	r3, [r0]
+  51 0032 DA60     		str	r2, [r3, #12]
+  52              	.L1:
+  53 0034 30BC     		pop	{r4, r5}
+  54 0036 7047     		bx	lr
+  55              	.L6:
+  56 0038 0368     		ldr	r3, [r0]
+  57 003a 9A60     		str	r2, [r3, #8]
+  58 003c 0368     		ldr	r3, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 2
+
+
+  59 003e D960     		str	r1, [r3, #12]
+  60 0040 F8E7     		b	.L1
+  62              		.section	.text.DMA_CalcDMAMUXChannelBaseAndMask,"ax",%progbits
+  63              		.align	1
+  64              		.syntax unified
+  65              		.thumb
+  66              		.thumb_func
+  68              	DMA_CalcDMAMUXChannelBaseAndMask:
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		@ link register save eliminated.
+  72 0000 0368     		ldr	r3, [r0]
+  73 0002 104A     		ldr	r2, .L10
+  74 0004 9342     		cmp	r3, r2
+  75 0006 15D8     		bhi	.L8
+  76 0008 426C     		ldr	r2, [r0, #68]
+  77 000a 22F00302 		bic	r2, r2, #3
+  78 000e 02F18042 		add	r2, r2, #1073741824
+  79 0012 02F50232 		add	r2, r2, #133120
+  80 0016 8264     		str	r2, [r0, #72]
+  81              	.L9:
+  82 0018 DBB2     		uxtb	r3, r3
+  83 001a 083B     		subs	r3, r3, #8
+  84 001c 0A4A     		ldr	r2, .L10+4
+  85 001e A2FB0323 		umull	r2, r3, r2, r3
+  86 0022 0A4A     		ldr	r2, .L10+8
+  87 0024 C264     		str	r2, [r0, #76]
+  88 0026 C3F30413 		ubfx	r3, r3, #4, #5
+  89 002a 0122     		movs	r2, #1
+  90 002c 02FA03F3 		lsl	r3, r2, r3
+  91 0030 0365     		str	r3, [r0, #80]
+  92 0032 7047     		bx	lr
+  93              	.L8:
+  94 0034 426C     		ldr	r2, [r0, #68]
+  95 0036 22F00301 		bic	r1, r2, #3
+  96 003a 054A     		ldr	r2, .L10+12
+  97 003c 0A44     		add	r2, r2, r1
+  98 003e 8264     		str	r2, [r0, #72]
+  99 0040 EAE7     		b	.L9
+ 100              	.L11:
+ 101 0042 00BF     		.align	2
+ 102              	.L10:
+ 103 0044 07040240 		.word	1073873927
+ 104 0048 CDCCCCCC 		.word	-858993459
+ 105 004c 80080240 		.word	1073875072
+ 106 0050 1C080240 		.word	1073874972
+ 108              		.section	.text.DMA_CalcDMAMUXRequestGenBaseAndMask,"ax",%progbits
+ 109              		.align	1
+ 110              		.syntax unified
+ 111              		.thumb
+ 112              		.thumb_func
+ 114              	DMA_CalcDMAMUXRequestGenBaseAndMask:
+ 115              		@ args = 0, pretend = 0, frame = 0
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117              		@ link register save eliminated.
+ 118 0000 4368     		ldr	r3, [r0, #4]
+ 119 0002 03F03F03 		and	r3, r3, #63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 3
+
+
+ 120 0006 074A     		ldr	r2, .L13
+ 121 0008 1A44     		add	r2, r2, r3
+ 122 000a 9200     		lsls	r2, r2, #2
+ 123 000c 4265     		str	r2, [r0, #84]
+ 124 000e 064A     		ldr	r2, .L13+4
+ 125 0010 8265     		str	r2, [r0, #88]
+ 126 0012 013B     		subs	r3, r3, #1
+ 127 0014 03F00303 		and	r3, r3, #3
+ 128 0018 0122     		movs	r2, #1
+ 129 001a 02FA03F3 		lsl	r3, r2, r3
+ 130 001e C365     		str	r3, [r0, #92]
+ 131 0020 7047     		bx	lr
+ 132              	.L14:
+ 133 0022 00BF     		.align	2
+ 134              	.L13:
+ 135 0024 3F820010 		.word	268468799
+ 136 0028 40090240 		.word	1073875264
+ 138              		.section	.text.HAL_DMA_Init,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	HAL_DMA_Init
+ 141              		.syntax unified
+ 142              		.thumb
+ 143              		.thumb_func
+ 145              	HAL_DMA_Init:
+ 146              		@ args = 0, pretend = 0, frame = 0
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148 0000 0028     		cmp	r0, #0
+ 149 0002 5BD0     		beq	.L22
+ 150 0004 10B5     		push	{r4, lr}
+ 151 0006 0446     		mov	r4, r0
+ 152 0008 0268     		ldr	r2, [r0]
+ 153 000a 2D4B     		ldr	r3, .L29
+ 154 000c 9A42     		cmp	r2, r3
+ 155 000e 3DD8     		bhi	.L17
+ 156 0010 2C4B     		ldr	r3, .L29+4
+ 157 0012 1344     		add	r3, r3, r2
+ 158 0014 2C49     		ldr	r1, .L29+8
+ 159 0016 A1FB0313 		umull	r1, r3, r1, r3
+ 160 001a 1B09     		lsrs	r3, r3, #4
+ 161 001c 9B00     		lsls	r3, r3, #2
+ 162 001e 4364     		str	r3, [r0, #68]
+ 163 0020 2A4B     		ldr	r3, .L29+12
+ 164 0022 0364     		str	r3, [r0, #64]
+ 165              	.L18:
+ 166 0024 0223     		movs	r3, #2
+ 167 0026 84F82530 		strb	r3, [r4, #37]
+ 168 002a 1168     		ldr	r1, [r2]
+ 169 002c 6FF30E11 		bfc	r1, #4, #11
+ 170 0030 A368     		ldr	r3, [r4, #8]
+ 171 0032 E068     		ldr	r0, [r4, #12]
+ 172 0034 0343     		orrs	r3, r3, r0
+ 173 0036 2069     		ldr	r0, [r4, #16]
+ 174 0038 0343     		orrs	r3, r3, r0
+ 175 003a 6069     		ldr	r0, [r4, #20]
+ 176 003c 0343     		orrs	r3, r3, r0
+ 177 003e A069     		ldr	r0, [r4, #24]
+ 178 0040 0343     		orrs	r3, r3, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 4
+
+
+ 179 0042 E069     		ldr	r0, [r4, #28]
+ 180 0044 0343     		orrs	r3, r3, r0
+ 181 0046 206A     		ldr	r0, [r4, #32]
+ 182 0048 0343     		orrs	r3, r3, r0
+ 183 004a 0B43     		orrs	r3, r3, r1
+ 184 004c 1360     		str	r3, [r2]
+ 185 004e 2046     		mov	r0, r4
+ 186 0050 FFF7FEFF 		bl	DMA_CalcDMAMUXChannelBaseAndMask
+ 187 0054 A368     		ldr	r3, [r4, #8]
+ 188 0056 B3F5804F 		cmp	r3, #16384
+ 189 005a 22D0     		beq	.L27
+ 190              	.L19:
+ 191 005c 6368     		ldr	r3, [r4, #4]
+ 192 005e A26C     		ldr	r2, [r4, #72]
+ 193 0060 03F03F03 		and	r3, r3, #63
+ 194 0064 1360     		str	r3, [r2]
+ 195 0066 E36C     		ldr	r3, [r4, #76]
+ 196 0068 226D     		ldr	r2, [r4, #80]
+ 197 006a 5A60     		str	r2, [r3, #4]
+ 198 006c 6368     		ldr	r3, [r4, #4]
+ 199 006e 013B     		subs	r3, r3, #1
+ 200 0070 032B     		cmp	r3, #3
+ 201 0072 19D9     		bls	.L28
+ 202 0074 0023     		movs	r3, #0
+ 203 0076 6365     		str	r3, [r4, #84]
+ 204 0078 A365     		str	r3, [r4, #88]
+ 205 007a E365     		str	r3, [r4, #92]
+ 206              	.L21:
+ 207 007c 0020     		movs	r0, #0
+ 208 007e E063     		str	r0, [r4, #60]
+ 209 0080 0123     		movs	r3, #1
+ 210 0082 84F82530 		strb	r3, [r4, #37]
+ 211 0086 84F82400 		strb	r0, [r4, #36]
+ 212 008a 10BD     		pop	{r4, pc}
+ 213              	.L17:
+ 214 008c 104B     		ldr	r3, .L29+16
+ 215 008e 1344     		add	r3, r3, r2
+ 216 0090 0D49     		ldr	r1, .L29+8
+ 217 0092 A1FB0313 		umull	r1, r3, r1, r3
+ 218 0096 1B09     		lsrs	r3, r3, #4
+ 219 0098 9B00     		lsls	r3, r3, #2
+ 220 009a 4364     		str	r3, [r0, #68]
+ 221 009c 0D4B     		ldr	r3, .L29+20
+ 222 009e 0364     		str	r3, [r0, #64]
+ 223 00a0 C0E7     		b	.L18
+ 224              	.L27:
+ 225 00a2 0023     		movs	r3, #0
+ 226 00a4 6360     		str	r3, [r4, #4]
+ 227 00a6 D9E7     		b	.L19
+ 228              	.L28:
+ 229 00a8 2046     		mov	r0, r4
+ 230 00aa FFF7FEFF 		bl	DMA_CalcDMAMUXRequestGenBaseAndMask
+ 231 00ae 636D     		ldr	r3, [r4, #84]
+ 232 00b0 0022     		movs	r2, #0
+ 233 00b2 1A60     		str	r2, [r3]
+ 234 00b4 A36D     		ldr	r3, [r4, #88]
+ 235 00b6 E26D     		ldr	r2, [r4, #92]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 5
+
+
+ 236 00b8 5A60     		str	r2, [r3, #4]
+ 237 00ba DFE7     		b	.L21
+ 238              	.L22:
+ 239 00bc 0120     		movs	r0, #1
+ 240 00be 7047     		bx	lr
+ 241              	.L30:
+ 242              		.align	2
+ 243              	.L29:
+ 244 00c0 07040240 		.word	1073873927
+ 245 00c4 F8FFFDBF 		.word	-1073872904
+ 246 00c8 CDCCCCCC 		.word	-858993459
+ 247 00cc 00000240 		.word	1073872896
+ 248 00d0 F8FBFDBF 		.word	-1073873928
+ 249 00d4 00040240 		.word	1073873920
+ 251              		.section	.text.HAL_DMA_DeInit,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	HAL_DMA_DeInit
+ 254              		.syntax unified
+ 255              		.thumb
+ 256              		.thumb_func
+ 258              	HAL_DMA_DeInit:
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 0000 0028     		cmp	r0, #0
+ 262 0002 4BD0     		beq	.L36
+ 263 0004 38B5     		push	{r3, r4, r5, lr}
+ 264 0006 0446     		mov	r4, r0
+ 265 0008 0268     		ldr	r2, [r0]
+ 266 000a 1368     		ldr	r3, [r2]
+ 267 000c 23F00103 		bic	r3, r3, #1
+ 268 0010 1360     		str	r3, [r2]
+ 269 0012 0268     		ldr	r2, [r0]
+ 270 0014 224B     		ldr	r3, .L42
+ 271 0016 9A42     		cmp	r2, r3
+ 272 0018 2CD8     		bhi	.L33
+ 273 001a 224B     		ldr	r3, .L42+4
+ 274 001c 1344     		add	r3, r3, r2
+ 275 001e 2249     		ldr	r1, .L42+8
+ 276 0020 A1FB0313 		umull	r1, r3, r1, r3
+ 277 0024 1B09     		lsrs	r3, r3, #4
+ 278 0026 9B00     		lsls	r3, r3, #2
+ 279 0028 4364     		str	r3, [r0, #68]
+ 280 002a 204B     		ldr	r3, .L42+12
+ 281 002c 0364     		str	r3, [r0, #64]
+ 282              	.L34:
+ 283 002e 0025     		movs	r5, #0
+ 284 0030 1560     		str	r5, [r2]
+ 285 0032 636C     		ldr	r3, [r4, #68]
+ 286 0034 03F01C02 		and	r2, r3, #28
+ 287 0038 216C     		ldr	r1, [r4, #64]
+ 288 003a 0123     		movs	r3, #1
+ 289 003c 9340     		lsls	r3, r3, r2
+ 290 003e 4B60     		str	r3, [r1, #4]
+ 291 0040 2046     		mov	r0, r4
+ 292 0042 FFF7FEFF 		bl	DMA_CalcDMAMUXChannelBaseAndMask
+ 293 0046 A36C     		ldr	r3, [r4, #72]
+ 294 0048 1D60     		str	r5, [r3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 6
+
+
+ 295 004a E36C     		ldr	r3, [r4, #76]
+ 296 004c 226D     		ldr	r2, [r4, #80]
+ 297 004e 5A60     		str	r2, [r3, #4]
+ 298 0050 6368     		ldr	r3, [r4, #4]
+ 299 0052 013B     		subs	r3, r3, #1
+ 300 0054 032B     		cmp	r3, #3
+ 301 0056 18D9     		bls	.L41
+ 302              	.L35:
+ 303 0058 0020     		movs	r0, #0
+ 304 005a 6065     		str	r0, [r4, #84]
+ 305 005c A065     		str	r0, [r4, #88]
+ 306 005e E065     		str	r0, [r4, #92]
+ 307 0060 E062     		str	r0, [r4, #44]
+ 308 0062 2063     		str	r0, [r4, #48]
+ 309 0064 6063     		str	r0, [r4, #52]
+ 310 0066 A063     		str	r0, [r4, #56]
+ 311 0068 E063     		str	r0, [r4, #60]
+ 312 006a 84F82500 		strb	r0, [r4, #37]
+ 313 006e 84F82400 		strb	r0, [r4, #36]
+ 314 0072 38BD     		pop	{r3, r4, r5, pc}
+ 315              	.L33:
+ 316 0074 0E4B     		ldr	r3, .L42+16
+ 317 0076 1344     		add	r3, r3, r2
+ 318 0078 0B49     		ldr	r1, .L42+8
+ 319 007a A1FB0313 		umull	r1, r3, r1, r3
+ 320 007e 1B09     		lsrs	r3, r3, #4
+ 321 0080 9B00     		lsls	r3, r3, #2
+ 322 0082 4364     		str	r3, [r0, #68]
+ 323 0084 0B4B     		ldr	r3, .L42+20
+ 324 0086 0364     		str	r3, [r0, #64]
+ 325 0088 D1E7     		b	.L34
+ 326              	.L41:
+ 327 008a 2046     		mov	r0, r4
+ 328 008c FFF7FEFF 		bl	DMA_CalcDMAMUXRequestGenBaseAndMask
+ 329 0090 636D     		ldr	r3, [r4, #84]
+ 330 0092 1D60     		str	r5, [r3]
+ 331 0094 A36D     		ldr	r3, [r4, #88]
+ 332 0096 E26D     		ldr	r2, [r4, #92]
+ 333 0098 5A60     		str	r2, [r3, #4]
+ 334 009a DDE7     		b	.L35
+ 335              	.L36:
+ 336 009c 0120     		movs	r0, #1
+ 337 009e 7047     		bx	lr
+ 338              	.L43:
+ 339              		.align	2
+ 340              	.L42:
+ 341 00a0 07040240 		.word	1073873927
+ 342 00a4 F8FFFDBF 		.word	-1073872904
+ 343 00a8 CDCCCCCC 		.word	-858993459
+ 344 00ac 00000240 		.word	1073872896
+ 345 00b0 F8FBFDBF 		.word	-1073873928
+ 346 00b4 00040240 		.word	1073873920
+ 348              		.section	.text.HAL_DMA_Start,"ax",%progbits
+ 349              		.align	1
+ 350              		.global	HAL_DMA_Start
+ 351              		.syntax unified
+ 352              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 7
+
+
+ 353              		.thumb_func
+ 355              	HAL_DMA_Start:
+ 356              		@ args = 0, pretend = 0, frame = 0
+ 357              		@ frame_needed = 0, uses_anonymous_args = 0
+ 358 0000 70B5     		push	{r4, r5, r6, lr}
+ 359 0002 0446     		mov	r4, r0
+ 360 0004 90F82400 		ldrb	r0, [r0, #36]	@ zero_extendqisi2
+ 361 0008 0128     		cmp	r0, #1
+ 362 000a 20D0     		beq	.L47
+ 363 000c 0120     		movs	r0, #1
+ 364 000e 84F82400 		strb	r0, [r4, #36]
+ 365 0012 94F82500 		ldrb	r0, [r4, #37]	@ zero_extendqisi2
+ 366 0016 C0B2     		uxtb	r0, r0
+ 367 0018 0128     		cmp	r0, #1
+ 368 001a 04D0     		beq	.L49
+ 369 001c 0023     		movs	r3, #0
+ 370 001e 84F82430 		strb	r3, [r4, #36]
+ 371 0022 0220     		movs	r0, #2
+ 372              	.L45:
+ 373 0024 70BD     		pop	{r4, r5, r6, pc}
+ 374              	.L49:
+ 375 0026 0220     		movs	r0, #2
+ 376 0028 84F82500 		strb	r0, [r4, #37]
+ 377 002c 0025     		movs	r5, #0
+ 378 002e E563     		str	r5, [r4, #60]
+ 379 0030 2668     		ldr	r6, [r4]
+ 380 0032 3068     		ldr	r0, [r6]
+ 381 0034 20F00100 		bic	r0, r0, #1
+ 382 0038 3060     		str	r0, [r6]
+ 383 003a 2046     		mov	r0, r4
+ 384 003c FFF7FEFF 		bl	DMA_SetConfig
+ 385 0040 2268     		ldr	r2, [r4]
+ 386 0042 1368     		ldr	r3, [r2]
+ 387 0044 43F00103 		orr	r3, r3, #1
+ 388 0048 1360     		str	r3, [r2]
+ 389 004a 2846     		mov	r0, r5
+ 390 004c EAE7     		b	.L45
+ 391              	.L47:
+ 392 004e 0220     		movs	r0, #2
+ 393 0050 E8E7     		b	.L45
+ 395              		.section	.text.HAL_DMA_Start_IT,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	HAL_DMA_Start_IT
+ 398              		.syntax unified
+ 399              		.thumb
+ 400              		.thumb_func
+ 402              	HAL_DMA_Start_IT:
+ 403              		@ args = 0, pretend = 0, frame = 0
+ 404              		@ frame_needed = 0, uses_anonymous_args = 0
+ 405 0000 38B5     		push	{r3, r4, r5, lr}
+ 406 0002 0446     		mov	r4, r0
+ 407 0004 90F82400 		ldrb	r0, [r0, #36]	@ zero_extendqisi2
+ 408 0008 0128     		cmp	r0, #1
+ 409 000a 41D0     		beq	.L57
+ 410 000c 0120     		movs	r0, #1
+ 411 000e 84F82400 		strb	r0, [r4, #36]
+ 412 0012 94F82500 		ldrb	r0, [r4, #37]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 8
+
+
+ 413 0016 C0B2     		uxtb	r0, r0
+ 414 0018 0128     		cmp	r0, #1
+ 415 001a 04D0     		beq	.L59
+ 416 001c 0023     		movs	r3, #0
+ 417 001e 84F82430 		strb	r3, [r4, #36]
+ 418 0022 0220     		movs	r0, #2
+ 419              	.L51:
+ 420 0024 38BD     		pop	{r3, r4, r5, pc}
+ 421              	.L59:
+ 422 0026 0220     		movs	r0, #2
+ 423 0028 84F82500 		strb	r0, [r4, #37]
+ 424 002c 0020     		movs	r0, #0
+ 425 002e E063     		str	r0, [r4, #60]
+ 426 0030 2568     		ldr	r5, [r4]
+ 427 0032 2868     		ldr	r0, [r5]
+ 428 0034 20F00100 		bic	r0, r0, #1
+ 429 0038 2860     		str	r0, [r5]
+ 430 003a 2046     		mov	r0, r4
+ 431 003c FFF7FEFF 		bl	DMA_SetConfig
+ 432 0040 236B     		ldr	r3, [r4, #48]
+ 433 0042 D3B1     		cbz	r3, .L53
+ 434 0044 2268     		ldr	r2, [r4]
+ 435 0046 1368     		ldr	r3, [r2]
+ 436 0048 43F00E03 		orr	r3, r3, #14
+ 437 004c 1360     		str	r3, [r2]
+ 438              	.L54:
+ 439 004e A36C     		ldr	r3, [r4, #72]
+ 440 0050 1A68     		ldr	r2, [r3]
+ 441 0052 12F4803F 		tst	r2, #65536
+ 442 0056 03D0     		beq	.L55
+ 443 0058 1A68     		ldr	r2, [r3]
+ 444 005a 42F48072 		orr	r2, r2, #256
+ 445 005e 1A60     		str	r2, [r3]
+ 446              	.L55:
+ 447 0060 636D     		ldr	r3, [r4, #84]
+ 448 0062 1BB1     		cbz	r3, .L56
+ 449 0064 1A68     		ldr	r2, [r3]
+ 450 0066 42F48072 		orr	r2, r2, #256
+ 451 006a 1A60     		str	r2, [r3]
+ 452              	.L56:
+ 453 006c 2268     		ldr	r2, [r4]
+ 454 006e 1368     		ldr	r3, [r2]
+ 455 0070 43F00103 		orr	r3, r3, #1
+ 456 0074 1360     		str	r3, [r2]
+ 457 0076 0020     		movs	r0, #0
+ 458 0078 D4E7     		b	.L51
+ 459              	.L53:
+ 460 007a 2268     		ldr	r2, [r4]
+ 461 007c 1368     		ldr	r3, [r2]
+ 462 007e 23F00403 		bic	r3, r3, #4
+ 463 0082 1360     		str	r3, [r2]
+ 464 0084 2268     		ldr	r2, [r4]
+ 465 0086 1368     		ldr	r3, [r2]
+ 466 0088 43F00A03 		orr	r3, r3, #10
+ 467 008c 1360     		str	r3, [r2]
+ 468 008e DEE7     		b	.L54
+ 469              	.L57:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 9
+
+
+ 470 0090 0220     		movs	r0, #2
+ 471 0092 C7E7     		b	.L51
+ 473              		.section	.text.HAL_DMA_Abort,"ax",%progbits
+ 474              		.align	1
+ 475              		.global	HAL_DMA_Abort
+ 476              		.syntax unified
+ 477              		.thumb
+ 478              		.thumb_func
+ 480              	HAL_DMA_Abort:
+ 481              		@ args = 0, pretend = 0, frame = 0
+ 482              		@ frame_needed = 0, uses_anonymous_args = 0
+ 483              		@ link register save eliminated.
+ 484 0000 0346     		mov	r3, r0
+ 485 0002 0028     		cmp	r0, #0
+ 486 0004 34D0     		beq	.L64
+ 487 0006 90F82520 		ldrb	r2, [r0, #37]	@ zero_extendqisi2
+ 488 000a D2B2     		uxtb	r2, r2
+ 489 000c 022A     		cmp	r2, #2
+ 490 000e 06D0     		beq	.L62
+ 491 0010 0422     		movs	r2, #4
+ 492 0012 C263     		str	r2, [r0, #60]
+ 493 0014 0022     		movs	r2, #0
+ 494 0016 80F82420 		strb	r2, [r0, #36]
+ 495 001a 0120     		movs	r0, #1
+ 496 001c 7047     		bx	lr
+ 497              	.L62:
+ 498 001e 0168     		ldr	r1, [r0]
+ 499 0020 0A68     		ldr	r2, [r1]
+ 500 0022 22F00E02 		bic	r2, r2, #14
+ 501 0026 0A60     		str	r2, [r1]
+ 502 0028 816C     		ldr	r1, [r0, #72]
+ 503 002a 0A68     		ldr	r2, [r1]
+ 504 002c 22F48072 		bic	r2, r2, #256
+ 505 0030 0A60     		str	r2, [r1]
+ 506 0032 0168     		ldr	r1, [r0]
+ 507 0034 0A68     		ldr	r2, [r1]
+ 508 0036 22F00102 		bic	r2, r2, #1
+ 509 003a 0A60     		str	r2, [r1]
+ 510 003c 426C     		ldr	r2, [r0, #68]
+ 511 003e 02F01C01 		and	r1, r2, #28
+ 512 0042 006C     		ldr	r0, [r0, #64]
+ 513 0044 0122     		movs	r2, #1
+ 514 0046 8A40     		lsls	r2, r2, r1
+ 515 0048 4260     		str	r2, [r0, #4]
+ 516 004a DA6C     		ldr	r2, [r3, #76]
+ 517 004c 196D     		ldr	r1, [r3, #80]
+ 518 004e 5160     		str	r1, [r2, #4]
+ 519 0050 5A6D     		ldr	r2, [r3, #84]
+ 520 0052 32B1     		cbz	r2, .L63
+ 521 0054 1168     		ldr	r1, [r2]
+ 522 0056 21F48071 		bic	r1, r1, #256
+ 523 005a 1160     		str	r1, [r2]
+ 524 005c 9A6D     		ldr	r2, [r3, #88]
+ 525 005e D96D     		ldr	r1, [r3, #92]
+ 526 0060 5160     		str	r1, [r2, #4]
+ 527              	.L63:
+ 528 0062 0122     		movs	r2, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 10
+
+
+ 529 0064 83F82520 		strb	r2, [r3, #37]
+ 530 0068 0020     		movs	r0, #0
+ 531 006a 83F82400 		strb	r0, [r3, #36]
+ 532 006e 7047     		bx	lr
+ 533              	.L64:
+ 534 0070 0120     		movs	r0, #1
+ 535 0072 7047     		bx	lr
+ 537              		.section	.text.HAL_DMA_Abort_IT,"ax",%progbits
+ 538              		.align	1
+ 539              		.global	HAL_DMA_Abort_IT
+ 540              		.syntax unified
+ 541              		.thumb
+ 542              		.thumb_func
+ 544              	HAL_DMA_Abort_IT:
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547 0000 08B5     		push	{r3, lr}
+ 548 0002 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+ 549 0006 DBB2     		uxtb	r3, r3
+ 550 0008 022B     		cmp	r3, #2
+ 551 000a 03D0     		beq	.L66
+ 552 000c 0423     		movs	r3, #4
+ 553 000e C363     		str	r3, [r0, #60]
+ 554 0010 0120     		movs	r0, #1
+ 555              	.L67:
+ 556 0012 08BD     		pop	{r3, pc}
+ 557              	.L66:
+ 558 0014 0268     		ldr	r2, [r0]
+ 559 0016 1368     		ldr	r3, [r2]
+ 560 0018 23F00E03 		bic	r3, r3, #14
+ 561 001c 1360     		str	r3, [r2]
+ 562 001e 0268     		ldr	r2, [r0]
+ 563 0020 1368     		ldr	r3, [r2]
+ 564 0022 23F00103 		bic	r3, r3, #1
+ 565 0026 1360     		str	r3, [r2]
+ 566 0028 826C     		ldr	r2, [r0, #72]
+ 567 002a 1368     		ldr	r3, [r2]
+ 568 002c 23F48073 		bic	r3, r3, #256
+ 569 0030 1360     		str	r3, [r2]
+ 570 0032 436C     		ldr	r3, [r0, #68]
+ 571 0034 03F01C02 		and	r2, r3, #28
+ 572 0038 016C     		ldr	r1, [r0, #64]
+ 573 003a 0123     		movs	r3, #1
+ 574 003c 9340     		lsls	r3, r3, r2
+ 575 003e 4B60     		str	r3, [r1, #4]
+ 576 0040 C36C     		ldr	r3, [r0, #76]
+ 577 0042 026D     		ldr	r2, [r0, #80]
+ 578 0044 5A60     		str	r2, [r3, #4]
+ 579 0046 436D     		ldr	r3, [r0, #84]
+ 580 0048 33B1     		cbz	r3, .L68
+ 581 004a 1A68     		ldr	r2, [r3]
+ 582 004c 22F48072 		bic	r2, r2, #256
+ 583 0050 1A60     		str	r2, [r3]
+ 584 0052 836D     		ldr	r3, [r0, #88]
+ 585 0054 C26D     		ldr	r2, [r0, #92]
+ 586 0056 5A60     		str	r2, [r3, #4]
+ 587              	.L68:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 11
+
+
+ 588 0058 0123     		movs	r3, #1
+ 589 005a 80F82530 		strb	r3, [r0, #37]
+ 590 005e 0023     		movs	r3, #0
+ 591 0060 80F82430 		strb	r3, [r0, #36]
+ 592 0064 836B     		ldr	r3, [r0, #56]
+ 593 0066 13B1     		cbz	r3, .L69
+ 594 0068 9847     		blx	r3
+ 595 006a 0020     		movs	r0, #0
+ 596 006c D1E7     		b	.L67
+ 597              	.L69:
+ 598 006e 0020     		movs	r0, #0
+ 599 0070 CFE7     		b	.L67
+ 601              		.section	.text.HAL_DMA_PollForTransfer,"ax",%progbits
+ 602              		.align	1
+ 603              		.global	HAL_DMA_PollForTransfer
+ 604              		.syntax unified
+ 605              		.thumb
+ 606              		.thumb_func
+ 608              	HAL_DMA_PollForTransfer:
+ 609              		@ args = 0, pretend = 0, frame = 0
+ 610              		@ frame_needed = 0, uses_anonymous_args = 0
+ 611 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 612 0004 0446     		mov	r4, r0
+ 613 0006 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+ 614 000a DBB2     		uxtb	r3, r3
+ 615 000c 022B     		cmp	r3, #2
+ 616 000e 07D0     		beq	.L72
+ 617 0010 0423     		movs	r3, #4
+ 618 0012 C363     		str	r3, [r0, #60]
+ 619 0014 0023     		movs	r3, #0
+ 620 0016 80F82430 		strb	r3, [r0, #36]
+ 621 001a 0120     		movs	r0, #1
+ 622              	.L73:
+ 623 001c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 624              	.L72:
+ 625 0020 0E46     		mov	r6, r1
+ 626 0022 1546     		mov	r5, r2
+ 627 0024 0368     		ldr	r3, [r0]
+ 628 0026 1B68     		ldr	r3, [r3]
+ 629 0028 13F0200F 		tst	r3, #32
+ 630 002c 2BD1     		bne	.L86
+ 631 002e 79BB     		cbnz	r1, .L75
+ 632 0030 436C     		ldr	r3, [r0, #68]
+ 633 0032 03F01C03 		and	r3, r3, #28
+ 634 0036 0227     		movs	r7, #2
+ 635 0038 9F40     		lsls	r7, r7, r3
+ 636              	.L76:
+ 637 003a FFF7FEFF 		bl	HAL_GetTick
+ 638 003e 8046     		mov	r8, r0
+ 639              	.L79:
+ 640 0040 226C     		ldr	r2, [r4, #64]
+ 641 0042 1368     		ldr	r3, [r2]
+ 642 0044 3B42     		tst	r3, r7
+ 643 0046 34D1     		bne	.L87
+ 644 0048 1168     		ldr	r1, [r2]
+ 645 004a 636C     		ldr	r3, [r4, #68]
+ 646 004c 03F01C03 		and	r3, r3, #28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 12
+
+
+ 647 0050 4FF0080C 		mov	ip, #8
+ 648 0054 0CFA03FC 		lsl	ip, ip, r3
+ 649 0058 11EA0C0F 		tst	r1, ip
+ 650 005c 1ED1     		bne	.L88
+ 651 005e B5F1FF3F 		cmp	r5, #-1
+ 652 0062 EDD0     		beq	.L79
+ 653 0064 FFF7FEFF 		bl	HAL_GetTick
+ 654 0068 A0EB0800 		sub	r0, r0, r8
+ 655 006c A842     		cmp	r0, r5
+ 656 006e 01D8     		bhi	.L80
+ 657 0070 002D     		cmp	r5, #0
+ 658 0072 E5D1     		bne	.L79
+ 659              	.L80:
+ 660 0074 2023     		movs	r3, #32
+ 661 0076 E363     		str	r3, [r4, #60]
+ 662 0078 0120     		movs	r0, #1
+ 663 007a 84F82500 		strb	r0, [r4, #37]
+ 664 007e 0023     		movs	r3, #0
+ 665 0080 84F82430 		strb	r3, [r4, #36]
+ 666 0084 CAE7     		b	.L73
+ 667              	.L86:
+ 668 0086 4FF48073 		mov	r3, #256
+ 669 008a C363     		str	r3, [r0, #60]
+ 670 008c 0120     		movs	r0, #1
+ 671 008e C5E7     		b	.L73
+ 672              	.L75:
+ 673 0090 436C     		ldr	r3, [r0, #68]
+ 674 0092 03F01C03 		and	r3, r3, #28
+ 675 0096 0427     		movs	r7, #4
+ 676 0098 9F40     		lsls	r7, r7, r3
+ 677 009a CEE7     		b	.L76
+ 678              	.L88:
+ 679 009c 0120     		movs	r0, #1
+ 680 009e 00FA03F3 		lsl	r3, r0, r3
+ 681 00a2 5360     		str	r3, [r2, #4]
+ 682 00a4 E063     		str	r0, [r4, #60]
+ 683 00a6 84F82500 		strb	r0, [r4, #37]
+ 684 00aa 0023     		movs	r3, #0
+ 685 00ac 84F82430 		strb	r3, [r4, #36]
+ 686 00b0 B4E7     		b	.L73
+ 687              	.L87:
+ 688 00b2 636D     		ldr	r3, [r4, #84]
+ 689 00b4 7BB1     		cbz	r3, .L82
+ 690 00b6 A26D     		ldr	r2, [r4, #88]
+ 691 00b8 1168     		ldr	r1, [r2]
+ 692 00ba E26D     		ldr	r2, [r4, #92]
+ 693 00bc 1142     		tst	r1, r2
+ 694 00be 0AD0     		beq	.L82
+ 695 00c0 1A68     		ldr	r2, [r3]
+ 696 00c2 42F48072 		orr	r2, r2, #256
+ 697 00c6 1A60     		str	r2, [r3]
+ 698 00c8 A36D     		ldr	r3, [r4, #88]
+ 699 00ca E26D     		ldr	r2, [r4, #92]
+ 700 00cc 5A60     		str	r2, [r3, #4]
+ 701 00ce E36B     		ldr	r3, [r4, #60]
+ 702 00d0 43F48063 		orr	r3, r3, #1024
+ 703 00d4 E363     		str	r3, [r4, #60]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 13
+
+
+ 704              	.L82:
+ 705 00d6 E36C     		ldr	r3, [r4, #76]
+ 706 00d8 1968     		ldr	r1, [r3]
+ 707 00da 226D     		ldr	r2, [r4, #80]
+ 708 00dc 1142     		tst	r1, r2
+ 709 00de 04D0     		beq	.L83
+ 710 00e0 5A60     		str	r2, [r3, #4]
+ 711 00e2 E36B     		ldr	r3, [r4, #60]
+ 712 00e4 43F40073 		orr	r3, r3, #512
+ 713 00e8 E363     		str	r3, [r4, #60]
+ 714              	.L83:
+ 715 00ea 76B9     		cbnz	r6, .L84
+ 716 00ec 636C     		ldr	r3, [r4, #68]
+ 717 00ee 03F01C02 		and	r2, r3, #28
+ 718 00f2 216C     		ldr	r1, [r4, #64]
+ 719 00f4 0223     		movs	r3, #2
+ 720 00f6 9340     		lsls	r3, r3, r2
+ 721 00f8 4B60     		str	r3, [r1, #4]
+ 722 00fa 0023     		movs	r3, #0
+ 723 00fc 84F82430 		strb	r3, [r4, #36]
+ 724 0100 0123     		movs	r3, #1
+ 725 0102 84F82530 		strb	r3, [r4, #37]
+ 726 0106 3046     		mov	r0, r6
+ 727 0108 88E7     		b	.L73
+ 728              	.L84:
+ 729 010a 636C     		ldr	r3, [r4, #68]
+ 730 010c 03F01C02 		and	r2, r3, #28
+ 731 0110 216C     		ldr	r1, [r4, #64]
+ 732 0112 0423     		movs	r3, #4
+ 733 0114 9340     		lsls	r3, r3, r2
+ 734 0116 4B60     		str	r3, [r1, #4]
+ 735 0118 0020     		movs	r0, #0
+ 736 011a 7FE7     		b	.L73
+ 738              		.section	.text.HAL_DMA_IRQHandler,"ax",%progbits
+ 739              		.align	1
+ 740              		.global	HAL_DMA_IRQHandler
+ 741              		.syntax unified
+ 742              		.thumb
+ 743              		.thumb_func
+ 745              	HAL_DMA_IRQHandler:
+ 746              		@ args = 0, pretend = 0, frame = 0
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+ 748 0000 38B5     		push	{r3, r4, r5, lr}
+ 749 0002 036C     		ldr	r3, [r0, #64]
+ 750 0004 1968     		ldr	r1, [r3]
+ 751 0006 0468     		ldr	r4, [r0]
+ 752 0008 2568     		ldr	r5, [r4]
+ 753 000a 436C     		ldr	r3, [r0, #68]
+ 754 000c 03F01C03 		and	r3, r3, #28
+ 755 0010 0422     		movs	r2, #4
+ 756 0012 9A40     		lsls	r2, r2, r3
+ 757 0014 0A42     		tst	r2, r1
+ 758 0016 15D0     		beq	.L90
+ 759 0018 15F0040F 		tst	r5, #4
+ 760 001c 12D0     		beq	.L90
+ 761 001e 2368     		ldr	r3, [r4]
+ 762 0020 13F0200F 		tst	r3, #32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 14
+
+
+ 763 0024 03D1     		bne	.L91
+ 764 0026 2368     		ldr	r3, [r4]
+ 765 0028 23F00403 		bic	r3, r3, #4
+ 766 002c 2360     		str	r3, [r4]
+ 767              	.L91:
+ 768 002e 436C     		ldr	r3, [r0, #68]
+ 769 0030 03F01C02 		and	r2, r3, #28
+ 770 0034 016C     		ldr	r1, [r0, #64]
+ 771 0036 0423     		movs	r3, #4
+ 772 0038 9340     		lsls	r3, r3, r2
+ 773 003a 4B60     		str	r3, [r1, #4]
+ 774 003c 036B     		ldr	r3, [r0, #48]
+ 775 003e 03B1     		cbz	r3, .L89
+ 776 0040 9847     		blx	r3
+ 777              	.L89:
+ 778 0042 38BD     		pop	{r3, r4, r5, pc}
+ 779              	.L90:
+ 780 0044 0222     		movs	r2, #2
+ 781 0046 9A40     		lsls	r2, r2, r3
+ 782 0048 0A42     		tst	r2, r1
+ 783 004a 1CD0     		beq	.L93
+ 784 004c 15F0020F 		tst	r5, #2
+ 785 0050 19D0     		beq	.L93
+ 786 0052 2368     		ldr	r3, [r4]
+ 787 0054 13F0200F 		tst	r3, #32
+ 788 0058 06D1     		bne	.L94
+ 789 005a 2368     		ldr	r3, [r4]
+ 790 005c 23F00A03 		bic	r3, r3, #10
+ 791 0060 2360     		str	r3, [r4]
+ 792 0062 0123     		movs	r3, #1
+ 793 0064 80F82530 		strb	r3, [r0, #37]
+ 794              	.L94:
+ 795 0068 436C     		ldr	r3, [r0, #68]
+ 796 006a 03F01C02 		and	r2, r3, #28
+ 797 006e 016C     		ldr	r1, [r0, #64]
+ 798 0070 0223     		movs	r3, #2
+ 799 0072 9340     		lsls	r3, r3, r2
+ 800 0074 4B60     		str	r3, [r1, #4]
+ 801 0076 0023     		movs	r3, #0
+ 802 0078 80F82430 		strb	r3, [r0, #36]
+ 803 007c C36A     		ldr	r3, [r0, #44]
+ 804 007e 002B     		cmp	r3, #0
+ 805 0080 DFD0     		beq	.L89
+ 806 0082 9847     		blx	r3
+ 807 0084 DDE7     		b	.L89
+ 808              	.L93:
+ 809 0086 0822     		movs	r2, #8
+ 810 0088 02FA03F3 		lsl	r3, r2, r3
+ 811 008c 0B42     		tst	r3, r1
+ 812 008e D8D0     		beq	.L89
+ 813 0090 15F0080F 		tst	r5, #8
+ 814 0094 D5D0     		beq	.L89
+ 815 0096 2368     		ldr	r3, [r4]
+ 816 0098 23F00E03 		bic	r3, r3, #14
+ 817 009c 2360     		str	r3, [r4]
+ 818 009e 436C     		ldr	r3, [r0, #68]
+ 819 00a0 03F01C03 		and	r3, r3, #28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 15
+
+
+ 820 00a4 016C     		ldr	r1, [r0, #64]
+ 821 00a6 0122     		movs	r2, #1
+ 822 00a8 02FA03F3 		lsl	r3, r2, r3
+ 823 00ac 4B60     		str	r3, [r1, #4]
+ 824 00ae C263     		str	r2, [r0, #60]
+ 825 00b0 80F82520 		strb	r2, [r0, #37]
+ 826 00b4 0023     		movs	r3, #0
+ 827 00b6 80F82430 		strb	r3, [r0, #36]
+ 828 00ba 436B     		ldr	r3, [r0, #52]
+ 829 00bc 002B     		cmp	r3, #0
+ 830 00be C0D0     		beq	.L89
+ 831 00c0 9847     		blx	r3
+ 832 00c2 BEE7     		b	.L89
+ 834              		.section	.text.HAL_DMA_RegisterCallback,"ax",%progbits
+ 835              		.align	1
+ 836              		.global	HAL_DMA_RegisterCallback
+ 837              		.syntax unified
+ 838              		.thumb
+ 839              		.thumb_func
+ 841              	HAL_DMA_RegisterCallback:
+ 842              		@ args = 0, pretend = 0, frame = 0
+ 843              		@ frame_needed = 0, uses_anonymous_args = 0
+ 844              		@ link register save eliminated.
+ 845 0000 0346     		mov	r3, r0
+ 846 0002 90F82400 		ldrb	r0, [r0, #36]	@ zero_extendqisi2
+ 847 0006 0128     		cmp	r0, #1
+ 848 0008 1ED0     		beq	.L104
+ 849 000a 0120     		movs	r0, #1
+ 850 000c 83F82400 		strb	r0, [r3, #36]
+ 851 0010 93F82500 		ldrb	r0, [r3, #37]	@ zero_extendqisi2
+ 852 0014 C0B2     		uxtb	r0, r0
+ 853 0016 0128     		cmp	r0, #1
+ 854 0018 04D0     		beq	.L107
+ 855 001a 0120     		movs	r0, #1
+ 856              	.L98:
+ 857 001c 0022     		movs	r2, #0
+ 858 001e 83F82420 		strb	r2, [r3, #36]
+ 859 0022 7047     		bx	lr
+ 860              	.L107:
+ 861 0024 0329     		cmp	r1, #3
+ 862 0026 F9D8     		bhi	.L98
+ 863 0028 DFE801F0 		tbb	[pc, r1]
+ 864              	.L100:
+ 865 002c 02       		.byte	(.L103-.L100)/2
+ 866 002d 05       		.byte	(.L102-.L100)/2
+ 867 002e 08       		.byte	(.L101-.L100)/2
+ 868 002f 0B       		.byte	(.L99-.L100)/2
+ 869              		.p2align 1
+ 870              	.L103:
+ 871 0030 DA62     		str	r2, [r3, #44]
+ 872 0032 0846     		mov	r0, r1
+ 873 0034 F2E7     		b	.L98
+ 874              	.L102:
+ 875 0036 1A63     		str	r2, [r3, #48]
+ 876 0038 0020     		movs	r0, #0
+ 877 003a EFE7     		b	.L98
+ 878              	.L101:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 16
+
+
+ 879 003c 5A63     		str	r2, [r3, #52]
+ 880 003e 0020     		movs	r0, #0
+ 881 0040 ECE7     		b	.L98
+ 882              	.L99:
+ 883 0042 9A63     		str	r2, [r3, #56]
+ 884 0044 0020     		movs	r0, #0
+ 885 0046 E9E7     		b	.L98
+ 886              	.L104:
+ 887 0048 0220     		movs	r0, #2
+ 888 004a 7047     		bx	lr
+ 890              		.section	.text.HAL_DMA_UnRegisterCallback,"ax",%progbits
+ 891              		.align	1
+ 892              		.global	HAL_DMA_UnRegisterCallback
+ 893              		.syntax unified
+ 894              		.thumb
+ 895              		.thumb_func
+ 897              	HAL_DMA_UnRegisterCallback:
+ 898              		@ args = 0, pretend = 0, frame = 0
+ 899              		@ frame_needed = 0, uses_anonymous_args = 0
+ 900              		@ link register save eliminated.
+ 901 0000 0346     		mov	r3, r0
+ 902 0002 90F82420 		ldrb	r2, [r0, #36]	@ zero_extendqisi2
+ 903 0006 012A     		cmp	r2, #1
+ 904 0008 26D0     		beq	.L117
+ 905 000a 0122     		movs	r2, #1
+ 906 000c 80F82420 		strb	r2, [r0, #36]
+ 907 0010 90F82500 		ldrb	r0, [r0, #37]	@ zero_extendqisi2
+ 908 0014 C0B2     		uxtb	r0, r0
+ 909 0016 9042     		cmp	r0, r2
+ 910 0018 04D0     		beq	.L120
+ 911 001a 0120     		movs	r0, #1
+ 912              	.L110:
+ 913 001c 0022     		movs	r2, #0
+ 914 001e 83F82420 		strb	r2, [r3, #36]
+ 915 0022 7047     		bx	lr
+ 916              	.L120:
+ 917 0024 0429     		cmp	r1, #4
+ 918 0026 F9D8     		bhi	.L110
+ 919 0028 DFE801F0 		tbb	[pc, r1]
+ 920              	.L112:
+ 921 002c 03       		.byte	(.L116-.L112)/2
+ 922 002d 07       		.byte	(.L115-.L112)/2
+ 923 002e 0A       		.byte	(.L114-.L112)/2
+ 924 002f 0D       		.byte	(.L113-.L112)/2
+ 925 0030 10       		.byte	(.L111-.L112)/2
+ 926 0031 00       		.p2align 1
+ 927              	.L116:
+ 928 0032 0022     		movs	r2, #0
+ 929 0034 DA62     		str	r2, [r3, #44]
+ 930 0036 0846     		mov	r0, r1
+ 931 0038 F0E7     		b	.L110
+ 932              	.L115:
+ 933 003a 0020     		movs	r0, #0
+ 934 003c 1863     		str	r0, [r3, #48]
+ 935 003e EDE7     		b	.L110
+ 936              	.L114:
+ 937 0040 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 17
+
+
+ 938 0042 5863     		str	r0, [r3, #52]
+ 939 0044 EAE7     		b	.L110
+ 940              	.L113:
+ 941 0046 0020     		movs	r0, #0
+ 942 0048 9863     		str	r0, [r3, #56]
+ 943 004a E7E7     		b	.L110
+ 944              	.L111:
+ 945 004c 0020     		movs	r0, #0
+ 946 004e D862     		str	r0, [r3, #44]
+ 947 0050 1863     		str	r0, [r3, #48]
+ 948 0052 5863     		str	r0, [r3, #52]
+ 949 0054 9863     		str	r0, [r3, #56]
+ 950 0056 E1E7     		b	.L110
+ 951              	.L117:
+ 952 0058 0220     		movs	r0, #2
+ 953 005a 7047     		bx	lr
+ 955              		.section	.text.HAL_DMA_GetState,"ax",%progbits
+ 956              		.align	1
+ 957              		.global	HAL_DMA_GetState
+ 958              		.syntax unified
+ 959              		.thumb
+ 960              		.thumb_func
+ 962              	HAL_DMA_GetState:
+ 963              		@ args = 0, pretend = 0, frame = 0
+ 964              		@ frame_needed = 0, uses_anonymous_args = 0
+ 965              		@ link register save eliminated.
+ 966 0000 90F82500 		ldrb	r0, [r0, #37]	@ zero_extendqisi2
+ 967 0004 7047     		bx	lr
+ 969              		.section	.text.HAL_DMA_GetError,"ax",%progbits
+ 970              		.align	1
+ 971              		.global	HAL_DMA_GetError
+ 972              		.syntax unified
+ 973              		.thumb
+ 974              		.thumb_func
+ 976              	HAL_DMA_GetError:
+ 977              		@ args = 0, pretend = 0, frame = 0
+ 978              		@ frame_needed = 0, uses_anonymous_args = 0
+ 979              		@ link register save eliminated.
+ 980 0000 C06B     		ldr	r0, [r0, #60]
+ 981 0002 7047     		bx	lr
+ 983              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_dma.c
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:18     .text.DMA_SetConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:23     .text.DMA_SetConfig:00000000 DMA_SetConfig
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:63     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:68     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 DMA_CalcDMAMUXChannelBaseAndMask
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:103    .text.DMA_CalcDMAMUXChannelBaseAndMask:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:109    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:114    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 DMA_CalcDMAMUXRequestGenBaseAndMask
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:135    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:139    .text.HAL_DMA_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:145    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:244    .text.HAL_DMA_Init:000000c0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:252    .text.HAL_DMA_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:258    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:341    .text.HAL_DMA_DeInit:000000a0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:349    .text.HAL_DMA_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:355    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:396    .text.HAL_DMA_Start_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:402    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:474    .text.HAL_DMA_Abort:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:480    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:538    .text.HAL_DMA_Abort_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:544    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:602    .text.HAL_DMA_PollForTransfer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:608    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:739    .text.HAL_DMA_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:745    .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:835    .text.HAL_DMA_RegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:841    .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:865    .text.HAL_DMA_RegisterCallback:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:869    .text.HAL_DMA_RegisterCallback:00000030 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:891    .text.HAL_DMA_UnRegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:897    .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:921    .text.HAL_DMA_UnRegisterCallback:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:956    .text.HAL_DMA_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:962    .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:970    .text.HAL_DMA_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:976    .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:926    .text.HAL_DMA_UnRegisterCallback:00000031 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgnkDn.s:926    .text.HAL_DMA_UnRegisterCallback:00000032 $t
+
+UNDEFINED SYMBOLS
+HAL_GetTick

@@ -1,0 +1,170 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usbd_ioreq.c"
+  16              		.text
+  17              		.section	.text.USBD_CtlSendData,"ax",%progbits
+  18              		.align	1
+  19              		.global	USBD_CtlSendData
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	USBD_CtlSendData:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 1346     		mov	r3, r2
+  29 0004 0222     		movs	r2, #2
+  30 0006 C0F89422 		str	r2, [r0, #660]
+  31 000a 8361     		str	r3, [r0, #24]
+  32 000c C361     		str	r3, [r0, #28]
+  33 000e 0A46     		mov	r2, r1
+  34 0010 0021     		movs	r1, #0
+  35 0012 FFF7FEFF 		bl	USBD_LL_Transmit
+  36 0016 0020     		movs	r0, #0
+  37 0018 08BD     		pop	{r3, pc}
+  39              		.section	.text.USBD_CtlContinueSendData,"ax",%progbits
+  40              		.align	1
+  41              		.global	USBD_CtlContinueSendData
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  46              	USBD_CtlContinueSendData:
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49 0000 08B5     		push	{r3, lr}
+  50 0002 1346     		mov	r3, r2
+  51 0004 0A46     		mov	r2, r1
+  52 0006 0021     		movs	r1, #0
+  53 0008 FFF7FEFF 		bl	USBD_LL_Transmit
+  54 000c 0020     		movs	r0, #0
+  55 000e 08BD     		pop	{r3, pc}
+  57              		.section	.text.USBD_CtlPrepareRx,"ax",%progbits
+  58              		.align	1
+  59              		.global	USBD_CtlPrepareRx
+  60              		.syntax unified
+  61              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s 			page 2
+
+
+  62              		.thumb_func
+  64              	USBD_CtlPrepareRx:
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 08B5     		push	{r3, lr}
+  68 0002 1346     		mov	r3, r2
+  69 0004 0322     		movs	r2, #3
+  70 0006 C0F89422 		str	r2, [r0, #660]
+  71 000a C0F85831 		str	r3, [r0, #344]
+  72 000e C0F85C31 		str	r3, [r0, #348]
+  73 0012 0A46     		mov	r2, r1
+  74 0014 0021     		movs	r1, #0
+  75 0016 FFF7FEFF 		bl	USBD_LL_PrepareReceive
+  76 001a 0020     		movs	r0, #0
+  77 001c 08BD     		pop	{r3, pc}
+  79              		.section	.text.USBD_CtlContinueRx,"ax",%progbits
+  80              		.align	1
+  81              		.global	USBD_CtlContinueRx
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  86              	USBD_CtlContinueRx:
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 08B5     		push	{r3, lr}
+  90 0002 1346     		mov	r3, r2
+  91 0004 0A46     		mov	r2, r1
+  92 0006 0021     		movs	r1, #0
+  93 0008 FFF7FEFF 		bl	USBD_LL_PrepareReceive
+  94 000c 0020     		movs	r0, #0
+  95 000e 08BD     		pop	{r3, pc}
+  97              		.section	.text.USBD_CtlSendStatus,"ax",%progbits
+  98              		.align	1
+  99              		.global	USBD_CtlSendStatus
+ 100              		.syntax unified
+ 101              		.thumb
+ 102              		.thumb_func
+ 104              	USBD_CtlSendStatus:
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 08B5     		push	{r3, lr}
+ 108 0002 0422     		movs	r2, #4
+ 109 0004 C0F89422 		str	r2, [r0, #660]
+ 110 0008 0023     		movs	r3, #0
+ 111 000a 1A46     		mov	r2, r3
+ 112 000c 1946     		mov	r1, r3
+ 113 000e FFF7FEFF 		bl	USBD_LL_Transmit
+ 114 0012 0020     		movs	r0, #0
+ 115 0014 08BD     		pop	{r3, pc}
+ 117              		.section	.text.USBD_CtlReceiveStatus,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	USBD_CtlReceiveStatus
+ 120              		.syntax unified
+ 121              		.thumb
+ 122              		.thumb_func
+ 124              	USBD_CtlReceiveStatus:
+ 125              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s 			page 3
+
+
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127 0000 08B5     		push	{r3, lr}
+ 128 0002 0522     		movs	r2, #5
+ 129 0004 C0F89422 		str	r2, [r0, #660]
+ 130 0008 0023     		movs	r3, #0
+ 131 000a 1A46     		mov	r2, r3
+ 132 000c 1946     		mov	r1, r3
+ 133 000e FFF7FEFF 		bl	USBD_LL_PrepareReceive
+ 134 0012 0020     		movs	r0, #0
+ 135 0014 08BD     		pop	{r3, pc}
+ 137              		.section	.text.USBD_GetRxCount,"ax",%progbits
+ 138              		.align	1
+ 139              		.global	USBD_GetRxCount
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 144              	USBD_GetRxCount:
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147 0000 08B5     		push	{r3, lr}
+ 148 0002 FFF7FEFF 		bl	USBD_LL_GetRxDataSize
+ 149 0006 08BD     		pop	{r3, pc}
+ 151              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usbd_ioreq.c
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:18     .text.USBD_CtlSendData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:24     .text.USBD_CtlSendData:00000000 USBD_CtlSendData
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:40     .text.USBD_CtlContinueSendData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:46     .text.USBD_CtlContinueSendData:00000000 USBD_CtlContinueSendData
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:58     .text.USBD_CtlPrepareRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:64     .text.USBD_CtlPrepareRx:00000000 USBD_CtlPrepareRx
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:80     .text.USBD_CtlContinueRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:86     .text.USBD_CtlContinueRx:00000000 USBD_CtlContinueRx
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:98     .text.USBD_CtlSendStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:104    .text.USBD_CtlSendStatus:00000000 USBD_CtlSendStatus
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:118    .text.USBD_CtlReceiveStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:124    .text.USBD_CtlReceiveStatus:00000000 USBD_CtlReceiveStatus
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:138    .text.USBD_GetRxCount:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccULp5KX.s:144    .text.USBD_GetRxCount:00000000 USBD_GetRxCount
+
+UNDEFINED SYMBOLS
+USBD_LL_Transmit
+USBD_LL_PrepareReceive
+USBD_LL_GetRxDataSize

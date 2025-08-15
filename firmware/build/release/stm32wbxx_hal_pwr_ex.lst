@@ -1,0 +1,1924 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_pwr_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_PWREx_GetVoltageRange,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_PWREx_GetVoltageRange
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_PWREx_GetVoltageRange:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 024B     		ldr	r3, .L2
+  29 0002 1868     		ldr	r0, [r3]
+  30 0004 00F4C060 		and	r0, r0, #1536
+  31 0008 7047     		bx	lr
+  32              	.L3:
+  33 000a 00BF     		.align	2
+  34              	.L2:
+  35 000c 00040058 		.word	1476396032
+  37              		.section	.text.HAL_PWREx_ControlVoltageScaling,"ax",%progbits
+  38              		.align	1
+  39              		.global	HAL_PWREx_ControlVoltageScaling
+  40              		.syntax unified
+  41              		.thumb
+  42              		.thumb_func
+  44              	HAL_PWREx_ControlVoltageScaling:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48 0000 B0F5007F 		cmp	r0, #512
+  49 0004 0FD0     		beq	.L13
+  50 0006 214B     		ldr	r3, .L14
+  51 0008 1B68     		ldr	r3, [r3]
+  52 000a 03F4C063 		and	r3, r3, #1536
+  53 000e B3F5806F 		cmp	r3, #1024
+  54 0012 38D0     		beq	.L12
+  55 0014 1D4A     		ldr	r2, .L14
+  56 0016 1368     		ldr	r3, [r2]
+  57 0018 23F4C063 		bic	r3, r3, #1536
+  58 001c 43F48063 		orr	r3, r3, #1024
+  59 0020 1360     		str	r3, [r2]
+  60 0022 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 2
+
+
+  61 0024 7047     		bx	lr
+  62              	.L13:
+  63 0026 194B     		ldr	r3, .L14
+  64 0028 1B68     		ldr	r3, [r3]
+  65 002a 03F4C063 		and	r3, r3, #1536
+  66 002e B3F5007F 		cmp	r3, #512
+  67 0032 24D0     		beq	.L10
+  68 0034 154A     		ldr	r2, .L14
+  69 0036 1368     		ldr	r3, [r2]
+  70 0038 23F4C063 		bic	r3, r3, #1536
+  71 003c 43F40073 		orr	r3, r3, #512
+  72 0040 1360     		str	r3, [r2]
+  73 0042 134B     		ldr	r3, .L14+4
+  74 0044 1B68     		ldr	r3, [r3]
+  75 0046 A2F1A752 		sub	r2, r2, #350224384
+  76 004a A2F58422 		sub	r2, r2, #270336
+  77 004e A2F27D52 		subw	r2, r2, #1405
+  78 0052 A2FB0323 		umull	r2, r3, r2, r3
+  79 0056 9B0C     		lsrs	r3, r3, #18
+  80 0058 3222     		movs	r2, #50
+  81 005a 02FB03F3 		mul	r3, r2, r3
+  82 005e 00E0     		b	.L7
+  83              	.L9:
+  84 0060 013B     		subs	r3, r3, #1
+  85              	.L7:
+  86 0062 0A4A     		ldr	r2, .L14
+  87 0064 5269     		ldr	r2, [r2, #20]
+  88 0066 12F4806F 		tst	r2, #1024
+  89 006a 01D0     		beq	.L8
+  90 006c 002B     		cmp	r3, #0
+  91 006e F7D1     		bne	.L9
+  92              	.L8:
+  93 0070 064B     		ldr	r3, .L14
+  94 0072 5B69     		ldr	r3, [r3, #20]
+  95 0074 13F4806F 		tst	r3, #1024
+  96 0078 03D1     		bne	.L11
+  97 007a 0020     		movs	r0, #0
+  98 007c 7047     		bx	lr
+  99              	.L10:
+ 100 007e 0020     		movs	r0, #0
+ 101 0080 7047     		bx	lr
+ 102              	.L11:
+ 103 0082 0320     		movs	r0, #3
+ 104 0084 7047     		bx	lr
+ 105              	.L12:
+ 106 0086 0020     		movs	r0, #0
+ 107 0088 7047     		bx	lr
+ 108              	.L15:
+ 109 008a 00BF     		.align	2
+ 110              	.L14:
+ 111 008c 00040058 		.word	1476396032
+ 112 0090 00000000 		.word	SystemCoreClock
+ 114              		.section	.text.HAL_PWREx_EnableBatteryCharging,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	HAL_PWREx_EnableBatteryCharging
+ 117              		.syntax unified
+ 118              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 3
+
+
+ 119              		.thumb_func
+ 121              	HAL_PWREx_EnableBatteryCharging:
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
+ 125 0000 054A     		ldr	r2, .L17
+ 126 0002 D368     		ldr	r3, [r2, #12]
+ 127 0004 23F40073 		bic	r3, r3, #512
+ 128 0008 0343     		orrs	r3, r3, r0
+ 129 000a D360     		str	r3, [r2, #12]
+ 130 000c D368     		ldr	r3, [r2, #12]
+ 131 000e 43F48073 		orr	r3, r3, #256
+ 132 0012 D360     		str	r3, [r2, #12]
+ 133 0014 7047     		bx	lr
+ 134              	.L18:
+ 135 0016 00BF     		.align	2
+ 136              	.L17:
+ 137 0018 00040058 		.word	1476396032
+ 139              		.section	.text.HAL_PWREx_DisableBatteryCharging,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	HAL_PWREx_DisableBatteryCharging
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 146              	HAL_PWREx_DisableBatteryCharging:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 0000 024A     		ldr	r2, .L20
+ 151 0002 D368     		ldr	r3, [r2, #12]
+ 152 0004 23F48073 		bic	r3, r3, #256
+ 153 0008 D360     		str	r3, [r2, #12]
+ 154 000a 7047     		bx	lr
+ 155              	.L21:
+ 156              		.align	2
+ 157              	.L20:
+ 158 000c 00040058 		.word	1476396032
+ 160              		.section	.text.HAL_PWREx_EnableVddUSB,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	HAL_PWREx_EnableVddUSB
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	HAL_PWREx_EnableVddUSB:
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170              		@ link register save eliminated.
+ 171 0000 024A     		ldr	r2, .L23
+ 172 0002 5368     		ldr	r3, [r2, #4]
+ 173 0004 43F48063 		orr	r3, r3, #1024
+ 174 0008 5360     		str	r3, [r2, #4]
+ 175 000a 7047     		bx	lr
+ 176              	.L24:
+ 177              		.align	2
+ 178              	.L23:
+ 179 000c 00040058 		.word	1476396032
+ 181              		.section	.text.HAL_PWREx_DisableVddUSB,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 4
+
+
+ 182              		.align	1
+ 183              		.global	HAL_PWREx_DisableVddUSB
+ 184              		.syntax unified
+ 185              		.thumb
+ 186              		.thumb_func
+ 188              	HAL_PWREx_DisableVddUSB:
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192 0000 024A     		ldr	r2, .L26
+ 193 0002 5368     		ldr	r3, [r2, #4]
+ 194 0004 23F48063 		bic	r3, r3, #1024
+ 195 0008 5360     		str	r3, [r2, #4]
+ 196 000a 7047     		bx	lr
+ 197              	.L27:
+ 198              		.align	2
+ 199              	.L26:
+ 200 000c 00040058 		.word	1476396032
+ 202              		.section	.text.HAL_PWREx_EnableInternalWakeUpLine,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HAL_PWREx_EnableInternalWakeUpLine
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	HAL_PWREx_EnableInternalWakeUpLine:
+ 210              		@ args = 0, pretend = 0, frame = 0
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212              		@ link register save eliminated.
+ 213 0000 024A     		ldr	r2, .L29
+ 214 0002 9368     		ldr	r3, [r2, #8]
+ 215 0004 43F40043 		orr	r3, r3, #32768
+ 216 0008 9360     		str	r3, [r2, #8]
+ 217 000a 7047     		bx	lr
+ 218              	.L30:
+ 219              		.align	2
+ 220              	.L29:
+ 221 000c 00040058 		.word	1476396032
+ 223              		.section	.text.HAL_PWREx_DisableInternalWakeUpLine,"ax",%progbits
+ 224              		.align	1
+ 225              		.global	HAL_PWREx_DisableInternalWakeUpLine
+ 226              		.syntax unified
+ 227              		.thumb
+ 228              		.thumb_func
+ 230              	HAL_PWREx_DisableInternalWakeUpLine:
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234 0000 024A     		ldr	r2, .L32
+ 235 0002 9368     		ldr	r3, [r2, #8]
+ 236 0004 23F40043 		bic	r3, r3, #32768
+ 237 0008 9360     		str	r3, [r2, #8]
+ 238 000a 7047     		bx	lr
+ 239              	.L33:
+ 240              		.align	2
+ 241              	.L32:
+ 242 000c 00040058 		.word	1476396032
+ 244              		.section	.text.HAL_PWREx_EnableBORH_SMPSBypassIT,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 5
+
+
+ 245              		.align	1
+ 246              		.global	HAL_PWREx_EnableBORH_SMPSBypassIT
+ 247              		.syntax unified
+ 248              		.thumb
+ 249              		.thumb_func
+ 251              	HAL_PWREx_EnableBORH_SMPSBypassIT:
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254              		@ link register save eliminated.
+ 255 0000 024A     		ldr	r2, .L35
+ 256 0002 9368     		ldr	r3, [r2, #8]
+ 257 0004 43F48073 		orr	r3, r3, #256
+ 258 0008 9360     		str	r3, [r2, #8]
+ 259 000a 7047     		bx	lr
+ 260              	.L36:
+ 261              		.align	2
+ 262              	.L35:
+ 263 000c 00040058 		.word	1476396032
+ 265              		.section	.text.HAL_PWREx_DisableBORH_SMPSBypassIT,"ax",%progbits
+ 266              		.align	1
+ 267              		.global	HAL_PWREx_DisableBORH_SMPSBypassIT
+ 268              		.syntax unified
+ 269              		.thumb
+ 270              		.thumb_func
+ 272              	HAL_PWREx_DisableBORH_SMPSBypassIT:
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276 0000 024A     		ldr	r2, .L38
+ 277 0002 9368     		ldr	r3, [r2, #8]
+ 278 0004 23F48073 		bic	r3, r3, #256
+ 279 0008 9360     		str	r3, [r2, #8]
+ 280 000a 7047     		bx	lr
+ 281              	.L39:
+ 282              		.align	2
+ 283              	.L38:
+ 284 000c 00040058 		.word	1476396032
+ 286              		.section	.text.HAL_PWREx_EnableRFPhaseIT,"ax",%progbits
+ 287              		.align	1
+ 288              		.global	HAL_PWREx_EnableRFPhaseIT
+ 289              		.syntax unified
+ 290              		.thumb
+ 291              		.thumb_func
+ 293              	HAL_PWREx_EnableRFPhaseIT:
+ 294              		@ args = 0, pretend = 0, frame = 0
+ 295              		@ frame_needed = 0, uses_anonymous_args = 0
+ 296              		@ link register save eliminated.
+ 297 0000 024A     		ldr	r2, .L41
+ 298 0002 9368     		ldr	r3, [r2, #8]
+ 299 0004 43F40063 		orr	r3, r3, #2048
+ 300 0008 9360     		str	r3, [r2, #8]
+ 301 000a 7047     		bx	lr
+ 302              	.L42:
+ 303              		.align	2
+ 304              	.L41:
+ 305 000c 00040058 		.word	1476396032
+ 307              		.section	.text.HAL_PWREx_DisableRFPhaseIT,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 6
+
+
+ 308              		.align	1
+ 309              		.global	HAL_PWREx_DisableRFPhaseIT
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 314              	HAL_PWREx_DisableRFPhaseIT:
+ 315              		@ args = 0, pretend = 0, frame = 0
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317              		@ link register save eliminated.
+ 318 0000 024A     		ldr	r2, .L44
+ 319 0002 9368     		ldr	r3, [r2, #8]
+ 320 0004 23F40063 		bic	r3, r3, #2048
+ 321 0008 9360     		str	r3, [r2, #8]
+ 322 000a 7047     		bx	lr
+ 323              	.L45:
+ 324              		.align	2
+ 325              	.L44:
+ 326 000c 00040058 		.word	1476396032
+ 328              		.section	.text.HAL_PWREx_EnableBLEActivityIT,"ax",%progbits
+ 329              		.align	1
+ 330              		.global	HAL_PWREx_EnableBLEActivityIT
+ 331              		.syntax unified
+ 332              		.thumb
+ 333              		.thumb_func
+ 335              	HAL_PWREx_EnableBLEActivityIT:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 024A     		ldr	r2, .L47
+ 340 0002 9368     		ldr	r3, [r2, #8]
+ 341 0004 43F48053 		orr	r3, r3, #4096
+ 342 0008 9360     		str	r3, [r2, #8]
+ 343 000a 7047     		bx	lr
+ 344              	.L48:
+ 345              		.align	2
+ 346              	.L47:
+ 347 000c 00040058 		.word	1476396032
+ 349              		.section	.text.HAL_PWREx_DisableBLEActivityIT,"ax",%progbits
+ 350              		.align	1
+ 351              		.global	HAL_PWREx_DisableBLEActivityIT
+ 352              		.syntax unified
+ 353              		.thumb
+ 354              		.thumb_func
+ 356              	HAL_PWREx_DisableBLEActivityIT:
+ 357              		@ args = 0, pretend = 0, frame = 0
+ 358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 359              		@ link register save eliminated.
+ 360 0000 024A     		ldr	r2, .L50
+ 361 0002 9368     		ldr	r3, [r2, #8]
+ 362 0004 23F48053 		bic	r3, r3, #4096
+ 363 0008 9360     		str	r3, [r2, #8]
+ 364 000a 7047     		bx	lr
+ 365              	.L51:
+ 366              		.align	2
+ 367              	.L50:
+ 368 000c 00040058 		.word	1476396032
+ 370              		.section	.text.HAL_PWREx_Enable802ActivityIT,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 7
+
+
+ 371              		.align	1
+ 372              		.global	HAL_PWREx_Enable802ActivityIT
+ 373              		.syntax unified
+ 374              		.thumb
+ 375              		.thumb_func
+ 377              	HAL_PWREx_Enable802ActivityIT:
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380              		@ link register save eliminated.
+ 381 0000 024A     		ldr	r2, .L53
+ 382 0002 9368     		ldr	r3, [r2, #8]
+ 383 0004 43F40053 		orr	r3, r3, #8192
+ 384 0008 9360     		str	r3, [r2, #8]
+ 385 000a 7047     		bx	lr
+ 386              	.L54:
+ 387              		.align	2
+ 388              	.L53:
+ 389 000c 00040058 		.word	1476396032
+ 391              		.section	.text.HAL_PWREx_Disable802ActivityIT,"ax",%progbits
+ 392              		.align	1
+ 393              		.global	HAL_PWREx_Disable802ActivityIT
+ 394              		.syntax unified
+ 395              		.thumb
+ 396              		.thumb_func
+ 398              	HAL_PWREx_Disable802ActivityIT:
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 402 0000 024A     		ldr	r2, .L56
+ 403 0002 9368     		ldr	r3, [r2, #8]
+ 404 0004 23F40053 		bic	r3, r3, #8192
+ 405 0008 9360     		str	r3, [r2, #8]
+ 406 000a 7047     		bx	lr
+ 407              	.L57:
+ 408              		.align	2
+ 409              	.L56:
+ 410 000c 00040058 		.word	1476396032
+ 412              		.section	.text.HAL_PWREx_EnableHOLDC2IT,"ax",%progbits
+ 413              		.align	1
+ 414              		.global	HAL_PWREx_EnableHOLDC2IT
+ 415              		.syntax unified
+ 416              		.thumb
+ 417              		.thumb_func
+ 419              	HAL_PWREx_EnableHOLDC2IT:
+ 420              		@ args = 0, pretend = 0, frame = 0
+ 421              		@ frame_needed = 0, uses_anonymous_args = 0
+ 422              		@ link register save eliminated.
+ 423 0000 024A     		ldr	r2, .L59
+ 424 0002 9368     		ldr	r3, [r2, #8]
+ 425 0004 43F48043 		orr	r3, r3, #16384
+ 426 0008 9360     		str	r3, [r2, #8]
+ 427 000a 7047     		bx	lr
+ 428              	.L60:
+ 429              		.align	2
+ 430              	.L59:
+ 431 000c 00040058 		.word	1476396032
+ 433              		.section	.text.HAL_PWREx_DisableHOLDC2IT,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 8
+
+
+ 434              		.align	1
+ 435              		.global	HAL_PWREx_DisableHOLDC2IT
+ 436              		.syntax unified
+ 437              		.thumb
+ 438              		.thumb_func
+ 440              	HAL_PWREx_DisableHOLDC2IT:
+ 441              		@ args = 0, pretend = 0, frame = 0
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443              		@ link register save eliminated.
+ 444 0000 024A     		ldr	r2, .L62
+ 445 0002 9368     		ldr	r3, [r2, #8]
+ 446 0004 23F48043 		bic	r3, r3, #16384
+ 447 0008 9360     		str	r3, [r2, #8]
+ 448 000a 7047     		bx	lr
+ 449              	.L63:
+ 450              		.align	2
+ 451              	.L62:
+ 452 000c 00040058 		.word	1476396032
+ 454              		.section	.text.HAL_PWREx_EnableGPIOPullUp,"ax",%progbits
+ 455              		.align	1
+ 456              		.global	HAL_PWREx_EnableGPIOPullUp
+ 457              		.syntax unified
+ 458              		.thumb
+ 459              		.thumb_func
+ 461              	HAL_PWREx_EnableGPIOPullUp:
+ 462              		@ args = 0, pretend = 0, frame = 0
+ 463              		@ frame_needed = 0, uses_anonymous_args = 0
+ 464              		@ link register save eliminated.
+ 465 0000 0728     		cmp	r0, #7
+ 466 0002 45D8     		bhi	.L73
+ 467 0004 DFE800F0 		tbb	[pc, r0]
+ 468              	.L67:
+ 469 0008 04       		.byte	(.L72-.L67)/2
+ 470 0009 0E       		.byte	(.L71-.L67)/2
+ 471 000a 18       		.byte	(.L70-.L67)/2
+ 472 000b 22       		.byte	(.L69-.L67)/2
+ 473 000c 2C       		.byte	(.L68-.L67)/2
+ 474 000d 44       		.byte	(.L73-.L67)/2
+ 475 000e 44       		.byte	(.L73-.L67)/2
+ 476 000f 38       		.byte	(.L66-.L67)/2
+ 477              		.p2align 1
+ 478              	.L72:
+ 479 0010 204B     		ldr	r3, .L74
+ 480 0012 1A6A     		ldr	r2, [r3, #32]
+ 481 0014 0A43     		orrs	r2, r2, r1
+ 482 0016 1A62     		str	r2, [r3, #32]
+ 483 0018 5A6A     		ldr	r2, [r3, #36]
+ 484 001a 22EA0102 		bic	r2, r2, r1
+ 485 001e 5A62     		str	r2, [r3, #36]
+ 486 0020 0020     		movs	r0, #0
+ 487 0022 7047     		bx	lr
+ 488              	.L71:
+ 489 0024 1B4B     		ldr	r3, .L74
+ 490 0026 9A6A     		ldr	r2, [r3, #40]
+ 491 0028 0A43     		orrs	r2, r2, r1
+ 492 002a 9A62     		str	r2, [r3, #40]
+ 493 002c DA6A     		ldr	r2, [r3, #44]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 9
+
+
+ 494 002e 22EA0102 		bic	r2, r2, r1
+ 495 0032 DA62     		str	r2, [r3, #44]
+ 496 0034 0020     		movs	r0, #0
+ 497 0036 7047     		bx	lr
+ 498              	.L70:
+ 499 0038 164B     		ldr	r3, .L74
+ 500 003a 1A6B     		ldr	r2, [r3, #48]
+ 501 003c 0A43     		orrs	r2, r2, r1
+ 502 003e 1A63     		str	r2, [r3, #48]
+ 503 0040 5A6B     		ldr	r2, [r3, #52]
+ 504 0042 22EA0102 		bic	r2, r2, r1
+ 505 0046 5A63     		str	r2, [r3, #52]
+ 506 0048 0020     		movs	r0, #0
+ 507 004a 7047     		bx	lr
+ 508              	.L69:
+ 509 004c 114B     		ldr	r3, .L74
+ 510 004e 9A6B     		ldr	r2, [r3, #56]
+ 511 0050 0A43     		orrs	r2, r2, r1
+ 512 0052 9A63     		str	r2, [r3, #56]
+ 513 0054 DA6B     		ldr	r2, [r3, #60]
+ 514 0056 22EA0102 		bic	r2, r2, r1
+ 515 005a DA63     		str	r2, [r3, #60]
+ 516 005c 0020     		movs	r0, #0
+ 517 005e 7047     		bx	lr
+ 518              	.L68:
+ 519 0060 0C4B     		ldr	r3, .L74
+ 520 0062 1A6C     		ldr	r2, [r3, #64]
+ 521 0064 01F01F01 		and	r1, r1, #31
+ 522 0068 0A43     		orrs	r2, r2, r1
+ 523 006a 1A64     		str	r2, [r3, #64]
+ 524 006c 5A6C     		ldr	r2, [r3, #68]
+ 525 006e 22EA0102 		bic	r2, r2, r1
+ 526 0072 5A64     		str	r2, [r3, #68]
+ 527 0074 0020     		movs	r0, #0
+ 528 0076 7047     		bx	lr
+ 529              	.L66:
+ 530 0078 064B     		ldr	r3, .L74
+ 531 007a 9A6D     		ldr	r2, [r3, #88]
+ 532 007c 01F00B01 		and	r1, r1, #11
+ 533 0080 0A43     		orrs	r2, r2, r1
+ 534 0082 9A65     		str	r2, [r3, #88]
+ 535 0084 DA6D     		ldr	r2, [r3, #92]
+ 536 0086 22EA0102 		bic	r2, r2, r1
+ 537 008a DA65     		str	r2, [r3, #92]
+ 538 008c 0020     		movs	r0, #0
+ 539 008e 7047     		bx	lr
+ 540              	.L73:
+ 541 0090 0120     		movs	r0, #1
+ 542 0092 7047     		bx	lr
+ 543              	.L75:
+ 544              		.align	2
+ 545              	.L74:
+ 546 0094 00040058 		.word	1476396032
+ 548              		.section	.text.HAL_PWREx_DisableGPIOPullUp,"ax",%progbits
+ 549              		.align	1
+ 550              		.global	HAL_PWREx_DisableGPIOPullUp
+ 551              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 10
+
+
+ 552              		.thumb
+ 553              		.thumb_func
+ 555              	HAL_PWREx_DisableGPIOPullUp:
+ 556              		@ args = 0, pretend = 0, frame = 0
+ 557              		@ frame_needed = 0, uses_anonymous_args = 0
+ 558              		@ link register save eliminated.
+ 559 0000 0728     		cmp	r0, #7
+ 560 0002 33D8     		bhi	.L85
+ 561 0004 DFE800F0 		tbb	[pc, r0]
+ 562              	.L79:
+ 563 0008 04       		.byte	(.L84-.L79)/2
+ 564 0009 0B       		.byte	(.L83-.L79)/2
+ 565 000a 12       		.byte	(.L82-.L79)/2
+ 566 000b 19       		.byte	(.L81-.L79)/2
+ 567 000c 20       		.byte	(.L80-.L79)/2
+ 568 000d 32       		.byte	(.L85-.L79)/2
+ 569 000e 32       		.byte	(.L85-.L79)/2
+ 570 000f 29       		.byte	(.L78-.L79)/2
+ 571              		.p2align 1
+ 572              	.L84:
+ 573 0010 174A     		ldr	r2, .L86
+ 574 0012 136A     		ldr	r3, [r2, #32]
+ 575 0014 23EA0103 		bic	r3, r3, r1
+ 576 0018 1362     		str	r3, [r2, #32]
+ 577 001a 0020     		movs	r0, #0
+ 578 001c 7047     		bx	lr
+ 579              	.L83:
+ 580 001e 144A     		ldr	r2, .L86
+ 581 0020 936A     		ldr	r3, [r2, #40]
+ 582 0022 23EA0103 		bic	r3, r3, r1
+ 583 0026 9362     		str	r3, [r2, #40]
+ 584 0028 0020     		movs	r0, #0
+ 585 002a 7047     		bx	lr
+ 586              	.L82:
+ 587 002c 104A     		ldr	r2, .L86
+ 588 002e 136B     		ldr	r3, [r2, #48]
+ 589 0030 23EA0103 		bic	r3, r3, r1
+ 590 0034 1363     		str	r3, [r2, #48]
+ 591 0036 0020     		movs	r0, #0
+ 592 0038 7047     		bx	lr
+ 593              	.L81:
+ 594 003a 0D4A     		ldr	r2, .L86
+ 595 003c 936B     		ldr	r3, [r2, #56]
+ 596 003e 23EA0103 		bic	r3, r3, r1
+ 597 0042 9363     		str	r3, [r2, #56]
+ 598 0044 0020     		movs	r0, #0
+ 599 0046 7047     		bx	lr
+ 600              	.L80:
+ 601 0048 094A     		ldr	r2, .L86
+ 602 004a 136C     		ldr	r3, [r2, #64]
+ 603 004c 01F01F01 		and	r1, r1, #31
+ 604 0050 23EA0101 		bic	r1, r3, r1
+ 605 0054 1164     		str	r1, [r2, #64]
+ 606 0056 0020     		movs	r0, #0
+ 607 0058 7047     		bx	lr
+ 608              	.L78:
+ 609 005a 054A     		ldr	r2, .L86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 11
+
+
+ 610 005c 936D     		ldr	r3, [r2, #88]
+ 611 005e 01F00B01 		and	r1, r1, #11
+ 612 0062 23EA0103 		bic	r3, r3, r1
+ 613 0066 9365     		str	r3, [r2, #88]
+ 614 0068 0020     		movs	r0, #0
+ 615 006a 7047     		bx	lr
+ 616              	.L85:
+ 617 006c 0120     		movs	r0, #1
+ 618 006e 7047     		bx	lr
+ 619              	.L87:
+ 620              		.align	2
+ 621              	.L86:
+ 622 0070 00040058 		.word	1476396032
+ 624              		.section	.text.HAL_PWREx_EnableGPIOPullDown,"ax",%progbits
+ 625              		.align	1
+ 626              		.global	HAL_PWREx_EnableGPIOPullDown
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 631              	HAL_PWREx_EnableGPIOPullDown:
+ 632              		@ args = 0, pretend = 0, frame = 0
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634              		@ link register save eliminated.
+ 635 0000 0728     		cmp	r0, #7
+ 636 0002 45D8     		bhi	.L97
+ 637 0004 DFE800F0 		tbb	[pc, r0]
+ 638              	.L91:
+ 639 0008 04       		.byte	(.L96-.L91)/2
+ 640 0009 0E       		.byte	(.L95-.L91)/2
+ 641 000a 18       		.byte	(.L94-.L91)/2
+ 642 000b 22       		.byte	(.L93-.L91)/2
+ 643 000c 2C       		.byte	(.L92-.L91)/2
+ 644 000d 44       		.byte	(.L97-.L91)/2
+ 645 000e 44       		.byte	(.L97-.L91)/2
+ 646 000f 38       		.byte	(.L90-.L91)/2
+ 647              		.p2align 1
+ 648              	.L96:
+ 649 0010 204B     		ldr	r3, .L98
+ 650 0012 5A6A     		ldr	r2, [r3, #36]
+ 651 0014 0A43     		orrs	r2, r2, r1
+ 652 0016 5A62     		str	r2, [r3, #36]
+ 653 0018 1A6A     		ldr	r2, [r3, #32]
+ 654 001a 22EA0102 		bic	r2, r2, r1
+ 655 001e 1A62     		str	r2, [r3, #32]
+ 656 0020 0020     		movs	r0, #0
+ 657 0022 7047     		bx	lr
+ 658              	.L95:
+ 659 0024 1B4B     		ldr	r3, .L98
+ 660 0026 DA6A     		ldr	r2, [r3, #44]
+ 661 0028 0A43     		orrs	r2, r2, r1
+ 662 002a DA62     		str	r2, [r3, #44]
+ 663 002c 9A6A     		ldr	r2, [r3, #40]
+ 664 002e 22EA0102 		bic	r2, r2, r1
+ 665 0032 9A62     		str	r2, [r3, #40]
+ 666 0034 0020     		movs	r0, #0
+ 667 0036 7047     		bx	lr
+ 668              	.L94:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 12
+
+
+ 669 0038 164B     		ldr	r3, .L98
+ 670 003a 5A6B     		ldr	r2, [r3, #52]
+ 671 003c 0A43     		orrs	r2, r2, r1
+ 672 003e 5A63     		str	r2, [r3, #52]
+ 673 0040 1A6B     		ldr	r2, [r3, #48]
+ 674 0042 22EA0102 		bic	r2, r2, r1
+ 675 0046 1A63     		str	r2, [r3, #48]
+ 676 0048 0020     		movs	r0, #0
+ 677 004a 7047     		bx	lr
+ 678              	.L93:
+ 679 004c 114B     		ldr	r3, .L98
+ 680 004e DA6B     		ldr	r2, [r3, #60]
+ 681 0050 0A43     		orrs	r2, r2, r1
+ 682 0052 DA63     		str	r2, [r3, #60]
+ 683 0054 9A6B     		ldr	r2, [r3, #56]
+ 684 0056 22EA0102 		bic	r2, r2, r1
+ 685 005a 9A63     		str	r2, [r3, #56]
+ 686 005c 0020     		movs	r0, #0
+ 687 005e 7047     		bx	lr
+ 688              	.L92:
+ 689 0060 0C4B     		ldr	r3, .L98
+ 690 0062 5A6C     		ldr	r2, [r3, #68]
+ 691 0064 01F01F01 		and	r1, r1, #31
+ 692 0068 0A43     		orrs	r2, r2, r1
+ 693 006a 5A64     		str	r2, [r3, #68]
+ 694 006c 1A6C     		ldr	r2, [r3, #64]
+ 695 006e 22EA0102 		bic	r2, r2, r1
+ 696 0072 1A64     		str	r2, [r3, #64]
+ 697 0074 0020     		movs	r0, #0
+ 698 0076 7047     		bx	lr
+ 699              	.L90:
+ 700 0078 064B     		ldr	r3, .L98
+ 701 007a DA6D     		ldr	r2, [r3, #92]
+ 702 007c 01F00B01 		and	r1, r1, #11
+ 703 0080 0A43     		orrs	r2, r2, r1
+ 704 0082 DA65     		str	r2, [r3, #92]
+ 705 0084 9A6D     		ldr	r2, [r3, #88]
+ 706 0086 22EA0102 		bic	r2, r2, r1
+ 707 008a 9A65     		str	r2, [r3, #88]
+ 708 008c 0020     		movs	r0, #0
+ 709 008e 7047     		bx	lr
+ 710              	.L97:
+ 711 0090 0120     		movs	r0, #1
+ 712 0092 7047     		bx	lr
+ 713              	.L99:
+ 714              		.align	2
+ 715              	.L98:
+ 716 0094 00040058 		.word	1476396032
+ 718              		.section	.text.HAL_PWREx_DisableGPIOPullDown,"ax",%progbits
+ 719              		.align	1
+ 720              		.global	HAL_PWREx_DisableGPIOPullDown
+ 721              		.syntax unified
+ 722              		.thumb
+ 723              		.thumb_func
+ 725              	HAL_PWREx_DisableGPIOPullDown:
+ 726              		@ args = 0, pretend = 0, frame = 0
+ 727              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 13
+
+
+ 728              		@ link register save eliminated.
+ 729 0000 0728     		cmp	r0, #7
+ 730 0002 33D8     		bhi	.L109
+ 731 0004 DFE800F0 		tbb	[pc, r0]
+ 732              	.L103:
+ 733 0008 04       		.byte	(.L108-.L103)/2
+ 734 0009 0B       		.byte	(.L107-.L103)/2
+ 735 000a 12       		.byte	(.L106-.L103)/2
+ 736 000b 19       		.byte	(.L105-.L103)/2
+ 737 000c 20       		.byte	(.L104-.L103)/2
+ 738 000d 32       		.byte	(.L109-.L103)/2
+ 739 000e 32       		.byte	(.L109-.L103)/2
+ 740 000f 29       		.byte	(.L102-.L103)/2
+ 741              		.p2align 1
+ 742              	.L108:
+ 743 0010 174A     		ldr	r2, .L110
+ 744 0012 536A     		ldr	r3, [r2, #36]
+ 745 0014 23EA0103 		bic	r3, r3, r1
+ 746 0018 5362     		str	r3, [r2, #36]
+ 747 001a 0020     		movs	r0, #0
+ 748 001c 7047     		bx	lr
+ 749              	.L107:
+ 750 001e 144A     		ldr	r2, .L110
+ 751 0020 D36A     		ldr	r3, [r2, #44]
+ 752 0022 23EA0103 		bic	r3, r3, r1
+ 753 0026 D362     		str	r3, [r2, #44]
+ 754 0028 0020     		movs	r0, #0
+ 755 002a 7047     		bx	lr
+ 756              	.L106:
+ 757 002c 104A     		ldr	r2, .L110
+ 758 002e 536B     		ldr	r3, [r2, #52]
+ 759 0030 23EA0103 		bic	r3, r3, r1
+ 760 0034 5363     		str	r3, [r2, #52]
+ 761 0036 0020     		movs	r0, #0
+ 762 0038 7047     		bx	lr
+ 763              	.L105:
+ 764 003a 0D4A     		ldr	r2, .L110
+ 765 003c D36B     		ldr	r3, [r2, #60]
+ 766 003e 23EA0103 		bic	r3, r3, r1
+ 767 0042 D363     		str	r3, [r2, #60]
+ 768 0044 0020     		movs	r0, #0
+ 769 0046 7047     		bx	lr
+ 770              	.L104:
+ 771 0048 094A     		ldr	r2, .L110
+ 772 004a 536C     		ldr	r3, [r2, #68]
+ 773 004c 01F01F01 		and	r1, r1, #31
+ 774 0050 23EA0101 		bic	r1, r3, r1
+ 775 0054 5164     		str	r1, [r2, #68]
+ 776 0056 0020     		movs	r0, #0
+ 777 0058 7047     		bx	lr
+ 778              	.L102:
+ 779 005a 054A     		ldr	r2, .L110
+ 780 005c D36D     		ldr	r3, [r2, #92]
+ 781 005e 01F00B01 		and	r1, r1, #11
+ 782 0062 23EA0103 		bic	r3, r3, r1
+ 783 0066 D365     		str	r3, [r2, #92]
+ 784 0068 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 14
+
+
+ 785 006a 7047     		bx	lr
+ 786              	.L109:
+ 787 006c 0120     		movs	r0, #1
+ 788 006e 7047     		bx	lr
+ 789              	.L111:
+ 790              		.align	2
+ 791              	.L110:
+ 792 0070 00040058 		.word	1476396032
+ 794              		.section	.text.HAL_PWREx_EnablePullUpPullDownConfig,"ax",%progbits
+ 795              		.align	1
+ 796              		.global	HAL_PWREx_EnablePullUpPullDownConfig
+ 797              		.syntax unified
+ 798              		.thumb
+ 799              		.thumb_func
+ 801              	HAL_PWREx_EnablePullUpPullDownConfig:
+ 802              		@ args = 0, pretend = 0, frame = 0
+ 803              		@ frame_needed = 0, uses_anonymous_args = 0
+ 804              		@ link register save eliminated.
+ 805 0000 024A     		ldr	r2, .L113
+ 806 0002 9368     		ldr	r3, [r2, #8]
+ 807 0004 43F48063 		orr	r3, r3, #1024
+ 808 0008 9360     		str	r3, [r2, #8]
+ 809 000a 7047     		bx	lr
+ 810              	.L114:
+ 811              		.align	2
+ 812              	.L113:
+ 813 000c 00040058 		.word	1476396032
+ 815              		.section	.text.HAL_PWREx_DisablePullUpPullDownConfig,"ax",%progbits
+ 816              		.align	1
+ 817              		.global	HAL_PWREx_DisablePullUpPullDownConfig
+ 818              		.syntax unified
+ 819              		.thumb
+ 820              		.thumb_func
+ 822              	HAL_PWREx_DisablePullUpPullDownConfig:
+ 823              		@ args = 0, pretend = 0, frame = 0
+ 824              		@ frame_needed = 0, uses_anonymous_args = 0
+ 825              		@ link register save eliminated.
+ 826 0000 024A     		ldr	r2, .L116
+ 827 0002 9368     		ldr	r3, [r2, #8]
+ 828 0004 23F48063 		bic	r3, r3, #1024
+ 829 0008 9360     		str	r3, [r2, #8]
+ 830 000a 7047     		bx	lr
+ 831              	.L117:
+ 832              		.align	2
+ 833              	.L116:
+ 834 000c 00040058 		.word	1476396032
+ 836              		.section	.text.HAL_PWREx_SetBORConfig,"ax",%progbits
+ 837              		.align	1
+ 838              		.global	HAL_PWREx_SetBORConfig
+ 839              		.syntax unified
+ 840              		.thumb
+ 841              		.thumb_func
+ 843              	HAL_PWREx_SetBORConfig:
+ 844              		@ args = 0, pretend = 0, frame = 0
+ 845              		@ frame_needed = 0, uses_anonymous_args = 0
+ 846              		@ link register save eliminated.
+ 847 0000 034A     		ldr	r2, .L119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 15
+
+
+ 848 0002 D369     		ldr	r3, [r2, #28]
+ 849 0004 23F48073 		bic	r3, r3, #256
+ 850 0008 1843     		orrs	r0, r0, r3
+ 851 000a D061     		str	r0, [r2, #28]
+ 852 000c 7047     		bx	lr
+ 853              	.L120:
+ 854 000e 00BF     		.align	2
+ 855              	.L119:
+ 856 0010 00040058 		.word	1476396032
+ 858              		.section	.text.HAL_PWREx_GetBORConfig,"ax",%progbits
+ 859              		.align	1
+ 860              		.global	HAL_PWREx_GetBORConfig
+ 861              		.syntax unified
+ 862              		.thumb
+ 863              		.thumb_func
+ 865              	HAL_PWREx_GetBORConfig:
+ 866              		@ args = 0, pretend = 0, frame = 0
+ 867              		@ frame_needed = 0, uses_anonymous_args = 0
+ 868              		@ link register save eliminated.
+ 869 0000 024B     		ldr	r3, .L122
+ 870 0002 D869     		ldr	r0, [r3, #28]
+ 871 0004 00F48070 		and	r0, r0, #256
+ 872 0008 7047     		bx	lr
+ 873              	.L123:
+ 874 000a 00BF     		.align	2
+ 875              	.L122:
+ 876 000c 00040058 		.word	1476396032
+ 878              		.section	.text.HAL_PWREx_HoldCore,"ax",%progbits
+ 879              		.align	1
+ 880              		.global	HAL_PWREx_HoldCore
+ 881              		.syntax unified
+ 882              		.thumb
+ 883              		.thumb_func
+ 885              	HAL_PWREx_HoldCore:
+ 886              		@ args = 0, pretend = 0, frame = 0
+ 887              		@ frame_needed = 0, uses_anonymous_args = 0
+ 888              		@ link register save eliminated.
+ 889 0000 024A     		ldr	r2, .L125
+ 890 0002 D368     		ldr	r3, [r2, #12]
+ 891 0004 23F40043 		bic	r3, r3, #32768
+ 892 0008 D360     		str	r3, [r2, #12]
+ 893 000a 7047     		bx	lr
+ 894              	.L126:
+ 895              		.align	2
+ 896              	.L125:
+ 897 000c 00040058 		.word	1476396032
+ 899              		.section	.text.HAL_PWREx_ReleaseCore,"ax",%progbits
+ 900              		.align	1
+ 901              		.global	HAL_PWREx_ReleaseCore
+ 902              		.syntax unified
+ 903              		.thumb
+ 904              		.thumb_func
+ 906              	HAL_PWREx_ReleaseCore:
+ 907              		@ args = 0, pretend = 0, frame = 0
+ 908              		@ frame_needed = 0, uses_anonymous_args = 0
+ 909              		@ link register save eliminated.
+ 910 0000 024A     		ldr	r2, .L128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 16
+
+
+ 911 0002 D368     		ldr	r3, [r2, #12]
+ 912 0004 43F40043 		orr	r3, r3, #32768
+ 913 0008 D360     		str	r3, [r2, #12]
+ 914 000a 7047     		bx	lr
+ 915              	.L129:
+ 916              		.align	2
+ 917              	.L128:
+ 918 000c 00040058 		.word	1476396032
+ 920              		.section	.text.HAL_PWREx_EnableSRAMRetention,"ax",%progbits
+ 921              		.align	1
+ 922              		.global	HAL_PWREx_EnableSRAMRetention
+ 923              		.syntax unified
+ 924              		.thumb
+ 925              		.thumb_func
+ 927              	HAL_PWREx_EnableSRAMRetention:
+ 928              		@ args = 0, pretend = 0, frame = 0
+ 929              		@ frame_needed = 0, uses_anonymous_args = 0
+ 930              		@ link register save eliminated.
+ 931 0000 024A     		ldr	r2, .L131
+ 932 0002 9368     		ldr	r3, [r2, #8]
+ 933 0004 43F40073 		orr	r3, r3, #512
+ 934 0008 9360     		str	r3, [r2, #8]
+ 935 000a 7047     		bx	lr
+ 936              	.L132:
+ 937              		.align	2
+ 938              	.L131:
+ 939 000c 00040058 		.word	1476396032
+ 941              		.section	.text.HAL_PWREx_DisableSRAMRetention,"ax",%progbits
+ 942              		.align	1
+ 943              		.global	HAL_PWREx_DisableSRAMRetention
+ 944              		.syntax unified
+ 945              		.thumb
+ 946              		.thumb_func
+ 948              	HAL_PWREx_DisableSRAMRetention:
+ 949              		@ args = 0, pretend = 0, frame = 0
+ 950              		@ frame_needed = 0, uses_anonymous_args = 0
+ 951              		@ link register save eliminated.
+ 952 0000 024A     		ldr	r2, .L134
+ 953 0002 9368     		ldr	r3, [r2, #8]
+ 954 0004 23F40073 		bic	r3, r3, #512
+ 955 0008 9360     		str	r3, [r2, #8]
+ 956 000a 7047     		bx	lr
+ 957              	.L135:
+ 958              		.align	2
+ 959              	.L134:
+ 960 000c 00040058 		.word	1476396032
+ 962              		.section	.text.HAL_PWREx_EnableFlashPowerDown,"ax",%progbits
+ 963              		.align	1
+ 964              		.global	HAL_PWREx_EnableFlashPowerDown
+ 965              		.syntax unified
+ 966              		.thumb
+ 967              		.thumb_func
+ 969              	HAL_PWREx_EnableFlashPowerDown:
+ 970              		@ args = 0, pretend = 0, frame = 0
+ 971              		@ frame_needed = 0, uses_anonymous_args = 0
+ 972              		@ link register save eliminated.
+ 973 0000 10F0100F 		tst	r0, #16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 17
+
+
+ 974 0004 03D0     		beq	.L137
+ 975 0006 044B     		ldr	r3, .L138
+ 976 0008 4CF2B012 		movw	r2, #49584
+ 977 000c 1A60     		str	r2, [r3]
+ 978              	.L137:
+ 979 000e 024A     		ldr	r2, .L138
+ 980 0010 1368     		ldr	r3, [r2]
+ 981 0012 0343     		orrs	r3, r3, r0
+ 982 0014 1360     		str	r3, [r2]
+ 983 0016 7047     		bx	lr
+ 984              	.L139:
+ 985              		.align	2
+ 986              	.L138:
+ 987 0018 00040058 		.word	1476396032
+ 989              		.section	.text.HAL_PWREx_DisableFlashPowerDown,"ax",%progbits
+ 990              		.align	1
+ 991              		.global	HAL_PWREx_DisableFlashPowerDown
+ 992              		.syntax unified
+ 993              		.thumb
+ 994              		.thumb_func
+ 996              	HAL_PWREx_DisableFlashPowerDown:
+ 997              		@ args = 0, pretend = 0, frame = 0
+ 998              		@ frame_needed = 0, uses_anonymous_args = 0
+ 999              		@ link register save eliminated.
+ 1000 0000 024A     		ldr	r2, .L141
+ 1001 0002 1368     		ldr	r3, [r2]
+ 1002 0004 23EA0003 		bic	r3, r3, r0
+ 1003 0008 1360     		str	r3, [r2]
+ 1004 000a 7047     		bx	lr
+ 1005              	.L142:
+ 1006              		.align	2
+ 1007              	.L141:
+ 1008 000c 00040058 		.word	1476396032
+ 1010              		.section	.text.HAL_PWREx_EnablePVM1,"ax",%progbits
+ 1011              		.align	1
+ 1012              		.global	HAL_PWREx_EnablePVM1
+ 1013              		.syntax unified
+ 1014              		.thumb
+ 1015              		.thumb_func
+ 1017              	HAL_PWREx_EnablePVM1:
+ 1018              		@ args = 0, pretend = 0, frame = 0
+ 1019              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1020              		@ link register save eliminated.
+ 1021 0000 024A     		ldr	r2, .L144
+ 1022 0002 5368     		ldr	r3, [r2, #4]
+ 1023 0004 43F01003 		orr	r3, r3, #16
+ 1024 0008 5360     		str	r3, [r2, #4]
+ 1025 000a 7047     		bx	lr
+ 1026              	.L145:
+ 1027              		.align	2
+ 1028              	.L144:
+ 1029 000c 00040058 		.word	1476396032
+ 1031              		.section	.text.HAL_PWREx_DisablePVM1,"ax",%progbits
+ 1032              		.align	1
+ 1033              		.global	HAL_PWREx_DisablePVM1
+ 1034              		.syntax unified
+ 1035              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 18
+
+
+ 1036              		.thumb_func
+ 1038              	HAL_PWREx_DisablePVM1:
+ 1039              		@ args = 0, pretend = 0, frame = 0
+ 1040              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1041              		@ link register save eliminated.
+ 1042 0000 024A     		ldr	r2, .L147
+ 1043 0002 5368     		ldr	r3, [r2, #4]
+ 1044 0004 23F01003 		bic	r3, r3, #16
+ 1045 0008 5360     		str	r3, [r2, #4]
+ 1046 000a 7047     		bx	lr
+ 1047              	.L148:
+ 1048              		.align	2
+ 1049              	.L147:
+ 1050 000c 00040058 		.word	1476396032
+ 1052              		.section	.text.HAL_PWREx_EnablePVM3,"ax",%progbits
+ 1053              		.align	1
+ 1054              		.global	HAL_PWREx_EnablePVM3
+ 1055              		.syntax unified
+ 1056              		.thumb
+ 1057              		.thumb_func
+ 1059              	HAL_PWREx_EnablePVM3:
+ 1060              		@ args = 0, pretend = 0, frame = 0
+ 1061              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1062              		@ link register save eliminated.
+ 1063 0000 024A     		ldr	r2, .L150
+ 1064 0002 5368     		ldr	r3, [r2, #4]
+ 1065 0004 43F04003 		orr	r3, r3, #64
+ 1066 0008 5360     		str	r3, [r2, #4]
+ 1067 000a 7047     		bx	lr
+ 1068              	.L151:
+ 1069              		.align	2
+ 1070              	.L150:
+ 1071 000c 00040058 		.word	1476396032
+ 1073              		.section	.text.HAL_PWREx_DisablePVM3,"ax",%progbits
+ 1074              		.align	1
+ 1075              		.global	HAL_PWREx_DisablePVM3
+ 1076              		.syntax unified
+ 1077              		.thumb
+ 1078              		.thumb_func
+ 1080              	HAL_PWREx_DisablePVM3:
+ 1081              		@ args = 0, pretend = 0, frame = 0
+ 1082              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1083              		@ link register save eliminated.
+ 1084 0000 024A     		ldr	r2, .L153
+ 1085 0002 5368     		ldr	r3, [r2, #4]
+ 1086 0004 23F04003 		bic	r3, r3, #64
+ 1087 0008 5360     		str	r3, [r2, #4]
+ 1088 000a 7047     		bx	lr
+ 1089              	.L154:
+ 1090              		.align	2
+ 1091              	.L153:
+ 1092 000c 00040058 		.word	1476396032
+ 1094              		.section	.text.HAL_PWREx_ConfigPVM,"ax",%progbits
+ 1095              		.align	1
+ 1096              		.global	HAL_PWREx_ConfigPVM
+ 1097              		.syntax unified
+ 1098              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 19
+
+
+ 1099              		.thumb_func
+ 1101              	HAL_PWREx_ConfigPVM:
+ 1102              		@ args = 0, pretend = 0, frame = 0
+ 1103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1104              		@ link register save eliminated.
+ 1105 0000 0368     		ldr	r3, [r0]
+ 1106 0002 102B     		cmp	r3, #16
+ 1107 0004 03D0     		beq	.L156
+ 1108 0006 402B     		cmp	r3, #64
+ 1109 0008 40D0     		beq	.L157
+ 1110 000a 0120     		movs	r0, #1
+ 1111 000c 7047     		bx	lr
+ 1112              	.L156:
+ 1113 000e 414B     		ldr	r3, .L167
+ 1114 0010 D3F88420 		ldr	r2, [r3, #132]
+ 1115 0014 22F00042 		bic	r2, r2, #-2147483648
+ 1116 0018 C3F88420 		str	r2, [r3, #132]
+ 1117 001c D3F88020 		ldr	r2, [r3, #128]
+ 1118 0020 22F00042 		bic	r2, r2, #-2147483648
+ 1119 0024 C3F88020 		str	r2, [r3, #128]
+ 1120 0028 5A68     		ldr	r2, [r3, #4]
+ 1121 002a 22F00042 		bic	r2, r2, #-2147483648
+ 1122 002e 5A60     		str	r2, [r3, #4]
+ 1123 0030 1A68     		ldr	r2, [r3]
+ 1124 0032 22F00042 		bic	r2, r2, #-2147483648
+ 1125 0036 1A60     		str	r2, [r3]
+ 1126 0038 4368     		ldr	r3, [r0, #4]
+ 1127 003a 13F4803F 		tst	r3, #65536
+ 1128 003e 06D0     		beq	.L159
+ 1129 0040 344A     		ldr	r2, .L167
+ 1130 0042 D2F88030 		ldr	r3, [r2, #128]
+ 1131 0046 43F00043 		orr	r3, r3, #-2147483648
+ 1132 004a C2F88030 		str	r3, [r2, #128]
+ 1133              	.L159:
+ 1134 004e 4368     		ldr	r3, [r0, #4]
+ 1135 0050 13F4003F 		tst	r3, #131072
+ 1136 0054 06D0     		beq	.L160
+ 1137 0056 2F4A     		ldr	r2, .L167
+ 1138 0058 D2F88430 		ldr	r3, [r2, #132]
+ 1139 005c 43F00043 		orr	r3, r3, #-2147483648
+ 1140 0060 C2F88430 		str	r3, [r2, #132]
+ 1141              	.L160:
+ 1142 0064 4368     		ldr	r3, [r0, #4]
+ 1143 0066 13F0010F 		tst	r3, #1
+ 1144 006a 04D0     		beq	.L161
+ 1145 006c 294A     		ldr	r2, .L167
+ 1146 006e 1368     		ldr	r3, [r2]
+ 1147 0070 43F00043 		orr	r3, r3, #-2147483648
+ 1148 0074 1360     		str	r3, [r2]
+ 1149              	.L161:
+ 1150 0076 4368     		ldr	r3, [r0, #4]
+ 1151 0078 13F0020F 		tst	r3, #2
+ 1152 007c 45D0     		beq	.L165
+ 1153 007e 254A     		ldr	r2, .L167
+ 1154 0080 5368     		ldr	r3, [r2, #4]
+ 1155 0082 43F00043 		orr	r3, r3, #-2147483648
+ 1156 0086 5360     		str	r3, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 20
+
+
+ 1157 0088 0020     		movs	r0, #0
+ 1158 008a 7047     		bx	lr
+ 1159              	.L157:
+ 1160 008c 214B     		ldr	r3, .L167
+ 1161 008e D3F89420 		ldr	r2, [r3, #148]
+ 1162 0092 22F00202 		bic	r2, r2, #2
+ 1163 0096 C3F89420 		str	r2, [r3, #148]
+ 1164 009a D3F89020 		ldr	r2, [r3, #144]
+ 1165 009e 22F00202 		bic	r2, r2, #2
+ 1166 00a2 C3F89020 		str	r2, [r3, #144]
+ 1167 00a6 5A6A     		ldr	r2, [r3, #36]
+ 1168 00a8 22F00202 		bic	r2, r2, #2
+ 1169 00ac 5A62     		str	r2, [r3, #36]
+ 1170 00ae 1A6A     		ldr	r2, [r3, #32]
+ 1171 00b0 22F00202 		bic	r2, r2, #2
+ 1172 00b4 1A62     		str	r2, [r3, #32]
+ 1173 00b6 4368     		ldr	r3, [r0, #4]
+ 1174 00b8 13F4803F 		tst	r3, #65536
+ 1175 00bc 06D0     		beq	.L162
+ 1176 00be 154A     		ldr	r2, .L167
+ 1177 00c0 D2F89030 		ldr	r3, [r2, #144]
+ 1178 00c4 43F00203 		orr	r3, r3, #2
+ 1179 00c8 C2F89030 		str	r3, [r2, #144]
+ 1180              	.L162:
+ 1181 00cc 4368     		ldr	r3, [r0, #4]
+ 1182 00ce 13F4003F 		tst	r3, #131072
+ 1183 00d2 06D0     		beq	.L163
+ 1184 00d4 0F4A     		ldr	r2, .L167
+ 1185 00d6 D2F89430 		ldr	r3, [r2, #148]
+ 1186 00da 43F00203 		orr	r3, r3, #2
+ 1187 00de C2F89430 		str	r3, [r2, #148]
+ 1188              	.L163:
+ 1189 00e2 4368     		ldr	r3, [r0, #4]
+ 1190 00e4 13F0010F 		tst	r3, #1
+ 1191 00e8 04D0     		beq	.L164
+ 1192 00ea 0A4A     		ldr	r2, .L167
+ 1193 00ec 136A     		ldr	r3, [r2, #32]
+ 1194 00ee 43F00203 		orr	r3, r3, #2
+ 1195 00f2 1362     		str	r3, [r2, #32]
+ 1196              	.L164:
+ 1197 00f4 4368     		ldr	r3, [r0, #4]
+ 1198 00f6 13F0020F 		tst	r3, #2
+ 1199 00fa 08D0     		beq	.L166
+ 1200 00fc 054A     		ldr	r2, .L167
+ 1201 00fe 536A     		ldr	r3, [r2, #36]
+ 1202 0100 43F00203 		orr	r3, r3, #2
+ 1203 0104 5362     		str	r3, [r2, #36]
+ 1204 0106 0020     		movs	r0, #0
+ 1205 0108 7047     		bx	lr
+ 1206              	.L165:
+ 1207 010a 0020     		movs	r0, #0
+ 1208 010c 7047     		bx	lr
+ 1209              	.L166:
+ 1210 010e 0020     		movs	r0, #0
+ 1211 0110 7047     		bx	lr
+ 1212              	.L168:
+ 1213 0112 00BF     		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 21
+
+
+ 1214              	.L167:
+ 1215 0114 00080058 		.word	1476397056
+ 1217              		.section	.text.HAL_PWREx_ConfigSMPS,"ax",%progbits
+ 1218              		.align	1
+ 1219              		.global	HAL_PWREx_ConfigSMPS
+ 1220              		.syntax unified
+ 1221              		.thumb
+ 1222              		.thumb_func
+ 1224              	HAL_PWREx_ConfigSMPS:
+ 1225              		@ args = 0, pretend = 0, frame = 8
+ 1226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1227              		@ link register save eliminated.
+ 1228 0000 10B4     		push	{r4}
+ 1229 0002 83B0     		sub	sp, sp, #12
+ 1230 0004 0346     		mov	r3, r0
+ 1231 0006 164A     		ldr	r2, .L176
+ 1232 0008 D2F85825 		ldr	r2, [r2, #1368]
+ 1233 000c C2F30322 		ubfx	r2, r2, #8, #4
+ 1234 0010 0192     		str	r2, [sp, #4]
+ 1235 0012 019A     		ldr	r2, [sp, #4]
+ 1236 0014 6AB9     		cbnz	r2, .L170
+ 1237 0016 1348     		ldr	r0, .L176+4
+ 1238 0018 C269     		ldr	r2, [r0, #28]
+ 1239 001a 22F00F02 		bic	r2, r2, #15
+ 1240 001e 1968     		ldr	r1, [r3]
+ 1241 0020 5B68     		ldr	r3, [r3, #4]
+ 1242 0022 0B43     		orrs	r3, r3, r1
+ 1243 0024 1343     		orrs	r3, r3, r2
+ 1244 0026 C361     		str	r3, [r0, #28]
+ 1245 0028 0020     		movs	r0, #0
+ 1246              	.L171:
+ 1247 002a 03B0     		add	sp, sp, #12
+ 1248              		@ sp needed
+ 1249 002c 5DF8044B 		ldr	r4, [sp], #4
+ 1250 0030 7047     		bx	lr
+ 1251              	.L170:
+ 1252 0032 0199     		ldr	r1, [sp, #4]
+ 1253 0034 0639     		subs	r1, r1, #6
+ 1254 0036 4268     		ldr	r2, [r0, #4]
+ 1255 0038 5218     		adds	r2, r2, r1
+ 1256 003a 03D4     		bmi	.L173
+ 1257 003c 0F2A     		cmp	r2, #15
+ 1258 003e 0CDC     		bgt	.L174
+ 1259 0040 0020     		movs	r0, #0
+ 1260 0042 01E0     		b	.L172
+ 1261              	.L173:
+ 1262 0044 0022     		movs	r2, #0
+ 1263 0046 0120     		movs	r0, #1
+ 1264              	.L172:
+ 1265 0048 064C     		ldr	r4, .L176+4
+ 1266 004a E169     		ldr	r1, [r4, #28]
+ 1267 004c 21F07F01 		bic	r1, r1, #127
+ 1268 0050 1B68     		ldr	r3, [r3]
+ 1269 0052 1343     		orrs	r3, r3, r2
+ 1270 0054 0B43     		orrs	r3, r3, r1
+ 1271 0056 E361     		str	r3, [r4, #28]
+ 1272 0058 E7E7     		b	.L171
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 22
+
+
+ 1273              	.L174:
+ 1274 005a 0F22     		movs	r2, #15
+ 1275 005c 0120     		movs	r0, #1
+ 1276 005e F3E7     		b	.L172
+ 1277              	.L177:
+ 1278              		.align	2
+ 1279              	.L176:
+ 1280 0060 0070FF1F 		.word	536834048
+ 1281 0064 00040058 		.word	1476396032
+ 1283              		.section	.text.HAL_PWREx_SMPS_SetMode,"ax",%progbits
+ 1284              		.align	1
+ 1285              		.global	HAL_PWREx_SMPS_SetMode
+ 1286              		.syntax unified
+ 1287              		.thumb
+ 1288              		.thumb_func
+ 1290              	HAL_PWREx_SMPS_SetMode:
+ 1291              		@ args = 0, pretend = 0, frame = 0
+ 1292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1293              		@ link register save eliminated.
+ 1294 0000 044A     		ldr	r2, .L179
+ 1295 0002 D369     		ldr	r3, [r2, #28]
+ 1296 0004 23F40043 		bic	r3, r3, #32768
+ 1297 0008 8003     		lsls	r0, r0, #14
+ 1298 000a 00F40040 		and	r0, r0, #32768
+ 1299 000e 0343     		orrs	r3, r3, r0
+ 1300 0010 D361     		str	r3, [r2, #28]
+ 1301 0012 7047     		bx	lr
+ 1302              	.L180:
+ 1303              		.align	2
+ 1304              	.L179:
+ 1305 0014 00040058 		.word	1476396032
+ 1307              		.section	.text.HAL_PWREx_SMPS_GetEffectiveMode,"ax",%progbits
+ 1308              		.align	1
+ 1309              		.global	HAL_PWREx_SMPS_GetEffectiveMode
+ 1310              		.syntax unified
+ 1311              		.thumb
+ 1312              		.thumb_func
+ 1314              	HAL_PWREx_SMPS_GetEffectiveMode:
+ 1315              		@ args = 0, pretend = 0, frame = 0
+ 1316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1317              		@ link register save eliminated.
+ 1318 0000 024B     		ldr	r3, .L182
+ 1319 0002 5869     		ldr	r0, [r3, #20]
+ 1320 0004 00F00300 		and	r0, r0, #3
+ 1321 0008 7047     		bx	lr
+ 1322              	.L183:
+ 1323 000a 00BF     		.align	2
+ 1324              	.L182:
+ 1325 000c 00040058 		.word	1476396032
+ 1327              		.section	.text.HAL_PWREx_EnableWakeUpPin,"ax",%progbits
+ 1328              		.align	1
+ 1329              		.global	HAL_PWREx_EnableWakeUpPin
+ 1330              		.syntax unified
+ 1331              		.thumb
+ 1332              		.thumb_func
+ 1334              	HAL_PWREx_EnableWakeUpPin:
+ 1335              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 23
+
+
+ 1336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1337              		@ link register save eliminated.
+ 1338 0000 10B4     		push	{r4}
+ 1339 0002 0C4C     		ldr	r4, .L189
+ 1340 0004 E368     		ldr	r3, [r4, #12]
+ 1341 0006 00F01F02 		and	r2, r0, #31
+ 1342 000a 23EA0203 		bic	r3, r3, r2
+ 1343 000e 43EA5010 		orr	r0, r3, r0, lsr #5
+ 1344 0012 E060     		str	r0, [r4, #12]
+ 1345 0014 0129     		cmp	r1, #1
+ 1346 0016 06D0     		beq	.L188
+ 1347 0018 064B     		ldr	r3, .L189
+ 1348 001a 9968     		ldr	r1, [r3, #8]
+ 1349 001c 0A43     		orrs	r2, r2, r1
+ 1350 001e 9A60     		str	r2, [r3, #8]
+ 1351              	.L184:
+ 1352 0020 5DF8044B 		ldr	r4, [sp], #4
+ 1353 0024 7047     		bx	lr
+ 1354              	.L188:
+ 1355 0026 D4F88410 		ldr	r1, [r4, #132]
+ 1356 002a 0A43     		orrs	r2, r2, r1
+ 1357 002c C4F88420 		str	r2, [r4, #132]
+ 1358 0030 F6E7     		b	.L184
+ 1359              	.L190:
+ 1360 0032 00BF     		.align	2
+ 1361              	.L189:
+ 1362 0034 00040058 		.word	1476396032
+ 1364              		.section	.text.HAL_PWREx_GetWakeupFlag,"ax",%progbits
+ 1365              		.align	1
+ 1366              		.global	HAL_PWREx_GetWakeupFlag
+ 1367              		.syntax unified
+ 1368              		.thumb
+ 1369              		.thumb_func
+ 1371              	HAL_PWREx_GetWakeupFlag:
+ 1372              		@ args = 0, pretend = 0, frame = 0
+ 1373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1374              		@ link register save eliminated.
+ 1375 0000 044B     		ldr	r3, .L192
+ 1376 0002 1969     		ldr	r1, [r3, #16]
+ 1377 0004 00F01F02 		and	r2, r0, #31
+ 1378 0008 0123     		movs	r3, #1
+ 1379 000a 9340     		lsls	r3, r3, r2
+ 1380 000c 01EA0300 		and	r0, r1, r3
+ 1381 0010 7047     		bx	lr
+ 1382              	.L193:
+ 1383 0012 00BF     		.align	2
+ 1384              	.L192:
+ 1385 0014 00040058 		.word	1476396032
+ 1387              		.section	.text.HAL_PWREx_ClearWakeupFlag,"ax",%progbits
+ 1388              		.align	1
+ 1389              		.global	HAL_PWREx_ClearWakeupFlag
+ 1390              		.syntax unified
+ 1391              		.thumb
+ 1392              		.thumb_func
+ 1394              	HAL_PWREx_ClearWakeupFlag:
+ 1395              		@ args = 0, pretend = 0, frame = 0
+ 1396              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 24
+
+
+ 1397              		@ link register save eliminated.
+ 1398 0000 00F01F00 		and	r0, r0, #31
+ 1399 0004 0123     		movs	r3, #1
+ 1400 0006 8340     		lsls	r3, r3, r0
+ 1401 0008 054A     		ldr	r2, .L197
+ 1402 000a 9361     		str	r3, [r2, #24]
+ 1403 000c 1369     		ldr	r3, [r2, #16]
+ 1404 000e C340     		lsrs	r3, r3, r0
+ 1405 0010 13F0010F 		tst	r3, #1
+ 1406 0014 01D1     		bne	.L196
+ 1407 0016 0020     		movs	r0, #0
+ 1408 0018 7047     		bx	lr
+ 1409              	.L196:
+ 1410 001a 0120     		movs	r0, #1
+ 1411 001c 7047     		bx	lr
+ 1412              	.L198:
+ 1413 001e 00BF     		.align	2
+ 1414              	.L197:
+ 1415 0020 00040058 		.word	1476396032
+ 1417              		.section	.text.HAL_PWREx_EnableLowPowerRunMode,"ax",%progbits
+ 1418              		.align	1
+ 1419              		.global	HAL_PWREx_EnableLowPowerRunMode
+ 1420              		.syntax unified
+ 1421              		.thumb
+ 1422              		.thumb_func
+ 1424              	HAL_PWREx_EnableLowPowerRunMode:
+ 1425              		@ args = 0, pretend = 0, frame = 0
+ 1426              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1427              		@ link register save eliminated.
+ 1428 0000 024A     		ldr	r2, .L200
+ 1429 0002 1368     		ldr	r3, [r2]
+ 1430 0004 43F48043 		orr	r3, r3, #16384
+ 1431 0008 1360     		str	r3, [r2]
+ 1432 000a 7047     		bx	lr
+ 1433              	.L201:
+ 1434              		.align	2
+ 1435              	.L200:
+ 1436 000c 00040058 		.word	1476396032
+ 1438              		.section	.text.HAL_PWREx_DisableLowPowerRunMode,"ax",%progbits
+ 1439              		.align	1
+ 1440              		.global	HAL_PWREx_DisableLowPowerRunMode
+ 1441              		.syntax unified
+ 1442              		.thumb
+ 1443              		.thumb_func
+ 1445              	HAL_PWREx_DisableLowPowerRunMode:
+ 1446              		@ args = 0, pretend = 0, frame = 0
+ 1447              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1448              		@ link register save eliminated.
+ 1449 0000 124A     		ldr	r2, .L208
+ 1450 0002 1368     		ldr	r3, [r2]
+ 1451 0004 23F48043 		bic	r3, r3, #16384
+ 1452 0008 1360     		str	r3, [r2]
+ 1453 000a 114B     		ldr	r3, .L208+4
+ 1454 000c 1B68     		ldr	r3, [r3]
+ 1455 000e A2F1A752 		sub	r2, r2, #350224384
+ 1456 0012 A2F58422 		sub	r2, r2, #270336
+ 1457 0016 A2F27D52 		subw	r2, r2, #1405
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 25
+
+
+ 1458 001a A2FB0323 		umull	r2, r3, r2, r3
+ 1459 001e 9B0C     		lsrs	r3, r3, #18
+ 1460 0020 3222     		movs	r2, #50
+ 1461 0022 02FB03F3 		mul	r3, r2, r3
+ 1462 0026 00E0     		b	.L203
+ 1463              	.L205:
+ 1464 0028 013B     		subs	r3, r3, #1
+ 1465              	.L203:
+ 1466 002a 084A     		ldr	r2, .L208
+ 1467 002c 5269     		ldr	r2, [r2, #20]
+ 1468 002e 12F4007F 		tst	r2, #512
+ 1469 0032 01D0     		beq	.L204
+ 1470 0034 002B     		cmp	r3, #0
+ 1471 0036 F7D1     		bne	.L205
+ 1472              	.L204:
+ 1473 0038 044B     		ldr	r3, .L208
+ 1474 003a 5B69     		ldr	r3, [r3, #20]
+ 1475 003c 13F4007F 		tst	r3, #512
+ 1476 0040 01D1     		bne	.L207
+ 1477 0042 0020     		movs	r0, #0
+ 1478 0044 7047     		bx	lr
+ 1479              	.L207:
+ 1480 0046 0320     		movs	r0, #3
+ 1481 0048 7047     		bx	lr
+ 1482              	.L209:
+ 1483 004a 00BF     		.align	2
+ 1484              	.L208:
+ 1485 004c 00040058 		.word	1476396032
+ 1486 0050 00000000 		.word	SystemCoreClock
+ 1488              		.section	.text.HAL_PWREx_EnterSTOP0Mode,"ax",%progbits
+ 1489              		.align	1
+ 1490              		.global	HAL_PWREx_EnterSTOP0Mode
+ 1491              		.syntax unified
+ 1492              		.thumb
+ 1493              		.thumb_func
+ 1495              	HAL_PWREx_EnterSTOP0Mode:
+ 1496              		@ args = 0, pretend = 0, frame = 0
+ 1497              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1498              		@ link register save eliminated.
+ 1499 0000 0B4A     		ldr	r2, .L214
+ 1500 0002 1368     		ldr	r3, [r2]
+ 1501 0004 23F00703 		bic	r3, r3, #7
+ 1502 0008 1360     		str	r3, [r2]
+ 1503 000a 0A4A     		ldr	r2, .L214+4
+ 1504 000c 1369     		ldr	r3, [r2, #16]
+ 1505 000e 43F00403 		orr	r3, r3, #4
+ 1506 0012 1361     		str	r3, [r2, #16]
+ 1507 0014 0128     		cmp	r0, #1
+ 1508 0016 08D0     		beq	.L213
+ 1509              		.syntax unified
+ 1510              	@ 1128 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1511 0018 40BF     		sev
+ 1512              	@ 0 "" 2
+ 1513              	@ 1129 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1514 001a 20BF     		wfe
+ 1515              	@ 0 "" 2
+ 1516              	@ 1130 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 26
+
+
+ 1517 001c 20BF     		wfe
+ 1518              	@ 0 "" 2
+ 1519              		.thumb
+ 1520              		.syntax unified
+ 1521              	.L212:
+ 1522 001e 054A     		ldr	r2, .L214+4
+ 1523 0020 1369     		ldr	r3, [r2, #16]
+ 1524 0022 23F00403 		bic	r3, r3, #4
+ 1525 0026 1361     		str	r3, [r2, #16]
+ 1526 0028 7047     		bx	lr
+ 1527              	.L213:
+ 1528              		.syntax unified
+ 1529              	@ 1123 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1530 002a 30BF     		wfi
+ 1531              	@ 0 "" 2
+ 1532              		.thumb
+ 1533              		.syntax unified
+ 1534 002c F7E7     		b	.L212
+ 1535              	.L215:
+ 1536 002e 00BF     		.align	2
+ 1537              	.L214:
+ 1538 0030 00040058 		.word	1476396032
+ 1539 0034 00ED00E0 		.word	-536810240
+ 1541              		.section	.text.HAL_PWREx_EnterSTOP1Mode,"ax",%progbits
+ 1542              		.align	1
+ 1543              		.global	HAL_PWREx_EnterSTOP1Mode
+ 1544              		.syntax unified
+ 1545              		.thumb
+ 1546              		.thumb_func
+ 1548              	HAL_PWREx_EnterSTOP1Mode:
+ 1549              		@ args = 0, pretend = 0, frame = 0
+ 1550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1551              		@ link register save eliminated.
+ 1552 0000 0C4A     		ldr	r2, .L220
+ 1553 0002 1368     		ldr	r3, [r2]
+ 1554 0004 23F00703 		bic	r3, r3, #7
+ 1555 0008 43F00103 		orr	r3, r3, #1
+ 1556 000c 1360     		str	r3, [r2]
+ 1557 000e 0A4A     		ldr	r2, .L220+4
+ 1558 0010 1369     		ldr	r3, [r2, #16]
+ 1559 0012 43F00403 		orr	r3, r3, #4
+ 1560 0016 1361     		str	r3, [r2, #16]
+ 1561 0018 0128     		cmp	r0, #1
+ 1562 001a 08D0     		beq	.L219
+ 1563              		.syntax unified
+ 1564              	@ 1180 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1565 001c 40BF     		sev
+ 1566              	@ 0 "" 2
+ 1567              	@ 1181 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1568 001e 20BF     		wfe
+ 1569              	@ 0 "" 2
+ 1570              	@ 1182 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1571 0020 20BF     		wfe
+ 1572              	@ 0 "" 2
+ 1573              		.thumb
+ 1574              		.syntax unified
+ 1575              	.L218:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 27
+
+
+ 1576 0022 054A     		ldr	r2, .L220+4
+ 1577 0024 1369     		ldr	r3, [r2, #16]
+ 1578 0026 23F00403 		bic	r3, r3, #4
+ 1579 002a 1361     		str	r3, [r2, #16]
+ 1580 002c 7047     		bx	lr
+ 1581              	.L219:
+ 1582              		.syntax unified
+ 1583              	@ 1175 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1584 002e 30BF     		wfi
+ 1585              	@ 0 "" 2
+ 1586              		.thumb
+ 1587              		.syntax unified
+ 1588 0030 F7E7     		b	.L218
+ 1589              	.L221:
+ 1590 0032 00BF     		.align	2
+ 1591              	.L220:
+ 1592 0034 00040058 		.word	1476396032
+ 1593 0038 00ED00E0 		.word	-536810240
+ 1595              		.section	.text.HAL_PWREx_EnterSTOP2Mode,"ax",%progbits
+ 1596              		.align	1
+ 1597              		.global	HAL_PWREx_EnterSTOP2Mode
+ 1598              		.syntax unified
+ 1599              		.thumb
+ 1600              		.thumb_func
+ 1602              	HAL_PWREx_EnterSTOP2Mode:
+ 1603              		@ args = 0, pretend = 0, frame = 0
+ 1604              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1605              		@ link register save eliminated.
+ 1606 0000 0C4A     		ldr	r2, .L226
+ 1607 0002 1368     		ldr	r3, [r2]
+ 1608 0004 23F00703 		bic	r3, r3, #7
+ 1609 0008 43F00203 		orr	r3, r3, #2
+ 1610 000c 1360     		str	r3, [r2]
+ 1611 000e 0A4A     		ldr	r2, .L226+4
+ 1612 0010 1369     		ldr	r3, [r2, #16]
+ 1613 0012 43F00403 		orr	r3, r3, #4
+ 1614 0016 1361     		str	r3, [r2, #16]
+ 1615 0018 0128     		cmp	r0, #1
+ 1616 001a 08D0     		beq	.L225
+ 1617              		.syntax unified
+ 1618              	@ 1243 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1619 001c 40BF     		sev
+ 1620              	@ 0 "" 2
+ 1621              	@ 1244 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1622 001e 20BF     		wfe
+ 1623              	@ 0 "" 2
+ 1624              	@ 1245 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1625 0020 20BF     		wfe
+ 1626              	@ 0 "" 2
+ 1627              		.thumb
+ 1628              		.syntax unified
+ 1629              	.L224:
+ 1630 0022 054A     		ldr	r2, .L226+4
+ 1631 0024 1369     		ldr	r3, [r2, #16]
+ 1632 0026 23F00403 		bic	r3, r3, #4
+ 1633 002a 1361     		str	r3, [r2, #16]
+ 1634 002c 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 28
+
+
+ 1635              	.L225:
+ 1636              		.syntax unified
+ 1637              	@ 1238 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1638 002e 30BF     		wfi
+ 1639              	@ 0 "" 2
+ 1640              		.thumb
+ 1641              		.syntax unified
+ 1642 0030 F7E7     		b	.L224
+ 1643              	.L227:
+ 1644 0032 00BF     		.align	2
+ 1645              	.L226:
+ 1646 0034 00040058 		.word	1476396032
+ 1647 0038 00ED00E0 		.word	-536810240
+ 1649              		.section	.text.HAL_PWREx_EnterSHUTDOWNMode,"ax",%progbits
+ 1650              		.align	1
+ 1651              		.global	HAL_PWREx_EnterSHUTDOWNMode
+ 1652              		.syntax unified
+ 1653              		.thumb
+ 1654              		.thumb_func
+ 1656              	HAL_PWREx_EnterSHUTDOWNMode:
+ 1657              		@ args = 0, pretend = 0, frame = 0
+ 1658              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1659              		@ link register save eliminated.
+ 1660 0000 084A     		ldr	r2, .L229
+ 1661 0002 1368     		ldr	r3, [r2]
+ 1662 0004 23F00703 		bic	r3, r3, #7
+ 1663 0008 43F00403 		orr	r3, r3, #4
+ 1664 000c 1360     		str	r3, [r2]
+ 1665 000e 064B     		ldr	r3, .L229+4
+ 1666 0010 1A69     		ldr	r2, [r3, #16]
+ 1667 0012 42F00402 		orr	r2, r2, #4
+ 1668 0016 1A61     		str	r2, [r3, #16]
+ 1669              		.syntax unified
+ 1670              	@ 1278 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
+ 1671 0018 30BF     		wfi
+ 1672              	@ 0 "" 2
+ 1673              		.thumb
+ 1674              		.syntax unified
+ 1675 001a 1A69     		ldr	r2, [r3, #16]
+ 1676 001c 22F00402 		bic	r2, r2, #4
+ 1677 0020 1A61     		str	r2, [r3, #16]
+ 1678 0022 7047     		bx	lr
+ 1679              	.L230:
+ 1680              		.align	2
+ 1681              	.L229:
+ 1682 0024 00040058 		.word	1476396032
+ 1683 0028 00ED00E0 		.word	-536810240
+ 1685              		.section	.text.HAL_PWREx_PVM1Callback,"ax",%progbits
+ 1686              		.align	1
+ 1687              		.weak	HAL_PWREx_PVM1Callback
+ 1688              		.syntax unified
+ 1689              		.thumb
+ 1690              		.thumb_func
+ 1692              	HAL_PWREx_PVM1Callback:
+ 1693              		@ args = 0, pretend = 0, frame = 0
+ 1694              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1695              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 29
+
+
+ 1696 0000 7047     		bx	lr
+ 1698              		.section	.text.HAL_PWREx_PVM3Callback,"ax",%progbits
+ 1699              		.align	1
+ 1700              		.weak	HAL_PWREx_PVM3Callback
+ 1701              		.syntax unified
+ 1702              		.thumb
+ 1703              		.thumb_func
+ 1705              	HAL_PWREx_PVM3Callback:
+ 1706              		@ args = 0, pretend = 0, frame = 0
+ 1707              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1708              		@ link register save eliminated.
+ 1709 0000 7047     		bx	lr
+ 1711              		.section	.text.HAL_PWREx_PVD_PVM_IRQHandler,"ax",%progbits
+ 1712              		.align	1
+ 1713              		.global	HAL_PWREx_PVD_PVM_IRQHandler
+ 1714              		.syntax unified
+ 1715              		.thumb
+ 1716              		.thumb_func
+ 1718              	HAL_PWREx_PVD_PVM_IRQHandler:
+ 1719              		@ args = 0, pretend = 0, frame = 0
+ 1720              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1721 0000 08B5     		push	{r3, lr}
+ 1722 0002 114B     		ldr	r3, .L241
+ 1723 0004 DB68     		ldr	r3, [r3, #12]
+ 1724 0006 13F4803F 		tst	r3, #65536
+ 1725 000a 09D1     		bne	.L238
+ 1726              	.L234:
+ 1727 000c 0E4B     		ldr	r3, .L241
+ 1728 000e DB68     		ldr	r3, [r3, #12]
+ 1729 0010 002B     		cmp	r3, #0
+ 1730 0012 0CDB     		blt	.L239
+ 1731              	.L235:
+ 1732 0014 0C4B     		ldr	r3, .L241
+ 1733 0016 DB6A     		ldr	r3, [r3, #44]
+ 1734 0018 13F0020F 		tst	r3, #2
+ 1735 001c 0ED1     		bne	.L240
+ 1736              	.L233:
+ 1737 001e 08BD     		pop	{r3, pc}
+ 1738              	.L238:
+ 1739 0020 FFF7FEFF 		bl	HAL_PWR_PVDCallback
+ 1740 0024 084B     		ldr	r3, .L241
+ 1741 0026 4FF48032 		mov	r2, #65536
+ 1742 002a DA60     		str	r2, [r3, #12]
+ 1743 002c EEE7     		b	.L234
+ 1744              	.L239:
+ 1745 002e FFF7FEFF 		bl	HAL_PWREx_PVM1Callback
+ 1746 0032 054B     		ldr	r3, .L241
+ 1747 0034 4FF00042 		mov	r2, #-2147483648
+ 1748 0038 DA60     		str	r2, [r3, #12]
+ 1749 003a EBE7     		b	.L235
+ 1750              	.L240:
+ 1751 003c FFF7FEFF 		bl	HAL_PWREx_PVM3Callback
+ 1752 0040 014B     		ldr	r3, .L241
+ 1753 0042 0222     		movs	r2, #2
+ 1754 0044 DA62     		str	r2, [r3, #44]
+ 1755 0046 EAE7     		b	.L233
+ 1756              	.L242:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 30
+
+
+ 1757              		.align	2
+ 1758              	.L241:
+ 1759 0048 00080058 		.word	1476397056
+ 1761              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_pwr_ex.c
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:18     .text.HAL_PWREx_GetVoltageRange:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:24     .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:35     .text.HAL_PWREx_GetVoltageRange:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:38     .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:44     .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:111    .text.HAL_PWREx_ControlVoltageScaling:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:115    .text.HAL_PWREx_EnableBatteryCharging:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:121    .text.HAL_PWREx_EnableBatteryCharging:00000000 HAL_PWREx_EnableBatteryCharging
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:137    .text.HAL_PWREx_EnableBatteryCharging:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:140    .text.HAL_PWREx_DisableBatteryCharging:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:146    .text.HAL_PWREx_DisableBatteryCharging:00000000 HAL_PWREx_DisableBatteryCharging
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:158    .text.HAL_PWREx_DisableBatteryCharging:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:161    .text.HAL_PWREx_EnableVddUSB:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:167    .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:179    .text.HAL_PWREx_EnableVddUSB:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:182    .text.HAL_PWREx_DisableVddUSB:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:188    .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:200    .text.HAL_PWREx_DisableVddUSB:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:203    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:209    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 HAL_PWREx_EnableInternalWakeUpLine
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:221    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:224    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:230    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 HAL_PWREx_DisableInternalWakeUpLine
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:242    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:245    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:251    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 HAL_PWREx_EnableBORH_SMPSBypassIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:263    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:266    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:272    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 HAL_PWREx_DisableBORH_SMPSBypassIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:284    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:287    .text.HAL_PWREx_EnableRFPhaseIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:293    .text.HAL_PWREx_EnableRFPhaseIT:00000000 HAL_PWREx_EnableRFPhaseIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:305    .text.HAL_PWREx_EnableRFPhaseIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:308    .text.HAL_PWREx_DisableRFPhaseIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:314    .text.HAL_PWREx_DisableRFPhaseIT:00000000 HAL_PWREx_DisableRFPhaseIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:326    .text.HAL_PWREx_DisableRFPhaseIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:329    .text.HAL_PWREx_EnableBLEActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:335    .text.HAL_PWREx_EnableBLEActivityIT:00000000 HAL_PWREx_EnableBLEActivityIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:347    .text.HAL_PWREx_EnableBLEActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:350    .text.HAL_PWREx_DisableBLEActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:356    .text.HAL_PWREx_DisableBLEActivityIT:00000000 HAL_PWREx_DisableBLEActivityIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:368    .text.HAL_PWREx_DisableBLEActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:371    .text.HAL_PWREx_Enable802ActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:377    .text.HAL_PWREx_Enable802ActivityIT:00000000 HAL_PWREx_Enable802ActivityIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:389    .text.HAL_PWREx_Enable802ActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:392    .text.HAL_PWREx_Disable802ActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:398    .text.HAL_PWREx_Disable802ActivityIT:00000000 HAL_PWREx_Disable802ActivityIT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:410    .text.HAL_PWREx_Disable802ActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:413    .text.HAL_PWREx_EnableHOLDC2IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:419    .text.HAL_PWREx_EnableHOLDC2IT:00000000 HAL_PWREx_EnableHOLDC2IT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:431    .text.HAL_PWREx_EnableHOLDC2IT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:434    .text.HAL_PWREx_DisableHOLDC2IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:440    .text.HAL_PWREx_DisableHOLDC2IT:00000000 HAL_PWREx_DisableHOLDC2IT
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:452    .text.HAL_PWREx_DisableHOLDC2IT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:455    .text.HAL_PWREx_EnableGPIOPullUp:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 32
+
+
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:461    .text.HAL_PWREx_EnableGPIOPullUp:00000000 HAL_PWREx_EnableGPIOPullUp
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:469    .text.HAL_PWREx_EnableGPIOPullUp:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:477    .text.HAL_PWREx_EnableGPIOPullUp:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:546    .text.HAL_PWREx_EnableGPIOPullUp:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:549    .text.HAL_PWREx_DisableGPIOPullUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:555    .text.HAL_PWREx_DisableGPIOPullUp:00000000 HAL_PWREx_DisableGPIOPullUp
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:563    .text.HAL_PWREx_DisableGPIOPullUp:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:571    .text.HAL_PWREx_DisableGPIOPullUp:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:622    .text.HAL_PWREx_DisableGPIOPullUp:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:625    .text.HAL_PWREx_EnableGPIOPullDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:631    .text.HAL_PWREx_EnableGPIOPullDown:00000000 HAL_PWREx_EnableGPIOPullDown
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:639    .text.HAL_PWREx_EnableGPIOPullDown:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:647    .text.HAL_PWREx_EnableGPIOPullDown:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:716    .text.HAL_PWREx_EnableGPIOPullDown:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:719    .text.HAL_PWREx_DisableGPIOPullDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:725    .text.HAL_PWREx_DisableGPIOPullDown:00000000 HAL_PWREx_DisableGPIOPullDown
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:733    .text.HAL_PWREx_DisableGPIOPullDown:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:741    .text.HAL_PWREx_DisableGPIOPullDown:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:792    .text.HAL_PWREx_DisableGPIOPullDown:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:795    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:801    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 HAL_PWREx_EnablePullUpPullDownConfig
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:813    .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:816    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:822    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 HAL_PWREx_DisablePullUpPullDownConfig
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:834    .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:837    .text.HAL_PWREx_SetBORConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:843    .text.HAL_PWREx_SetBORConfig:00000000 HAL_PWREx_SetBORConfig
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:856    .text.HAL_PWREx_SetBORConfig:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:859    .text.HAL_PWREx_GetBORConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:865    .text.HAL_PWREx_GetBORConfig:00000000 HAL_PWREx_GetBORConfig
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:876    .text.HAL_PWREx_GetBORConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:879    .text.HAL_PWREx_HoldCore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:885    .text.HAL_PWREx_HoldCore:00000000 HAL_PWREx_HoldCore
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:897    .text.HAL_PWREx_HoldCore:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:900    .text.HAL_PWREx_ReleaseCore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:906    .text.HAL_PWREx_ReleaseCore:00000000 HAL_PWREx_ReleaseCore
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:918    .text.HAL_PWREx_ReleaseCore:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:921    .text.HAL_PWREx_EnableSRAMRetention:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:927    .text.HAL_PWREx_EnableSRAMRetention:00000000 HAL_PWREx_EnableSRAMRetention
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:939    .text.HAL_PWREx_EnableSRAMRetention:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:942    .text.HAL_PWREx_DisableSRAMRetention:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:948    .text.HAL_PWREx_DisableSRAMRetention:00000000 HAL_PWREx_DisableSRAMRetention
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:960    .text.HAL_PWREx_DisableSRAMRetention:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:963    .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:969    .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:987    .text.HAL_PWREx_EnableFlashPowerDown:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:990    .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:996    .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1008   .text.HAL_PWREx_DisableFlashPowerDown:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1011   .text.HAL_PWREx_EnablePVM1:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1017   .text.HAL_PWREx_EnablePVM1:00000000 HAL_PWREx_EnablePVM1
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1029   .text.HAL_PWREx_EnablePVM1:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1032   .text.HAL_PWREx_DisablePVM1:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1038   .text.HAL_PWREx_DisablePVM1:00000000 HAL_PWREx_DisablePVM1
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1050   .text.HAL_PWREx_DisablePVM1:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1053   .text.HAL_PWREx_EnablePVM3:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1059   .text.HAL_PWREx_EnablePVM3:00000000 HAL_PWREx_EnablePVM3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s 			page 33
+
+
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1071   .text.HAL_PWREx_EnablePVM3:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1074   .text.HAL_PWREx_DisablePVM3:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1080   .text.HAL_PWREx_DisablePVM3:00000000 HAL_PWREx_DisablePVM3
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1092   .text.HAL_PWREx_DisablePVM3:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1095   .text.HAL_PWREx_ConfigPVM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1101   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1215   .text.HAL_PWREx_ConfigPVM:00000114 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1218   .text.HAL_PWREx_ConfigSMPS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1224   .text.HAL_PWREx_ConfigSMPS:00000000 HAL_PWREx_ConfigSMPS
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1280   .text.HAL_PWREx_ConfigSMPS:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1284   .text.HAL_PWREx_SMPS_SetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1290   .text.HAL_PWREx_SMPS_SetMode:00000000 HAL_PWREx_SMPS_SetMode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1305   .text.HAL_PWREx_SMPS_SetMode:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1308   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1314   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 HAL_PWREx_SMPS_GetEffectiveMode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1325   .text.HAL_PWREx_SMPS_GetEffectiveMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1328   .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1334   .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1362   .text.HAL_PWREx_EnableWakeUpPin:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1365   .text.HAL_PWREx_GetWakeupFlag:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1371   .text.HAL_PWREx_GetWakeupFlag:00000000 HAL_PWREx_GetWakeupFlag
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1385   .text.HAL_PWREx_GetWakeupFlag:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1388   .text.HAL_PWREx_ClearWakeupFlag:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1394   .text.HAL_PWREx_ClearWakeupFlag:00000000 HAL_PWREx_ClearWakeupFlag
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1415   .text.HAL_PWREx_ClearWakeupFlag:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1418   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1424   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 HAL_PWREx_EnableLowPowerRunMode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1436   .text.HAL_PWREx_EnableLowPowerRunMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1439   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1445   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 HAL_PWREx_DisableLowPowerRunMode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1485   .text.HAL_PWREx_DisableLowPowerRunMode:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1489   .text.HAL_PWREx_EnterSTOP0Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1495   .text.HAL_PWREx_EnterSTOP0Mode:00000000 HAL_PWREx_EnterSTOP0Mode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1538   .text.HAL_PWREx_EnterSTOP0Mode:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1542   .text.HAL_PWREx_EnterSTOP1Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1548   .text.HAL_PWREx_EnterSTOP1Mode:00000000 HAL_PWREx_EnterSTOP1Mode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1592   .text.HAL_PWREx_EnterSTOP1Mode:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1596   .text.HAL_PWREx_EnterSTOP2Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1602   .text.HAL_PWREx_EnterSTOP2Mode:00000000 HAL_PWREx_EnterSTOP2Mode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1646   .text.HAL_PWREx_EnterSTOP2Mode:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1650   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1656   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 HAL_PWREx_EnterSHUTDOWNMode
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1682   .text.HAL_PWREx_EnterSHUTDOWNMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1686   .text.HAL_PWREx_PVM1Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1692   .text.HAL_PWREx_PVM1Callback:00000000 HAL_PWREx_PVM1Callback
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1699   .text.HAL_PWREx_PVM3Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1705   .text.HAL_PWREx_PVM3Callback:00000000 HAL_PWREx_PVM3Callback
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1712   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1718   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc7g4LXW.s:1759   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000048 $d
+
+UNDEFINED SYMBOLS
+SystemCoreClock
+HAL_PWR_PVDCallback

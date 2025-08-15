@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
   27:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** size_t __write(int handle, const unsigned char * buf, size_t bufSize);
   28:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
   29:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 2
 
 
   30:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @addtogroup TRACE
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
   84:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
   85:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
   86:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 3
 
 
   87:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
   46              	.LVL2:
   47              		.loc 1 124 6 discriminator 1 view .LVU5
   48 000a 08B1     		cbz	r0, .L2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 4
 
 
  125:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
   85              	.LC0:
   86 0000 20253032 		.ascii	" %02X\000"
   86      5800
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 5
 
 
   87              		.section	.text.DbgTraceBuffer,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
  126 0012 FFF7FEFF 		bl	vprintf
  127              	.LVL12:
  151:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   va_end(vaArgs);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 6
 
 
  128              		.loc 1 151 3 view .LVU25
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
  176              		.thumb
  177              		.thumb_func
  179              	DbgTraceInit:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 7
 
 
  180              	.LFB1417:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
  184              		@ frame_needed = 0, uses_anonymous_args = 0
  185              		@ link register save eliminated.
  207:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (( CFG_DEBUG_TRACE_FULL != 0 ) || ( CFG_DEBUG_TRACE_LIGHT != 0 ))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 8
 
 
  208:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   DbgOutputInit();
@@ -441,19 +441,19 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 1
  197              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
  198              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
  199              		.file 7 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dbg_trace.c
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:21     .text.DbgTraceGetFileName:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:27     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:84     .rodata.DbgTraceBuffer.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:88     .text.DbgTraceBuffer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:94     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:168    .text.DbgTraceBuffer:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:173    .text.DbgTraceInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccvilGEa.s:179    .text.DbgTraceInit:00000000 DbgTraceInit
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:21     .text.DbgTraceGetFileName:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:27     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:84     .rodata.DbgTraceBuffer.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:88     .text.DbgTraceBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:94     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:168    .text.DbgTraceBuffer:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:173    .text.DbgTraceInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccO2pIEP.s:179    .text.DbgTraceInit:00000000 DbgTraceInit
 
 UNDEFINED SYMBOLS
 strrchr

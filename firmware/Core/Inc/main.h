@@ -62,6 +62,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define DISCHARGE_Pin GPIO_PIN_0
+#define DISCHARGE_GPIO_Port GPIOA
 #define S2_Pin GPIO_PIN_14
 #define S2_GPIO_Port GPIOA
 #define S1_Pin GPIO_PIN_15
@@ -80,6 +82,8 @@ void Error_Handler(void);
 #define E1N_GPIO_Port GPIOB
 #define E0N_Pin GPIO_PIN_5
 #define E0N_GPIO_Port GPIOB
+#define EXCITER_Pin GPIO_PIN_6
+#define EXCITER_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

@@ -1,0 +1,1071 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"main.c"
+  16              		.text
+  17              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	MX_GPIO_Init:
+  24              		@ args = 0, pretend = 0, frame = 40
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  27 0004 8AB0     		sub	sp, sp, #40
+  28 0006 0024     		movs	r4, #0
+  29 0008 0594     		str	r4, [sp, #20]
+  30 000a 0694     		str	r4, [sp, #24]
+  31 000c 0794     		str	r4, [sp, #28]
+  32 000e 0894     		str	r4, [sp, #32]
+  33 0010 0994     		str	r4, [sp, #36]
+  34 0012 4FF0B043 		mov	r3, #1476395008
+  35 0016 DA6C     		ldr	r2, [r3, #76]
+  36 0018 42F00402 		orr	r2, r2, #4
+  37 001c DA64     		str	r2, [r3, #76]
+  38 001e DA6C     		ldr	r2, [r3, #76]
+  39 0020 02F00402 		and	r2, r2, #4
+  40 0024 0492     		str	r2, [sp, #16]
+  41 0026 049A     		ldr	r2, [sp, #16]
+  42 0028 DA6C     		ldr	r2, [r3, #76]
+  43 002a 42F08002 		orr	r2, r2, #128
+  44 002e DA64     		str	r2, [r3, #76]
+  45 0030 DA6C     		ldr	r2, [r3, #76]
+  46 0032 02F08002 		and	r2, r2, #128
+  47 0036 0392     		str	r2, [sp, #12]
+  48 0038 039A     		ldr	r2, [sp, #12]
+  49 003a DA6C     		ldr	r2, [r3, #76]
+  50 003c 42F00202 		orr	r2, r2, #2
+  51 0040 DA64     		str	r2, [r3, #76]
+  52 0042 DA6C     		ldr	r2, [r3, #76]
+  53 0044 02F00202 		and	r2, r2, #2
+  54 0048 0292     		str	r2, [sp, #8]
+  55 004a 029A     		ldr	r2, [sp, #8]
+  56 004c DA6C     		ldr	r2, [r3, #76]
+  57 004e 42F00102 		orr	r2, r2, #1
+  58 0052 DA64     		str	r2, [r3, #76]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 2
+
+
+  59 0054 DA6C     		ldr	r2, [r3, #76]
+  60 0056 02F00102 		and	r2, r2, #1
+  61 005a 0192     		str	r2, [sp, #4]
+  62 005c 019A     		ldr	r2, [sp, #4]
+  63 005e DA6C     		ldr	r2, [r3, #76]
+  64 0060 42F00802 		orr	r2, r2, #8
+  65 0064 DA64     		str	r2, [r3, #76]
+  66 0066 DB6C     		ldr	r3, [r3, #76]
+  67 0068 03F00803 		and	r3, r3, #8
+  68 006c 0093     		str	r3, [sp]
+  69 006e 009B     		ldr	r3, [sp]
+  70 0070 2246     		mov	r2, r4
+  71 0072 4FF44041 		mov	r1, #49152
+  72 0076 4FF09040 		mov	r0, #1207959552
+  73 007a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  74 007e 284E     		ldr	r6, .L3
+  75 0080 2246     		mov	r2, r4
+  76 0082 4FF4A051 		mov	r1, #5120
+  77 0086 3046     		mov	r0, r6
+  78 0088 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  79 008c DFF89C80 		ldr	r8, .L3+12
+  80 0090 2246     		mov	r2, r4
+  81 0092 0321     		movs	r1, #3
+  82 0094 4046     		mov	r0, r8
+  83 0096 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  84 009a 224F     		ldr	r7, .L3+4
+  85 009c 2246     		mov	r2, r4
+  86 009e 3821     		movs	r1, #56
+  87 00a0 3846     		mov	r0, r7
+  88 00a2 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  89 00a6 4FF40053 		mov	r3, #8192
+  90 00aa 0593     		str	r3, [sp, #20]
+  91 00ac 0694     		str	r4, [sp, #24]
+  92 00ae 0794     		str	r4, [sp, #28]
+  93 00b0 05A9     		add	r1, sp, #20
+  94 00b2 3046     		mov	r0, r6
+  95 00b4 FFF7FEFF 		bl	HAL_GPIO_Init
+  96 00b8 0823     		movs	r3, #8
+  97 00ba 0593     		str	r3, [sp, #20]
+  98 00bc 0694     		str	r4, [sp, #24]
+  99 00be 0794     		str	r4, [sp, #28]
+ 100 00c0 05A9     		add	r1, sp, #20
+ 101 00c2 1948     		ldr	r0, .L3+8
+ 102 00c4 FFF7FEFF 		bl	HAL_GPIO_Init
+ 103 00c8 4FF44043 		mov	r3, #49152
+ 104 00cc 0593     		str	r3, [sp, #20]
+ 105 00ce 0125     		movs	r5, #1
+ 106 00d0 0695     		str	r5, [sp, #24]
+ 107 00d2 0794     		str	r4, [sp, #28]
+ 108 00d4 0894     		str	r4, [sp, #32]
+ 109 00d6 05A9     		add	r1, sp, #20
+ 110 00d8 4FF09040 		mov	r0, #1207959552
+ 111 00dc FFF7FEFF 		bl	HAL_GPIO_Init
+ 112 00e0 4FF4A053 		mov	r3, #5120
+ 113 00e4 0593     		str	r3, [sp, #20]
+ 114 00e6 0695     		str	r5, [sp, #24]
+ 115 00e8 0794     		str	r4, [sp, #28]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 3
+
+
+ 116 00ea 0894     		str	r4, [sp, #32]
+ 117 00ec 05A9     		add	r1, sp, #20
+ 118 00ee 3046     		mov	r0, r6
+ 119 00f0 FFF7FEFF 		bl	HAL_GPIO_Init
+ 120 00f4 0323     		movs	r3, #3
+ 121 00f6 0593     		str	r3, [sp, #20]
+ 122 00f8 0695     		str	r5, [sp, #24]
+ 123 00fa 0794     		str	r4, [sp, #28]
+ 124 00fc 0894     		str	r4, [sp, #32]
+ 125 00fe 05A9     		add	r1, sp, #20
+ 126 0100 4046     		mov	r0, r8
+ 127 0102 FFF7FEFF 		bl	HAL_GPIO_Init
+ 128 0106 3823     		movs	r3, #56
+ 129 0108 0593     		str	r3, [sp, #20]
+ 130 010a 0695     		str	r5, [sp, #24]
+ 131 010c 0794     		str	r4, [sp, #28]
+ 132 010e 0894     		str	r4, [sp, #32]
+ 133 0110 05A9     		add	r1, sp, #20
+ 134 0112 3846     		mov	r0, r7
+ 135 0114 FFF7FEFF 		bl	HAL_GPIO_Init
+ 136 0118 0AB0     		add	sp, sp, #40
+ 137              		@ sp needed
+ 138 011a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 139              	.L4:
+ 140 011e 00BF     		.align	2
+ 141              	.L3:
+ 142 0120 00080048 		.word	1207961600
+ 143 0124 00040048 		.word	1207960576
+ 144 0128 001C0048 		.word	1207966720
+ 145 012c 000C0048 		.word	1207962624
+ 147              		.section	.text.Error_Handler,"ax",%progbits
+ 148              		.align	1
+ 149              		.global	Error_Handler
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 154              	Error_Handler:
+ 155              		@ Volatile: function does not return.
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
+ 159              		.syntax unified
+ 160              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 161 0000 72B6     		cpsid i
+ 162              	@ 0 "" 2
+ 163              		.thumb
+ 164              		.syntax unified
+ 165              	.L6:
+ 166 0002 FEE7     		b	.L6
+ 168              		.section	.text.MX_IPCC_Init,"ax",%progbits
+ 169              		.align	1
+ 170              		.syntax unified
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	MX_IPCC_Init:
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 4
+
+
+ 177 0000 08B5     		push	{r3, lr}
+ 178 0002 0448     		ldr	r0, .L11
+ 179 0004 044B     		ldr	r3, .L11+4
+ 180 0006 0360     		str	r3, [r0]
+ 181 0008 FFF7FEFF 		bl	HAL_IPCC_Init
+ 182 000c 00B9     		cbnz	r0, .L10
+ 183 000e 08BD     		pop	{r3, pc}
+ 184              	.L10:
+ 185 0010 FFF7FEFF 		bl	Error_Handler
+ 186              	.L12:
+ 187              		.align	2
+ 188              	.L11:
+ 189 0014 00000000 		.word	hipcc
+ 190 0018 000C0058 		.word	1476398080
+ 192              		.section	.text.MX_ADC1_Init,"ax",%progbits
+ 193              		.align	1
+ 194              		.syntax unified
+ 195              		.thumb
+ 196              		.thumb_func
+ 198              	MX_ADC1_Init:
+ 199              		@ args = 0, pretend = 0, frame = 24
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 00B5     		push	{lr}
+ 202 0002 87B0     		sub	sp, sp, #28
+ 203 0004 0023     		movs	r3, #0
+ 204 0006 0093     		str	r3, [sp]
+ 205 0008 0193     		str	r3, [sp, #4]
+ 206 000a 0293     		str	r3, [sp, #8]
+ 207 000c 0393     		str	r3, [sp, #12]
+ 208 000e 0493     		str	r3, [sp, #16]
+ 209 0010 0593     		str	r3, [sp, #20]
+ 210 0012 1848     		ldr	r0, .L19
+ 211 0014 184A     		ldr	r2, .L19+4
+ 212 0016 0260     		str	r2, [r0]
+ 213 0018 4360     		str	r3, [r0, #4]
+ 214 001a 8360     		str	r3, [r0, #8]
+ 215 001c C360     		str	r3, [r0, #12]
+ 216 001e 0361     		str	r3, [r0, #16]
+ 217 0020 0422     		movs	r2, #4
+ 218 0022 4261     		str	r2, [r0, #20]
+ 219 0024 0376     		strb	r3, [r0, #24]
+ 220 0026 4376     		strb	r3, [r0, #25]
+ 221 0028 0122     		movs	r2, #1
+ 222 002a C261     		str	r2, [r0, #28]
+ 223 002c 80F82030 		strb	r3, [r0, #32]
+ 224 0030 8362     		str	r3, [r0, #40]
+ 225 0032 C362     		str	r3, [r0, #44]
+ 226 0034 80F83030 		strb	r3, [r0, #48]
+ 227 0038 4363     		str	r3, [r0, #52]
+ 228 003a 80F83830 		strb	r3, [r0, #56]
+ 229 003e FFF7FEFF 		bl	HAL_ADC_Init
+ 230 0042 90B9     		cbnz	r0, .L17
+ 231 0044 0D4B     		ldr	r3, .L19+8
+ 232 0046 0093     		str	r3, [sp]
+ 233 0048 0623     		movs	r3, #6
+ 234 004a 0193     		str	r3, [sp, #4]
+ 235 004c 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 5
+
+
+ 236 004e 0293     		str	r3, [sp, #8]
+ 237 0050 7F22     		movs	r2, #127
+ 238 0052 0392     		str	r2, [sp, #12]
+ 239 0054 0422     		movs	r2, #4
+ 240 0056 0492     		str	r2, [sp, #16]
+ 241 0058 0593     		str	r3, [sp, #20]
+ 242 005a 6946     		mov	r1, sp
+ 243 005c 0548     		ldr	r0, .L19
+ 244 005e FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 245 0062 20B9     		cbnz	r0, .L18
+ 246 0064 07B0     		add	sp, sp, #28
+ 247              		@ sp needed
+ 248 0066 5DF804FB 		ldr	pc, [sp], #4
+ 249              	.L17:
+ 250 006a FFF7FEFF 		bl	Error_Handler
+ 251              	.L18:
+ 252 006e FFF7FEFF 		bl	Error_Handler
+ 253              	.L20:
+ 254 0072 00BF     		.align	2
+ 255              	.L19:
+ 256 0074 00000000 		.word	hadc1
+ 257 0078 00000450 		.word	1342439424
+ 258 007c 0800900C 		.word	210763784
+ 260              		.section	.text.MX_I2C1_Init,"ax",%progbits
+ 261              		.align	1
+ 262              		.syntax unified
+ 263              		.thumb
+ 264              		.thumb_func
+ 266              	MX_I2C1_Init:
+ 267              		@ args = 0, pretend = 0, frame = 0
+ 268              		@ frame_needed = 0, uses_anonymous_args = 0
+ 269 0000 08B5     		push	{r3, lr}
+ 270 0002 1148     		ldr	r0, .L29
+ 271 0004 114B     		ldr	r3, .L29+4
+ 272 0006 0360     		str	r3, [r0]
+ 273 0008 114B     		ldr	r3, .L29+8
+ 274 000a 4360     		str	r3, [r0, #4]
+ 275 000c 0023     		movs	r3, #0
+ 276 000e 8360     		str	r3, [r0, #8]
+ 277 0010 0122     		movs	r2, #1
+ 278 0012 C260     		str	r2, [r0, #12]
+ 279 0014 0361     		str	r3, [r0, #16]
+ 280 0016 4361     		str	r3, [r0, #20]
+ 281 0018 8361     		str	r3, [r0, #24]
+ 282 001a C361     		str	r3, [r0, #28]
+ 283 001c 0362     		str	r3, [r0, #32]
+ 284 001e FFF7FEFF 		bl	HAL_I2C_Init
+ 285 0022 50B9     		cbnz	r0, .L26
+ 286 0024 0021     		movs	r1, #0
+ 287 0026 0848     		ldr	r0, .L29
+ 288 0028 FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
+ 289 002c 38B9     		cbnz	r0, .L27
+ 290 002e 0021     		movs	r1, #0
+ 291 0030 0548     		ldr	r0, .L29
+ 292 0032 FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
+ 293 0036 20B9     		cbnz	r0, .L28
+ 294 0038 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 6
+
+
+ 295              	.L26:
+ 296 003a FFF7FEFF 		bl	Error_Handler
+ 297              	.L27:
+ 298 003e FFF7FEFF 		bl	Error_Handler
+ 299              	.L28:
+ 300 0042 FFF7FEFF 		bl	Error_Handler
+ 301              	.L30:
+ 302 0046 00BF     		.align	2
+ 303              	.L29:
+ 304 0048 00000000 		.word	hi2c1
+ 305 004c 00540040 		.word	1073763328
+ 306 0050 B57DB110 		.word	280067509
+ 308              		.section	.text.MX_TIM1_Init,"ax",%progbits
+ 309              		.align	1
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 314              	MX_TIM1_Init:
+ 315              		@ args = 0, pretend = 0, frame = 112
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317 0000 10B5     		push	{r4, lr}
+ 318 0002 9CB0     		sub	sp, sp, #112
+ 319 0004 0024     		movs	r4, #0
+ 320 0006 1894     		str	r4, [sp, #96]
+ 321 0008 1994     		str	r4, [sp, #100]
+ 322 000a 1A94     		str	r4, [sp, #104]
+ 323 000c 1B94     		str	r4, [sp, #108]
+ 324 000e 1594     		str	r4, [sp, #84]
+ 325 0010 1694     		str	r4, [sp, #88]
+ 326 0012 1794     		str	r4, [sp, #92]
+ 327 0014 0E94     		str	r4, [sp, #56]
+ 328 0016 0F94     		str	r4, [sp, #60]
+ 329 0018 1094     		str	r4, [sp, #64]
+ 330 001a 1194     		str	r4, [sp, #68]
+ 331 001c 1294     		str	r4, [sp, #72]
+ 332 001e 1394     		str	r4, [sp, #76]
+ 333 0020 1494     		str	r4, [sp, #80]
+ 334 0022 3422     		movs	r2, #52
+ 335 0024 2146     		mov	r1, r4
+ 336 0026 01A8     		add	r0, sp, #4
+ 337 0028 FFF7FEFF 		bl	memset
+ 338 002c 3748     		ldr	r0, .L49
+ 339 002e 384B     		ldr	r3, .L49+4
+ 340 0030 0360     		str	r3, [r0]
+ 341 0032 4460     		str	r4, [r0, #4]
+ 342 0034 8460     		str	r4, [r0, #8]
+ 343 0036 4FF6FF73 		movw	r3, #65535
+ 344 003a C360     		str	r3, [r0, #12]
+ 345 003c 0461     		str	r4, [r0, #16]
+ 346 003e 4461     		str	r4, [r0, #20]
+ 347 0040 8461     		str	r4, [r0, #24]
+ 348 0042 FFF7FEFF 		bl	HAL_TIM_Base_Init
+ 349 0046 0028     		cmp	r0, #0
+ 350 0048 4FD1     		bne	.L41
+ 351 004a 4FF48053 		mov	r3, #4096
+ 352 004e 1893     		str	r3, [sp, #96]
+ 353 0050 18A9     		add	r1, sp, #96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 7
+
+
+ 354 0052 2E48     		ldr	r0, .L49
+ 355 0054 FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
+ 356 0058 0028     		cmp	r0, #0
+ 357 005a 48D1     		bne	.L42
+ 358 005c 2B48     		ldr	r0, .L49
+ 359 005e FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 360 0062 0028     		cmp	r0, #0
+ 361 0064 45D1     		bne	.L43
+ 362 0066 2948     		ldr	r0, .L49
+ 363 0068 FFF7FEFF 		bl	HAL_TIM_OC_Init
+ 364 006c 0028     		cmp	r0, #0
+ 365 006e 42D1     		bne	.L44
+ 366 0070 0023     		movs	r3, #0
+ 367 0072 1593     		str	r3, [sp, #84]
+ 368 0074 1693     		str	r3, [sp, #88]
+ 369 0076 1793     		str	r3, [sp, #92]
+ 370 0078 15A9     		add	r1, sp, #84
+ 371 007a 2448     		ldr	r0, .L49
+ 372 007c FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+ 373 0080 0028     		cmp	r0, #0
+ 374 0082 3AD1     		bne	.L45
+ 375 0084 6023     		movs	r3, #96
+ 376 0086 0E93     		str	r3, [sp, #56]
+ 377 0088 0022     		movs	r2, #0
+ 378 008a 0F92     		str	r2, [sp, #60]
+ 379 008c 1092     		str	r2, [sp, #64]
+ 380 008e 1192     		str	r2, [sp, #68]
+ 381 0090 1292     		str	r2, [sp, #72]
+ 382 0092 1392     		str	r2, [sp, #76]
+ 383 0094 1492     		str	r2, [sp, #80]
+ 384 0096 0EA9     		add	r1, sp, #56
+ 385 0098 1C48     		ldr	r0, .L49
+ 386 009a FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 387 009e 0028     		cmp	r0, #0
+ 388 00a0 2DD1     		bne	.L46
+ 389 00a2 0023     		movs	r3, #0
+ 390 00a4 0E93     		str	r3, [sp, #56]
+ 391 00a6 0822     		movs	r2, #8
+ 392 00a8 0EA9     		add	r1, sp, #56
+ 393 00aa 1848     		ldr	r0, .L49
+ 394 00ac FFF7FEFF 		bl	HAL_TIM_OC_ConfigChannel
+ 395 00b0 38BB     		cbnz	r0, .L47
+ 396 00b2 0023     		movs	r3, #0
+ 397 00b4 0193     		str	r3, [sp, #4]
+ 398 00b6 0293     		str	r3, [sp, #8]
+ 399 00b8 0393     		str	r3, [sp, #12]
+ 400 00ba 0493     		str	r3, [sp, #16]
+ 401 00bc 0593     		str	r3, [sp, #20]
+ 402 00be 4FF40052 		mov	r2, #8192
+ 403 00c2 0692     		str	r2, [sp, #24]
+ 404 00c4 0793     		str	r3, [sp, #28]
+ 405 00c6 0893     		str	r3, [sp, #32]
+ 406 00c8 0993     		str	r3, [sp, #36]
+ 407 00ca 4FF00072 		mov	r2, #33554432
+ 408 00ce 0A92     		str	r2, [sp, #40]
+ 409 00d0 0B93     		str	r3, [sp, #44]
+ 410 00d2 0C93     		str	r3, [sp, #48]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 8
+
+
+ 411 00d4 0D93     		str	r3, [sp, #52]
+ 412 00d6 01A9     		add	r1, sp, #4
+ 413 00d8 0C48     		ldr	r0, .L49
+ 414 00da FFF7FEFF 		bl	HAL_TIMEx_ConfigBreakDeadTime
+ 415 00de 90B9     		cbnz	r0, .L48
+ 416 00e0 0A48     		ldr	r0, .L49
+ 417 00e2 FFF7FEFF 		bl	HAL_TIM_MspPostInit
+ 418 00e6 1CB0     		add	sp, sp, #112
+ 419              		@ sp needed
+ 420 00e8 10BD     		pop	{r4, pc}
+ 421              	.L41:
+ 422 00ea FFF7FEFF 		bl	Error_Handler
+ 423              	.L42:
+ 424 00ee FFF7FEFF 		bl	Error_Handler
+ 425              	.L43:
+ 426 00f2 FFF7FEFF 		bl	Error_Handler
+ 427              	.L44:
+ 428 00f6 FFF7FEFF 		bl	Error_Handler
+ 429              	.L45:
+ 430 00fa FFF7FEFF 		bl	Error_Handler
+ 431              	.L46:
+ 432 00fe FFF7FEFF 		bl	Error_Handler
+ 433              	.L47:
+ 434 0102 FFF7FEFF 		bl	Error_Handler
+ 435              	.L48:
+ 436 0106 FFF7FEFF 		bl	Error_Handler
+ 437              	.L50:
+ 438 010a 00BF     		.align	2
+ 439              	.L49:
+ 440 010c 00000000 		.word	htim1
+ 441 0110 002C0140 		.word	1073818624
+ 443              		.section	.text.MX_TIM16_Init,"ax",%progbits
+ 444              		.align	1
+ 445              		.syntax unified
+ 446              		.thumb
+ 447              		.thumb_func
+ 449              	MX_TIM16_Init:
+ 450              		@ args = 0, pretend = 0, frame = 80
+ 451              		@ frame_needed = 0, uses_anonymous_args = 0
+ 452 0000 10B5     		push	{r4, lr}
+ 453 0002 94B0     		sub	sp, sp, #80
+ 454 0004 0024     		movs	r4, #0
+ 455 0006 0D94     		str	r4, [sp, #52]
+ 456 0008 0E94     		str	r4, [sp, #56]
+ 457 000a 0F94     		str	r4, [sp, #60]
+ 458 000c 1094     		str	r4, [sp, #64]
+ 459 000e 1194     		str	r4, [sp, #68]
+ 460 0010 1294     		str	r4, [sp, #72]
+ 461 0012 1394     		str	r4, [sp, #76]
+ 462 0014 3422     		movs	r2, #52
+ 463 0016 2146     		mov	r1, r4
+ 464 0018 6846     		mov	r0, sp
+ 465 001a FFF7FEFF 		bl	memset
+ 466 001e 2248     		ldr	r0, .L63
+ 467 0020 224B     		ldr	r3, .L63+4
+ 468 0022 0360     		str	r3, [r0]
+ 469 0024 4460     		str	r4, [r0, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 9
+
+
+ 470 0026 8460     		str	r4, [r0, #8]
+ 471 0028 4FF6FF73 		movw	r3, #65535
+ 472 002c C360     		str	r3, [r0, #12]
+ 473 002e 0461     		str	r4, [r0, #16]
+ 474 0030 4461     		str	r4, [r0, #20]
+ 475 0032 8461     		str	r4, [r0, #24]
+ 476 0034 FFF7FEFF 		bl	HAL_TIM_Base_Init
+ 477 0038 0028     		cmp	r0, #0
+ 478 003a 2BD1     		bne	.L58
+ 479 003c 1A48     		ldr	r0, .L63
+ 480 003e FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 481 0042 48BB     		cbnz	r0, .L59
+ 482 0044 0821     		movs	r1, #8
+ 483 0046 1848     		ldr	r0, .L63
+ 484 0048 FFF7FEFF 		bl	HAL_TIM_OnePulse_Init
+ 485 004c 30BB     		cbnz	r0, .L60
+ 486 004e 6023     		movs	r3, #96
+ 487 0050 0D93     		str	r3, [sp, #52]
+ 488 0052 0022     		movs	r2, #0
+ 489 0054 0E92     		str	r2, [sp, #56]
+ 490 0056 0F92     		str	r2, [sp, #60]
+ 491 0058 1092     		str	r2, [sp, #64]
+ 492 005a 1192     		str	r2, [sp, #68]
+ 493 005c 1292     		str	r2, [sp, #72]
+ 494 005e 1392     		str	r2, [sp, #76]
+ 495 0060 0DA9     		add	r1, sp, #52
+ 496 0062 1148     		ldr	r0, .L63
+ 497 0064 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 498 0068 D0B9     		cbnz	r0, .L61
+ 499 006a 0023     		movs	r3, #0
+ 500 006c 0093     		str	r3, [sp]
+ 501 006e 0193     		str	r3, [sp, #4]
+ 502 0070 0293     		str	r3, [sp, #8]
+ 503 0072 0393     		str	r3, [sp, #12]
+ 504 0074 0493     		str	r3, [sp, #16]
+ 505 0076 4FF40052 		mov	r2, #8192
+ 506 007a 0592     		str	r2, [sp, #20]
+ 507 007c 0693     		str	r3, [sp, #24]
+ 508 007e 0C93     		str	r3, [sp, #48]
+ 509 0080 6946     		mov	r1, sp
+ 510 0082 0948     		ldr	r0, .L63
+ 511 0084 FFF7FEFF 		bl	HAL_TIMEx_ConfigBreakDeadTime
+ 512 0088 60B9     		cbnz	r0, .L62
+ 513 008a 0748     		ldr	r0, .L63
+ 514 008c FFF7FEFF 		bl	HAL_TIM_MspPostInit
+ 515 0090 14B0     		add	sp, sp, #80
+ 516              		@ sp needed
+ 517 0092 10BD     		pop	{r4, pc}
+ 518              	.L58:
+ 519 0094 FFF7FEFF 		bl	Error_Handler
+ 520              	.L59:
+ 521 0098 FFF7FEFF 		bl	Error_Handler
+ 522              	.L60:
+ 523 009c FFF7FEFF 		bl	Error_Handler
+ 524              	.L61:
+ 525 00a0 FFF7FEFF 		bl	Error_Handler
+ 526              	.L62:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 10
+
+
+ 527 00a4 FFF7FEFF 		bl	Error_Handler
+ 528              	.L64:
+ 529              		.align	2
+ 530              	.L63:
+ 531 00a8 00000000 		.word	htim16
+ 532 00ac 00440140 		.word	1073824768
+ 534              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
+ 535              		.align	1
+ 536              		.syntax unified
+ 537              		.thumb
+ 538              		.thumb_func
+ 540              	MX_USART1_UART_Init:
+ 541              		@ args = 0, pretend = 0, frame = 0
+ 542              		@ frame_needed = 0, uses_anonymous_args = 0
+ 543 0000 08B5     		push	{r3, lr}
+ 544 0002 1548     		ldr	r0, .L75
+ 545 0004 154B     		ldr	r3, .L75+4
+ 546 0006 0360     		str	r3, [r0]
+ 547 0008 4FF4E133 		mov	r3, #115200
+ 548 000c 4360     		str	r3, [r0, #4]
+ 549 000e 0023     		movs	r3, #0
+ 550 0010 8360     		str	r3, [r0, #8]
+ 551 0012 C360     		str	r3, [r0, #12]
+ 552 0014 0361     		str	r3, [r0, #16]
+ 553 0016 0C22     		movs	r2, #12
+ 554 0018 4261     		str	r2, [r0, #20]
+ 555 001a 8361     		str	r3, [r0, #24]
+ 556 001c C361     		str	r3, [r0, #28]
+ 557 001e 0362     		str	r3, [r0, #32]
+ 558 0020 4362     		str	r3, [r0, #36]
+ 559 0022 8362     		str	r3, [r0, #40]
+ 560 0024 FFF7FEFF 		bl	HAL_UART_Init
+ 561 0028 70B9     		cbnz	r0, .L71
+ 562 002a 0021     		movs	r1, #0
+ 563 002c 0A48     		ldr	r0, .L75
+ 564 002e FFF7FEFF 		bl	HAL_UARTEx_SetTxFifoThreshold
+ 565 0032 58B9     		cbnz	r0, .L72
+ 566 0034 0021     		movs	r1, #0
+ 567 0036 0848     		ldr	r0, .L75
+ 568 0038 FFF7FEFF 		bl	HAL_UARTEx_SetRxFifoThreshold
+ 569 003c 40B9     		cbnz	r0, .L73
+ 570 003e 0648     		ldr	r0, .L75
+ 571 0040 FFF7FEFF 		bl	HAL_UARTEx_DisableFifoMode
+ 572 0044 30B9     		cbnz	r0, .L74
+ 573 0046 08BD     		pop	{r3, pc}
+ 574              	.L71:
+ 575 0048 FFF7FEFF 		bl	Error_Handler
+ 576              	.L72:
+ 577 004c FFF7FEFF 		bl	Error_Handler
+ 578              	.L73:
+ 579 0050 FFF7FEFF 		bl	Error_Handler
+ 580              	.L74:
+ 581 0054 FFF7FEFF 		bl	Error_Handler
+ 582              	.L76:
+ 583              		.align	2
+ 584              	.L75:
+ 585 0058 00000000 		.word	huart1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 11
+
+
+ 586 005c 00380140 		.word	1073821696
+ 588              		.section	.text.MX_TIM2_Init,"ax",%progbits
+ 589              		.align	1
+ 590              		.syntax unified
+ 591              		.thumb
+ 592              		.thumb_func
+ 594              	MX_TIM2_Init:
+ 595              		@ args = 0, pretend = 0, frame = 40
+ 596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 597 0000 00B5     		push	{lr}
+ 598 0002 8BB0     		sub	sp, sp, #44
+ 599 0004 0023     		movs	r3, #0
+ 600 0006 0793     		str	r3, [sp, #28]
+ 601 0008 0893     		str	r3, [sp, #32]
+ 602 000a 0993     		str	r3, [sp, #36]
+ 603 000c 0093     		str	r3, [sp]
+ 604 000e 0193     		str	r3, [sp, #4]
+ 605 0010 0293     		str	r3, [sp, #8]
+ 606 0012 0393     		str	r3, [sp, #12]
+ 607 0014 0493     		str	r3, [sp, #16]
+ 608 0016 0593     		str	r3, [sp, #20]
+ 609 0018 0693     		str	r3, [sp, #24]
+ 610 001a 1E48     		ldr	r0, .L89
+ 611 001c 4FF08042 		mov	r2, #1073741824
+ 612 0020 0260     		str	r2, [r0]
+ 613 0022 4360     		str	r3, [r0, #4]
+ 614 0024 8360     		str	r3, [r0, #8]
+ 615 0026 4FF0FF32 		mov	r2, #-1
+ 616 002a C260     		str	r2, [r0, #12]
+ 617 002c 0361     		str	r3, [r0, #16]
+ 618 002e 8361     		str	r3, [r0, #24]
+ 619 0030 FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 620 0034 20BB     		cbnz	r0, .L84
+ 621 0036 0023     		movs	r3, #0
+ 622 0038 0793     		str	r3, [sp, #28]
+ 623 003a 0993     		str	r3, [sp, #36]
+ 624 003c 07A9     		add	r1, sp, #28
+ 625 003e 1548     		ldr	r0, .L89
+ 626 0040 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+ 627 0044 F0B9     		cbnz	r0, .L85
+ 628 0046 6023     		movs	r3, #96
+ 629 0048 0093     		str	r3, [sp]
+ 630 004a 0022     		movs	r2, #0
+ 631 004c 0192     		str	r2, [sp, #4]
+ 632 004e 0292     		str	r2, [sp, #8]
+ 633 0050 0492     		str	r2, [sp, #16]
+ 634 0052 6946     		mov	r1, sp
+ 635 0054 0F48     		ldr	r0, .L89
+ 636 0056 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 637 005a A8B9     		cbnz	r0, .L86
+ 638 005c 0422     		movs	r2, #4
+ 639 005e 6946     		mov	r1, sp
+ 640 0060 0C48     		ldr	r0, .L89
+ 641 0062 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 642 0066 88B9     		cbnz	r0, .L87
+ 643 0068 0822     		movs	r2, #8
+ 644 006a 6946     		mov	r1, sp
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 12
+
+
+ 645 006c 0948     		ldr	r0, .L89
+ 646 006e FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 647 0072 68B9     		cbnz	r0, .L88
+ 648 0074 0748     		ldr	r0, .L89
+ 649 0076 FFF7FEFF 		bl	HAL_TIM_MspPostInit
+ 650 007a 0BB0     		add	sp, sp, #44
+ 651              		@ sp needed
+ 652 007c 5DF804FB 		ldr	pc, [sp], #4
+ 653              	.L84:
+ 654 0080 FFF7FEFF 		bl	Error_Handler
+ 655              	.L85:
+ 656 0084 FFF7FEFF 		bl	Error_Handler
+ 657              	.L86:
+ 658 0088 FFF7FEFF 		bl	Error_Handler
+ 659              	.L87:
+ 660 008c FFF7FEFF 		bl	Error_Handler
+ 661              	.L88:
+ 662 0090 FFF7FEFF 		bl	Error_Handler
+ 663              	.L90:
+ 664              		.align	2
+ 665              	.L89:
+ 666 0094 00000000 		.word	htim2
+ 668              		.section	.text.MX_RTC_Init,"ax",%progbits
+ 669              		.align	1
+ 670              		.syntax unified
+ 671              		.thumb
+ 672              		.thumb_func
+ 674              	MX_RTC_Init:
+ 675              		@ args = 0, pretend = 0, frame = 0
+ 676              		@ frame_needed = 0, uses_anonymous_args = 0
+ 677 0000 08B5     		push	{r3, lr}
+ 678 0002 0E48     		ldr	r0, .L97
+ 679 0004 0E4B     		ldr	r3, .L97+4
+ 680 0006 0360     		str	r3, [r0]
+ 681 0008 0023     		movs	r3, #0
+ 682 000a 4360     		str	r3, [r0, #4]
+ 683 000c 0F22     		movs	r2, #15
+ 684 000e 8260     		str	r2, [r0, #8]
+ 685 0010 47F6FF72 		movw	r2, #32767
+ 686 0014 C260     		str	r2, [r0, #12]
+ 687 0016 0361     		str	r3, [r0, #16]
+ 688 0018 8361     		str	r3, [r0, #24]
+ 689 001a C361     		str	r3, [r0, #28]
+ 690 001c 4361     		str	r3, [r0, #20]
+ 691 001e FFF7FEFF 		bl	HAL_RTC_Init
+ 692 0022 30B9     		cbnz	r0, .L95
+ 693 0024 0022     		movs	r2, #0
+ 694 0026 1146     		mov	r1, r2
+ 695 0028 0448     		ldr	r0, .L97
+ 696 002a FFF7FEFF 		bl	HAL_RTCEx_SetWakeUpTimer
+ 697 002e 10B9     		cbnz	r0, .L96
+ 698 0030 08BD     		pop	{r3, pc}
+ 699              	.L95:
+ 700 0032 FFF7FEFF 		bl	Error_Handler
+ 701              	.L96:
+ 702 0036 FFF7FEFF 		bl	Error_Handler
+ 703              	.L98:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 13
+
+
+ 704 003a 00BF     		.align	2
+ 705              	.L97:
+ 706 003c 00000000 		.word	hrtc
+ 707 0040 00280040 		.word	1073752064
+ 709              		.section	.text.SystemClock_Config,"ax",%progbits
+ 710              		.align	1
+ 711              		.global	SystemClock_Config
+ 712              		.syntax unified
+ 713              		.thumb
+ 714              		.thumb_func
+ 716              	SystemClock_Config:
+ 717              		@ args = 0, pretend = 0, frame = 104
+ 718              		@ frame_needed = 0, uses_anonymous_args = 0
+ 719 0000 10B5     		push	{r4, lr}
+ 720 0002 9AB0     		sub	sp, sp, #104
+ 721 0004 4822     		movs	r2, #72
+ 722 0006 0021     		movs	r1, #0
+ 723 0008 08A8     		add	r0, sp, #32
+ 724 000a FFF7FEFF 		bl	memset
+ 725 000e 0024     		movs	r4, #0
+ 726 0010 0194     		str	r4, [sp, #4]
+ 727 0012 0294     		str	r4, [sp, #8]
+ 728 0014 0394     		str	r4, [sp, #12]
+ 729 0016 0494     		str	r4, [sp, #16]
+ 730 0018 0594     		str	r4, [sp, #20]
+ 731 001a 0694     		str	r4, [sp, #24]
+ 732 001c 0794     		str	r4, [sp, #28]
+ 733 001e FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
+ 734 0022 4FF0B042 		mov	r2, #1476395008
+ 735 0026 D2F89030 		ldr	r3, [r2, #144]
+ 736 002a 23F01803 		bic	r3, r3, #24
+ 737 002e 43F01003 		orr	r3, r3, #16
+ 738 0032 C2F89030 		str	r3, [r2, #144]
+ 739 0036 02F58062 		add	r2, r2, #1024
+ 740 003a 1368     		ldr	r3, [r2]
+ 741 003c 23F4C063 		bic	r3, r3, #1536
+ 742 0040 43F40073 		orr	r3, r3, #512
+ 743 0044 1360     		str	r3, [r2]
+ 744 0046 1368     		ldr	r3, [r2]
+ 745 0048 03F4C063 		and	r3, r3, #1536
+ 746 004c 0093     		str	r3, [sp]
+ 747 004e 009B     		ldr	r3, [sp]
+ 748 0050 2F23     		movs	r3, #47
+ 749 0052 0893     		str	r3, [sp, #32]
+ 750 0054 4FF48033 		mov	r3, #65536
+ 751 0058 0993     		str	r3, [sp, #36]
+ 752 005a 0123     		movs	r3, #1
+ 753 005c 0A93     		str	r3, [sp, #40]
+ 754 005e 4FF48072 		mov	r2, #256
+ 755 0062 0B92     		str	r2, [sp, #44]
+ 756 0064 0F93     		str	r3, [sp, #60]
+ 757 0066 4022     		movs	r2, #64
+ 758 0068 0C92     		str	r2, [sp, #48]
+ 759 006a 1094     		str	r4, [sp, #64]
+ 760 006c 6022     		movs	r2, #96
+ 761 006e 1192     		str	r2, [sp, #68]
+ 762 0070 0522     		movs	r2, #5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 14
+
+
+ 763 0072 0D92     		str	r2, [sp, #52]
+ 764 0074 0222     		movs	r2, #2
+ 765 0076 1392     		str	r2, [sp, #76]
+ 766 0078 1493     		str	r3, [sp, #80]
+ 767 007a 1594     		str	r4, [sp, #84]
+ 768 007c 2023     		movs	r3, #32
+ 769 007e 1693     		str	r3, [sp, #88]
+ 770 0080 4FF40033 		mov	r3, #131072
+ 771 0084 1793     		str	r3, [sp, #92]
+ 772 0086 4FF00053 		mov	r3, #536870912
+ 773 008a 1993     		str	r3, [sp, #100]
+ 774 008c 4FF00073 		mov	r3, #33554432
+ 775 0090 1893     		str	r3, [sp, #96]
+ 776 0092 08A8     		add	r0, sp, #32
+ 777 0094 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 778 0098 90B9     		cbnz	r0, .L103
+ 779 009a 6F23     		movs	r3, #111
+ 780 009c 0193     		str	r3, [sp, #4]
+ 781 009e 0321     		movs	r1, #3
+ 782 00a0 0291     		str	r1, [sp, #8]
+ 783 00a2 0023     		movs	r3, #0
+ 784 00a4 0393     		str	r3, [sp, #12]
+ 785 00a6 0493     		str	r3, [sp, #16]
+ 786 00a8 0593     		str	r3, [sp, #20]
+ 787 00aa 8022     		movs	r2, #128
+ 788 00ac 0692     		str	r2, [sp, #24]
+ 789 00ae 0793     		str	r3, [sp, #28]
+ 790 00b0 01A8     		add	r0, sp, #4
+ 791 00b2 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 792 00b6 28B9     		cbnz	r0, .L104
+ 793 00b8 FFF7FEFF 		bl	HAL_RCCEx_EnableMSIPLLMode
+ 794 00bc 1AB0     		add	sp, sp, #104
+ 795              		@ sp needed
+ 796 00be 10BD     		pop	{r4, pc}
+ 797              	.L103:
+ 798 00c0 FFF7FEFF 		bl	Error_Handler
+ 799              	.L104:
+ 800 00c4 FFF7FEFF 		bl	Error_Handler
+ 802              		.section	.text.PeriphCommonClock_Config,"ax",%progbits
+ 803              		.align	1
+ 804              		.global	PeriphCommonClock_Config
+ 805              		.syntax unified
+ 806              		.thumb
+ 807              		.thumb_func
+ 809              	PeriphCommonClock_Config:
+ 810              		@ args = 0, pretend = 0, frame = 80
+ 811              		@ frame_needed = 0, uses_anonymous_args = 0
+ 812 0000 00B5     		push	{lr}
+ 813 0002 95B0     		sub	sp, sp, #84
+ 814 0004 5022     		movs	r2, #80
+ 815 0006 0021     		movs	r1, #0
+ 816 0008 6846     		mov	r0, sp
+ 817 000a FFF7FEFF 		bl	memset
+ 818 000e 4FF45453 		mov	r3, #13568
+ 819 0012 0093     		str	r3, [sp]
+ 820 0014 1823     		movs	r3, #24
+ 821 0016 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 15
+
+
+ 822 0018 4FF40033 		mov	r3, #131072
+ 823 001c 0293     		str	r3, [sp, #8]
+ 824 001e 4FF00073 		mov	r3, #33554432
+ 825 0022 0393     		str	r3, [sp, #12]
+ 826 0024 4FF00053 		mov	r3, #536870912
+ 827 0028 0493     		str	r3, [sp, #16]
+ 828 002a 4FF08853 		mov	r3, #285212672
+ 829 002e 0593     		str	r3, [sp, #20]
+ 830 0030 4FF08063 		mov	r3, #67108864
+ 831 0034 0D93     		str	r3, [sp, #52]
+ 832 0036 4FF08053 		mov	r3, #268435456
+ 833 003a 0F93     		str	r3, [sp, #60]
+ 834 003c 4FF44043 		mov	r3, #49152
+ 835 0040 1193     		str	r3, [sp, #68]
+ 836 0042 1023     		movs	r3, #16
+ 837 0044 1393     		str	r3, [sp, #76]
+ 838 0046 6846     		mov	r0, sp
+ 839 0048 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 840 004c 10B9     		cbnz	r0, .L108
+ 841 004e 15B0     		add	sp, sp, #84
+ 842              		@ sp needed
+ 843 0050 5DF804FB 		ldr	pc, [sp], #4
+ 844              	.L108:
+ 845 0054 FFF7FEFF 		bl	Error_Handler
+ 847              		.section	.text.main,"ax",%progbits
+ 848              		.align	1
+ 849              		.global	main
+ 850              		.syntax unified
+ 851              		.thumb
+ 852              		.thumb_func
+ 854              	main:
+ 855              		@ Volatile: function does not return.
+ 856              		@ args = 0, pretend = 0, frame = 0
+ 857              		@ frame_needed = 0, uses_anonymous_args = 0
+ 858 0000 08B5     		push	{r3, lr}
+ 859 0002 FFF7FEFF 		bl	HAL_Init
+ 860 0006 FFF7FEFF 		bl	MX_APPE_Config
+ 861 000a FFF7FEFF 		bl	SystemClock_Config
+ 862 000e FFF7FEFF 		bl	PeriphCommonClock_Config
+ 863 0012 FFF7FEFF 		bl	MX_IPCC_Init
+ 864 0016 FFF7FEFF 		bl	MX_GPIO_Init
+ 865 001a FFF7FEFF 		bl	MX_ADC1_Init
+ 866 001e FFF7FEFF 		bl	MX_I2C1_Init
+ 867 0022 FFF7FEFF 		bl	MX_TIM1_Init
+ 868 0026 FFF7FEFF 		bl	MX_TIM16_Init
+ 869 002a FFF7FEFF 		bl	MX_USART1_UART_Init
+ 870 002e FFF7FEFF 		bl	MX_USB_Device_Init
+ 871 0032 FFF7FEFF 		bl	MX_TIM2_Init
+ 872 0036 FFF7FEFF 		bl	MX_RTC_Init
+ 873 003a FFF7FEFF 		bl	MX_APPE_Init
+ 874              	.L110:
+ 875 003e FFF7FEFF 		bl	MX_APPE_Process
+ 876 0042 FCE7     		b	.L110
+ 878              		.global	huart1
+ 879              		.section	.bss.huart1,"aw",%nobits
+ 880              		.align	2
+ 883              	huart1:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 16
+
+
+ 884 0000 00000000 		.space	148
+ 884      00000000 
+ 884      00000000 
+ 884      00000000 
+ 884      00000000 
+ 885              		.global	htim16
+ 886              		.section	.bss.htim16,"aw",%nobits
+ 887              		.align	2
+ 890              	htim16:
+ 891 0000 00000000 		.space	76
+ 891      00000000 
+ 891      00000000 
+ 891      00000000 
+ 891      00000000 
+ 892              		.global	htim2
+ 893              		.section	.bss.htim2,"aw",%nobits
+ 894              		.align	2
+ 897              	htim2:
+ 898 0000 00000000 		.space	76
+ 898      00000000 
+ 898      00000000 
+ 898      00000000 
+ 898      00000000 
+ 899              		.global	htim1
+ 900              		.section	.bss.htim1,"aw",%nobits
+ 901              		.align	2
+ 904              	htim1:
+ 905 0000 00000000 		.space	76
+ 905      00000000 
+ 905      00000000 
+ 905      00000000 
+ 905      00000000 
+ 906              		.global	hrtc
+ 907              		.section	.bss.hrtc,"aw",%nobits
+ 908              		.align	2
+ 911              	hrtc:
+ 912 0000 00000000 		.space	36
+ 912      00000000 
+ 912      00000000 
+ 912      00000000 
+ 912      00000000 
+ 913              		.global	hipcc
+ 914              		.section	.bss.hipcc,"aw",%nobits
+ 915              		.align	2
+ 918              	hipcc:
+ 919 0000 00000000 		.space	60
+ 919      00000000 
+ 919      00000000 
+ 919      00000000 
+ 919      00000000 
+ 920              		.global	hi2c1
+ 921              		.section	.bss.hi2c1,"aw",%nobits
+ 922              		.align	2
+ 925              	hi2c1:
+ 926 0000 00000000 		.space	84
+ 926      00000000 
+ 926      00000000 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 17
+
+
+ 926      00000000 
+ 926      00000000 
+ 927              		.global	hadc1
+ 928              		.section	.bss.hadc1,"aw",%nobits
+ 929              		.align	2
+ 932              	hadc1:
+ 933 0000 00000000 		.space	100
+ 933      00000000 
+ 933      00000000 
+ 933      00000000 
+ 933      00000000 
+ 934              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:142    .text.MX_GPIO_Init:00000120 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:148    .text.Error_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:154    .text.Error_Handler:00000000 Error_Handler
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:169    .text.MX_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:174    .text.MX_IPCC_Init:00000000 MX_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:189    .text.MX_IPCC_Init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:918    .bss.hipcc:00000000 hipcc
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:193    .text.MX_ADC1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:198    .text.MX_ADC1_Init:00000000 MX_ADC1_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:256    .text.MX_ADC1_Init:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:932    .bss.hadc1:00000000 hadc1
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:261    .text.MX_I2C1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:266    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:304    .text.MX_I2C1_Init:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:925    .bss.hi2c1:00000000 hi2c1
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:309    .text.MX_TIM1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:314    .text.MX_TIM1_Init:00000000 MX_TIM1_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:440    .text.MX_TIM1_Init:0000010c $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:904    .bss.htim1:00000000 htim1
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:444    .text.MX_TIM16_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:449    .text.MX_TIM16_Init:00000000 MX_TIM16_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:531    .text.MX_TIM16_Init:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:890    .bss.htim16:00000000 htim16
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:535    .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:540    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:585    .text.MX_USART1_UART_Init:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:883    .bss.huart1:00000000 huart1
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:589    .text.MX_TIM2_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:594    .text.MX_TIM2_Init:00000000 MX_TIM2_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:666    .text.MX_TIM2_Init:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:897    .bss.htim2:00000000 htim2
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:669    .text.MX_RTC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:674    .text.MX_RTC_Init:00000000 MX_RTC_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:706    .text.MX_RTC_Init:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:911    .bss.hrtc:00000000 hrtc
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:710    .text.SystemClock_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:716    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:803    .text.PeriphCommonClock_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:809    .text.PeriphCommonClock_Config:00000000 PeriphCommonClock_Config
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:848    .text.main:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:854    .text.main:00000000 main
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:880    .bss.huart1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:887    .bss.htim16:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:894    .bss.htim2:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:901    .bss.htim1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:908    .bss.hrtc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:915    .bss.hipcc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:922    .bss.hi2c1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s:929    .bss.hadc1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4FKrbO.s 			page 19
+
+
+HAL_IPCC_Init
+HAL_ADC_Init
+HAL_ADC_ConfigChannel
+HAL_I2C_Init
+HAL_I2CEx_ConfigAnalogFilter
+HAL_I2CEx_ConfigDigitalFilter
+memset
+HAL_TIM_Base_Init
+HAL_TIM_ConfigClockSource
+HAL_TIM_PWM_Init
+HAL_TIM_OC_Init
+HAL_TIMEx_MasterConfigSynchronization
+HAL_TIM_PWM_ConfigChannel
+HAL_TIM_OC_ConfigChannel
+HAL_TIMEx_ConfigBreakDeadTime
+HAL_TIM_MspPostInit
+HAL_TIM_OnePulse_Init
+HAL_UART_Init
+HAL_UARTEx_SetTxFifoThreshold
+HAL_UARTEx_SetRxFifoThreshold
+HAL_UARTEx_DisableFifoMode
+HAL_RTC_Init
+HAL_RTCEx_SetWakeUpTimer
+HAL_PWR_EnableBkUpAccess
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_RCCEx_EnableMSIPLLMode
+HAL_RCCEx_PeriphCLKConfig
+HAL_Init
+MX_APPE_Config
+MX_USB_Device_Init
+MX_APPE_Init
+MX_APPE_Process
