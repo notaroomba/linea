@@ -21,12 +21,12 @@
 
 #pragma message("Including patchouli_bsp_glider_addon_v1.h")
 
-#include "stdbool.h"
-#include "stdint.h"
+#include <stdbool.h>
+#include <stdint.h>
 #include "patchouli.h"
 
-#define PATCHOULI_N_X_COIL    34u
-#define PATCHOULI_N_Y_COIL    45u
+#define PATCHOULI_N_X_COIL    28u
+#define PATCHOULI_N_Y_COIL    18u
 
 #include "patchouli_passive_pen.h"
 
@@ -35,9 +35,9 @@
 
 // From the sysclk settings
 // 96MHz Fast Clock for Pulse Generation TIM1
-#define PATCHOULI_TIM_FAST_CLK (144.0E6f)
+#define PATCHOULI_TIM_FAST_CLK (64.0E6f)
 // 48MHz Slow Clock for all the other timers
-#define PATCHOULI_TIM_SLOW_CLK (144.0E6f)
+#define PATCHOULI_TIM_SLOW_CLK (64.0E6f)
 // Number of samples
 #define PATCHOULI_ADC_NSAMPLE (3u)
 // Number of pulses in the pulse train

@@ -17,7 +17,7 @@
 */
 #ifndef __PATCHOULI_MATH_H
 #define __PATCHOULI_MATH_H
-#include "stdint.h"
+#include <stdint.h>
 
 #define PATCHOULI_GWIN 5
 

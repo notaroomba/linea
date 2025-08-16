@@ -23,24 +23,28 @@
 #include <stdbool.h>
 #include "patchouli_config.h"
 
+
 // A temporary workaround for the signs
 #define PATCHOULI_DATA_OFFSET 100.0f
 
+// Helper function for debug output
+void patchouli_debug_output(const char* prefix, const char* format, ...);
+
 /* Debug Macros */
 #if (PATCHOULI_DEBUG_LEVEL > 0)
-#define PATCHOULI_UsrLog(...)    do{printf("[INFO]: ");printf(__VA_ARGS__);printf("\n");}while (0)
+#define PATCHOULI_UsrLog(...)    patchouli_debug_output("[INFO]: ", __VA_ARGS__)
 #else
 #define PATCHOULI_UsrLog(...)
 #endif
 
 #if (PATCHOULI_DEBUG_LEVEL > 1)
-#define PATCHOULI_ErrLog(...)    do{printf("[ ERR]: ");printf(__VA_ARGS__);printf("\n");}while (0)
+#define PATCHOULI_ErrLog(...)    patchouli_debug_output("[ ERR]: ", __VA_ARGS__)
 #else
 #define PATCHOULI_ErrLog(...)
 #endif
 
 #if (PATCHOULI_DEBUG_LEVEL > 2)
-#define PATCHOULI_DbgLog(...)    do{printf("[ DBG]: ");printf(__VA_ARGS__);printf("\n");}while (0)
+#define PATCHOULI_DbgLog(...)    patchouli_debug_output("[ DBG]: ", __VA_ARGS__)
 #else
 #define PATCHOULI_DbgLog(...)
 #endif

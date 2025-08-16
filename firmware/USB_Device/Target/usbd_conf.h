@@ -65,7 +65,7 @@
   */
 
 /*---------- -----------*/
-#define USBD_MAX_NUM_INTERFACES     1U
+#define USBD_MAX_NUM_INTERFACES     3U
 /*---------- -----------*/
 #define USBD_MAX_NUM_CONFIGURATION     1U
 /*---------- -----------*/
@@ -76,8 +76,6 @@
 #define USBD_LPM_ENABLED     1U
 /*---------- -----------*/
 #define USBD_SELF_POWERED     1U
-/*---------- -----------*/
-#define HID_FS_BINTERVAL     0xAU
 
 /****************************************/
 /* #define for FS and HS identification */

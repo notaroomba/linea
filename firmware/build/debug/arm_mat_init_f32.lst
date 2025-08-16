@@ -1,0 +1,141 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"arm_mat_init_f32.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c"
+  20              		.section	.text.arm_mat_init_f32,"ax",%progbits
+  21              		.align	1
+  22              		.global	arm_mat_init_f32
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	arm_mat_init_f32:
+  28              	.LVL0:
+  29              	.LFB145:
+   1:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /* ----------------------------------------------------------------------
+   2:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Project:      CMSIS DSP Library
+   3:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Title:        arm_mat_init_f32.c
+   4:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Description:  Floating-point matrix initialization
+   5:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+   6:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * $Date:        18. March 2019
+   7:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * $Revision:    V1.6.0
+   8:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+   9:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Target Processor: Cortex-M cores
+  10:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * -------------------------------------------------------------------- */
+  11:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /*
+  12:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Copyright (C) 2010-2019 ARM Limited or its affiliates. All rights reserved.
+  13:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+  14:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * SPDX-License-Identifier: Apache-2.0
+  15:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+  16:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  17:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * not use this file except in compliance with the License.
+  18:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * You may obtain a copy of the License at
+  19:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+  20:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
+  21:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  *
+  22:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * Unless required by applicable law or agreed to in writing, software
+  23:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  24:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  25:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * See the License for the specific language governing permissions and
+  26:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  * limitations under the License.
+  27:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  */
+  28:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  29:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** #include "arm_math.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s 			page 2
+
+
+  30:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  31:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /**
+  32:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @ingroup groupMatrix
+  33:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  */
+  34:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  35:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /**
+  36:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @defgroup MatrixInit Matrix Initialization
+  37:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  
+  38:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   Initializes the underlying matrix data structure.
+  39:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   The functions set the <code>numRows</code>,
+  40:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   <code>numCols</code>, and <code>pData</code> fields
+  41:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   of the matrix data structure.
+  42:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  */
+  43:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  44:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /**
+  45:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @addtogroup MatrixInit
+  46:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @{
+  47:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  */
+  48:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  49:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** /**
+  50:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @brief         Floating-point matrix initialization.
+  51:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @param[in,out] S         points to an instance of the floating-point matrix structure
+  52:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @param[in]     nRows     number of rows in the matrix
+  53:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @param[in]     nColumns  number of columns in the matrix
+  54:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @param[in]     pData     points to the matrix data array
+  55:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   @return        none
+  56:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****  */
+  57:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  58:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** void arm_mat_init_f32(
+  59:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   arm_matrix_instance_f32 * S,
+  60:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   uint16_t nRows,
+  61:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   uint16_t nColumns,
+  62:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   float32_t * pData)
+  63:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** {
+  30              		.loc 1 63 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  64:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   /* Assign Number of Rows */
+  65:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   S->numRows = nRows;
+  35              		.loc 1 65 3 view .LVU1
+  36              		.loc 1 65 14 is_stmt 0 view .LVU2
+  37 0000 0180     		strh	r1, [r0]	@ movhi
+  66:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  67:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   /* Assign Number of Columns */
+  68:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   S->numCols = nColumns;
+  38              		.loc 1 68 3 is_stmt 1 view .LVU3
+  39              		.loc 1 68 14 is_stmt 0 view .LVU4
+  40 0002 4280     		strh	r2, [r0, #2]	@ movhi
+  69:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** 
+  70:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   /* Assign Data pointer */
+  71:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c ****   S->pData = pData;
+  41              		.loc 1 71 3 is_stmt 1 view .LVU5
+  42              		.loc 1 71 12 is_stmt 0 view .LVU6
+  43 0004 4360     		str	r3, [r0, #4]
+  72:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s 			page 3
+
+
+  44              		.loc 1 72 1 view .LVU7
+  45 0006 7047     		bx	lr
+  46              		.cfi_endproc
+  47              	.LFE145:
+  49              		.text
+  50              	.Letext0:
+  51              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+  52              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+  53              		.file 4 "Drivers/CMSIS/DSP/Include/arm_math.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 arm_mat_init_f32.c
+C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s:21     .text.arm_mat_init_f32:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHRcLkK.s:27     .text.arm_mat_init_f32:00000000 arm_mat_init_f32
+
+NO UNDEFINED SYMBOLS

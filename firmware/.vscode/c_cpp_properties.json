@@ -4,10 +4,13 @@
       "name": "STM32",
       "includePath": [
         "Core/Inc",
+        "Core/Src",
+        "Drivers/CMSIS/DSP/Include",
         "Drivers/CMSIS/Device/ST/STM32WBxx/Include",
         "Drivers/CMSIS/Include",
         "Drivers/STM32WBxx_HAL_Driver/Inc",
         "Drivers/STM32WBxx_HAL_Driver/Inc/Legacy",
+        "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc",
         "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc",
         "Middlewares/ST/STM32_USB_Device_Library/Core/Inc",
         "Middlewares/ST/STM32_WPAN",
@@ -26,7 +29,8 @@
         "USB_Device/Target",
         "Utilities/lpm/tiny_lpm",
         "Utilities/sequencer",
-        "linea/inc"
+        "linea/inc",
+        "patchouli/inc"
       ],
       "defines": [
         "STM32WB55xx",

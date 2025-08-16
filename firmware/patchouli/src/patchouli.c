@@ -29,6 +29,10 @@
 #include <math.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include "usbd_cdc.h"
+
 // #define OLD_IMPL
 
 // Moving Average Filters
@@ -129,7 +133,7 @@ void _patchouli_cycle_default(){
 
         int p = (int)(4096*(((pavg-pen_zero_pressure)/prange)*((pavg-pen_zero_pressure)/prange))); // Square the value to get a linear response
         if (p>4095) p = 4095;
-        // PATCHOULI_UsrLog("$%d, %d, %d, %d, %d;\r\n", (int)(xavg*1000), (int)(yavg*1000),(int)(pavg*1000), p, maxpval);
+        PATCHOULI_UsrLog("$%d, %d, %d, %d, %d;\r\n", (int)(xavg*1000), (int)(yavg*1000),(int)(pavg*1000), p, maxpval);
 		patchouli_report_t report = {0};
 		report.xpos = x;
 		report.ypos = y;
@@ -185,4 +189,20 @@ void patchouli_cycle(){
             // Undefined mode
             PATCHOULI_ErrLog("Undefined mode: %d", debug_state);
     }
+}
+
+// Debug helper function implementation
+void patchouli_debug_output(const char* prefix, const char* format, ...) {
+    char debug_buffer[256];
+    va_list args;
+    
+    // Format the message
+    va_start(args, format);
+    int len = snprintf(debug_buffer, sizeof(debug_buffer), "%s", prefix);
+    len += vsnprintf(debug_buffer + len, sizeof(debug_buffer) - len, format, args);
+    len += snprintf(debug_buffer + len, sizeof(debug_buffer) - len, "\n");
+    va_end(args);
+    
+    // Send via CDC
+    CDC_Transmit_FS((uint8_t*)debug_buffer, len);
 }

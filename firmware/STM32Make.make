@@ -85,6 +85,10 @@ Core/Src/stm32wbxx_it.c \
 Core/Src/syscalls.c \
 Core/Src/sysmem.c \
 Core/Src/system_stm32wbxx.c \
+Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c \
+Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_inverse_f32.c \
+Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c \
+Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_trans_f32.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_adc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_adc_ex.c \
@@ -114,6 +118,7 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_adc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_rcc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_usb.c \
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c \
 Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
@@ -145,11 +150,11 @@ USB_Device/App/usbd_desc.c \
 USB_Device/Target/usbd_conf.c \
 Utilities/lpm/tiny_lpm/stm32_lpm.c \
 Utilities/sequencer/stm32_seq.c \
-linea/src/BCG.c \
-linea/src/linea.c \
-linea/src/linea_bsp_linea_v1.c \
-linea/src/linea_math.c \
-linea/src/linea_passive_pen.c
+patchouli/src/patchouli.c \
+patchouli/src/patchouli_bsp_discrete_sst.c \
+patchouli/src/patchouli_bsp_glider_addon_v1.c \
+patchouli/src/patchouli_bsp_tx.c \
+patchouli/src/patchouli_math.c
 
 
 CXX_SOURCES = \
@@ -243,10 +248,13 @@ AS_INCLUDES = \
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
+-ICore/Src \
+-IDrivers/CMSIS/DSP/Include \
 -IDrivers/CMSIS/Device/ST/STM32WBxx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/STM32WBxx_HAL_Driver/Inc \
 -IDrivers/STM32WBxx_HAL_Driver/Inc/Legacy \
+-IMiddlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc \
 -IMiddlewares/ST/STM32_USB_Device_Library/Class/HID/Inc \
 -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
 -IMiddlewares/ST/STM32_WPAN \
@@ -265,7 +273,8 @@ C_INCLUDES =  \
 -IUSB_Device/Target \
 -IUtilities/lpm/tiny_lpm \
 -IUtilities/sequencer \
--Ilinea/inc
+-Ilinea/inc \
+-Ipatchouli/inc
 
 
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     [..]
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       The PCD HAL driver can be used as follows:
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****      (#) Declare a PCD_HandleTypeDef handle structure, for example:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** /* Private functions prototypes ----------------------------------------------*/
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** /** @defgroup PCD_Private_Functions PCD Private Functions
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #if (USE_HAL_PCD_REGISTER_CALLBACKS == 1U)
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->SOFCallback = HAL_PCD_SOFCallback;
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->SetupStageCallback = HAL_PCD_SetupStageCallback;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->ResetCallback = HAL_PCD_ResetCallback;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   /* Init Device */
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   (void)USB_DevInit(hpcd->Instance, hpcd->Init);
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   hpcd->USB_Address = 0U;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval None
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** __weak void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   /* Process locked */
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_LOCK(hpcd);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         hpcd->MspInitCallback = pCallback;
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         break;
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       case HAL_PCD_MSPDEINIT_CB_ID :
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       case HAL_PCD_SOF_CB_ID :
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         hpcd->SOFCallback = HAL_PCD_SOFCallback;
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       default :
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         /* Update the error code */
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         hpcd->ErrorCode |= HAL_PCD_ERROR_INVALID_CALLBACK;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   /* Release Lock */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_UNLOCK(hpcd);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     return HAL_ERROR;
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   /* Process locked */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** /**
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @brief  Register USB PCD Iso OUT incomplete Callback
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   *         To be used instead of the weak HAL_PCD_ISOOUTIncompleteCallback() predefined callback
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  hpcd PCD handle
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->ISOOUTIncompleteCallback = HAL_PCD_ISOOUTIncompleteCallback; /* Legacy weak ISOOUTIncompl
  714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 14
 
 
  715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   else
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  769:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   return status;
  770:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** }
  771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 15
 
 
  772:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** /**
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  826:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  827:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   if (hpcd->State == HAL_PCD_STATE_READY)
  828:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 16
 
 
  829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->BCDCallback = pCallback;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval HAL status
  884:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** HAL_StatusTypeDef HAL_PCD_RegisterLpmCallback(PCD_HandleTypeDef *hpcd, pPCD_LpmCallbackTypeDef pCal
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 17
 
 
  886:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  940:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  941:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     /* Return error status */
  942:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     status =  HAL_ERROR;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 18
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   return HAL_OK;
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 19
 
 
 1000:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     if (hpcd->LPM_State == LPM_L1)
 1055:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
 1056:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       hpcd->LPM_State = LPM_L0;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 20
 
 
 1057:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #if (USE_HAL_PCD_REGISTER_CALLBACKS == 1U)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
 1112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     else
 1113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 21
 
 
 1114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #if (USE_HAL_PCD_REGISTER_CALLBACKS == 1U)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval None
 1169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
 1170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** __weak void HAL_PCD_DataInStageCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 22
 
 
 1171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** /**
 1226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @brief  Suspend event callback.
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  hpcd PCD handle
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 23
 
 
 1228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval None
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   UNUSED(epnum);
 1283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 1284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   /* NOTE : This function should not be modified, when the callback is needed,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 24
 
 
 1285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             the HAL_PCD_ISOINIncompleteCallback could be implemented in the user file
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @brief  Connect the USB device
 1340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  hpcd PCD handle
 1341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval HAL status
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 25
 
 
 1342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1396:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
 1397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     ep = &hpcd->IN_ep[ep_addr & EP_ADDR_MSK];
 1398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     ep->is_in = 1U;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 26
 
 
 1399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @brief  Receive an amount of data.
 1454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  hpcd PCD handle
 1455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  ep_addr endpoint address
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 27
 
 
 1456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  pBuf pointer to the reception buffer
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 1511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   (void)USB_EPStartXfer(hpcd->Instance, ep);
 1512:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 28
 
 
 1513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   return HAL_OK;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1567:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
 1568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 1569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   if ((0x80U & ep_addr) == 0x80U)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 29
 
 
 1570:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1624:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_LOCK(hpcd);
 1625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 1626:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   if ((ep_addr & 0x80U) == 0x80U)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 30
 
 
 1627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1681:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @param  hpcd PCD handle
 1682:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   * @retval HAL state
 1683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 31
 
 
 1684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** PCD_StateTypeDef HAL_PCD_GetState(PCD_HandleTypeDef const *hpcd)
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         /* DIR = 0 => IN  int */
 1739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         /* DIR = 0 implies that (EP_CTR_TX = 1) always */
 1740:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         PCD_CLEAR_TX_EP_CTR(hpcd->Instance, PCD_ENDP0);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 32
 
 
 1741:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         ep = &hpcd->IN_ep[0];
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1795:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             USB_ReadPMA(hpcd->Instance, ep->xfer_buff,
 1796:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****                         ep->pmaadress, (uint16_t)ep->xfer_count);
 1797:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 33
 
 
 1798:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             ep->xfer_buff += ep->xfer_count;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1852:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             if ((PCD_GET_ENDPOINT(hpcd->Instance, ep->num) & USB_EP_DTOG_RX) != 0U)
 1853:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             {
 1854:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****               /* read from endpoint BUF0Addr buffer */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 34
 
 
 1855:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****               count = (uint16_t)PCD_GET_EP_DBUF0_CNT(hpcd->Instance, ep->num);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1909:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             if ((wEPVal & USB_EP_DTOG_TX) != 0U)
 1910:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             {
 1911:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****               PCD_SET_EP_DBUF0_CNT(hpcd->Instance, ep->num, ep->is_in, 0U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 35
 
 
 1912:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1966:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             (void)HAL_PCD_EP_DB_Transmit(hpcd, ep, wEPVal);
 1967:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****           }
 1968:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #endif /* (USE_USB_DOUBLE_BUFFER == 1U) */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 36
 
 
 1969:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         }
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
   56              	.LVL1:
 1996:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 1997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     if (ep->xfer_len >= count)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 37
 
 
   57              		.loc 1 1997 5 is_stmt 1 view .LVU8
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2010:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
 2011:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
 2012:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     /* Check if Buffer1 is in blocked state which requires to toggle */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 38
 
 
 2013:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     if ((wEPVal & USB_EP_DTOG_TX) != 0U)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2031:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       ep->xfer_len -= count;
 2032:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
 2033:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 39
 
 
 2034:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  160              	.LVL16:
  161              	.L2:
 2027:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 40
 
 
  162              		.loc 1 2027 5 is_stmt 1 view .LVU48
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  201              		.loc 1 2041 7 discriminator 3 view .LVU63
 2041:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
  202              		.loc 1 2041 7 discriminator 4 view .LVU64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 41
 
 
  203 00ca 83F40053 		eor	r3, r3, #8192
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  242              		.loc 1 2047 7 is_stmt 1 discriminator 1 view .LVU79
  243              	.LVL25:
  244              	.L11:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 42
 
 
 2047:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  289              		.loc 1 266 1 is_stmt 0 view .LVU91
  290 0000 7047     		bx	lr
  291              		.cfi_endproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 43
 
 
  292              	.LFE1106:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  335              		.loc 1 176 3 view .LVU104
  176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
  336              		.loc 1 176 10 is_stmt 0 view .LVU105
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 44
 
 
  337 001a 0023     		movs	r3, #0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  374              	.LVL37:
  185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  375              		.loc 1 185 29 view .LVU123
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 45
 
 
  376 0040 03EB8302 		add	r2, r3, r3, lsl #2
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  414              		.loc 1 195 5 is_stmt 1 view .LVU139
  195:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     hpcd->OUT_ep[i].xfer_len = 0U;
  415              		.loc 1 195 31 is_stmt 0 view .LVU140
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 46
 
 
  416 006e C2F86411 		str	r1, [r2, #356]
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  454 00a0 012B     		cmp	r3, #1
  455 00a2 01D0     		beq	.L29
  211:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 47
 
 
  456              		.loc 1 211 10 view .LVU157
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  503              	.LFE1107:
  505              		.section	.text.HAL_PCD_DeInit,"ax",%progbits
  506              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 48
 
 
  507              		.global	HAL_PCD_DeInit
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  550 001a 38BD     		pop	{r3, r4, r5, pc}
  551              	.LVL56:
  552              	.L36:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 49
 
 
  245:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #endif /* USE_HAL_PCD_REGISTER_CALLBACKS */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  598 000c 0123     		movs	r3, #1
  599 000e 80F89032 		strb	r3, [r0, #656]
  978:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_PCD_ENABLE(hpcd);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 50
 
 
  600              		.loc 1 978 3 discriminator 2 view .LVU190
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  644              		.cfi_startproc
  645              		@ args = 0, pretend = 0, frame = 0
  646              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 51
 
 
  993:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_PCD_DISABLE(hpcd);
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  686              		.loc 1 993 3 discriminator 1 view .LVU217
  687 0026 0220     		movs	r0, #2
  688              	.LVL70:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 52
 
 
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  739              		.align	1
  740              		.syntax unified
  741              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 53
 
 
  742              		.thumb_func
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  777 001c 1CFA83F3 		uxtah	r3, ip, r3
  778 0020 1344     		add	r3, r3, r2
  779 0022 B3F80224 		ldrh	r2, [r3, #1026]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 54
 
 
  780              		.loc 1 2077 15 view .LVU237
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       return HAL_OK;
 2113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     }
 2114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     else /* Transfer is not yet Done */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 55
 
 
 2115:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2132:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****           ep->xfer_len_db -= len;
 2133:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         }
 2134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         else if (ep->xfer_len_db == 0U)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 56
 
 
 2135:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2189:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       if ((wEPVal & USB_EP_DTOG_RX) == 0U)
 2190:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       {
 2191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         PCD_FREE_USER_BUFFER(hpcd->Instance, ep->num, 1U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 57
 
 
 2192:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       }
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  844 006c 9BB2     		uxth	r3, r3
  845 006e 23F4E043 		bic	r3, r3, #28672
  846 0072 23F04003 		bic	r3, r3, #64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 58
 
 
  847              	.LVL82:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  890 009c 12FA83F3 		uxtah	r3, r2, r3
  891              	.LVL89:
 2091:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       PCD_SET_EP_DBUF1_CNT(hpcd->Instance, ep->num, ep->is_in, 0U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 59
 
 
  892              		.loc 1 2091 7 discriminator 1 view .LVU282
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  930              		.loc 1 2092 7 discriminator 1 view .LVU298
  931              	.LVL93:
 2092:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 60
 
 
  932              		.loc 1 2092 7 discriminator 1 view .LVU299
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2094:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       {
  971              		.loc 1 2094 10 view .LVU315
  972 00f6 022B     		cmp	r3, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 61
 
 
  973 00f8 2FD0     		beq	.L98
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1011              	.LVL102:
  1012              	.L58:
 2091:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       PCD_SET_EP_DBUF1_CNT(hpcd->Instance, ep->num, ep->is_in, 0U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 62
 
 
  1013              		.loc 1 2091 7 is_stmt 1 discriminator 2 view .LVU332
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1055              		.loc 1 2092 7 is_stmt 0 discriminator 16 view .LVU344
  1056              	.LBE15:
 2097:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 63
 
 
  1057              		.loc 1 2097 9 is_stmt 1 view .LVU345
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1096              		.loc 1 2129 9 is_stmt 1 view .LVU360
 2129:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
  1097              		.loc 1 2129 15 is_stmt 0 view .LVU361
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 64
 
 
  1098 018a 216A     		ldr	r1, [r4, #32]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1136 01ac B2F80214 		ldrh	r1, [r2, #1026]
  1137 01b0 C1F30901 		ubfx	r1, r1, #0, #10
  1138 01b4 A2F80214 		strh	r1, [r2, #1026]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 65
 
 
 2148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1178 01e4 D7E7     		b	.L68
  1179              	.LVL123:
  1180              	.L71:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 66
 
 
  1181              	.LBB20:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1222 0210 B2F80214 		ldrh	r1, [r2, #1026]
  1223 0214 89B2     		uxth	r1, r1
  1224 0216 8002     		lsls	r0, r0, #10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 67
 
 
  1225              	.LVL130:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1267 0244 02EBC102 		add	r2, r2, r1, lsl #3
  1268              	.LVL137:
 2148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 68
 
 
  1269              		.loc 1 2148 9 discriminator 16 view .LVU418
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
  1309              		.loc 1 2170 8 view .LVU433
  1310 0274 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 69
 
 
  1311 0276 44D0     		beq	.L100
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2207:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         ep->xfer_count += TxPctSize;
  1348              		.loc 1 2207 11 is_stmt 0 view .LVU451
  1349 02a4 6369     		ldr	r3, [r4, #20]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 70
 
 
 2207:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         ep->xfer_count += TxPctSize;
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1387              	.LBB24:
 2229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1388              		.loc 1 2229 9 discriminator 1 view .LVU469
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 71
 
 
  1389              	.LVL149:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       PCD_SET_EP_DBUF1_CNT(hpcd->Instance, ep->num, ep->is_in, 0U);
  1431              		.loc 1 2172 7 is_stmt 1 view .LVU482
 2172:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       PCD_SET_EP_DBUF1_CNT(hpcd->Instance, ep->num, ep->is_in, 0U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 72
 
 
  1432              		.loc 1 2172 7 view .LVU483
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1471              		.loc 1 2172 7 discriminator 18 view .LVU498
 2173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1472              		.loc 1 2173 7 view .LVU499
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 73
 
 
  1473              	.LBB30:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1512              		.loc 1 2173 7 discriminator 15 view .LVU514
  1513              	.LBE32:
 2173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 74
 
 
  1514              		.loc 1 2173 7 discriminator 15 view .LVU515
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1552              	.LVL167:
 2191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       }
  1553              		.loc 1 2191 9 discriminator 4 view .LVU532
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 75
 
 
  1554 038e 43F44043 		orr	r3, r3, #49152
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1594 03b6 D6D1     		bne	.L82
 2173:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1595              		.loc 1 2173 7 discriminator 16 view .LVU547
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 76
 
 
  1596 03b8 B2F85030 		ldrh	r3, [r2, #80]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 2216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
  1638              		.loc 1 2216 14 is_stmt 1 view .LVU560
 2216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 77
 
 
  1639              		.loc 1 2216 17 is_stmt 0 view .LVU561
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1678              		.loc 1 2229 9 discriminator 8 view .LVU576
  1679 0416 0131     		adds	r1, r1, #1
  1680              	.LVL185:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 78
 
 
  1681              	.L93:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1724 044c 06D0     		beq	.L102
  1725              	.LVL192:
  1726              	.L91:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 79
 
 
 2229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1774              		.loc 1 1188 3 view .LVU596
 1193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1775              		.loc 1 1193 1 is_stmt 0 view .LVU597
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 80
 
 
  1776 0000 7047     		bx	lr
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1819 0010 00F05582 		beq	.L129
 1724:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1820              		.loc 1 1724 5 is_stmt 1 view .LVU611
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 81
 
 
 1724:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1857 0038 0388     		ldrh	r3, [r0]
  1858 003a 23F07003 		bic	r3, r3, #112
  1859 003e 1B05     		lsls	r3, r3, #20
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 82
 
 
  1860 0040 1B0D     		lsrs	r3, r3, #20
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1798:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  1899              		.loc 1 1798 27 view .LVU645
  1900 007e 1344     		add	r3, r3, r2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 83
 
 
  1901 0080 C5F86431 		str	r3, [r5, #356]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1939              		.loc 1 1812 13 discriminator 4 view .LVU661
  1940 00ae 83F44053 		eor	r3, r3, #12288
  1941              	.LVL215:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 84
 
 
 1812:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****           }
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  1983 00e6 B3F80234 		ldrh	r3, [r3, #1026]
  1984 00ea C3F30903 		ubfx	r3, r3, #0, #10
 1743:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         ep->xfer_buff += ep->xfer_count;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 85
 
 
  1985              		.loc 1 1743 24 view .LVU675
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  2024              		.loc 1 1771 11 is_stmt 1 view .LVU691
 1771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 86
 
 
  2025              		.loc 1 1771 28 is_stmt 0 view .LVU692
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2067              		.loc 1 1821 14 is_stmt 0 view .LVU704
  2068 0160 30F82430 		ldrh	r3, [r0, r4, lsl #2]
  2069              	.LVL230:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 87
 
 
 1821:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2109              		.loc 1 1902 15 is_stmt 0 view .LVU719
  2110 019c 04EB8403 		add	r3, r4, r4, lsl #2
  2111 01a0 05EBC303 		add	r3, r5, r3, lsl #3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 88
 
 
  2112 01a4 DB7C     		ldrb	r3, [r3, #19]	@ zero_extendqisi2
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2152              		.loc 1 1945 19 is_stmt 0 view .LVU733
  2153 01f0 621C     		adds	r2, r4, #1
  2154 01f2 02EB8202 		add	r2, r2, r2, lsl #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 89
 
 
  2155 01f6 55F83220 		ldr	r2, [r5, r2, lsl #3]
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2195 022c 04EB8403 		add	r3, r4, r4, lsl #2
  2196 0230 05EBC303 		add	r3, r5, r3, lsl #3
  2197 0234 93F85C31 		ldrb	r3, [r3, #348]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 90
 
 
 1830:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2237 0280 3BB1     		cbz	r3, .L116
 1880:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****         {
  2238              		.loc 1 1880 48 discriminator 1 view .LVU763
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 91
 
 
  2239 0282 04EB8403 		add	r3, r4, r4, lsl #2
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2282 02d4 05EBC202 		add	r2, r5, r2, lsl #3
  2283 02d8 92F85001 		ldrb	r0, [r2, #336]	@ zero_extendqisi2
  2284 02dc 31F82030 		ldrh	r3, [r1, r0, lsl #2]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 92
 
 
  2285 02e0 9BB2     		uxth	r3, r3
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2325 0328 B1F85821 		ldrh	r2, [r1, #344]
  2326 032c D1F86411 		ldr	r1, [r1, #356]
  2327 0330 FFF7FEFF 		bl	USB_ReadPMA
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 93
 
 
  2328              	.LVL250:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2371              		.loc 1 1891 17 is_stmt 0 view .LVU799
  2372 0374 4146     		mov	r1, r8
  2373 0376 2868     		ldr	r0, [r5]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 94
 
 
  2374 0378 FFF7FEFF 		bl	USB_EPStartXfer
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2414 03b2 04EB8402 		add	r2, r4, r4, lsl #2
  2415 03b6 05EBC202 		add	r2, r5, r2, lsl #3
  2416 03ba 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 95
 
 
  2417 03bc 03EBC203 		add	r3, r3, r2, lsl #3
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1911:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             }
  2458              		.loc 1 1911 15 discriminator 16 view .LVU827
  2459 03f4 2A68     		ldr	r2, [r5]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 96
 
 
  2460              	.LVL267:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2500              		.loc 1 1915 15 discriminator 1 view .LVU841
  2501 042a 04EB8402 		add	r2, r4, r4, lsl #2
  2502              	.LVL274:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 97
 
 
 1915:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             }
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2544 0464 04EB8402 		add	r2, r4, r4, lsl #2
  2545 0468 05EBC202 		add	r2, r5, r2, lsl #3
  2546 046c 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 98
 
 
  2547 046e 03EBC203 		add	r3, r3, r2, lsl #3
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2588              		.loc 1 1959 21 is_stmt 0 view .LVU867
  2589 04ae FFF7FEFF 		bl	USB_EPStartXfer
  2590              	.LVL282:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 99
 
 
 1959:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****             }
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2638              		.thumb
  2639              		.thumb_func
  2641              	HAL_PCD_ResetCallback:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 100
 
 
  2642              	.LVL287:
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1253:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  2692              		.loc 1 1253 1 is_stmt 0 view .LVU886
  2693 0000 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 101
 
 
  2694              		.cfi_endproc
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2745              		.thumb
  2746              		.thumb_func
  2748              	HAL_PCD_ConnectCallback:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 102
 
 
  2749              	.LVL292:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2798              		.loc 1 1345 3 view .LVU903
  2799 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
  2800 0004 012B     		cmp	r3, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 103
 
 
  2801 0006 0BD0     		beq	.L146
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2843              		.syntax unified
  2844              		.thumb
  2845              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 104
 
 
  2847              	HAL_PCD_DevDisconnect:
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2887              		.cfi_restore 4
  2888              		.cfi_restore 14
 1359:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   (void)USB_DevDisconnect(hpcd->Instance);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 105
 
 
  2889              		.loc 1 1359 3 discriminator 1 view .LVU931
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  2933              		.loc 1 1376 9 view .LVU943
  2934 0016 FFF7FEFF 		bl	USB_SetDevAddress
  2935              	.LVL306:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 106
 
 
 1377:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1009:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  2981              		.loc 1 1009 20 view .LVU955
  2982 0006 FFF7FEFF 		bl	USB_ReadInterrupts
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 107
 
 
  2983              	.LVL311:
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3019 0042 27D0     		beq	.L165
 1140:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  3020              		.loc 1 1140 5 is_stmt 1 view .LVU974
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 108
 
 
  3021 0044 2268     		ldr	r2, [r4]
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1037:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  3064              		.loc 1 1037 5 view .LVU986
  3065 0082 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 109
 
 
  3066 0084 B2F84430 		ldrh	r3, [r2, #68]
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
  3108              		.loc 1 1054 5 is_stmt 1 view .LVU999
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 110
 
 
  3109              		.loc 1 1054 13 is_stmt 0 view .LVU1000
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3151 0106 43F00803 		orr	r3, r3, #8
  3152 010a A2F84030 		strh	r3, [r2, #64]	@ movhi
 1081:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 111
 
 
  3153              		.loc 1 1081 5 is_stmt 1 view .LVU1013
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1101:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****       hpcd->Instance->CNTR |= (uint16_t)USB_CNTR_FSUSP;
  3194              		.loc 1 1101 21 view .LVU1027
  3195 0152 B2F84030 		ldrh	r3, [r2, #64]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 112
 
 
  3196 0156 9BB2     		uxth	r3, r3
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1117:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** #endif /* USE_HAL_PCD_REGISTER_CALLBACKS */
  3235              		.loc 1 1117 7 is_stmt 0 view .LVU1043
  3236 0192 FFF7FEFF 		bl	HAL_PCD_SuspendCallback
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 113
 
 
  3237              	.LVL334:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1395:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
  3284              		.loc 1 1395 3 view .LVU1053
 1395:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 114
 
 
  3285              		.loc 1 1395 6 is_stmt 0 view .LVU1054
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3323 003c 022B     		cmp	r3, #2
  3324 003e 1DD0     		beq	.L196
  3325              	.LVL344:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 115
 
 
  3326              	.L191:
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3364              		.loc 1 1398 5 is_stmt 1 view .LVU1086
 1398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  3365              		.loc 1 1398 15 is_stmt 0 view .LVU1087
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 116
 
 
  3366 006a 0CEB8C0C 		add	ip, ip, ip, lsl #2
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1440:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     ep->is_in = 0U;
  3413              		.loc 1 1440 5 is_stmt 1 view .LVU1097
 1440:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****     ep->is_in = 0U;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 117
 
 
  3414              		.loc 1 1440 32 is_stmt 0 view .LVU1098
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1447:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   return HAL_OK;
  3454              		.loc 1 1447 3 view .LVU1113
 1448:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 118
 
 
  3455              		.loc 1 1448 3 view .LVU1114
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3502              		.cfi_def_cfa_offset 8
  3503              		.cfi_offset 4, -8
  3504              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 119
 
 
 1462:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3541 0032 FFF7FEFF 		bl	USB_EPStartXfer
  3542              	.LVL366:
 1475:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 120
 
 
  3543              		.loc 1 1475 3 is_stmt 1 view .LVU1142
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3593              		.loc 1 1497 1 is_stmt 0 view .LVU1150
  3594 0000 38B5     		push	{r3, r4, r5, lr}
  3595              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 121
 
 
  3596              		.cfi_offset 3, -16
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1508:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   ep->num = ep_addr & EP_ADDR_MSK;
  3635              		.loc 1 1508 3 is_stmt 1 view .LVU1166
 1508:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   ep->num = ep_addr & EP_ADDR_MSK;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 122
 
 
  3636              		.loc 1 1508 13 is_stmt 0 view .LVU1167
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3679              	.LVL379:
 1526:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
  3680              		.loc 1 1526 6 view .LVU1181
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 123
 
 
  3681 0008 9142     		cmp	r1, r2
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3720 0036 94F89032 		ldrb	r3, [r4, #656]	@ zero_extendqisi2
  3721 003a 012B     		cmp	r3, #1
  3722 003c 17D0     		beq	.L214
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 124
 
 
 1545:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3763              		.cfi_restore 14
 1528:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   }
  3764              		.loc 1 1528 12 view .LVU1211
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 125
 
 
  3765 006a 0120     		movs	r0, #1
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3811              		.loc 1 1569 3 is_stmt 1 view .LVU1221
 1569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   {
  3812              		.loc 1 1569 6 is_stmt 0 view .LVU1222
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 126
 
 
  3813 0010 13F0800F 		tst	r3, #128
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1584:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_UNLOCK(hpcd);
  3852              		.loc 1 1584 3 view .LVU1238
 1584:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   __HAL_UNLOCK(hpcd);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 127
 
 
  3853              		.loc 1 1584 9 is_stmt 0 view .LVU1239
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3894              		.loc 1 1588 1 view .LVU1252
  3895 0078 7047     		bx	lr
  3896              	.LVL401:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 128
 
 
  3897              	.L225:
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
 1611:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
  3943              		.loc 1 1611 3 is_stmt 1 view .LVU1263
 1611:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 129
 
 
  3944              		.loc 1 1611 9 is_stmt 0 view .LVU1264
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  3989              		.loc 1 1623 1 is_stmt 0 view .LVU1275
  3990 0008 10B5     		push	{r4, lr}
  3991              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 130
 
 
  3992              		.cfi_offset 4, -8
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  4030              	.LVL416:
  4031 0030 F5E7     		b	.L239
  4032              	.LVL417:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 131
 
 
  4033              	.L240:
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  4083              	HAL_PCD_DeActivateRemoteWakeup:
  4084              	.LVL422:
  4085              	.LFB1135:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 132
 
 
 1656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd.c ****   return (USB_DeActivateRemoteWakeup(hpcd->Instance));
@@ -7918,93 +7918,93 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 1
  4133              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  4134              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  4135              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 133
 
 
  4136              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  4137              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_usb.h"
  4138              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd.h"
  4139              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd_ex.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 134
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pcd.c
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:21     .text.HAL_PCD_EP_DB_Receive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:26     .text.HAL_PCD_EP_DB_Receive:00000000 HAL_PCD_EP_DB_Receive
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:274    .text.HAL_PCD_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:280    .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:295    .text.HAL_PCD_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:301    .text.HAL_PCD_Init:00000000 HAL_PCD_Init
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:485    .text.HAL_PCD_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:491    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:506    .text.HAL_PCD_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:512    .text.HAL_PCD_DeInit:00000000 HAL_PCD_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:573    .text.HAL_PCD_Start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:579    .text.HAL_PCD_Start:00000000 HAL_PCD_Start
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:634    .text.HAL_PCD_Stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:640    .text.HAL_PCD_Stop:00000000 HAL_PCD_Stop
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:695    .text.HAL_PCD_DataOutStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:701    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:717    .text.HAL_PCD_DataInStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:723    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:739    .text.HAL_PCD_EP_DB_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:744    .text.HAL_PCD_EP_DB_Transmit:00000000 HAL_PCD_EP_DB_Transmit
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:1760   .text.HAL_PCD_SetupStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:1766   .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:1781   .text.PCD_EP_ISR_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:1786   .text.PCD_EP_ISR_Handler:00000000 PCD_EP_ISR_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2614   .text.HAL_PCD_SOFCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2620   .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2635   .text.HAL_PCD_ResetCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2641   .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2656   .text.HAL_PCD_SuspendCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2662   .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2677   .text.HAL_PCD_ResumeCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2683   .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2698   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2704   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2720   .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2726   .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2742   .text.HAL_PCD_ConnectCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2748   .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2763   .text.HAL_PCD_DisconnectCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2769   .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2784   .text.HAL_PCD_DevConnect:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2790   .text.HAL_PCD_DevConnect:00000000 HAL_PCD_DevConnect
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2841   .text.HAL_PCD_DevDisconnect:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2847   .text.HAL_PCD_DevDisconnect:00000000 HAL_PCD_DevDisconnect
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2898   .text.HAL_PCD_SetAddress:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2904   .text.HAL_PCD_SetAddress:00000000 HAL_PCD_SetAddress
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2958   .text.HAL_PCD_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:2964   .text.HAL_PCD_IRQHandler:00000000 HAL_PCD_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3261   .text.HAL_PCD_EP_Open:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3267   .text.HAL_PCD_EP_Open:00000000 HAL_PCD_EP_Open
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3388   .text.HAL_PCD_EP_Close:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3394   .text.HAL_PCD_EP_Close:00000000 HAL_PCD_EP_Close
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3487   .text.HAL_PCD_EP_Receive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3493   .text.HAL_PCD_EP_Receive:00000000 HAL_PCD_EP_Receive
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3551   .text.HAL_PCD_EP_GetRxCount:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s 			page 135
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:21     .text.HAL_PCD_EP_DB_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:26     .text.HAL_PCD_EP_DB_Receive:00000000 HAL_PCD_EP_DB_Receive
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:274    .text.HAL_PCD_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:280    .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:295    .text.HAL_PCD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:301    .text.HAL_PCD_Init:00000000 HAL_PCD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:485    .text.HAL_PCD_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:491    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:506    .text.HAL_PCD_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:512    .text.HAL_PCD_DeInit:00000000 HAL_PCD_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:573    .text.HAL_PCD_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:579    .text.HAL_PCD_Start:00000000 HAL_PCD_Start
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:634    .text.HAL_PCD_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:640    .text.HAL_PCD_Stop:00000000 HAL_PCD_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:695    .text.HAL_PCD_DataOutStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:701    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:717    .text.HAL_PCD_DataInStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:723    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:739    .text.HAL_PCD_EP_DB_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:744    .text.HAL_PCD_EP_DB_Transmit:00000000 HAL_PCD_EP_DB_Transmit
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:1760   .text.HAL_PCD_SetupStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:1766   .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:1781   .text.PCD_EP_ISR_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:1786   .text.PCD_EP_ISR_Handler:00000000 PCD_EP_ISR_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2614   .text.HAL_PCD_SOFCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2620   .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2635   .text.HAL_PCD_ResetCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2641   .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2656   .text.HAL_PCD_SuspendCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2662   .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2677   .text.HAL_PCD_ResumeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2683   .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2698   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2704   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2720   .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2726   .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2742   .text.HAL_PCD_ConnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2748   .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2763   .text.HAL_PCD_DisconnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2769   .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2784   .text.HAL_PCD_DevConnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2790   .text.HAL_PCD_DevConnect:00000000 HAL_PCD_DevConnect
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2841   .text.HAL_PCD_DevDisconnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2847   .text.HAL_PCD_DevDisconnect:00000000 HAL_PCD_DevDisconnect
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2898   .text.HAL_PCD_SetAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2904   .text.HAL_PCD_SetAddress:00000000 HAL_PCD_SetAddress
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2958   .text.HAL_PCD_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:2964   .text.HAL_PCD_IRQHandler:00000000 HAL_PCD_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3261   .text.HAL_PCD_EP_Open:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3267   .text.HAL_PCD_EP_Open:00000000 HAL_PCD_EP_Open
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3388   .text.HAL_PCD_EP_Close:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3394   .text.HAL_PCD_EP_Close:00000000 HAL_PCD_EP_Close
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3487   .text.HAL_PCD_EP_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3493   .text.HAL_PCD_EP_Receive:00000000 HAL_PCD_EP_Receive
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3551   .text.HAL_PCD_EP_GetRxCount:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s 			page 135
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3557   .text.HAL_PCD_EP_GetRxCount:00000000 HAL_PCD_EP_GetRxCount
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3580   .text.HAL_PCD_EP_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3586   .text.HAL_PCD_EP_Transmit:00000000 HAL_PCD_EP_Transmit
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3659   .text.HAL_PCD_EP_SetStall:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3665   .text.HAL_PCD_EP_SetStall:00000000 HAL_PCD_EP_SetStall
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3781   .text.HAL_PCD_EP_ClrStall:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3787   .text.HAL_PCD_EP_ClrStall:00000000 HAL_PCD_EP_ClrStall
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3908   .text.HAL_PCD_EP_Abort:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3914   .text.HAL_PCD_EP_Abort:00000000 HAL_PCD_EP_Abort
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3971   .text.HAL_PCD_EP_Flush:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:3977   .text.HAL_PCD_EP_Flush:00000000 HAL_PCD_EP_Flush
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4046   .text.HAL_PCD_ActivateRemoteWakeup:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4052   .text.HAL_PCD_ActivateRemoteWakeup:00000000 HAL_PCD_ActivateRemoteWakeup
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4077   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4083   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 HAL_PCD_DeActivateRemoteWakeup
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4108   .text.HAL_PCD_GetState:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccDPhVHs.s:4114   .text.HAL_PCD_GetState:00000000 HAL_PCD_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3557   .text.HAL_PCD_EP_GetRxCount:00000000 HAL_PCD_EP_GetRxCount
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3580   .text.HAL_PCD_EP_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3586   .text.HAL_PCD_EP_Transmit:00000000 HAL_PCD_EP_Transmit
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3659   .text.HAL_PCD_EP_SetStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3665   .text.HAL_PCD_EP_SetStall:00000000 HAL_PCD_EP_SetStall
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3781   .text.HAL_PCD_EP_ClrStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3787   .text.HAL_PCD_EP_ClrStall:00000000 HAL_PCD_EP_ClrStall
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3908   .text.HAL_PCD_EP_Abort:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3914   .text.HAL_PCD_EP_Abort:00000000 HAL_PCD_EP_Abort
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3971   .text.HAL_PCD_EP_Flush:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:3977   .text.HAL_PCD_EP_Flush:00000000 HAL_PCD_EP_Flush
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4046   .text.HAL_PCD_ActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4052   .text.HAL_PCD_ActivateRemoteWakeup:00000000 HAL_PCD_ActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4077   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4083   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 HAL_PCD_DeActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4108   .text.HAL_PCD_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpPNIC1.s:4114   .text.HAL_PCD_GetState:00000000 HAL_PCD_GetState
 
 UNDEFINED SYMBOLS
 USB_ReadPMA

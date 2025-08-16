@@ -28,18 +28,14 @@
 #include "patchouli_bsp_tx.h"
 
 // ExN List
-#define PATCHOULI_N_EXN (10u)
+#define PATCHOULI_N_EXN (6u)
 GPIO_TypeDef* ExN_GPIO_Port[PATCHOULI_N_EXN] = {
     E0N_GPIO_Port, E1N_GPIO_Port, E2N_GPIO_Port,
-    E3N_GPIO_Port, E4N_GPIO_Port, E5N_GPIO_Port,
-    E6N_GPIO_Port, E7N_GPIO_Port, E8N_GPIO_Port,
-    E9N_GPIO_Port
+    E3N_GPIO_Port, E4N_GPIO_Port, E5N_GPIO_Port
 };
 uint16_t ExN_Pin[PATCHOULI_N_EXN] = {
     E0N_Pin, E1N_Pin, E2N_Pin,
-    E3N_Pin, E4N_Pin, E5N_Pin,
-    E6N_Pin, E7N_Pin, E8N_Pin,
-    E9N_Pin
+    E3N_Pin, E4N_Pin, E5N_Pin
 };
 
 
@@ -57,40 +53,34 @@ void patchouli_coil_select(int id, bool x_yn){
             return;
         }
         switch(id) {
-            case 5:  ExN[6] = GPIO_PIN_RESET; S = 0; break; // U11
-            case 6:  ExN[6] = GPIO_PIN_RESET; S = 1; break;
-            case 7:  ExN[6] = GPIO_PIN_RESET; S = 2; break;
-            case 4:  ExN[6] = GPIO_PIN_RESET; S = 3; break;
-            case 0:  ExN[6] = GPIO_PIN_RESET; S = 4; break;
-            case 3:  ExN[6] = GPIO_PIN_RESET; S = 5; break;
-            case 1:  ExN[6] = GPIO_PIN_RESET; S = 6; break;
-            case 2:  ExN[6] = GPIO_PIN_RESET; S = 7; break;
-            case 13: ExN[7] = GPIO_PIN_RESET; S = 0; break; // U12
-            case 14: ExN[7] = GPIO_PIN_RESET; S = 1; break;
-            case 15: ExN[7] = GPIO_PIN_RESET; S = 2; break;
-            case 12: ExN[7] = GPIO_PIN_RESET; S = 3; break;
-            case 8:  ExN[7] = GPIO_PIN_RESET; S = 4; break;
-            case 11: ExN[7] = GPIO_PIN_RESET; S = 5; break;
-            case 9:  ExN[7] = GPIO_PIN_RESET; S = 6; break;
-            case 10: ExN[7] = GPIO_PIN_RESET; S = 7; break;
-            case 17: ExN[8] = GPIO_PIN_RESET; S = 0; break; // U13
-            case 18: ExN[8] = GPIO_PIN_RESET; S = 1; break;
-            case 19: ExN[8] = GPIO_PIN_RESET; S = 2; break;
-            case 16: ExN[8] = GPIO_PIN_RESET; S = 3; break;
-            case 20: ExN[8] = GPIO_PIN_RESET; S = 4; break;
-            case 23: ExN[8] = GPIO_PIN_RESET; S = 5; break;
-            case 21: ExN[8] = GPIO_PIN_RESET; S = 6; break;
-            case 22: ExN[8] = GPIO_PIN_RESET; S = 7; break;
-            case 25: ExN[9] = GPIO_PIN_RESET; S = 0; break; // U14
-            case 26: ExN[9] = GPIO_PIN_RESET; S = 1; break;
-            case 27: ExN[9] = GPIO_PIN_RESET; S = 2; break;
-            case 24: ExN[9] = GPIO_PIN_RESET; S = 3; break;
-            case 28: ExN[9] = GPIO_PIN_RESET; S = 4; break;
-            case 31: ExN[9] = GPIO_PIN_RESET; S = 5; break;
-            case 29: ExN[9] = GPIO_PIN_RESET; S = 6; break;
-            case 30: ExN[9] = GPIO_PIN_RESET; S = 7; break;
-            case 32: ExN[0] = GPIO_PIN_RESET; S = 0; break; // U1
-            case 33: ExN[0] = GPIO_PIN_RESET; S = 1; break;
+            case 0:  ExN[0] = GPIO_PIN_RESET; S = 1; break; // U7
+            case 1:  ExN[0] = GPIO_PIN_RESET; S = 2; break; 
+            case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break; 
+            case 3:  ExN[0] = GPIO_PIN_RESET; S = 6; break; 
+            case 4:  ExN[0] = GPIO_PIN_RESET; S = 7; break; 
+            case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break; 
+            case 6:  ExN[1] = GPIO_PIN_RESET; S = 3; break; // U8
+            case 7:  ExN[1] = GPIO_PIN_RESET; S = 0; break; 
+            case 8:  ExN[1] = GPIO_PIN_RESET; S = 1; break; 
+            case 9:  ExN[1] = GPIO_PIN_RESET; S = 2; break; 
+            case 10:  ExN[1] = GPIO_PIN_RESET; S = 4; break; 
+            case 11:  ExN[1] = GPIO_PIN_RESET; S = 6; break; 
+            case 12:  ExN[1] = GPIO_PIN_RESET; S = 7; break; 
+            case 13:  ExN[1] = GPIO_PIN_RESET; S = 5; break; 
+            case 14:  ExN[2] = GPIO_PIN_RESET; S = 3; break; // U9 
+            case 15:  ExN[2] = GPIO_PIN_RESET; S = 0; break;
+            case 16:  ExN[2] = GPIO_PIN_RESET; S = 1; break;
+            case 17:  ExN[2] = GPIO_PIN_RESET; S = 2; break;
+            case 18:  ExN[2] = GPIO_PIN_RESET; S = 4; break;
+            case 19:  ExN[2] = GPIO_PIN_RESET; S = 6; break;
+            case 20:  ExN[2] = GPIO_PIN_RESET; S = 7; break;
+            case 21:  ExN[2] = GPIO_PIN_RESET; S = 5; break;
+            case 22:  ExN[3] = GPIO_PIN_RESET; S = 3; break; // U10
+            case 23:  ExN[3] = GPIO_PIN_RESET; S = 0; break;
+            case 24:  ExN[3] = GPIO_PIN_RESET; S = 1; break;
+            case 25:  ExN[3] = GPIO_PIN_RESET; S = 2; break;
+            case 26:  ExN[3] = GPIO_PIN_RESET; S = 4; break;
+            case 27:  ExN[3] = GPIO_PIN_RESET; S = 6; break;
             default: 
                 PATCHOULI_ErrLog("Invalid X Coil ID: %d", id); 
                 return;
@@ -102,51 +92,25 @@ void patchouli_coil_select(int id, bool x_yn){
             return;
         }
         switch (id) {
-            case 0:  ExN[0] = GPIO_PIN_RESET; S = 2; break; // U1
-            case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break;
-            case 4:  ExN[0] = GPIO_PIN_RESET; S = 5; break;
-            case 1:  ExN[0] = GPIO_PIN_RESET; S = 6; break;
-            case 3:  ExN[0] = GPIO_PIN_RESET; S = 7; break;
-            case 5:  ExN[1] = GPIO_PIN_RESET; S = 0; break; // U2
-            case 7:  ExN[1] = GPIO_PIN_RESET; S = 1; break;
-            case 8:  ExN[1] = GPIO_PIN_RESET; S = 2; break;
-            case 6:  ExN[1] = GPIO_PIN_RESET; S = 3; break;
-            case 10: ExN[1] = GPIO_PIN_RESET; S = 4; break;
-            case 12: ExN[1] = GPIO_PIN_RESET; S = 5; break;
-            case 9:  ExN[1] = GPIO_PIN_RESET; S = 6; break;
-            case 11: ExN[1] = GPIO_PIN_RESET; S = 7; break;
-            case 13: ExN[2] = GPIO_PIN_RESET; S = 0; break; // U3
-            case 15: ExN[2] = GPIO_PIN_RESET; S = 1; break;
-            case 16: ExN[2] = GPIO_PIN_RESET; S = 2; break;
-            case 14: ExN[2] = GPIO_PIN_RESET; S = 3; break;
-            case 18: ExN[2] = GPIO_PIN_RESET; S = 4; break;
-            case 20: ExN[2] = GPIO_PIN_RESET; S = 5; break;
-            case 17: ExN[2] = GPIO_PIN_RESET; S = 6; break;
-            case 19: ExN[2] = GPIO_PIN_RESET; S = 7; break;
-            case 21: ExN[3] = GPIO_PIN_RESET; S = 0; break; // U8
-            case 23: ExN[3] = GPIO_PIN_RESET; S = 1; break;
-            case 24: ExN[3] = GPIO_PIN_RESET; S = 2; break;
-            case 22: ExN[3] = GPIO_PIN_RESET; S = 3; break;
-            case 26: ExN[3] = GPIO_PIN_RESET; S = 4; break;
-            case 28: ExN[3] = GPIO_PIN_RESET; S = 5; break;
-            case 25: ExN[3] = GPIO_PIN_RESET; S = 6; break;
-            case 27: ExN[3] = GPIO_PIN_RESET; S = 7; break;
-            case 29: ExN[4] = GPIO_PIN_RESET; S = 0; break; // U9
-            case 31: ExN[4] = GPIO_PIN_RESET; S = 1; break;
-            case 32: ExN[4] = GPIO_PIN_RESET; S = 2; break;
-            case 30: ExN[4] = GPIO_PIN_RESET; S = 3; break;
-            case 34: ExN[4] = GPIO_PIN_RESET; S = 4; break;
-            case 36: ExN[4] = GPIO_PIN_RESET; S = 5; break;
-            case 33: ExN[4] = GPIO_PIN_RESET; S = 6; break;
-            case 35: ExN[4] = GPIO_PIN_RESET; S = 7; break;
-            case 38: ExN[5] = GPIO_PIN_RESET; S = 0; break; // U10
-            case 39: ExN[5] = GPIO_PIN_RESET; S = 1; break;
-            case 40: ExN[5] = GPIO_PIN_RESET; S = 2; break;
-            case 37: ExN[5] = GPIO_PIN_RESET; S = 3; break;
-            case 41: ExN[5] = GPIO_PIN_RESET; S = 4; break;
-            case 44: ExN[5] = GPIO_PIN_RESET; S = 5; break;
-            case 42: ExN[5] = GPIO_PIN_RESET; S = 6; break;
-            case 43: ExN[5] = GPIO_PIN_RESET; S = 7; break;
+            case 0:  ExN[4] = GPIO_PIN_RESET; S = 3; break; // U11
+            case 1:  ExN[4] = GPIO_PIN_RESET; S = 0; break;
+            case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+            case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+            case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+            case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+            case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+            case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+            case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+            case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+            case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+            case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+            case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+            case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+            case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+            case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+            case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+            case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+            
             default: 
                 PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
                 return;
@@ -161,25 +125,25 @@ void patchouli_coil_select(int id, bool x_yn){
     return;
 }
 
+extern TIM_HandleTypeDef htim16;
 extern TIM_HandleTypeDef htim1;
-extern TIM_HandleTypeDef htim8;
 extern float gfreq;
 
 void patchouli_TIM_init(){
-    HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
-    HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
-    HAL_TIMEx_PWMN_Start(&htim8, TIM_CHANNEL_1);
-    HAL_TIMEx_PWMN_Start(&htim8, TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+    HAL_TIMEx_PWMN_Start(&htim16, TIM_CHANNEL_1);
     gfreq = PATCHOULI_TIM_F_CENTER;
     uint16_t d = (PATCHOULI_TIM_FAST_CLK/gfreq);
-    htim1.Instance->ARR = d;
-    htim1.Instance->CCR1 = d>>1;
-    htim1.Instance->RCR = 60;
+    htim16.Instance->ARR = d;
+    htim16.Instance->CCR1 = d>>1;
+    htim16.Instance->RCR = 60;
 }
 
 void patchouli_TIM_trigger(){
-    htim1.Instance->CR1 |= B16(00000000,00000001); // Enable TIM1
+    htim16.Instance->CR1 |= B16(00000000,00000001); // Enable TIM1
 }
 
 extern ADC_HandleTypeDef hadc1;
@@ -244,8 +208,8 @@ uint16_t patchouli_simple_take_sample(bool back_side, uint8_t fstep){
 //
 void patchouli_set_freq(float freq){
       uint16_t t = round(PATCHOULI_TIM_FAST_CLK/freq);
-      htim1.Instance->ARR  = t;
-      htim1.Instance->CCR1 = (t/2);
+      htim16.Instance->ARR  = t;
+      htim16.Instance->CCR1 = (t/2);
 }
 void patchouli_freq_test(){
       printf("Target\tAchieved\r\n");
@@ -259,11 +223,11 @@ void patchouli_freq_test(){
       }
 }
 void patchouli_led_on(){
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
 void patchouli_led_off(){
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 }
 
 extern UART_HandleTypeDef huart1;
@@ -296,5 +260,15 @@ bool patchouli_transmit(patchouli_report_t* report){
     USBD_HID_SendReport(&hUsbDeviceFS, usbhid_txbuf, 12);
     return true;
 }
-// 
+//#include "usbd_cdc_if.h"
+// bool patchouli_transmit(patchouli_report_t* report){
+//     // through cdc
+//     int16_t p = report->tip;
+//     int16_t x = report->xpos;
+//     int16_t y = report->ypos;
+//     char txbuf[32];
+//     sprintf(txbuf, "%d\t%d\t%d\r\n", x, y, p);
+//     CDC_Transmit_FS(txbuf, strlen(txbuf));
+//     return true;
+// }
 #endif /* PATCHOULI_PCB_GLIDER_ADDON_V1 */

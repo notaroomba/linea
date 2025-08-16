@@ -1,0 +1,793 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"arm_mat_mult_f32.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c"
+  20              		.section	.text.arm_mat_mult_f32,"ax",%progbits
+  21              		.align	1
+  22              		.global	arm_mat_mult_f32
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	arm_mat_mult_f32:
+  28              	.LVL0:
+  29              	.LFB145:
+   1:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /* ----------------------------------------------------------------------
+   2:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Project:      CMSIS DSP Library
+   3:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Title:        arm_mat_mult_f32.c
+   4:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Description:  Floating-point matrix multiplication
+   5:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+   6:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * $Date:        18. March 2019
+   7:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * $Revision:    V1.6.0
+   8:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+   9:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Target Processor: Cortex-M cores
+  10:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * -------------------------------------------------------------------- */
+  11:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /*
+  12:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Copyright (C) 2010-2019 ARM Limited or its affiliates. All rights reserved.
+  13:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  14:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * SPDX-License-Identifier: Apache-2.0
+  15:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  16:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  17:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * not use this file except in compliance with the License.
+  18:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * You may obtain a copy of the License at
+  19:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  20:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * www.apache.org/licenses/LICENSE-2.0
+  21:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  22:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Unless required by applicable law or agreed to in writing, software
+  23:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  24:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  25:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * See the License for the specific language governing permissions and
+  26:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * limitations under the License.
+  27:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
+  28:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  29:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #include "arm_math.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 2
+
+
+  30:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  31:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /**
+  32:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @ingroup groupMatrix
+  33:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
+  34:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  35:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /**
+  36:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @defgroup MatrixMult Matrix Multiplication
+  37:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  38:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Multiplies two matrices.
+  39:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  *
+  40:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * \image html MatrixMultiplication.gif "Multiplication of two 3 x 3 matrices"
+  41:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  42:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Matrix multiplication is only defined if the number of columns of the
+  43:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * first matrix equals the number of rows of the second matrix.
+  44:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * Multiplying an <code>M x N</code> matrix with an <code>N x P</code> matrix results
+  45:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * in an <code>M x P</code> matrix.
+  46:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * When matrix size checking is enabled, the functions check: (1) that the inner dimensions of
+  47:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * <code>pSrcA</code> and <code>pSrcB</code> are equal; and (2) that the size of the output
+  48:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * matrix equals the outer dimensions of <code>pSrcA</code> and <code>pSrcB</code>.
+  49:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
+  50:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  51:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  52:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /**
+  53:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @addtogroup MatrixMult
+  54:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @{
+  55:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
+  56:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  57:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** /**
+  58:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @brief Floating-point matrix multiplication.
+  59:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @param[in]       *pSrcA points to the first input matrix structure
+  60:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @param[in]       *pSrcB points to the second input matrix structure
+  61:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @param[out]      *pDst points to output matrix structure
+  62:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * @return     		The function returns either
+  63:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  * <code>ARM_MATH_SIZE_MISMATCH</code> or <code>ARM_MATH_SUCCESS</code> based on the outcome of siz
+  64:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
+  65:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #if defined(ARM_MATH_NEON)
+  66:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  67:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #define GROUPOFROWS 8
+  68:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  69:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** arm_status arm_mat_mult_f32(
+  70:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   const arm_matrix_instance_f32 * pSrcA,
+  71:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   const arm_matrix_instance_f32 * pSrcB,
+  72:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   arm_matrix_instance_f32 * pDst)
+  73:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** {
+  74:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1 = pSrcA->pData;                /* input data matrix pointer A */
+  75:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn2 = pSrcB->pData;                /* input data matrix pointer B */
+  76:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pInA = pSrcA->pData;                /* input data matrix pointer A  */
+  77:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pOut = pDst->pData;                 /* output data matrix pointer */
+  78:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *px;                                 /* Temporary output data matrix pointer */
+  79:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t sum;                                 /* Accumulator */
+  80:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numRowsA = pSrcA->numRows;            /* number of rows of input matrix A */
+  81:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numColsB = pSrcB->numCols;            /* number of columns of input matrix B */
+  82:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numColsA = pSrcA->numCols;            /* number of columns of input matrix A */
+  83:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  84:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  85:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t in1, in2, in3, in4;
+  86:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t col, i = 0U, j, row = numRowsA, rowCnt, colCnt;      /* loop counters */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 3
+
+
+  87:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   arm_status status;                             /* status of matrix multiplication */
+  88:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+  89:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32x4_t a0V, a1V, a2V, a3V, a4V, a5V, a6V, a7V;
+  90:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32x4_t acc0,acc1,acc2,acc3,acc4,acc5,acc6,acc7,temp;
+  91:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32x2_t accum = vdup_n_f32(0);
+  92:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1B = pSrcA->pData;    
+  93:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1C = pSrcA->pData;    
+  94:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1D = pSrcA->pData;  
+  95:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1E = pSrcA->pData; 
+  96:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1F = pSrcA->pData; 
+  97:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1G = pSrcA->pData; 
+  98:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1H = pSrcA->pData;   
+  99:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 100:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pxB,*pxC, *pxD, *pxE, *pxF, *pxG, *pxH;                                 /* Temporary o
+ 101:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t sum0,sum1, sum2,sum3, sum4, sum5 , sum6, sum7;
+ 102:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 103:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #ifdef ARM_MATH_MATRIX_CHECK
+ 104:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 105:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   /* Check for matrix mismatch condition */
+ 106:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   if ((pSrcA->numCols != pSrcB->numRows) ||
+ 107:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****      (pSrcA->numRows != pDst->numRows) || (pSrcB->numCols != pDst->numCols))
+ 108:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   {
+ 109:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* Set status as ARM_MATH_SIZE_MISMATCH */
+ 110:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     status = ARM_MATH_SIZE_MISMATCH;
+ 111:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   }
+ 112:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   else
+ 113:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #endif /*      #ifdef ARM_MATH_MATRIX_CHECK    */
+ 114:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   {
+ 115:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* The following loop performs the dot-product of each row in pSrcA with each column in pSrcB *
+ 116:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* Row loop */
+ 117:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     rowCnt = row >> 3;
+ 118:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 119:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     while(rowCnt > 0)
+ 120:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     {
+ 121:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Output pointer is set to starting address of the row being processed */
+ 122:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       px = pOut + GROUPOFROWS*i;
+ 123:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxB = px + numColsB;
+ 124:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxC = px + 2*numColsB;
+ 125:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxD = px + 3*numColsB;
+ 126:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxE = px + 4*numColsB;
+ 127:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxF = px + 5*numColsB;
+ 128:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxG = px + 6*numColsB;
+ 129:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pxH = px + 7*numColsB;
+ 130:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 131:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, the column loop counter is to be initiated */
+ 132:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       col = numColsB;
+ 133:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 134:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, the pIn2 pointer is set
+ 135:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****        ** to the starting address of the pSrcB data */
+ 136:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pIn2 = pSrcB->pData;
+ 137:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 138:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       j = 0U;
+ 139:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 140:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Column loop */
+ 141:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       do
+ 142:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       {
+ 143:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Set the variable sum, that acts as accumulator, to zero */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 4
+
+
+ 144:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum0 = 0.0f;
+ 145:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum1 = 0.0f;
+ 146:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum2 = 0.0f;
+ 147:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum3 = 0.0f;
+ 148:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum4 = 0.0f;
+ 149:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum5 = 0.0f;
+ 150:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum6 = 0.0f;
+ 151:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum7 = 0.0f;
+ 152:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 153:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Initiate the pointer pIn1 to point to the starting address of the column being processed
+ 154:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1 = pInA;
+ 155:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1B = pIn1 + numColsA;
+ 156:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1C = pIn1 + 2*numColsA;
+ 157:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1D = pIn1 + 3*numColsA;
+ 158:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1E = pIn1 + 4*numColsA;
+ 159:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1F = pIn1 + 5*numColsA;
+ 160:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1G = pIn1 + 6*numColsA;
+ 161:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1H = pIn1 + 7*numColsA;
+ 162:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 163:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc0 = vdupq_n_f32(0.0);
+ 164:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc1 = vdupq_n_f32(0.0);
+ 165:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc2 = vdupq_n_f32(0.0);
+ 166:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc3 = vdupq_n_f32(0.0);
+ 167:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc4 = vdupq_n_f32(0.0);
+ 168:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc5 = vdupq_n_f32(0.0);
+ 169:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc6 = vdupq_n_f32(0.0);
+ 170:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc7 = vdupq_n_f32(0.0);
+ 171:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 172:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Compute 4 MACs simultaneously. */
+ 173:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA >> 2U;
+ 174:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 175:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Matrix multiplication */
+ 176:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ 177:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 178:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1)*b(1,1) + a(1,2)*b(2,1) + ... + a(m,p)*b(p,n) */
+ 179:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a0V = vld1q_f32(pIn1);  
+ 180:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a1V = vld1q_f32(pIn1B);  
+ 181:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a2V = vld1q_f32(pIn1C); 
+ 182:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a3V = vld1q_f32(pIn1D); 
+ 183:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a4V = vld1q_f32(pIn1E); 
+ 184:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a5V = vld1q_f32(pIn1F); 
+ 185:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a6V = vld1q_f32(pIn1G); 
+ 186:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a7V = vld1q_f32(pIn1H); 
+ 187:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 188:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 	  pIn1 += 4;
+ 189:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1B += 4;
+ 190:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1C += 4;
+ 191:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1D += 4;
+ 192:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1E += 4;
+ 193:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1F += 4;
+ 194:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1G += 4;
+ 195:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1H += 4;
+ 196:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           
+ 197:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[0] = *pIn2;
+ 198:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 199:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[1] = *pIn2;
+ 200:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 5
+
+
+ 201:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[2] = *pIn2;
+ 202:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 203:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[3] = *pIn2;
+ 204:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 205:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 206:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc0 = vmlaq_f32(acc0,a0V,temp);
+ 207:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc1 = vmlaq_f32(acc1,a1V,temp);
+ 208:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc2 = vmlaq_f32(acc2,a2V,temp);
+ 209:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc3 = vmlaq_f32(acc3,a3V,temp);
+ 210:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc4 = vmlaq_f32(acc4,a4V,temp);
+ 211:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc5 = vmlaq_f32(acc5,a5V,temp);
+ 212:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc6 = vmlaq_f32(acc6,a6V,temp);
+ 213:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc7 = vmlaq_f32(acc7,a7V,temp);
+ 214:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 215:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement the loop count */
+ 216:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+ 217:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 218:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 219:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc0), vget_high_f32(acc0));
+ 220:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum0 += accum[0] + accum[1];
+ 221:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 222:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc1), vget_high_f32(acc1));
+ 223:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum1 += accum[0] + accum[1];
+ 224:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 225:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc2), vget_high_f32(acc2));
+ 226:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum2 += accum[0] + accum[1];
+ 227:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 228:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc3), vget_high_f32(acc3));
+ 229:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum3 += accum[0] + accum[1];
+ 230:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 231:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc4), vget_high_f32(acc4));
+ 232:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum4 += accum[0] + accum[1];
+ 233:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 234:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc5), vget_high_f32(acc5));
+ 235:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum5 += accum[0] + accum[1];
+ 236:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 237:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc6), vget_high_f32(acc6));
+ 238:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum6 += accum[0] + accum[1];
+ 239:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 240:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc7), vget_high_f32(acc7));
+ 241:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum7 += accum[0] + accum[1];
+ 242:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 243:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* If the columns of pSrcA is not a multiple of 4, compute any remaining MACs here.
+ 244:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****          ** No loop unrolling is used. */
+ 245:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA & 3;
+ 246:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 247:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ 248:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 249:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1)*b(1,1) + a(1,2)*b(2,1) + ... + a(m,p)*b(p,n) */
+ 250:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum0 += *pIn1++ * (*pIn2);
+ 251:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum1 += *pIn1B++ * (*pIn2);
+ 252:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum2 += *pIn1C++ * (*pIn2);
+ 253:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum3 += *pIn1D++ * (*pIn2);
+ 254:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum4 += *pIn1E++ * (*pIn2);
+ 255:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum5 += *pIn1F++ * (*pIn2);
+ 256:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum6 += *pIn1G++ * (*pIn2);
+ 257:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum7 += *pIn1H++ * (*pIn2);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 6
+
+
+ 258:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 259:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 260:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement the loop counter */
+ 261:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+ 262:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 263:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 264:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Store the result in the destination buffer */
+ 265:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *px++ = sum0;
+ 266:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxB++ = sum1;
+ 267:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxC++ = sum2;
+ 268:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxD++ = sum3;
+ 269:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxE++ = sum4;
+ 270:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxF++ = sum5;
+ 271:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxG++ = sum6;
+ 272:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *pxH++ = sum7;
+ 273:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 274:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Update the pointer pIn2 to point to the  starting address of the next column */
+ 275:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         j++;
+ 276:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn2 = pSrcB->pData + j;
+ 277:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 278:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Decrement the column loop counter */
+ 279:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         col--;
+ 280:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 281:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       } while (col > 0U);
+ 282:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 283:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Update the pointer pInA to point to the  starting address of the next row */
+ 284:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       i = i + numColsB;
+ 285:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pInA = pInA + GROUPOFROWS*numColsA;
+ 286:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 287:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Decrement the row loop counter */
+ 288:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       rowCnt--;
+ 289:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     } 
+ 290:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 291:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /*
+ 292:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 293:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     i was the index of a group of rows computed by previous loop.
+ 294:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     Now i is the index of a row since below code is computing row per row
+ 295:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     and no more group of row per group of rows.
+ 296:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 297:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     */
+ 298:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 299:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     i = GROUPOFROWS*i;
+ 300:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     rowCnt = row & 7;
+ 301:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 302:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     while(rowCnt > 0)
+ 303:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     {
+ 304:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Output pointer is set to starting address of the row being processed */
+ 305:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       px = pOut + i;
+ 306:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 307:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, the column loop counter is to be initiated */
+ 308:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       col = numColsB;
+ 309:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 310:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, the pIn2 pointer is set
+ 311:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****        ** to the starting address of the pSrcB data */
+ 312:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pIn2 = pSrcB->pData;
+ 313:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 314:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       j = 0U;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 7
+
+
+ 315:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 316:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Column loop */
+ 317:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       do
+ 318:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       {
+ 319:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Set the variable sum, that acts as accumulator, to zero */
+ 320:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum = 0.0f;
+ 321:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 322:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Initiate the pointer pIn1 to point to the starting address of the column being processed
+ 323:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1 = pInA;
+ 324:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 325:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         acc0 = vdupq_n_f32(0.0);
+ 326:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 327:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Compute 4 MACs simultaneously. */
+ 328:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA >> 2U;
+ 329:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 330:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Matrix multiplication   */
+ 331:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ 332:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 333:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1)*b(1,1) + a(1,2)*b(2,1) + ... + a(m,p)*b(p,n) */
+ 334:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           a0V = vld1q_f32(pIn1);  // load & separate real/imag pSrcA (de-interleave 2)
+ 335:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn1 += 4;
+ 336:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           
+ 337:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[0] = *pIn2;
+ 338:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 339:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[1] = *pIn2;
+ 340:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 341:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[2] = *pIn2;
+ 342:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 343:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[3] = *pIn2;
+ 344:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 345:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 346:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           acc0 = vmlaq_f32(acc0,a0V,temp);
+ 347:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 348:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement the loop count */
+ 349:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+ 350:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 351:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 352:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         accum = vpadd_f32(vget_low_f32(acc0), vget_high_f32(acc0));
+ 353:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum += accum[0] + accum[1];
+ 354:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 355:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* If the columns of pSrcA is not a multiple of 4, compute any remaining MACs here.
+ 356:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****          ** No loop unrolling is used. */
+ 357:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA % 0x4U;
+ 358:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 359:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ 360:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 361:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1)*b(1,1) + a(1,2)*b(2,1) + ... + a(m,p)*b(p,n) */
+ 362:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * (*pIn2);
+ 363:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 364:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 365:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement the loop counter */
+ 366:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+ 367:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 368:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 369:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Store the result in the destination buffer */
+ 370:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *px++ = sum;
+ 371:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 8
+
+
+ 372:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Update the pointer pIn2 to point to the  starting address of the next column */
+ 373:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         j++;
+ 374:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn2 = pSrcB->pData + j;
+ 375:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 376:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Decrement the column loop counter */
+ 377:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         col--;
+ 378:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 379:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       } while (col > 0U);
+ 380:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 381:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 382:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Update the pointer pInA to point to the  starting address of the next row */
+ 383:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       i = i + numColsB;
+ 384:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pInA = pInA + numColsA;
+ 385:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 386:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Decrement the row loop counter */
+ 387:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       rowCnt--;
+ 388:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 389:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     } 
+ 390:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* Set status as ARM_MATH_SUCCESS */
+ 391:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     status = ARM_MATH_SUCCESS;
+ 392:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   }
+ 393:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 394:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   /* Return to application */
+ 395:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   return (status);
+ 396:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** }
+ 397:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #else
+ 398:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** arm_status arm_mat_mult_f32(
+ 399:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   const arm_matrix_instance_f32 * pSrcA,
+ 400:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   const arm_matrix_instance_f32 * pSrcB,
+ 401:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         arm_matrix_instance_f32 * pDst)
+ 402:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** {
+  30              		.loc 1 402 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 402 1 is_stmt 0 view .LVU1
+  35 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+  36              		.cfi_def_cfa_offset 32
+  37              		.cfi_offset 4, -32
+  38              		.cfi_offset 5, -28
+  39              		.cfi_offset 6, -24
+  40              		.cfi_offset 7, -20
+  41              		.cfi_offset 8, -16
+  42              		.cfi_offset 9, -12
+  43              		.cfi_offset 10, -8
+  44              		.cfi_offset 14, -4
+  45 0004 0346     		mov	r3, r0
+  46 0006 8846     		mov	r8, r1
+ 403:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn1 = pSrcA->pData;                /* Input data matrix pointer A */
+  47              		.loc 1 403 3 is_stmt 1 view .LVU2
+  48              	.LVL1:
+ 404:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pIn2 = pSrcB->pData;                /* Input data matrix pointer B */
+  49              		.loc 1 404 3 view .LVU3
+ 405:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pInA = pSrcA->pData;                /* Input data matrix pointer A */
+  50              		.loc 1 405 3 view .LVU4
+  51              		.loc 1 405 14 is_stmt 0 view .LVU5
+  52 0008 D0F804C0 		ldr	ip, [r0, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 9
+
+
+  53              	.LVL2:
+ 406:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pInB = pSrcB->pData;                /* Input data matrix pointer B */
+  54              		.loc 1 406 3 is_stmt 1 view .LVU6
+  55              		.loc 1 406 14 is_stmt 0 view .LVU7
+  56 000c 4D68     		ldr	r5, [r1, #4]
+  57              	.LVL3:
+ 407:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *pOut = pDst->pData;                 /* Output data matrix pointer */
+  58              		.loc 1 407 3 is_stmt 1 view .LVU8
+  59              		.loc 1 407 14 is_stmt 0 view .LVU9
+  60 000e D2F80490 		ldr	r9, [r2, #4]
+  61              	.LVL4:
+ 408:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t *px;                                 /* Temporary output data matrix pointer */
+  62              		.loc 1 408 3 is_stmt 1 view .LVU10
+ 409:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t sum;                                 /* Accumulator */
+  63              		.loc 1 409 3 view .LVU11
+ 410:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numRowsA = pSrcA->numRows;            /* Number of rows of input matrix A */
+  64              		.loc 1 410 3 view .LVU12
+ 411:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numColsB = pSrcB->numCols;            /* Number of columns of input matrix B */
+  65              		.loc 1 411 3 view .LVU13
+  66              		.loc 1 411 12 is_stmt 0 view .LVU14
+  67 0012 4888     		ldrh	r0, [r1, #2]
+  68              	.LVL5:
+ 412:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t numColsA = pSrcA->numCols;            /* Number of columns of input matrix A */
+  69              		.loc 1 412 3 is_stmt 1 view .LVU15
+  70              		.loc 1 412 12 is_stmt 0 view .LVU16
+  71 0014 B3F802E0 		ldrh	lr, [r3, #2]
+  72              	.LVL6:
+ 413:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint32_t col, i = 0U, row = numRowsA, colCnt;  /* Loop counters */
+  73              		.loc 1 413 3 is_stmt 1 view .LVU17
+  74              		.loc 1 413 25 is_stmt 0 view .LVU18
+  75 0018 1F88     		ldrh	r7, [r3]
+  76              	.LVL7:
+  77              		.loc 1 413 17 view .LVU19
+  78 001a 0026     		movs	r6, #0
+  79 001c 1FE0     		b	.L5
+  80              	.LVL8:
+  81              	.L3:
+ 414:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   arm_status status;                             /* Status of matrix multiplication */
+ 415:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 416:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #ifdef ARM_MATH_MATRIX_CHECK
+ 417:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 418:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   /* Check for matrix mismatch condition */
+ 419:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   if ((pSrcA->numCols != pSrcB->numRows) ||
+ 420:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       (pSrcA->numRows != pDst->numRows)  ||
+ 421:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       (pSrcB->numCols != pDst->numCols)    )
+ 422:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   {
+ 423:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* Set status as ARM_MATH_SIZE_MISMATCH */
+ 424:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     status = ARM_MATH_SIZE_MISMATCH;
+ 425:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   }
+ 426:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   else
+ 427:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 428:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #endif /* #ifdef ARM_MATH_MATRIX_CHECK */
+ 429:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 430:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   {
+ 431:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* The following loop performs the dot-product of each row in pSrcA with each column in pSrcB *
+ 432:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* row loop */
+ 433:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     do
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 10
+
+
+ 434:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     {
+ 435:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Output pointer is set to starting address of row being processed */
+ 436:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       px = pOut + i;
+ 437:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 438:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, column loop counter is to be initiated */
+ 439:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       col = numColsB;
+ 440:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 441:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* For every row wise process, pIn2 pointer is set to starting address of pSrcB data */
+ 442:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pIn2 = pSrcB->pData;
+ 443:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 444:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* column loop */
+ 445:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       do
+ 446:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       {
+ 447:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Set the variable sum, that acts as accumulator, to zero */
+ 448:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum = 0.0f;
+ 449:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 450:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Initialize pointer pIn1 to point to starting address of column being processed */
+ 451:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn1 = pInA;
+ 452:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 453:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #if defined (ARM_MATH_LOOPUNROLL)
+ 454:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 455:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Loop unrolling: Compute 4 MACs at a time. */
+ 456:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA >> 2U;
+ 457:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 458:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* matrix multiplication */
+ 459:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ 460:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 461:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1) * b(1,1) + a(1,2) * b(2,1) + .... + a(m,p) * b(p,n) */
+ 462:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 463:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Perform the multiply-accumulates */
+ 464:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * *pIn2;
+ 465:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 466:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 467:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * *pIn2;
+ 468:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 469:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 470:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * *pIn2;
+ 471:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 472:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 473:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * *pIn2;
+ 474:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+ 475:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 476:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement loop counter */
+ 477:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+ 478:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 479:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 480:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Loop unrolling: Compute remaining MACs */
+ 481:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA % 0x4U;
+ 482:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 483:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #else
+ 484:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 485:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Initialize cntCnt with number of columns */
+ 486:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         colCnt = numColsA;
+ 487:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 488:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #endif /* #if defined (ARM_MATH_LOOPUNROLL) */
+ 489:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 490:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 11
+
+
+ 491:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 492:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* c(m,n) = a(1,1) * b(1,1) + a(1,2) * b(2,1) + .... + a(m,p) * b(p,n) */
+ 493:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 494:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Perform the multiply-accumulates */
+ 495:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum += *pIn1++ * *pIn2;
+  82              		.loc 1 495 11 is_stmt 1 view .LVU20
+  83              		.loc 1 495 18 is_stmt 0 view .LVU21
+  84 001e F3EC017A 		vldmia.32	r3!, {s15}
+  85              	.LVL9:
+  86              		.loc 1 495 28 view .LVU22
+  87 0022 D2ED006A 		vldr.32	s13, [r2]
+  88              		.loc 1 495 26 view .LVU23
+  89 0026 67EEA67A 		vmul.f32	s15, s15, s13
+  90              		.loc 1 495 15 view .LVU24
+  91 002a 37EE277A 		vadd.f32	s14, s14, s15
+  92              	.LVL10:
+ 496:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
+  93              		.loc 1 496 11 is_stmt 1 view .LVU25
+  94              		.loc 1 496 16 is_stmt 0 view .LVU26
+  95 002e 02EB8002 		add	r2, r2, r0, lsl #2
+  96              	.LVL11:
+ 497:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 498:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           /* Decrement loop counter */
+ 499:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           colCnt--;
+  97              		.loc 1 499 11 is_stmt 1 view .LVU27
+  98              		.loc 1 499 17 is_stmt 0 view .LVU28
+  99 0032 0139     		subs	r1, r1, #1
+ 100              	.LVL12:
+ 101              	.L2:
+ 490:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 102              		.loc 1 490 23 is_stmt 1 view .LVU29
+ 103 0034 0029     		cmp	r1, #0
+ 104 0036 F2D1     		bne	.L3
+ 500:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         }
+ 501:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 502:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Store result in destination buffer */
+ 503:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *px++ = sum;
+ 105              		.loc 1 503 9 view .LVU30
+ 106              		.loc 1 503 12 is_stmt 0 view .LVU31
+ 107 0038 5346     		mov	r3, r10
+ 108              	.LVL13:
+ 109              		.loc 1 503 15 view .LVU32
+ 110 003a A3EC017A 		vstmia.32	r3!, {s14}
+ 111              	.LVL14:
+ 504:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 505:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Decrement column loop counter */
+ 506:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         col--;
+ 112              		.loc 1 506 9 is_stmt 1 view .LVU33
+ 113              		.loc 1 506 12 is_stmt 0 view .LVU34
+ 114 003e 013C     		subs	r4, r4, #1
+ 115              	.LVL15:
+ 507:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 508:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Update pointer pIn2 to point to starting address of next column */
+ 509:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         pIn2 = pInB + (numColsB - col);
+ 116              		.loc 1 509 9 is_stmt 1 view .LVU35
+ 117              		.loc 1 509 33 is_stmt 0 view .LVU36
+ 118 0040 021B     		subs	r2, r0, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 12
+
+
+ 119              	.LVL16:
+ 120              		.loc 1 509 14 view .LVU37
+ 121 0042 05EB8202 		add	r2, r5, r2, lsl #2
+ 122              	.LVL17:
+ 510:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 511:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       } while (col > 0U);
+ 123              		.loc 1 511 20 is_stmt 1 view .LVU38
+ 124 0046 2CB1     		cbz	r4, .L8
+ 503:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 125              		.loc 1 503 12 is_stmt 0 view .LVU39
+ 126 0048 9A46     		mov	r10, r3
+ 127              	.LVL18:
+ 128              	.L4:
+ 445:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       {
+ 129              		.loc 1 445 7 is_stmt 1 view .LVU40
+ 448:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 130              		.loc 1 448 9 view .LVU41
+ 451:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 131              		.loc 1 451 9 view .LVU42
+ 486:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 132              		.loc 1 486 9 view .LVU43
+ 490:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 133              		.loc 1 490 9 view .LVU44
+ 486:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 134              		.loc 1 486 16 is_stmt 0 view .LVU45
+ 135 004a 7146     		mov	r1, lr
+ 451:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 136              		.loc 1 451 14 view .LVU46
+ 137 004c 6346     		mov	r3, ip
+ 448:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 138              		.loc 1 448 13 view .LVU47
+ 139 004e 9FED087A 		vldr.32	s14, .L10
+ 490:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
+ 140              		.loc 1 490 15 view .LVU48
+ 141 0052 EFE7     		b	.L2
+ 142              	.LVL19:
+ 143              	.L8:
+ 512:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 513:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Update pointer pInA to point to starting address of next row */
+ 514:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       i = i + numColsB;
+ 144              		.loc 1 514 7 is_stmt 1 view .LVU49
+ 145              		.loc 1 514 9 is_stmt 0 view .LVU50
+ 146 0054 0644     		add	r6, r6, r0
+ 147              	.LVL20:
+ 515:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pInA = pInA + numColsA;
+ 148              		.loc 1 515 7 is_stmt 1 view .LVU51
+ 149              		.loc 1 515 12 is_stmt 0 view .LVU52
+ 150 0056 0CEB8E0C 		add	ip, ip, lr, lsl #2
+ 151              	.LVL21:
+ 516:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 517:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       /* Decrement row loop counter */
+ 518:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       row--;
+ 152              		.loc 1 518 7 is_stmt 1 view .LVU53
+ 519:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 520:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     } while (row > 0U);
+ 153              		.loc 1 520 18 view .LVU54
+ 154 005a 013F     		subs	r7, r7, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 13
+
+
+ 155              	.LVL22:
+ 156              		.loc 1 520 18 is_stmt 0 view .LVU55
+ 157 005c 05D0     		beq	.L9
+ 158              	.LVL23:
+ 159              	.L5:
+ 414:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 160              		.loc 1 414 3 is_stmt 1 view .LVU56
+ 433:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     {
+ 161              		.loc 1 433 5 view .LVU57
+ 436:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 162              		.loc 1 436 7 view .LVU58
+ 436:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 163              		.loc 1 436 10 is_stmt 0 view .LVU59
+ 164 005e 09EB860A 		add	r10, r9, r6, lsl #2
+ 165              	.LVL24:
+ 439:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 166              		.loc 1 439 7 is_stmt 1 view .LVU60
+ 442:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 167              		.loc 1 442 7 view .LVU61
+ 442:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 168              		.loc 1 442 12 is_stmt 0 view .LVU62
+ 169 0062 D8F80420 		ldr	r2, [r8, #4]
+ 170              	.LVL25:
+ 439:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 171              		.loc 1 439 11 view .LVU63
+ 172 0066 0446     		mov	r4, r0
+ 173 0068 EFE7     		b	.L4
+ 174              	.LVL26:
+ 175              	.L9:
+ 521:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 522:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* Set status as ARM_MATH_SUCCESS */
+ 523:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     status = ARM_MATH_SUCCESS;
+ 176              		.loc 1 523 5 is_stmt 1 view .LVU64
+ 524:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   }
+ 525:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
+ 526:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   /* Return to application */
+ 527:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   return (status);
+ 177              		.loc 1 527 3 view .LVU65
+ 528:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** }
+ 178              		.loc 1 528 1 is_stmt 0 view .LVU66
+ 179 006a 0020     		movs	r0, #0
+ 180              	.LVL27:
+ 181              		.loc 1 528 1 view .LVU67
+ 182 006c BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 183              	.LVL28:
+ 184              	.L11:
+ 185              		.loc 1 528 1 view .LVU68
+ 186              		.align	2
+ 187              	.L10:
+ 188 0070 00000000 		.word	0
+ 189              		.cfi_endproc
+ 190              	.LFE145:
+ 192              		.text
+ 193              	.Letext0:
+ 194              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 195              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 196              		.file 4 "Drivers/CMSIS/DSP/Include/arm_math.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 14
+
+
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 arm_mat_mult_f32.c
+C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s:21     .text.arm_mat_mult_f32:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s:27     .text.arm_mat_mult_f32:00000000 arm_mat_mult_f32
+C:\Users\Nathan\AppData\Local\Temp\cctcjayN.s:188    .text.arm_mat_mult_f32:00000070 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,2029 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"patchouli_math.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "patchouli/src/patchouli_math.c"
+  20              		.section	.text.patchouli_linear_map,"ax",%progbits
+  21              		.align	1
+  22              		.global	patchouli_linear_map
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	patchouli_linear_map:
+  28              	.LVL0:
+  29              	.LFB145:
+   1:patchouli/src/patchouli_math.c **** /*
+   2:patchouli/src/patchouli_math.c **** * Project Patchouli
+   3:patchouli/src/patchouli_math.c **** * Copyright (C) 2024 Anhang Li (thelithcore@gmail.com)
+   4:patchouli/src/patchouli_math.c **** *
+   5:patchouli/src/patchouli_math.c **** * This program is free software: you can redistribute it and/or modify
+   6:patchouli/src/patchouli_math.c **** * it under the terms of the GNU General Public License as published by
+   7:patchouli/src/patchouli_math.c **** * the Free Software Foundation, either version 3 of the License, or
+   8:patchouli/src/patchouli_math.c **** * (at your option) any later version.
+   9:patchouli/src/patchouli_math.c **** *
+  10:patchouli/src/patchouli_math.c **** * This program is distributed in the hope that it will be useful,
+  11:patchouli/src/patchouli_math.c **** * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  12:patchouli/src/patchouli_math.c **** * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  13:patchouli/src/patchouli_math.c **** * GNU General Public License for more details.
+  14:patchouli/src/patchouli_math.c **** *
+  15:patchouli/src/patchouli_math.c **** * You should have received a copy of the GNU General Public License
+  16:patchouli/src/patchouli_math.c **** * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  17:patchouli/src/patchouli_math.c **** */
+  18:patchouli/src/patchouli_math.c **** // This file implements the following math and signal processing functions 
+  19:patchouli/src/patchouli_math.c **** // for the Patchouli project.
+  20:patchouli/src/patchouli_math.c **** // - median filter
+  21:patchouli/src/patchouli_math.c **** // - weighted average filter
+  22:patchouli/src/patchouli_math.c **** // - Gaussian fitting
+  23:patchouli/src/patchouli_math.c **** // - moving average filter
+  24:patchouli/src/patchouli_math.c **** // - Kalman filter
+  25:patchouli/src/patchouli_math.c **** // - FIR filter & coefficient calculation
+  26:patchouli/src/patchouli_math.c **** 
+  27:patchouli/src/patchouli_math.c **** #include "patchouli_math.h"
+  28:patchouli/src/patchouli_math.c **** #include "arm_math.h" 
+  29:patchouli/src/patchouli_math.c **** #include "malloc.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 2
+
+
+  30:patchouli/src/patchouli_math.c **** 
+  31:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  32:patchouli/src/patchouli_math.c **** // Mapping
+  33:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  34:patchouli/src/patchouli_math.c **** float patchouli_linear_map(float src_min, float src_max, float dst_min, float dst_max, float val){
+  30              		.loc 1 34 98 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35:patchouli/src/patchouli_math.c ****     return dst_min + (dst_max-dst_min)*(val-src_min)/(src_max-src_min);
+  35              		.loc 1 35 5 view .LVU1
+  36              		.loc 1 35 30 is_stmt 0 view .LVU2
+  37 0000 71EEC11A 		vsub.f32	s3, s3, s2
+  38              	.LVL1:
+  39              		.loc 1 35 44 view .LVU3
+  40 0004 32EE402A 		vsub.f32	s4, s4, s0
+  41              	.LVL2:
+  42              		.loc 1 35 39 view .LVU4
+  43 0008 61EE821A 		vmul.f32	s3, s3, s4
+  44              		.loc 1 35 62 view .LVU5
+  45 000c 70EEC00A 		vsub.f32	s1, s1, s0
+  46              	.LVL3:
+  47              		.loc 1 35 53 view .LVU6
+  48 0010 81EEA00A 		vdiv.f32	s0, s3, s1
+  49              	.LVL4:
+  36:patchouli/src/patchouli_math.c **** }
+  50              		.loc 1 36 1 view .LVU7
+  51 0014 30EE010A 		vadd.f32	s0, s0, s2
+  52 0018 7047     		bx	lr
+  53              		.cfi_endproc
+  54              	.LFE145:
+  56              		.section	.text.patchouli_median,"ax",%progbits
+  57              		.align	1
+  58              		.global	patchouli_median
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	patchouli_median:
+  64              	.LVL5:
+  65              	.LFB146:
+  37:patchouli/src/patchouli_math.c **** 
+  38:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  39:patchouli/src/patchouli_math.c **** // Median 
+  40:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  41:patchouli/src/patchouli_math.c **** uint16_t patchouli_median(uint16_t *arr, uint16_t n) {
+  66              		.loc 1 41 54 is_stmt 1 view -0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		.loc 1 41 54 is_stmt 0 view .LVU9
+  71 0000 10B5     		push	{r4, lr}
+  72              		.cfi_def_cfa_offset 8
+  73              		.cfi_offset 4, -8
+  74              		.cfi_offset 14, -4
+  42:patchouli/src/patchouli_math.c ****   uint16_t temp;
+  75              		.loc 1 42 3 is_stmt 1 view .LVU10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 3
+
+
+  43:patchouli/src/patchouli_math.c ****   for (uint16_t i = 0; i < n; i++) {
+  76              		.loc 1 43 3 view .LVU11
+  77              	.LBB2:
+  78              		.loc 1 43 8 view .LVU12
+  79              	.LVL6:
+  80              		.loc 1 43 17 is_stmt 0 view .LVU13
+  81 0002 4FF0000E 		mov	lr, #0
+  82              		.loc 1 43 3 view .LVU14
+  83 0006 0FE0     		b	.L3
+  84              	.LVL7:
+  85              	.L5:
+  86              	.LBB3:
+  44:patchouli/src/patchouli_math.c ****     for (uint16_t j = i + 1; j < n; j++) {
+  87              		.loc 1 44 38 is_stmt 1 discriminator 2 view .LVU15
+  88 0008 0133     		adds	r3, r3, #1
+  89              	.LVL8:
+  90              		.loc 1 44 38 is_stmt 0 discriminator 2 view .LVU16
+  91 000a 9BB2     		uxth	r3, r3
+  92              	.LVL9:
+  93              	.L4:
+  94              		.loc 1 44 32 is_stmt 1 discriminator 1 view .LVU17
+  95 000c 8B42     		cmp	r3, r1
+  96 000e 0AD2     		bcs	.L9
+  45:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+  97              		.loc 1 45 7 view .LVU18
+  98              		.loc 1 45 14 is_stmt 0 view .LVU19
+  99 0010 30F813C0 		ldrh	ip, [r0, r3, lsl #1]
+ 100              		.loc 1 45 23 view .LVU20
+ 101 0014 30F81E20 		ldrh	r2, [r0, lr, lsl #1]
+ 102              		.loc 1 45 10 view .LVU21
+ 103 0018 9445     		cmp	ip, r2
+ 104 001a F5D2     		bcs	.L5
+  46:patchouli/src/patchouli_math.c ****         temp = arr[i];
+ 105              		.loc 1 46 9 is_stmt 1 view .LVU22
+ 106              	.LVL10:
+  47:patchouli/src/patchouli_math.c ****         arr[i] = arr[j];
+ 107              		.loc 1 47 9 view .LVU23
+ 108              		.loc 1 47 16 is_stmt 0 view .LVU24
+ 109 001c 20F81EC0 		strh	ip, [r0, lr, lsl #1]	@ movhi
+  48:patchouli/src/patchouli_math.c ****         arr[j] = temp;
+ 110              		.loc 1 48 9 is_stmt 1 view .LVU25
+ 111              		.loc 1 48 16 is_stmt 0 view .LVU26
+ 112 0020 20F81320 		strh	r2, [r0, r3, lsl #1]	@ movhi
+ 113 0024 F0E7     		b	.L5
+ 114              	.LVL11:
+ 115              	.L9:
+ 116              		.loc 1 48 16 view .LVU27
+ 117              	.LBE3:
+  43:patchouli/src/patchouli_math.c ****     for (uint16_t j = i + 1; j < n; j++) {
+ 118              		.loc 1 43 32 discriminator 2 view .LVU28
+ 119 0026 A646     		mov	lr, r4
+ 120              	.LVL12:
+ 121              	.L3:
+  43:patchouli/src/patchouli_math.c ****     for (uint16_t j = i + 1; j < n; j++) {
+ 122              		.loc 1 43 26 is_stmt 1 discriminator 1 view .LVU29
+ 123 0028 8E45     		cmp	lr, r1
+ 124 002a 04D2     		bcs	.L10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 4
+
+
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 125              		.loc 1 44 5 view .LVU30
+ 126              	.LBB4:
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 127              		.loc 1 44 10 view .LVU31
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 128              		.loc 1 44 19 is_stmt 0 view .LVU32
+ 129 002c 0EF10104 		add	r4, lr, #1
+ 130 0030 A4B2     		uxth	r4, r4
+ 131              	.LVL13:
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 132              		.loc 1 44 19 view .LVU33
+ 133 0032 2346     		mov	r3, r4
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 134              		.loc 1 44 5 view .LVU34
+ 135 0034 EAE7     		b	.L4
+ 136              	.LVL14:
+ 137              	.L10:
+  44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
+ 138              		.loc 1 44 5 view .LVU35
+ 139              	.LBE4:
+ 140              	.LBE2:
+  49:patchouli/src/patchouli_math.c ****       }
+  50:patchouli/src/patchouli_math.c ****     }
+  51:patchouli/src/patchouli_math.c ****   }
+  52:patchouli/src/patchouli_math.c ****   return arr[n / 2];
+ 141              		.loc 1 52 3 is_stmt 1 view .LVU36
+ 142              		.loc 1 52 16 is_stmt 0 view .LVU37
+ 143 0036 4908     		lsrs	r1, r1, #1
+ 144              	.LVL15:
+  53:patchouli/src/patchouli_math.c **** }
+ 145              		.loc 1 53 1 view .LVU38
+ 146 0038 30F81100 		ldrh	r0, [r0, r1, lsl #1]
+ 147              	.LVL16:
+ 148              		.loc 1 53 1 view .LVU39
+ 149 003c 10BD     		pop	{r4, pc}
+ 150              		.cfi_endproc
+ 151              	.LFE146:
+ 153              		.section	.text.patchouli_wavg_f32,"ax",%progbits
+ 154              		.align	1
+ 155              		.global	patchouli_wavg_f32
+ 156              		.syntax unified
+ 157              		.thumb
+ 158              		.thumb_func
+ 160              	patchouli_wavg_f32:
+ 161              	.LVL17:
+ 162              	.LFB147:
+  54:patchouli/src/patchouli_math.c **** 
+  55:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  56:patchouli/src/patchouli_math.c **** // Weighted Average
+  57:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  58:patchouli/src/patchouli_math.c **** float patchouli_wavg_f32(float* pos, float* weight, int len){
+ 163              		.loc 1 58 61 is_stmt 1 view -0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 5
+
+
+  59:patchouli/src/patchouli_math.c ****     float sum = 0;
+ 168              		.loc 1 59 5 view .LVU41
+  60:patchouli/src/patchouli_math.c ****     float wsum = 0;
+ 169              		.loc 1 60 5 view .LVU42
+  61:patchouli/src/patchouli_math.c ****     for (int i=0; i<len; i++){
+ 170              		.loc 1 61 5 view .LVU43
+ 171              	.LBB5:
+ 172              		.loc 1 61 10 view .LVU44
+ 173              		.loc 1 61 14 is_stmt 0 view .LVU45
+ 174 0000 0023     		movs	r3, #0
+ 175              	.LBE5:
+  60:patchouli/src/patchouli_math.c ****     float wsum = 0;
+ 176              		.loc 1 60 11 view .LVU46
+ 177 0002 DFED0C6A 		vldr.32	s13, .L14
+  59:patchouli/src/patchouli_math.c ****     float sum = 0;
+ 178              		.loc 1 59 11 view .LVU47
+ 179 0006 B0EE660A 		vmov.f32	s0, s13
+ 180              	.LBB6:
+ 181              		.loc 1 61 5 view .LVU48
+ 182 000a 0EE0     		b	.L12
+ 183              	.LVL18:
+ 184              	.L13:
+  62:patchouli/src/patchouli_math.c ****         sum  += pos[i]*weight[i];
+ 185              		.loc 1 62 9 is_stmt 1 view .LVU49
+ 186              		.loc 1 62 20 is_stmt 0 view .LVU50
+ 187 000c 00EB830C 		add	ip, r0, r3, lsl #2
+ 188 0010 DCED007A 		vldr.32	s15, [ip]
+ 189              		.loc 1 62 30 view .LVU51
+ 190 0014 01EB830C 		add	ip, r1, r3, lsl #2
+ 191 0018 9CED007A 		vldr.32	s14, [ip]
+ 192              		.loc 1 62 23 view .LVU52
+ 193 001c 67EE877A 		vmul.f32	s15, s15, s14
+ 194              		.loc 1 62 14 view .LVU53
+ 195 0020 30EE270A 		vadd.f32	s0, s0, s15
+ 196              	.LVL19:
+  63:patchouli/src/patchouli_math.c ****         wsum += weight[i];
+ 197              		.loc 1 63 9 is_stmt 1 view .LVU54
+ 198              		.loc 1 63 14 is_stmt 0 view .LVU55
+ 199 0024 76EE876A 		vadd.f32	s13, s13, s14
+ 200              	.LVL20:
+  61:patchouli/src/patchouli_math.c ****     for (int i=0; i<len; i++){
+ 201              		.loc 1 61 27 is_stmt 1 discriminator 3 view .LVU56
+ 202 0028 0133     		adds	r3, r3, #1
+ 203              	.LVL21:
+ 204              	.L12:
+  61:patchouli/src/patchouli_math.c ****     for (int i=0; i<len; i++){
+ 205              		.loc 1 61 20 discriminator 1 view .LVU57
+ 206 002a 9342     		cmp	r3, r2
+ 207 002c EEDB     		blt	.L13
+ 208              	.LBE6:
+  64:patchouli/src/patchouli_math.c ****     }
+  65:patchouli/src/patchouli_math.c ****     return sum/wsum;
+ 209              		.loc 1 65 5 view .LVU58
+  66:patchouli/src/patchouli_math.c **** }
+ 210              		.loc 1 66 1 is_stmt 0 view .LVU59
+ 211 002e 80EE260A 		vdiv.f32	s0, s0, s13
+ 212              	.LVL22:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 6
+
+
+ 213              		.loc 1 66 1 view .LVU60
+ 214 0032 7047     		bx	lr
+ 215              	.L15:
+ 216              		.align	2
+ 217              	.L14:
+ 218 0034 00000000 		.word	0
+ 219              		.cfi_endproc
+ 220              	.LFE147:
+ 222              		.section	.text.patchouli_gauss_init_kernel,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	patchouli_gauss_init_kernel
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	patchouli_gauss_init_kernel:
+ 230              	.LFB148:
+  67:patchouli/src/patchouli_math.c **** 
+  68:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  69:patchouli/src/patchouli_math.c **** // Gaussian fitting
+  70:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+  71:patchouli/src/patchouli_math.c **** float32_t               patchouli_kernel_f32[3*PATCHOULI_GWIN];
+  72:patchouli/src/patchouli_math.c **** arm_matrix_instance_f32 patchouli_kernel_mat;
+  73:patchouli/src/patchouli_math.c **** float32_t               patchouli_c_f32[3];
+  74:patchouli/src/patchouli_math.c **** arm_matrix_instance_f32 patchouli_c_mat;
+  75:patchouli/src/patchouli_math.c **** float32_t               patchouli_b_f32[PATCHOULI_GWIN];
+  76:patchouli/src/patchouli_math.c **** arm_matrix_instance_f32 patchouli_b_mat;
+  77:patchouli/src/patchouli_math.c **** 
+  78:patchouli/src/patchouli_math.c **** // Compute the kernel for the Gaussian fit
+  79:patchouli/src/patchouli_math.c **** void patchouli_gauss_init_kernel(){
+ 231              		.loc 1 79 35 is_stmt 1 view -0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 224
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 00B5     		push	{lr}
+ 236              		.cfi_def_cfa_offset 4
+ 237              		.cfi_offset 14, -4
+ 238 0002 B9B0     		sub	sp, sp, #228
+ 239              		.cfi_def_cfa_offset 232
+  80:patchouli/src/patchouli_math.c ****     float32_t A_f32 [3*PATCHOULI_GWIN];
+ 240              		.loc 1 80 5 view .LVU62
+  81:patchouli/src/patchouli_math.c ****     float32_t AT_f32[3*PATCHOULI_GWIN];
+ 241              		.loc 1 81 5 view .LVU63
+  82:patchouli/src/patchouli_math.c ****     float32_t ATMA_f32[3*3];
+ 242              		.loc 1 82 5 view .LVU64
+  83:patchouli/src/patchouli_math.c ****     float32_t ATMAI_f32[3*3];
+ 243              		.loc 1 83 5 view .LVU65
+  84:patchouli/src/patchouli_math.c ****     arm_matrix_instance_f32 A;
+ 244              		.loc 1 84 5 view .LVU66
+  85:patchouli/src/patchouli_math.c ****     arm_matrix_instance_f32 AT;
+ 245              		.loc 1 85 5 view .LVU67
+  86:patchouli/src/patchouli_math.c ****     arm_matrix_instance_f32 ATMA;
+ 246              		.loc 1 86 5 view .LVU68
+  87:patchouli/src/patchouli_math.c ****     arm_matrix_instance_f32 ATMAI;
+ 247              		.loc 1 87 5 view .LVU69
+  88:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&A, PATCHOULI_GWIN,3 ,  A_f32 );
+ 248              		.loc 1 88 5 view .LVU70
+ 249 0004 29AB     		add	r3, sp, #164
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 7
+
+
+ 250 0006 0322     		movs	r2, #3
+ 251 0008 0521     		movs	r1, #5
+ 252 000a 06A8     		add	r0, sp, #24
+ 253 000c FFF7FEFF 		bl	arm_mat_init_f32
+ 254              	.LVL23:
+  89:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&AT, 3, PATCHOULI_GWIN, AT_f32);
+ 255              		.loc 1 89 5 view .LVU71
+ 256 0010 1AAB     		add	r3, sp, #104
+ 257 0012 0522     		movs	r2, #5
+ 258 0014 0321     		movs	r1, #3
+ 259 0016 04A8     		add	r0, sp, #16
+ 260 0018 FFF7FEFF 		bl	arm_mat_init_f32
+ 261              	.LVL24:
+  90:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&ATMA, 3, 3, ATMA_f32);
+ 262              		.loc 1 90 5 view .LVU72
+ 263 001c 11AB     		add	r3, sp, #68
+ 264 001e 0322     		movs	r2, #3
+ 265 0020 1146     		mov	r1, r2
+ 266 0022 02A8     		add	r0, sp, #8
+ 267 0024 FFF7FEFF 		bl	arm_mat_init_f32
+ 268              	.LVL25:
+  91:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&ATMAI, 3, 3, ATMAI_f32);
+ 269              		.loc 1 91 5 view .LVU73
+ 270 0028 08AB     		add	r3, sp, #32
+ 271 002a 0322     		movs	r2, #3
+ 272 002c 1146     		mov	r1, r2
+ 273 002e 6846     		mov	r0, sp
+ 274 0030 FFF7FEFF 		bl	arm_mat_init_f32
+ 275              	.LVL26:
+  92:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&patchouli_kernel_mat, 3, PATCHOULI_GWIN, patchouli_kernel_f32);
+ 276              		.loc 1 92 5 view .LVU74
+ 277 0034 244B     		ldr	r3, .L20
+ 278 0036 0522     		movs	r2, #5
+ 279 0038 0321     		movs	r1, #3
+ 280 003a 2448     		ldr	r0, .L20+4
+ 281 003c FFF7FEFF 		bl	arm_mat_init_f32
+ 282              	.LVL27:
+  93:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&patchouli_b_mat, PATCHOULI_GWIN,1, patchouli_b_f32);
+ 283              		.loc 1 93 5 view .LVU75
+ 284 0040 234B     		ldr	r3, .L20+8
+ 285 0042 0122     		movs	r2, #1
+ 286 0044 0521     		movs	r1, #5
+ 287 0046 2348     		ldr	r0, .L20+12
+ 288 0048 FFF7FEFF 		bl	arm_mat_init_f32
+ 289              	.LVL28:
+  94:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&patchouli_c_mat, 3,1, patchouli_c_f32);
+ 290              		.loc 1 94 5 view .LVU76
+ 291 004c 224B     		ldr	r3, .L20+16
+ 292 004e 0122     		movs	r2, #1
+ 293 0050 0321     		movs	r1, #3
+ 294 0052 2248     		ldr	r0, .L20+20
+ 295 0054 FFF7FEFF 		bl	arm_mat_init_f32
+ 296              	.LVL29:
+  95:patchouli/src/patchouli_math.c ****     for (int x=0; x<PATCHOULI_GWIN;x++) {
+ 297              		.loc 1 95 5 view .LVU77
+ 298              	.LBB7:
+ 299              		.loc 1 95 10 view .LVU78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 8
+
+
+ 300              		.loc 1 95 14 is_stmt 0 view .LVU79
+ 301 0058 0023     		movs	r3, #0
+ 302              		.loc 1 95 5 view .LVU80
+ 303 005a 1EE0     		b	.L17
+ 304              	.LVL30:
+ 305              	.L18:
+  96:patchouli/src/patchouli_math.c ****         A_f32[x*3+0] = 1;
+ 306              		.loc 1 96 9 is_stmt 1 view .LVU81
+ 307              		.loc 1 96 18 is_stmt 0 view .LVU82
+ 308 005c 03EB4302 		add	r2, r3, r3, lsl #1
+ 309              		.loc 1 96 22 view .LVU83
+ 310 0060 38A9     		add	r1, sp, #224
+ 311 0062 01EB8201 		add	r1, r1, r2, lsl #2
+ 312 0066 4FF07E50 		mov	r0, #1065353216
+ 313 006a 41F83C0C 		str	r0, [r1, #-60]	@ float
+  97:patchouli/src/patchouli_math.c ****         A_f32[x*3+1] = x+1;
+ 314              		.loc 1 97 9 is_stmt 1 view .LVU84
+ 315              		.loc 1 97 25 is_stmt 0 view .LVU85
+ 316 006e 0133     		adds	r3, r3, #1
+ 317              	.LVL31:
+ 318              		.loc 1 97 18 view .LVU86
+ 319 0070 511C     		adds	r1, r2, #1
+ 320              		.loc 1 97 22 view .LVU87
+ 321 0072 38A8     		add	r0, sp, #224
+ 322 0074 00EB8101 		add	r1, r0, r1, lsl #2
+ 323 0078 07EE903A 		vmov	s15, r3	@ int
+ 324 007c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 325 0080 41ED0F7A 		vstr.32	s15, [r1, #-60]
+  98:patchouli/src/patchouli_math.c ****         A_f32[x*3+2] = (x+1)*(x+1);
+ 326              		.loc 1 98 9 is_stmt 1 view .LVU88
+ 327              		.loc 1 98 29 is_stmt 0 view .LVU89
+ 328 0084 03FB03F1 		mul	r1, r3, r3
+ 329 0088 07EE901A 		vmov	s15, r1	@ int
+ 330              		.loc 1 98 18 view .LVU90
+ 331 008c 0232     		adds	r2, r2, #2
+ 332              		.loc 1 98 22 view .LVU91
+ 333 008e 00EB8202 		add	r2, r0, r2, lsl #2
+ 334 0092 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 335 0096 42ED0F7A 		vstr.32	s15, [r2, #-60]
+  95:patchouli/src/patchouli_math.c ****         A_f32[x*3+0] = 1;
+ 336              		.loc 1 95 37 is_stmt 1 discriminator 3 view .LVU92
+ 337              	.LVL32:
+ 338              	.L17:
+  95:patchouli/src/patchouli_math.c ****         A_f32[x*3+0] = 1;
+ 339              		.loc 1 95 20 discriminator 1 view .LVU93
+ 340 009a 042B     		cmp	r3, #4
+ 341 009c DEDD     		ble	.L18
+ 342              	.LBE7:
+  99:patchouli/src/patchouli_math.c ****     }
+ 100:patchouli/src/patchouli_math.c ****     arm_mat_trans_f32(&A, &AT);
+ 343              		.loc 1 100 5 view .LVU94
+ 344 009e 04A9     		add	r1, sp, #16
+ 345 00a0 06A8     		add	r0, sp, #24
+ 346 00a2 FFF7FEFF 		bl	arm_mat_trans_f32
+ 347              	.LVL33:
+ 101:patchouli/src/patchouli_math.c ****     arm_mat_mult_f32(&AT, &A, &ATMA);
+ 348              		.loc 1 101 5 view .LVU95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 9
+
+
+ 349 00a6 02AA     		add	r2, sp, #8
+ 350 00a8 06A9     		add	r1, sp, #24
+ 351 00aa 04A8     		add	r0, sp, #16
+ 352 00ac FFF7FEFF 		bl	arm_mat_mult_f32
+ 353              	.LVL34:
+ 102:patchouli/src/patchouli_math.c ****     arm_mat_inverse_f32(&ATMA, &ATMAI);
+ 354              		.loc 1 102 5 view .LVU96
+ 355 00b0 6946     		mov	r1, sp
+ 356 00b2 02A8     		add	r0, sp, #8
+ 357 00b4 FFF7FEFF 		bl	arm_mat_inverse_f32
+ 358              	.LVL35:
+ 103:patchouli/src/patchouli_math.c ****     arm_mat_mult_f32(&ATMAI, &AT, &patchouli_kernel_mat);
+ 359              		.loc 1 103 5 view .LVU97
+ 360 00b8 044A     		ldr	r2, .L20+4
+ 361 00ba 04A9     		add	r1, sp, #16
+ 362 00bc 6846     		mov	r0, sp
+ 363 00be FFF7FEFF 		bl	arm_mat_mult_f32
+ 364              	.LVL36:
+ 104:patchouli/src/patchouli_math.c **** }
+ 365              		.loc 1 104 1 is_stmt 0 view .LVU98
+ 366 00c2 39B0     		add	sp, sp, #228
+ 367              		.cfi_def_cfa_offset 4
+ 368              		@ sp needed
+ 369 00c4 5DF804FB 		ldr	pc, [sp], #4
+ 370              	.L21:
+ 371              		.align	2
+ 372              	.L20:
+ 373 00c8 00000000 		.word	patchouli_kernel_f32
+ 374 00cc 00000000 		.word	patchouli_kernel_mat
+ 375 00d0 00000000 		.word	patchouli_b_f32
+ 376 00d4 00000000 		.word	patchouli_b_mat
+ 377 00d8 00000000 		.word	patchouli_c_f32
+ 378 00dc 00000000 		.word	patchouli_c_mat
+ 379              		.cfi_endproc
+ 380              	.LFE148:
+ 382              		.section	.text.patchouli_gauss_apply,"ax",%progbits
+ 383              		.align	1
+ 384              		.global	patchouli_gauss_apply
+ 385              		.syntax unified
+ 386              		.thumb
+ 387              		.thumb_func
+ 389              	patchouli_gauss_apply:
+ 390              	.LVL37:
+ 391              	.LFB149:
+ 105:patchouli/src/patchouli_math.c **** // Apply the Gaussian fit
+ 106:patchouli/src/patchouli_math.c **** float* patchouli_gauss_apply(int16_t* arr, float* dst){
+ 392              		.loc 1 106 55 is_stmt 1 view -0
+ 393              		.cfi_startproc
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 396              		.loc 1 106 55 is_stmt 0 view .LVU100
+ 397 0000 10B5     		push	{r4, lr}
+ 398              		.cfi_def_cfa_offset 8
+ 399              		.cfi_offset 4, -8
+ 400              		.cfi_offset 14, -4
+ 401 0002 0C46     		mov	r4, r1
+ 107:patchouli/src/patchouli_math.c ****     for (int x=0; x<PATCHOULI_GWIN;x++) {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 10
+
+
+ 402              		.loc 1 107 5 is_stmt 1 view .LVU101
+ 403              	.LBB8:
+ 404              		.loc 1 107 10 view .LVU102
+ 405              	.LVL38:
+ 406              		.loc 1 107 14 is_stmt 0 view .LVU103
+ 407 0004 0023     		movs	r3, #0
+ 408              		.loc 1 107 5 view .LVU104
+ 409 0006 0BE0     		b	.L23
+ 410              	.LVL39:
+ 411              	.L24:
+ 108:patchouli/src/patchouli_math.c ****         patchouli_b_f32[x] = (float)arr[x];
+ 412              		.loc 1 108 9 is_stmt 1 view .LVU105
+ 413              		.loc 1 108 40 is_stmt 0 view .LVU106
+ 414 0008 30F91320 		ldrsh	r2, [r0, r3, lsl #1]
+ 415 000c 07EE902A 		vmov	s15, r2	@ int
+ 416              		.loc 1 108 30 view .LVU107
+ 417 0010 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 418              		.loc 1 108 28 view .LVU108
+ 419 0014 094A     		ldr	r2, .L26
+ 420 0016 02EB8302 		add	r2, r2, r3, lsl #2
+ 421 001a C2ED007A 		vstr.32	s15, [r2]
+ 107:patchouli/src/patchouli_math.c ****     for (int x=0; x<PATCHOULI_GWIN;x++) {
+ 422              		.loc 1 107 37 is_stmt 1 discriminator 3 view .LVU109
+ 423 001e 0133     		adds	r3, r3, #1
+ 424              	.LVL40:
+ 425              	.L23:
+ 107:patchouli/src/patchouli_math.c ****     for (int x=0; x<PATCHOULI_GWIN;x++) {
+ 426              		.loc 1 107 20 discriminator 1 view .LVU110
+ 427 0020 042B     		cmp	r3, #4
+ 428 0022 F1DD     		ble	.L24
+ 429              	.LBE8:
+ 109:patchouli/src/patchouli_math.c ****     }
+ 110:patchouli/src/patchouli_math.c ****     arm_mat_mult_f32(&patchouli_kernel_mat, &patchouli_b_mat, &patchouli_c_mat);
+ 430              		.loc 1 110 5 view .LVU111
+ 431 0024 064A     		ldr	r2, .L26+4
+ 432 0026 0749     		ldr	r1, .L26+8
+ 433              	.LVL41:
+ 434              		.loc 1 110 5 is_stmt 0 view .LVU112
+ 435 0028 0748     		ldr	r0, .L26+12
+ 436              	.LVL42:
+ 437              		.loc 1 110 5 view .LVU113
+ 438 002a FFF7FEFF 		bl	arm_mat_mult_f32
+ 439              	.LVL43:
+ 111:patchouli/src/patchouli_math.c ****     memcpy(dst, patchouli_c_f32, 3*sizeof(float));
+ 440              		.loc 1 111 5 is_stmt 1 view .LVU114
+ 441 002e 074B     		ldr	r3, .L26+16
+ 442 0030 07CB     		ldmia	r3!, {r0, r1, r2}
+ 443 0032 2060     		str	r0, [r4]	@ unaligned
+ 444 0034 6160     		str	r1, [r4, #4]	@ unaligned
+ 445 0036 A260     		str	r2, [r4, #8]	@ unaligned
+ 112:patchouli/src/patchouli_math.c ****     return dst;
+ 446              		.loc 1 112 5 view .LVU115
+ 113:patchouli/src/patchouli_math.c **** }
+ 447              		.loc 1 113 1 is_stmt 0 view .LVU116
+ 448 0038 2046     		mov	r0, r4
+ 449 003a 10BD     		pop	{r4, pc}
+ 450              	.LVL44:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 11
+
+
+ 451              	.L27:
+ 452              		.loc 1 113 1 view .LVU117
+ 453              		.align	2
+ 454              	.L26:
+ 455 003c 00000000 		.word	patchouli_b_f32
+ 456 0040 00000000 		.word	patchouli_c_mat
+ 457 0044 00000000 		.word	patchouli_b_mat
+ 458 0048 00000000 		.word	patchouli_kernel_mat
+ 459 004c 00000000 		.word	patchouli_c_f32
+ 460              		.cfi_endproc
+ 461              	.LFE149:
+ 463              		.section	.text.patchouli_gauss_calc_mean,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	patchouli_gauss_calc_mean
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 470              	patchouli_gauss_calc_mean:
+ 471              	.LFB150:
+ 114:patchouli/src/patchouli_math.c **** float patchouli_gauss_calc_mean(){return -patchouli_c_f32[1]/(2.0f*patchouli_c_f32[2]);}
+ 472              		.loc 1 114 34 is_stmt 1 view -0
+ 473              		.cfi_startproc
+ 474              		@ args = 0, pretend = 0, frame = 0
+ 475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 476              		@ link register save eliminated.
+ 477              		.loc 1 114 35 view .LVU119
+ 478              		.loc 1 114 58 is_stmt 0 view .LVU120
+ 479 0000 054B     		ldr	r3, .L29
+ 480 0002 93ED010A 		vldr.32	s0, [r3, #4]
+ 481              		.loc 1 114 42 view .LVU121
+ 482 0006 B1EE400A 		vneg.f32	s0, s0
+ 483              		.loc 1 114 83 view .LVU122
+ 484 000a D3ED027A 		vldr.32	s15, [r3, #8]
+ 485              		.loc 1 114 67 view .LVU123
+ 486 000e 77EEA77A 		vadd.f32	s15, s15, s15
+ 487              		.loc 1 114 88 view .LVU124
+ 488 0012 80EE270A 		vdiv.f32	s0, s0, s15
+ 489 0016 7047     		bx	lr
+ 490              	.L30:
+ 491              		.align	2
+ 492              	.L29:
+ 493 0018 00000000 		.word	patchouli_c_f32
+ 494              		.cfi_endproc
+ 495              	.LFE150:
+ 497              		.section	.text.patchouli_gauss_calc_std,"ax",%progbits
+ 498              		.align	1
+ 499              		.global	patchouli_gauss_calc_std
+ 500              		.syntax unified
+ 501              		.thumb
+ 502              		.thumb_func
+ 504              	patchouli_gauss_calc_std:
+ 505              	.LFB151:
+ 115:patchouli/src/patchouli_math.c **** float patchouli_gauss_calc_std(){return sqrtf(1.0f/(2.0f*patchouli_c_f32[2]));}
+ 506              		.loc 1 115 33 is_stmt 1 view -0
+ 507              		.cfi_startproc
+ 508              		@ args = 0, pretend = 0, frame = 0
+ 509              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 12
+
+
+ 510 0000 08B5     		push	{r3, lr}
+ 511              		.cfi_def_cfa_offset 8
+ 512              		.cfi_offset 3, -8
+ 513              		.cfi_offset 14, -4
+ 514              		.loc 1 115 34 view .LVU126
+ 515              		.loc 1 115 73 is_stmt 0 view .LVU127
+ 516 0002 064B     		ldr	r3, .L33
+ 517 0004 93ED020A 		vldr.32	s0, [r3, #8]
+ 518              		.loc 1 115 57 view .LVU128
+ 519 0008 30EE000A 		vadd.f32	s0, s0, s0
+ 520              		.loc 1 115 41 view .LVU129
+ 521 000c F7EE007A 		vmov.f32	s15, #1.0e+0
+ 522 0010 87EE800A 		vdiv.f32	s0, s15, s0
+ 523 0014 FFF7FEFF 		bl	sqrtf
+ 524              	.LVL45:
+ 525              		.loc 1 115 79 view .LVU130
+ 526 0018 08BD     		pop	{r3, pc}
+ 527              	.L34:
+ 528 001a 00BF     		.align	2
+ 529              	.L33:
+ 530 001c 00000000 		.word	patchouli_c_f32
+ 531              		.cfi_endproc
+ 532              	.LFE151:
+ 534              		.section	.text.patchouli_gauss_calc_amp,"ax",%progbits
+ 535              		.align	1
+ 536              		.global	patchouli_gauss_calc_amp
+ 537              		.syntax unified
+ 538              		.thumb
+ 539              		.thumb_func
+ 541              	patchouli_gauss_calc_amp:
+ 542              	.LFB152:
+ 116:patchouli/src/patchouli_math.c **** float patchouli_gauss_calc_amp(){return patchouli_c_f32[0]-patchouli_c_f32[1]*patchouli_c_f32[1]/(4
+ 543              		.loc 1 116 33 is_stmt 1 view -0
+ 544              		.cfi_startproc
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547              		@ link register save eliminated.
+ 548              		.loc 1 116 34 view .LVU132
+ 549              		.loc 1 116 56 is_stmt 0 view .LVU133
+ 550 0000 084B     		ldr	r3, .L36
+ 551 0002 93ED000A 		vldr.32	s0, [r3]
+ 552              		.loc 1 116 75 view .LVU134
+ 553 0006 D3ED017A 		vldr.32	s15, [r3, #4]
+ 554              		.loc 1 116 78 view .LVU135
+ 555 000a 67EEA77A 		vmul.f32	s15, s15, s15
+ 556              		.loc 1 116 119 view .LVU136
+ 557 000e 93ED027A 		vldr.32	s14, [r3, #8]
+ 558              		.loc 1 116 103 view .LVU137
+ 559 0012 F1EE006A 		vmov.f32	s13, #4.0e+0
+ 560 0016 27EE267A 		vmul.f32	s14, s14, s13
+ 561              		.loc 1 116 97 view .LVU138
+ 562 001a C7EE876A 		vdiv.f32	s13, s15, s14
+ 563              		.loc 1 116 124 view .LVU139
+ 564 001e 30EE660A 		vsub.f32	s0, s0, s13
+ 565 0022 7047     		bx	lr
+ 566              	.L37:
+ 567              		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 13
+
+
+ 568              	.L36:
+ 569 0024 00000000 		.word	patchouli_c_f32
+ 570              		.cfi_endproc
+ 571              	.LFE152:
+ 573              		.section	.text.patchouli_mva_buffer_init,"ax",%progbits
+ 574              		.align	1
+ 575              		.global	patchouli_mva_buffer_init
+ 576              		.syntax unified
+ 577              		.thumb
+ 578              		.thumb_func
+ 580              	patchouli_mva_buffer_init:
+ 581              	.LVL46:
+ 582              	.LFB153:
+ 117:patchouli/src/patchouli_math.c **** 
+ 118:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 119:patchouli/src/patchouli_math.c **** // Moving average
+ 120:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 121:patchouli/src/patchouli_math.c **** void patchouli_mva_buffer_init(patchouli_mva_t* mva, int size){
+ 583              		.loc 1 121 63 is_stmt 1 view -0
+ 584              		.cfi_startproc
+ 585              		@ args = 0, pretend = 0, frame = 0
+ 586              		@ frame_needed = 0, uses_anonymous_args = 0
+ 587              		.loc 1 121 63 is_stmt 0 view .LVU141
+ 588 0000 38B5     		push	{r3, r4, r5, lr}
+ 589              		.cfi_def_cfa_offset 16
+ 590              		.cfi_offset 3, -16
+ 591              		.cfi_offset 4, -12
+ 592              		.cfi_offset 5, -8
+ 593              		.cfi_offset 14, -4
+ 594 0002 0446     		mov	r4, r0
+ 595 0004 0D46     		mov	r5, r1
+ 122:patchouli/src/patchouli_math.c ****     mva->buf = (float*)malloc(size*sizeof(float));
+ 596              		.loc 1 122 5 is_stmt 1 view .LVU142
+ 597              		.loc 1 122 24 is_stmt 0 view .LVU143
+ 598 0006 8800     		lsls	r0, r1, #2
+ 599              	.LVL47:
+ 600              		.loc 1 122 24 view .LVU144
+ 601 0008 FFF7FEFF 		bl	malloc
+ 602              	.LVL48:
+ 603              		.loc 1 122 14 discriminator 1 view .LVU145
+ 604 000c 2060     		str	r0, [r4]
+ 123:patchouli/src/patchouli_math.c ****     mva->size = size;
+ 605              		.loc 1 123 5 is_stmt 1 view .LVU146
+ 606              		.loc 1 123 15 is_stmt 0 view .LVU147
+ 607 000e 6560     		str	r5, [r4, #4]
+ 124:patchouli/src/patchouli_math.c ****     mva->index = 0;
+ 608              		.loc 1 124 5 is_stmt 1 view .LVU148
+ 609              		.loc 1 124 16 is_stmt 0 view .LVU149
+ 610 0010 0023     		movs	r3, #0
+ 611 0012 A360     		str	r3, [r4, #8]
+ 125:patchouli/src/patchouli_math.c ****     mva->sum = 0;
+ 612              		.loc 1 125 5 is_stmt 1 view .LVU150
+ 613              		.loc 1 125 14 is_stmt 0 view .LVU151
+ 614 0014 0022     		movs	r2, #0
+ 615 0016 E260     		str	r2, [r4, #12]	@ float
+ 126:patchouli/src/patchouli_math.c ****     mva->mean = 0;
+ 616              		.loc 1 126 5 is_stmt 1 view .LVU152
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 14
+
+
+ 617              		.loc 1 126 15 is_stmt 0 view .LVU153
+ 618 0018 2261     		str	r2, [r4, #16]	@ float
+ 127:patchouli/src/patchouli_math.c ****     for (int i=0; i<size; i++) mva->buf[i] = 0;
+ 619              		.loc 1 127 5 is_stmt 1 view .LVU154
+ 620              	.LBB9:
+ 621              		.loc 1 127 10 view .LVU155
+ 622              	.LVL49:
+ 623              		.loc 1 127 5 is_stmt 0 view .LVU156
+ 624 001a 07E0     		b	.L39
+ 625              	.LVL50:
+ 626              	.L40:
+ 627              		.loc 1 127 32 is_stmt 1 discriminator 3 view .LVU157
+ 628              		.loc 1 127 35 is_stmt 0 discriminator 3 view .LVU158
+ 629 001c 2268     		ldr	r2, [r4]
+ 630              		.loc 1 127 40 discriminator 3 view .LVU159
+ 631 001e 02EB8302 		add	r2, r2, r3, lsl #2
+ 632              		.loc 1 127 44 discriminator 3 view .LVU160
+ 633 0022 4FF0000C 		mov	ip, #0
+ 634 0026 C2F800C0 		str	ip, [r2]	@ float
+ 635              		.loc 1 127 28 is_stmt 1 discriminator 3 view .LVU161
+ 636 002a 0133     		adds	r3, r3, #1
+ 637              	.LVL51:
+ 638              	.L39:
+ 639              		.loc 1 127 20 discriminator 1 view .LVU162
+ 640 002c AB42     		cmp	r3, r5
+ 641 002e F5DB     		blt	.L40
+ 642              	.LBE9:
+ 128:patchouli/src/patchouli_math.c **** }
+ 643              		.loc 1 128 1 is_stmt 0 view .LVU163
+ 644 0030 38BD     		pop	{r3, r4, r5, pc}
+ 645              		.loc 1 128 1 view .LVU164
+ 646              		.cfi_endproc
+ 647              	.LFE153:
+ 649              		.section	.text.patchouli_mva_buffer_free,"ax",%progbits
+ 650              		.align	1
+ 651              		.global	patchouli_mva_buffer_free
+ 652              		.syntax unified
+ 653              		.thumb
+ 654              		.thumb_func
+ 656              	patchouli_mva_buffer_free:
+ 657              	.LVL52:
+ 658              	.LFB154:
+ 129:patchouli/src/patchouli_math.c **** 
+ 130:patchouli/src/patchouli_math.c **** void patchouli_mva_buffer_free(patchouli_mva_t* mva){
+ 659              		.loc 1 130 53 is_stmt 1 view -0
+ 660              		.cfi_startproc
+ 661              		@ args = 0, pretend = 0, frame = 0
+ 662              		@ frame_needed = 0, uses_anonymous_args = 0
+ 663              		.loc 1 130 53 is_stmt 0 view .LVU166
+ 664 0000 08B5     		push	{r3, lr}
+ 665              		.cfi_def_cfa_offset 8
+ 666              		.cfi_offset 3, -8
+ 667              		.cfi_offset 14, -4
+ 131:patchouli/src/patchouli_math.c ****     free(mva->buf);
+ 668              		.loc 1 131 5 is_stmt 1 view .LVU167
+ 669 0002 0068     		ldr	r0, [r0]
+ 670              	.LVL53:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 15
+
+
+ 671              		.loc 1 131 5 is_stmt 0 view .LVU168
+ 672 0004 FFF7FEFF 		bl	free
+ 673              	.LVL54:
+ 132:patchouli/src/patchouli_math.c **** }
+ 674              		.loc 1 132 1 view .LVU169
+ 675 0008 08BD     		pop	{r3, pc}
+ 676              		.cfi_endproc
+ 677              	.LFE154:
+ 679              		.section	.text.patchouli_mva_buffer_push,"ax",%progbits
+ 680              		.align	1
+ 681              		.global	patchouli_mva_buffer_push
+ 682              		.syntax unified
+ 683              		.thumb
+ 684              		.thumb_func
+ 686              	patchouli_mva_buffer_push:
+ 687              	.LVL55:
+ 688              	.LFB155:
+ 133:patchouli/src/patchouli_math.c **** 
+ 134:patchouli/src/patchouli_math.c **** float patchouli_mva_buffer_push(patchouli_mva_t* mva, float val){
+ 689              		.loc 1 134 65 is_stmt 1 view -0
+ 690              		.cfi_startproc
+ 691              		@ args = 0, pretend = 0, frame = 0
+ 692              		@ frame_needed = 0, uses_anonymous_args = 0
+ 693              		@ link register save eliminated.
+ 135:patchouli/src/patchouli_math.c ****     mva->sum -= mva->buf[mva->index];
+ 694              		.loc 1 135 5 view .LVU171
+ 695              		.loc 1 135 8 is_stmt 0 view .LVU172
+ 696 0000 D0ED037A 		vldr.32	s15, [r0, #12]
+ 697              		.loc 1 135 20 view .LVU173
+ 698 0004 0368     		ldr	r3, [r0]
+ 699              		.loc 1 135 29 view .LVU174
+ 700 0006 8268     		ldr	r2, [r0, #8]
+ 701              		.loc 1 135 25 view .LVU175
+ 702 0008 03EB8203 		add	r3, r3, r2, lsl #2
+ 703 000c 93ED007A 		vldr.32	s14, [r3]
+ 704              		.loc 1 135 14 view .LVU176
+ 705 0010 77EEC77A 		vsub.f32	s15, s15, s14
+ 706 0014 C0ED037A 		vstr.32	s15, [r0, #12]
+ 136:patchouli/src/patchouli_math.c ****     mva->buf[mva->index] = val;
+ 707              		.loc 1 136 5 is_stmt 1 view .LVU177
+ 708              		.loc 1 136 26 is_stmt 0 view .LVU178
+ 709 0018 83ED000A 		vstr.32	s0, [r3]
+ 137:patchouli/src/patchouli_math.c ****     mva->sum += val;
+ 710              		.loc 1 137 5 is_stmt 1 view .LVU179
+ 711              		.loc 1 137 8 is_stmt 0 view .LVU180
+ 712 001c 90ED037A 		vldr.32	s14, [r0, #12]
+ 713              		.loc 1 137 14 view .LVU181
+ 714 0020 37EE007A 		vadd.f32	s14, s14, s0
+ 715 0024 80ED037A 		vstr.32	s14, [r0, #12]
+ 138:patchouli/src/patchouli_math.c ****     mva->index = (mva->index+1)%mva->size;
+ 716              		.loc 1 138 5 is_stmt 1 view .LVU182
+ 717              		.loc 1 138 22 is_stmt 0 view .LVU183
+ 718 0028 8368     		ldr	r3, [r0, #8]
+ 719              		.loc 1 138 29 view .LVU184
+ 720 002a 0133     		adds	r3, r3, #1
+ 721              		.loc 1 138 36 view .LVU185
+ 722 002c 4268     		ldr	r2, [r0, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 16
+
+
+ 723              		.loc 1 138 32 view .LVU186
+ 724 002e 93FBF2F1 		sdiv	r1, r3, r2
+ 725 0032 02FB1133 		mls	r3, r2, r1, r3
+ 726              		.loc 1 138 16 view .LVU187
+ 727 0036 8360     		str	r3, [r0, #8]
+ 139:patchouli/src/patchouli_math.c ****     mva->mean = mva->sum/mva->size;
+ 728              		.loc 1 139 5 is_stmt 1 view .LVU188
+ 729              		.loc 1 139 25 is_stmt 0 view .LVU189
+ 730 0038 07EE902A 		vmov	s15, r2	@ int
+ 731 003c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 732 0040 87EE270A 		vdiv.f32	s0, s14, s15
+ 733              	.LVL56:
+ 734              		.loc 1 139 15 view .LVU190
+ 735 0044 80ED040A 		vstr.32	s0, [r0, #16]
+ 140:patchouli/src/patchouli_math.c ****     return mva->mean;
+ 736              		.loc 1 140 5 is_stmt 1 view .LVU191
+ 141:patchouli/src/patchouli_math.c **** }
+ 737              		.loc 1 141 1 is_stmt 0 view .LVU192
+ 738 0048 7047     		bx	lr
+ 739              		.cfi_endproc
+ 740              	.LFE155:
+ 742              		.section	.text.patchouli_kalman_init,"ax",%progbits
+ 743              		.align	1
+ 744              		.global	patchouli_kalman_init
+ 745              		.syntax unified
+ 746              		.thumb
+ 747              		.thumb_func
+ 749              	patchouli_kalman_init:
+ 750              	.LVL57:
+ 751              	.LFB156:
+ 142:patchouli/src/patchouli_math.c **** 
+ 143:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 144:patchouli/src/patchouli_math.c **** // Kalman filtering
+ 145:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 146:patchouli/src/patchouli_math.c **** void patchouli_kalman_init(patchouli_kalman_t* k, float Q, float R){
+ 752              		.loc 1 146 68 is_stmt 1 view -0
+ 753              		.cfi_startproc
+ 754              		@ args = 0, pretend = 0, frame = 0
+ 755              		@ frame_needed = 0, uses_anonymous_args = 0
+ 756              		@ link register save eliminated.
+ 147:patchouli/src/patchouli_math.c ****     k->x[0] = 0;
+ 757              		.loc 1 147 5 view .LVU194
+ 758              		.loc 1 147 13 is_stmt 0 view .LVU195
+ 759 0000 0023     		movs	r3, #0
+ 760 0002 0360     		str	r3, [r0]	@ float
+ 148:patchouli/src/patchouli_math.c ****     k->x[1] = 0;
+ 761              		.loc 1 148 5 is_stmt 1 view .LVU196
+ 762              		.loc 1 148 13 is_stmt 0 view .LVU197
+ 763 0004 4360     		str	r3, [r0, #4]	@ float
+ 149:patchouli/src/patchouli_math.c ****     k->P[0][0] = 0;
+ 764              		.loc 1 149 5 is_stmt 1 view .LVU198
+ 765              		.loc 1 149 16 is_stmt 0 view .LVU199
+ 766 0006 8360     		str	r3, [r0, #8]	@ float
+ 150:patchouli/src/patchouli_math.c ****     k->P[0][1] = 0;
+ 767              		.loc 1 150 5 is_stmt 1 view .LVU200
+ 768              		.loc 1 150 16 is_stmt 0 view .LVU201
+ 769 0008 C360     		str	r3, [r0, #12]	@ float
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 17
+
+
+ 151:patchouli/src/patchouli_math.c ****     k->P[1][0] = 0;
+ 770              		.loc 1 151 5 is_stmt 1 view .LVU202
+ 771              		.loc 1 151 16 is_stmt 0 view .LVU203
+ 772 000a 0361     		str	r3, [r0, #16]	@ float
+ 152:patchouli/src/patchouli_math.c ****     k->P[1][1] = 0;
+ 773              		.loc 1 152 5 is_stmt 1 view .LVU204
+ 774              		.loc 1 152 16 is_stmt 0 view .LVU205
+ 775 000c 4361     		str	r3, [r0, #20]	@ float
+ 153:patchouli/src/patchouli_math.c ****     k->Q[0][0] = Q;
+ 776              		.loc 1 153 5 is_stmt 1 view .LVU206
+ 777              		.loc 1 153 16 is_stmt 0 view .LVU207
+ 778 000e 80ED060A 		vstr.32	s0, [r0, #24]
+ 154:patchouli/src/patchouli_math.c ****     k->Q[0][1] = 0;
+ 779              		.loc 1 154 5 is_stmt 1 view .LVU208
+ 780              		.loc 1 154 16 is_stmt 0 view .LVU209
+ 781 0012 C361     		str	r3, [r0, #28]	@ float
+ 155:patchouli/src/patchouli_math.c ****     k->Q[1][0] = 0;
+ 782              		.loc 1 155 5 is_stmt 1 view .LVU210
+ 783              		.loc 1 155 16 is_stmt 0 view .LVU211
+ 784 0014 0362     		str	r3, [r0, #32]	@ float
+ 156:patchouli/src/patchouli_math.c ****     k->Q[1][1] = Q;
+ 785              		.loc 1 156 5 is_stmt 1 view .LVU212
+ 786              		.loc 1 156 16 is_stmt 0 view .LVU213
+ 787 0016 80ED090A 		vstr.32	s0, [r0, #36]
+ 157:patchouli/src/patchouli_math.c ****     k->R = R;
+ 788              		.loc 1 157 5 is_stmt 1 view .LVU214
+ 789              		.loc 1 157 10 is_stmt 0 view .LVU215
+ 790 001a C0ED0A0A 		vstr.32	s1, [r0, #40]
+ 158:patchouli/src/patchouli_math.c **** }
+ 791              		.loc 1 158 1 view .LVU216
+ 792 001e 7047     		bx	lr
+ 793              		.cfi_endproc
+ 794              	.LFE156:
+ 796              		.section	.text.patchouli_kalman_update,"ax",%progbits
+ 797              		.align	1
+ 798              		.global	patchouli_kalman_update
+ 799              		.syntax unified
+ 800              		.thumb
+ 801              		.thumb_func
+ 803              	patchouli_kalman_update:
+ 804              	.LVL58:
+ 805              	.LFB157:
+ 159:patchouli/src/patchouli_math.c **** 
+ 160:patchouli/src/patchouli_math.c **** float patchouli_kalman_update(patchouli_kalman_t* k, float val){
+ 806              		.loc 1 160 64 is_stmt 1 view -0
+ 807              		.cfi_startproc
+ 808              		@ args = 0, pretend = 0, frame = 8
+ 809              		@ frame_needed = 0, uses_anonymous_args = 0
+ 810              		@ link register save eliminated.
+ 811              		.loc 1 160 64 is_stmt 0 view .LVU218
+ 812 0000 82B0     		sub	sp, sp, #8
+ 813              		.cfi_def_cfa_offset 8
+ 161:patchouli/src/patchouli_math.c ****     float y, S, K[2];
+ 814              		.loc 1 161 5 is_stmt 1 view .LVU219
+ 162:patchouli/src/patchouli_math.c ****     y = val - k->x[0];
+ 815              		.loc 1 162 5 view .LVU220
+ 816              		.loc 1 162 19 is_stmt 0 view .LVU221
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 18
+
+
+ 817 0002 90ED005A 		vldr.32	s10, [r0]
+ 818              		.loc 1 162 7 view .LVU222
+ 819 0006 30EE457A 		vsub.f32	s14, s0, s10
+ 820              	.LVL59:
+ 163:patchouli/src/patchouli_math.c ****     S = k->P[0][0] + k->R;
+ 821              		.loc 1 163 5 is_stmt 1 view .LVU223
+ 822              		.loc 1 163 16 is_stmt 0 view .LVU224
+ 823 000a D0ED027A 		vldr.32	s15, [r0, #8]
+ 824              		.loc 1 163 23 view .LVU225
+ 825 000e D0ED0A4A 		vldr.32	s9, [r0, #40]
+ 826              		.loc 1 163 7 view .LVU226
+ 827 0012 77EEA44A 		vadd.f32	s9, s15, s9
+ 828              	.LVL60:
+ 164:patchouli/src/patchouli_math.c ****     K[0] = k->P[0][0] / S;
+ 829              		.loc 1 164 5 is_stmt 1 view .LVU227
+ 830              		.loc 1 164 23 is_stmt 0 view .LVU228
+ 831 0016 87EEA46A 		vdiv.f32	s12, s15, s9
+ 832              		.loc 1 164 10 view .LVU229
+ 833 001a 8DED006A 		vstr.32	s12, [sp]
+ 165:patchouli/src/patchouli_math.c ****     K[1] = k->P[1][0] / S;
+ 834              		.loc 1 165 5 is_stmt 1 view .LVU230
+ 835              		.loc 1 165 19 is_stmt 0 view .LVU231
+ 836 001e D0ED046A 		vldr.32	s13, [r0, #16]
+ 837              		.loc 1 165 23 view .LVU232
+ 838 0022 C6EEA45A 		vdiv.f32	s11, s13, s9
+ 839              		.loc 1 165 10 view .LVU233
+ 840 0026 CDED015A 		vstr.32	s11, [sp, #4]
+ 166:patchouli/src/patchouli_math.c ****     k->x[0] += K[0] * y;
+ 841              		.loc 1 166 5 is_stmt 1 view .LVU234
+ 842              		.loc 1 166 21 is_stmt 0 view .LVU235
+ 843 002a 66EE074A 		vmul.f32	s9, s12, s14
+ 844              	.LVL61:
+ 845              		.loc 1 166 13 view .LVU236
+ 846 002e 35EE240A 		vadd.f32	s0, s10, s9
+ 847              	.LVL62:
+ 848              		.loc 1 166 13 view .LVU237
+ 849 0032 80ED000A 		vstr.32	s0, [r0]
+ 167:patchouli/src/patchouli_math.c ****     k->x[1] += K[1] * y;
+ 850              		.loc 1 167 5 is_stmt 1 view .LVU238
+ 851              		.loc 1 167 9 is_stmt 0 view .LVU239
+ 852 0036 90ED015A 		vldr.32	s10, [r0, #4]
+ 853              		.loc 1 167 21 view .LVU240
+ 854 003a 25EE877A 		vmul.f32	s14, s11, s14
+ 855              	.LVL63:
+ 856              		.loc 1 167 13 view .LVU241
+ 857 003e 35EE077A 		vadd.f32	s14, s10, s14
+ 858 0042 80ED017A 		vstr.32	s14, [r0, #4]
+ 168:patchouli/src/patchouli_math.c ****     k->P[0][0] -= K[0] * k->P[0][0];
+ 859              		.loc 1 168 5 is_stmt 1 view .LVU242
+ 860              		.loc 1 168 24 is_stmt 0 view .LVU243
+ 861 0046 27EE867A 		vmul.f32	s14, s15, s12
+ 862              		.loc 1 168 16 view .LVU244
+ 863 004a 77EEC77A 		vsub.f32	s15, s15, s14
+ 864              	.LVL64:
+ 865              		.loc 1 168 16 view .LVU245
+ 866 004e C0ED027A 		vstr.32	s15, [r0, #8]
+ 867              	.LVL65:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 19
+
+
+ 169:patchouli/src/patchouli_math.c ****     k->P[0][1] -= K[0] * k->P[0][1];
+ 868              		.loc 1 169 5 is_stmt 1 view .LVU246
+ 869              		.loc 1 169 12 is_stmt 0 view .LVU247
+ 870 0052 90ED037A 		vldr.32	s14, [r0, #12]
+ 871              		.loc 1 169 24 view .LVU248
+ 872 0056 26EE076A 		vmul.f32	s12, s12, s14
+ 873              		.loc 1 169 16 view .LVU249
+ 874 005a 37EE467A 		vsub.f32	s14, s14, s12
+ 875 005e 80ED037A 		vstr.32	s14, [r0, #12]
+ 170:patchouli/src/patchouli_math.c ****     k->P[1][0] -= K[1] * k->P[0][0];
+ 876              		.loc 1 170 5 is_stmt 1 view .LVU250
+ 877              		.loc 1 170 24 is_stmt 0 view .LVU251
+ 878 0062 25EEA76A 		vmul.f32	s12, s11, s15
+ 879              		.loc 1 170 16 view .LVU252
+ 880 0066 76EEC66A 		vsub.f32	s13, s13, s12
+ 881 006a C0ED046A 		vstr.32	s13, [r0, #16]
+ 171:patchouli/src/patchouli_math.c ****     k->P[1][1] -= K[1] * k->P[0][1];
+ 882              		.loc 1 171 5 is_stmt 1 view .LVU253
+ 883              		.loc 1 171 12 is_stmt 0 view .LVU254
+ 884 006e 90ED056A 		vldr.32	s12, [r0, #20]
+ 885              		.loc 1 171 24 view .LVU255
+ 886 0072 65EE875A 		vmul.f32	s11, s11, s14
+ 887              		.loc 1 171 16 view .LVU256
+ 888 0076 36EE656A 		vsub.f32	s12, s12, s11
+ 889 007a 80ED056A 		vstr.32	s12, [r0, #20]
+ 172:patchouli/src/patchouli_math.c ****     k->P[0][0] += k->Q[0][0];
+ 890              		.loc 1 172 5 is_stmt 1 view .LVU257
+ 891              		.loc 1 172 26 is_stmt 0 view .LVU258
+ 892 007e D0ED065A 		vldr.32	s11, [r0, #24]
+ 893              		.loc 1 172 16 view .LVU259
+ 894 0082 77EEA57A 		vadd.f32	s15, s15, s11
+ 895 0086 C0ED027A 		vstr.32	s15, [r0, #8]
+ 173:patchouli/src/patchouli_math.c ****     k->P[0][1] += k->Q[0][1];
+ 896              		.loc 1 173 5 is_stmt 1 view .LVU260
+ 897              		.loc 1 173 26 is_stmt 0 view .LVU261
+ 898 008a D0ED077A 		vldr.32	s15, [r0, #28]
+ 899              		.loc 1 173 16 view .LVU262
+ 900 008e 37EE277A 		vadd.f32	s14, s14, s15
+ 901 0092 80ED037A 		vstr.32	s14, [r0, #12]
+ 174:patchouli/src/patchouli_math.c ****     k->P[1][0] += k->Q[1][0];
+ 902              		.loc 1 174 5 is_stmt 1 view .LVU263
+ 903              		.loc 1 174 26 is_stmt 0 view .LVU264
+ 904 0096 D0ED087A 		vldr.32	s15, [r0, #32]
+ 905              		.loc 1 174 16 view .LVU265
+ 906 009a 76EEA76A 		vadd.f32	s13, s13, s15
+ 907 009e C0ED046A 		vstr.32	s13, [r0, #16]
+ 175:patchouli/src/patchouli_math.c ****     k->P[1][1] += k->Q[1][1];
+ 908              		.loc 1 175 5 is_stmt 1 view .LVU266
+ 909              		.loc 1 175 26 is_stmt 0 view .LVU267
+ 910 00a2 D0ED097A 		vldr.32	s15, [r0, #36]
+ 911              		.loc 1 175 16 view .LVU268
+ 912 00a6 36EE276A 		vadd.f32	s12, s12, s15
+ 913 00aa 80ED056A 		vstr.32	s12, [r0, #20]
+ 176:patchouli/src/patchouli_math.c ****     return k->x[0];
+ 914              		.loc 1 176 5 is_stmt 1 view .LVU269
+ 177:patchouli/src/patchouli_math.c **** }
+ 915              		.loc 1 177 1 is_stmt 0 view .LVU270
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 20
+
+
+ 916 00ae 02B0     		add	sp, sp, #8
+ 917              		.cfi_def_cfa_offset 0
+ 918              		@ sp needed
+ 919 00b0 7047     		bx	lr
+ 920              		.cfi_endproc
+ 921              	.LFE157:
+ 923              		.section	.text.patchouli_fir_init,"ax",%progbits
+ 924              		.align	1
+ 925              		.global	patchouli_fir_init
+ 926              		.syntax unified
+ 927              		.thumb
+ 928              		.thumb_func
+ 930              	patchouli_fir_init:
+ 931              	.LVL66:
+ 932              	.LFB158:
+ 178:patchouli/src/patchouli_math.c **** 
+ 179:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 180:patchouli/src/patchouli_math.c **** // FIR filter
+ 181:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 182:patchouli/src/patchouli_math.c **** void patchouli_fir_init(patchouli_fir_t* fir, int len, patchouli_fir_type_t ftype, float order, flo
+ 933              		.loc 1 182 116 is_stmt 1 view -0
+ 934              		.cfi_startproc
+ 935              		@ args = 0, pretend = 0, frame = 0
+ 936              		@ frame_needed = 0, uses_anonymous_args = 0
+ 937              		.loc 1 182 116 is_stmt 0 view .LVU272
+ 938 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 939              		.cfi_def_cfa_offset 24
+ 940              		.cfi_offset 3, -24
+ 941              		.cfi_offset 4, -20
+ 942              		.cfi_offset 5, -16
+ 943              		.cfi_offset 6, -12
+ 944              		.cfi_offset 7, -8
+ 945              		.cfi_offset 14, -4
+ 946 0002 2DED048B 		vpush.64	{d8, d9}
+ 947              		.cfi_def_cfa_offset 40
+ 948              		.cfi_offset 80, -40
+ 949              		.cfi_offset 81, -36
+ 950              		.cfi_offset 82, -32
+ 951              		.cfi_offset 83, -28
+ 952 0006 0646     		mov	r6, r0
+ 953 0008 0C46     		mov	r4, r1
+ 954 000a 1546     		mov	r5, r2
+ 955 000c F0EE409A 		vmov.f32	s19, s0
+ 956 0010 B0EE609A 		vmov.f32	s18, s1
+ 183:patchouli/src/patchouli_math.c ****     fir->len         = len;
+ 957              		.loc 1 183 5 is_stmt 1 view .LVU273
+ 958              		.loc 1 183 22 is_stmt 0 view .LVU274
+ 959 0014 C160     		str	r1, [r0, #12]
+ 184:patchouli/src/patchouli_math.c ****     fir->data        = (float*)malloc(len*sizeof(float));
+ 960              		.loc 1 184 5 is_stmt 1 view .LVU275
+ 961              		.loc 1 184 32 is_stmt 0 view .LVU276
+ 962 0016 8F00     		lsls	r7, r1, #2
+ 963 0018 3846     		mov	r0, r7
+ 964              	.LVL67:
+ 965              		.loc 1 184 32 view .LVU277
+ 966 001a FFF7FEFF 		bl	malloc
+ 967              	.LVL68:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 21
+
+
+ 968              		.loc 1 184 22 discriminator 1 view .LVU278
+ 969 001e 3060     		str	r0, [r6]
+ 185:patchouli/src/patchouli_math.c ****     fir->coefficient = (float*)malloc(len*sizeof(float));
+ 970              		.loc 1 185 5 is_stmt 1 view .LVU279
+ 971              		.loc 1 185 32 is_stmt 0 view .LVU280
+ 972 0020 3846     		mov	r0, r7
+ 973 0022 FFF7FEFF 		bl	malloc
+ 974              	.LVL69:
+ 975              		.loc 1 185 22 discriminator 1 view .LVU281
+ 976 0026 7060     		str	r0, [r6, #4]
+ 186:patchouli/src/patchouli_math.c ****     switch (ftype){
+ 977              		.loc 1 186 5 is_stmt 1 view .LVU282
+ 978 0028 55B3     		cbz	r5, .L56
+ 979 002a 012D     		cmp	r5, #1
+ 980 002c 25D1     		bne	.L48
+ 981 002e 0025     		movs	r5, #0
+ 982              	.LVL70:
+ 983              		.loc 1 186 5 is_stmt 0 view .LVU283
+ 984 0030 4CE0     		b	.L50
+ 985              	.LVL71:
+ 986              	.L52:
+ 987              	.LBB10:
+ 187:patchouli/src/patchouli_math.c ****         case PATCHOULI_FIR_LPF:
+ 188:patchouli/src/patchouli_math.c ****             // Calculate the coefficients for a low-pass filter
+ 189:patchouli/src/patchouli_math.c ****             for (int i=0; i<len; i++){
+ 190:patchouli/src/patchouli_math.c ****                 fir->coefficient[i] = 2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
+ 988              		.loc 1 190 17 is_stmt 1 view .LVU284
+ 989              		.loc 1 190 43 is_stmt 0 view .LVU285
+ 990 0032 79EE098A 		vadd.f32	s17, s18, s18
+ 991              		.loc 1 190 61 view .LVU286
+ 992 0036 07EE904A 		vmov	s15, r4	@ int
+ 993 003a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 994 003e B6EE007A 		vmov.f32	s14, #5.0e-1
+ 995 0042 67EE877A 		vmul.f32	s15, s15, s14
+ 996              		.loc 1 190 57 view .LVU287
+ 997 0046 07EE105A 		vmov	s14, r5	@ int
+ 998 004a B8EEC78A 		vcvt.f32.s32	s16, s14
+ 999 004e 38EE678A 		vsub.f32	s16, s16, s15
+ 1000              		.loc 1 190 54 view .LVU288
+ 1001 0052 DFED287A 		vldr.32	s15, .L59
+ 1002 0056 28EE278A 		vmul.f32	s16, s16, s15
+ 1003              		.loc 1 190 47 view .LVU289
+ 1004 005a 28EE290A 		vmul.f32	s0, s16, s19
+ 1005 005e FFF7FEFF 		bl	sinf
+ 1006              	.LVL72:
+ 1007              		.loc 1 190 46 discriminator 1 view .LVU290
+ 1008 0062 68EE808A 		vmul.f32	s17, s17, s0
+ 1009              		.loc 1 190 20 discriminator 1 view .LVU291
+ 1010 0066 7368     		ldr	r3, [r6, #4]
+ 1011              		.loc 1 190 33 discriminator 1 view .LVU292
+ 1012 0068 03EB8503 		add	r3, r3, r5, lsl #2
+ 1013              		.loc 1 190 74 discriminator 1 view .LVU293
+ 1014 006c C8EE887A 		vdiv.f32	s15, s17, s16
+ 1015              		.loc 1 190 37 discriminator 1 view .LVU294
+ 1016 0070 C3ED007A 		vstr.32	s15, [r3]
+ 189:patchouli/src/patchouli_math.c ****                 fir->coefficient[i] = 2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
+ 1017              		.loc 1 189 35 is_stmt 1 discriminator 3 view .LVU295
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 22
+
+
+ 1018 0074 0135     		adds	r5, r5, #1
+ 1019              	.LVL73:
+ 1020              	.L49:
+ 189:patchouli/src/patchouli_math.c ****                 fir->coefficient[i] = 2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
+ 1021              		.loc 1 189 28 discriminator 1 view .LVU296
+ 1022 0076 A542     		cmp	r5, r4
+ 1023 0078 DBDB     		blt	.L52
+ 1024              	.LVL74:
+ 1025              	.L48:
+ 189:patchouli/src/patchouli_math.c ****                 fir->coefficient[i] = 2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
+ 1026              		.loc 1 189 28 is_stmt 0 discriminator 1 view .LVU297
+ 1027              	.LBE10:
+ 191:patchouli/src/patchouli_math.c ****             }
+ 192:patchouli/src/patchouli_math.c ****             break;
+ 193:patchouli/src/patchouli_math.c ****         case PATCHOULI_FIR_HPF:
+ 194:patchouli/src/patchouli_math.c ****             // Calculate the coefficients for a high-pass filter
+ 195:patchouli/src/patchouli_math.c ****             for (int i=0; i<len; i++){
+ 196:patchouli/src/patchouli_math.c ****                 if (i==len/2){
+ 197:patchouli/src/patchouli_math.c ****                     fir->coefficient[i] = 1.0f - 2.0f*bw;
+ 198:patchouli/src/patchouli_math.c ****                 } else {
+ 199:patchouli/src/patchouli_math.c ****                     fir->coefficient[i] = -2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
+ 200:patchouli/src/patchouli_math.c ****                 }
+ 201:patchouli/src/patchouli_math.c ****             }
+ 202:patchouli/src/patchouli_math.c ****             break;
+ 203:patchouli/src/patchouli_math.c ****         default:
+ 204:patchouli/src/patchouli_math.c ****             // Not implemented yet
+ 205:patchouli/src/patchouli_math.c ****             break;
+ 206:patchouli/src/patchouli_math.c ****     }
+ 207:patchouli/src/patchouli_math.c **** }
+ 1028              		.loc 1 207 1 view .LVU298
+ 1029 007a BDEC048B 		vldm	sp!, {d8-d9}
+ 1030              		.cfi_remember_state
+ 1031              		.cfi_restore 82
+ 1032              		.cfi_restore 83
+ 1033              		.cfi_restore 80
+ 1034              		.cfi_restore 81
+ 1035              		.cfi_def_cfa_offset 24
+ 1036              	.LVL75:
+ 1037              		.loc 1 207 1 view .LVU299
+ 1038 007e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1039              	.LVL76:
+ 1040              	.L56:
+ 1041              		.cfi_restore_state
+ 186:patchouli/src/patchouli_math.c ****         case PATCHOULI_FIR_LPF:
+ 1042              		.loc 1 186 5 view .LVU300
+ 1043 0080 0025     		movs	r5, #0
+ 1044 0082 F8E7     		b	.L49
+ 1045              	.LVL77:
+ 1046              	.L53:
+ 1047              	.LBB11:
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1048              		.loc 1 199 21 is_stmt 1 view .LVU301
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1049              		.loc 1 199 48 is_stmt 0 view .LVU302
+ 1050 0084 F8EE008A 		vmov.f32	s17, #-2.0e+0
+ 1051 0088 69EE288A 		vmul.f32	s17, s18, s17
+ 199:patchouli/src/patchouli_math.c ****                 }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 23
+
+
+ 1052              		.loc 1 199 66 view .LVU303
+ 1053 008c 07EE904A 		vmov	s15, r4	@ int
+ 1054 0090 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1055 0094 B6EE007A 		vmov.f32	s14, #5.0e-1
+ 1056 0098 67EE877A 		vmul.f32	s15, s15, s14
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1057              		.loc 1 199 62 view .LVU304
+ 1058 009c 07EE105A 		vmov	s14, r5	@ int
+ 1059 00a0 B8EEC78A 		vcvt.f32.s32	s16, s14
+ 1060 00a4 38EE678A 		vsub.f32	s16, s16, s15
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1061              		.loc 1 199 59 view .LVU305
+ 1062 00a8 DFED127A 		vldr.32	s15, .L59
+ 1063 00ac 28EE278A 		vmul.f32	s16, s16, s15
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1064              		.loc 1 199 52 view .LVU306
+ 1065 00b0 28EE290A 		vmul.f32	s0, s16, s19
+ 1066 00b4 FFF7FEFF 		bl	sinf
+ 1067              	.LVL78:
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1068              		.loc 1 199 51 discriminator 1 view .LVU307
+ 1069 00b8 68EE808A 		vmul.f32	s17, s17, s0
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1070              		.loc 1 199 24 discriminator 1 view .LVU308
+ 1071 00bc 7368     		ldr	r3, [r6, #4]
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1072              		.loc 1 199 37 discriminator 1 view .LVU309
+ 1073 00be 03EB8503 		add	r3, r3, r5, lsl #2
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1074              		.loc 1 199 79 discriminator 1 view .LVU310
+ 1075 00c2 C8EE887A 		vdiv.f32	s15, s17, s16
+ 199:patchouli/src/patchouli_math.c ****                 }
+ 1076              		.loc 1 199 41 discriminator 1 view .LVU311
+ 1077 00c6 C3ED007A 		vstr.32	s15, [r3]
+ 1078              	.L54:
+ 195:patchouli/src/patchouli_math.c ****                 if (i==len/2){
+ 1079              		.loc 1 195 35 is_stmt 1 discriminator 2 view .LVU312
+ 1080 00ca 0135     		adds	r5, r5, #1
+ 1081              	.LVL79:
+ 1082              	.L50:
+ 195:patchouli/src/patchouli_math.c ****                 if (i==len/2){
+ 1083              		.loc 1 195 28 discriminator 1 view .LVU313
+ 1084 00cc A542     		cmp	r5, r4
+ 1085 00ce D4DA     		bge	.L48
+ 196:patchouli/src/patchouli_math.c ****                     fir->coefficient[i] = 1.0f - 2.0f*bw;
+ 1086              		.loc 1 196 17 view .LVU314
+ 196:patchouli/src/patchouli_math.c ****                     fir->coefficient[i] = 1.0f - 2.0f*bw;
+ 1087              		.loc 1 196 27 is_stmt 0 view .LVU315
+ 1088 00d0 04EBD473 		add	r3, r4, r4, lsr #31
+ 196:patchouli/src/patchouli_math.c ****                     fir->coefficient[i] = 1.0f - 2.0f*bw;
+ 1089              		.loc 1 196 20 view .LVU316
+ 1090 00d4 B5EB630F 		cmp	r5, r3, asr #1
+ 1091 00d8 D4D1     		bne	.L53
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1092              		.loc 1 197 21 is_stmt 1 view .LVU317
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1093              		.loc 1 197 54 is_stmt 0 view .LVU318
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 24
+
+
+ 1094 00da 39EE097A 		vadd.f32	s14, s18, s18
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1095              		.loc 1 197 24 view .LVU319
+ 1096 00de 7368     		ldr	r3, [r6, #4]
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1097              		.loc 1 197 37 view .LVU320
+ 1098 00e0 03EB8503 		add	r3, r3, r5, lsl #2
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1099              		.loc 1 197 48 view .LVU321
+ 1100 00e4 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 1101 00e8 77EEC77A 		vsub.f32	s15, s15, s14
+ 197:patchouli/src/patchouli_math.c ****                 } else {
+ 1102              		.loc 1 197 41 view .LVU322
+ 1103 00ec C3ED007A 		vstr.32	s15, [r3]
+ 1104 00f0 EBE7     		b	.L54
+ 1105              	.L60:
+ 1106 00f2 00BF     		.align	2
+ 1107              	.L59:
+ 1108 00f4 DB0F4940 		.word	1078530011
+ 1109              	.LBE11:
+ 1110              		.cfi_endproc
+ 1111              	.LFE158:
+ 1113              		.section	.text.patchouli_fir_free,"ax",%progbits
+ 1114              		.align	1
+ 1115              		.global	patchouli_fir_free
+ 1116              		.syntax unified
+ 1117              		.thumb
+ 1118              		.thumb_func
+ 1120              	patchouli_fir_free:
+ 1121              	.LVL80:
+ 1122              	.LFB159:
+ 208:patchouli/src/patchouli_math.c **** 
+ 209:patchouli/src/patchouli_math.c **** void patchouli_fir_free(patchouli_fir_t* fir){
+ 1123              		.loc 1 209 46 is_stmt 1 view -0
+ 1124              		.cfi_startproc
+ 1125              		@ args = 0, pretend = 0, frame = 0
+ 1126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1127              		.loc 1 209 46 is_stmt 0 view .LVU324
+ 1128 0000 10B5     		push	{r4, lr}
+ 1129              		.cfi_def_cfa_offset 8
+ 1130              		.cfi_offset 4, -8
+ 1131              		.cfi_offset 14, -4
+ 1132 0002 0446     		mov	r4, r0
+ 210:patchouli/src/patchouli_math.c ****     free(fir->data);
+ 1133              		.loc 1 210 5 is_stmt 1 view .LVU325
+ 1134 0004 0068     		ldr	r0, [r0]
+ 1135              	.LVL81:
+ 1136              		.loc 1 210 5 is_stmt 0 view .LVU326
+ 1137 0006 FFF7FEFF 		bl	free
+ 1138              	.LVL82:
+ 211:patchouli/src/patchouli_math.c ****     free(fir->coefficient);
+ 1139              		.loc 1 211 5 is_stmt 1 view .LVU327
+ 1140 000a 6068     		ldr	r0, [r4, #4]
+ 1141 000c FFF7FEFF 		bl	free
+ 1142              	.LVL83:
+ 212:patchouli/src/patchouli_math.c **** }
+ 1143              		.loc 1 212 1 is_stmt 0 view .LVU328
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 25
+
+
+ 1144 0010 10BD     		pop	{r4, pc}
+ 1145              		.loc 1 212 1 view .LVU329
+ 1146              		.cfi_endproc
+ 1147              	.LFE159:
+ 1149              		.section	.text.patchouli_fir_update,"ax",%progbits
+ 1150              		.align	1
+ 1151              		.global	patchouli_fir_update
+ 1152              		.syntax unified
+ 1153              		.thumb
+ 1154              		.thumb_func
+ 1156              	patchouli_fir_update:
+ 1157              	.LVL84:
+ 1158              	.LFB160:
+ 213:patchouli/src/patchouli_math.c **** 
+ 214:patchouli/src/patchouli_math.c **** float patchouli_fir_update(patchouli_fir_t* fir, float val){
+ 1159              		.loc 1 214 60 is_stmt 1 view -0
+ 1160              		.cfi_startproc
+ 1161              		@ args = 0, pretend = 0, frame = 0
+ 1162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1163              		@ link register save eliminated.
+ 215:patchouli/src/patchouli_math.c ****     // Push new data
+ 216:patchouli/src/patchouli_math.c ****     for (int i=fir->len-1; i>0; i--){
+ 1164              		.loc 1 216 5 view .LVU331
+ 1165              	.LBB12:
+ 1166              		.loc 1 216 10 view .LVU332
+ 1167              		.loc 1 216 19 is_stmt 0 view .LVU333
+ 1168 0000 C368     		ldr	r3, [r0, #12]
+ 1169              		.loc 1 216 14 view .LVU334
+ 1170 0002 013B     		subs	r3, r3, #1
+ 1171              	.LVL85:
+ 1172              		.loc 1 216 5 view .LVU335
+ 1173 0004 0BE0     		b	.L64
+ 1174              	.L65:
+ 217:patchouli/src/patchouli_math.c ****         fir->data[i] = fir->data[i-1];
+ 1175              		.loc 1 217 9 is_stmt 1 view .LVU336
+ 1176              		.loc 1 217 27 is_stmt 0 view .LVU337
+ 1177 0006 0268     		ldr	r2, [r0]
+ 1178              		.loc 1 217 18 view .LVU338
+ 1179 0008 02EB830C 		add	ip, r2, r3, lsl #2
+ 1180              		.loc 1 217 33 view .LVU339
+ 1181 000c 03F18041 		add	r1, r3, #1073741824
+ 1182 0010 0139     		subs	r1, r1, #1
+ 1183 0012 02EB8102 		add	r2, r2, r1, lsl #2
+ 1184 0016 1268     		ldr	r2, [r2]	@ float
+ 1185              		.loc 1 217 22 view .LVU340
+ 1186 0018 CCF80020 		str	r2, [ip]	@ float
+ 216:patchouli/src/patchouli_math.c ****         fir->data[i] = fir->data[i-1];
+ 1187              		.loc 1 216 34 is_stmt 1 discriminator 3 view .LVU341
+ 1188 001c 013B     		subs	r3, r3, #1
+ 1189              	.LVL86:
+ 1190              	.L64:
+ 216:patchouli/src/patchouli_math.c ****         fir->data[i] = fir->data[i-1];
+ 1191              		.loc 1 216 29 discriminator 1 view .LVU342
+ 1192 001e 002B     		cmp	r3, #0
+ 1193 0020 F1DC     		bgt	.L65
+ 216:patchouli/src/patchouli_math.c ****         fir->data[i] = fir->data[i-1];
+ 1194              		.loc 1 216 29 is_stmt 0 discriminator 1 view .LVU343
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 26
+
+
+ 1195              	.LBE12:
+ 218:patchouli/src/patchouli_math.c ****     }
+ 219:patchouli/src/patchouli_math.c ****     fir->data[0] = val;
+ 1196              		.loc 1 219 5 is_stmt 1 view .LVU344
+ 1197              		.loc 1 219 8 is_stmt 0 view .LVU345
+ 1198 0022 0368     		ldr	r3, [r0]
+ 1199              	.LVL87:
+ 1200              		.loc 1 219 18 view .LVU346
+ 1201 0024 83ED000A 		vstr.32	s0, [r3]
+ 220:patchouli/src/patchouli_math.c ****     // Apply the filter
+ 221:patchouli/src/patchouli_math.c ****     fir->acc = 0;
+ 1202              		.loc 1 221 5 is_stmt 1 view .LVU347
+ 1203              		.loc 1 221 14 is_stmt 0 view .LVU348
+ 1204 0028 0023     		movs	r3, #0
+ 1205 002a 8360     		str	r3, [r0, #8]	@ float
+ 222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
+ 1206              		.loc 1 222 5 is_stmt 1 view .LVU349
+ 1207              	.LBB13:
+ 1208              		.loc 1 222 10 view .LVU350
+ 1209              	.LVL88:
+ 1210              		.loc 1 222 14 is_stmt 0 view .LVU351
+ 1211 002c 0023     		movs	r3, #0
+ 1212              		.loc 1 222 5 view .LVU352
+ 1213 002e 12E0     		b	.L66
+ 1214              	.LVL89:
+ 1215              	.L67:
+ 223:patchouli/src/patchouli_math.c ****         fir->acc += fir->data[i]*fir->coefficient[i];
+ 1216              		.loc 1 223 9 is_stmt 1 view .LVU353
+ 1217              		.loc 1 223 12 is_stmt 0 view .LVU354
+ 1218 0030 D0ED027A 		vldr.32	s15, [r0, #8]
+ 1219              		.loc 1 223 24 view .LVU355
+ 1220 0034 0268     		ldr	r2, [r0]
+ 1221              		.loc 1 223 30 view .LVU356
+ 1222 0036 02EB8302 		add	r2, r2, r3, lsl #2
+ 1223 003a 92ED007A 		vldr.32	s14, [r2]
+ 1224              		.loc 1 223 37 view .LVU357
+ 1225 003e 4268     		ldr	r2, [r0, #4]
+ 1226              		.loc 1 223 50 view .LVU358
+ 1227 0040 02EB8302 		add	r2, r2, r3, lsl #2
+ 1228 0044 D2ED006A 		vldr.32	s13, [r2]
+ 1229              		.loc 1 223 33 view .LVU359
+ 1230 0048 27EE267A 		vmul.f32	s14, s14, s13
+ 1231              		.loc 1 223 18 view .LVU360
+ 1232 004c 77EE877A 		vadd.f32	s15, s15, s14
+ 1233 0050 C0ED027A 		vstr.32	s15, [r0, #8]
+ 222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
+ 1234              		.loc 1 222 32 is_stmt 1 discriminator 3 view .LVU361
+ 1235 0054 0133     		adds	r3, r3, #1
+ 1236              	.LVL90:
+ 1237              	.L66:
+ 222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
+ 1238              		.loc 1 222 20 discriminator 1 view .LVU362
+ 222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
+ 1239              		.loc 1 222 24 is_stmt 0 discriminator 1 view .LVU363
+ 1240 0056 C268     		ldr	r2, [r0, #12]
+ 222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
+ 1241              		.loc 1 222 20 discriminator 1 view .LVU364
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 27
+
+
+ 1242 0058 9A42     		cmp	r2, r3
+ 1243 005a E9DC     		bgt	.L67
+ 1244              	.LBE13:
+ 224:patchouli/src/patchouli_math.c ****     }
+ 225:patchouli/src/patchouli_math.c ****     return fir->acc;
+ 1245              		.loc 1 225 5 is_stmt 1 view .LVU365
+ 226:patchouli/src/patchouli_math.c **** }
+ 1246              		.loc 1 226 1 is_stmt 0 view .LVU366
+ 1247 005c 90ED020A 		vldr.32	s0, [r0, #8]
+ 1248              	.LVL91:
+ 1249              		.loc 1 226 1 view .LVU367
+ 1250 0060 7047     		bx	lr
+ 1251              		.cfi_endproc
+ 1252              	.LFE160:
+ 1254              		.section	.text.patchouli_quad_interp,"ax",%progbits
+ 1255              		.align	1
+ 1256              		.global	patchouli_quad_interp
+ 1257              		.syntax unified
+ 1258              		.thumb
+ 1259              		.thumb_func
+ 1261              	patchouli_quad_interp:
+ 1262              	.LVL92:
+ 1263              	.LFB161:
+ 227:patchouli/src/patchouli_math.c **** 
+ 228:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 229:patchouli/src/patchouli_math.c **** // Quadratic interpolation
+ 230:patchouli/src/patchouli_math.c **** //----------------------------------------------------------------
+ 231:patchouli/src/patchouli_math.c **** // General purpose quadratic interpolation util function
+ 232:patchouli/src/patchouli_math.c **** // Treats boundary conditions
+ 233:patchouli/src/patchouli_math.c **** float patchouli_quad_interp(patchouli_quad_interp_t* q){
+ 1264              		.loc 1 233 56 is_stmt 1 view -0
+ 1265              		.cfi_startproc
+ 1266              		@ args = 0, pretend = 0, frame = 0
+ 1267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1268              		.loc 1 233 56 is_stmt 0 view .LVU369
+ 1269 0000 10B5     		push	{r4, lr}
+ 1270              		.cfi_def_cfa_offset 8
+ 1271              		.cfi_offset 4, -8
+ 1272              		.cfi_offset 14, -4
+ 234:patchouli/src/patchouli_math.c ****     int n = q->n;
+ 1273              		.loc 1 234 5 is_stmt 1 view .LVU370
+ 1274              		.loc 1 234 14 is_stmt 0 view .LVU371
+ 1275 0002 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 1276              	.LVL93:
+ 235:patchouli/src/patchouli_math.c ****     q->result_maxidx = 0;
+ 1277              		.loc 1 235 5 is_stmt 1 view .LVU372
+ 1278              		.loc 1 235 22 is_stmt 0 view .LVU373
+ 1279 0004 0023     		movs	r3, #0
+ 1280 0006 0361     		str	r3, [r0, #16]
+ 236:patchouli/src/patchouli_math.c ****     float maxval = -100.0f;
+ 1281              		.loc 1 236 5 is_stmt 1 view .LVU374
+ 1282              	.LVL94:
+ 237:patchouli/src/patchouli_math.c ****     for (int i=0; i<n; i++){
+ 1283              		.loc 1 237 5 view .LVU375
+ 1284              	.LBB14:
+ 1285              		.loc 1 237 10 view .LVU376
+ 1286              		.loc 1 237 10 is_stmt 0 view .LVU377
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 28
+
+
+ 1287              	.LBE14:
+ 236:patchouli/src/patchouli_math.c ****     float maxval = -100.0f;
+ 1288              		.loc 1 236 11 view .LVU378
+ 1289 0008 9FED3B7A 		vldr.32	s14, .L82
+ 1290              	.LBB15:
+ 1291              		.loc 1 237 5 view .LVU379
+ 1292 000c 00E0     		b	.L69
+ 1293              	.LVL95:
+ 1294              	.L70:
+ 1295              		.loc 1 237 25 is_stmt 1 discriminator 2 view .LVU380
+ 1296 000e 0133     		adds	r3, r3, #1
+ 1297              	.LVL96:
+ 1298              	.L69:
+ 1299              		.loc 1 237 20 discriminator 1 view .LVU381
+ 1300 0010 8B42     		cmp	r3, r1
+ 1301 0012 0DDA     		bge	.L79
+ 238:patchouli/src/patchouli_math.c ****         if (q->data[i]>maxval){
+ 1302              		.loc 1 238 9 view .LVU382
+ 1303              		.loc 1 238 14 is_stmt 0 view .LVU383
+ 1304 0014 C268     		ldr	r2, [r0, #12]
+ 1305              		.loc 1 238 20 view .LVU384
+ 1306 0016 02EB8302 		add	r2, r2, r3, lsl #2
+ 1307 001a D2ED007A 		vldr.32	s15, [r2]
+ 1308              		.loc 1 238 12 view .LVU385
+ 1309 001e F4EEC77A 		vcmpe.f32	s15, s14
+ 1310 0022 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1311 0026 F2DD     		ble	.L70
+ 239:patchouli/src/patchouli_math.c ****             maxval = q->data[i];
+ 1312              		.loc 1 239 13 is_stmt 1 view .LVU386
+ 1313              	.LVL97:
+ 240:patchouli/src/patchouli_math.c ****             q->result_maxidx = i;
+ 1314              		.loc 1 240 13 view .LVU387
+ 1315              		.loc 1 240 30 is_stmt 0 view .LVU388
+ 1316 0028 0361     		str	r3, [r0, #16]
+ 239:patchouli/src/patchouli_math.c ****             maxval = q->data[i];
+ 1317              		.loc 1 239 20 view .LVU389
+ 1318 002a B0EE677A 		vmov.f32	s14, s15
+ 1319 002e EEE7     		b	.L70
+ 1320              	.LVL98:
+ 1321              	.L79:
+ 239:patchouli/src/patchouli_math.c ****             maxval = q->data[i];
+ 1322              		.loc 1 239 20 view .LVU390
+ 1323              	.LBE15:
+ 241:patchouli/src/patchouli_math.c ****         }
+ 242:patchouli/src/patchouli_math.c ****     }
+ 243:patchouli/src/patchouli_math.c ****     int xl, xm, xr;
+ 1324              		.loc 1 243 5 is_stmt 1 view .LVU391
+ 244:patchouli/src/patchouli_math.c ****     if (q->result_maxidx==0) {
+ 1325              		.loc 1 244 5 view .LVU392
+ 1326              		.loc 1 244 10 is_stmt 0 view .LVU393
+ 1327 0030 0269     		ldr	r2, [r0, #16]
+ 1328              		.loc 1 244 8 view .LVU394
+ 1329 0032 002A     		cmp	r2, #0
+ 1330 0034 4AD1     		bne	.L73
+ 245:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_LEFT;
+ 1331              		.loc 1 245 9 is_stmt 1 view .LVU395
+ 1332              		.loc 1 245 28 is_stmt 0 view .LVU396
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 29
+
+
+ 1333 0036 0023     		movs	r3, #0
+ 1334              	.LVL99:
+ 1335              		.loc 1 245 28 view .LVU397
+ 1336 0038 0377     		strb	r3, [r0, #28]
+ 246:patchouli/src/patchouli_math.c ****         xl = 0;
+ 1337              		.loc 1 246 9 is_stmt 1 view .LVU398
+ 1338              	.LVL100:
+ 247:patchouli/src/patchouli_math.c ****         xm = 0;
+ 1339              		.loc 1 247 9 view .LVU399
+ 248:patchouli/src/patchouli_math.c ****         xr = 1;
+ 1340              		.loc 1 248 9 view .LVU400
+ 246:patchouli/src/patchouli_math.c ****         xl = 0;
+ 1341              		.loc 1 246 12 is_stmt 0 view .LVU401
+ 1342 003a 1346     		mov	r3, r2
+ 1343              		.loc 1 248 12 view .LVU402
+ 1344 003c 4FF0010C 		mov	ip, #1
+ 1345              	.LVL101:
+ 1346              	.L74:
+ 249:patchouli/src/patchouli_math.c ****     } else if (q->result_maxidx==n-1){
+ 250:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_RIGHT;
+ 251:patchouli/src/patchouli_math.c ****         xl = n-2;
+ 252:patchouli/src/patchouli_math.c ****         xm = n-1;
+ 253:patchouli/src/patchouli_math.c ****         xr = n-1;
+ 254:patchouli/src/patchouli_math.c ****     } else {
+ 255:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_NORMAL;
+ 256:patchouli/src/patchouli_math.c ****         xl = q->result_maxidx-1;
+ 257:patchouli/src/patchouli_math.c ****         xm = q->result_maxidx;
+ 258:patchouli/src/patchouli_math.c ****         xr = q->result_maxidx+1;
+ 259:patchouli/src/patchouli_math.c ****     }
+ 260:patchouli/src/patchouli_math.c ****     float yl = q->data[xl];
+ 1347              		.loc 1 260 5 is_stmt 1 view .LVU403
+ 1348              		.loc 1 260 17 is_stmt 0 view .LVU404
+ 1349 0040 C468     		ldr	r4, [r0, #12]
+ 1350              		.loc 1 260 23 view .LVU405
+ 1351 0042 04EB830E 		add	lr, r4, r3, lsl #2
+ 1352              		.loc 1 260 11 view .LVU406
+ 1353 0046 DEED006A 		vldr.32	s13, [lr]
+ 1354              	.LVL102:
+ 261:patchouli/src/patchouli_math.c ****     float ym = q->data[xm];
+ 1355              		.loc 1 261 5 is_stmt 1 view .LVU407
+ 1356              		.loc 1 261 23 is_stmt 0 view .LVU408
+ 1357 004a 04EB8202 		add	r2, r4, r2, lsl #2
+ 1358              	.LVL103:
+ 1359              		.loc 1 261 11 view .LVU409
+ 1360 004e 92ED006A 		vldr.32	s12, [r2]
+ 1361              	.LVL104:
+ 262:patchouli/src/patchouli_math.c ****     float yr = q->data[xr];
+ 1362              		.loc 1 262 5 is_stmt 1 view .LVU410
+ 1363              		.loc 1 262 23 is_stmt 0 view .LVU411
+ 1364 0052 04EB8C04 		add	r4, r4, ip, lsl #2
+ 1365              		.loc 1 262 11 view .LVU412
+ 1366 0056 94ED005A 		vldr.32	s10, [r4]
+ 1367              	.LVL105:
+ 263:patchouli/src/patchouli_math.c **** 
+ 264:patchouli/src/patchouli_math.c ****     // Quadratic interpolation
+ 265:patchouli/src/patchouli_math.c ****     q->result_interp = (float)xl+0.5f*(3*yl-4*ym+yr)/(yl-2*ym+yr);
+ 1368              		.loc 1 265 5 is_stmt 1 view .LVU413
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 30
+
+
+ 1369              		.loc 1 265 24 is_stmt 0 view .LVU414
+ 1370 005a 07EE903A 		vmov	s15, r3	@ int
+ 1371 005e B8EEE77A 		vcvt.f32.s32	s14, s15
+ 1372              	.LVL106:
+ 1373              		.loc 1 265 41 view .LVU415
+ 1374 0062 F0EE087A 		vmov.f32	s15, #3.0e+0
+ 1375 0066 66EEA77A 		vmul.f32	s15, s13, s15
+ 1376              		.loc 1 265 46 view .LVU416
+ 1377 006a F1EE005A 		vmov.f32	s11, #4.0e+0
+ 1378 006e 66EE255A 		vmul.f32	s11, s12, s11
+ 1379              		.loc 1 265 44 view .LVU417
+ 1380 0072 77EEE57A 		vsub.f32	s15, s15, s11
+ 1381              		.loc 1 265 49 view .LVU418
+ 1382 0076 77EE857A 		vadd.f32	s15, s15, s10
+ 1383              		.loc 1 265 38 view .LVU419
+ 1384 007a F6EE005A 		vmov.f32	s11, #5.0e-1
+ 1385 007e 67EEA57A 		vmul.f32	s15, s15, s11
+ 1386              		.loc 1 265 59 view .LVU420
+ 1387 0082 36EE066A 		vadd.f32	s12, s12, s12
+ 1388              	.LVL107:
+ 1389              		.loc 1 265 57 view .LVU421
+ 1390 0086 76EEC66A 		vsub.f32	s13, s13, s12
+ 1391              	.LVL108:
+ 1392              		.loc 1 265 62 view .LVU422
+ 1393 008a 76EE856A 		vadd.f32	s13, s13, s10
+ 1394              		.loc 1 265 53 view .LVU423
+ 1395 008e 87EEA66A 		vdiv.f32	s12, s15, s13
+ 1396              		.loc 1 265 33 view .LVU424
+ 1397 0092 77EE067A 		vadd.f32	s15, s14, s12
+ 1398              		.loc 1 265 22 view .LVU425
+ 1399 0096 C0ED057A 		vstr.32	s15, [r0, #20]
+ 1400              	.LVL109:
+ 266:patchouli/src/patchouli_math.c ****     if (q->boundary_status==PATCHOULI_QUAD_INTERP_LEFT)  q->result_interp -= 0.0f;
+ 1401              		.loc 1 266 5 is_stmt 1 view .LVU426
+ 1402              		.loc 1 266 10 is_stmt 0 view .LVU427
+ 1403 009a 037F     		ldrb	r3, [r0, #28]	@ zero_extendqisi2
+ 1404              	.LVL110:
+ 1405              		.loc 1 266 58 is_stmt 1 discriminator 1 view .LVU428
+ 267:patchouli/src/patchouli_math.c ****     if (q->boundary_status==PATCHOULI_QUAD_INTERP_RIGHT) q->result_interp -= 1.0f;
+ 1406              		.loc 1 267 5 view .LVU429
+ 1407              		.loc 1 267 8 is_stmt 0 view .LVU430
+ 1408 009c 022B     		cmp	r3, #2
+ 1409 009e 24D0     		beq	.L80
+ 1410              	.L76:
+ 268:patchouli/src/patchouli_math.c **** 
+ 269:patchouli/src/patchouli_math.c ****     // Map the result to the range [low, high]
+ 270:patchouli/src/patchouli_math.c ****     q->result_mapped = q->low + (q->high-q->low)*q->result_interp/(n-1);
+ 1411              		.loc 1 270 5 is_stmt 1 view .LVU431
+ 1412              		.loc 1 270 25 is_stmt 0 view .LVU432
+ 1413 00a0 90ED010A 		vldr.32	s0, [r0, #4]
+ 1414              		.loc 1 270 35 view .LVU433
+ 1415 00a4 90ED027A 		vldr.32	s14, [r0, #8]
+ 1416              		.loc 1 270 41 view .LVU434
+ 1417 00a8 37EE407A 		vsub.f32	s14, s14, s0
+ 1418              		.loc 1 270 51 view .LVU435
+ 1419 00ac D0ED057A 		vldr.32	s15, [r0, #20]
+ 1420              		.loc 1 270 49 view .LVU436
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 31
+
+
+ 1421 00b0 27EE277A 		vmul.f32	s14, s14, s15
+ 1422              		.loc 1 270 69 view .LVU437
+ 1423 00b4 0139     		subs	r1, r1, #1
+ 1424              	.LVL111:
+ 1425              		.loc 1 270 66 view .LVU438
+ 1426 00b6 07EE901A 		vmov	s15, r1	@ int
+ 1427 00ba F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1428 00be C7EE276A 		vdiv.f32	s13, s14, s15
+ 1429              		.loc 1 270 31 view .LVU439
+ 1430 00c2 30EE260A 		vadd.f32	s0, s0, s13
+ 1431              		.loc 1 270 22 view .LVU440
+ 1432 00c6 80ED060A 		vstr.32	s0, [r0, #24]
+ 271:patchouli/src/patchouli_math.c ****     return q->result_mapped;
+ 1433              		.loc 1 271 5 is_stmt 1 view .LVU441
+ 272:patchouli/src/patchouli_math.c **** }
+ 1434              		.loc 1 272 1 is_stmt 0 view .LVU442
+ 1435 00ca 10BD     		pop	{r4, pc}
+ 1436              	.LVL112:
+ 1437              	.L73:
+ 249:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_RIGHT;
+ 1438              		.loc 1 249 12 is_stmt 1 view .LVU443
+ 249:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_RIGHT;
+ 1439              		.loc 1 249 35 is_stmt 0 view .LVU444
+ 1440 00cc 01F1FF3C 		add	ip, r1, #-1
+ 249:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_RIGHT;
+ 1441              		.loc 1 249 15 view .LVU445
+ 1442 00d0 6245     		cmp	r2, ip
+ 1443 00d2 05D0     		beq	.L81
+ 255:patchouli/src/patchouli_math.c ****         xl = q->result_maxidx-1;
+ 1444              		.loc 1 255 9 is_stmt 1 view .LVU446
+ 255:patchouli/src/patchouli_math.c ****         xl = q->result_maxidx-1;
+ 1445              		.loc 1 255 28 is_stmt 0 view .LVU447
+ 1446 00d4 0123     		movs	r3, #1
+ 1447              	.LVL113:
+ 255:patchouli/src/patchouli_math.c ****         xl = q->result_maxidx-1;
+ 1448              		.loc 1 255 28 view .LVU448
+ 1449 00d6 0377     		strb	r3, [r0, #28]
+ 256:patchouli/src/patchouli_math.c ****         xm = q->result_maxidx;
+ 1450              		.loc 1 256 9 is_stmt 1 view .LVU449
+ 256:patchouli/src/patchouli_math.c ****         xm = q->result_maxidx;
+ 1451              		.loc 1 256 12 is_stmt 0 view .LVU450
+ 1452 00d8 531E     		subs	r3, r2, #1
+ 1453              	.LVL114:
+ 257:patchouli/src/patchouli_math.c ****         xr = q->result_maxidx+1;
+ 1454              		.loc 1 257 9 is_stmt 1 view .LVU451
+ 258:patchouli/src/patchouli_math.c ****     }
+ 1455              		.loc 1 258 9 view .LVU452
+ 258:patchouli/src/patchouli_math.c ****     }
+ 1456              		.loc 1 258 12 is_stmt 0 view .LVU453
+ 1457 00da 02F1010C 		add	ip, r2, #1
+ 1458              	.LVL115:
+ 258:patchouli/src/patchouli_math.c ****     }
+ 1459              		.loc 1 258 12 view .LVU454
+ 1460 00de AFE7     		b	.L74
+ 1461              	.LVL116:
+ 1462              	.L81:
+ 250:patchouli/src/patchouli_math.c ****         xl = n-2;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 32
+
+
+ 1463              		.loc 1 250 9 is_stmt 1 view .LVU455
+ 250:patchouli/src/patchouli_math.c ****         xl = n-2;
+ 1464              		.loc 1 250 28 is_stmt 0 view .LVU456
+ 1465 00e0 0223     		movs	r3, #2
+ 1466              	.LVL117:
+ 250:patchouli/src/patchouli_math.c ****         xl = n-2;
+ 1467              		.loc 1 250 28 view .LVU457
+ 1468 00e2 0377     		strb	r3, [r0, #28]
+ 251:patchouli/src/patchouli_math.c ****         xm = n-1;
+ 1469              		.loc 1 251 9 is_stmt 1 view .LVU458
+ 251:patchouli/src/patchouli_math.c ****         xm = n-1;
+ 1470              		.loc 1 251 12 is_stmt 0 view .LVU459
+ 1471 00e4 8B1E     		subs	r3, r1, #2
+ 1472              	.LVL118:
+ 252:patchouli/src/patchouli_math.c ****         xr = n-1;
+ 1473              		.loc 1 252 9 is_stmt 1 view .LVU460
+ 253:patchouli/src/patchouli_math.c ****     } else {
+ 1474              		.loc 1 253 9 view .LVU461
+ 252:patchouli/src/patchouli_math.c ****         xr = n-1;
+ 1475              		.loc 1 252 12 is_stmt 0 view .LVU462
+ 1476 00e6 6246     		mov	r2, ip
+ 1477 00e8 AAE7     		b	.L74
+ 1478              	.LVL119:
+ 1479              	.L80:
+ 267:patchouli/src/patchouli_math.c **** 
+ 1480              		.loc 1 267 58 is_stmt 1 discriminator 1 view .LVU463
+ 267:patchouli/src/patchouli_math.c **** 
+ 1481              		.loc 1 267 75 is_stmt 0 discriminator 1 view .LVU464
+ 1482 00ea B7EE007A 		vmov.f32	s14, #1.0e+0
+ 1483 00ee 77EEC77A 		vsub.f32	s15, s15, s14
+ 1484 00f2 C0ED057A 		vstr.32	s15, [r0, #20]
+ 1485 00f6 D3E7     		b	.L76
+ 1486              	.L83:
+ 1487              		.align	2
+ 1488              	.L82:
+ 1489 00f8 0000C8C2 		.word	-1027080192
+ 1490              		.cfi_endproc
+ 1491              	.LFE161:
+ 1493              		.global	patchouli_b_mat
+ 1494              		.section	.bss.patchouli_b_mat,"aw",%nobits
+ 1495              		.align	2
+ 1498              	patchouli_b_mat:
+ 1499 0000 00000000 		.space	8
+ 1499      00000000 
+ 1500              		.global	patchouli_b_f32
+ 1501              		.section	.bss.patchouli_b_f32,"aw",%nobits
+ 1502              		.align	2
+ 1505              	patchouli_b_f32:
+ 1506 0000 00000000 		.space	20
+ 1506      00000000 
+ 1506      00000000 
+ 1506      00000000 
+ 1506      00000000 
+ 1507              		.global	patchouli_c_mat
+ 1508              		.section	.bss.patchouli_c_mat,"aw",%nobits
+ 1509              		.align	2
+ 1512              	patchouli_c_mat:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 33
+
+
+ 1513 0000 00000000 		.space	8
+ 1513      00000000 
+ 1514              		.global	patchouli_c_f32
+ 1515              		.section	.bss.patchouli_c_f32,"aw",%nobits
+ 1516              		.align	2
+ 1519              	patchouli_c_f32:
+ 1520 0000 00000000 		.space	12
+ 1520      00000000 
+ 1520      00000000 
+ 1521              		.global	patchouli_kernel_mat
+ 1522              		.section	.bss.patchouli_kernel_mat,"aw",%nobits
+ 1523              		.align	2
+ 1526              	patchouli_kernel_mat:
+ 1527 0000 00000000 		.space	8
+ 1527      00000000 
+ 1528              		.global	patchouli_kernel_f32
+ 1529              		.section	.bss.patchouli_kernel_f32,"aw",%nobits
+ 1530              		.align	2
+ 1533              	patchouli_kernel_f32:
+ 1534 0000 00000000 		.space	60
+ 1534      00000000 
+ 1534      00000000 
+ 1534      00000000 
+ 1534      00000000 
+ 1535              		.text
+ 1536              	.Letext0:
+ 1537              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1538              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1539              		.file 4 "patchouli/inc/patchouli_math.h"
+ 1540              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
+ 1541              		.file 6 "Drivers/CMSIS/DSP/Include/arm_math.h"
+ 1542              		.file 7 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1543              		.file 8 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1544              		.file 9 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 patchouli_math.c
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:21     .text.patchouli_linear_map:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:27     .text.patchouli_linear_map:00000000 patchouli_linear_map
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:57     .text.patchouli_median:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:63     .text.patchouli_median:00000000 patchouli_median
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:154    .text.patchouli_wavg_f32:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:160    .text.patchouli_wavg_f32:00000000 patchouli_wavg_f32
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:218    .text.patchouli_wavg_f32:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:223    .text.patchouli_gauss_init_kernel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:229    .text.patchouli_gauss_init_kernel:00000000 patchouli_gauss_init_kernel
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:373    .text.patchouli_gauss_init_kernel:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1533   .bss.patchouli_kernel_f32:00000000 patchouli_kernel_f32
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1526   .bss.patchouli_kernel_mat:00000000 patchouli_kernel_mat
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1505   .bss.patchouli_b_f32:00000000 patchouli_b_f32
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1498   .bss.patchouli_b_mat:00000000 patchouli_b_mat
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1519   .bss.patchouli_c_f32:00000000 patchouli_c_f32
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1512   .bss.patchouli_c_mat:00000000 patchouli_c_mat
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:383    .text.patchouli_gauss_apply:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:389    .text.patchouli_gauss_apply:00000000 patchouli_gauss_apply
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:455    .text.patchouli_gauss_apply:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:464    .text.patchouli_gauss_calc_mean:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:470    .text.patchouli_gauss_calc_mean:00000000 patchouli_gauss_calc_mean
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:493    .text.patchouli_gauss_calc_mean:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:498    .text.patchouli_gauss_calc_std:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:504    .text.patchouli_gauss_calc_std:00000000 patchouli_gauss_calc_std
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:530    .text.patchouli_gauss_calc_std:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:535    .text.patchouli_gauss_calc_amp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:541    .text.patchouli_gauss_calc_amp:00000000 patchouli_gauss_calc_amp
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:569    .text.patchouli_gauss_calc_amp:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:574    .text.patchouli_mva_buffer_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:580    .text.patchouli_mva_buffer_init:00000000 patchouli_mva_buffer_init
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:650    .text.patchouli_mva_buffer_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:656    .text.patchouli_mva_buffer_free:00000000 patchouli_mva_buffer_free
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:680    .text.patchouli_mva_buffer_push:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:686    .text.patchouli_mva_buffer_push:00000000 patchouli_mva_buffer_push
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:743    .text.patchouli_kalman_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:749    .text.patchouli_kalman_init:00000000 patchouli_kalman_init
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:797    .text.patchouli_kalman_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:803    .text.patchouli_kalman_update:00000000 patchouli_kalman_update
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:924    .text.patchouli_fir_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:930    .text.patchouli_fir_init:00000000 patchouli_fir_init
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1108   .text.patchouli_fir_init:000000f4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1114   .text.patchouli_fir_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1120   .text.patchouli_fir_free:00000000 patchouli_fir_free
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1150   .text.patchouli_fir_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1156   .text.patchouli_fir_update:00000000 patchouli_fir_update
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1255   .text.patchouli_quad_interp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1261   .text.patchouli_quad_interp:00000000 patchouli_quad_interp
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1489   .text.patchouli_quad_interp:000000f8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1495   .bss.patchouli_b_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1502   .bss.patchouli_b_f32:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1509   .bss.patchouli_c_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1516   .bss.patchouli_c_f32:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1523   .bss.patchouli_kernel_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1530   .bss.patchouli_kernel_f32:00000000 $d
+
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 35
+
+
+UNDEFINED SYMBOLS
+arm_mat_init_f32
+arm_mat_trans_f32
+arm_mat_mult_f32
+arm_mat_inverse_f32
+sqrtf
+malloc
+free
+sinf

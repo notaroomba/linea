@@ -1,0 +1,2522 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"patchouli_bsp_glider_addon_v1.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "patchouli/src/patchouli_bsp_glider_addon_v1.c"
+  20              		.section	.rodata.patchouli_coil_select.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 496E7661 		.ascii	"Invalid X Coil ID: %d\000"
+  23      6C696420 
+  23      5820436F 
+  23      696C2049 
+  23      443A2025 
+  24 0016 0000     		.align	2
+  25              	.LC1:
+  26 0018 5B204552 		.ascii	"[ ERR]: \000"
+  26      525D3A20 
+  26      00
+  27 0021 000000   		.align	2
+  28              	.LC2:
+  29 0024 496E7661 		.ascii	"Invalid Y Coil ID: %d\000"
+  29      6C696420 
+  29      5920436F 
+  29      696C2049 
+  29      443A2025 
+  30              		.section	.text.patchouli_coil_select,"ax",%progbits
+  31              		.align	1
+  32              		.global	patchouli_coil_select
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	patchouli_coil_select:
+  38              	.LVL0:
+  39              	.LFB1415:
+   1:patchouli/src/patchouli_bsp_glider_addon_v1.c **** /*
+   2:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * Project Patchouli
+   3:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * Copyright (C) 2024 Anhang Li (thelithcore@gmail.com)
+   4:patchouli/src/patchouli_bsp_glider_addon_v1.c **** *
+   5:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * This program is free software: you can redistribute it and/or modify
+   6:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * it under the terms of the GNU General Public License as published by
+   7:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * the Free Software Foundation, either version 3 of the License, or
+   8:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * (at your option) any later version.
+   9:patchouli/src/patchouli_bsp_glider_addon_v1.c **** *
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 2
+
+
+  10:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * This program is distributed in the hope that it will be useful,
+  11:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  12:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  13:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * GNU General Public License for more details.
+  14:patchouli/src/patchouli_bsp_glider_addon_v1.c **** *
+  15:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * You should have received a copy of the GNU General Public License
+  16:patchouli/src/patchouli_bsp_glider_addon_v1.c **** * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  17:patchouli/src/patchouli_bsp_glider_addon_v1.c **** */
+  18:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  19:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "patchouli_config.h"
+  20:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #ifdef PATCHOULI_PCB_GLIDER_ADDON_V1
+  21:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  22:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "patchouli_bsp_glider_addon_v1.h"
+  23:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "main.h"
+  24:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "math.h"
+  25:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "patchouli_math.h"
+  26:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "patchouli.h"
+  27:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "BCG.h"
+  28:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "patchouli_bsp_tx.h"
+  29:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  30:patchouli/src/patchouli_bsp_glider_addon_v1.c **** // ExN List
+  31:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #define PATCHOULI_N_EXN (6u)
+  32:patchouli/src/patchouli_bsp_glider_addon_v1.c **** GPIO_TypeDef* ExN_GPIO_Port[PATCHOULI_N_EXN] = {
+  33:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     E0N_GPIO_Port, E1N_GPIO_Port, E2N_GPIO_Port,
+  34:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     E3N_GPIO_Port, E4N_GPIO_Port, E5N_GPIO_Port
+  35:patchouli/src/patchouli_bsp_glider_addon_v1.c **** };
+  36:patchouli/src/patchouli_bsp_glider_addon_v1.c **** uint16_t ExN_Pin[PATCHOULI_N_EXN] = {
+  37:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     E0N_Pin, E1N_Pin, E2N_Pin,
+  38:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     E3N_Pin, E4N_Pin, E5N_Pin
+  39:patchouli/src/patchouli_bsp_glider_addon_v1.c **** };
+  40:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  41:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  42:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_coil_select(int id, bool x_yn){
+  40              		.loc 1 42 46 view -0
+  41              		.cfi_startproc
+  42              		@ args = 0, pretend = 0, frame = 8
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              		.loc 1 42 46 is_stmt 0 view .LVU1
+  45 0000 10B5     		push	{r4, lr}
+  46              		.cfi_def_cfa_offset 8
+  47              		.cfi_offset 4, -8
+  48              		.cfi_offset 14, -4
+  49 0002 82B0     		sub	sp, sp, #8
+  50              		.cfi_def_cfa_offset 16
+  43:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     uint8_t S   = 0;
+  51              		.loc 1 43 5 is_stmt 1 view .LVU2
+  52              	.LVL1:
+  44:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     GPIO_PinState    ExN[PATCHOULI_N_EXN];
+  53              		.loc 1 44 5 view .LVU3
+  45:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     for (int i = 0; i < PATCHOULI_N_EXN; i++) {
+  54              		.loc 1 45 5 view .LVU4
+  55              	.LBB11:
+  56              		.loc 1 45 10 view .LVU5
+  57              		.loc 1 45 14 is_stmt 0 view .LVU6
+  58 0004 0023     		movs	r3, #0
+  59              		.loc 1 45 5 view .LVU7
+  60 0006 08E0     		b	.L2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 3
+
+
+  61              	.LVL2:
+  62              	.L3:
+  46:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         ExN[i] = GPIO_PIN_SET; // Default state is high
+  63              		.loc 1 46 9 is_stmt 1 view .LVU8
+  64              		.loc 1 46 16 is_stmt 0 view .LVU9
+  65 0008 03F10802 		add	r2, r3, #8
+  66 000c 0DEB0204 		add	r4, sp, r2
+  67 0010 4FF0010C 		mov	ip, #1
+  68 0014 04F808CC 		strb	ip, [r4, #-8]
+  45:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     for (int i = 0; i < PATCHOULI_N_EXN; i++) {
+  69              		.loc 1 45 43 is_stmt 1 discriminator 3 view .LVU10
+  70 0018 6344     		add	r3, r3, ip
+  71              	.LVL3:
+  72              	.L2:
+  45:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     for (int i = 0; i < PATCHOULI_N_EXN; i++) {
+  73              		.loc 1 45 23 discriminator 1 view .LVU11
+  74 001a 052B     		cmp	r3, #5
+  75 001c F4D9     		bls	.L3
+  76              	.LBE11:
+  47:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     }
+  48:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+  49:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     if(x_yn) {
+  77              		.loc 1 49 5 view .LVU12
+  78              		.loc 1 49 7 is_stmt 0 view .LVU13
+  79 001e 0029     		cmp	r1, #0
+  80 0020 00F0AA80 		beq	.L4
+  50:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         // X Coils
+  51:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         if(id >= PATCHOULI_N_X_COIL) {
+  81              		.loc 1 51 9 is_stmt 1 view .LVU14
+  82              		.loc 1 51 11 is_stmt 0 view .LVU15
+  83 0024 1B28     		cmp	r0, #27
+  84 0026 12D8     		bhi	.L62
+  52:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid X Coil ID: %d", id);
+  53:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             return;
+  54:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+  55:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         switch(id) {
+  85              		.loc 1 55 9 is_stmt 1 view .LVU16
+  86 0028 1B28     		cmp	r0, #27
+  87 002a 00F29F80 		bhi	.L7
+  88 002e DFE800F0 		tbb	[pc, r0]
+  89              	.LVL4:
+  90              	.L9:
+  91 0032 14       		.byte	(.L36-.L9)/2
+  92 0033 19       		.byte	(.L35-.L9)/2
+  93 0034 1E       		.byte	(.L34-.L9)/2
+  94 0035 23       		.byte	(.L33-.L9)/2
+  95 0036 28       		.byte	(.L32-.L9)/2
+  96 0037 2D       		.byte	(.L31-.L9)/2
+  97 0038 32       		.byte	(.L30-.L9)/2
+  98 0039 37       		.byte	(.L29-.L9)/2
+  99 003a 3B       		.byte	(.L28-.L9)/2
+ 100 003b 40       		.byte	(.L27-.L9)/2
+ 101 003c 45       		.byte	(.L26-.L9)/2
+ 102 003d 4A       		.byte	(.L25-.L9)/2
+ 103 003e 4F       		.byte	(.L24-.L9)/2
+ 104 003f 54       		.byte	(.L23-.L9)/2
+ 105 0040 59       		.byte	(.L22-.L9)/2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 4
+
+
+ 106 0041 5E       		.byte	(.L21-.L9)/2
+ 107 0042 62       		.byte	(.L20-.L9)/2
+ 108 0043 67       		.byte	(.L19-.L9)/2
+ 109 0044 6C       		.byte	(.L18-.L9)/2
+ 110 0045 71       		.byte	(.L17-.L9)/2
+ 111 0046 76       		.byte	(.L16-.L9)/2
+ 112 0047 7B       		.byte	(.L15-.L9)/2
+ 113 0048 80       		.byte	(.L14-.L9)/2
+ 114 0049 85       		.byte	(.L13-.L9)/2
+ 115 004a 89       		.byte	(.L12-.L9)/2
+ 116 004b 8E       		.byte	(.L11-.L9)/2
+ 117 004c 93       		.byte	(.L10-.L9)/2
+ 118 004d 98       		.byte	(.L8-.L9)/2
+ 119              		.p2align 1
+ 120              	.L62:
+  52:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid X Coil ID: %d", id);
+ 121              		.loc 1 52 13 view .LVU17
+ 122 004e 0246     		mov	r2, r0
+ 123 0050 9749     		ldr	r1, .L64
+ 124              	.LVL5:
+  52:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid X Coil ID: %d", id);
+ 125              		.loc 1 52 13 is_stmt 0 view .LVU18
+ 126 0052 9848     		ldr	r0, .L64+4
+ 127              	.LVL6:
+  52:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid X Coil ID: %d", id);
+ 128              		.loc 1 52 13 view .LVU19
+ 129 0054 FFF7FEFF 		bl	patchouli_debug_output
+ 130              	.LVL7:
+  53:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+ 131              		.loc 1 53 13 is_stmt 1 view .LVU20
+ 132 0058 27E1     		b	.L1
+ 133              	.LVL8:
+ 134              	.L36:
+  56:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 0:  ExN[0] = GPIO_PIN_RESET; S = 1; break; // U7
+ 135              		.loc 1 56 22 view .LVU21
+ 136              		.loc 1 56 29 is_stmt 0 view .LVU22
+ 137 005a 0023     		movs	r3, #0
+ 138 005c 8DF80030 		strb	r3, [sp]
+ 139              		.loc 1 56 47 is_stmt 1 view .LVU23
+ 140              	.LVL9:
+ 141              		.loc 1 56 54 view .LVU24
+ 142              		.loc 1 56 49 is_stmt 0 view .LVU25
+ 143 0060 0124     		movs	r4, #1
+ 144              		.loc 1 56 54 view .LVU26
+ 145 0062 A2E0     		b	.L37
+ 146              	.LVL10:
+ 147              	.L35:
+  57:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 1:  ExN[0] = GPIO_PIN_RESET; S = 2; break; 
+ 148              		.loc 1 57 22 is_stmt 1 view .LVU27
+ 149              		.loc 1 57 29 is_stmt 0 view .LVU28
+ 150 0064 0023     		movs	r3, #0
+ 151 0066 8DF80030 		strb	r3, [sp]
+ 152              		.loc 1 57 47 is_stmt 1 view .LVU29
+ 153              	.LVL11:
+ 154              		.loc 1 57 54 view .LVU30
+ 155              		.loc 1 57 49 is_stmt 0 view .LVU31
+ 156 006a 0224     		movs	r4, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 5
+
+
+ 157              		.loc 1 57 54 view .LVU32
+ 158 006c 9DE0     		b	.L37
+ 159              	.LVL12:
+ 160              	.L34:
+  58:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[0] = GPIO_PIN_RESET; S = 4; break; 
+ 161              		.loc 1 58 22 is_stmt 1 view .LVU33
+ 162              		.loc 1 58 29 is_stmt 0 view .LVU34
+ 163 006e 0023     		movs	r3, #0
+ 164 0070 8DF80030 		strb	r3, [sp]
+ 165              		.loc 1 58 47 is_stmt 1 view .LVU35
+ 166              	.LVL13:
+ 167              		.loc 1 58 54 view .LVU36
+ 168              		.loc 1 58 49 is_stmt 0 view .LVU37
+ 169 0074 0424     		movs	r4, #4
+ 170              		.loc 1 58 54 view .LVU38
+ 171 0076 98E0     		b	.L37
+ 172              	.LVL14:
+ 173              	.L33:
+  59:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[0] = GPIO_PIN_RESET; S = 6; break; 
+ 174              		.loc 1 59 22 is_stmt 1 view .LVU39
+ 175              		.loc 1 59 29 is_stmt 0 view .LVU40
+ 176 0078 0023     		movs	r3, #0
+ 177 007a 8DF80030 		strb	r3, [sp]
+ 178              		.loc 1 59 47 is_stmt 1 view .LVU41
+ 179              	.LVL15:
+ 180              		.loc 1 59 54 view .LVU42
+ 181              		.loc 1 59 49 is_stmt 0 view .LVU43
+ 182 007e 0624     		movs	r4, #6
+ 183              		.loc 1 59 54 view .LVU44
+ 184 0080 93E0     		b	.L37
+ 185              	.LVL16:
+ 186              	.L32:
+  60:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[0] = GPIO_PIN_RESET; S = 7; break; 
+ 187              		.loc 1 60 22 is_stmt 1 view .LVU45
+ 188              		.loc 1 60 29 is_stmt 0 view .LVU46
+ 189 0082 0023     		movs	r3, #0
+ 190 0084 8DF80030 		strb	r3, [sp]
+ 191              		.loc 1 60 47 is_stmt 1 view .LVU47
+ 192              	.LVL17:
+ 193              		.loc 1 60 54 view .LVU48
+ 194              		.loc 1 60 49 is_stmt 0 view .LVU49
+ 195 0088 0724     		movs	r4, #7
+ 196              		.loc 1 60 54 view .LVU50
+ 197 008a 8EE0     		b	.L37
+ 198              	.LVL18:
+ 199              	.L31:
+  61:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[0] = GPIO_PIN_RESET; S = 5; break; 
+ 200              		.loc 1 61 22 is_stmt 1 view .LVU51
+ 201              		.loc 1 61 29 is_stmt 0 view .LVU52
+ 202 008c 0023     		movs	r3, #0
+ 203 008e 8DF80030 		strb	r3, [sp]
+ 204              		.loc 1 61 47 is_stmt 1 view .LVU53
+ 205              	.LVL19:
+ 206              		.loc 1 61 54 view .LVU54
+ 207              		.loc 1 61 49 is_stmt 0 view .LVU55
+ 208 0092 0524     		movs	r4, #5
+ 209              		.loc 1 61 54 view .LVU56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 6
+
+
+ 210 0094 89E0     		b	.L37
+ 211              	.LVL20:
+ 212              	.L30:
+  62:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[1] = GPIO_PIN_RESET; S = 3; break; // U8
+ 213              		.loc 1 62 22 is_stmt 1 view .LVU57
+ 214              		.loc 1 62 29 is_stmt 0 view .LVU58
+ 215 0096 0023     		movs	r3, #0
+ 216 0098 8DF80130 		strb	r3, [sp, #1]
+ 217              		.loc 1 62 47 is_stmt 1 view .LVU59
+ 218              	.LVL21:
+ 219              		.loc 1 62 54 view .LVU60
+ 220              		.loc 1 62 49 is_stmt 0 view .LVU61
+ 221 009c 0324     		movs	r4, #3
+ 222              		.loc 1 62 54 view .LVU62
+ 223 009e 84E0     		b	.L37
+ 224              	.LVL22:
+ 225              	.L29:
+  63:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[1] = GPIO_PIN_RESET; S = 0; break; 
+ 226              		.loc 1 63 22 is_stmt 1 view .LVU63
+ 227              		.loc 1 63 29 is_stmt 0 view .LVU64
+ 228 00a0 0024     		movs	r4, #0
+ 229 00a2 8DF80140 		strb	r4, [sp, #1]
+ 230              		.loc 1 63 47 is_stmt 1 view .LVU65
+ 231              		.loc 1 63 54 view .LVU66
+ 232 00a6 80E0     		b	.L37
+ 233              	.L28:
+  64:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[1] = GPIO_PIN_RESET; S = 1; break; 
+ 234              		.loc 1 64 22 view .LVU67
+ 235              		.loc 1 64 29 is_stmt 0 view .LVU68
+ 236 00a8 0023     		movs	r3, #0
+ 237 00aa 8DF80130 		strb	r3, [sp, #1]
+ 238              		.loc 1 64 47 is_stmt 1 view .LVU69
+ 239              	.LVL23:
+ 240              		.loc 1 64 54 view .LVU70
+ 241              		.loc 1 64 49 is_stmt 0 view .LVU71
+ 242 00ae 0124     		movs	r4, #1
+ 243              		.loc 1 64 54 view .LVU72
+ 244 00b0 7BE0     		b	.L37
+ 245              	.LVL24:
+ 246              	.L27:
+  65:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[1] = GPIO_PIN_RESET; S = 2; break; 
+ 247              		.loc 1 65 22 is_stmt 1 view .LVU73
+ 248              		.loc 1 65 29 is_stmt 0 view .LVU74
+ 249 00b2 0023     		movs	r3, #0
+ 250 00b4 8DF80130 		strb	r3, [sp, #1]
+ 251              		.loc 1 65 47 is_stmt 1 view .LVU75
+ 252              	.LVL25:
+ 253              		.loc 1 65 54 view .LVU76
+ 254              		.loc 1 65 49 is_stmt 0 view .LVU77
+ 255 00b8 0224     		movs	r4, #2
+ 256              		.loc 1 65 54 view .LVU78
+ 257 00ba 76E0     		b	.L37
+ 258              	.LVL26:
+ 259              	.L26:
+  66:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[1] = GPIO_PIN_RESET; S = 4; break; 
+ 260              		.loc 1 66 23 is_stmt 1 view .LVU79
+ 261              		.loc 1 66 30 is_stmt 0 view .LVU80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 7
+
+
+ 262 00bc 0023     		movs	r3, #0
+ 263 00be 8DF80130 		strb	r3, [sp, #1]
+ 264              		.loc 1 66 48 is_stmt 1 view .LVU81
+ 265              	.LVL27:
+ 266              		.loc 1 66 55 view .LVU82
+ 267              		.loc 1 66 50 is_stmt 0 view .LVU83
+ 268 00c2 0424     		movs	r4, #4
+ 269              		.loc 1 66 55 view .LVU84
+ 270 00c4 71E0     		b	.L37
+ 271              	.LVL28:
+ 272              	.L25:
+  67:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[1] = GPIO_PIN_RESET; S = 6; break; 
+ 273              		.loc 1 67 23 is_stmt 1 view .LVU85
+ 274              		.loc 1 67 30 is_stmt 0 view .LVU86
+ 275 00c6 0023     		movs	r3, #0
+ 276 00c8 8DF80130 		strb	r3, [sp, #1]
+ 277              		.loc 1 67 48 is_stmt 1 view .LVU87
+ 278              	.LVL29:
+ 279              		.loc 1 67 55 view .LVU88
+ 280              		.loc 1 67 50 is_stmt 0 view .LVU89
+ 281 00cc 0624     		movs	r4, #6
+ 282              		.loc 1 67 55 view .LVU90
+ 283 00ce 6CE0     		b	.L37
+ 284              	.LVL30:
+ 285              	.L24:
+  68:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[1] = GPIO_PIN_RESET; S = 7; break; 
+ 286              		.loc 1 68 23 is_stmt 1 view .LVU91
+ 287              		.loc 1 68 30 is_stmt 0 view .LVU92
+ 288 00d0 0023     		movs	r3, #0
+ 289 00d2 8DF80130 		strb	r3, [sp, #1]
+ 290              		.loc 1 68 48 is_stmt 1 view .LVU93
+ 291              	.LVL31:
+ 292              		.loc 1 68 55 view .LVU94
+ 293              		.loc 1 68 50 is_stmt 0 view .LVU95
+ 294 00d6 0724     		movs	r4, #7
+ 295              		.loc 1 68 55 view .LVU96
+ 296 00d8 67E0     		b	.L37
+ 297              	.LVL32:
+ 298              	.L23:
+  69:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[1] = GPIO_PIN_RESET; S = 5; break; 
+ 299              		.loc 1 69 23 is_stmt 1 view .LVU97
+ 300              		.loc 1 69 30 is_stmt 0 view .LVU98
+ 301 00da 0023     		movs	r3, #0
+ 302 00dc 8DF80130 		strb	r3, [sp, #1]
+ 303              		.loc 1 69 48 is_stmt 1 view .LVU99
+ 304              	.LVL33:
+ 305              		.loc 1 69 55 view .LVU100
+ 306              		.loc 1 69 50 is_stmt 0 view .LVU101
+ 307 00e0 0524     		movs	r4, #5
+ 308              		.loc 1 69 55 view .LVU102
+ 309 00e2 62E0     		b	.L37
+ 310              	.LVL34:
+ 311              	.L22:
+  70:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[2] = GPIO_PIN_RESET; S = 3; break; // U9 
+ 312              		.loc 1 70 23 is_stmt 1 view .LVU103
+ 313              		.loc 1 70 30 is_stmt 0 view .LVU104
+ 314 00e4 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 8
+
+
+ 315 00e6 8DF80230 		strb	r3, [sp, #2]
+ 316              		.loc 1 70 48 is_stmt 1 view .LVU105
+ 317              	.LVL35:
+ 318              		.loc 1 70 55 view .LVU106
+ 319              		.loc 1 70 50 is_stmt 0 view .LVU107
+ 320 00ea 0324     		movs	r4, #3
+ 321              		.loc 1 70 55 view .LVU108
+ 322 00ec 5DE0     		b	.L37
+ 323              	.LVL36:
+ 324              	.L21:
+  71:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[2] = GPIO_PIN_RESET; S = 0; break;
+ 325              		.loc 1 71 23 is_stmt 1 view .LVU109
+ 326              		.loc 1 71 30 is_stmt 0 view .LVU110
+ 327 00ee 0024     		movs	r4, #0
+ 328 00f0 8DF80240 		strb	r4, [sp, #2]
+ 329              		.loc 1 71 48 is_stmt 1 view .LVU111
+ 330              		.loc 1 71 55 view .LVU112
+ 331 00f4 59E0     		b	.L37
+ 332              	.L20:
+  72:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[2] = GPIO_PIN_RESET; S = 1; break;
+ 333              		.loc 1 72 23 view .LVU113
+ 334              		.loc 1 72 30 is_stmt 0 view .LVU114
+ 335 00f6 0023     		movs	r3, #0
+ 336 00f8 8DF80230 		strb	r3, [sp, #2]
+ 337              		.loc 1 72 48 is_stmt 1 view .LVU115
+ 338              	.LVL37:
+ 339              		.loc 1 72 55 view .LVU116
+ 340              		.loc 1 72 50 is_stmt 0 view .LVU117
+ 341 00fc 0124     		movs	r4, #1
+ 342              		.loc 1 72 55 view .LVU118
+ 343 00fe 54E0     		b	.L37
+ 344              	.LVL38:
+ 345              	.L19:
+  73:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[2] = GPIO_PIN_RESET; S = 2; break;
+ 346              		.loc 1 73 23 is_stmt 1 view .LVU119
+ 347              		.loc 1 73 30 is_stmt 0 view .LVU120
+ 348 0100 0023     		movs	r3, #0
+ 349 0102 8DF80230 		strb	r3, [sp, #2]
+ 350              		.loc 1 73 48 is_stmt 1 view .LVU121
+ 351              	.LVL39:
+ 352              		.loc 1 73 55 view .LVU122
+ 353              		.loc 1 73 50 is_stmt 0 view .LVU123
+ 354 0106 0224     		movs	r4, #2
+ 355              		.loc 1 73 55 view .LVU124
+ 356 0108 4FE0     		b	.L37
+ 357              	.LVL40:
+ 358              	.L18:
+  74:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 18:  ExN[2] = GPIO_PIN_RESET; S = 4; break;
+ 359              		.loc 1 74 23 is_stmt 1 view .LVU125
+ 360              		.loc 1 74 30 is_stmt 0 view .LVU126
+ 361 010a 0023     		movs	r3, #0
+ 362 010c 8DF80230 		strb	r3, [sp, #2]
+ 363              		.loc 1 74 48 is_stmt 1 view .LVU127
+ 364              	.LVL41:
+ 365              		.loc 1 74 55 view .LVU128
+ 366              		.loc 1 74 50 is_stmt 0 view .LVU129
+ 367 0110 0424     		movs	r4, #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 9
+
+
+ 368              		.loc 1 74 55 view .LVU130
+ 369 0112 4AE0     		b	.L37
+ 370              	.LVL42:
+ 371              	.L17:
+  75:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 19:  ExN[2] = GPIO_PIN_RESET; S = 6; break;
+ 372              		.loc 1 75 23 is_stmt 1 view .LVU131
+ 373              		.loc 1 75 30 is_stmt 0 view .LVU132
+ 374 0114 0023     		movs	r3, #0
+ 375 0116 8DF80230 		strb	r3, [sp, #2]
+ 376              		.loc 1 75 48 is_stmt 1 view .LVU133
+ 377              	.LVL43:
+ 378              		.loc 1 75 55 view .LVU134
+ 379              		.loc 1 75 50 is_stmt 0 view .LVU135
+ 380 011a 0624     		movs	r4, #6
+ 381              		.loc 1 75 55 view .LVU136
+ 382 011c 45E0     		b	.L37
+ 383              	.LVL44:
+ 384              	.L16:
+  76:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 20:  ExN[2] = GPIO_PIN_RESET; S = 7; break;
+ 385              		.loc 1 76 23 is_stmt 1 view .LVU137
+ 386              		.loc 1 76 30 is_stmt 0 view .LVU138
+ 387 011e 0023     		movs	r3, #0
+ 388 0120 8DF80230 		strb	r3, [sp, #2]
+ 389              		.loc 1 76 48 is_stmt 1 view .LVU139
+ 390              	.LVL45:
+ 391              		.loc 1 76 55 view .LVU140
+ 392              		.loc 1 76 50 is_stmt 0 view .LVU141
+ 393 0124 0724     		movs	r4, #7
+ 394              		.loc 1 76 55 view .LVU142
+ 395 0126 40E0     		b	.L37
+ 396              	.LVL46:
+ 397              	.L15:
+  77:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 21:  ExN[2] = GPIO_PIN_RESET; S = 5; break;
+ 398              		.loc 1 77 23 is_stmt 1 view .LVU143
+ 399              		.loc 1 77 30 is_stmt 0 view .LVU144
+ 400 0128 0023     		movs	r3, #0
+ 401 012a 8DF80230 		strb	r3, [sp, #2]
+ 402              		.loc 1 77 48 is_stmt 1 view .LVU145
+ 403              	.LVL47:
+ 404              		.loc 1 77 55 view .LVU146
+ 405              		.loc 1 77 50 is_stmt 0 view .LVU147
+ 406 012e 0524     		movs	r4, #5
+ 407              		.loc 1 77 55 view .LVU148
+ 408 0130 3BE0     		b	.L37
+ 409              	.LVL48:
+ 410              	.L14:
+  78:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 22:  ExN[3] = GPIO_PIN_RESET; S = 3; break; // U10
+ 411              		.loc 1 78 23 is_stmt 1 view .LVU149
+ 412              		.loc 1 78 30 is_stmt 0 view .LVU150
+ 413 0132 0023     		movs	r3, #0
+ 414 0134 8DF80330 		strb	r3, [sp, #3]
+ 415              		.loc 1 78 48 is_stmt 1 view .LVU151
+ 416              	.LVL49:
+ 417              		.loc 1 78 55 view .LVU152
+ 418              		.loc 1 78 50 is_stmt 0 view .LVU153
+ 419 0138 0324     		movs	r4, #3
+ 420              		.loc 1 78 55 view .LVU154
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 10
+
+
+ 421 013a 36E0     		b	.L37
+ 422              	.LVL50:
+ 423              	.L13:
+  79:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 23:  ExN[3] = GPIO_PIN_RESET; S = 0; break;
+ 424              		.loc 1 79 23 is_stmt 1 view .LVU155
+ 425              		.loc 1 79 30 is_stmt 0 view .LVU156
+ 426 013c 0024     		movs	r4, #0
+ 427 013e 8DF80340 		strb	r4, [sp, #3]
+ 428              		.loc 1 79 48 is_stmt 1 view .LVU157
+ 429              		.loc 1 79 55 view .LVU158
+ 430 0142 32E0     		b	.L37
+ 431              	.L12:
+  80:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 24:  ExN[3] = GPIO_PIN_RESET; S = 1; break;
+ 432              		.loc 1 80 23 view .LVU159
+ 433              		.loc 1 80 30 is_stmt 0 view .LVU160
+ 434 0144 0023     		movs	r3, #0
+ 435 0146 8DF80330 		strb	r3, [sp, #3]
+ 436              		.loc 1 80 48 is_stmt 1 view .LVU161
+ 437              	.LVL51:
+ 438              		.loc 1 80 55 view .LVU162
+ 439              		.loc 1 80 50 is_stmt 0 view .LVU163
+ 440 014a 0124     		movs	r4, #1
+ 441              		.loc 1 80 55 view .LVU164
+ 442 014c 2DE0     		b	.L37
+ 443              	.LVL52:
+ 444              	.L11:
+  81:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 25:  ExN[3] = GPIO_PIN_RESET; S = 2; break;
+ 445              		.loc 1 81 23 is_stmt 1 view .LVU165
+ 446              		.loc 1 81 30 is_stmt 0 view .LVU166
+ 447 014e 0023     		movs	r3, #0
+ 448 0150 8DF80330 		strb	r3, [sp, #3]
+ 449              		.loc 1 81 48 is_stmt 1 view .LVU167
+ 450              	.LVL53:
+ 451              		.loc 1 81 55 view .LVU168
+ 452              		.loc 1 81 50 is_stmt 0 view .LVU169
+ 453 0154 0224     		movs	r4, #2
+ 454              		.loc 1 81 55 view .LVU170
+ 455 0156 28E0     		b	.L37
+ 456              	.LVL54:
+ 457              	.L10:
+  82:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 26:  ExN[3] = GPIO_PIN_RESET; S = 4; break;
+ 458              		.loc 1 82 23 is_stmt 1 view .LVU171
+ 459              		.loc 1 82 30 is_stmt 0 view .LVU172
+ 460 0158 0023     		movs	r3, #0
+ 461 015a 8DF80330 		strb	r3, [sp, #3]
+ 462              		.loc 1 82 48 is_stmt 1 view .LVU173
+ 463              	.LVL55:
+ 464              		.loc 1 82 55 view .LVU174
+ 465              		.loc 1 82 50 is_stmt 0 view .LVU175
+ 466 015e 0424     		movs	r4, #4
+ 467              		.loc 1 82 55 view .LVU176
+ 468 0160 23E0     		b	.L37
+ 469              	.LVL56:
+ 470              	.L8:
+  83:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 27:  ExN[3] = GPIO_PIN_RESET; S = 6; break;
+ 471              		.loc 1 83 23 is_stmt 1 view .LVU177
+ 472              		.loc 1 83 30 is_stmt 0 view .LVU178
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 11
+
+
+ 473 0162 0023     		movs	r3, #0
+ 474 0164 8DF80330 		strb	r3, [sp, #3]
+ 475              		.loc 1 83 48 is_stmt 1 view .LVU179
+ 476              	.LVL57:
+ 477              		.loc 1 83 55 view .LVU180
+ 478              		.loc 1 83 50 is_stmt 0 view .LVU181
+ 479 0168 0624     		movs	r4, #6
+ 480              		.loc 1 83 55 view .LVU182
+ 481 016a 1EE0     		b	.L37
+ 482              	.LVL58:
+ 483              	.L7:
+  84:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             default: 
+  85:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 PATCHOULI_ErrLog("Invalid X Coil ID: %d", id); 
+ 484              		.loc 1 85 17 is_stmt 1 view .LVU183
+ 485 016c 0246     		mov	r2, r0
+ 486 016e 5049     		ldr	r1, .L64
+ 487              	.LVL59:
+ 488              		.loc 1 85 17 is_stmt 0 view .LVU184
+ 489 0170 5048     		ldr	r0, .L64+4
+ 490              	.LVL60:
+ 491              		.loc 1 85 17 view .LVU185
+ 492 0172 FFF7FEFF 		bl	patchouli_debug_output
+ 493              	.LVL61:
+  86:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 return;
+ 494              		.loc 1 86 17 is_stmt 1 view .LVU186
+ 495 0176 98E0     		b	.L1
+ 496              	.LVL62:
+ 497              	.L4:
+  87:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+  88:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     } else {
+  89:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         // Y Coils
+  90:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         if(id >= PATCHOULI_N_Y_COIL) {
+ 498              		.loc 1 90 9 view .LVU187
+ 499              		.loc 1 90 11 is_stmt 0 view .LVU188
+ 500 0178 1128     		cmp	r0, #17
+ 501 017a 0CD8     		bhi	.L63
+  91:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+  92:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             return;
+  93:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+  94:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         switch (id) {
+ 502              		.loc 1 94 9 is_stmt 1 view .LVU189
+ 503 017c 1128     		cmp	r0, #17
+ 504 017e 7ED8     		bhi	.L39
+ 505 0180 DFE800F0 		tbb	[pc, r0]
+ 506              	.LVL63:
+ 507              	.L41:
+ 508 0184 0F       		.byte	(.L58-.L41)/2
+ 509 0185 2B       		.byte	(.L57-.L41)/2
+ 510 0186 2F       		.byte	(.L56-.L41)/2
+ 511 0187 34       		.byte	(.L55-.L41)/2
+ 512 0188 39       		.byte	(.L54-.L41)/2
+ 513 0189 3E       		.byte	(.L53-.L41)/2
+ 514 018a 43       		.byte	(.L52-.L41)/2
+ 515 018b 48       		.byte	(.L51-.L41)/2
+ 516 018c 4D       		.byte	(.L50-.L41)/2
+ 517 018d 52       		.byte	(.L49-.L41)/2
+ 518 018e 56       		.byte	(.L48-.L41)/2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 12
+
+
+ 519 018f 5B       		.byte	(.L47-.L41)/2
+ 520 0190 60       		.byte	(.L46-.L41)/2
+ 521 0191 65       		.byte	(.L45-.L41)/2
+ 522 0192 6A       		.byte	(.L44-.L41)/2
+ 523 0193 6F       		.byte	(.L43-.L41)/2
+ 524 0194 74       		.byte	(.L42-.L41)/2
+ 525 0195 79       		.byte	(.L40-.L41)/2
+ 526              		.p2align 1
+ 527              	.L63:
+  91:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+ 528              		.loc 1 91 13 view .LVU190
+ 529 0196 0246     		mov	r2, r0
+ 530 0198 4749     		ldr	r1, .L64+8
+ 531              	.LVL64:
+  91:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+ 532              		.loc 1 91 13 is_stmt 0 view .LVU191
+ 533 019a 4648     		ldr	r0, .L64+4
+ 534              	.LVL65:
+  91:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+ 535              		.loc 1 91 13 view .LVU192
+ 536 019c FFF7FEFF 		bl	patchouli_debug_output
+ 537              	.LVL66:
+  92:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+ 538              		.loc 1 92 13 is_stmt 1 view .LVU193
+ 539 01a0 83E0     		b	.L1
+ 540              	.LVL67:
+ 541              	.L58:
+  95:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 0:  ExN[4] = GPIO_PIN_RESET; S = 3; break; // U11
+ 542              		.loc 1 95 22 view .LVU194
+ 543              		.loc 1 95 29 is_stmt 0 view .LVU195
+ 544 01a2 0023     		movs	r3, #0
+ 545 01a4 8DF80430 		strb	r3, [sp, #4]
+ 546              		.loc 1 95 47 is_stmt 1 view .LVU196
+ 547              	.LVL68:
+ 548              		.loc 1 95 54 view .LVU197
+ 549              		.loc 1 95 49 is_stmt 0 view .LVU198
+ 550 01a8 0324     		movs	r4, #3
+ 551              	.LVL69:
+ 552              	.L37:
+  96:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 1:  ExN[4] = GPIO_PIN_RESET; S = 0; break;
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 104:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 112:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 113:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 13
+
+
+ 114:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             default: 
+ 115:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+ 116:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 return;
+ 117:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+ 118:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     }
+ 119:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_GPIO_WritePin(S0_GPIO_Port,  S0_Pin,  (S & 0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);
+ 553              		.loc 1 119 5 is_stmt 1 view .LVU199
+ 554 01aa 04F00102 		and	r2, r4, #1
+ 555 01ae 4FF48061 		mov	r1, #1024
+ 556              	.LVL70:
+ 557              		.loc 1 119 5 is_stmt 0 view .LVU200
+ 558 01b2 4248     		ldr	r0, .L64+12
+ 559              	.LVL71:
+ 560              		.loc 1 119 5 view .LVU201
+ 561 01b4 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 562              	.LVL72:
+ 120:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_GPIO_WritePin(S1_GPIO_Port,  S1_Pin,  ((S >> 1) & 0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);
+ 563              		.loc 1 120 5 is_stmt 1 view .LVU202
+ 564 01b8 C4F34002 		ubfx	r2, r4, #1, #1
+ 565 01bc 4FF40041 		mov	r1, #32768
+ 566 01c0 4FF09040 		mov	r0, #1207959552
+ 567 01c4 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 568              	.LVL73:
+ 121:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_GPIO_WritePin(S2_GPIO_Port,  S2_Pin,  ((S >> 2) & 0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);
+ 569              		.loc 1 121 5 view .LVU203
+ 570 01c8 A208     		lsrs	r2, r4, #2
+ 571 01ca 4FF48041 		mov	r1, #16384
+ 572 01ce 4FF09040 		mov	r0, #1207959552
+ 573 01d2 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 574              	.LVL74:
+ 122:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     for (int i = 0; i < PATCHOULI_N_EXN; i++) {
+ 575              		.loc 1 122 5 view .LVU204
+ 576              	.LBB12:
+ 577              		.loc 1 122 10 view .LVU205
+ 578              		.loc 1 122 14 is_stmt 0 view .LVU206
+ 579 01d6 0024     		movs	r4, #0
+ 580              	.LVL75:
+ 581              		.loc 1 122 5 view .LVU207
+ 582 01d8 65E0     		b	.L59
+ 583              	.LVL76:
+ 584              	.L57:
+ 585              		.loc 1 122 5 view .LVU208
+ 586              	.LBE12:
+  96:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 587              		.loc 1 96 22 is_stmt 1 view .LVU209
+  96:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 588              		.loc 1 96 29 is_stmt 0 view .LVU210
+ 589 01da 0024     		movs	r4, #0
+ 590 01dc 8DF80440 		strb	r4, [sp, #4]
+  96:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 591              		.loc 1 96 47 is_stmt 1 view .LVU211
+  96:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 2:  ExN[4] = GPIO_PIN_RESET; S = 1; break;
+ 592              		.loc 1 96 54 view .LVU212
+ 593 01e0 E3E7     		b	.L37
+ 594              	.L56:
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 595              		.loc 1 97 22 view .LVU213
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 14
+
+
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 596              		.loc 1 97 29 is_stmt 0 view .LVU214
+ 597 01e2 0023     		movs	r3, #0
+ 598 01e4 8DF80430 		strb	r3, [sp, #4]
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 599              		.loc 1 97 47 is_stmt 1 view .LVU215
+ 600              	.LVL77:
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 601              		.loc 1 97 54 view .LVU216
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 602              		.loc 1 97 49 is_stmt 0 view .LVU217
+ 603 01e8 0124     		movs	r4, #1
+  97:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 3:  ExN[4] = GPIO_PIN_RESET; S = 2; break;
+ 604              		.loc 1 97 54 view .LVU218
+ 605 01ea DEE7     		b	.L37
+ 606              	.LVL78:
+ 607              	.L55:
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 608              		.loc 1 98 22 is_stmt 1 view .LVU219
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 609              		.loc 1 98 29 is_stmt 0 view .LVU220
+ 610 01ec 0023     		movs	r3, #0
+ 611 01ee 8DF80430 		strb	r3, [sp, #4]
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 612              		.loc 1 98 47 is_stmt 1 view .LVU221
+ 613              	.LVL79:
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 614              		.loc 1 98 54 view .LVU222
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 615              		.loc 1 98 49 is_stmt 0 view .LVU223
+ 616 01f2 0224     		movs	r4, #2
+  98:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 4:  ExN[4] = GPIO_PIN_RESET; S = 4; break;
+ 617              		.loc 1 98 54 view .LVU224
+ 618 01f4 D9E7     		b	.L37
+ 619              	.LVL80:
+ 620              	.L54:
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 621              		.loc 1 99 22 is_stmt 1 view .LVU225
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 622              		.loc 1 99 29 is_stmt 0 view .LVU226
+ 623 01f6 0023     		movs	r3, #0
+ 624 01f8 8DF80430 		strb	r3, [sp, #4]
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 625              		.loc 1 99 47 is_stmt 1 view .LVU227
+ 626              	.LVL81:
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 627              		.loc 1 99 54 view .LVU228
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 628              		.loc 1 99 49 is_stmt 0 view .LVU229
+ 629 01fc 0424     		movs	r4, #4
+  99:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 5:  ExN[4] = GPIO_PIN_RESET; S = 6; break;
+ 630              		.loc 1 99 54 view .LVU230
+ 631 01fe D4E7     		b	.L37
+ 632              	.LVL82:
+ 633              	.L53:
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 634              		.loc 1 100 22 is_stmt 1 view .LVU231
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 15
+
+
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 635              		.loc 1 100 29 is_stmt 0 view .LVU232
+ 636 0200 0023     		movs	r3, #0
+ 637 0202 8DF80430 		strb	r3, [sp, #4]
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 638              		.loc 1 100 47 is_stmt 1 view .LVU233
+ 639              	.LVL83:
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 640              		.loc 1 100 54 view .LVU234
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 641              		.loc 1 100 49 is_stmt 0 view .LVU235
+ 642 0206 0624     		movs	r4, #6
+ 100:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 6:  ExN[4] = GPIO_PIN_RESET; S = 7; break;
+ 643              		.loc 1 100 54 view .LVU236
+ 644 0208 CFE7     		b	.L37
+ 645              	.LVL84:
+ 646              	.L52:
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 647              		.loc 1 101 22 is_stmt 1 view .LVU237
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 648              		.loc 1 101 29 is_stmt 0 view .LVU238
+ 649 020a 0023     		movs	r3, #0
+ 650 020c 8DF80430 		strb	r3, [sp, #4]
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 651              		.loc 1 101 47 is_stmt 1 view .LVU239
+ 652              	.LVL85:
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 653              		.loc 1 101 54 view .LVU240
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 654              		.loc 1 101 49 is_stmt 0 view .LVU241
+ 655 0210 0724     		movs	r4, #7
+ 101:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 7:  ExN[4] = GPIO_PIN_RESET; S = 5; break;
+ 656              		.loc 1 101 54 view .LVU242
+ 657 0212 CAE7     		b	.L37
+ 658              	.LVL86:
+ 659              	.L51:
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 660              		.loc 1 102 22 is_stmt 1 view .LVU243
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 661              		.loc 1 102 29 is_stmt 0 view .LVU244
+ 662 0214 0023     		movs	r3, #0
+ 663 0216 8DF80430 		strb	r3, [sp, #4]
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 664              		.loc 1 102 47 is_stmt 1 view .LVU245
+ 665              	.LVL87:
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 666              		.loc 1 102 54 view .LVU246
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 667              		.loc 1 102 49 is_stmt 0 view .LVU247
+ 668 021a 0524     		movs	r4, #5
+ 102:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 8:  ExN[5] = GPIO_PIN_RESET; S = 3; break; // U12
+ 669              		.loc 1 102 54 view .LVU248
+ 670 021c C5E7     		b	.L37
+ 671              	.LVL88:
+ 672              	.L50:
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 673              		.loc 1 103 22 is_stmt 1 view .LVU249
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 16
+
+
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 674              		.loc 1 103 29 is_stmt 0 view .LVU250
+ 675 021e 0023     		movs	r3, #0
+ 676 0220 8DF80530 		strb	r3, [sp, #5]
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 677              		.loc 1 103 47 is_stmt 1 view .LVU251
+ 678              	.LVL89:
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 679              		.loc 1 103 54 view .LVU252
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 680              		.loc 1 103 49 is_stmt 0 view .LVU253
+ 681 0224 0324     		movs	r4, #3
+ 103:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 9:  ExN[5] = GPIO_PIN_RESET; S = 0; break;
+ 682              		.loc 1 103 54 view .LVU254
+ 683 0226 C0E7     		b	.L37
+ 684              	.LVL90:
+ 685              	.L49:
+ 104:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 686              		.loc 1 104 22 is_stmt 1 view .LVU255
+ 104:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 687              		.loc 1 104 29 is_stmt 0 view .LVU256
+ 688 0228 0024     		movs	r4, #0
+ 689 022a 8DF80540 		strb	r4, [sp, #5]
+ 104:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 690              		.loc 1 104 47 is_stmt 1 view .LVU257
+ 104:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 10:  ExN[5] = GPIO_PIN_RESET; S = 1; break;
+ 691              		.loc 1 104 54 view .LVU258
+ 692 022e BCE7     		b	.L37
+ 693              	.L48:
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 694              		.loc 1 105 23 view .LVU259
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 695              		.loc 1 105 30 is_stmt 0 view .LVU260
+ 696 0230 0023     		movs	r3, #0
+ 697 0232 8DF80530 		strb	r3, [sp, #5]
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 698              		.loc 1 105 48 is_stmt 1 view .LVU261
+ 699              	.LVL91:
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 700              		.loc 1 105 55 view .LVU262
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 701              		.loc 1 105 50 is_stmt 0 view .LVU263
+ 702 0236 0124     		movs	r4, #1
+ 105:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 11:  ExN[5] = GPIO_PIN_RESET; S = 2; break;
+ 703              		.loc 1 105 55 view .LVU264
+ 704 0238 B7E7     		b	.L37
+ 705              	.LVL92:
+ 706              	.L47:
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 707              		.loc 1 106 23 is_stmt 1 view .LVU265
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 708              		.loc 1 106 30 is_stmt 0 view .LVU266
+ 709 023a 0023     		movs	r3, #0
+ 710 023c 8DF80530 		strb	r3, [sp, #5]
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 711              		.loc 1 106 48 is_stmt 1 view .LVU267
+ 712              	.LVL93:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 17
+
+
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 713              		.loc 1 106 55 view .LVU268
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 714              		.loc 1 106 50 is_stmt 0 view .LVU269
+ 715 0240 0224     		movs	r4, #2
+ 106:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 12:  ExN[5] = GPIO_PIN_RESET; S = 4; break;
+ 716              		.loc 1 106 55 view .LVU270
+ 717 0242 B2E7     		b	.L37
+ 718              	.LVL94:
+ 719              	.L46:
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 720              		.loc 1 107 23 is_stmt 1 view .LVU271
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 721              		.loc 1 107 30 is_stmt 0 view .LVU272
+ 722 0244 0023     		movs	r3, #0
+ 723 0246 8DF80530 		strb	r3, [sp, #5]
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 724              		.loc 1 107 48 is_stmt 1 view .LVU273
+ 725              	.LVL95:
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 726              		.loc 1 107 55 view .LVU274
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 727              		.loc 1 107 50 is_stmt 0 view .LVU275
+ 728 024a 0424     		movs	r4, #4
+ 107:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 13:  ExN[5] = GPIO_PIN_RESET; S = 6; break;
+ 729              		.loc 1 107 55 view .LVU276
+ 730 024c ADE7     		b	.L37
+ 731              	.LVL96:
+ 732              	.L45:
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 733              		.loc 1 108 23 is_stmt 1 view .LVU277
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 734              		.loc 1 108 30 is_stmt 0 view .LVU278
+ 735 024e 0023     		movs	r3, #0
+ 736 0250 8DF80530 		strb	r3, [sp, #5]
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 737              		.loc 1 108 48 is_stmt 1 view .LVU279
+ 738              	.LVL97:
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 739              		.loc 1 108 55 view .LVU280
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 740              		.loc 1 108 50 is_stmt 0 view .LVU281
+ 741 0254 0624     		movs	r4, #6
+ 108:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
+ 742              		.loc 1 108 55 view .LVU282
+ 743 0256 A8E7     		b	.L37
+ 744              	.LVL98:
+ 745              	.L44:
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 746              		.loc 1 109 23 is_stmt 1 view .LVU283
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 747              		.loc 1 109 30 is_stmt 0 view .LVU284
+ 748 0258 0023     		movs	r3, #0
+ 749 025a 8DF80530 		strb	r3, [sp, #5]
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 750              		.loc 1 109 48 is_stmt 1 view .LVU285
+ 751              	.LVL99:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 18
+
+
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 752              		.loc 1 109 55 view .LVU286
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 753              		.loc 1 109 50 is_stmt 0 view .LVU287
+ 754 025e 0724     		movs	r4, #7
+ 109:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
+ 755              		.loc 1 109 55 view .LVU288
+ 756 0260 A3E7     		b	.L37
+ 757              	.LVL100:
+ 758              	.L43:
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 759              		.loc 1 110 23 is_stmt 1 view .LVU289
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 760              		.loc 1 110 30 is_stmt 0 view .LVU290
+ 761 0262 0023     		movs	r3, #0
+ 762 0264 8DF80530 		strb	r3, [sp, #5]
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 763              		.loc 1 110 48 is_stmt 1 view .LVU291
+ 764              	.LVL101:
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 765              		.loc 1 110 55 view .LVU292
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 766              		.loc 1 110 50 is_stmt 0 view .LVU293
+ 767 0268 0524     		movs	r4, #5
+ 110:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
+ 768              		.loc 1 110 55 view .LVU294
+ 769 026a 9EE7     		b	.L37
+ 770              	.LVL102:
+ 771              	.L42:
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 772              		.loc 1 111 23 is_stmt 1 view .LVU295
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 773              		.loc 1 111 30 is_stmt 0 view .LVU296
+ 774 026c 0023     		movs	r3, #0
+ 775 026e 8DF80030 		strb	r3, [sp]
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 776              		.loc 1 111 48 is_stmt 1 view .LVU297
+ 777              	.LVL103:
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 778              		.loc 1 111 55 view .LVU298
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 779              		.loc 1 111 50 is_stmt 0 view .LVU299
+ 780 0272 0324     		movs	r4, #3
+ 111:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+ 781              		.loc 1 111 55 view .LVU300
+ 782 0274 99E7     		b	.L37
+ 783              	.LVL104:
+ 784              	.L40:
+ 112:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             
+ 785              		.loc 1 112 23 is_stmt 1 view .LVU301
+ 112:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             
+ 786              		.loc 1 112 30 is_stmt 0 view .LVU302
+ 787 0276 0024     		movs	r4, #0
+ 788 0278 8DF80040 		strb	r4, [sp]
+ 112:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             
+ 789              		.loc 1 112 48 is_stmt 1 view .LVU303
+ 112:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 19
+
+
+ 790              		.loc 1 112 55 view .LVU304
+ 791 027c 95E7     		b	.L37
+ 792              	.L39:
+ 115:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 return;
+ 793              		.loc 1 115 17 view .LVU305
+ 794 027e 0246     		mov	r2, r0
+ 795 0280 0D49     		ldr	r1, .L64+8
+ 796              	.LVL105:
+ 115:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 return;
+ 797              		.loc 1 115 17 is_stmt 0 view .LVU306
+ 798 0282 0C48     		ldr	r0, .L64+4
+ 799              	.LVL106:
+ 115:patchouli/src/patchouli_bsp_glider_addon_v1.c ****                 return;
+ 800              		.loc 1 115 17 view .LVU307
+ 801 0284 FFF7FEFF 		bl	patchouli_debug_output
+ 802              	.LVL107:
+ 116:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+ 803              		.loc 1 116 17 is_stmt 1 view .LVU308
+ 804 0288 0FE0     		b	.L1
+ 805              	.LVL108:
+ 806              	.L60:
+ 807              	.LBB13:
+ 123:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 808              		.loc 1 123 9 view .LVU309
+ 809 028a 04F10803 		add	r3, r4, #8
+ 810 028e 6B44     		add	r3, sp, r3
+ 811 0290 13F8082C 		ldrb	r2, [r3, #-8]	@ zero_extendqisi2
+ 812 0294 0A4B     		ldr	r3, .L64+16
+ 813 0296 33F81410 		ldrh	r1, [r3, r4, lsl #1]
+ 814 029a 0A4B     		ldr	r3, .L64+20
+ 815 029c 53F82400 		ldr	r0, [r3, r4, lsl #2]
+ 816 02a0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 817              	.LVL109:
+ 122:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 818              		.loc 1 122 43 discriminator 3 view .LVU310
+ 819 02a4 0134     		adds	r4, r4, #1
+ 820              	.LVL110:
+ 821              	.L59:
+ 122:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 822              		.loc 1 122 23 discriminator 1 view .LVU311
+ 823 02a6 052C     		cmp	r4, #5
+ 824 02a8 EFD9     		bls	.L60
+ 825              	.LVL111:
+ 826              	.L1:
+ 122:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_GPIO_WritePin(ExN_GPIO_Port[i], ExN_Pin[i], ExN[i]);
+ 827              		.loc 1 122 23 is_stmt 0 discriminator 1 view .LVU312
+ 828              	.LBE13:
+ 124:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     }
+ 125:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     return;
+ 126:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 829              		.loc 1 126 1 view .LVU313
+ 830 02aa 02B0     		add	sp, sp, #8
+ 831              		.cfi_def_cfa_offset 8
+ 832              		@ sp needed
+ 833 02ac 10BD     		pop	{r4, pc}
+ 834              	.L65:
+ 835 02ae 00BF     		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 20
+
+
+ 836              	.L64:
+ 837 02b0 00000000 		.word	.LC0
+ 838 02b4 18000000 		.word	.LC1
+ 839 02b8 24000000 		.word	.LC2
+ 840 02bc 00080048 		.word	1207961600
+ 841 02c0 00000000 		.word	ExN_Pin
+ 842 02c4 00000000 		.word	ExN_GPIO_Port
+ 843              		.cfi_endproc
+ 844              	.LFE1415:
+ 846              		.section	.text.patchouli_TIM_init,"ax",%progbits
+ 847              		.align	1
+ 848              		.global	patchouli_TIM_init
+ 849              		.syntax unified
+ 850              		.thumb
+ 851              		.thumb_func
+ 853              	patchouli_TIM_init:
+ 854              	.LFB1416:
+ 127:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 128:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern TIM_HandleTypeDef htim16;
+ 129:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern TIM_HandleTypeDef htim1;
+ 130:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern float gfreq;
+ 131:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 132:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_TIM_init(){
+ 855              		.loc 1 132 26 is_stmt 1 view -0
+ 856              		.cfi_startproc
+ 857              		@ args = 0, pretend = 0, frame = 0
+ 858              		@ frame_needed = 0, uses_anonymous_args = 0
+ 859 0000 10B5     		push	{r4, lr}
+ 860              		.cfi_def_cfa_offset 8
+ 861              		.cfi_offset 4, -8
+ 862              		.cfi_offset 14, -4
+ 133:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+ 863              		.loc 1 133 5 view .LVU315
+ 864 0002 104C     		ldr	r4, .L68
+ 865 0004 0021     		movs	r1, #0
+ 866 0006 2046     		mov	r0, r4
+ 867 0008 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 868              	.LVL112:
+ 134:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+ 869              		.loc 1 134 5 view .LVU316
+ 870 000c 0821     		movs	r1, #8
+ 871 000e 2046     		mov	r0, r4
+ 872 0010 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 873              	.LVL113:
+ 135:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+ 874              		.loc 1 135 5 view .LVU317
+ 875 0014 0021     		movs	r1, #0
+ 876 0016 2046     		mov	r0, r4
+ 877 0018 FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 878              	.LVL114:
+ 136:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+ 879              		.loc 1 136 5 view .LVU318
+ 880 001c 0821     		movs	r1, #8
+ 881 001e 2046     		mov	r0, r4
+ 882 0020 FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 883              	.LVL115:
+ 137:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_TIMEx_PWMN_Start(&htim16, TIM_CHANNEL_1);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 21
+
+
+ 884              		.loc 1 137 5 view .LVU319
+ 885 0024 084C     		ldr	r4, .L68+4
+ 886 0026 0021     		movs	r1, #0
+ 887 0028 2046     		mov	r0, r4
+ 888 002a FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 889              	.LVL116:
+ 138:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     gfreq = PATCHOULI_TIM_F_CENTER;
+ 890              		.loc 1 138 5 view .LVU320
+ 891              		.loc 1 138 11 is_stmt 0 view .LVU321
+ 892 002e 074B     		ldr	r3, .L68+8
+ 893 0030 074A     		ldr	r2, .L68+12
+ 894 0032 1A60     		str	r2, [r3]	@ float
+ 139:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     uint16_t d = (PATCHOULI_TIM_FAST_CLK/gfreq);
+ 895              		.loc 1 139 5 is_stmt 1 view .LVU322
+ 896              	.LVL117:
+ 140:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     htim16.Instance->ARR = d;
+ 897              		.loc 1 140 5 view .LVU323
+ 898              		.loc 1 140 11 is_stmt 0 view .LVU324
+ 899 0034 2368     		ldr	r3, [r4]
+ 900              		.loc 1 140 26 view .LVU325
+ 901 0036 7C22     		movs	r2, #124
+ 902 0038 DA62     		str	r2, [r3, #44]
+ 141:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     htim16.Instance->CCR1 = d>>1;
+ 903              		.loc 1 141 5 is_stmt 1 view .LVU326
+ 904              		.loc 1 141 27 is_stmt 0 view .LVU327
+ 905 003a 3E22     		movs	r2, #62
+ 906 003c 5A63     		str	r2, [r3, #52]
+ 142:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     htim16.Instance->RCR = 60;
+ 907              		.loc 1 142 5 is_stmt 1 view .LVU328
+ 908              		.loc 1 142 26 is_stmt 0 view .LVU329
+ 909 003e 3C22     		movs	r2, #60
+ 910 0040 1A63     		str	r2, [r3, #48]
+ 143:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 911              		.loc 1 143 1 view .LVU330
+ 912 0042 10BD     		pop	{r4, pc}
+ 913              	.L69:
+ 914              		.align	2
+ 915              	.L68:
+ 916 0044 00000000 		.word	htim1
+ 917 0048 00000000 		.word	htim16
+ 918 004c 00000000 		.word	gfreq
+ 919 0050 0077FB48 		.word	1224439552
+ 920              		.cfi_endproc
+ 921              	.LFE1416:
+ 923              		.section	.text.patchouli_TIM_trigger,"ax",%progbits
+ 924              		.align	1
+ 925              		.global	patchouli_TIM_trigger
+ 926              		.syntax unified
+ 927              		.thumb
+ 928              		.thumb_func
+ 930              	patchouli_TIM_trigger:
+ 931              	.LFB1417:
+ 144:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 145:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_TIM_trigger(){
+ 932              		.loc 1 145 29 is_stmt 1 view -0
+ 933              		.cfi_startproc
+ 934              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 22
+
+
+ 935              		@ frame_needed = 0, uses_anonymous_args = 0
+ 936              		@ link register save eliminated.
+ 146:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     htim16.Instance->CR1 |= B16(00000000,00000001); // Enable TIM1
+ 937              		.loc 1 146 5 view .LVU332
+ 938              		.loc 1 146 11 is_stmt 0 view .LVU333
+ 939 0000 034B     		ldr	r3, .L71
+ 940 0002 1A68     		ldr	r2, [r3]
+ 941              		.loc 1 146 20 view .LVU334
+ 942 0004 1368     		ldr	r3, [r2]
+ 943              		.loc 1 146 26 view .LVU335
+ 944 0006 43F00103 		orr	r3, r3, #1
+ 945 000a 1360     		str	r3, [r2]
+ 147:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 946              		.loc 1 147 1 view .LVU336
+ 947 000c 7047     		bx	lr
+ 948              	.L72:
+ 949 000e 00BF     		.align	2
+ 950              	.L71:
+ 951 0010 00000000 		.word	htim16
+ 952              		.cfi_endproc
+ 953              	.LFE1417:
+ 955              		.section	.text._patchouli_adc_multisample,"ax",%progbits
+ 956              		.align	1
+ 957              		.global	_patchouli_adc_multisample
+ 958              		.syntax unified
+ 959              		.thumb
+ 960              		.thumb_func
+ 962              	_patchouli_adc_multisample:
+ 963              	.LFB1418:
+ 148:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 149:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern ADC_HandleTypeDef hadc1;
+ 150:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 151:patchouli/src/patchouli_bsp_glider_addon_v1.c **** uint16_t _patchouli_adc_multisample(){
+ 964              		.loc 1 151 38 is_stmt 1 view -0
+ 965              		.cfi_startproc
+ 966              		@ args = 0, pretend = 0, frame = 8
+ 967              		@ frame_needed = 0, uses_anonymous_args = 0
+ 968 0000 30B5     		push	{r4, r5, lr}
+ 969              		.cfi_def_cfa_offset 12
+ 970              		.cfi_offset 4, -12
+ 971              		.cfi_offset 5, -8
+ 972              		.cfi_offset 14, -4
+ 973 0002 83B0     		sub	sp, sp, #12
+ 974              		.cfi_def_cfa_offset 24
+ 152:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     uint16_t sample[PATCHOULI_ADC_NSAMPLE];
+ 975              		.loc 1 152 5 view .LVU338
+ 153:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     uint16_t value;
+ 976              		.loc 1 153 5 view .LVU339
+ 154:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     if(PATCHOULI_ADC_NSAMPLE==1){
+ 977              		.loc 1 154 5 view .LVU340
+ 155:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_Start(&hadc1);
+ 156:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 157:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         value = HAL_ADC_GetValue(&hadc1);
+ 158:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     } else if (PATCHOULI_ADC_NSAMPLE==2) {
+ 978              		.loc 1 158 12 view .LVU341
+ 159:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_Start(&hadc1);
+ 160:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 23
+
+
+ 161:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         sample[0] = HAL_ADC_GetValue(&hadc1);
+ 162:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_Start(&hadc1);
+ 163:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 164:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         sample[1] = HAL_ADC_GetValue(&hadc1);
+ 165:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         value = (sample[0]+sample[1])/2;
+ 166:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     } else {
+ 167:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         for(int i=0;i<PATCHOULI_ADC_NSAMPLE; i++) {
+ 979              		.loc 1 167 9 view .LVU342
+ 980              	.LBB14:
+ 981              		.loc 1 167 13 view .LVU343
+ 982              	.LVL118:
+ 983              		.loc 1 167 17 is_stmt 0 view .LVU344
+ 984 0004 0024     		movs	r4, #0
+ 985              		.loc 1 167 9 view .LVU345
+ 986 0006 11E0     		b	.L74
+ 987              	.LVL119:
+ 988              	.L75:
+ 168:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             HAL_ADC_Start(&hadc1);
+ 989              		.loc 1 168 13 is_stmt 1 view .LVU346
+ 990 0008 0C4D     		ldr	r5, .L77
+ 991 000a 2846     		mov	r0, r5
+ 992 000c FFF7FEFF 		bl	HAL_ADC_Start
+ 993              	.LVL120:
+ 169:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 994              		.loc 1 169 13 view .LVU347
+ 995 0010 4FF0FF31 		mov	r1, #-1
+ 996 0014 2846     		mov	r0, r5
+ 997 0016 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 998              	.LVL121:
+ 170:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             sample[i] = HAL_ADC_GetValue(&hadc1);
+ 999              		.loc 1 170 13 view .LVU348
+ 1000              		.loc 1 170 25 is_stmt 0 view .LVU349
+ 1001 001a 2846     		mov	r0, r5
+ 1002 001c FFF7FEFF 		bl	HAL_ADC_GetValue
+ 1003              	.LVL122:
+ 1004              		.loc 1 170 23 discriminator 1 view .LVU350
+ 1005 0020 02AB     		add	r3, sp, #8
+ 1006 0022 03EB4403 		add	r3, r3, r4, lsl #1
+ 1007 0026 23F8080C 		strh	r0, [r3, #-8]	@ movhi
+ 167:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             HAL_ADC_Start(&hadc1);
+ 1008              		.loc 1 167 47 is_stmt 1 discriminator 3 view .LVU351
+ 1009 002a 0134     		adds	r4, r4, #1
+ 1010              	.LVL123:
+ 1011              	.L74:
+ 167:patchouli/src/patchouli_bsp_glider_addon_v1.c ****             HAL_ADC_Start(&hadc1);
+ 1012              		.loc 1 167 22 discriminator 1 view .LVU352
+ 1013 002c 022C     		cmp	r4, #2
+ 1014 002e EBD9     		bls	.L75
+ 1015              	.LBE14:
+ 171:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         }
+ 172:patchouli/src/patchouli_bsp_glider_addon_v1.c ****         value = patchouli_median(sample, PATCHOULI_ADC_NSAMPLE);
+ 1016              		.loc 1 172 9 view .LVU353
+ 1017              		.loc 1 172 17 is_stmt 0 view .LVU354
+ 1018 0030 0321     		movs	r1, #3
+ 1019 0032 6846     		mov	r0, sp
+ 1020 0034 FFF7FEFF 		bl	patchouli_median
+ 1021              	.LVL124:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 24
+
+
+ 173:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     }
+ 174:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     return value;
+ 1022              		.loc 1 174 5 is_stmt 1 view .LVU355
+ 175:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1023              		.loc 1 175 1 is_stmt 0 view .LVU356
+ 1024 0038 03B0     		add	sp, sp, #12
+ 1025              		.cfi_def_cfa_offset 12
+ 1026              		@ sp needed
+ 1027 003a 30BD     		pop	{r4, r5, pc}
+ 1028              	.LVL125:
+ 1029              	.L78:
+ 1030              		.loc 1 175 1 view .LVU357
+ 1031              		.align	2
+ 1032              	.L77:
+ 1033 003c 00000000 		.word	hadc1
+ 1034              		.cfi_endproc
+ 1035              	.LFE1418:
+ 1037              		.section	.text.patchouli_simple_take_sample,"ax",%progbits
+ 1038              		.align	1
+ 1039              		.global	patchouli_simple_take_sample
+ 1040              		.syntax unified
+ 1041              		.thumb
+ 1042              		.thumb_func
+ 1044              	patchouli_simple_take_sample:
+ 1045              	.LVL126:
+ 1046              	.LFB1419:
+ 176:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 177:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern patchouli_tx_t patchouli_pen_pw100;
+ 178:patchouli/src/patchouli_bsp_glider_addon_v1.c **** uint16_t patchouli_simple_take_sample(bool back_side, uint8_t fstep){
+ 1047              		.loc 1 178 69 is_stmt 1 view -0
+ 1048              		.cfi_startproc
+ 1049              		@ args = 0, pretend = 0, frame = 0
+ 1050              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1051              		.loc 1 178 69 is_stmt 0 view .LVU359
+ 1052 0000 38B5     		push	{r3, r4, r5, lr}
+ 1053              		.cfi_def_cfa_offset 16
+ 1054              		.cfi_offset 3, -16
+ 1055              		.cfi_offset 4, -12
+ 1056              		.cfi_offset 5, -8
+ 1057              		.cfi_offset 14, -4
+ 1058 0002 0446     		mov	r4, r0
+ 179:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     __disable_irq();
+ 1059              		.loc 1 179 5 is_stmt 1 view .LVU360
+ 1060              	.LBB15:
+ 1061              	.LBI15:
+ 1062              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.2.0
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     08. May 2019
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 25
+
+
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 26
+
+
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 27
+
+
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 28
+
+
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 1063              		.loc 2 207 27 view .LVU361
+ 1064              	.LBB16:
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 1065              		.loc 2 209 3 view .LVU362
+ 1066              		.syntax unified
+ 1067              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1068 0004 72B6     		cpsid i
+ 1069              	@ 0 "" 2
+ 1070              		.thumb
+ 1071              		.syntax unified
+ 1072              	.LBE16:
+ 1073              	.LBE15:
+ 180:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     patchouli_pen_pw100.tx_fptr_table[fstep]();
+ 1074              		.loc 1 180 5 view .LVU363
+ 1075              		.loc 1 180 24 is_stmt 0 view .LVU364
+ 1076 0006 304B     		ldr	r3, .L93
+ 1077 0008 1B69     		ldr	r3, [r3, #16]
+ 1078              		.loc 1 180 38 view .LVU365
+ 1079 000a 53F82130 		ldr	r3, [r3, r1, lsl #2]
+ 1080              		.loc 1 180 5 view .LVU366
+ 1081 000e 9847     		blx	r3
+ 1082              	.LVL127:
+ 181:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       if(!back_side)
+ 1083              		.loc 1 181 7 is_stmt 1 view .LVU367
+ 1084              		.loc 1 181 9 is_stmt 0 view .LVU368
+ 1085 0010 34B9     		cbnz	r4, .L91
+ 1086              	.LBB17:
+ 182:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           for (int i=0;i<400;i++)  asm volatile ("nop");
+ 1087              		.loc 1 182 20 view .LVU369
+ 1088 0012 0023     		movs	r3, #0
+ 1089              	.L81:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 29
+
+
+ 1090              	.LVL128:
+ 1091              		.loc 1 182 25 is_stmt 1 discriminator 1 view .LVU370
+ 1092 0014 B3F5C87F 		cmp	r3, #400
+ 1093 0018 08DA     		bge	.L83
+ 1094              		.loc 1 182 36 discriminator 3 view .LVU371
+ 1095              		.syntax unified
+ 1096              	@ 182 "patchouli/src/patchouli_bsp_glider_addon_v1.c" 1
+ 1097 001a 00BF     		nop
+ 1098              	@ 0 "" 2
+ 1099              		.loc 1 182 31 discriminator 3 view .LVU372
+ 1100              		.thumb
+ 1101              		.syntax unified
+ 1102 001c 0133     		adds	r3, r3, #1
+ 1103              	.LVL129:
+ 1104              		.loc 1 182 31 is_stmt 0 discriminator 3 view .LVU373
+ 1105 001e F9E7     		b	.L81
+ 1106              	.LVL130:
+ 1107              	.L91:
+ 1108              		.loc 1 182 31 discriminator 3 view .LVU374
+ 1109              	.LBE17:
+ 1110              	.LBB18:
+ 183:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       else
+ 184:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           for (int i=0;i<100;i++)  asm volatile ("nop");
+ 1111              		.loc 1 184 20 view .LVU375
+ 1112 0020 0023     		movs	r3, #0
+ 1113              	.L80:
+ 1114              	.LVL131:
+ 1115              		.loc 1 184 25 is_stmt 1 discriminator 1 view .LVU376
+ 1116 0022 632B     		cmp	r3, #99
+ 1117 0024 02DC     		bgt	.L83
+ 1118              		.loc 1 184 36 discriminator 3 view .LVU377
+ 1119              		.syntax unified
+ 1120              	@ 184 "patchouli/src/patchouli_bsp_glider_addon_v1.c" 1
+ 1121 0026 00BF     		nop
+ 1122              	@ 0 "" 2
+ 1123              		.loc 1 184 31 discriminator 3 view .LVU378
+ 1124              		.thumb
+ 1125              		.syntax unified
+ 1126 0028 0133     		adds	r3, r3, #1
+ 1127              	.LVL132:
+ 1128              		.loc 1 184 31 is_stmt 0 discriminator 3 view .LVU379
+ 1129 002a FAE7     		b	.L80
+ 1130              	.LVL133:
+ 1131              	.L83:
+ 1132              		.loc 1 184 31 discriminator 3 view .LVU380
+ 1133              	.LBE18:
+ 185:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_RESET);
+ 1134              		.loc 1 185 7 is_stmt 1 view .LVU381
+ 1135 002c 0022     		movs	r2, #0
+ 1136 002e 0121     		movs	r1, #1
+ 1137 0030 4FF09040 		mov	r0, #1207959552
+ 1138 0034 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1139              	.LVL134:
+ 186:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       for (int i=0;i<5000;i++) asm volatile ("nop");
+ 1140              		.loc 1 186 7 view .LVU382
+ 1141              	.LBB19:
+ 1142              		.loc 1 186 12 view .LVU383
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 30
+
+
+ 1143              		.loc 1 186 16 is_stmt 0 view .LVU384
+ 1144 0038 0023     		movs	r3, #0
+ 1145              		.loc 1 186 7 view .LVU385
+ 1146 003a 01E0     		b	.L85
+ 1147              	.LVL135:
+ 1148              	.L86:
+ 1149              		.loc 1 186 32 is_stmt 1 discriminator 3 view .LVU386
+ 1150              		.syntax unified
+ 1151              	@ 186 "patchouli/src/patchouli_bsp_glider_addon_v1.c" 1
+ 1152 003c 00BF     		nop
+ 1153              	@ 0 "" 2
+ 1154              		.loc 1 186 28 discriminator 3 view .LVU387
+ 1155              		.thumb
+ 1156              		.syntax unified
+ 1157 003e 0133     		adds	r3, r3, #1
+ 1158              	.LVL136:
+ 1159              	.L85:
+ 1160              		.loc 1 186 21 discriminator 1 view .LVU388
+ 1161 0040 41F28732 		movw	r2, #4999
+ 1162 0044 9342     		cmp	r3, r2
+ 1163 0046 F9DD     		ble	.L86
+ 1164              	.LBE19:
+ 187:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       uint16_t value = _patchouli_adc_multisample();
+ 1165              		.loc 1 187 7 view .LVU389
+ 1166              		.loc 1 187 24 is_stmt 0 view .LVU390
+ 1167 0048 FFF7FEFF 		bl	_patchouli_adc_multisample
+ 1168              	.LVL137:
+ 1169              		.loc 1 187 24 view .LVU391
+ 1170 004c 0446     		mov	r4, r0
+ 1171              	.LVL138:
+ 188:patchouli/src/patchouli_bsp_glider_addon_v1.c **** # ifdef PATCHOULI_CDS
+ 189:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_SET);
+ 1172              		.loc 1 189 7 is_stmt 1 view .LVU392
+ 1173 004e 0122     		movs	r2, #1
+ 1174 0050 1146     		mov	r1, r2
+ 1175 0052 4FF09040 		mov	r0, #1207959552
+ 1176 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1177              	.LVL139:
+ 190:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       for (int i=0;i<100;i++) asm volatile ("nop");
+ 1178              		.loc 1 190 7 view .LVU393
+ 1179              	.LBB20:
+ 1180              		.loc 1 190 12 view .LVU394
+ 1181              		.loc 1 190 16 is_stmt 0 view .LVU395
+ 1182 005a 0023     		movs	r3, #0
+ 1183              		.loc 1 190 7 view .LVU396
+ 1184 005c 01E0     		b	.L87
+ 1185              	.LVL140:
+ 1186              	.L88:
+ 1187              		.loc 1 190 31 is_stmt 1 discriminator 3 view .LVU397
+ 1188              		.syntax unified
+ 1189              	@ 190 "patchouli/src/patchouli_bsp_glider_addon_v1.c" 1
+ 1190 005e 00BF     		nop
+ 1191              	@ 0 "" 2
+ 1192              		.loc 1 190 27 discriminator 3 view .LVU398
+ 1193              		.thumb
+ 1194              		.syntax unified
+ 1195 0060 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 31
+
+
+ 1196              	.LVL141:
+ 1197              	.L87:
+ 1198              		.loc 1 190 21 discriminator 1 view .LVU399
+ 1199 0062 632B     		cmp	r3, #99
+ 1200 0064 FBDD     		ble	.L88
+ 1201              	.LBE20:
+ 191:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_RESET);
+ 1202              		.loc 1 191 7 view .LVU400
+ 1203 0066 0022     		movs	r2, #0
+ 1204 0068 0121     		movs	r1, #1
+ 1205 006a 4FF09040 		mov	r0, #1207959552
+ 1206 006e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1207              	.LVL142:
+ 192:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       for (int i=0;i<200;i++) asm volatile ("nop");
+ 1208              		.loc 1 192 7 view .LVU401
+ 1209              	.LBB21:
+ 1210              		.loc 1 192 12 view .LVU402
+ 1211              		.loc 1 192 16 is_stmt 0 view .LVU403
+ 1212 0072 0023     		movs	r3, #0
+ 1213              		.loc 1 192 7 view .LVU404
+ 1214 0074 01E0     		b	.L89
+ 1215              	.LVL143:
+ 1216              	.L90:
+ 1217              		.loc 1 192 31 is_stmt 1 discriminator 3 view .LVU405
+ 1218              		.syntax unified
+ 1219              	@ 192 "patchouli/src/patchouli_bsp_glider_addon_v1.c" 1
+ 1220 0076 00BF     		nop
+ 1221              	@ 0 "" 2
+ 1222              		.loc 1 192 27 discriminator 3 view .LVU406
+ 1223              		.thumb
+ 1224              		.syntax unified
+ 1225 0078 0133     		adds	r3, r3, #1
+ 1226              	.LVL144:
+ 1227              	.L89:
+ 1228              		.loc 1 192 21 discriminator 1 view .LVU407
+ 1229 007a C72B     		cmp	r3, #199
+ 1230 007c FBDD     		ble	.L90
+ 1231              	.LBE21:
+ 193:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_ADC_Start(&hadc1);
+ 1232              		.loc 1 193 7 view .LVU408
+ 1233 007e 134D     		ldr	r5, .L93+4
+ 1234 0080 2846     		mov	r0, r5
+ 1235 0082 FFF7FEFF 		bl	HAL_ADC_Start
+ 1236              	.LVL145:
+ 194:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+ 1237              		.loc 1 194 7 view .LVU409
+ 1238 0086 4FF0FF31 		mov	r1, #-1
+ 1239 008a 2846     		mov	r0, r5
+ 1240 008c FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 1241              	.LVL146:
+ 195:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       uint16_t base = HAL_ADC_GetValue(&hadc1);
+ 1242              		.loc 1 195 7 view .LVU410
+ 1243              		.loc 1 195 23 is_stmt 0 view .LVU411
+ 1244 0090 2846     		mov	r0, r5
+ 1245 0092 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 1246              	.LVL147:
+ 1247 0096 0546     		mov	r5, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 32
+
+
+ 1248              	.LVL148:
+ 196:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #endif
+ 197:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       __enable_irq();
+ 1249              		.loc 1 197 7 is_stmt 1 view .LVU412
+ 1250              	.LBB22:
+ 1251              	.LBI22:
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 1252              		.loc 2 196 27 view .LVU413
+ 1253              	.LBB23:
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 1254              		.loc 2 198 3 view .LVU414
+ 1255              		.syntax unified
+ 1256              	@ 198 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1257 0098 62B6     		cpsie i
+ 1258              	@ 0 "" 2
+ 1259              		.thumb
+ 1260              		.syntax unified
+ 1261              	.LBE23:
+ 1262              	.LBE22:
+ 198:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_SET);
+ 1263              		.loc 1 198 7 view .LVU415
+ 1264 009a 0122     		movs	r2, #1
+ 1265 009c 1146     		mov	r1, r2
+ 1266 009e 4FF09040 		mov	r0, #1207959552
+ 1267 00a2 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1268              	.LVL149:
+ 199:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #ifdef PATCHOULI_CDS
+ 200:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       // return value-base;
+ 201:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       return value-base+PATCHOULI_DATA_OFFSET;
+ 1269              		.loc 1 201 7 view .LVU416
+ 1270              		.loc 1 201 19 is_stmt 0 view .LVU417
+ 1271 00a6 ADB2     		uxth	r5, r5
+ 1272              		.loc 1 201 19 view .LVU418
+ 1273 00a8 631B     		subs	r3, r4, r5
+ 1274 00aa 07EE903A 		vmov	s15, r3	@ int
+ 1275              		.loc 1 201 24 view .LVU419
+ 1276 00ae F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1277 00b2 9FED077A 		vldr.32	s14, .L93+8
+ 1278 00b6 77EE877A 		vadd.f32	s15, s15, s14
+ 1279 00ba FCEEE77A 		vcvt.u32.f32	s15, s15
+ 202:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #else
+ 203:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       return value;
+ 204:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #endif
+ 205:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1280              		.loc 1 205 1 view .LVU420
+ 1281 00be 17EE903A 		vmov	r3, s15	@ int
+ 1282 00c2 98B2     		uxth	r0, r3
+ 1283 00c4 38BD     		pop	{r3, r4, r5, pc}
+ 1284              	.LVL150:
+ 1285              	.L94:
+ 1286              		.loc 1 205 1 view .LVU421
+ 1287 00c6 00BF     		.align	2
+ 1288              	.L93:
+ 1289 00c8 00000000 		.word	patchouli_pen_pw100
+ 1290 00cc 00000000 		.word	hadc1
+ 1291 00d0 0000C842 		.word	1120403456
+ 1292              		.cfi_endproc
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 33
+
+
+ 1293              	.LFE1419:
+ 1295              		.global	__aeabi_f2d
+ 1296              		.global	__aeabi_d2uiz
+ 1297              		.section	.text.patchouli_set_freq,"ax",%progbits
+ 1298              		.align	1
+ 1299              		.global	patchouli_set_freq
+ 1300              		.syntax unified
+ 1301              		.thumb
+ 1302              		.thumb_func
+ 1304              	patchouli_set_freq:
+ 1305              	.LVL151:
+ 1306              	.LFB1420:
+ 206:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 207:patchouli/src/patchouli_bsp_glider_addon_v1.c **** // Configure TIM1 to generate the expected output frequency
+ 208:patchouli/src/patchouli_bsp_glider_addon_v1.c **** //
+ 209:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_set_freq(float freq){
+ 1307              		.loc 1 209 36 is_stmt 1 view -0
+ 1308              		.cfi_startproc
+ 1309              		@ args = 0, pretend = 0, frame = 0
+ 1310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1311              		.loc 1 209 36 is_stmt 0 view .LVU423
+ 1312 0000 08B5     		push	{r3, lr}
+ 1313              		.cfi_def_cfa_offset 8
+ 1314              		.cfi_offset 3, -8
+ 1315              		.cfi_offset 14, -4
+ 210:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       uint16_t t = round(PATCHOULI_TIM_FAST_CLK/freq);
+ 1316              		.loc 1 210 7 is_stmt 1 view .LVU424
+ 1317              		.loc 1 210 20 is_stmt 0 view .LVU425
+ 1318 0002 DFED0B7A 		vldr.32	s15, .L97
+ 1319 0006 C7EE807A 		vdiv.f32	s15, s15, s0
+ 1320 000a 17EE900A 		vmov	r0, s15
+ 1321 000e FFF7FEFF 		bl	__aeabi_f2d
+ 1322              	.LVL152:
+ 1323              		.loc 1 210 20 view .LVU426
+ 1324 0012 41EC100B 		vmov	d0, r0, r1
+ 1325 0016 FFF7FEFF 		bl	round
+ 1326              	.LVL153:
+ 1327 001a 51EC100B 		vmov	r0, r1, d0
+ 1328              		.loc 1 210 16 discriminator 1 view .LVU427
+ 1329 001e FFF7FEFF 		bl	__aeabi_d2uiz
+ 1330              	.LVL154:
+ 1331 0022 80B2     		uxth	r0, r0
+ 1332              	.LVL155:
+ 211:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       htim16.Instance->ARR  = t;
+ 1333              		.loc 1 211 7 is_stmt 1 view .LVU428
+ 1334              		.loc 1 211 13 is_stmt 0 view .LVU429
+ 1335 0024 034B     		ldr	r3, .L97+4
+ 1336 0026 1B68     		ldr	r3, [r3]
+ 1337              		.loc 1 211 29 view .LVU430
+ 1338 0028 D862     		str	r0, [r3, #44]
+ 212:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       htim16.Instance->CCR1 = (t/2);
+ 1339              		.loc 1 212 7 is_stmt 1 view .LVU431
+ 1340              		.loc 1 212 33 is_stmt 0 view .LVU432
+ 1341 002a 4008     		lsrs	r0, r0, #1
+ 1342              	.LVL156:
+ 1343              		.loc 1 212 29 view .LVU433
+ 1344 002c 5863     		str	r0, [r3, #52]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 34
+
+
+ 1345              	.LVL157:
+ 213:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1346              		.loc 1 213 1 view .LVU434
+ 1347 002e 08BD     		pop	{r3, pc}
+ 1348              	.L98:
+ 1349              		.align	2
+ 1350              	.L97:
+ 1351 0030 0024744C 		.word	1282679808
+ 1352 0034 00000000 		.word	htim16
+ 1353              		.cfi_endproc
+ 1354              	.LFE1420:
+ 1356              		.section	.rodata.patchouli_freq_test.str1.4,"aMS",%progbits,1
+ 1357              		.align	2
+ 1358              	.LC3:
+ 1359 0000 54617267 		.ascii	"Target\011Achieved\015\000"
+ 1359      65740941 
+ 1359      63686965 
+ 1359      7665640D 
+ 1359      00
+ 1360              		.global	__aeabi_i2d
+ 1361              		.global	__aeabi_dmul
+ 1362              		.global	__aeabi_dadd
+ 1363              		.global	__aeabi_d2f
+ 1364              		.global	__aeabi_ddiv
+ 1365 0011 000000   		.align	2
+ 1366              	.LC4:
+ 1367 0014 25660925 		.ascii	"%f\011%f\015\012\000"
+ 1367      660D0A00 
+ 1368              		.section	.text.patchouli_freq_test,"ax",%progbits
+ 1369              		.align	1
+ 1370              		.global	patchouli_freq_test
+ 1371              		.syntax unified
+ 1372              		.thumb
+ 1373              		.thumb_func
+ 1375              	patchouli_freq_test:
+ 1376              	.LFB1421:
+ 214:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_freq_test(){
+ 1377              		.loc 1 214 27 is_stmt 1 view -0
+ 1378              		.cfi_startproc
+ 1379              		@ args = 0, pretend = 0, frame = 72
+ 1380              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1381 0000 2DE9D043 		push	{r4, r6, r7, r8, r9, lr}
+ 1382              		.cfi_def_cfa_offset 24
+ 1383              		.cfi_offset 4, -24
+ 1384              		.cfi_offset 6, -20
+ 1385              		.cfi_offset 7, -16
+ 1386              		.cfi_offset 8, -12
+ 1387              		.cfi_offset 9, -8
+ 1388              		.cfi_offset 14, -4
+ 1389 0004 2DED028B 		vpush.64	{d8}
+ 1390              		.cfi_def_cfa_offset 32
+ 1391              		.cfi_offset 80, -32
+ 1392              		.cfi_offset 81, -28
+ 1393 0008 94B0     		sub	sp, sp, #80
+ 1394              		.cfi_def_cfa_offset 112
+ 215:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       printf("Target\tAchieved\r\n");
+ 1395              		.loc 1 215 7 view .LVU436
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 35
+
+
+ 1396 000a 2D48     		ldr	r0, .L103+16
+ 1397 000c FFF7FEFF 		bl	puts
+ 1398              	.LVL158:
+ 216:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       float flist[PATCHOULI_TIM_N_STEP];
+ 1399              		.loc 1 216 7 view .LVU437
+ 217:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       float fachieved[PATCHOULI_TIM_N_STEP];
+ 1400              		.loc 1 217 7 view .LVU438
+ 218:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       for (int i=0;i<PATCHOULI_TIM_N_STEP;i++){
+ 1401              		.loc 1 218 7 view .LVU439
+ 1402              	.LBB24:
+ 1403              		.loc 1 218 12 view .LVU440
+ 1404              		.loc 1 218 16 is_stmt 0 view .LVU441
+ 1405 0010 0024     		movs	r4, #0
+ 1406              		.loc 1 218 7 view .LVU442
+ 1407 0012 46E0     		b	.L100
+ 1408              	.LVL159:
+ 1409              	.L101:
+ 1410              	.LBB25:
+ 219:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           flist[i] = PATCHOULI_TIM_F_MIN + PATCHOULI_TIM_F_STEP * i;
+ 1411              		.loc 1 219 11 is_stmt 1 view .LVU443
+ 1412              		.loc 1 219 65 is_stmt 0 view .LVU444
+ 1413 0014 2046     		mov	r0, r4
+ 1414 0016 FFF7FEFF 		bl	__aeabi_i2d
+ 1415              	.LVL160:
+ 1416 001a 25A3     		adr	r3, .L103
+ 1417 001c D3E90023 		ldrd	r2, [r3]
+ 1418 0020 FFF7FEFF 		bl	__aeabi_dmul
+ 1419              	.LVL161:
+ 1420              		.loc 1 219 42 view .LVU445
+ 1421 0024 24A3     		adr	r3, .L103+8
+ 1422 0026 D3E90023 		ldrd	r2, [r3]
+ 1423 002a FFF7FEFF 		bl	__aeabi_dadd
+ 1424              	.LVL162:
+ 1425 002e FFF7FEFF 		bl	__aeabi_d2f
+ 1426              	.LVL163:
+ 1427 0032 07EE100A 		vmov	s14, r0
+ 1428              		.loc 1 219 20 view .LVU446
+ 1429 0036 14AB     		add	r3, sp, #80
+ 1430 0038 03EB8403 		add	r3, r3, r4, lsl #2
+ 1431 003c 43F8480C 		str	r0, [r3, #-72]	@ float
+ 220:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           uint16_t d = (PATCHOULI_TIM_FAST_CLK/flist[i]);
+ 1432              		.loc 1 220 11 is_stmt 1 view .LVU447
+ 1433              		.loc 1 220 47 is_stmt 0 view .LVU448
+ 1434 0040 DFED206A 		vldr.32	s13, .L103+20
+ 1435 0044 C6EE877A 		vdiv.f32	s15, s13, s14
+ 1436              		.loc 1 220 20 view .LVU449
+ 1437 0048 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1438 004c 17EE902A 		vmov	r2, s15	@ int
+ 1439 0050 92B2     		uxth	r2, r2
+ 1440 0052 07EE902A 		vmov	s15, r2	@ int
+ 1441              	.LVL164:
+ 221:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           fachieved[i] = PATCHOULI_TIM_FAST_CLK/d;
+ 1442              		.loc 1 221 11 is_stmt 1 view .LVU450
+ 1443              		.loc 1 221 48 is_stmt 0 view .LVU451
+ 1444 0056 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1445              	.LVL165:
+ 1446              		.loc 1 221 48 view .LVU452
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 36
+
+
+ 1447 005a 86EEA78A 		vdiv.f32	s16, s13, s15
+ 1448              		.loc 1 221 24 view .LVU453
+ 1449 005e 03ED098A 		vstr.32	s16, [r3, #-36]
+ 222:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           printf("%f\t%f\r\n", flist[i]/1e3, fachieved[i]/1e3);
+ 1450              		.loc 1 222 11 is_stmt 1 view .LVU454
+ 1451              		.loc 1 222 37 is_stmt 0 view .LVU455
+ 1452 0062 FFF7FEFF 		bl	__aeabi_f2d
+ 1453              	.LVL166:
+ 1454              		.loc 1 222 37 view .LVU456
+ 1455 0066 0646     		mov	r6, r0
+ 1456 0068 0F46     		mov	r7, r1
+ 1457              		.loc 1 222 55 view .LVU457
+ 1458 006a 18EE100A 		vmov	r0, s16
+ 1459 006e FFF7FEFF 		bl	__aeabi_f2d
+ 1460              	.LVL167:
+ 1461 0072 8046     		mov	r8, r0
+ 1462 0074 8946     		mov	r9, r1
+ 1463              		.loc 1 222 11 view .LVU458
+ 1464 0076 0022     		movs	r2, #0
+ 1465 0078 134B     		ldr	r3, .L103+24
+ 1466 007a 3046     		mov	r0, r6
+ 1467 007c 3946     		mov	r1, r7
+ 1468 007e FFF7FEFF 		bl	__aeabi_ddiv
+ 1469              	.LVL168:
+ 1470 0082 0646     		mov	r6, r0
+ 1471 0084 0F46     		mov	r7, r1
+ 1472 0086 0022     		movs	r2, #0
+ 1473 0088 0F4B     		ldr	r3, .L103+24
+ 1474 008a 4046     		mov	r0, r8
+ 1475 008c 4946     		mov	r1, r9
+ 1476 008e FFF7FEFF 		bl	__aeabi_ddiv
+ 1477              	.LVL169:
+ 1478 0092 CDE90001 		strd	r0, [sp]
+ 1479 0096 3246     		mov	r2, r6
+ 1480 0098 3B46     		mov	r3, r7
+ 1481 009a 0C48     		ldr	r0, .L103+28
+ 1482 009c FFF7FEFF 		bl	printf
+ 1483              	.LVL170:
+ 1484              	.LBE25:
+ 218:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           flist[i] = PATCHOULI_TIM_F_MIN + PATCHOULI_TIM_F_STEP * i;
+ 1485              		.loc 1 218 44 is_stmt 1 discriminator 3 view .LVU459
+ 1486 00a0 0134     		adds	r4, r4, #1
+ 1487              	.LVL171:
+ 1488              	.L100:
+ 218:patchouli/src/patchouli_bsp_glider_addon_v1.c ****           flist[i] = PATCHOULI_TIM_F_MIN + PATCHOULI_TIM_F_STEP * i;
+ 1489              		.loc 1 218 21 discriminator 1 view .LVU460
+ 1490 00a2 082C     		cmp	r4, #8
+ 1491 00a4 B6DD     		ble	.L101
+ 1492              	.LBE24:
+ 223:patchouli/src/patchouli_bsp_glider_addon_v1.c ****       }
+ 224:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1493              		.loc 1 224 1 is_stmt 0 view .LVU461
+ 1494 00a6 14B0     		add	sp, sp, #80
+ 1495              		.cfi_def_cfa_offset 32
+ 1496              		@ sp needed
+ 1497 00a8 BDEC028B 		vldm	sp!, {d8}
+ 1498              		.cfi_restore 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 37
+
+
+ 1499              		.cfi_restore 81
+ 1500              		.cfi_def_cfa_offset 24
+ 1501 00ac BDE8D083 		pop	{r4, r6, r7, r8, r9, pc}
+ 1502              	.LVL172:
+ 1503              	.L104:
+ 1504              		.loc 1 224 1 view .LVU462
+ 1505              		.align	3
+ 1506              	.L103:
+ 1507 00b0 00000000 		.word	0
+ 1508 00b4 0088C340 		.word	1086556160
+ 1509 00b8 00000000 		.word	0
+ 1510 00bc E0FD1C41 		.word	1092419040
+ 1511 00c0 00000000 		.word	.LC3
+ 1512 00c4 0024744C 		.word	1282679808
+ 1513 00c8 00408F40 		.word	1083129856
+ 1514 00cc 14000000 		.word	.LC4
+ 1515              		.cfi_endproc
+ 1516              	.LFE1421:
+ 1518              		.section	.text.patchouli_led_on,"ax",%progbits
+ 1519              		.align	1
+ 1520              		.global	patchouli_led_on
+ 1521              		.syntax unified
+ 1522              		.thumb
+ 1523              		.thumb_func
+ 1525              	patchouli_led_on:
+ 1526              	.LFB1422:
+ 225:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_led_on(){
+ 1527              		.loc 1 225 24 is_stmt 1 view -0
+ 1528              		.cfi_startproc
+ 1529              		@ args = 0, pretend = 0, frame = 0
+ 1530              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1531              		@ link register save eliminated.
+ 226:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+ 227:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1532              		.loc 1 227 1 view .LVU464
+ 1533 0000 7047     		bx	lr
+ 1534              		.cfi_endproc
+ 1535              	.LFE1422:
+ 1537              		.section	.text.patchouli_led_off,"ax",%progbits
+ 1538              		.align	1
+ 1539              		.global	patchouli_led_off
+ 1540              		.syntax unified
+ 1541              		.thumb
+ 1542              		.thumb_func
+ 1544              	patchouli_led_off:
+ 1545              	.LFB1423:
+ 228:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 229:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_led_off(){
+ 1546              		.loc 1 229 25 view -0
+ 1547              		.cfi_startproc
+ 1548              		@ args = 0, pretend = 0, frame = 0
+ 1549              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1550              		@ link register save eliminated.
+ 230:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+ 231:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1551              		.loc 1 231 1 view .LVU466
+ 1552 0000 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 38
+
+
+ 1553              		.cfi_endproc
+ 1554              	.LFE1423:
+ 1556              		.section	.text.patchouli_comms_init,"ax",%progbits
+ 1557              		.align	1
+ 1558              		.global	patchouli_comms_init
+ 1559              		.syntax unified
+ 1560              		.thumb
+ 1561              		.thumb_func
+ 1563              	patchouli_comms_init:
+ 1564              	.LFB1424:
+ 232:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 233:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern UART_HandleTypeDef huart1;
+ 234:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern uint8_t huart1_rxbuffer[256];
+ 235:patchouli/src/patchouli_bsp_glider_addon_v1.c **** // Init all communication drivers (UART, USB, etc)
+ 236:patchouli/src/patchouli_bsp_glider_addon_v1.c **** void patchouli_comms_init(){
+ 1565              		.loc 1 236 28 view -0
+ 1566              		.cfi_startproc
+ 1567              		@ args = 0, pretend = 0, frame = 0
+ 1568              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1569 0000 08B5     		push	{r3, lr}
+ 1570              		.cfi_def_cfa_offset 8
+ 1571              		.cfi_offset 3, -8
+ 1572              		.cfi_offset 14, -4
+ 237:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     HAL_UART_Receive_IT(&huart1, (uint8_t *)huart1_rxbuffer, 1);
+ 1573              		.loc 1 237 5 view .LVU468
+ 1574 0002 0122     		movs	r2, #1
+ 1575 0004 0249     		ldr	r1, .L109
+ 1576 0006 0348     		ldr	r0, .L109+4
+ 1577 0008 FFF7FEFF 		bl	HAL_UART_Receive_IT
+ 1578              	.LVL173:
+ 238:patchouli/src/patchouli_bsp_glider_addon_v1.c **** 
+ 239:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1579              		.loc 1 239 1 is_stmt 0 view .LVU469
+ 1580 000c 08BD     		pop	{r3, pc}
+ 1581              	.L110:
+ 1582 000e 00BF     		.align	2
+ 1583              	.L109:
+ 1584 0010 00000000 		.word	huart1_rxbuffer
+ 1585 0014 00000000 		.word	huart1
+ 1586              		.cfi_endproc
+ 1587              	.LFE1424:
+ 1589              		.section	.text.patchouli_transmit,"ax",%progbits
+ 1590              		.align	1
+ 1591              		.global	patchouli_transmit
+ 1592              		.syntax unified
+ 1593              		.thumb
+ 1594              		.thumb_func
+ 1596              	patchouli_transmit:
+ 1597              	.LVL174:
+ 1598              	.LFB1426:
+ 240:patchouli/src/patchouli_bsp_glider_addon_v1.c **** #include "usbd_hid.h"
+ 241:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern uint8_t usbhid_txbuf[12];
+ 242:patchouli/src/patchouli_bsp_glider_addon_v1.c **** extern USBD_HandleTypeDef hUsbDeviceFS;
+ 243:patchouli/src/patchouli_bsp_glider_addon_v1.c **** bool patchouli_transmit(patchouli_report_t* report){
+ 1599              		.loc 1 243 52 is_stmt 1 view -0
+ 1600              		.cfi_startproc
+ 1601              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 39
+
+
+ 1602              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1603              		.loc 1 243 52 is_stmt 0 view .LVU471
+ 1604 0000 38B5     		push	{r3, r4, r5, lr}
+ 1605              		.cfi_def_cfa_offset 16
+ 1606              		.cfi_offset 3, -16
+ 1607              		.cfi_offset 4, -12
+ 1608              		.cfi_offset 5, -8
+ 1609              		.cfi_offset 14, -4
+ 244:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     int16_t p = report->tip;
+ 1610              		.loc 1 244 5 is_stmt 1 view .LVU472
+ 1611              		.loc 1 244 23 is_stmt 0 view .LVU473
+ 1612 0002 B0F80AC0 		ldrh	ip, [r0, #10]
+ 1613              	.LVL175:
+ 245:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     int16_t x = report->xpos;
+ 1614              		.loc 1 245 5 is_stmt 1 view .LVU474
+ 1615              		.loc 1 245 23 is_stmt 0 view .LVU475
+ 1616 0006 0488     		ldrh	r4, [r0]
+ 1617              		.loc 1 245 13 view .LVU476
+ 1618 0008 B0F90020 		ldrsh	r2, [r0]
+ 1619              	.LVL176:
+ 246:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     int16_t y = report->ypos;
+ 1620              		.loc 1 246 5 is_stmt 1 view .LVU477
+ 1621              		.loc 1 246 23 is_stmt 0 view .LVU478
+ 1622 000c B0F802E0 		ldrh	lr, [r0, #2]
+ 1623              		.loc 1 246 13 view .LVU479
+ 1624 0010 B0F90230 		ldrsh	r3, [r0, #2]
+ 1625              	.LVL177:
+ 247:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     // printf("%d\t%d\t%d\r\n", p,x,y);
+ 248:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[0]  = 0x08;
+ 1626              		.loc 1 248 5 is_stmt 1 view .LVU480
+ 1627              		.loc 1 248 22 is_stmt 0 view .LVU481
+ 1628 0014 0D49     		ldr	r1, .L113
+ 1629 0016 0825     		movs	r5, #8
+ 1630 0018 0D70     		strb	r5, [r1]
+ 249:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[1]  = 0x80;
+ 1631              		.loc 1 249 5 is_stmt 1 view .LVU482
+ 1632              		.loc 1 249 22 is_stmt 0 view .LVU483
+ 1633 001a 8025     		movs	r5, #128
+ 1634 001c 4D70     		strb	r5, [r1, #1]
+ 250:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[2]  = x&0xFF;
+ 1635              		.loc 1 250 5 is_stmt 1 view .LVU484
+ 1636              		.loc 1 250 22 is_stmt 0 view .LVU485
+ 1637 001e 8C70     		strb	r4, [r1, #2]
+ 251:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[3]  = (x>>8)&0xFF;
+ 1638              		.loc 1 251 5 is_stmt 1 view .LVU486
+ 1639              		.loc 1 251 22 is_stmt 0 view .LVU487
+ 1640 0020 1212     		asrs	r2, r2, #8
+ 1641              	.LVL178:
+ 1642              		.loc 1 251 22 view .LVU488
+ 1643 0022 CA70     		strb	r2, [r1, #3]
+ 252:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[4]  = y&0xFF;
+ 1644              		.loc 1 252 5 is_stmt 1 view .LVU489
+ 1645              		.loc 1 252 22 is_stmt 0 view .LVU490
+ 1646 0024 81F804E0 		strb	lr, [r1, #4]
+ 253:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[5]  = (y>>8)&0xFF;
+ 1647              		.loc 1 253 5 is_stmt 1 view .LVU491
+ 1648              		.loc 1 253 22 is_stmt 0 view .LVU492
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 40
+
+
+ 1649 0028 1B12     		asrs	r3, r3, #8
+ 1650              	.LVL179:
+ 1651              		.loc 1 253 22 view .LVU493
+ 1652 002a 4B71     		strb	r3, [r1, #5]
+ 254:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[6]  = p&0xFF;
+ 1653              		.loc 1 254 5 is_stmt 1 view .LVU494
+ 1654              		.loc 1 254 22 is_stmt 0 view .LVU495
+ 1655 002c 81F806C0 		strb	ip, [r1, #6]
+ 255:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[7]  = (p>>8)&0xFF;
+ 1656              		.loc 1 255 5 is_stmt 1 view .LVU496
+ 1657              		.loc 1 255 22 is_stmt 0 view .LVU497
+ 1658 0030 90F90B30 		ldrsb	r3, [r0, #11]
+ 1659 0034 CB71     		strb	r3, [r1, #7]
+ 256:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[8]  = 0;
+ 1660              		.loc 1 256 5 is_stmt 1 view .LVU498
+ 1661              		.loc 1 256 22 is_stmt 0 view .LVU499
+ 1662 0036 0023     		movs	r3, #0
+ 1663 0038 0B72     		strb	r3, [r1, #8]
+ 257:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[9]  = 0;
+ 1664              		.loc 1 257 5 is_stmt 1 view .LVU500
+ 1665              		.loc 1 257 22 is_stmt 0 view .LVU501
+ 1666 003a 4B72     		strb	r3, [r1, #9]
+ 258:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[10] = 0;
+ 1667              		.loc 1 258 5 is_stmt 1 view .LVU502
+ 1668              		.loc 1 258 22 is_stmt 0 view .LVU503
+ 1669 003c 8B72     		strb	r3, [r1, #10]
+ 1670              	.LVL180:
+ 259:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     usbhid_txbuf[11] = 0;
+ 1671              		.loc 1 259 5 is_stmt 1 view .LVU504
+ 1672              		.loc 1 259 22 is_stmt 0 view .LVU505
+ 1673 003e CB72     		strb	r3, [r1, #11]
+ 260:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     USBD_HID_SendReport(&hUsbDeviceFS, usbhid_txbuf, 12);
+ 1674              		.loc 1 260 5 is_stmt 1 view .LVU506
+ 1675 0040 0C22     		movs	r2, #12
+ 1676 0042 0348     		ldr	r0, .L113+4
+ 1677              	.LVL181:
+ 1678              		.loc 1 260 5 is_stmt 0 view .LVU507
+ 1679 0044 FFF7FEFF 		bl	USBD_HID_SendReport
+ 1680              	.LVL182:
+ 261:patchouli/src/patchouli_bsp_glider_addon_v1.c ****     return true;
+ 1681              		.loc 1 261 5 is_stmt 1 view .LVU508
+ 262:patchouli/src/patchouli_bsp_glider_addon_v1.c **** }
+ 1682              		.loc 1 262 1 is_stmt 0 view .LVU509
+ 1683 0048 0120     		movs	r0, #1
+ 1684 004a 38BD     		pop	{r3, r4, r5, pc}
+ 1685              	.LVL183:
+ 1686              	.L114:
+ 1687              		.loc 1 262 1 view .LVU510
+ 1688              		.align	2
+ 1689              	.L113:
+ 1690 004c 00000000 		.word	usbhid_txbuf
+ 1691 0050 00000000 		.word	hUsbDeviceFS
+ 1692              		.cfi_endproc
+ 1693              	.LFE1426:
+ 1695              		.global	ExN_Pin
+ 1696              		.section	.data.ExN_Pin,"aw"
+ 1697              		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 41
+
+
+ 1700              	ExN_Pin:
+ 1701 0000 2000     		.short	32
+ 1702 0002 1000     		.short	16
+ 1703 0004 0800     		.short	8
+ 1704 0006 0200     		.short	2
+ 1705 0008 0100     		.short	1
+ 1706 000a 0010     		.short	4096
+ 1707              		.global	ExN_GPIO_Port
+ 1708              		.section	.data.ExN_GPIO_Port,"aw"
+ 1709              		.align	2
+ 1712              	ExN_GPIO_Port:
+ 1713 0000 00040048 		.word	1207960576
+ 1714 0004 00040048 		.word	1207960576
+ 1715 0008 00040048 		.word	1207960576
+ 1716 000c 000C0048 		.word	1207962624
+ 1717 0010 000C0048 		.word	1207962624
+ 1718 0014 00080048 		.word	1207961600
+ 1719              		.text
+ 1720              	.Letext0:
+ 1721              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1722              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1723              		.file 5 "patchouli/inc/patchouli.h"
+ 1724              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1725              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wbxx.h"
+ 1726              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1727              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 1728              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc.h"
+ 1729              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ 1730              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
+ 1731              		.file 13 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
+ 1732              		.file 14 "Core/Inc/app_conf.h"
+ 1733              		.file 15 "patchouli/inc/patchouli_bsp_tx.h"
+ 1734              		.file 16 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 1735              		.file 17 "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h"
+ 1736              		.file 18 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
+ 1737              		.file 19 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/m
+ 1738              		.file 20 "patchouli/inc/patchouli_math.h"
+ 1739              		.file 21 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim_ex.h"
+ 1740              		.file 22 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 42
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 patchouli_bsp_glider_addon_v1.c
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:21     .rodata.patchouli_coil_select.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:31     .text.patchouli_coil_select:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:37     .text.patchouli_coil_select:00000000 patchouli_coil_select
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:91     .text.patchouli_coil_select:00000032 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:119    .text.patchouli_coil_select:0000004e $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:508    .text.patchouli_coil_select:00000184 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:526    .text.patchouli_coil_select:00000196 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:837    .text.patchouli_coil_select:000002b0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1700   .data.ExN_Pin:00000000 ExN_Pin
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1712   .data.ExN_GPIO_Port:00000000 ExN_GPIO_Port
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:847    .text.patchouli_TIM_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:853    .text.patchouli_TIM_init:00000000 patchouli_TIM_init
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:916    .text.patchouli_TIM_init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:924    .text.patchouli_TIM_trigger:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:930    .text.patchouli_TIM_trigger:00000000 patchouli_TIM_trigger
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:951    .text.patchouli_TIM_trigger:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:956    .text._patchouli_adc_multisample:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:962    .text._patchouli_adc_multisample:00000000 _patchouli_adc_multisample
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1033   .text._patchouli_adc_multisample:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1038   .text.patchouli_simple_take_sample:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1044   .text.patchouli_simple_take_sample:00000000 patchouli_simple_take_sample
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1289   .text.patchouli_simple_take_sample:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1298   .text.patchouli_set_freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1304   .text.patchouli_set_freq:00000000 patchouli_set_freq
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1351   .text.patchouli_set_freq:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1357   .rodata.patchouli_freq_test.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1369   .text.patchouli_freq_test:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1375   .text.patchouli_freq_test:00000000 patchouli_freq_test
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1507   .text.patchouli_freq_test:000000b0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1519   .text.patchouli_led_on:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1525   .text.patchouli_led_on:00000000 patchouli_led_on
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1538   .text.patchouli_led_off:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1544   .text.patchouli_led_off:00000000 patchouli_led_off
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1557   .text.patchouli_comms_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1563   .text.patchouli_comms_init:00000000 patchouli_comms_init
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1584   .text.patchouli_comms_init:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1590   .text.patchouli_transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1596   .text.patchouli_transmit:00000000 patchouli_transmit
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1690   .text.patchouli_transmit:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1697   .data.ExN_Pin:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s:1709   .data.ExN_GPIO_Port:00000000 $d
+
+UNDEFINED SYMBOLS
+patchouli_debug_output
+HAL_GPIO_WritePin
+HAL_TIM_PWM_Start
+HAL_TIMEx_PWMN_Start
+htim1
+htim16
+gfreq
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+patchouli_median
+hadc1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWEW3WF.s 			page 43
+
+
+patchouli_pen_pw100
+__aeabi_f2d
+__aeabi_d2uiz
+round
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_d2f
+__aeabi_ddiv
+puts
+printf
+HAL_UART_Receive_IT
+huart1_rxbuffer
+huart1
+USBD_HID_SendReport
+usbhid_txbuf
+hUsbDeviceFS

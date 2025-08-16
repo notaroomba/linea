@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
   28:Core/Src/stm32wbxx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32wbxx_it.c **** 
   30:Core/Src/stm32wbxx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 2
 
 
   31:Core/Src/stm32wbxx_it.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
   78:Core/Src/stm32wbxx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
   79:Core/Src/stm32wbxx_it.c ****    while (1)
   36              		.loc 1 79 4 view .LVU1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 3
 
 
   80:Core/Src/stm32wbxx_it.c ****   {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
   98:Core/Src/stm32wbxx_it.c **** }
   99:Core/Src/stm32wbxx_it.c **** 
  100:Core/Src/stm32wbxx_it.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 4
 
 
  101:Core/Src/stm32wbxx_it.c ****   * @brief This function handles Memory management fault.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  125:Core/Src/stm32wbxx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
  126:Core/Src/stm32wbxx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
  127:Core/Src/stm32wbxx_it.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 5
 
 
  106              		.loc 1 127 3 view .LVU14
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  146:Core/Src/stm32wbxx_it.c ****   * @brief This function handles System service call via SWI instruction.
  147:Core/Src/stm32wbxx_it.c ****   */
  148:Core/Src/stm32wbxx_it.c **** void SVC_Handler(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 6
 
 
  149:Core/Src/stm32wbxx_it.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  181              	.LFB1422:
  170:Core/Src/stm32wbxx_it.c **** 
  171:Core/Src/stm32wbxx_it.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 7
 
 
  172:Core/Src/stm32wbxx_it.c ****   * @brief This function handles Pendable request for system service.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  213 0006 08BD     		pop	{r3, pc}
  214              		.cfi_endproc
  215              	.LFE1423:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 8
 
 
  217              		.section	.text.RTC_WKUP_IRQHandler,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  220:Core/Src/stm32wbxx_it.c ****   * @brief This function handles USB low priority interrupt, USB wake-up interrupt through EXTI lin
  221:Core/Src/stm32wbxx_it.c ****   */
  222:Core/Src/stm32wbxx_it.c **** void USB_LP_IRQHandler(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 9
 
 
  223:Core/Src/stm32wbxx_it.c **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  241:Core/Src/stm32wbxx_it.c ****   HAL_TIM_IRQHandler(&htim1);
  289              		.loc 1 241 3 view .LVU36
  290 0002 0348     		ldr	r0, .L24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 10
 
 
  291 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  328 0006 08BD     		pop	{r3, pc}
  329              		.cfi_endproc
  330              	.LFE1427:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 11
 
 
  332              		.section	.text.IPCC_C1_TX_IRQHandler,"ax",%progbits
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  369              		@ frame_needed = 0, uses_anonymous_args = 0
  370 0000 08B5     		push	{r3, lr}
  371              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 12
 
 
  372              		.cfi_offset 3, -8
@@ -678,57 +678,206 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 1
  378 0006 08BD     		pop	{r3, pc}
  379              		.cfi_endproc
  380              	.LFE1429:
- 382              		.text
- 383              	.Letext0:
- 384              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
- 385              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 386              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
- 387              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
- 388              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
- 389              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_usb.h"
- 390              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd.h"
- 391              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
- 392              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_hsem.h"
- 393              		.file 11 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/hw.h"
- 394              		.file 12 "Core/Inc/hw_if.h"
- 395              		.file 13 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s 			page 13
+ 382              		.section	.text.USB_LP_CAN_RX0_IRQHandler,"ax",%progbits
+ 383              		.align	1
+ 384              		.global	USB_LP_CAN_RX0_IRQHandler
+ 385              		.syntax unified
+ 386              		.thumb
+ 387              		.thumb_func
+ 389              	USB_LP_CAN_RX0_IRQHandler:
+ 390              	.LFB1430:
+ 289:Core/Src/stm32wbxx_it.c **** 
+ 290:Core/Src/stm32wbxx_it.c **** /* USER CODE BEGIN 1 */
+ 291:Core/Src/stm32wbxx_it.c **** extern PCD_HandleTypeDef hpcd_USB_FS;
+ 292:Core/Src/stm32wbxx_it.c **** void USB_LP_CAN_RX0_IRQHandler(void){
+ 391              		.loc 1 292 37 is_stmt 1 view -0
+ 392              		.cfi_startproc
+ 393              		@ args = 0, pretend = 0, frame = 0
+ 394              		@ frame_needed = 0, uses_anonymous_args = 0
+ 395 0000 08B5     		push	{r3, lr}
+ 396              		.cfi_def_cfa_offset 8
+ 397              		.cfi_offset 3, -8
+ 398              		.cfi_offset 14, -4
+ 293:Core/Src/stm32wbxx_it.c ****   HAL_PCD_IRQHandler(&hpcd_USB_FS);
+ 399              		.loc 1 293 3 view .LVU49
+ 400 0002 0248     		ldr	r0, .L34
+ 401 0004 FFF7FEFF 		bl	HAL_PCD_IRQHandler
+ 402              	.LVL8:
+ 294:Core/Src/stm32wbxx_it.c **** }
+ 403              		.loc 1 294 1 is_stmt 0 view .LVU50
+ 404 0008 08BD     		pop	{r3, pc}
+ 405              	.L35:
+ 406 000a 00BF     		.align	2
+ 407              	.L34:
+ 408 000c 00000000 		.word	hpcd_USB_FS
+ 409              		.cfi_endproc
+ 410              	.LFE1430:
+ 412              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 413              		.align	1
+ 414              		.global	HAL_UART_RxCpltCallback
+ 415              		.syntax unified
+ 416              		.thumb
+ 417              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 13
+
+
+ 419              	HAL_UART_RxCpltCallback:
+ 420              	.LVL9:
+ 421              	.LFB1431:
+ 295:Core/Src/stm32wbxx_it.c **** 
+ 296:Core/Src/stm32wbxx_it.c **** extern UART_HandleTypeDef huart1;
+ 297:Core/Src/stm32wbxx_it.c **** extern TIM_HandleTypeDef htim1;
+ 298:Core/Src/stm32wbxx_it.c **** float gfreq;
+ 299:Core/Src/stm32wbxx_it.c **** uint8_t huart1_rxbuffer[256];
+ 300:Core/Src/stm32wbxx_it.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+ 422              		.loc 1 300 56 is_stmt 1 view -0
+ 423              		.cfi_startproc
+ 424              		@ args = 0, pretend = 0, frame = 0
+ 425              		@ frame_needed = 0, uses_anonymous_args = 0
+ 426              		.loc 1 300 56 is_stmt 0 view .LVU52
+ 427 0000 38B5     		push	{r3, r4, r5, lr}
+ 428              		.cfi_def_cfa_offset 16
+ 429              		.cfi_offset 3, -16
+ 430              		.cfi_offset 4, -12
+ 431              		.cfi_offset 5, -8
+ 432              		.cfi_offset 14, -4
+ 301:Core/Src/stm32wbxx_it.c ****   if(huart->Instance == USART1){
+ 433              		.loc 1 301 3 is_stmt 1 view .LVU53
+ 434              		.loc 1 301 11 is_stmt 0 view .LVU54
+ 435 0002 0268     		ldr	r2, [r0]
+ 436              		.loc 1 301 5 view .LVU55
+ 437 0004 084B     		ldr	r3, .L40
+ 438 0006 9A42     		cmp	r2, r3
+ 439 0008 00D0     		beq	.L39
+ 440              	.LVL10:
+ 441              	.L36:
+ 302:Core/Src/stm32wbxx_it.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)huart1_rxbuffer, 1, 100);
+ 303:Core/Src/stm32wbxx_it.c ****     HAL_UART_Receive_IT(&huart1, (uint8_t *)huart1_rxbuffer, 1);
+ 304:Core/Src/stm32wbxx_it.c ****   }
+ 305:Core/Src/stm32wbxx_it.c ****   // A switch of possible inputs
+ 306:Core/Src/stm32wbxx_it.c ****   switch(huart1_rxbuffer[0]){
+ 307:Core/Src/stm32wbxx_it.c ****     default:
+ 308:Core/Src/stm32wbxx_it.c ****       break;
+ 309:Core/Src/stm32wbxx_it.c ****   }
+ 310:Core/Src/stm32wbxx_it.c **** }
+ 442              		.loc 1 310 1 view .LVU56
+ 443 000a 38BD     		pop	{r3, r4, r5, pc}
+ 444              	.LVL11:
+ 445              	.L39:
+ 302:Core/Src/stm32wbxx_it.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)huart1_rxbuffer, 1, 100);
+ 446              		.loc 1 302 5 is_stmt 1 view .LVU57
+ 447 000c 074D     		ldr	r5, .L40+4
+ 448 000e 084C     		ldr	r4, .L40+8
+ 449 0010 6423     		movs	r3, #100
+ 450 0012 0122     		movs	r2, #1
+ 451 0014 2946     		mov	r1, r5
+ 452 0016 2046     		mov	r0, r4
+ 453              	.LVL12:
+ 302:Core/Src/stm32wbxx_it.c ****     HAL_UART_Transmit(&huart1, (uint8_t *)huart1_rxbuffer, 1, 100);
+ 454              		.loc 1 302 5 is_stmt 0 view .LVU58
+ 455 0018 FFF7FEFF 		bl	HAL_UART_Transmit
+ 456              	.LVL13:
+ 303:Core/Src/stm32wbxx_it.c ****   }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 14
+
+
+ 457              		.loc 1 303 5 is_stmt 1 view .LVU59
+ 458 001c 0122     		movs	r2, #1
+ 459 001e 2946     		mov	r1, r5
+ 460 0020 2046     		mov	r0, r4
+ 461 0022 FFF7FEFF 		bl	HAL_UART_Receive_IT
+ 462              	.LVL14:
+ 306:Core/Src/stm32wbxx_it.c ****     default:
+ 463              		.loc 1 306 3 view .LVU60
+ 308:Core/Src/stm32wbxx_it.c ****   }
+ 464              		.loc 1 308 7 view .LVU61
+ 465              		.loc 1 310 1 is_stmt 0 view .LVU62
+ 466 0026 F0E7     		b	.L36
+ 467              	.L41:
+ 468              		.align	2
+ 469              	.L40:
+ 470 0028 00380140 		.word	1073821696
+ 471 002c 00000000 		.word	huart1_rxbuffer
+ 472 0030 00000000 		.word	huart1
+ 473              		.cfi_endproc
+ 474              	.LFE1431:
+ 476              		.global	huart1_rxbuffer
+ 477              		.section	.bss.huart1_rxbuffer,"aw",%nobits
+ 478              		.align	2
+ 481              	huart1_rxbuffer:
+ 482 0000 00000000 		.space	256
+ 482      00000000 
+ 482      00000000 
+ 482      00000000 
+ 482      00000000 
+ 483              		.global	gfreq
+ 484              		.section	.bss.gfreq,"aw",%nobits
+ 485              		.align	2
+ 488              	gfreq:
+ 489 0000 00000000 		.space	4
+ 490              		.text
+ 491              	.Letext0:
+ 492              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 493              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 494              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 495              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 496              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 497              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_usb.h"
+ 498              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd.h"
+ 499              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
+ 500              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
+ 501              		.file 11 "Core/Inc/app_conf.h"
+ 502              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_hsem.h"
+ 503              		.file 13 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/hw.h"
+ 504              		.file 14 "Core/Inc/hw_if.h"
+ 505              		.file 15 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_it.c
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:21     .text.NMI_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:27     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:218    .text.RTC_WKUP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:224    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:243    .text.USB_LP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:249    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:268    .text.USB_LP_IRQHandler:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:273    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:279    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:302    .text.TIM1_UP_TIM16_IRQHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:308    .text.IPCC_C1_RX_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:314    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:333    .text.IPCC_C1_TX_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:339    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:358    .text.HSEM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccv9hsr1.s:364    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:21     .text.NMI_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:27     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:136    .text.SVC_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:142    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:155    .text.DebugMon_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:174    .text.PendSV_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:193    .text.SysTick_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:218    .text.RTC_WKUP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:224    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:243    .text.USB_LP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:249    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:268    .text.USB_LP_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:273    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:279    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:302    .text.TIM1_UP_TIM16_IRQHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:308    .text.IPCC_C1_RX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:314    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:333    .text.IPCC_C1_TX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:339    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:358    .text.HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:364    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:383    .text.USB_LP_CAN_RX0_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:389    .text.USB_LP_CAN_RX0_IRQHandler:00000000 USB_LP_CAN_RX0_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:408    .text.USB_LP_CAN_RX0_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:413    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:419    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:470    .text.HAL_UART_RxCpltCallback:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:481    .bss.huart1_rxbuffer:00000000 huart1_rxbuffer
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:478    .bss.huart1_rxbuffer:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:488    .bss.gfreq:00000000 gfreq
+C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s:485    .bss.gfreq:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
@@ -741,3 +890,9 @@ htim16
 HW_IPCC_Rx_Handler
 HW_IPCC_Tx_Handler
 HAL_HSEM_IRQHandler
+HAL_UART_Transmit
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccskaRcy.s 			page 16
+
+
+HAL_UART_Receive_IT
+huart1

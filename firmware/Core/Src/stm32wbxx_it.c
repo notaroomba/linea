@@ -288,5 +288,24 @@ void HSEM_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+extern PCD_HandleTypeDef hpcd_USB_FS;
+void USB_LP_CAN_RX0_IRQHandler(void){
+  HAL_PCD_IRQHandler(&hpcd_USB_FS);
+}
 
+extern UART_HandleTypeDef huart1;
+extern TIM_HandleTypeDef htim1;
+float gfreq;
+uint8_t huart1_rxbuffer[256];
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+  if(huart->Instance == USART1){
+    HAL_UART_Transmit(&huart1, (uint8_t *)huart1_rxbuffer, 1, 100);
+    HAL_UART_Receive_IT(&huart1, (uint8_t *)huart1_rxbuffer, 1);
+  }
+  // A switch of possible inputs
+  switch(huart1_rxbuffer[0]){
+    default:
+      break;
+  }
+}
 /* USER CODE END 1 */
