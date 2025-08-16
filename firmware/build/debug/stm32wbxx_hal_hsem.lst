@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   @verbatim
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                      ##### How to use this driver #####
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 3
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Includes ------------------------------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** [..] This section provides functions allowing to:
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Take a semaphore with 2 Step method
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Fast Take a semaphore with 1 Step method
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 4
 
 
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Check semaphore state Taken or not
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return HAL_ERROR;
   52              		.loc 1 176 10 view .LVU10
   53 0016 0120     		movs	r0, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 5
 
 
   54              	.LVL2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
   95 0008 044B     		ldr	r3, .L9+4
   96 000a 9A42     		cmp	r2, r3
   97 000c 01D0     		beq	.L8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 6
 
 
  191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  137 0008 01DB     		blt	.L14
  138              		.loc 1 206 56 discriminator 2 view .LVU28
  139 000a 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 7
 
 
  140              	.LVL9:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  177              	.LVL13:
  178              		.loc 1 223 18 view .LVU37
  179 0004 014B     		ldr	r3, .L18
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 8
 
 
  180 0006 43F82010 		str	r1, [r3, r0, lsl #2]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  220              	.L21:
  221 0010 00140058 		.word	1476400128
  222              		.cfi_endproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 9
 
 
  223              	.LFE1108:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  247              		.loc 1 271 1 is_stmt 0 view .LVU50
  248 0010 7047     		bx	lr
  249              	.L25:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 10
 
 
  250 0012 00BF     		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  286:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions_Group3 HSEM IRQ handler management
  287:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *  @brief    HSEM Notification functions.
  288:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 11
 
 
  289:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @verbatim
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_DeactivateNotification(uint32_t SemMask)
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
  325              		.loc 1 315 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 12
 
 
  326              		.cfi_startproc
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
  343:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
  344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** __weak void HAL_HSEM_FreeCallback(uint32_t SemMask)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 13
 
 
  345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  396              		.loc 1 333 3 is_stmt 1 view .LVU75
  333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  397              		.loc 1 333 20 is_stmt 0 view .LVU76
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 14
 
 
  398 000e 5860     		str	r0, [r3, #4]
@@ -801,42 +801,42 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 1
  414              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  415              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  416              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_hsem.c
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:21     .text.HAL_HSEM_Take:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:27     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:67     .text.HAL_HSEM_Take:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:72     .text.HAL_HSEM_FastTake:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:78     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:111    .text.HAL_HSEM_FastTake:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:117    .text.HAL_HSEM_IsSemTaken:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:123    .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:153    .text.HAL_HSEM_IsSemTaken:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:158    .text.HAL_HSEM_Release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:164    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:186    .text.HAL_HSEM_Release:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:191    .text.HAL_HSEM_ReleaseAll:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:197    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:221    .text.HAL_HSEM_ReleaseAll:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:226    .text.HAL_HSEM_SetClearKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:232    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:252    .text.HAL_HSEM_SetClearKey:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:257    .text.HAL_HSEM_GetClearKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:263    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:280    .text.HAL_HSEM_GetClearKey:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:285    .text.HAL_HSEM_ActivateNotification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:291    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:311    .text.HAL_HSEM_ActivateNotification:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:316    .text.HAL_HSEM_DeactivateNotification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:322    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:342    .text.HAL_HSEM_DeactivateNotification:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:347    .text.HAL_HSEM_FreeCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:353    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:368    .text.HAL_HSEM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:374    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccr2o3YH.s:407    .text.HAL_HSEM_IRQHandler:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:21     .text.HAL_HSEM_Take:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:27     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:67     .text.HAL_HSEM_Take:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:72     .text.HAL_HSEM_FastTake:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:78     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:111    .text.HAL_HSEM_FastTake:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:117    .text.HAL_HSEM_IsSemTaken:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:123    .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:153    .text.HAL_HSEM_IsSemTaken:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:158    .text.HAL_HSEM_Release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:164    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:186    .text.HAL_HSEM_Release:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:191    .text.HAL_HSEM_ReleaseAll:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:197    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:221    .text.HAL_HSEM_ReleaseAll:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:226    .text.HAL_HSEM_SetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:232    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:252    .text.HAL_HSEM_SetClearKey:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:257    .text.HAL_HSEM_GetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:263    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:280    .text.HAL_HSEM_GetClearKey:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:285    .text.HAL_HSEM_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:291    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:311    .text.HAL_HSEM_ActivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:316    .text.HAL_HSEM_DeactivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:322    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:342    .text.HAL_HSEM_DeactivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:347    .text.HAL_HSEM_FreeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:353    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:368    .text.HAL_HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:374    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccDlr31g.s:407    .text.HAL_HSEM_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

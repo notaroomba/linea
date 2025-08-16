@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
   34              		.loc 1 22 1 is_stmt 0 view .LVU1
   35 0000 70B5     		push	{r4, r5, r6, lr}
   36              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 2
 
 
   37              		.cfi_offset 4, -16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
   80 0024 ADF80831 		strh	r3, [sp, #264]	@ movhi
   34:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x006;
   81              		.loc 1 34 3 is_stmt 1 view .LVU20
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 3
 
 
   82              		.loc 1 34 10 is_stmt 0 view .LVU21
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  126 0052 FBE7     		b	.L2
  127              		.cfi_endproc
  128              	.LFE0:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 4
 
 
  130              		.section	.text.hci_read_remote_version_information,"ax",%progbits
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  174 0016 2146     		mov	r1, r4
  175 0018 42A8     		add	r0, sp, #264
  176              	.LVL16:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 5
 
 
  177              		.loc 1 54 3 is_stmt 0 view .LVU52
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  220              		.cfi_remember_state
  221              		.cfi_def_cfa_offset 16
  222              		@ sp needed
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 6
 
 
  223 004a 70BD     		pop	{r4, r5, r6, pc}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  269 0010 02AE     		add	r6, sp, #8
  270              	.LVL23:
  271              		.loc 1 74 3 is_stmt 0 view .LVU83
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 7
 
 
  272 0012 0822     		movs	r2, #8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  315              		.loc 1 85 3 is_stmt 1 view .LVU102
  316              		.loc 1 85 10 is_stmt 0 view .LVU103
  317 0046 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 8
 
 
  318              	.L10:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  365              		.loc 1 93 10 is_stmt 0 view .LVU112
  366 0014 0323     		movs	r3, #3
  367 0016 ADF80830 		strh	r3, [sp, #8]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 9
 
 
   94:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x003;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  101:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
  102:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_read_transmit_power_level( uint16_t Connection_Handle,
  103:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                           uint8_t Type,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 10
 
 
  104:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                           uint8_t* Transmit_Power_Level )
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  460              	.LVL38:
  114:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Type = Type;
  461              		.loc 1 114 3 view .LVU141
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 11
 
 
  462              		.loc 1 114 13 is_stmt 0 view .LVU142
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  505              		.loc 1 125 6 view .LVU162
  506 0056 10B9     		cbnz	r0, .L18
  126:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return resp.Status;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 12
 
 
  127:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   *Transmit_Power_Level = resp.Transmit_Power_Level;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  135:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   hci_set_controller_to_host_flow_control_cp0 *cp0 = (hci_set_controller_to_host_flow_control_cp0*)
  554              		.loc 1 135 3 view .LVU173
  555              	.LVL44:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 13
 
 
  136:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   tBleStatus status = 0;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  599 0032 4793     		str	r3, [sp, #284]
  147:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
  600              		.loc 1 147 3 is_stmt 1 view .LVU195
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 14
 
 
  601              		.loc 1 147 8 is_stmt 0 view .LVU196
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  647              		.cfi_offset 6, -8
  648              		.cfi_offset 14, -4
  649 0002 C8B0     		sub	sp, sp, #288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 15
 
 
  650              		.cfi_def_cfa_offset 304
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  690              	.LVL61:
  691              		.loc 1 170 3 view .LVU225
  692 0024 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 16
 
 
  693              	.LVL62:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  737 0054 70BD     		pop	{r4, r5, r6, pc}
  738              	.LVL65:
  739              	.L27:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 17
 
 
  740              		.cfi_restore_state
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  785              	.LVL69:
  786              		.loc 1 190 26 view .LVU256
  787 0010 8DF80800 		strb	r0, [sp, #8]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 18
 
 
  191:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  831 0042 2946     		mov	r1, r5
  832 0044 42A8     		add	r0, sp, #264
  833 0046 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 19
 
 
  834              	.LVL75:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  879              		.cfi_offset 14, -4
  880 0004 8AB0     		sub	sp, sp, #40
  881              		.cfi_def_cfa_offset 64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 20
 
 
  882 0006 0746     		mov	r7, r0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  927              	.LVL83:
  928              		.loc 1 220 6 discriminator 1 view .LVU301
  929 0042 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 21
 
 
  930 0044 15DB     		blt	.L35
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  973              		.loc 1 221 12 view .LVU322
  974 0072 FF20     		movs	r0, #255
  975 0074 FAE7     		b	.L34
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 22
 
 
  976              		.cfi_endproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1023              		.loc 1 239 3 is_stmt 1 view .LVU332
  1024              		.loc 1 239 10 is_stmt 0 view .LVU333
  1025 0022 0223     		movs	r3, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 23
 
 
  1026 0024 ADF84A30 		strh	r3, [sp, #74]	@ movhi
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1068              	.L39:
  243:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
  1069              		.loc 1 243 12 view .LVU348
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 24
 
 
  1070 0054 FF25     		movs	r5, #255
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1118 001e ADF81030 		strh	r3, [sp, #16]	@ movhi
  257:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x003;
  1119              		.loc 1 257 3 is_stmt 1 view .LVU358
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 25
 
 
  1120              		.loc 1 257 10 is_stmt 0 view .LVU359
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1162              		.loc 1 265 10 is_stmt 0 view .LVU373
  1163 0052 F5E7     		b	.L43
  1164              	.L44:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 26
 
 
  261:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1212 001a 0423     		movs	r3, #4
  1213 001c ADF80830 		strh	r3, [sp, #8]	@ movhi
  275:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x009;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 27
 
 
  1214              		.loc 1 275 3 is_stmt 1 view .LVU384
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  283:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
  1257              		.loc 1 283 10 is_stmt 0 view .LVU399
  1258 0052 F5E7     		b	.L48
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 28
 
 
  1259              	.L49:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1305              		.loc 1 293 3 view .LVU409
  1306 0010 FFF7FEFF 		bl	Osal_MemSet
  1307              	.LVL110:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 29
 
 
  294:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   int index_input = 0;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1351 0042 0028     		cmp	r0, #0
  1352 0044 07DB     		blt	.L54
  305:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 30
 
 
  306:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1400              		.cfi_offset 14, -4
  1401 0002 C8B0     		sub	sp, sp, #288
  1402              		.cfi_def_cfa_offset 304
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 31
 
 
  1403 0004 0146     		mov	r1, r0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1445 0032 4592     		str	r2, [sp, #276]
  326:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
  1446              		.loc 1 326 3 is_stmt 1 view .LVU461
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 32
 
 
  1447              		.loc 1 326 13 is_stmt 0 view .LVU462
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1493              		@ frame_needed = 0, uses_anonymous_args = 0
  1494              		.loc 1 335 1 is_stmt 0 view .LVU473
  1495 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 33
 
 
  1496              		.cfi_def_cfa_offset 16
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1541 0030 0021     		movs	r1, #0
  1542 0032 02A8     		add	r0, sp, #8
  1543 0034 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 34
 
 
  1544              	.LVL130:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  354:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
  1590              		.loc 1 354 1 is_stmt 1 view -0
  1591              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 35
 
 
  1592              		@ args = 0, pretend = 0, frame = 40
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1637 002e 0021     		movs	r1, #0
  1638 0030 04A8     		add	r0, sp, #16
  1639 0032 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 36
 
 
  1640              	.LVL136:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  370:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
  371:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_set_random_address( const uint8_t* Random_Address )
  372:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 37
 
 
  1686              		.loc 1 372 1 is_stmt 1 view -0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1731 0026 ADF80831 		strh	r3, [sp, #264]	@ movhi
  382:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x005;
  1732              		.loc 1 382 3 is_stmt 1 view .LVU544
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 38
 
 
  1733              		.loc 1 382 10 is_stmt 0 view .LVU545
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1779              		.align	1
  1780              		.global	hci_le_set_advertising_parameters
  1781              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 39
 
 
  1782              		.thumb
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  408:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Advertising_Interval_Max = Advertising_Interval_Max;
  1820              		.loc 1 408 3 view .LVU573
  1821              		.loc 1 408 33 is_stmt 0 view .LVU574
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 40
 
 
  1822 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1864 003c 9DF83C31 		ldrb	r3, [sp, #316]	@ zero_extendqisi2
  1865 0040 8DF81630 		strb	r3, [sp, #22]
  421:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 41
 
 
  1866              		.loc 1 421 3 is_stmt 1 view .LVU596
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1909              		.loc 1 432 1 view .LVU615
  1910 0076 48B0     		add	sp, sp, #288
  1911              		.cfi_remember_state
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 42
 
 
  1912              		.cfi_def_cfa_offset 16
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  1960 0014 0021     		movs	r1, #0
  1961 0016 02A8     		add	r0, sp, #8
  1962 0018 FFF7FEFF 		bl	Osal_MemSet
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 43
 
 
  1963              	.LVL170:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2006              	.LVL172:
  2007              	.L79:
  2008              		.cfi_restore_state
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 44
 
 
  445:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2054 0010 8DF80800 		strb	r0, [sp, #8]
  461:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  2055              		.loc 1 461 3 is_stmt 1 view .LVU655
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 45
 
 
  2056              	.LVL177:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2100 0048 03DB     		blt	.L83
  472:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
  473:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   return status;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 46
 
 
  2101              		.loc 1 473 3 is_stmt 1 view .LVU675
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2147              		.loc 1 482 3 view .LVU684
  2148              		.loc 1 482 14 is_stmt 0 view .LVU685
  2149 0004 0DF10705 		add	r5, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 47
 
 
  2150 0008 0024     		movs	r4, #0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2193 003a 4695     		str	r5, [sp, #280]
  494:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rlen = 1;
  2194              		.loc 1 494 3 is_stmt 1 view .LVU705
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 48
 
 
  2195              		.loc 1 494 11 is_stmt 0 view .LVU706
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2243              		.cfi_offset 4, -16
  2244              		.cfi_offset 5, -12
  2245              		.cfi_offset 6, -8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 49
 
 
  2246              		.cfi_offset 14, -4
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2288              		.loc 1 513 11 is_stmt 0 view .LVU735
  2289 002c 0123     		movs	r3, #1
  2290 002e 4593     		str	r3, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 50
 
 
  514:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  525:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                        uint8_t Scanning_Filter_Policy )
  526:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
  2335              		.loc 1 526 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 51
 
 
  2336              		.cfi_startproc
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2378              		.loc 1 538 25 is_stmt 0 view .LVU766
  2379 001c 8DF80D30 		strb	r3, [sp, #13]
  539:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 52
 
 
  2380              		.loc 1 539 3 is_stmt 1 view .LVU767
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2424              		.loc 1 549 3 is_stmt 1 view .LVU788
  2425              		.loc 1 549 8 is_stmt 0 view .LVU789
  2426 004a 2946     		mov	r1, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 53
 
 
  2427 004c 42A8     		add	r0, sp, #264
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  557:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   struct hci_request rq;
  2475              		.loc 1 557 3 is_stmt 1 view .LVU797
  558:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 54
 
 
  2476              		.loc 1 558 3 view .LVU798
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2519 002e 4495     		str	r5, [sp, #272]
  570:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.clen = index_input;
  2520              		.loc 1 570 3 is_stmt 1 view .LVU819
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 55
 
 
  2521              		.loc 1 570 11 is_stmt 0 view .LVU820
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  578:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_create_connection( uint16_t LE_Scan_Interval,
  579:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                      uint16_t LE_Scan_Window,
  580:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                      uint8_t Initiator_Filter_Policy,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 56
 
 
  581:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                      uint8_t Peer_Address_Type,
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2604              		.loc 1 599 3 is_stmt 1 view .LVU846
  2605              	.LVL234:
  600:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Initiator_Filter_Policy = Initiator_Filter_Policy;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 57
 
 
  2606              		.loc 1 600 3 view .LVU847
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2648              		.loc 1 612 21 is_stmt 0 view .LVU868
  2649 0044 BDF84031 		ldrh	r3, [sp, #320]
  2650 0048 ADF81930 		strh	r3, [sp, #25]	@ unaligned
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 58
 
 
  613:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 2;
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2692              		.loc 1 625 3 is_stmt 1 view .LVU888
  2693              		.loc 1 625 11 is_stmt 0 view .LVU889
  2694 0080 1923     		movs	r3, #25
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 59
 
 
  2695 0082 4593     		str	r3, [sp, #276]
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2741              		.cfi_startproc
  2742              		@ args = 0, pretend = 0, frame = 32
  2743              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 60
 
 
  2744 0000 10B5     		push	{r4, lr}
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2788 0036 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  2789              	.L106:
  645:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 61
 
 
  2790              		.loc 1 645 1 view .LVU919
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2838              		.loc 1 652 3 is_stmt 1 view .LVU927
  2839 0012 1822     		movs	r2, #24
  2840 0014 0021     		movs	r1, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 62
 
 
  2841 0016 02A8     		add	r0, sp, #8
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2884              		@ sp needed
  2885 0048 30BD     		pop	{r4, r5, pc}
  2886              	.LVL258:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 63
 
 
  2887              	.L111:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2933              		.loc 1 672 3 is_stmt 1 view .LVU957
  2934              		.loc 1 672 13 is_stmt 0 view .LVU958
  2935 0020 0DF10703 		add	r3, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 64
 
 
  2936 0024 0693     		str	r3, [sp, #24]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  2982              		.loc 1 681 1 is_stmt 0 view .LVU969
  2983 0000 70B5     		push	{r4, r5, r6, lr}
  2984              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 65
 
 
  2985              		.cfi_offset 4, -16
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  693:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x011;
  3028              		.loc 1 693 3 is_stmt 1 view .LVU986
  3029              		.loc 1 693 10 is_stmt 0 view .LVU987
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 66
 
 
  3030 002e 1123     		movs	r3, #17
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3076              		.global	hci_le_remove_device_from_filter_accept_list
  3077              		.syntax unified
  3078              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 67
 
 
  3079              		.thumb_func
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3122              	.LVL277:
  714:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 6;
  3123              		.loc 1 714 3 is_stmt 1 view .LVU1017
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 68
 
 
  715:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3167              		.cfi_remember_state
  3168              		.cfi_def_cfa_offset 16
  3169              		@ sp needed
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 69
 
 
  3170 0052 70BD     		pop	{r4, r5, r6, pc}
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  739:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   int index_input = 0;
  3212              		.loc 1 739 3 is_stmt 1 view .LVU1045
  3213              	.LVL283:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 70
 
 
  740:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Connection_Handle = Connection_Handle;
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  753:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 2;
  3255              		.loc 1 753 3 is_stmt 1 view .LVU1068
  3256              	.LVL292:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 71
 
 
  754:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3302 0066 A842     		cmp	r0, r5
  3303 0068 03DB     		blt	.L127
  763:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 72
 
 
  764:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   return status;
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  772:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   tBleStatus status = 0;
  3351              		.loc 1 772 3 view .LVU1099
  3352              		.loc 1 772 14 is_stmt 0 view .LVU1100
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 73
 
 
  3353 0006 0DF10705 		add	r5, sp, #7
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  783:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
  3397              		.loc 1 783 3 is_stmt 1 view .LVU1119
  3398              		.loc 1 783 8 is_stmt 0 view .LVU1120
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 74
 
 
  3399 003c 2146     		mov	r1, r4
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3447              		.cfi_def_cfa_offset 304
  3448 0004 0446     		mov	r4, r0
  3449 0006 0D46     		mov	r5, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 75
 
 
  791:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   struct hci_request rq;
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3491              		.loc 1 803 3 is_stmt 1 view .LVU1147
  3492              		.loc 1 803 11 is_stmt 0 view .LVU1148
  3493 0030 0222     		movs	r2, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 76
 
 
  3494 0032 4592     		str	r2, [sp, #276]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3536              	.L135:
  807:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
  3537              		.loc 1 807 12 view .LVU1163
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 77
 
 
  3538 0060 FF24     		movs	r4, #255
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3584              	.LVL324:
  823:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
  3585              		.loc 1 823 3 view .LVU1176
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 78
 
 
  3586 0014 1822     		movs	r2, #24
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3630 0046 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  3631              	.L139:
  834:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 79
 
 
  3632              		.loc 1 834 1 view .LVU1197
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  843:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   hci_le_encrypt_rp0 resp;
  3679              		.loc 1 843 3 view .LVU1204
  844:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 80
 
 
  3680              		.loc 1 844 3 view .LVU1205
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3725              		.loc 1 853 3 is_stmt 1 view .LVU1220
  3726              		.loc 1 853 13 is_stmt 0 view .LVU1221
  3727 0046 CDF82081 		str	r8, [sp, #288]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 81
 
 
  854:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.clen = index_input;
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  862:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
  3771              		.loc 1 862 3 view .LVU1236
  862:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 82
 
 
  3772              		.loc 1 862 10 is_stmt 0 view .LVU1237
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3819 0012 1822     		movs	r2, #24
  3820 0014 0021     		movs	r1, #0
  3821 0016 04A8     		add	r0, sp, #16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 83
 
 
  3822 0018 FFF7FEFF 		bl	Osal_MemSet
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3864              		.loc 1 879 3 is_stmt 1 view .LVU1262
  3865 0046 0822     		movs	r2, #8
  3866 0048 0DF10501 		add	r1, sp, #5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 84
 
 
  3867 004c 2046     		mov	r0, r4
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  891:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   tBleStatus status = 0;
  3911              		.loc 1 891 3 view .LVU1271
  3912              		.loc 1 891 14 is_stmt 0 view .LVU1272
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 85
 
 
  3913 000a 0DF10708 		add	r8, sp, #7
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  3956 003c 0823     		movs	r3, #8
  3957 003e ADF80831 		strh	r3, [sp, #264]	@ movhi
  903:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x019;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 86
 
 
  3958              		.loc 1 903 3 is_stmt 1 view .LVU1290
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4002              		.loc 1 910 12 view .LVU1308
  4003 0070 FF20     		movs	r0, #255
  4004 0072 FAE7     		b	.L153
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 87
 
 
  4005              		.cfi_endproc
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  923:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Connection_Handle = Connection_Handle;
  4051              		.loc 1 923 3 view .LVU1319
  4052              		.loc 1 923 26 is_stmt 0 view .LVU1320
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 88
 
 
  4053 0014 02AF     		add	r7, sp, #8
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4096 0048 0021     		movs	r1, #0
  4097 004a 42A8     		add	r0, sp, #264
  4098 004c FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 89
 
 
  4099              	.LVL374:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  943:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   struct hci_request rq;
  4146              		.loc 1 943 3 is_stmt 1 view .LVU1347
  944:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 90
 
 
  4147              		.loc 1 944 3 view .LVU1348
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  956:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &resp;
  4190              		.loc 1 956 3 is_stmt 1 view .LVU1367
  4191              		.loc 1 956 13 is_stmt 0 view .LVU1368
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 91
 
 
  4192 0034 4695     		str	r5, [sp, #280]
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4237              		@ args = 0, pretend = 0, frame = 40
  4238              		@ frame_needed = 0, uses_anonymous_args = 0
  4239              		.loc 1 966 1 is_stmt 0 view .LVU1379
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 92
 
 
  4240 0000 30B5     		push	{r4, r5, lr}
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4285              	.LVL389:
  4286              		.loc 1 975 6 discriminator 1 view .LVU1395
  4287 0036 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 93
 
 
  4288 0038 0CDB     		blt	.L166
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4331              		.loc 1 984 1 is_stmt 1 view -0
  4332              		.cfi_startproc
  4333              		@ args = 0, pretend = 0, frame = 288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 94
 
 
  4334              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4378 0026 ADF80A31 		strh	r3, [sp, #266]	@ movhi
  995:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.cparam = cmd_buffer;
  4379              		.loc 1 995 3 is_stmt 1 view .LVU1422
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 95
 
 
  4380              		.loc 1 995 13 is_stmt 0 view .LVU1423
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4428              	.LVL401:
  4429              	.LFB41:
 1003:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 96
 
 
 1004:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_transmitter_test( uint8_t TX_Frequency,
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1018:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  4470              		.loc 1 1018 3 is_stmt 1 view .LVU1454
  4471              	.LVL407:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 97
 
 
 1019:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4516              		.loc 1 1028 10 is_stmt 0 view .LVU1475
  4517 004a 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  4518              	.L174:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 98
 
 
 1029:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4567              	.LVL416:
 1036:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
  4568              		.loc 1 1036 3 is_stmt 1 view .LVU1484
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 99
 
 
  4569 0012 1822     		movs	r2, #24
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4612              		.cfi_remember_state
  4613              		.cfi_def_cfa_offset 12
  4614              		@ sp needed
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 100
 
 
  4615 0048 30BD     		pop	{r4, r5, pc}
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4660 0010 0322     		movs	r2, #3
  4661              	.LVL422:
  4662              		.loc 1 1057 3 is_stmt 0 view .LVU1512
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 101
 
 
  4663 0012 0021     		movs	r1, #0
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4706 003e 4494     		str	r4, [sp, #272]
 1069:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.clen = index_input;
  4707              		.loc 1 1069 3 is_stmt 1 view .LVU1533
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 102
 
 
  4708              		.loc 1 1069 11 is_stmt 0 view .LVU1534
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4755              	.LFB44:
 1078:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
 1079:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_read_suggested_default_data_length( uint16_t* SuggestedMaxTxOctets,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 103
 
 
 1080:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                                       uint16_t* SuggestedMaxTxTime )
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4800              		.loc 1 1089 11 is_stmt 0 view .LVU1561
  4801 002c 0523     		movs	r3, #5
  4802 002e 0793     		str	r3, [sp, #28]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 104
 
 
 1090:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4849              		.thumb_func
  4851              	hci_le_write_suggested_default_data_length:
  4852              	.LVL440:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 105
 
 
  4853              	.LFB45:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4893 001a 2146     		mov	r1, r4
  4894              	.LVL446:
  4895              		.loc 1 1111 3 is_stmt 0 view .LVU1593
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 106
 
 
  4896 001c 42A8     		add	r0, sp, #264
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4940              		@ sp needed
  4941 004c 70BD     		pop	{r4, r5, r6, pc}
  4942              	.LVL450:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 107
 
 
  4943              	.L191:
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  4989              		.loc 1 1130 3 is_stmt 1 view .LVU1623
  4990              		.loc 1 1130 12 is_stmt 0 view .LVU1624
  4991 0020 0F23     		movs	r3, #15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 108
 
 
  4992 0022 0393     		str	r3, [sp, #12]
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5038              		.loc 1 1139 1 is_stmt 1 view -0
  5039              		.cfi_startproc
  5040              		@ args = 0, pretend = 0, frame = 288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 109
 
 
  5041              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5085              		.loc 1 1149 10 is_stmt 0 view .LVU1652
  5086 002a 2623     		movs	r3, #38
  5087 002c ADF80A31 		strh	r3, [sp, #266]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 110
 
 
 1150:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.event = 0x0F;
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5132              	.LFE47:
  5134              		.section	.text.hci_le_add_device_to_resolving_list,"ax",%progbits
  5135              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 111
 
 
  5136              		.global	hci_le_add_device_to_resolving_list
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5178              		.loc 1 1171 3 is_stmt 1 view .LVU1681
  5179              	.LVL466:
 1172:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemCpy( (void*)&cp0->Peer_Identity_Address, (const void*)Peer_Identity_Address, 6 );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 112
 
 
  5180              		.loc 1 1172 3 view .LVU1682
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1183:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
  5224              		.loc 1 1183 3 is_stmt 1 view .LVU1699
  5225              		.loc 1 1183 13 is_stmt 0 view .LVU1700
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 113
 
 
  5226 005a 4697     		str	r7, [sp, #280]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5272              		@ frame_needed = 0, uses_anonymous_args = 0
  5273              		.loc 1 1192 1 is_stmt 0 view .LVU1711
  5274 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 114
 
 
  5275              		.cfi_def_cfa_offset 16
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5318 002a ADF80831 		strh	r3, [sp, #264]	@ movhi
 1204:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x028;
  5319              		.loc 1 1204 3 is_stmt 1 view .LVU1728
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 115
 
 
  5320              		.loc 1 1204 10 is_stmt 0 view .LVU1729
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5366              		.align	1
  5367              		.global	hci_le_clear_resolving_list
  5368              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 116
 
 
  5369              		.thumb
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5413 002a 2146     		mov	r1, r4
  5414 002c 02A8     		add	r0, sp, #8
  5415 002e FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 117
 
 
  5416              	.LVL486:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1232:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
  5463              		.loc 1 1232 3 view .LVU1769
  5464 0006 01AD     		add	r5, sp, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 118
 
 
  5465 0008 0222     		movs	r2, #2
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5509 0040 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
  5510              		.loc 1 1242 24 view .LVU1788
  5511 0044 2370     		strb	r3, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 119
 
 
 1243:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   return BLE_STATUS_SUCCESS;
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1252:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   hci_le_read_peer_resolvable_address_cp0 *cp0 = (hci_le_read_peer_resolvable_address_cp0*)(cmd_buf
  5558              		.loc 1 1252 3 view .LVU1796
  5559              	.LVL494:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 120
 
 
 1253:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   hci_le_read_peer_resolvable_address_rp0 resp;
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5603              		.loc 1 1263 3 is_stmt 1 view .LVU1814
  5604              		.loc 1 1263 13 is_stmt 0 view .LVU1815
  5605 003c 4497     		str	r7, [sp, #272]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 121
 
 
 1264:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.clen = index_input;
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5648              		.loc 1 1272 3 view .LVU1830
 1272:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
  5649              		.loc 1 1272 10 is_stmt 0 view .LVU1831
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 122
 
 
  5650 006c F5E7     		b	.L218
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5694 000a 0722     		movs	r2, #7
  5695              	.LVL511:
  5696              		.loc 1 1283 3 is_stmt 0 view .LVU1841
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 123
 
 
  5697 000c 0021     		movs	r1, #0
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5741 0040 4593     		str	r3, [sp, #276]
 1294:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &resp;
  5742              		.loc 1 1294 3 is_stmt 1 view .LVU1860
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 124
 
 
  5743              		.loc 1 1294 13 is_stmt 0 view .LVU1861
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5785              		.loc 1 1297 12 view .LVU1874
  5786 006e FF24     		movs	r4, #255
  5787              	.LVL524:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 125
 
 
 1297:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( resp.Status )
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5833              		.loc 1 1312 3 is_stmt 1 view .LVU1887
  5834              	.LVL529:
 1313:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 126
 
 
  5835              		.loc 1 1313 3 view .LVU1888
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5879              		.cfi_remember_state
  5880              		.cfi_def_cfa_offset 16
  5881              		@ sp needed
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 127
 
 
  5882 0046 70BD     		pop	{r4, r5, r6, pc}
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5928 000e 02AE     		add	r6, sp, #8
  5929              	.LVL537:
  5930              		.loc 1 1332 20 view .LVU1919
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 128
 
 
  5931 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  5974              		.loc 1 1343 10 is_stmt 0 view .LVU1939
  5975 0042 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  5976              	.L232:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 129
 
 
 1344:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** }
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1353:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
  6023              		.loc 1 1353 3 view .LVU1946
  6024 000e 0DF10408 		add	r8, sp, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 130
 
 
  6025 0012 0922     		movs	r2, #9
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1362:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return resp.Status;
 1363:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   *supportedMaxTxOctets = resp.supportedMaxTxOctets;
  6071              		.loc 1 1363 3 is_stmt 1 view .LVU1965
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 131
 
 
  6072              		.loc 1 1363 31 is_stmt 0 view .LVU1966
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1373:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
  6118              		.loc 1 1373 1 is_stmt 1 view -0
  6119              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 132
 
 
  6120              		@ args = 0, pretend = 0, frame = 288
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6165 0020 FFF7FEFF 		bl	Osal_MemSet
  6166              	.LVL559:
 1383:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ogf = 0x08;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 133
 
 
  6167              		.loc 1 1383 3 view .LVU1996
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6210 0056 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
  6211              		.loc 1 1394 11 view .LVU2019
  6212 005a 2B70     		strb	r3, [r5]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 134
 
 
 1395:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   return BLE_STATUS_SUCCESS;
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6257              		.loc 1 1405 3 view .LVU2028
  6258              		.loc 1 1405 14 is_stmt 0 view .LVU2029
  6259 0004 0DF10706 		add	r6, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 135
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 135
 
 
  6260 0008 0025     		movs	r5, #0
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6303              		.loc 1 1416 13 is_stmt 0 view .LVU2050
  6304 0032 4494     		str	r4, [sp, #272]
 1417:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.clen = index_input;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 136
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 136
 
 
  6305              		.loc 1 1417 3 is_stmt 1 view .LVU2051
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1424:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
 1425:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_set_phy( uint16_t Connection_Handle,
 1426:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                            uint8_t ALL_PHYS,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 137
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 137
 
 
 1427:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                            uint8_t TX_PHYS,
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1441:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  6394              		.loc 1 1441 3 is_stmt 1 view .LVU2081
  6395              	.LVL581:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 138
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 138
 
 
 1442:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->RX_PHYS = RX_PHYS;
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1452:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
  6440              		.loc 1 1452 3 is_stmt 1 view .LVU2103
  6441              		.loc 1 1452 13 is_stmt 0 view .LVU2104
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 139
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 139
 
 
  6442 0048 4696     		str	r6, [sp, #280]
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6487              		@ args = 0, pretend = 0, frame = 288
  6488              		@ frame_needed = 0, uses_anonymous_args = 0
  6489              		.loc 1 1462 1 is_stmt 0 view .LVU2115
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 140
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 140
 
 
  6490 0000 70B5     		push	{r4, r5, r6, lr}
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6532              	.LVL599:
  6533              		.loc 1 1474 3 view .LVU2134
  6534 0020 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 141
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 141
 
 
  6535              	.LVL600:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6579 0050 70BD     		pop	{r4, r5, r6, pc}
  6580              	.LVL603:
  6581              	.L253:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 142
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 142
 
 
  6582              		.cfi_restore_state
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6625 000e 02AC     		add	r4, sp, #8
  6626              	.LVL607:
  6627              		.loc 1 1496 21 view .LVU2165
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 143
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 143
 
 
  6628 0010 8DF80800 		strb	r0, [sp, #8]
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6670              		.loc 1 1508 11 is_stmt 0 view .LVU2187
  6671 0038 0423     		movs	r3, #4
  6672 003a 4593     		str	r3, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 144
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 144
 
 
 1509:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6718              		.loc 1 1518 1 is_stmt 1 view -0
  6719              		.cfi_startproc
  6720              		@ args = 0, pretend = 0, frame = 288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 145
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 145
 
 
  6721              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6764              		.loc 1 1529 3 view .LVU2215
  6765              		.loc 1 1529 10 is_stmt 0 view .LVU2216
  6766 0028 0823     		movs	r3, #8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 146
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 146
 
 
  6767 002a ADF80831 		strh	r3, [sp, #264]	@ movhi
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6811              		.cfi_endproc
  6812              	.LFE62:
  6814              		.section	.text.hci_le_set_extended_advertising_parameters,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 147
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 147
 
 
  6815              		.align	1
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  6848              		.loc 1 1560 3 view .LVU2239
 1561:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
  6849              		.loc 1 1561 3 view .LVU2240
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 148
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 148
 
 
  6850 000e 0DF10409 		add	r9, sp, #4
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1572:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  6894              		.loc 1 1572 3 is_stmt 1 view .LVU2258
  6895              	.LVL639:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 149
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 149
 
 
 1573:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Own_Address_Type = Own_Address_Type;
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1586:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  6937              		.loc 1 1586 3 is_stmt 1 view .LVU2278
  6938              	.LVL646:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 150
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 150
 
 
 1587:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Secondary_Adv_PHY = Secondary_Adv_PHY;
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1599:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rlen = sizeof(resp);
  6981              		.loc 1 1599 3 is_stmt 1 view .LVU2299
  6982              		.loc 1 1599 11 is_stmt 0 view .LVU2300
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 151
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 151
 
 
  6983 00b8 0223     		movs	r3, #2
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7031              	.LFB64:
 1607:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
 1608:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_set_extended_advertising_data( uint8_t Advertising_Handle,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 152
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 152
 
 
 1609:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                                  uint8_t Operation,
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7071              		.loc 1 1623 3 view .LVU2328
  7072              		.loc 1 1623 28 is_stmt 0 view .LVU2329
  7073 001a 8DF80A20 		strb	r2, [sp, #10]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 153
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 153
 
 
 1624:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7117              		.loc 1 1634 3 is_stmt 1 view .LVU2349
  7118              		.loc 1 1634 13 is_stmt 0 view .LVU2350
  7119 0048 4697     		str	r7, [sp, #280]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 154
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 154
 
 
 1635:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rlen = 1;
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7163              		.cfi_startproc
  7164              		@ args = 4, pretend = 0, frame = 288
  7165              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 155
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 155
 
 
  7166              		.loc 1 1646 1 is_stmt 0 view .LVU2361
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7208 001e 8DF80B30 		strb	r3, [sp, #11]
 1659:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
  7209              		.loc 1 1659 3 is_stmt 1 view .LVU2380
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 156
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 156
 
 
  7210              	.LVL676:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7254              		.loc 1 1669 3 is_stmt 1 view .LVU2400
  7255              		.loc 1 1669 8 is_stmt 0 view .LVU2401
  7256 004e 3146     		mov	r1, r6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 157
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 157
 
 
  7257 0050 42A8     		add	r0, sp, #264
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7304 0002 C9B0     		sub	sp, sp, #292
  7305              		.cfi_def_cfa_offset 312
  7306 0004 0C46     		mov	r4, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 158
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 158
 
 
  7307 0006 1146     		mov	r1, r2
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7349 002a 1822     		movs	r2, #24
  7350 002c 2946     		mov	r1, r5
  7351 002e 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 159
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 159
 
 
  7352 0030 FFF7FEFF 		bl	Osal_MemSet
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7396              		.cfi_restore_state
 1697:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
  7397              		.loc 1 1697 12 view .LVU2447
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 160
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 160
 
 
  7398 005e FF20     		movs	r0, #255
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7446 001e ADF80830 		strh	r3, [sp, #8]	@ movhi
 1708:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x03a;
  7447              		.loc 1 1708 3 is_stmt 1 view .LVU2457
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 161
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 161
 
 
  7448              		.loc 1 1708 10 is_stmt 0 view .LVU2458
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7492              	.LFE67:
  7494              		.section	.text.hci_le_read_number_of_supported_advertising_sets,"ax",%progbits
  7495              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 162
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 162
 
 
  7496              		.global	hci_le_read_number_of_supported_advertising_sets
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1727:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &resp;
  7542              		.loc 1 1727 3 is_stmt 1 view .LVU2486
  7543              		.loc 1 1727 13 is_stmt 0 view .LVU2487
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 163
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 163
 
 
  7544 0028 0695     		str	r5, [sp, #24]
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7590              		.thumb_func
  7592              	hci_le_remove_advertising_set:
  7593              	.LVL711:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 164
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 164
 
 
  7594              	.LFB69:
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7636              		.loc 1 1747 10 is_stmt 0 view .LVU2517
  7637 001e 0823     		movs	r3, #8
  7638 0020 ADF80831 		strh	r3, [sp, #264]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 165
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 165
 
 
 1748:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x03c;
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7684              		.section	.text.hci_le_clear_advertising_sets,"ax",%progbits
  7685              		.align	1
  7686              		.global	hci_le_clear_advertising_sets
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 166
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 166
 
 
  7687              		.syntax unified
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7731              		.loc 1 1767 8 is_stmt 0 view .LVU2549
  7732 002a 2146     		mov	r1, r4
  7733 002c 02A8     		add	r0, sp, #8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 167
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 167
 
 
  7734 002e FFF7FEFF 		bl	hci_send_req
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1777:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   struct hci_request rq;
  7780              		.loc 1 1777 3 is_stmt 1 view .LVU2557
 1778:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 168
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 168
 
 
  7781              		.loc 1 1778 3 view .LVU2558
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7823 0028 1822     		movs	r2, #24
  7824 002a 2946     		mov	r1, r5
  7825 002c 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 169
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 169
 
 
  7826 002e FFF7FEFF 		bl	Osal_MemSet
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7870              	.L297:
  7871              		.cfi_restore_state
 1798:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 170
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 170
 
 
  7872              		.loc 1 1798 12 view .LVU2597
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7916              		.loc 1 1812 15 view .LVU2608
  7917 0010 8DF80800 		strb	r0, [sp, #8]
 1813:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   index_input += 1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 171
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 171
 
 
  7918              		.loc 1 1813 3 is_stmt 1 view .LVU2609
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  7961 003a 4593     		str	r3, [sp, #276]
 1825:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rparam = &status;
  7962              		.loc 1 1825 3 is_stmt 1 view .LVU2631
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 172
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 172
 
 
  7963              		.loc 1 1825 13 is_stmt 0 view .LVU2632
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1837:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****                                               const Init_Param_Phy_t* Init_Param_Phy )
 1838:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
  8007              		.loc 1 1838 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 173
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 173
 
 
  8008              		.cfi_startproc
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8050 001c 0622     		movs	r2, #6
  8051              	.LVL757:
  8052              		.loc 1 1850 3 is_stmt 0 view .LVU2661
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 174
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 174
 
 
  8053 001e 1946     		mov	r1, r3
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8096              		.loc 1 1861 3 is_stmt 1 view .LVU2679
  8097              		.loc 1 1861 11 is_stmt 0 view .LVU2680
  8098 0058 3A23     		movs	r3, #58
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 175
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 175
 
 
  8099 005a 4593     		str	r3, [sp, #276]
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1871:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** {
  8145              		.loc 1 1871 1 is_stmt 1 view -0
  8146              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 176
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 176
 
 
  8147              		@ args = 0, pretend = 0, frame = 32
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8193 002e 0793     		str	r3, [sp, #28]
 1880:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
  8194              		.loc 1 1880 3 is_stmt 1 view .LVU2708
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 177
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 177
 
 
  8195              		.loc 1 1880 8 is_stmt 0 view .LVU2709
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8243              	.LVL773:
  8244              	.LFB75:
 1888:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 178
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 178
 
 
 1889:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c **** tBleStatus hci_le_read_rf_path_compensation( uint16_t* RF_TX_Path_Compensation,
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8288              		.loc 1 1899 3 is_stmt 1 view .LVU2737
  8289              		.loc 1 1899 11 is_stmt 0 view .LVU2738
  8290 002c 0523     		movs	r3, #5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 179
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 179
 
 
  8291 002e 0793     		str	r3, [sp, #28]
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8337              		.thumb
  8338              		.thumb_func
  8340              	hci_le_write_rf_path_compensation:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 180
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 180
 
 
  8341              	.LVL780:
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8381 0018 1822     		movs	r2, #24
  8382 001a 2146     		mov	r1, r4
  8383              	.LVL786:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 181
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 181
 
 
  8384              		.loc 1 1921 3 is_stmt 0 view .LVU2770
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8428              		.cfi_def_cfa_offset 16
  8429              		@ sp needed
  8430 004c 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 182
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 182
 
 
  8431              	.LVL790:
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1942:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   cp0->Peer_Identity_Address_Type = Peer_Identity_Address_Type;
  8476              		.loc 1 1942 3 view .LVU2799
  8477              		.loc 1 1942 35 is_stmt 0 view .LVU2800
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 183
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 183
 
 
  8478 0010 02AD     		add	r5, sp, #8
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8521 003e 4697     		str	r7, [sp, #280]
 1954:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.rlen = 1;
  8522              		.loc 1 1954 3 is_stmt 1 view .LVU2821
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 184
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 184
 
 
  8523              		.loc 1 1954 11 is_stmt 0 view .LVU2822
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8570              		.cfi_def_cfa_offset 20
  8571              		.cfi_offset 4, -20
  8572              		.cfi_offset 5, -16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 185
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 185
 
 
  8573              		.cfi_offset 6, -12
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8616              		.loc 1 1973 10 is_stmt 0 view .LVU2848
  8617 002a 0823     		movs	r3, #8
  8618 002c ADF80831 		strh	r3, [sp, #264]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 186
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 186
 
 
 1974:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****   rq.ocf = 0x05e;
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
 1981:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c ****     return BLE_STATUS_TIMEOUT;
  8663              		.loc 1 1981 12 view .LVU2867
  8664 005a FF20     		movs	r0, #255
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 187
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 187
 
 
  8665 005c FBE7     		b	.L324
@@ -11171,175 +11171,175 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 1
  8673              		.file 4 "Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h"
  8674              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
  8675              		.file 6 "Middlewares/ST/STM32_WPAN/ble/core/template/osal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 188
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 188
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ble_hci_le.c
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:21     .text.hci_disconnect:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:27     .text.hci_disconnect:00000000 hci_disconnect
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:131    .text.hci_read_remote_version_information:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:137    .text.hci_read_remote_version_information:00000000 hci_read_remote_version_information
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:234    .text.hci_set_event_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:240    .text.hci_set_event_mask:00000000 hci_set_event_mask
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:335    .text.hci_reset:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:341    .text.hci_reset:00000000 hci_reset
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:407    .text.hci_read_transmit_power_level:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:413    .text.hci_read_transmit_power_level:00000000 hci_read_transmit_power_level
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:530    .text.hci_set_controller_to_host_flow_control:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:536    .text.hci_set_controller_to_host_flow_control:00000000 hci_set_controller_to_host_flow_control
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:629    .text.hci_host_buffer_size:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:635    .text.hci_host_buffer_size:00000000 hci_host_buffer_size
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:748    .text.hci_host_number_of_completed_packets:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:754    .text.hci_host_number_of_completed_packets:00000000 hci_host_number_of_completed_packets
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:858    .text.hci_read_local_version_information:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:864    .text.hci_read_local_version_information:00000000 hci_read_local_version_information
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:980    .text.hci_read_local_supported_commands:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:986    .text.hci_read_local_supported_commands:00000000 hci_read_local_supported_commands
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1076   .text.hci_read_local_supported_features:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1082   .text.hci_read_local_supported_features:00000000 hci_read_local_supported_features
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1172   .text.hci_read_bd_addr:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1178   .text.hci_read_bd_addr:00000000 hci_read_bd_addr
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1267   .text.hci_read_rssi:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1273   .text.hci_read_rssi:00000000 hci_read_rssi
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1381   .text.hci_le_set_event_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1387   .text.hci_le_set_event_mask:00000000 hci_le_set_event_mask
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1481   .text.hci_le_read_buffer_size:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1487   .text.hci_le_read_buffer_size:00000000 hci_le_read_buffer_size
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1581   .text.hci_le_read_local_supported_features:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1587   .text.hci_le_read_local_supported_features:00000000 hci_le_read_local_supported_features
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1677   .text.hci_le_set_random_address:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1683   .text.hci_le_set_random_address:00000000 hci_le_set_random_address
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1779   .text.hci_le_set_advertising_parameters:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1785   .text.hci_le_set_advertising_parameters:00000000 hci_le_set_advertising_parameters
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1925   .text.hci_le_read_advertising_physical_channel_tx_power:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:1931   .text.hci_le_read_advertising_physical_channel_tx_power:00000000 hci_le_read_advertising_physical_channel_tx_power
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2016   .text.hci_le_set_advertising_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2022   .text.hci_le_set_advertising_data:00000000 hci_le_set_advertising_data
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2121   .text.hci_le_set_scan_response_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2127   .text.hci_le_set_scan_response_data:00000000 hci_le_set_scan_response_data
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2227   .text.hci_le_set_advertising_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2233   .text.hci_le_set_advertising_enable:00000000 hci_le_set_advertising_enable
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2326   .text.hci_le_set_scan_parameters:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2332   .text.hci_le_set_scan_parameters:00000000 hci_le_set_scan_parameters
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2453   .text.hci_le_set_scan_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2459   .text.hci_le_set_scan_enable:00000000 hci_le_set_scan_enable
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2560   .text.hci_le_create_connection:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2566   .text.hci_le_create_connection:00000000 hci_le_create_connection
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2732   .text.hci_le_create_connection_cancel:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2738   .text.hci_le_create_connection_cancel:00000000 hci_le_create_connection_cancel
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2805   .text.hci_le_read_filter_accept_list_size:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2811   .text.hci_le_read_filter_accept_list_size:00000000 hci_le_read_filter_accept_list_size
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2896   .text.hci_le_clear_filter_accept_list:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 189
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:21     .text.hci_disconnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:27     .text.hci_disconnect:00000000 hci_disconnect
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:131    .text.hci_read_remote_version_information:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:137    .text.hci_read_remote_version_information:00000000 hci_read_remote_version_information
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:234    .text.hci_set_event_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:240    .text.hci_set_event_mask:00000000 hci_set_event_mask
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:335    .text.hci_reset:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:341    .text.hci_reset:00000000 hci_reset
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:407    .text.hci_read_transmit_power_level:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:413    .text.hci_read_transmit_power_level:00000000 hci_read_transmit_power_level
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:530    .text.hci_set_controller_to_host_flow_control:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:536    .text.hci_set_controller_to_host_flow_control:00000000 hci_set_controller_to_host_flow_control
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:629    .text.hci_host_buffer_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:635    .text.hci_host_buffer_size:00000000 hci_host_buffer_size
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:748    .text.hci_host_number_of_completed_packets:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:754    .text.hci_host_number_of_completed_packets:00000000 hci_host_number_of_completed_packets
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:858    .text.hci_read_local_version_information:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:864    .text.hci_read_local_version_information:00000000 hci_read_local_version_information
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:980    .text.hci_read_local_supported_commands:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:986    .text.hci_read_local_supported_commands:00000000 hci_read_local_supported_commands
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1076   .text.hci_read_local_supported_features:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1082   .text.hci_read_local_supported_features:00000000 hci_read_local_supported_features
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1172   .text.hci_read_bd_addr:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1178   .text.hci_read_bd_addr:00000000 hci_read_bd_addr
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1267   .text.hci_read_rssi:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1273   .text.hci_read_rssi:00000000 hci_read_rssi
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1381   .text.hci_le_set_event_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1387   .text.hci_le_set_event_mask:00000000 hci_le_set_event_mask
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1481   .text.hci_le_read_buffer_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1487   .text.hci_le_read_buffer_size:00000000 hci_le_read_buffer_size
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1581   .text.hci_le_read_local_supported_features:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1587   .text.hci_le_read_local_supported_features:00000000 hci_le_read_local_supported_features
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1677   .text.hci_le_set_random_address:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1683   .text.hci_le_set_random_address:00000000 hci_le_set_random_address
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1779   .text.hci_le_set_advertising_parameters:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1785   .text.hci_le_set_advertising_parameters:00000000 hci_le_set_advertising_parameters
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1925   .text.hci_le_read_advertising_physical_channel_tx_power:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:1931   .text.hci_le_read_advertising_physical_channel_tx_power:00000000 hci_le_read_advertising_physical_channel_tx_power
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2016   .text.hci_le_set_advertising_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2022   .text.hci_le_set_advertising_data:00000000 hci_le_set_advertising_data
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2121   .text.hci_le_set_scan_response_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2127   .text.hci_le_set_scan_response_data:00000000 hci_le_set_scan_response_data
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2227   .text.hci_le_set_advertising_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2233   .text.hci_le_set_advertising_enable:00000000 hci_le_set_advertising_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2326   .text.hci_le_set_scan_parameters:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2332   .text.hci_le_set_scan_parameters:00000000 hci_le_set_scan_parameters
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2453   .text.hci_le_set_scan_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2459   .text.hci_le_set_scan_enable:00000000 hci_le_set_scan_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2560   .text.hci_le_create_connection:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2566   .text.hci_le_create_connection:00000000 hci_le_create_connection
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2732   .text.hci_le_create_connection_cancel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2738   .text.hci_le_create_connection_cancel:00000000 hci_le_create_connection_cancel
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2805   .text.hci_le_read_filter_accept_list_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2811   .text.hci_le_read_filter_accept_list_size:00000000 hci_le_read_filter_accept_list_size
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2896   .text.hci_le_clear_filter_accept_list:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 189
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2902   .text.hci_le_clear_filter_accept_list:00000000 hci_le_clear_filter_accept_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2969   .text.hci_le_add_device_to_filter_accept_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:2975   .text.hci_le_add_device_to_filter_accept_list:00000000 hci_le_add_device_to_filter_accept_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3075   .text.hci_le_remove_device_from_filter_accept_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3081   .text.hci_le_remove_device_from_filter_accept_list:00000000 hci_le_remove_device_from_filter_accept_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3181   .text.hci_le_connection_update:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3187   .text.hci_le_connection_update:00000000 hci_le_connection_update
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3324   .text.hci_le_set_host_channel_classification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3330   .text.hci_le_set_host_channel_classification:00000000 hci_le_set_host_channel_classification
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3426   .text.hci_le_read_channel_map:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3432   .text.hci_le_read_channel_map:00000000 hci_le_read_channel_map
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3544   .text.hci_le_read_remote_features:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3550   .text.hci_le_read_remote_features:00000000 hci_le_read_remote_features
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3648   .text.hci_le_encrypt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3654   .text.hci_le_encrypt:00000000 hci_le_encrypt
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3785   .text.hci_le_rand:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3791   .text.hci_le_rand:00000000 hci_le_rand
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3881   .text.hci_le_enable_encryption:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:3887   .text.hci_le_enable_encryption:00000000 hci_le_enable_encryption
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4009   .text.hci_le_long_term_key_request_reply:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4015   .text.hci_le_long_term_key_request_reply:00000000 hci_le_long_term_key_request_reply
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4123   .text.hci_le_long_term_key_request_negative_reply:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4129   .text.hci_le_long_term_key_request_negative_reply:00000000 hci_le_long_term_key_request_negative_reply
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4226   .text.hci_le_read_supported_states:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4232   .text.hci_le_read_supported_states:00000000 hci_le_read_supported_states
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4322   .text.hci_le_receiver_test:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4328   .text.hci_le_receiver_test:00000000 hci_le_receiver_test
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4421   .text.hci_le_transmitter_test:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4427   .text.hci_le_transmitter_test:00000000 hci_le_transmitter_test
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4535   .text.hci_le_test_end:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4541   .text.hci_le_test_end:00000000 hci_le_test_end
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4626   .text.hci_le_set_data_length:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4632   .text.hci_le_set_data_length:00000000 hci_le_set_data_length
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4747   .text.hci_le_read_suggested_default_data_length:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4753   .text.hci_le_read_suggested_default_data_length:00000000 hci_le_read_suggested_default_data_length
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4845   .text.hci_le_write_suggested_default_data_length:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4851   .text.hci_le_write_suggested_default_data_length:00000000 hci_le_write_suggested_default_data_length
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4952   .text.hci_le_read_local_p256_public_key:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:4958   .text.hci_le_read_local_p256_public_key:00000000 hci_le_read_local_p256_public_key
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5029   .text.hci_le_generate_dhkey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5035   .text.hci_le_generate_dhkey:00000000 hci_le_generate_dhkey
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5135   .text.hci_le_add_device_to_resolving_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5141   .text.hci_le_add_device_to_resolving_list:00000000 hci_le_add_device_to_resolving_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5260   .text.hci_le_remove_device_from_resolving_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5266   .text.hci_le_remove_device_from_resolving_list:00000000 hci_le_remove_device_from_resolving_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5366   .text.hci_le_clear_resolving_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5372   .text.hci_le_clear_resolving_list:00000000 hci_le_clear_resolving_list
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5439   .text.hci_le_read_resolving_list_size:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5445   .text.hci_le_read_resolving_list_size:00000000 hci_le_read_resolving_list_size
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5530   .text.hci_le_read_peer_resolvable_address:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5536   .text.hci_le_read_peer_resolvable_address:00000000 hci_le_read_peer_resolvable_address
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5662   .text.hci_le_read_local_resolvable_address:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5668   .text.hci_le_read_local_resolvable_address:00000000 hci_le_read_local_resolvable_address
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5794   .text.hci_le_set_address_resolution_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5800   .text.hci_le_set_address_resolution_enable:00000000 hci_le_set_address_resolution_enable
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5893   .text.hci_le_set_resolvable_private_address_timeout:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5899   .text.hci_le_set_resolvable_private_address_timeout:00000000 hci_le_set_resolvable_private_address_timeout
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s 			page 190
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2902   .text.hci_le_clear_filter_accept_list:00000000 hci_le_clear_filter_accept_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2969   .text.hci_le_add_device_to_filter_accept_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:2975   .text.hci_le_add_device_to_filter_accept_list:00000000 hci_le_add_device_to_filter_accept_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3075   .text.hci_le_remove_device_from_filter_accept_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3081   .text.hci_le_remove_device_from_filter_accept_list:00000000 hci_le_remove_device_from_filter_accept_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3181   .text.hci_le_connection_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3187   .text.hci_le_connection_update:00000000 hci_le_connection_update
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3324   .text.hci_le_set_host_channel_classification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3330   .text.hci_le_set_host_channel_classification:00000000 hci_le_set_host_channel_classification
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3426   .text.hci_le_read_channel_map:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3432   .text.hci_le_read_channel_map:00000000 hci_le_read_channel_map
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3544   .text.hci_le_read_remote_features:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3550   .text.hci_le_read_remote_features:00000000 hci_le_read_remote_features
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3648   .text.hci_le_encrypt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3654   .text.hci_le_encrypt:00000000 hci_le_encrypt
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3785   .text.hci_le_rand:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3791   .text.hci_le_rand:00000000 hci_le_rand
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3881   .text.hci_le_enable_encryption:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:3887   .text.hci_le_enable_encryption:00000000 hci_le_enable_encryption
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4009   .text.hci_le_long_term_key_request_reply:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4015   .text.hci_le_long_term_key_request_reply:00000000 hci_le_long_term_key_request_reply
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4123   .text.hci_le_long_term_key_request_negative_reply:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4129   .text.hci_le_long_term_key_request_negative_reply:00000000 hci_le_long_term_key_request_negative_reply
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4226   .text.hci_le_read_supported_states:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4232   .text.hci_le_read_supported_states:00000000 hci_le_read_supported_states
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4322   .text.hci_le_receiver_test:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4328   .text.hci_le_receiver_test:00000000 hci_le_receiver_test
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4421   .text.hci_le_transmitter_test:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4427   .text.hci_le_transmitter_test:00000000 hci_le_transmitter_test
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4535   .text.hci_le_test_end:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4541   .text.hci_le_test_end:00000000 hci_le_test_end
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4626   .text.hci_le_set_data_length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4632   .text.hci_le_set_data_length:00000000 hci_le_set_data_length
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4747   .text.hci_le_read_suggested_default_data_length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4753   .text.hci_le_read_suggested_default_data_length:00000000 hci_le_read_suggested_default_data_length
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4845   .text.hci_le_write_suggested_default_data_length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4851   .text.hci_le_write_suggested_default_data_length:00000000 hci_le_write_suggested_default_data_length
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4952   .text.hci_le_read_local_p256_public_key:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:4958   .text.hci_le_read_local_p256_public_key:00000000 hci_le_read_local_p256_public_key
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5029   .text.hci_le_generate_dhkey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5035   .text.hci_le_generate_dhkey:00000000 hci_le_generate_dhkey
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5135   .text.hci_le_add_device_to_resolving_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5141   .text.hci_le_add_device_to_resolving_list:00000000 hci_le_add_device_to_resolving_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5260   .text.hci_le_remove_device_from_resolving_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5266   .text.hci_le_remove_device_from_resolving_list:00000000 hci_le_remove_device_from_resolving_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5366   .text.hci_le_clear_resolving_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5372   .text.hci_le_clear_resolving_list:00000000 hci_le_clear_resolving_list
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5439   .text.hci_le_read_resolving_list_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5445   .text.hci_le_read_resolving_list_size:00000000 hci_le_read_resolving_list_size
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5530   .text.hci_le_read_peer_resolvable_address:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5536   .text.hci_le_read_peer_resolvable_address:00000000 hci_le_read_peer_resolvable_address
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5662   .text.hci_le_read_local_resolvable_address:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5668   .text.hci_le_read_local_resolvable_address:00000000 hci_le_read_local_resolvable_address
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5794   .text.hci_le_set_address_resolution_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5800   .text.hci_le_set_address_resolution_enable:00000000 hci_le_set_address_resolution_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5893   .text.hci_le_set_resolvable_private_address_timeout:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5899   .text.hci_le_set_resolvable_private_address_timeout:00000000 hci_le_set_resolvable_private_address_timeout
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s 			page 190
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5993   .text.hci_le_read_maximum_data_length:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:5999   .text.hci_le_read_maximum_data_length:00000000 hci_le_read_maximum_data_length
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6109   .text.hci_le_read_phy:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6115   .text.hci_le_read_phy:00000000 hci_le_read_phy
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6231   .text.hci_le_set_default_phy:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6237   .text.hci_le_set_default_phy:00000000 hci_le_set_default_phy
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6345   .text.hci_le_set_phy:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6351   .text.hci_le_set_phy:00000000 hci_le_set_phy
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6476   .text.hci_le_receiver_test_v2:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6482   .text.hci_le_receiver_test_v2:00000000 hci_le_receiver_test_v2
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6590   .text.hci_le_transmitter_test_v2:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6596   .text.hci_le_transmitter_test_v2:00000000 hci_le_transmitter_test_v2
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6709   .text.hci_le_set_advertising_set_random_address:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6715   .text.hci_le_set_advertising_set_random_address:00000000 hci_le_set_advertising_set_random_address
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6815   .text.hci_le_set_extended_advertising_parameters:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:6821   .text.hci_le_set_extended_advertising_parameters:00000000 hci_le_set_extended_advertising_parameters
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7023   .text.hci_le_set_extended_advertising_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7029   .text.hci_le_set_extended_advertising_data:00000000 hci_le_set_extended_advertising_data
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7153   .text.hci_le_set_extended_scan_response_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7159   .text.hci_le_set_extended_scan_response_data:00000000 hci_le_set_extended_scan_response_data
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7283   .text.hci_le_set_extended_advertising_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7289   .text.hci_le_set_extended_advertising_enable:00000000 hci_le_set_extended_advertising_enable
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7404   .text.hci_le_read_maximum_advertising_data_length:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7410   .text.hci_le_read_maximum_advertising_data_length:00000000 hci_le_read_maximum_advertising_data_length
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7495   .text.hci_le_read_number_of_supported_advertising_sets:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7501   .text.hci_le_read_number_of_supported_advertising_sets:00000000 hci_le_read_number_of_supported_advertising_sets
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7586   .text.hci_le_remove_advertising_set:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7592   .text.hci_le_remove_advertising_set:00000000 hci_le_remove_advertising_set
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7685   .text.hci_le_clear_advertising_sets:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7691   .text.hci_le_clear_advertising_sets:00000000 hci_le_clear_advertising_sets
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7758   .text.hci_le_set_extended_scan_parameters:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7764   .text.hci_le_set_extended_scan_parameters:00000000 hci_le_set_extended_scan_parameters
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7879   .text.hci_le_set_extended_scan_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7885   .text.hci_le_set_extended_scan_enable:00000000 hci_le_set_extended_scan_enable
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:7998   .text.hci_le_extended_create_connection:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8004   .text.hci_le_extended_create_connection:00000000 hci_le_extended_create_connection
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8136   .text.hci_le_read_transmit_power:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8142   .text.hci_le_read_transmit_power:00000000 hci_le_read_transmit_power
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8236   .text.hci_le_read_rf_path_compensation:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8242   .text.hci_le_read_rf_path_compensation:00000000 hci_le_read_rf_path_compensation
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8334   .text.hci_le_write_rf_path_compensation:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8340   .text.hci_le_write_rf_path_compensation:00000000 hci_le_write_rf_path_compensation
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8441   .text.hci_le_set_privacy_mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8447   .text.hci_le_set_privacy_mode:00000000 hci_le_set_privacy_mode
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8555   .text.hci_le_generate_dhkey_v2:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccFA4pjO.s:8561   .text.hci_le_generate_dhkey_v2:00000000 hci_le_generate_dhkey_v2
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5993   .text.hci_le_read_maximum_data_length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:5999   .text.hci_le_read_maximum_data_length:00000000 hci_le_read_maximum_data_length
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6109   .text.hci_le_read_phy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6115   .text.hci_le_read_phy:00000000 hci_le_read_phy
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6231   .text.hci_le_set_default_phy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6237   .text.hci_le_set_default_phy:00000000 hci_le_set_default_phy
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6345   .text.hci_le_set_phy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6351   .text.hci_le_set_phy:00000000 hci_le_set_phy
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6476   .text.hci_le_receiver_test_v2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6482   .text.hci_le_receiver_test_v2:00000000 hci_le_receiver_test_v2
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6590   .text.hci_le_transmitter_test_v2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6596   .text.hci_le_transmitter_test_v2:00000000 hci_le_transmitter_test_v2
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6709   .text.hci_le_set_advertising_set_random_address:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6715   .text.hci_le_set_advertising_set_random_address:00000000 hci_le_set_advertising_set_random_address
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6815   .text.hci_le_set_extended_advertising_parameters:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:6821   .text.hci_le_set_extended_advertising_parameters:00000000 hci_le_set_extended_advertising_parameters
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7023   .text.hci_le_set_extended_advertising_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7029   .text.hci_le_set_extended_advertising_data:00000000 hci_le_set_extended_advertising_data
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7153   .text.hci_le_set_extended_scan_response_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7159   .text.hci_le_set_extended_scan_response_data:00000000 hci_le_set_extended_scan_response_data
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7283   .text.hci_le_set_extended_advertising_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7289   .text.hci_le_set_extended_advertising_enable:00000000 hci_le_set_extended_advertising_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7404   .text.hci_le_read_maximum_advertising_data_length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7410   .text.hci_le_read_maximum_advertising_data_length:00000000 hci_le_read_maximum_advertising_data_length
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7495   .text.hci_le_read_number_of_supported_advertising_sets:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7501   .text.hci_le_read_number_of_supported_advertising_sets:00000000 hci_le_read_number_of_supported_advertising_sets
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7586   .text.hci_le_remove_advertising_set:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7592   .text.hci_le_remove_advertising_set:00000000 hci_le_remove_advertising_set
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7685   .text.hci_le_clear_advertising_sets:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7691   .text.hci_le_clear_advertising_sets:00000000 hci_le_clear_advertising_sets
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7758   .text.hci_le_set_extended_scan_parameters:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7764   .text.hci_le_set_extended_scan_parameters:00000000 hci_le_set_extended_scan_parameters
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7879   .text.hci_le_set_extended_scan_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7885   .text.hci_le_set_extended_scan_enable:00000000 hci_le_set_extended_scan_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:7998   .text.hci_le_extended_create_connection:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8004   .text.hci_le_extended_create_connection:00000000 hci_le_extended_create_connection
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8136   .text.hci_le_read_transmit_power:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8142   .text.hci_le_read_transmit_power:00000000 hci_le_read_transmit_power
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8236   .text.hci_le_read_rf_path_compensation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8242   .text.hci_le_read_rf_path_compensation:00000000 hci_le_read_rf_path_compensation
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8334   .text.hci_le_write_rf_path_compensation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8340   .text.hci_le_write_rf_path_compensation:00000000 hci_le_write_rf_path_compensation
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8441   .text.hci_le_set_privacy_mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8447   .text.hci_le_set_privacy_mode:00000000 hci_le_set_privacy_mode
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8555   .text.hci_le_generate_dhkey_v2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSOvzBh.s:8561   .text.hci_le_generate_dhkey_v2:00000000 hci_le_generate_dhkey_v2
 
 UNDEFINED SYMBOLS
 Osal_MemSet

@@ -70,7 +70,7 @@ build/debug/patchouli_bsp_glider_addon_v1.o: \
  Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- USB_Device/Target/usbd_conf.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
@@ -152,7 +152,7 @@ patchouli/inc/patchouli_bsp_tx.h:
 Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-USB_Device/Target/usbd_conf.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:

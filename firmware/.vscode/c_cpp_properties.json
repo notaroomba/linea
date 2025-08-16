@@ -3,6 +3,7 @@
     {
       "name": "STM32",
       "includePath": [
+        "Composite",
         "Core/Inc",
         "Core/Src",
         "Drivers/CMSIS/DSP/Include",
@@ -24,6 +25,13 @@
         "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci",
         "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl",
         "Middlewares/ST/STM32_WPAN/utilities",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc",
+        "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target",
         "STM32_WPAN/App",
         "USB_Device/App",
         "USB_Device/Target",

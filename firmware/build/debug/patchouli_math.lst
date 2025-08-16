@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
   27:patchouli/src/patchouli_math.c **** #include "patchouli_math.h"
   28:patchouli/src/patchouli_math.c **** #include "arm_math.h" 
   29:patchouli/src/patchouli_math.c **** #include "malloc.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 2
 
 
   30:patchouli/src/patchouli_math.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
   74              		.cfi_offset 14, -4
   42:patchouli/src/patchouli_math.c ****   uint16_t temp;
   75              		.loc 1 42 3 is_stmt 1 view .LVU10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 3
 
 
   43:patchouli/src/patchouli_math.c ****   for (uint16_t i = 0; i < n; i++) {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  122              		.loc 1 43 26 is_stmt 1 discriminator 1 view .LVU29
  123 0028 8E45     		cmp	lr, r1
  124 002a 04D2     		bcs	.L10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 4
 
 
   44:patchouli/src/patchouli_math.c ****       if (arr[j] < arr[i]) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  165              		@ args = 0, pretend = 0, frame = 0
  166              		@ frame_needed = 0, uses_anonymous_args = 0
  167              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 5
 
 
   59:patchouli/src/patchouli_math.c ****     float sum = 0;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  210              		.loc 1 66 1 is_stmt 0 view .LVU59
  211 002e 80EE260A 		vdiv.f32	s0, s0, s13
  212              	.LVL22:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 6
 
 
  213              		.loc 1 66 1 view .LVU60
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
   88:patchouli/src/patchouli_math.c ****     arm_mat_init_f32(&A, PATCHOULI_GWIN,3 ,  A_f32 );
  248              		.loc 1 88 5 view .LVU70
  249 0004 29AB     		add	r3, sp, #164
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 7
 
 
  250 0006 0322     		movs	r2, #3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  297              		.loc 1 95 5 view .LVU77
  298              	.LBB7:
  299              		.loc 1 95 10 view .LVU78
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 8
 
 
  300              		.loc 1 95 14 is_stmt 0 view .LVU79
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  347              	.LVL33:
  101:patchouli/src/patchouli_math.c ****     arm_mat_mult_f32(&AT, &A, &ATMA);
  348              		.loc 1 101 5 view .LVU95
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 9
 
 
  349 00a6 02AA     		add	r2, sp, #8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  400              		.cfi_offset 14, -4
  401 0002 0C46     		mov	r4, r1
  107:patchouli/src/patchouli_math.c ****     for (int x=0; x<PATCHOULI_GWIN;x++) {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 10
 
 
  402              		.loc 1 107 5 is_stmt 1 view .LVU101
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  448 0038 2046     		mov	r0, r4
  449 003a 10BD     		pop	{r4, pc}
  450              	.LVL44:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 11
 
 
  451              	.L27:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  507              		.cfi_startproc
  508              		@ args = 0, pretend = 0, frame = 0
  509              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 12
 
 
  510 0000 08B5     		push	{r3, lr}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  565 0022 7047     		bx	lr
  566              	.L37:
  567              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 13
 
 
  568              	.L36:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  615 0016 E260     		str	r2, [r4, #12]	@ float
  126:patchouli/src/patchouli_math.c ****     mva->mean = 0;
  616              		.loc 1 126 5 is_stmt 1 view .LVU152
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 14
 
 
  617              		.loc 1 126 15 is_stmt 0 view .LVU153
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  668              		.loc 1 131 5 is_stmt 1 view .LVU167
  669 0002 0068     		ldr	r0, [r0]
  670              	.LVL53:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 15
 
 
  671              		.loc 1 131 5 is_stmt 0 view .LVU168
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  720 002a 0133     		adds	r3, r3, #1
  721              		.loc 1 138 36 view .LVU185
  722 002c 4268     		ldr	r2, [r0, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 16
 
 
  723              		.loc 1 138 32 view .LVU186
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  767              		.loc 1 150 5 is_stmt 1 view .LVU200
  768              		.loc 1 150 16 is_stmt 0 view .LVU201
  769 0008 C360     		str	r3, [r0, #12]	@ float
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 17
 
 
  151:patchouli/src/patchouli_math.c ****     k->P[1][0] = 0;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  162:patchouli/src/patchouli_math.c ****     y = val - k->x[0];
  815              		.loc 1 162 5 view .LVU220
  816              		.loc 1 162 19 is_stmt 0 view .LVU221
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 18
 
 
  817 0002 90ED005A 		vldr.32	s10, [r0]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  865              		.loc 1 168 16 view .LVU245
  866 004e C0ED027A 		vstr.32	s15, [r0, #8]
  867              	.LVL65:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 19
 
 
  169:patchouli/src/patchouli_math.c ****     k->P[0][1] -= K[0] * k->P[0][1];
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  914              		.loc 1 176 5 is_stmt 1 view .LVU269
  177:patchouli/src/patchouli_math.c **** }
  915              		.loc 1 177 1 is_stmt 0 view .LVU270
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 20
 
 
  916 00ae 02B0     		add	sp, sp, #8
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  965              		.loc 1 184 32 view .LVU277
  966 001a FFF7FEFF 		bl	malloc
  967              	.LVL68:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 21
 
 
  968              		.loc 1 184 22 discriminator 1 view .LVU278
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1016 0070 C3ED007A 		vstr.32	s15, [r3]
  189:patchouli/src/patchouli_math.c ****                 fir->coefficient[i] = 2.0f*bw*sinf(PI*(i-len/2.0f)*order)/(PI*(i-len/2.0f));
  1017              		.loc 1 189 35 is_stmt 1 discriminator 3 view .LVU295
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 22
 
 
  1018 0074 0135     		adds	r5, r5, #1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1050 0084 F8EE008A 		vmov.f32	s17, #-2.0e+0
  1051 0088 69EE288A 		vmul.f32	s17, s18, s17
  199:patchouli/src/patchouli_math.c ****                 }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 23
 
 
  1052              		.loc 1 199 66 view .LVU303
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1092              		.loc 1 197 21 is_stmt 1 view .LVU317
  197:patchouli/src/patchouli_math.c ****                 } else {
  1093              		.loc 1 197 54 is_stmt 0 view .LVU318
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 24
 
 
  1094 00da 39EE097A 		vadd.f32	s14, s18, s18
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1142              	.LVL83:
  212:patchouli/src/patchouli_math.c **** }
  1143              		.loc 1 212 1 is_stmt 0 view .LVU328
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 25
 
 
  1144 0010 10BD     		pop	{r4, pc}
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1193 0020 F1DC     		bgt	.L65
  216:patchouli/src/patchouli_math.c ****         fir->data[i] = fir->data[i-1];
  1194              		.loc 1 216 29 is_stmt 0 discriminator 1 view .LVU343
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 26
 
 
  1195              	.LBE12:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1240 0056 C268     		ldr	r2, [r0, #12]
  222:patchouli/src/patchouli_math.c ****     for (int i=0; i<fir->len; i++){
  1241              		.loc 1 222 20 discriminator 1 view .LVU364
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 27
 
 
  1242 0058 9A42     		cmp	r2, r3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1284              	.LBB14:
  1285              		.loc 1 237 10 view .LVU376
  1286              		.loc 1 237 10 is_stmt 0 view .LVU377
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 28
 
 
  1287              	.LBE14:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  245:patchouli/src/patchouli_math.c ****         q->boundary_status = PATCHOULI_QUAD_INTERP_LEFT;
  1331              		.loc 1 245 9 is_stmt 1 view .LVU395
  1332              		.loc 1 245 28 is_stmt 0 view .LVU396
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 29
 
 
  1333 0036 0023     		movs	r3, #0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  264:patchouli/src/patchouli_math.c ****     // Quadratic interpolation
  265:patchouli/src/patchouli_math.c ****     q->result_interp = (float)xl+0.5f*(3*yl-4*ym+yr)/(yl-2*ym+yr);
  1368              		.loc 1 265 5 is_stmt 1 view .LVU413
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 30
 
 
  1369              		.loc 1 265 24 is_stmt 0 view .LVU414
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1418              		.loc 1 270 51 view .LVU435
  1419 00ac D0ED057A 		vldr.32	s15, [r0, #20]
  1420              		.loc 1 270 49 view .LVU436
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 31
 
 
  1421 00b0 27EE277A 		vmul.f32	s14, s14, s15
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1461              	.LVL116:
  1462              	.L81:
  250:patchouli/src/patchouli_math.c ****         xl = n-2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 32
 
 
  1463              		.loc 1 250 9 is_stmt 1 view .LVU455
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1508              		.section	.bss.patchouli_c_mat,"aw",%nobits
  1509              		.align	2
  1512              	patchouli_c_mat:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 33
 
 
  1513 0000 00000000 		.space	8
@@ -1955,67 +1955,67 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 1
  1542              		.file 7 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  1543              		.file 8 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  1544              		.file 9 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 patchouli_math.c
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:21     .text.patchouli_linear_map:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:27     .text.patchouli_linear_map:00000000 patchouli_linear_map
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:57     .text.patchouli_median:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:63     .text.patchouli_median:00000000 patchouli_median
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:154    .text.patchouli_wavg_f32:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:160    .text.patchouli_wavg_f32:00000000 patchouli_wavg_f32
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:218    .text.patchouli_wavg_f32:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:223    .text.patchouli_gauss_init_kernel:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:229    .text.patchouli_gauss_init_kernel:00000000 patchouli_gauss_init_kernel
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:373    .text.patchouli_gauss_init_kernel:000000c8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1533   .bss.patchouli_kernel_f32:00000000 patchouli_kernel_f32
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1526   .bss.patchouli_kernel_mat:00000000 patchouli_kernel_mat
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1505   .bss.patchouli_b_f32:00000000 patchouli_b_f32
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1498   .bss.patchouli_b_mat:00000000 patchouli_b_mat
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1519   .bss.patchouli_c_f32:00000000 patchouli_c_f32
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1512   .bss.patchouli_c_mat:00000000 patchouli_c_mat
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:383    .text.patchouli_gauss_apply:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:389    .text.patchouli_gauss_apply:00000000 patchouli_gauss_apply
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:455    .text.patchouli_gauss_apply:0000003c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:464    .text.patchouli_gauss_calc_mean:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:470    .text.patchouli_gauss_calc_mean:00000000 patchouli_gauss_calc_mean
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:493    .text.patchouli_gauss_calc_mean:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:498    .text.patchouli_gauss_calc_std:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:504    .text.patchouli_gauss_calc_std:00000000 patchouli_gauss_calc_std
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:530    .text.patchouli_gauss_calc_std:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:535    .text.patchouli_gauss_calc_amp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:541    .text.patchouli_gauss_calc_amp:00000000 patchouli_gauss_calc_amp
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:569    .text.patchouli_gauss_calc_amp:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:574    .text.patchouli_mva_buffer_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:580    .text.patchouli_mva_buffer_init:00000000 patchouli_mva_buffer_init
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:650    .text.patchouli_mva_buffer_free:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:656    .text.patchouli_mva_buffer_free:00000000 patchouli_mva_buffer_free
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:680    .text.patchouli_mva_buffer_push:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:686    .text.patchouli_mva_buffer_push:00000000 patchouli_mva_buffer_push
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:743    .text.patchouli_kalman_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:749    .text.patchouli_kalman_init:00000000 patchouli_kalman_init
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:797    .text.patchouli_kalman_update:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:803    .text.patchouli_kalman_update:00000000 patchouli_kalman_update
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:924    .text.patchouli_fir_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:930    .text.patchouli_fir_init:00000000 patchouli_fir_init
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1108   .text.patchouli_fir_init:000000f4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1114   .text.patchouli_fir_free:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1120   .text.patchouli_fir_free:00000000 patchouli_fir_free
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1150   .text.patchouli_fir_update:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1156   .text.patchouli_fir_update:00000000 patchouli_fir_update
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1255   .text.patchouli_quad_interp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1261   .text.patchouli_quad_interp:00000000 patchouli_quad_interp
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1489   .text.patchouli_quad_interp:000000f8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1495   .bss.patchouli_b_mat:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1502   .bss.patchouli_b_f32:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1509   .bss.patchouli_c_mat:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1516   .bss.patchouli_c_f32:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1523   .bss.patchouli_kernel_mat:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s:1530   .bss.patchouli_kernel_f32:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:21     .text.patchouli_linear_map:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:27     .text.patchouli_linear_map:00000000 patchouli_linear_map
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:57     .text.patchouli_median:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:63     .text.patchouli_median:00000000 patchouli_median
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:154    .text.patchouli_wavg_f32:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:160    .text.patchouli_wavg_f32:00000000 patchouli_wavg_f32
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:218    .text.patchouli_wavg_f32:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:223    .text.patchouli_gauss_init_kernel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:229    .text.patchouli_gauss_init_kernel:00000000 patchouli_gauss_init_kernel
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:373    .text.patchouli_gauss_init_kernel:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1533   .bss.patchouli_kernel_f32:00000000 patchouli_kernel_f32
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1526   .bss.patchouli_kernel_mat:00000000 patchouli_kernel_mat
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1505   .bss.patchouli_b_f32:00000000 patchouli_b_f32
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1498   .bss.patchouli_b_mat:00000000 patchouli_b_mat
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1519   .bss.patchouli_c_f32:00000000 patchouli_c_f32
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1512   .bss.patchouli_c_mat:00000000 patchouli_c_mat
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:383    .text.patchouli_gauss_apply:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:389    .text.patchouli_gauss_apply:00000000 patchouli_gauss_apply
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:455    .text.patchouli_gauss_apply:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:464    .text.patchouli_gauss_calc_mean:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:470    .text.patchouli_gauss_calc_mean:00000000 patchouli_gauss_calc_mean
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:493    .text.patchouli_gauss_calc_mean:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:498    .text.patchouli_gauss_calc_std:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:504    .text.patchouli_gauss_calc_std:00000000 patchouli_gauss_calc_std
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:530    .text.patchouli_gauss_calc_std:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:535    .text.patchouli_gauss_calc_amp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:541    .text.patchouli_gauss_calc_amp:00000000 patchouli_gauss_calc_amp
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:569    .text.patchouli_gauss_calc_amp:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:574    .text.patchouli_mva_buffer_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:580    .text.patchouli_mva_buffer_init:00000000 patchouli_mva_buffer_init
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:650    .text.patchouli_mva_buffer_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:656    .text.patchouli_mva_buffer_free:00000000 patchouli_mva_buffer_free
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:680    .text.patchouli_mva_buffer_push:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:686    .text.patchouli_mva_buffer_push:00000000 patchouli_mva_buffer_push
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:743    .text.patchouli_kalman_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:749    .text.patchouli_kalman_init:00000000 patchouli_kalman_init
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:797    .text.patchouli_kalman_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:803    .text.patchouli_kalman_update:00000000 patchouli_kalman_update
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:924    .text.patchouli_fir_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:930    .text.patchouli_fir_init:00000000 patchouli_fir_init
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1108   .text.patchouli_fir_init:000000f4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1114   .text.patchouli_fir_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1120   .text.patchouli_fir_free:00000000 patchouli_fir_free
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1150   .text.patchouli_fir_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1156   .text.patchouli_fir_update:00000000 patchouli_fir_update
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1255   .text.patchouli_quad_interp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1261   .text.patchouli_quad_interp:00000000 patchouli_quad_interp
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1489   .text.patchouli_quad_interp:000000f8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1495   .bss.patchouli_b_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1502   .bss.patchouli_b_f32:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1509   .bss.patchouli_c_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1516   .bss.patchouli_c_f32:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1523   .bss.patchouli_kernel_mat:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s:1530   .bss.patchouli_kernel_f32:00000000 $d
 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOgyQnJ.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsOkq8V.s 			page 35
 
 
 UNDEFINED SYMBOLS

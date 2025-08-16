@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -19,85 +19,82 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.file 1 "USB_Device/App/usb_device.c"
-  20              		.section	.text.MX_USB_Device_Init,"ax",%progbits
+  19              		.file 1 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c"
+  20              		.section	.text.MX_USB_DEVICE_Init,"ax",%progbits
   21              		.align	1
-  22              		.global	MX_USB_Device_Init
+  22              		.global	MX_USB_DEVICE_Init
   23              		.syntax unified
   24              		.thumb
   25              		.thumb_func
-  27              	MX_USB_Device_Init:
-  28              	.LFB1108:
-   1:USB_Device/App/usb_device.c **** /* USER CODE BEGIN Header */
-   2:USB_Device/App/usb_device.c **** /**
-   3:USB_Device/App/usb_device.c ****   ******************************************************************************
-   4:USB_Device/App/usb_device.c ****   * @file           : usb_device.c
-   5:USB_Device/App/usb_device.c ****   * @version        : v3.0_Cube
-   6:USB_Device/App/usb_device.c ****   * @brief          : This file implements the USB Device
-   7:USB_Device/App/usb_device.c ****   ******************************************************************************
-   8:USB_Device/App/usb_device.c ****   * @attention
-   9:USB_Device/App/usb_device.c ****   *
-  10:USB_Device/App/usb_device.c ****   * Copyright (c) 2025 STMicroelectronics.
-  11:USB_Device/App/usb_device.c ****   * All rights reserved.
-  12:USB_Device/App/usb_device.c ****   *
-  13:USB_Device/App/usb_device.c ****   * This software is licensed under terms that can be found in the LICENSE file
-  14:USB_Device/App/usb_device.c ****   * in the root directory of this software component.
-  15:USB_Device/App/usb_device.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
-  16:USB_Device/App/usb_device.c ****   *
-  17:USB_Device/App/usb_device.c ****   ******************************************************************************
-  18:USB_Device/App/usb_device.c ****   */
-  19:USB_Device/App/usb_device.c **** /* USER CODE END Header */
-  20:USB_Device/App/usb_device.c **** 
-  21:USB_Device/App/usb_device.c **** /* Includes ------------------------------------------------------------------*/
-  22:USB_Device/App/usb_device.c **** 
-  23:USB_Device/App/usb_device.c **** #include "usb_device.h"
-  24:USB_Device/App/usb_device.c **** #include "usbd_core.h"
-  25:USB_Device/App/usb_device.c **** #include "usbd_desc.h"
-  26:USB_Device/App/usb_device.c **** #include "usbd_hid.h"
-  27:USB_Device/App/usb_device.c **** 
-  28:USB_Device/App/usb_device.c **** /* USER CODE BEGIN Includes */
-  29:USB_Device/App/usb_device.c **** 
-  30:USB_Device/App/usb_device.c **** /* USER CODE END Includes */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 2
+  27              	MX_USB_DEVICE_Init:
+  28              	.LFB1416:
+   1:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN Header */
+   2:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /**
+   3:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   ******************************************************************************
+   4:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * @file           : usb_device.c
+   5:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * @version        : v1.0_Cube
+   6:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * @brief          : This file implements the USB Device
+   7:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   ******************************************************************************
+   8:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * @attention
+   9:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   *
+  10:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  11:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * All rights reserved.</center></h2>
+  12:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   *
+  13:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * This software component is licensed by ST under Ultimate Liberty license
+  14:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * SLA0044, the "License"; You may not use this file except in compliance with
+  15:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * the License. You may obtain a copy of the License at:
+  16:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   *                             www.st.com/SLA0044
+  17:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   *
+  18:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   ******************************************************************************
+  19:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   */
+  20:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END Header */
+  21:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  22:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* Includes ------------------------------------------------------------------*/
+  23:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  24:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #include "usb_device.h"
+  25:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #include "usbd_desc.h"
+  26:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  27:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN Includes */
+  28:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #include "usbd_composite.h"
+  29:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END Includes */
+  30:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 2
 
 
-  31:USB_Device/App/usb_device.c **** 
-  32:USB_Device/App/usb_device.c **** /* USER CODE BEGIN PV */
-  33:USB_Device/App/usb_device.c **** /* Private variables ---------------------------------------------------------*/
-  34:USB_Device/App/usb_device.c **** 
-  35:USB_Device/App/usb_device.c **** /* USER CODE END PV */
-  36:USB_Device/App/usb_device.c **** 
-  37:USB_Device/App/usb_device.c **** /* USER CODE BEGIN PFP */
-  38:USB_Device/App/usb_device.c **** /* Private function prototypes -----------------------------------------------*/
-  39:USB_Device/App/usb_device.c **** 
-  40:USB_Device/App/usb_device.c **** /* USER CODE END PFP */
-  41:USB_Device/App/usb_device.c **** 
-  42:USB_Device/App/usb_device.c **** extern void Error_Handler(void);
-  43:USB_Device/App/usb_device.c **** /* USB Device Core handle declaration. */
-  44:USB_Device/App/usb_device.c **** USBD_HandleTypeDef hUsbDeviceFS;
-  45:USB_Device/App/usb_device.c **** extern USBD_DescriptorsTypeDef HID_Desc;
-  46:USB_Device/App/usb_device.c **** 
-  47:USB_Device/App/usb_device.c **** /*
-  48:USB_Device/App/usb_device.c ****  * -- Insert your variables declaration here --
-  49:USB_Device/App/usb_device.c ****  */
-  50:USB_Device/App/usb_device.c **** /* USER CODE BEGIN 0 */
-  51:USB_Device/App/usb_device.c **** 
-  52:USB_Device/App/usb_device.c **** /* USER CODE END 0 */
-  53:USB_Device/App/usb_device.c **** 
-  54:USB_Device/App/usb_device.c **** /*
-  55:USB_Device/App/usb_device.c ****  * -- Insert your external function declaration here --
-  56:USB_Device/App/usb_device.c ****  */
-  57:USB_Device/App/usb_device.c **** /* USER CODE BEGIN 1 */
-  58:USB_Device/App/usb_device.c **** 
-  59:USB_Device/App/usb_device.c **** /* USER CODE END 1 */
-  60:USB_Device/App/usb_device.c **** 
-  61:USB_Device/App/usb_device.c **** /**
-  62:USB_Device/App/usb_device.c ****   * Init USB device Library, add supported class and start the library
-  63:USB_Device/App/usb_device.c ****   * @retval None
-  64:USB_Device/App/usb_device.c ****   */
-  65:USB_Device/App/usb_device.c **** void MX_USB_Device_Init(void)
-  66:USB_Device/App/usb_device.c **** {
-  29              		.loc 1 66 1 view -0
+  31:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN PV */
+  32:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* Private variables ---------------------------------------------------------*/
+  33:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  34:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END PV */
+  35:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  36:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN PFP */
+  37:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* Private function prototypes -----------------------------------------------*/
+  38:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  39:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END PFP */
+  40:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  41:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USB Device Core handle declaration. */
+  42:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** USBD_HandleTypeDef hUsbDevice;
+  43:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  44:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /*
+  45:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****  * -- Insert your variables declaration here --
+  46:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****  */
+  47:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN 0 */
+  48:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  49:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END 0 */
+  50:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  51:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /*
+  52:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****  * -- Insert your external function declaration here --
+  53:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****  */
+  54:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE BEGIN 1 */
+  55:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  56:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /* USER CODE END 1 */
+  57:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  58:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** /**
+  59:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * Init USB device Library, add supported class and start the library
+  60:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   * @retval None
+  61:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   */
+  62:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** void MX_USB_DEVICE_Init(void)
+  63:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** {
+  29              		.loc 1 63 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -105,118 +102,247 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  67:USB_Device/App/usb_device.c ****   /* USER CODE BEGIN USB_Device_Init_PreTreatment */
-  68:USB_Device/App/usb_device.c **** 
-  69:USB_Device/App/usb_device.c ****   /* USER CODE END USB_Device_Init_PreTreatment */
-  70:USB_Device/App/usb_device.c **** 
-  71:USB_Device/App/usb_device.c ****   /* Init Device Library, add supported class and start the library. */
-  72:USB_Device/App/usb_device.c ****   if (USBD_Init(&hUsbDeviceFS, &HID_Desc, DEVICE_FS) != USBD_OK) {
-  37              		.loc 1 72 3 view .LVU1
-  38              		.loc 1 72 7 is_stmt 0 view .LVU2
-  39 0002 0022     		movs	r2, #0
-  40 0004 0B49     		ldr	r1, .L9
-  41 0006 0C48     		ldr	r0, .L9+4
-  42 0008 FFF7FEFF 		bl	USBD_Init
-  43              	.LVL0:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 3
+  64:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   /* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */
+  65:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  66:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   /* USER CODE END USB_DEVICE_Init_PreTreatment */
+  67:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  68:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   /* Init Device Library, add supported class and start the library. */
+  69:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   USBD_COMPOSITE_Mount_Class();
+  37              		.loc 1 69 3 view .LVU1
+  38 0002 FFF7FEFF 		bl	USBD_COMPOSITE_Mount_Class
+  39              	.LVL0:
+  70:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+  71:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_HS == 1)
+  72:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_Init(&hUsbDevice, &USBD_Desc, DEVICE_HS) != USBD_OK)
+  73:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+  74:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+  75:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  76:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #else
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 3
 
 
-  44              		.loc 1 72 6 discriminator 1 view .LVU3
-  45 000c 48B9     		cbnz	r0, .L6
-  46              	.L2:
-  73:USB_Device/App/usb_device.c ****     Error_Handler();
-  74:USB_Device/App/usb_device.c ****   }
-  75:USB_Device/App/usb_device.c ****   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_HID) != USBD_OK) {
-  47              		.loc 1 75 3 is_stmt 1 view .LVU4
-  48              		.loc 1 75 7 is_stmt 0 view .LVU5
-  49 000e 0B49     		ldr	r1, .L9+8
-  50 0010 0948     		ldr	r0, .L9+4
-  51 0012 FFF7FEFF 		bl	USBD_RegisterClass
-  52              	.LVL1:
-  53              		.loc 1 75 6 discriminator 1 view .LVU6
-  54 0016 38B9     		cbnz	r0, .L7
-  55              	.L3:
-  76:USB_Device/App/usb_device.c ****     Error_Handler();
-  77:USB_Device/App/usb_device.c ****   }
-  78:USB_Device/App/usb_device.c ****   if (USBD_Start(&hUsbDeviceFS) != USBD_OK) {
-  56              		.loc 1 78 3 is_stmt 1 view .LVU7
-  57              		.loc 1 78 7 is_stmt 0 view .LVU8
-  58 0018 0748     		ldr	r0, .L9+4
-  59 001a FFF7FEFF 		bl	USBD_Start
-  60              	.LVL2:
-  61              		.loc 1 78 6 discriminator 1 view .LVU9
-  62 001e 30B9     		cbnz	r0, .L8
-  63              	.L1:
-  79:USB_Device/App/usb_device.c ****     Error_Handler();
-  80:USB_Device/App/usb_device.c ****   }
-  81:USB_Device/App/usb_device.c ****   /* USER CODE BEGIN USB_Device_Init_PostTreatment */
-  82:USB_Device/App/usb_device.c **** 
-  83:USB_Device/App/usb_device.c ****   /* USER CODE END USB_Device_Init_PostTreatment */
-  84:USB_Device/App/usb_device.c **** }
-  64              		.loc 1 84 1 view .LVU10
-  65 0020 08BD     		pop	{r3, pc}
-  66              	.L6:
-  73:USB_Device/App/usb_device.c ****   }
-  67              		.loc 1 73 5 is_stmt 1 view .LVU11
-  68 0022 FFF7FEFF 		bl	Error_Handler
-  69              	.LVL3:
-  70 0026 F2E7     		b	.L2
-  71              	.L7:
-  76:USB_Device/App/usb_device.c ****     Error_Handler();
-  72              		.loc 1 76 5 view .LVU12
-  73 0028 FFF7FEFF 		bl	Error_Handler
-  74              	.LVL4:
-  75 002c F4E7     		b	.L3
-  76              	.L8:
-  79:USB_Device/App/usb_device.c ****     Error_Handler();
-  77              		.loc 1 79 5 view .LVU13
-  78 002e FFF7FEFF 		bl	Error_Handler
-  79              	.LVL5:
-  80              		.loc 1 84 1 is_stmt 0 view .LVU14
-  81 0032 F5E7     		b	.L1
-  82              	.L10:
-  83              		.align	2
-  84              	.L9:
-  85 0034 00000000 		.word	HID_Desc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 4
+  77:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_Init(&hUsbDevice, &USBD_Desc, DEVICE_FS) != USBD_OK)
+  40              		.loc 1 77 3 view .LVU2
+  41              		.loc 1 77 7 is_stmt 0 view .LVU3
+  42 0006 0022     		movs	r2, #0
+  43 0008 1349     		ldr	r1, .L13
+  44 000a 1448     		ldr	r0, .L13+4
+  45 000c FFF7FEFF 		bl	USBD_Init
+  46              	.LVL1:
+  47              		.loc 1 77 6 discriminator 1 view .LVU4
+  48 0010 98B9     		cbnz	r0, .L8
+  49              	.L2:
+  78:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+  79:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+  80:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  81:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+  82:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_RegisterClass(&hUsbDevice, &USBD_COMPOSITE) != USBD_OK)
+  50              		.loc 1 82 3 is_stmt 1 view .LVU5
+  51              		.loc 1 82 7 is_stmt 0 view .LVU6
+  52 0012 1349     		ldr	r1, .L13+8
+  53 0014 1148     		ldr	r0, .L13+4
+  54 0016 FFF7FEFF 		bl	USBD_RegisterClass
+  55              	.LVL2:
+  56              		.loc 1 82 6 discriminator 1 view .LVU7
+  57 001a 88B9     		cbnz	r0, .L9
+  58              	.L3:
+  83:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+  84:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+  85:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  86:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_CDC_ACM == 1)
+  87:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_CDC_ACM_RegisterInterface(&hUsbDevice, &USBD_CDC_ACM_fops) != USBD_OK)
+  59              		.loc 1 87 3 is_stmt 1 view .LVU8
+  60              		.loc 1 87 7 is_stmt 0 view .LVU9
+  61 001c 1149     		ldr	r1, .L13+12
+  62 001e 0F48     		ldr	r0, .L13+4
+  63 0020 FFF7FEFF 		bl	USBD_CDC_ACM_RegisterInterface
+  64              	.LVL3:
+  65              		.loc 1 87 6 discriminator 1 view .LVU10
+  66 0024 78B9     		cbnz	r0, .L10
+  67              	.L4:
+  88:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+  89:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+  90:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  91:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+  92:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_CDC_RNDIS == 1)
+  93:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_CDC_RNDIS_RegisterInterface(&hUsbDevice, &USBD_CDC_RNDIS_fops) != USBD_OK)
+  94:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+  95:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+  96:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  97:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+  98:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_CDC_ECM == 1)
+  99:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_CDC_ECM_RegisterInterface(&hUsbDevice, &USBD_CDC_ECM_fops) != USBD_OK)
+ 100:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 101:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 102:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 103:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 104:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_HID_MOUSE == 1)
+ 105:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 4
 
 
-  86 0038 00000000 		.word	hUsbDeviceFS
-  87 003c 00000000 		.word	USBD_HID
-  88              		.cfi_endproc
-  89              	.LFE1108:
-  91              		.global	hUsbDeviceFS
-  92              		.section	.bss.hUsbDeviceFS,"aw",%nobits
-  93              		.align	2
-  96              	hUsbDeviceFS:
-  97 0000 00000000 		.space	732
-  97      00000000 
-  97      00000000 
-  97      00000000 
-  97      00000000 
-  98              		.text
-  99              	.Letext0:
- 100              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
- 101              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 102              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 103              		.file 5 "USB_Device/App/usbd_desc.h"
- 104              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h"
- 105              		.file 7 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s 			page 5
+ 106:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_HID_KEYBOARD == 1)
+ 107:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 108:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_HID_CUSTOM == 1)
+ 109:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_CUSTOM_HID_RegisterInterface(&hUsbDevice, &USBD_CustomHID_fops) != USBD_OK)
+  68              		.loc 1 109 3 is_stmt 1 view .LVU11
+  69              		.loc 1 109 7 is_stmt 0 view .LVU12
+  70 0026 1049     		ldr	r1, .L13+16
+  71 0028 0C48     		ldr	r0, .L13+4
+  72 002a FFF7FEFF 		bl	USBD_CUSTOM_HID_RegisterInterface
+  73              	.LVL4:
+  74              		.loc 1 109 6 discriminator 1 view .LVU13
+  75 002e 68B9     		cbnz	r0, .L11
+  76              	.L5:
+ 110:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 111:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 112:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 113:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 114:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_UAC_MIC == 1)
+ 115:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_AUDIO_MIC_RegisterInterface(&hUsbDevice, &USBD_AUDIO_MIC_fops_FS) != USBD_OK)
+ 116:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 117:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 118:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 119:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 120:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_UAC_SPKR == 1)
+ 121:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_AUDIO_SPKR_RegisterInterface(&hUsbDevice, &USBD_AUDIO_SPKR_fops) != USBD_OK)
+ 122:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 123:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 124:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 125:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 126:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_UVC == 1)
+ 127:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_VIDEO_RegisterInterface(&hUsbDevice, &USBD_VIDEO_fops_FS) != USBD_OK)
+ 128:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 129:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 130:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 131:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 132:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_MSC == 1)
+ 133:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_MSC_RegisterStorage(&hUsbDevice, &USBD_Storage_Interface_fops) != USBD_OK)
+ 134:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 135:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 136:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 137:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 138:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_DFU == 1)
+ 139:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_DFU_RegisterMedia(&hUsbDevice, &USBD_DFU_fops) != USBD_OK)
+ 140:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 141:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 142:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 143:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 144:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #if (USBD_USE_PRNTR == 1)
+ 145:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_PRNT_RegisterInterface(&hUsbDevice, &USBD_PRNT_fops) != USBD_OK)
+ 146:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 147:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 148:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 149:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** #endif
+ 150:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   if (USBD_Start(&hUsbDevice) != USBD_OK)
+  77              		.loc 1 150 3 is_stmt 1 view .LVU14
+  78              		.loc 1 150 7 is_stmt 0 view .LVU15
+  79 0030 0A48     		ldr	r0, .L13+4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 5
+
+
+  80 0032 FFF7FEFF 		bl	USBD_Start
+  81              	.LVL5:
+  82              		.loc 1 150 6 discriminator 1 view .LVU16
+  83 0036 60B9     		cbnz	r0, .L12
+  84              	.L1:
+ 151:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   {
+ 152:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****     Error_Handler();
+ 153:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 154:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+ 155:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   /* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */
+ 156:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** 
+ 157:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   /* USER CODE END USB_DEVICE_Init_PostTreatment */
+ 158:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c **** }
+  85              		.loc 1 158 1 view .LVU17
+  86 0038 08BD     		pop	{r3, pc}
+  87              	.L8:
+  79:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  88              		.loc 1 79 5 is_stmt 1 view .LVU18
+  89 003a FFF7FEFF 		bl	Error_Handler
+  90              	.LVL6:
+  91 003e E8E7     		b	.L2
+  92              	.L9:
+  84:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  93              		.loc 1 84 5 view .LVU19
+  94 0040 FFF7FEFF 		bl	Error_Handler
+  95              	.LVL7:
+  96 0044 EAE7     		b	.L3
+  97              	.L10:
+  89:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+  98              		.loc 1 89 5 view .LVU20
+  99 0046 FFF7FEFF 		bl	Error_Handler
+ 100              	.LVL8:
+ 101 004a ECE7     		b	.L4
+ 102              	.L11:
+ 111:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 103              		.loc 1 111 5 view .LVU21
+ 104 004c FFF7FEFF 		bl	Error_Handler
+ 105              	.LVL9:
+ 106 0050 EEE7     		b	.L5
+ 107              	.L12:
+ 152:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c ****   }
+ 108              		.loc 1 152 5 view .LVU22
+ 109 0052 FFF7FEFF 		bl	Error_Handler
+ 110              	.LVL10:
+ 111              		.loc 1 158 1 is_stmt 0 view .LVU23
+ 112 0056 EFE7     		b	.L1
+ 113              	.L14:
+ 114              		.align	2
+ 115              	.L13:
+ 116 0058 00000000 		.word	USBD_Desc
+ 117 005c 00000000 		.word	hUsbDevice
+ 118 0060 00000000 		.word	USBD_COMPOSITE
+ 119 0064 00000000 		.word	USBD_CDC_ACM_fops
+ 120 0068 00000000 		.word	USBD_CustomHID_fops
+ 121              		.cfi_endproc
+ 122              	.LFE1416:
+ 124              		.global	hUsbDevice
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 6
+
+
+ 125              		.section	.bss.hUsbDevice,"aw",%nobits
+ 126              		.align	2
+ 129              	hUsbDevice:
+ 130 0000 00000000 		.space	732
+ 130      00000000 
+ 130      00000000 
+ 130      00000000 
+ 130      00000000 
+ 131              		.text
+ 132              	.Letext0:
+ 133              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 134              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 135              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 136              		.file 5 "Core/Inc/app_conf.h"
+ 137              		.file 6 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h"
+ 138              		.file 7 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.h"
+ 139              		.file 8 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h"
+ 140              		.file 9 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom
+ 141              		.file 10 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.h"
+ 142              		.file 11 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc/usbd_composite.
+ 143              		.file 12 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
+ 144              		.file 13 "Core/Inc/main.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usb_device.c
-C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s:21     .text.MX_USB_Device_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s:27     .text.MX_USB_Device_Init:00000000 MX_USB_Device_Init
-C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s:85     .text.MX_USB_Device_Init:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s:96     .bss.hUsbDeviceFS:00000000 hUsbDeviceFS
-C:\Users\Nathan\AppData\Local\Temp\cc7oHKMr.s:93     .bss.hUsbDeviceFS:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s:21     .text.MX_USB_DEVICE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s:27     .text.MX_USB_DEVICE_Init:00000000 MX_USB_DEVICE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s:116    .text.MX_USB_DEVICE_Init:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s:129    .bss.hUsbDevice:00000000 hUsbDevice
+C:\Users\Nathan\AppData\Local\Temp\ccrL6str.s:126    .bss.hUsbDevice:00000000 $d
 
 UNDEFINED SYMBOLS
+USBD_COMPOSITE_Mount_Class
 USBD_Init
 USBD_RegisterClass
+USBD_CDC_ACM_RegisterInterface
+USBD_CUSTOM_HID_RegisterInterface
 USBD_Start
 Error_Handler
-HID_Desc
-USBD_HID
+USBD_Desc
+USBD_COMPOSITE
+USBD_CDC_ACM_fops
+USBD_CustomHID_fops

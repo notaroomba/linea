@@ -75,16 +75,25 @@ endif
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/adc.c \
 Core/Src/app_debug.c \
 Core/Src/app_entry.c \
+Core/Src/gpio.c \
 Core/Src/hw_timerserver.c \
+Core/Src/i2c.c \
+Core/Src/ipcc.c \
 Core/Src/main.c \
+Core/Src/memorymap.c \
+Core/Src/rf.c \
+Core/Src/rtc.c \
 Core/Src/stm32_lpm_if.c \
 Core/Src/stm32wbxx_hal_msp.c \
 Core/Src/stm32wbxx_it.c \
 Core/Src/syscalls.c \
 Core/Src/sysmem.c \
 Core/Src/system_stm32wbxx.c \
+Core/Src/tim.c \
+Core/Src/usart.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_inverse_f32.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c \
@@ -118,7 +127,6 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_adc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_rcc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_usb.c \
-Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c \
 Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
@@ -141,6 +149,18 @@ Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c \
 Middlewares/ST/STM32_WPAN/utilities/otp.c \
 Middlewares/ST/STM32_WPAN/utilities/stm_list.c \
 Middlewares/ST/STM32_WPAN/utilities/stm_queue.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_desc.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Src/usbd_cdc_acm.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Src/usbd_composite.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Src/usbd_hid_keyboard.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_core.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ctlreq.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Src/usbd_ioreq.c \
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.c \
 STM32_WPAN/App/app_ble.c \
 STM32_WPAN/App/custom_app.c \
 STM32_WPAN/App/custom_stm.c \
@@ -162,7 +182,6 @@ CXX_SOURCES = \
 
 # ASM sources
 ASM_SOURCES =  \
-startup_stm32wb55xx_cm4.s
 
 
 #######################################
@@ -247,6 +266,7 @@ AS_INCLUDES = \
 
 # C includes
 C_INCLUDES =  \
+-IComposite \
 -ICore/Inc \
 -ICore/Src \
 -IDrivers/CMSIS/DSP/Include \
@@ -268,6 +288,13 @@ C_INCLUDES =  \
 -IMiddlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci \
 -IMiddlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl \
 -IMiddlewares/ST/STM32_WPAN/utilities \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc \
+-IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target \
 -ISTM32_WPAN/App \
 -IUSB_Device/App \
 -IUSB_Device/Target \

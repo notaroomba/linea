@@ -104,7 +104,7 @@
   * @{
   */
 
-extern USBD_DescriptorsTypeDef     CDC_Desc;
+extern USBD_DescriptorsTypeDef     HID_Desc;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
 

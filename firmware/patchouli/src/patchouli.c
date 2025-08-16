@@ -31,7 +31,7 @@
 #include <stdbool.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include "usbd_cdc.h"
+// #include "usbd_cdc_acms.h"
 
 // #define OLD_IMPL
 

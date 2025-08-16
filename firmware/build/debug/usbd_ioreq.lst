@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
   25              		.thumb_func
   27              	USBD_CtlSendData:
   28              	.LVL0:
-  29              	.LFB1108:
+  29              	.LFB1416:
    1:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
    2:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   ******************************************************************************
    3:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @file    usbd_ioreq.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
   27:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /** @defgroup USBD_IOREQ
   28:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @brief control I/O requests module
   29:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 2
 
 
   30:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
   84:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @retval status
   85:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   */
   86:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** USBD_StatusTypeDef USBD_CtlSendData(USBD_HandleTypeDef *pdev,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 3
 
 
   87:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****                                     uint8_t *pbuf, uint32_t len)
@@ -173,19 +173,19 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
   62 0016 0020     		movs	r0, #0
   63 0018 08BD     		pop	{r3, pc}
   64              		.cfi_endproc
-  65              	.LFE1108:
+  65              	.LFE1416:
   67              		.section	.text.USBD_CtlContinueSendData,"ax",%progbits
   68              		.align	1
   69              		.global	USBD_CtlContinueSendData
   70              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 4
 
 
   71              		.thumb
   72              		.thumb_func
   74              	USBD_CtlContinueSendData:
   75              	.LVL4:
-  76              	.LFB1109:
+  76              	.LFB1417:
  104:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
  105:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
  106:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @brief  USBD_CtlContinueSendData
@@ -228,7 +228,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
   99 000c 0020     		movs	r0, #0
  100 000e 08BD     		pop	{r3, pc}
  101              		.cfi_endproc
- 102              	.LFE1109:
+ 102              	.LFE1417:
  104              		.section	.text.USBD_CtlPrepareRx,"ax",%progbits
  105              		.align	1
  106              		.global	USBD_CtlPrepareRx
@@ -237,8 +237,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  109              		.thumb_func
  111              	USBD_CtlPrepareRx:
  112              	.LVL8:
- 113              	.LFB1110:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 5
+ 113              	.LFB1418:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 5
 
 
  121:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  145:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
  146:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   return USBD_OK;
  144              		.loc 1 146 3 is_stmt 1 view .LVU34
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 6
 
 
  147:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** }
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  146 001a 0020     		movs	r0, #0
  147 001c 08BD     		pop	{r3, pc}
  148              		.cfi_endproc
- 149              	.LFE1110:
+ 149              	.LFE1418:
  151              		.section	.text.USBD_CtlContinueRx,"ax",%progbits
  152              		.align	1
  153              		.global	USBD_CtlContinueRx
@@ -315,7 +315,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  156              		.thumb_func
  158              	USBD_CtlContinueRx:
  159              	.LVL12:
- 160              	.LFB1111:
+ 160              	.LFB1419:
  148:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
  149:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
  150:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @brief  USBD_CtlContinueRx
@@ -357,8 +357,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  183 000c 0020     		movs	r0, #0
  184 000e 08BD     		pop	{r3, pc}
  185              		.cfi_endproc
- 186              	.LFE1111:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 7
+ 186              	.LFE1419:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 7
 
 
  188              		.section	.text.USBD_CtlSendStatus,"ax",%progbits
@@ -369,7 +369,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  193              		.thumb_func
  195              	USBD_CtlSendStatus:
  196              	.LVL16:
- 197              	.LFB1112:
+ 197              	.LFB1420:
  164:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
  165:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
  166:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @brief  USBD_CtlSendStatus
@@ -412,19 +412,19 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  220 0012 0020     		movs	r0, #0
  221 0014 08BD     		pop	{r3, pc}
  222              		.cfi_endproc
- 223              	.LFE1112:
+ 223              	.LFE1420:
  225              		.section	.text.USBD_CtlReceiveStatus,"ax",%progbits
  226              		.align	1
  227              		.global	USBD_CtlReceiveStatus
  228              		.syntax unified
  229              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 8
 
 
  230              		.thumb_func
  232              	USBD_CtlReceiveStatus:
  233              	.LVL18:
- 234              	.LFB1113:
+ 234              	.LFB1421:
  181:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
  182:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
  183:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c ****   * @brief  USBD_CtlReceiveStatus
@@ -467,7 +467,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  257 0012 0020     		movs	r0, #0
  258 0014 08BD     		pop	{r3, pc}
  259              		.cfi_endproc
- 260              	.LFE1113:
+ 260              	.LFE1421:
  262              		.section	.text.USBD_GetRxCount,"ax",%progbits
  263              		.align	1
  264              		.global	USBD_GetRxCount
@@ -476,9 +476,9 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  267              		.thumb_func
  269              	USBD_GetRxCount:
  270              	.LVL20:
- 271              	.LFB1114:
+ 271              	.LFB1422:
  198:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 9
 
 
  199:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c **** /**
@@ -508,32 +508,32 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 1
  285              		.loc 1 209 1 view .LVU64
  286 0006 08BD     		pop	{r3, pc}
  287              		.cfi_endproc
- 288              	.LFE1114:
+ 288              	.LFE1422:
  290              		.text
  291              	.Letext0:
  292              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  293              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  294              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  295              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_ioreq.c
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:21     .text.USBD_CtlSendData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:27     .text.USBD_CtlSendData:00000000 USBD_CtlSendData
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:68     .text.USBD_CtlContinueSendData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:74     .text.USBD_CtlContinueSendData:00000000 USBD_CtlContinueSendData
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:105    .text.USBD_CtlPrepareRx:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:111    .text.USBD_CtlPrepareRx:00000000 USBD_CtlPrepareRx
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:152    .text.USBD_CtlContinueRx:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:158    .text.USBD_CtlContinueRx:00000000 USBD_CtlContinueRx
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:189    .text.USBD_CtlSendStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:195    .text.USBD_CtlSendStatus:00000000 USBD_CtlSendStatus
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:226    .text.USBD_CtlReceiveStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:232    .text.USBD_CtlReceiveStatus:00000000 USBD_CtlReceiveStatus
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:263    .text.USBD_GetRxCount:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccl6fFRQ.s:269    .text.USBD_GetRxCount:00000000 USBD_GetRxCount
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:21     .text.USBD_CtlSendData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:27     .text.USBD_CtlSendData:00000000 USBD_CtlSendData
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:68     .text.USBD_CtlContinueSendData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:74     .text.USBD_CtlContinueSendData:00000000 USBD_CtlContinueSendData
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:105    .text.USBD_CtlPrepareRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:111    .text.USBD_CtlPrepareRx:00000000 USBD_CtlPrepareRx
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:152    .text.USBD_CtlContinueRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:158    .text.USBD_CtlContinueRx:00000000 USBD_CtlContinueRx
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:189    .text.USBD_CtlSendStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:195    .text.USBD_CtlSendStatus:00000000 USBD_CtlSendStatus
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:226    .text.USBD_CtlReceiveStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:232    .text.USBD_CtlReceiveStatus:00000000 USBD_CtlReceiveStatus
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:263    .text.USBD_GetRxCount:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4oIFZb.s:269    .text.USBD_GetRxCount:00000000 USBD_GetRxCount
 
 UNDEFINED SYMBOLS
 USBD_LL_Transmit
