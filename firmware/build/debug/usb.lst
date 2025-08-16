@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
   28:Core/Src/usb.c **** 
   29:Core/Src/usb.c **** /* USB init function */
   30:Core/Src/usb.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 2
 
 
   31:Core/Src/usb.c **** void MX_USB_PCD_Init(void)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
   65 001a C372     		strb	r3, [r0, #11]
   49:Core/Src/usb.c ****   if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
   66              		.loc 1 49 3 is_stmt 1 view .LVU17
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 3
 
 
   67              		.loc 1 49 7 is_stmt 0 view .LVU18
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
   62:Core/Src/usb.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
  110              		.loc 1 62 3 is_stmt 1 view .LVU25
  111              		.loc 1 62 20 is_stmt 0 view .LVU26
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 4
 
 
  112 0004 0023     		movs	r3, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  136              		.loc 1 69 5 is_stmt 1 view .LVU31
  137              	.LBB8:
  138              	.LBI8:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 5
 
 
  139              		.file 2 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h"
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
   54:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
   55:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
   56:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 6
 
 
   57:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Private types -------------------------------------------------------------*/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  111:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  112:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  113:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_AHB3_GRP1_PERIPH  AHB3 GRP1 PERIPH
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 7
 
 
  114:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  168:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB1_GRP2_PERIPH_LPTIM2         RCC_APB1ENR2_LPTIM2EN
  169:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  170:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 8
 
 
  171:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  225:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_C2_AHB2_GRP1_PERIPH  C2 AHB2 GRP1 PERIPH
  226:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
  227:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 9
 
 
  228:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOA        RCC_C2AHB2ENR_GPIOAEN
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  282:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  283:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 10
 
 
  285:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_C2_APB1_GRP2_PERIPH  C2 APB1 GRP2 PERIPH
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  339:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  340:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_Exported_Functions BUS Exported Functions
  341:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 11
 
 
  342:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  396:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB1ENR      DMA1EN        LL_AHB1_GRP1_DisableClock\n
  397:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMA2EN        LL_AHB1_GRP1_DisableClock\n
  398:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMAMUX1EN      LL_AHB1_GRP1_DisableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 12
 
 
  399:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      CRCEN         LL_AHB1_GRP1_DisableClock\n
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  453:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  454:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB1_GRP1_ReleaseReset(uint32_t Periphs)
  455:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 13
 
 
  456:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   CLEAR_BIT(RCC->AHB1RSTR, Periphs);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  510:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
  511:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  512:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 14
 
 
  513:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EF_AHB2 AHB2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  160              		.loc 1 74 5 is_stmt 1 view .LVU40
   74:Core/Src/usb.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
  161              		.loc 1 74 25 is_stmt 0 view .LVU41
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 15
 
 
  162 0032 4FF4C053 		mov	r3, #6144
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  569:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  570:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE uint32_t LL_AHB2_GRP1_IsEnabledClock(uint32_t Periphs)
  571:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 16
 
 
  572:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   return ((READ_BIT(RCC->AHB2ENR, Periphs) == (Periphs)) ? 1UL : 0UL);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  626:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
  627:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB2RSTR, Periphs);
  628:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 17
 
 
  629:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  683:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB2SMENR, Periphs);
  684:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   /* Delay after an RCC peripheral clock enabling */
  685:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB2SMENR, Periphs);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 18
 
 
  686:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  740:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_FLASH
  741:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
  742:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 19
 
 
  743:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  797:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  798:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB3_GRP1_DisableClock(uint32_t Periphs)
  799:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 20
 
 
  800:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   CLEAR_BIT(RCC->AHB3ENR, Periphs);
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  854:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  855:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  856:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Enable AHB3 peripherals clock during Low Power (Sleep) mode.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 21
 
 
  857:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB3SMENR    QUADSPISMEN   LL_AHB3_GRP1_EnableClockSleep\n
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  911:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  912:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  913:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 22
 
 
  914:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Enable APB1 peripherals clock.
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  205 005e 1146     		mov	r1, r2
  206 0060 1420     		movs	r0, #20
  207 0062 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 23
 
 
  208              	.LVL9:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  105:Core/Src/usb.c ****     PA11     ------> USB_DM
  106:Core/Src/usb.c ****     PA12     ------> USB_DP
  107:Core/Src/usb.c ****     */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 24
 
 
  108:Core/Src/usb.c ****     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_11|GPIO_PIN_12);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  983:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_WWDG
  984:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_SPI2 (*)
  985:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_I2C1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 25
 
 
  986:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_I2C3 (*)
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  258              	.LBB13:
 1039:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
 1040:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   CLEAR_BIT(RCC->APB1ENR1, Periphs);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 26
 
 
  259              		.loc 2 1040 3 view .LVU70
@@ -1555,22 +1555,22 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 1
  306              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_cortex.h"
  307              		.file 13 "Core/Inc/usb.h"
  308              		.file 14 "Core/Inc/main.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s 			page 27
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usb.c
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:21     .text.MX_USB_PCD_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:27     .text.MX_USB_PCD_Init:00000000 MX_USB_PCD_Init
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:84     .text.MX_USB_PCD_Init:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:293    .bss.hpcd_USB_FS:00000000 hpcd_USB_FS
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:90     .text.HAL_PCD_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:96     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:218    .text.HAL_PCD_MspInit:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:223    .text.HAL_PCD_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:229    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:284    .text.HAL_PCD_MspDeInit:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\cc9S8RMc.s:290    .bss.hpcd_USB_FS:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:21     .text.MX_USB_PCD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:27     .text.MX_USB_PCD_Init:00000000 MX_USB_PCD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:84     .text.MX_USB_PCD_Init:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:293    .bss.hpcd_USB_FS:00000000 hpcd_USB_FS
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:90     .text.HAL_PCD_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:96     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:218    .text.HAL_PCD_MspInit:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:223    .text.HAL_PCD_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:229    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:284    .text.HAL_PCD_MspDeInit:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOmCrex.s:290    .bss.hpcd_USB_FS:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_PCD_Init

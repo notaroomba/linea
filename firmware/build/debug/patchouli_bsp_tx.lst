@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
   28:patchouli/src/patchouli_bsp_tx.c **** // The current workaround is to use cycle-accurate assembly code to generate 
   29:patchouli/src/patchouli_bsp_tx.c **** // the signals. This is not ideal because:
   30:patchouli/src/patchouli_bsp_tx.c **** // 1. The code is not portable between architectures.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 2
 
 
   31:patchouli/src/patchouli_bsp_tx.c **** // 2. The clock frequency of the CPU cannot be changed.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
   85:patchouli/src/patchouli_bsp_tx.c **** 
   86:patchouli/src/patchouli_bsp_tx.c **** void _PW100_FSTEP_480(void){
   87:patchouli/src/patchouli_bsp_tx.c ****     // 480kHz
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 3
 
 
   88:patchouli/src/patchouli_bsp_tx.c ****     // need 300 cycles
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  142:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  143:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  144:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_LOW();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 4
 
 
  145:patchouli/src/patchouli_bsp_tx.c ****         _100NOP();
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
   67              		.loc 1 160 9 view .LVU15
   68              		.loc 1 160 9 view .LVU16
   69              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 5
 
 
   70              	@ 160 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  124              	@ 160 "patchouli/src/patchouli_bsp_tx.c" 1
  125 0056 00BF     		nop
  126 0058 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 6
 
 
  127 005a 00BF     	nop
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  181 0088 00BF     		nop
  182 008a 00BF     	nop
  183 008c 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 7
 
 
  184 008e 00BF     	nop
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  238 00c0 00BF     	nop
  239 00c2 00BF     	nop
  240              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 8
 
 
  241              		.loc 1 160 9 view .LVU76
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  294 00f0 00BF     	nop
  295 00f2 00BF     	nop
  296 00f4 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 9
 
 
  297              	@ 0 "" 2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  351              	@ 0 "" 2
  352              		.loc 1 161 27 view .LVU117
  353              		.loc 1 161 27 view .LVU118
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 10
 
 
  354              		.loc 1 161 36 view .LVU119
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  406              		.loc 1 163 9 view .LVU138
  407              		.loc 1 163 9 view .LVU139
  408              		.loc 1 163 9 view .LVU140
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 11
 
 
  409              		.loc 1 163 9 view .LVU141
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  463              		.loc 1 163 9 view .LVU160
  464              	@ 163 "patchouli/src/patchouli_bsp_tx.c" 1
  465 0188 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 12
 
 
  466 018a 00BF     	nop
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  520              	@ 163 "patchouli/src/patchouli_bsp_tx.c" 1
  521 01ba 00BF     		nop
  522 01bc 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 13
 
 
  523 01be 00BF     	nop
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  577 01f0 00BF     	nop
  578 01f2 00BF     	nop
  579 01f4 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 14
 
 
  580              	@ 0 "" 2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  633 0224 00BF     	nop
  634              	@ 0 "" 2
  635              		.loc 1 164 9 view .LVU218
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 15
 
 
  636              		.loc 1 164 9 view .LVU219
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  158:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
  685              		.loc 1 158 26 discriminator 3 view .LVU235
  686              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 16
 
 
  687              		.syntax unified
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  734 0008 1360     		str	r3, [r2]
  735              		.loc 1 176 5 view .LVU246
  177:patchouli/src/patchouli_bsp_tx.c ****     const int ncycle = patchouli_pen_pw100.tx_ncycle;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 17
 
 
  736              		.loc 1 177 5 view .LVU247
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  786              		.loc 1 181 9 view .LVU267
  787              	@ 181 "patchouli/src/patchouli_bsp_tx.c" 1
  788 0038 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 18
 
 
  789 003a 00BF     	nop
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  843 006c 00BF     	nop
  844 006e 00BF     	nop
  845 0070 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 19
 
 
  846 0072 00BF     	nop
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  900 00a0 00BF     	nop
  901 00a2 00BF     	nop
  902 00a4 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 20
 
 
  903              	@ 0 "" 2
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  957              	@ 0 "" 2
  958              		.loc 1 181 9 view .LVU327
  959              		.loc 1 181 9 view .LVU328
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 21
 
 
  960              		.loc 1 181 9 view .LVU329
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1013 0108 00BF     	nop
  1014              	@ 0 "" 2
  1015              		.loc 1 182 18 view .LVU349
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 22
 
 
  1016              		.loc 1 182 18 view .LVU350
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  186:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  1067              		.loc 1 186 9 view .LVU367
  1068              	@ 186 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 23
 
 
  1069 0136 00BF     		nop
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1121              	@ 0 "" 2
  1122              		.loc 1 188 9 view .LVU386
  1123              		.loc 1 188 9 view .LVU387
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 24
 
 
  1124              		.loc 1 188 9 view .LVU388
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1178              		.loc 1 188 9 view .LVU407
  1179              		.loc 1 188 9 view .LVU408
  1180              		.loc 1 188 9 view .LVU409
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 25
 
 
  1181              	@ 188 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1235              		.loc 1 188 9 view .LVU429
  1236              		.loc 1 188 9 view .LVU430
  1237              	@ 188 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 26
 
 
  1238 01ca 00BF     		nop
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1292 01fc 00BF     		nop
  1293 01fe 00BF     	nop
  1294 0200 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 27
 
 
  1295 0202 00BF     	nop
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1348 022e 00BF     	nop
  1349 0230 00BF     	nop
  1350 0232 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 28
 
 
  1351              	@ 0 "" 2
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1396              		.loc 1 195 5 is_stmt 1 view .LVU481
  196:patchouli/src/patchouli_bsp_tx.c **** }
  1397              		.loc 1 196 1 is_stmt 0 view .LVU482
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 29
 
 
  1398 0258 7047     		bx	lr
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1446              		.loc 1 204 9 view .LVU494
  1447 001c 7F4A     		ldr	r2, .L26
  1448 001e 4FF40051 		mov	r1, #8192
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 30
 
 
  1449 0022 9161     		str	r1, [r2, #24]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1502 004e 00BF     	nop
  1503 0050 00BF     	nop
  1504 0052 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 31
 
 
  1505 0054 00BF     	nop
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1559 0086 00BF     	nop
  1560              	@ 0 "" 2
  1561              		.loc 1 205 9 view .LVU535
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 32
 
 
  1562              		.loc 1 205 9 view .LVU536
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1616              	@ 0 "" 2
  1617              		.loc 1 205 9 view .LVU556
  1618              		.loc 1 205 9 view .LVU557
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 33
 
 
  1619              		.loc 1 205 9 view .LVU558
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1673              		.loc 1 205 9 view .LVU577
  206:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  1674              		.loc 1 206 9 view .LVU578
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 34
 
 
  1675              		.loc 1 206 9 view .LVU579
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1729              		.loc 1 206 27 view .LVU598
  1730              		.loc 1 206 27 view .LVU599
  1731              	@ 206 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 35
 
 
  1732 011e 00BF     		nop
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1781 0146 00BF     		nop
  1782 0148 00BF     	nop
  1783 014a 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 36
 
 
  1784 014c 00BF     	nop
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1838 017a 00BF     	nop
  1839 017c 00BF     	nop
  1840 017e 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 37
 
 
  1841 0180 00BF     	nop
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1895 01b2 00BF     	nop
  1896              	@ 0 "" 2
  1897              		.loc 1 211 9 view .LVU657
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 38
 
 
  1898              		.loc 1 211 9 view .LVU658
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  1952              	@ 0 "" 2
  1953              		.loc 1 211 9 view .LVU678
  1954              		.loc 1 211 9 view .LVU679
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 39
 
 
  1955              		.loc 1 211 9 view .LVU680
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2008              		.thumb
  2009              		.syntax unified
  2010 0218 02E0     		b	.L27
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 40
 
 
  2011              	.L28:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2061              		.syntax unified
  2062 0242 0133     		adds	r3, r3, #1
  2063              	.LVL12:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 41
 
 
  203:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2110              		.loc 1 223 5 view .LVU725
  2111              		.loc 1 223 43 is_stmt 0 view .LVU726
  2112 000a 034B     		ldr	r3, .L34+4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 42
 
 
  2113 000c 1889     		ldrh	r0, [r3, #8]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2163 003a 00BF     	nop
  2164 003c 00BF     	nop
  2165 003e 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 43
 
 
  2166 0040 00BF     	nop
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2220 0072 00BF     	nop
  2221              	@ 0 "" 2
  2222              		.loc 1 227 9 view .LVU765
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 44
 
 
  2223              		.loc 1 227 9 view .LVU766
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2277              	@ 0 "" 2
  2278              		.loc 1 227 9 view .LVU786
  2279              		.loc 1 227 9 view .LVU787
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 45
 
 
  2280              		.loc 1 227 9 view .LVU788
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2334              		.loc 1 227 9 view .LVU807
  2335              		.loc 1 227 9 view .LVU808
  2336              		.loc 1 227 9 view .LVU809
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 46
 
 
  2337              	@ 227 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2390              		.loc 1 228 18 view .LVU828
  2391              		.loc 1 228 18 view .LVU829
  2392              	@ 228 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 47
 
 
  2393 010a 00BF     		nop
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2442              	@ 0 "" 2
  234:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  2443              		.loc 1 234 9 view .LVU845
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 48
 
 
  2444              	@ 234 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2496 0160 00BF     	nop
  2497              	@ 0 "" 2
  2498              		.loc 1 236 9 view .LVU864
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 49
 
 
  2499              		.loc 1 236 9 view .LVU865
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2553              	@ 0 "" 2
  2554              		.loc 1 236 9 view .LVU885
  2555              		.loc 1 236 9 view .LVU886
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 50
 
 
  2556              		.loc 1 236 9 view .LVU887
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2610              		.loc 1 236 9 view .LVU906
  2611              		.loc 1 236 9 view .LVU907
  2612              		.loc 1 236 9 view .LVU908
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 51
 
 
  2613              	@ 236 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2667              	@ 236 "patchouli/src/patchouli_bsp_tx.c" 1
  2668 01f8 00BF     		nop
  2669 01fa 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 52
 
 
  2670 01fc 00BF     	nop
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2723 0228 00BF     	nop
  2724 022a 00BF     	nop
  2725 022c 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 53
 
 
  2726 022e 00BF     	nop
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2770              		.loc 1 244 5 is_stmt 1 view .LVU958
  245:patchouli/src/patchouli_bsp_tx.c **** }
  2771              		.loc 1 245 1 is_stmt 0 view .LVU959
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 54
 
 
  2772 024e 7047     		bx	lr
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2820              		.loc 1 253 9 view .LVU971
  2821 001c 7E4A     		ldr	r2, .L46
  2822 001e 4FF40051 		mov	r1, #8192
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 55
 
 
  2823 0022 9161     		str	r1, [r2, #24]
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2876 004e 00BF     	nop
  2877 0050 00BF     	nop
  2878 0052 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 56
 
 
  2879 0054 00BF     	nop
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2933 0086 00BF     	nop
  2934              	@ 0 "" 2
  2935              		.loc 1 254 9 view .LVU1012
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 57
 
 
  2936              		.loc 1 254 9 view .LVU1013
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  2990              	@ 0 "" 2
  2991              		.loc 1 254 9 view .LVU1033
  2992              		.loc 1 254 9 view .LVU1034
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 58
 
 
  2993              		.loc 1 254 9 view .LVU1035
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3047              		.loc 1 254 9 view .LVU1054
  255:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  3048              		.loc 1 255 9 view .LVU1055
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 59
 
 
  3049              		.loc 1 255 9 view .LVU1056
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3103              		.loc 1 255 27 view .LVU1075
  3104              		.loc 1 255 27 view .LVU1076
  3105              	@ 255 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 60
 
 
  3106 011e 00BF     		nop
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3157              		.loc 1 258 9 view .LVU1096
  3158              	@ 258 "patchouli/src/patchouli_bsp_tx.c" 1
  3159 014c 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 61
 
 
  3160 014e 00BF     	nop
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3214 0180 00BF     	nop
  3215 0182 00BF     	nop
  3216 0184 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 62
 
 
  3217 0186 00BF     	nop
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3271 01b4 00BF     	nop
  3272 01b6 00BF     	nop
  3273 01b8 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 63
 
 
  3274              	@ 0 "" 2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3328              	@ 0 "" 2
  3329              		.loc 1 258 9 view .LVU1156
  3330              		.loc 1 258 9 view .LVU1157
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 64
 
 
  3331              		.loc 1 258 9 view .LVU1158
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3384              		.loc 1 259 18 view .LVU1175
  3385              		.loc 1 259 18 view .LVU1176
  3386              		.loc 1 259 18 view .LVU1177
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 65
 
 
  3387              		.syntax unified
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3434 023e 3FF6EDAE 		bhi	.L43
  264:patchouli/src/patchouli_bsp_tx.c ****     }
  265:patchouli/src/patchouli_bsp_tx.c ****     PATCHOULI_TX_TRISTATE();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 66
 
 
  3435              		.loc 1 265 5 view .LVU1190
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3483              		.loc 1 273 5 view .LVU1204
  3484 0010 10E1     		b	.L52
  3485              	.L55:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 67
 
 
  3486 0012 00BF     		.align	2
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3538 0046 00BF     	nop
  3539 0048 00BF     	nop
  3540 004a 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 68
 
 
  3541              	@ 0 "" 2
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3595 007a 00BF     	nop
  3596 007c 00BF     	nop
  3597              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 69
 
 
  3598              		.loc 1 275 9 view .LVU1244
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3652              		.loc 1 275 9 view .LVU1263
  3653              		.loc 1 275 9 view .LVU1264
  3654              		.loc 1 275 9 view .LVU1265
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 70
 
 
  3655              		.loc 1 275 9 view .LVU1266
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3709              		.loc 1 275 9 view .LVU1285
  3710              		.loc 1 275 9 view .LVU1286
  3711              	@ 275 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 71
 
 
  3712 00e2 00BF     		nop
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3765              		.loc 1 276 27 view .LVU1306
  3766              		.loc 1 276 27 view .LVU1307
  3767              		.loc 1 276 27 view .LVU1308
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 72
 
 
  3768              	@ 276 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3817              	@ 0 "" 2
  3818              		.loc 1 281 9 view .LVU1324
  3819              		.loc 1 281 9 view .LVU1325
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 73
 
 
  3820              		.loc 1 281 9 view .LVU1326
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3874              		.loc 1 281 9 view .LVU1345
  3875              		.loc 1 281 9 view .LVU1346
  3876              		.loc 1 281 9 view .LVU1347
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 74
 
 
  3877              	@ 281 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3931              	@ 281 "patchouli/src/patchouli_bsp_tx.c" 1
  3932 01a2 00BF     		nop
  3933 01a4 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 75
 
 
  3934 01a6 00BF     	nop
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  3988 01d4 00BF     		nop
  3989 01d6 00BF     	nop
  3990 01d8 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 76
 
 
  3991 01da 00BF     	nop
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4044 0208 00BF     	nop
  4045 020a 00BF     	nop
  4046 020c 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 77
 
 
  4047 020e 00BF     	nop
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4097 0230 0133     		adds	r3, r3, #1
  4098              	.LVL27:
  273:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 78
 
 
  4099              		.loc 1 273 26 is_stmt 0 discriminator 3 view .LVU1422
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4146              		.loc 1 293 43 is_stmt 0 view .LVU1434
  4147 000a 034B     		ldr	r3, .L64+4
  4148 000c 1889     		ldrh	r0, [r3, #8]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 79
 
 
  4149              	.LVL30:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4199 003c 00BF     	nop
  4200 003e 00BF     	nop
  4201 0040 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 80
 
 
  4202              	@ 0 "" 2
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4256              	@ 0 "" 2
  4257              		.loc 1 297 9 view .LVU1473
  4258              		.loc 1 297 9 view .LVU1474
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 81
 
 
  4259              		.loc 1 297 9 view .LVU1475
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4313              		.loc 1 297 9 view .LVU1494
  4314              		.loc 1 297 9 view .LVU1495
  4315              		.loc 1 297 9 view .LVU1496
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 82
 
 
  4316              	@ 297 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4370              		.loc 1 297 9 view .LVU1516
  4371              		.loc 1 297 9 view .LVU1517
  4372              	@ 297 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 83
 
 
  4373 00d8 00BF     		nop
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4426              		.loc 1 298 18 view .LVU1537
  4427              	@ 298 "patchouli/src/patchouli_bsp_tx.c" 1
  4428 010a 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 84
 
 
  4429 010c 00BF     	nop
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4479 0132 00BF     		nop
  4480 0134 00BF     	nop
  4481 0136 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 85
 
 
  4482 0138 00BF     	nop
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4536 016a 00BF     	nop
  4537 016c 00BF     	nop
  4538              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 86
 
 
  4539              		.loc 1 302 9 view .LVU1576
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4593 019e 00BF     	nop
  4594              	@ 0 "" 2
  4595              		.loc 1 302 9 view .LVU1597
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 87
 
 
  4596              		.loc 1 302 9 view .LVU1598
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4650              		.loc 1 302 9 view .LVU1617
  4651              		.loc 1 302 9 view .LVU1618
  4652              		.loc 1 302 9 view .LVU1619
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 88
 
 
  4653              		.loc 1 302 9 view .LVU1620
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4706              		.loc 1 303 9 view .LVU1638
  4707              		.loc 1 303 9 view .LVU1639
  4708              		.loc 1 303 9 view .LVU1640
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 89
 
 
  4709              	@ 303 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4760 022e 0133     		adds	r3, r3, #1
  4761              	.LVL32:
  295:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 90
 
 
  4762              		.loc 1 295 26 is_stmt 0 discriminator 3 view .LVU1654
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4809              		.loc 1 313 43 is_stmt 0 view .LVU1666
  4810 000a 034B     		ldr	r3, .L74+4
  4811 000c 1889     		ldrh	r0, [r3, #8]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 91
 
 
  4812              	.LVL35:
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4862 003c 00BF     	nop
  4863 003e 00BF     	nop
  4864 0040 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 92
 
 
  4865              	@ 0 "" 2
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4919              	@ 0 "" 2
  4920              		.loc 1 317 9 view .LVU1705
  4921              		.loc 1 317 9 view .LVU1706
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 93
 
 
  4922              		.loc 1 317 9 view .LVU1707
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  4976              		.loc 1 317 9 view .LVU1726
  4977              		.loc 1 317 9 view .LVU1727
  4978              		.loc 1 317 9 view .LVU1728
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 94
 
 
  4979              	@ 317 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5033              		.loc 1 317 9 view .LVU1748
  5034              		.loc 1 317 9 view .LVU1749
  5035              	@ 317 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 95
 
 
  5036 00d8 00BF     		nop
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5089              		.loc 1 318 18 view .LVU1769
  5090              	@ 318 "patchouli/src/patchouli_bsp_tx.c" 1
  5091 010a 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 96
 
 
  5092 010c 00BF     	nop
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5139              		.loc 1 325 9 view .LVU1786
  5140              		.syntax unified
  5141              	@ 325 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 97
 
 
  5142 012e 00BF     		nop
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5196 0160 00BF     		nop
  5197 0162 00BF     	nop
  5198 0164 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 98
 
 
  5199 0166 00BF     	nop
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5253 0194 00BF     	nop
  5254 0196 00BF     	nop
  5255 0198 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 99
 
 
  5256 019a 00BF     	nop
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5310 01cc 00BF     	nop
  5311              	@ 0 "" 2
  5312              		.loc 1 325 9 view .LVU1846
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 100
 
 
  5313              		.loc 1 325 9 view .LVU1847
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5366 01fc 00BF     	nop
  5367 01fe 00BF     	nop
  5368              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 101
 
 
  5369              		.loc 1 326 9 view .LVU1868
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  315:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
  5421              		.loc 1 315 26 is_stmt 0 discriminator 3 view .LVU1883
  5422 022a 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 102
 
 
  5423              	.LVL38:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5469 000a 034B     		ldr	r3, .L84+4
  5470 000c 1889     		ldrh	r0, [r3, #8]
  5471              	.LVL40:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 103
 
 
   91:patchouli/src/patchouli_bsp_tx.c ****     for (i=0; i<ncycle; i++){ // 3 cycles
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5512              	@ 0 "" 2
   94:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  5513              		.loc 1 94 9 view .LVU1910
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 104
 
 
   94:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5553 005a 00BF     	nop
  5554 005c 00BF     	nop
  5555 005e 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 105
 
 
  5556              	@ 0 "" 2
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5594              	@ 94 "patchouli/src/patchouli_bsp_tx.c" 1
  5595 007e 00BF     		nop
  5596 0080 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 106
 
 
  5597 0082 00BF     	nop
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5636              		.loc 1 94 9 view .LVU1956
   94:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  5637              		.loc 1 94 9 view .LVU1957
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 107
 
 
  5638              	@ 94 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
   94:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  5679              		.loc 1 94 9 view .LVU1971
   94:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 108
 
 
  5680              		.loc 1 94 9 view .LVU1972
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5719 00ee 00BF     	nop
  5720 00f0 00BF     	nop
  5721 00f2 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 109
 
 
  5722 00f4 00BF     	nop
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5760              		.loc 1 95 27 view .LVU2003
  5761              	@ 95 "patchouli/src/patchouli_bsp_tx.c" 1
  5762 0114 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 110
 
 
  5763 0116 00BF     	nop
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
   96:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  5803              		.loc 1 96 9 view .LVU2018
  5804              	@ 96 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 111
 
 
  5805 013c 00BF     		nop
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  5847              		.loc 1 102 9 view .LVU2031
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 112
 
 
  5848              		.loc 1 102 9 view .LVU2032
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5888 0182 00BF     	nop
  5889 0184 00BF     	nop
  5890              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 113
 
 
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  5929 01a4 00BF     		nop
  5930 01a6 00BF     	nop
  5931 01a8 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 114
 
 
  5932 01aa 00BF     	nop
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  5971              		.loc 1 102 9 view .LVU2078
  5972              	@ 102 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 115
 
 
  5973 01cc 00BF     		nop
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6013              		.loc 1 102 9 view .LVU2092
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  6014              		.loc 1 102 9 view .LVU2093
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 116
 
 
  102:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6057 021c 02E0     		b	.L87
  6058              	.L88:
  6059 021e 00BF     		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 117
 
 
  6060              	.L86:
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6099              		.loc 1 103 18 view .LVU2120
  103:patchouli/src/patchouli_bsp_tx.c ****         _5NOP();
  6100              		.loc 1 103 18 view .LVU2121
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 118
 
 
  103:patchouli/src/patchouli_bsp_tx.c ****         _5NOP();
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  104:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  6142              		.loc 1 104 9 view .LVU2135
  105:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 119
 
 
  6143              		.loc 1 105 9 view .LVU2136
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6188              		.syntax unified
  6189              		.thumb
  6190              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 120
 
 
  6192              	_PW100_FSTEP_490:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6231              		.loc 1 120 9 view .LVU2161
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  6232              		.loc 1 120 9 view .LVU2162
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 121
 
 
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6274              		.loc 1 120 9 view .LVU2175
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  6275              		.loc 1 120 9 view .LVU2176
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 122
 
 
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6316 0072 00BF     	nop
  6317              	@ 0 "" 2
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 123
 
 
  6318              		.loc 1 120 9 view .LVU2191
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6357 0094 00BF     	nop
  6358 0096 00BF     	nop
  6359 0098 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 124
 
 
  6360 009a 00BF     	nop
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6398              		.loc 1 120 9 view .LVU2222
  6399              	@ 120 "patchouli/src/patchouli_bsp_tx.c" 1
  6400 00ba 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 125
 
 
  6401 00bc 00BF     	nop
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  6441              		.loc 1 120 9 view .LVU2237
  120:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 126
 
 
  6442              		.loc 1 120 9 view .LVU2238
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6482 0106 00BF     	nop
  6483 0108 00BF     	nop
  6484              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 127
 
 
  121:patchouli/src/patchouli_bsp_tx.c ****         _5NOP();
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6523 0128 00BF     		nop
  6524 012a 00BF     	nop
  6525 012c 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 128
 
 
  6526 012e 00BF     	nop
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  6565              		.loc 1 125 9 view .LVU2284
  6566              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 129
 
 
  6567              	@ 125 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  6608              		.loc 1 125 9 view .LVU2298
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 130
 
 
  6609              		.loc 1 125 9 view .LVU2299
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6650              		.loc 1 125 9 view .LVU2312
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  6651              		.loc 1 125 9 view .LVU2313
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 131
 
 
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6692 01c4 00BF     	nop
  6693              	@ 0 "" 2
  125:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 132
 
 
  6694              		.loc 1 125 9 view .LVU2328
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6733 01e6 00BF     	nop
  6734 01e8 00BF     	nop
  6735 01ea 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 133
 
 
  6736 01ec 00BF     	nop
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6774              		.loc 1 125 9 view .LVU2359
  6775              	@ 125 "patchouli/src/patchouli_bsp_tx.c" 1
  6776 020c 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 134
 
 
  6777 020e 00BF     	nop
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  126:patchouli/src/patchouli_bsp_tx.c ****         _5NOP();
  6818              		.loc 1 126 18 view .LVU2373
  6819              	@ 126 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 135
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 135
 
 
  6820 0230 00BF     		nop
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6860              		.loc 1 127 9 view .LVU2387
  127:patchouli/src/patchouli_bsp_tx.c ****     }
  6861              		.loc 1 127 9 view .LVU2388
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 136
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 136
 
 
  6862              	@ 127 "patchouli/src/patchouli_bsp_tx.c" 1
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  132:patchouli/src/patchouli_bsp_tx.c ****     // 500kHz
  6909              		.loc 1 132 28 is_stmt 1 view -0
  6910              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 137
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 137
 
 
  6911              		@ args = 0, pretend = 0, frame = 0
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  6949              		.syntax unified
  6950              	@ 139 "patchouli/src/patchouli_bsp_tx.c" 1
  6951 0024 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 138
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 138
 
 
  6952 0026 00BF     	nop
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  6992              		.loc 1 139 9 view .LVU2429
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 139
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 139
 
 
  6993              		.loc 1 139 9 view .LVU2430
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7034              		.loc 1 139 9 view .LVU2443
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  7035              		.loc 1 139 9 view .LVU2444
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 140
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 140
 
 
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
  7077              		.loc 1 139 9 view .LVU2458
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 141
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 141
 
 
  7078              		.loc 1 139 9 view .LVU2459
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7118 00c0 00BF     	nop
  7119 00c2 00BF     	nop
  7120              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 142
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 142
 
 
  139:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();_10NOP();
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7159 00e2 00BF     		nop
  7160 00e4 00BF     	nop
  7161 00e6 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 143
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 143
 
 
  7162 00e8 00BF     	nop
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  140:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  7201              		.loc 1 140 18 view .LVU2505
  140:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 144
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 144
 
 
  7202              		.loc 1 140 18 view .LVU2506
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7243              	@ 0 "" 2
  140:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  7244              		.loc 1 140 36 view .LVU2520
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 145
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 145
 
 
  140:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7285 0150 00BF     	nop
  7286              	@ 0 "" 2
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 146
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 146
 
 
  7287              		.loc 1 145 9 view .LVU2535
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7326 0172 00BF     	nop
  7327 0174 00BF     	nop
  7328 0176 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 147
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 147
 
 
  7329 0178 00BF     	nop
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7367              		.loc 1 145 9 view .LVU2566
  7368              	@ 145 "patchouli/src/patchouli_bsp_tx.c" 1
  7369 0198 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 148
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 148
 
 
  7370 019a 00BF     	nop
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  7410              		.loc 1 145 9 view .LVU2581
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 149
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 149
 
 
  7411              		.loc 1 145 9 view .LVU2582
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7452              		.loc 1 145 9 view .LVU2595
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  7453              		.loc 1 145 9 view .LVU2596
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 150
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 150
 
 
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
  7495              		.loc 1 145 9 view .LVU2610
  145:patchouli/src/patchouli_bsp_tx.c ****         _10NOP();_10NOP();_10NOP();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 151
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 151
 
 
  7496              		.loc 1 145 9 view .LVU2611
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7538              	@ 0 "" 2
  146:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
  7539              		.loc 1 146 18 view .LVU2624
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 152
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 152
 
 
  146:patchouli/src/patchouli_bsp_tx.c ****         asm volatile ("nop");
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7580              	@ 0 "" 2
  137:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
  7581              		.loc 1 137 26 discriminator 3 view .LVU2639
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 153
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 153
 
 
  7582              		.thumb
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7627 0000 044A     		ldr	r2, .L114
  7628 0002 1368     		ldr	r3, [r2]
  7629 0004 43F08063 		orr	r3, r3, #67108864
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 154
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 154
 
 
  7630 0008 1360     		str	r3, [r2]
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7679              		.loc 1 339 9 view .LVU2668
  7680              		.loc 1 339 9 view .LVU2669
  7681              		.loc 1 339 9 view .LVU2670
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 155
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 155
 
 
  7682              		.loc 1 339 9 view .LVU2671
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7736              		.loc 1 339 9 view .LVU2690
  7737              	@ 339 "patchouli/src/patchouli_bsp_tx.c" 1
  7738 006a 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 156
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 156
 
 
  7739 006c 00BF     	nop
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7793              	@ 339 "patchouli/src/patchouli_bsp_tx.c" 1
  7794 009c 00BF     		nop
  7795 009e 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 157
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 157
 
 
  7796 00a0 00BF     	nop
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7850 00d2 00BF     	nop
  7851 00d4 00BF     	nop
  7852 00d6 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 158
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 158
 
 
  7853              	@ 0 "" 2
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7906 0102 00BF     	nop
  7907 0104 00BF     	nop
  7908 0106 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 159
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 159
 
 
  7909 0108 00BF     	nop
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  7961 0134 00BF     	nop
  7962 0136 00BF     	nop
  7963              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 160
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 160
 
 
  7964              		.loc 1 342 9 view .LVU2773
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  8018              		.loc 1 342 9 view .LVU2792
  8019              		.loc 1 342 9 view .LVU2793
  8020              		.loc 1 342 9 view .LVU2794
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 161
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 161
 
 
  8021              		.loc 1 342 9 view .LVU2795
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  8075              		.loc 1 342 9 view .LVU2814
  8076              		.loc 1 342 9 view .LVU2815
  8077              	@ 342 "patchouli/src/patchouli_bsp_tx.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 162
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 162
 
 
  8078 019c 00BF     		nop
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  8132              		.loc 1 342 9 view .LVU2836
  8133              	@ 342 "patchouli/src/patchouli_bsp_tx.c" 1
  8134 01ce 00BF     		nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 163
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 163
 
 
  8135 01d0 00BF     	nop
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  8188              	@ 343 "patchouli/src/patchouli_bsp_tx.c" 1
  8189 0200 00BF     		nop
  8190 0202 00BF     	nop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 164
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 164
 
 
  8191 0204 00BF     	nop
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  337:patchouli/src/patchouli_bsp_tx.c ****         PATCHOULI_TX_HIGH();
  8238              		.loc 1 337 16 is_stmt 1 discriminator 1 view .LVU2868
  8239 0228 9842     		cmp	r0, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 165
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 165
 
 
  8240 022a 3FF6F7AE 		bhi	.L113
@@ -9894,101 +9894,101 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 1
  8292              		.file 4 "patchouli/inc/patchouli_bsp_tx.h"
  8293              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  8294              		.file 6 "Core/Inc/app_conf.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 166
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 166
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 patchouli_bsp_tx.c
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:21     .text._PW100_FSTEP_510:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:27     .text._PW100_FSTEP_510:00000000 _PW100_FSTEP_510
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:55     .text._PW100_FSTEP_510:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8264   .data.patchouli_pen_pw100:00000000 patchouli_pen_pw100
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:61     .text._PW100_FSTEP_510:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:622    .text._PW100_FSTEP_510:00000218 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:629    .text._PW100_FSTEP_510:0000021c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:711    .text._PW100_FSTEP_510:00000264 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:716    .text._PW100_FSTEP_515:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:722    .text._PW100_FSTEP_515:00000000 _PW100_FSTEP_515
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:750    .text._PW100_FSTEP_515:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:756    .text._PW100_FSTEP_515:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1327   .text._PW100_FSTEP_515:0000021c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1336   .text._PW100_FSTEP_515:00000220 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1402   .text._PW100_FSTEP_515:0000025c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1407   .text._PW100_FSTEP_520:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1413   .text._PW100_FSTEP_520:00000000 _PW100_FSTEP_520
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1441   .text._PW100_FSTEP_520:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:1447   .text._PW100_FSTEP_520:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2014   .text._PW100_FSTEP_520:0000021c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2023   .text._PW100_FSTEP_520:00000220 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2085   .text._PW100_FSTEP_520:00000258 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2090   .text._PW100_FSTEP_525:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2096   .text._PW100_FSTEP_525:00000000 _PW100_FSTEP_525
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2124   .text._PW100_FSTEP_525:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2130   .text._PW100_FSTEP_525:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2703   .text._PW100_FSTEP_525:00000218 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2712   .text._PW100_FSTEP_525:0000021c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2776   .text._PW100_FSTEP_525:00000250 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2781   .text._PW100_FSTEP_530:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2787   .text._PW100_FSTEP_530:00000000 _PW100_FSTEP_530
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2815   .text._PW100_FSTEP_530:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:2821   .text._PW100_FSTEP_530:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3380   .text._PW100_FSTEP_530:00000218 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3389   .text._PW100_FSTEP_530:0000021c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3449   .text._PW100_FSTEP_530:00000250 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3454   .text._PW100_FSTEP_535:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3460   .text._PW100_FSTEP_535:00000000 _PW100_FSTEP_535
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3488   .text._PW100_FSTEP_535:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:3494   .text._PW100_FSTEP_535:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4067   .text._PW100_FSTEP_535:0000021c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4074   .text._PW100_FSTEP_535:00000220 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4120   .text._PW100_FSTEP_535:00000248 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4125   .text._PW100_FSTEP_540:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4131   .text._PW100_FSTEP_540:00000000 _PW100_FSTEP_540
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4159   .text._PW100_FSTEP_540:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4165   .text._PW100_FSTEP_540:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4734   .text._PW100_FSTEP_540:0000021c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4741   .text._PW100_FSTEP_540:00000220 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4783   .text._PW100_FSTEP_540:00000244 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4788   .text._PW100_FSTEP_545:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4794   .text._PW100_FSTEP_545:00000000 _PW100_FSTEP_545
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4822   .text._PW100_FSTEP_545:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:4828   .text._PW100_FSTEP_545:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5397   .text._PW100_FSTEP_545:00000218 $d
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s 			page 167
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:21     .text._PW100_FSTEP_510:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:27     .text._PW100_FSTEP_510:00000000 _PW100_FSTEP_510
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:55     .text._PW100_FSTEP_510:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8264   .data.patchouli_pen_pw100:00000000 patchouli_pen_pw100
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:61     .text._PW100_FSTEP_510:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:622    .text._PW100_FSTEP_510:00000218 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:629    .text._PW100_FSTEP_510:0000021c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:711    .text._PW100_FSTEP_510:00000264 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:716    .text._PW100_FSTEP_515:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:722    .text._PW100_FSTEP_515:00000000 _PW100_FSTEP_515
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:750    .text._PW100_FSTEP_515:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:756    .text._PW100_FSTEP_515:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1327   .text._PW100_FSTEP_515:0000021c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1336   .text._PW100_FSTEP_515:00000220 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1402   .text._PW100_FSTEP_515:0000025c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1407   .text._PW100_FSTEP_520:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1413   .text._PW100_FSTEP_520:00000000 _PW100_FSTEP_520
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1441   .text._PW100_FSTEP_520:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:1447   .text._PW100_FSTEP_520:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2014   .text._PW100_FSTEP_520:0000021c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2023   .text._PW100_FSTEP_520:00000220 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2085   .text._PW100_FSTEP_520:00000258 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2090   .text._PW100_FSTEP_525:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2096   .text._PW100_FSTEP_525:00000000 _PW100_FSTEP_525
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2124   .text._PW100_FSTEP_525:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2130   .text._PW100_FSTEP_525:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2703   .text._PW100_FSTEP_525:00000218 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2712   .text._PW100_FSTEP_525:0000021c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2776   .text._PW100_FSTEP_525:00000250 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2781   .text._PW100_FSTEP_530:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2787   .text._PW100_FSTEP_530:00000000 _PW100_FSTEP_530
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2815   .text._PW100_FSTEP_530:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:2821   .text._PW100_FSTEP_530:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3380   .text._PW100_FSTEP_530:00000218 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3389   .text._PW100_FSTEP_530:0000021c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3449   .text._PW100_FSTEP_530:00000250 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3454   .text._PW100_FSTEP_535:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3460   .text._PW100_FSTEP_535:00000000 _PW100_FSTEP_535
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3488   .text._PW100_FSTEP_535:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:3494   .text._PW100_FSTEP_535:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4067   .text._PW100_FSTEP_535:0000021c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4074   .text._PW100_FSTEP_535:00000220 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4120   .text._PW100_FSTEP_535:00000248 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4125   .text._PW100_FSTEP_540:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4131   .text._PW100_FSTEP_540:00000000 _PW100_FSTEP_540
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4159   .text._PW100_FSTEP_540:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4165   .text._PW100_FSTEP_540:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4734   .text._PW100_FSTEP_540:0000021c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4741   .text._PW100_FSTEP_540:00000220 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4783   .text._PW100_FSTEP_540:00000244 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4788   .text._PW100_FSTEP_545:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4794   .text._PW100_FSTEP_545:00000000 _PW100_FSTEP_545
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4822   .text._PW100_FSTEP_545:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:4828   .text._PW100_FSTEP_545:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5397   .text._PW100_FSTEP_545:00000218 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s 			page 167
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5404   .text._PW100_FSTEP_545:0000021c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5442   .text._PW100_FSTEP_545:00000240 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5447   .text._PW100_FSTEP_480:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5453   .text._PW100_FSTEP_480:00000000 _PW100_FSTEP_480
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5481   .text._PW100_FSTEP_480:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:5487   .text._PW100_FSTEP_480:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6061   .text._PW100_FSTEP_480:00000220 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6071   .text._PW100_FSTEP_480:00000224 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6181   .text._PW100_FSTEP_480:00000288 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6186   .text._PW100_FSTEP_490:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6192   .text._PW100_FSTEP_490:00000000 _PW100_FSTEP_490
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6220   .text._PW100_FSTEP_490:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6226   .text._PW100_FSTEP_490:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6788   .text._PW100_FSTEP_490:00000218 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6798   .text._PW100_FSTEP_490:0000021c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6896   .text._PW100_FSTEP_490:00000278 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6901   .text._PW100_FSTEP_500:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6907   .text._PW100_FSTEP_500:00000000 _PW100_FSTEP_500
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6935   .text._PW100_FSTEP_500:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:6941   .text._PW100_FSTEP_500:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7514   .text._PW100_FSTEP_500:0000021c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7521   .text._PW100_FSTEP_500:00000220 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7607   .text._PW100_FSTEP_500:0000026c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7612   .text._PW100_FSTEP_550:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7618   .text._PW100_FSTEP_550:00000000 _PW100_FSTEP_550
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7646   .text._PW100_FSTEP_550:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:7652   .text._PW100_FSTEP_550:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8229   .text._PW100_FSTEP_550:00000220 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8232   .text._PW100_FSTEP_550:00000224 $t
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8255   .text._PW100_FSTEP_550:0000023c $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8261   .data.patchouli_pen_pw100:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8279   .data.patchouli_tx_fptr_table:00000000 patchouli_tx_fptr_table
-C:\Users\Nathan\AppData\Local\Temp\ccKZg8jn.s:8276   .data.patchouli_tx_fptr_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5404   .text._PW100_FSTEP_545:0000021c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5442   .text._PW100_FSTEP_545:00000240 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5447   .text._PW100_FSTEP_480:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5453   .text._PW100_FSTEP_480:00000000 _PW100_FSTEP_480
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5481   .text._PW100_FSTEP_480:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:5487   .text._PW100_FSTEP_480:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6061   .text._PW100_FSTEP_480:00000220 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6071   .text._PW100_FSTEP_480:00000224 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6181   .text._PW100_FSTEP_480:00000288 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6186   .text._PW100_FSTEP_490:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6192   .text._PW100_FSTEP_490:00000000 _PW100_FSTEP_490
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6220   .text._PW100_FSTEP_490:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6226   .text._PW100_FSTEP_490:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6788   .text._PW100_FSTEP_490:00000218 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6798   .text._PW100_FSTEP_490:0000021c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6896   .text._PW100_FSTEP_490:00000278 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6901   .text._PW100_FSTEP_500:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6907   .text._PW100_FSTEP_500:00000000 _PW100_FSTEP_500
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6935   .text._PW100_FSTEP_500:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:6941   .text._PW100_FSTEP_500:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7514   .text._PW100_FSTEP_500:0000021c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7521   .text._PW100_FSTEP_500:00000220 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7607   .text._PW100_FSTEP_500:0000026c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7612   .text._PW100_FSTEP_550:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7618   .text._PW100_FSTEP_550:00000000 _PW100_FSTEP_550
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7646   .text._PW100_FSTEP_550:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:7652   .text._PW100_FSTEP_550:0000001c $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8229   .text._PW100_FSTEP_550:00000220 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8232   .text._PW100_FSTEP_550:00000224 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8255   .text._PW100_FSTEP_550:0000023c $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8261   .data.patchouli_pen_pw100:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8279   .data.patchouli_tx_fptr_table:00000000 patchouli_tx_fptr_table
+C:\Users\Nathan\AppData\Local\Temp\ccJFcY2l.s:8276   .data.patchouli_tx_fptr_table:00000000 $d
 
 NO UNDEFINED SYMBOLS

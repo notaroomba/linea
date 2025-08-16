@@ -18,8 +18,6 @@ C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/
                               build/debug/patchouli_bsp_glider_addon_v1.o (puts)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
                               build/debug/patchouli.o (snprintf)
-C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
-                              build/debug/main.o (sprintf)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-stdio.o)
                               C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o) (__sread)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-vprintf.o)
@@ -58,8 +56,6 @@ C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/
                               C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
                               build/debug/hci_tl.o (memcpy)
-C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
-                              build/debug/main.o (strlen)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
                               C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o) (_free_r)
 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
@@ -1593,21 +1589,19 @@ Discarded input sections
                 0x00000000       0xc8 build/debug/main.o
  .text.PeriphCommonClock_Config
                 0x00000000       0x64 build/debug/main.o
- .rodata.main.str1.4
-                0x00000000       0x3e build/debug/main.o
- .text.main     0x00000000      0x10c build/debug/main.o
+ .text.main     0x00000000       0x54 build/debug/main.o
  .bss.usbhid_txbuf
                 0x00000000        0xc build/debug/main.o
- .debug_info    0x00000000     0x1857 build/debug/main.o
- .debug_abbrev  0x00000000      0x3af build/debug/main.o
+ .debug_info    0x00000000      0xde6 build/debug/main.o
+ .debug_abbrev  0x00000000      0x2f6 build/debug/main.o
  .debug_loclists
                 0x00000000       0x34 build/debug/main.o
  .debug_aranges
                 0x00000000       0x38 build/debug/main.o
  .debug_rnglists
-                0x00000000       0x27 build/debug/main.o
- .debug_line    0x00000000      0x666 build/debug/main.o
- .debug_str     0x00000000     0x119f build/debug/main.o
+                0x00000000       0x26 build/debug/main.o
+ .debug_line    0x00000000      0x519 build/debug/main.o
+ .debug_str     0x00000000      0xa1c build/debug/main.o
  .comment       0x00000000       0x46 build/debug/main.o
  .debug_frame   0x00000000       0x7c build/debug/main.o
  .ARM.attributes
@@ -4924,13 +4918,13 @@ Discarded input sections
  .data          0x00000000        0x0 build/debug/usbd_composite.o
  .bss           0x00000000        0x0 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_Init
-                0x00000000       0x24 build/debug/usbd_composite.o
+                0x00000000       0x30 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_DeInit
-                0x00000000       0x24 build/debug/usbd_composite.o
+                0x00000000       0x30 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_Setup
-                0x00000000       0x54 build/debug/usbd_composite.o
+                0x00000000       0x6c build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_DataIn
-                0x00000000       0x58 build/debug/usbd_composite.o
+                0x00000000       0x74 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_EP0_RxReady
                 0x00000000       0x20 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_EP0_TxReady
@@ -4952,11 +4946,11 @@ Discarded input sections
  .text.USBD_COMPOSITE_GetDeviceQualifierDesc
                 0x00000000        0xc build/debug/usbd_composite.o
  .rodata.USBD_COMPOSITE_GetUsrStringDesc.str1.4
-                0x00000000       0x21 build/debug/usbd_composite.o
+                0x00000000       0x35 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_GetUsrStringDesc
-                0x00000000       0x7c build/debug/usbd_composite.o
+                0x00000000       0x98 build/debug/usbd_composite.o
  .text.USBD_COMPOSITE_Mount_Class
-                0x00000000      0x158 build/debug/usbd_composite.o
+                0x00000000      0x1b4 build/debug/usbd_composite.o
  .bss.USBD_StrDesc.0
                 0x00000000       0x40 build/debug/usbd_composite.o
  .data.USBD_COMPOSITE_DeviceQualifierDesc
@@ -4964,21 +4958,21 @@ Discarded input sections
  .data.USBD_Track_String_Index
                 0x00000000        0x1 build/debug/usbd_composite.o
  .bss.USBD_COMPOSITE_HSCfgDesc
-                0x00000000       0x6b build/debug/usbd_composite.o
+                0x00000000       0x84 build/debug/usbd_composite.o
  .bss.USBD_COMPOSITE_FSCfgDesc
-                0x00000000       0x6b build/debug/usbd_composite.o
+                0x00000000       0x84 build/debug/usbd_composite.o
  .data.USBD_COMPOSITE
                 0x00000000       0x3c build/debug/usbd_composite.o
- .debug_info    0x00000000      0xf92 build/debug/usbd_composite.o
+ .debug_info    0x00000000     0x10e4 build/debug/usbd_composite.o
  .debug_abbrev  0x00000000      0x38c build/debug/usbd_composite.o
  .debug_loclists
-                0x00000000      0x538 build/debug/usbd_composite.o
+                0x00000000      0x5d0 build/debug/usbd_composite.o
  .debug_aranges
                 0x00000000       0x98 build/debug/usbd_composite.o
  .debug_rnglists
-                0x00000000       0xaa build/debug/usbd_composite.o
- .debug_line    0x00000000      0x899 build/debug/usbd_composite.o
- .debug_str     0x00000000      0xba1 build/debug/usbd_composite.o
+                0x00000000       0xab build/debug/usbd_composite.o
+ .debug_line    0x00000000      0x97b build/debug/usbd_composite.o
+ .debug_str     0x00000000      0xc25 build/debug/usbd_composite.o
  .comment       0x00000000       0x46 build/debug/usbd_composite.o
  .debug_frame   0x00000000      0x180 build/debug/usbd_composite.o
  .ARM.attributes
@@ -5013,7 +5007,7 @@ Discarded input sections
  .text.HAL_PCD_DisconnectCallback
                 0x00000000        0xc build/debug/usbd_conf.o
  .text.USBD_LL_Init
-                0x00000000       0xb8 build/debug/usbd_conf.o
+                0x00000000       0xcc build/debug/usbd_conf.o
  .text.USBD_LL_IsStallEP
                 0x00000000       0x2c build/debug/usbd_conf.o
  .text.USBD_LL_GetRxDataSize
@@ -5046,16 +5040,16 @@ Discarded input sections
                 0x00000000       0x10 build/debug/usbd_conf.o
  .bss.hpcd_USB_OTG_PTR
                 0x00000000        0x4 build/debug/usbd_conf.o
- .debug_info    0x00000000     0x1ac3 build/debug/usbd_conf.o
+ .debug_info    0x00000000     0x1ae8 build/debug/usbd_conf.o
  .debug_abbrev  0x00000000      0x316 build/debug/usbd_conf.o
  .debug_loclists
-                0x00000000      0x89e build/debug/usbd_conf.o
+                0x00000000      0x8ad build/debug/usbd_conf.o
  .debug_aranges
                 0x00000000      0x100 build/debug/usbd_conf.o
  .debug_rnglists
                 0x00000000       0xc8 build/debug/usbd_conf.o
- .debug_line    0x00000000      0x815 build/debug/usbd_conf.o
- .debug_str     0x00000000     0x1037 build/debug/usbd_conf.o
+ .debug_line    0x00000000      0x879 build/debug/usbd_conf.o
+ .debug_str     0x00000000     0x104a build/debug/usbd_conf.o
  .comment       0x00000000       0x46 build/debug/usbd_conf.o
  .debug_frame   0x00000000      0x2ac build/debug/usbd_conf.o
  .ARM.attributes
@@ -5506,15 +5500,6 @@ Discarded input sections
  .debug_frame   0x00000000       0x7c C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
  .ARM.attributes
                 0x00000000       0x34 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
- .text          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .data          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .bss           0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .text._sprintf_r
-                0x00000000       0x3c C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .text.sprintf  0x00000000       0x44 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .debug_frame   0x00000000       0x74 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
- .ARM.attributes
-                0x00000000       0x34 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
  .text          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-stdio.o)
  .data          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-stdio.o)
  .bss           0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-stdio.o)
@@ -5706,16 +5691,6 @@ Discarded input sections
  .debug_frame   0x00000000       0x28 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
  .ARM.attributes
                 0x00000000       0x34 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
- .text          0x00000000       0x10 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .data          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .bss           0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .ARM.extab     0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .ARM.exidx     0x00000000        0x8 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .debug_line_str
-                0x00000000       0xeb C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .eh_frame      0x00000000       0x28 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
- .ARM.attributes
-                0x00000000       0x17 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
  .text          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
  .data          0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
  .bss           0x00000000        0x0 C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
@@ -6420,7 +6395,6 @@ CDC_STR_DESC_IDX                                  build/debug/usbd_cdc_acm.o
                                                   build/debug/usbd_composite.o
 CDC_Transmit                                      build/debug/usbd_cdc_acm_if.o
 CDC_Transmit_FS                                   build/debug/patchouli.o
-                                                  build/debug/main.o
 CRS_STM_Init                                      build/debug/svc_ctl.o
 CUSTOM_HID_IN_EP                                  build/debug/usbd_hid_custom.o
                                                   build/debug/usbd_conf.o
@@ -6613,7 +6587,6 @@ HAL_GPIO_Init                                     build/debug/stm32wbxx_hal_gpio
                                                   build/debug/tim.o
                                                   build/debug/stm32wbxx_hal_rcc_ex.o
                                                   build/debug/stm32wbxx_hal_rcc.o
-                                                  build/debug/main.o
                                                   build/debug/i2c.o
                                                   build/debug/gpio.o
                                                   build/debug/app_debug.o
@@ -6991,7 +6964,6 @@ HAL_RCC_GetResetSource                            build/debug/stm32wbxx_hal_rcc.
 HAL_RCC_GetSysClockFreq                           build/debug/stm32wbxx_hal_rcc.o
                                                   build/debug/stm32wbxx_hal_uart.o
                                                   build/debug/stm32wbxx_hal_rcc_ex.o
-                                                  build/debug/main.o
 HAL_RCC_MCOConfig                                 build/debug/stm32wbxx_hal_rcc.o
 HAL_RCC_NMI_IRQHandler                            build/debug/stm32wbxx_hal_rcc.o
 HAL_RCC_OscConfig                                 build/debug/stm32wbxx_hal_rcc.o
@@ -7312,8 +7284,12 @@ HAL_UART_UnRegisterCallback                       build/debug/stm32wbxx_hal_uart
 HAL_UART_UnRegisterRxEventCallback                build/debug/stm32wbxx_hal_uart.o
 HIDS_Init                                         build/debug/svc_ctl.o
 HID_KEYBOARD_IN_EP                                build/debug/usbd_hid_keyboard.o
+                                                  build/debug/usbd_conf.o
+                                                  build/debug/usbd_composite.o
 HID_KEYBOARD_ITF_NBR                              build/debug/usbd_hid_keyboard.o
+                                                  build/debug/usbd_composite.o
 HID_KEYBOARD_STR_DESC_IDX                         build/debug/usbd_hid_keyboard.o
+                                                  build/debug/usbd_composite.o
 HRS_Init                                          build/debug/svc_ctl.o
 HSEM_IRQHandler                                   build/debug/stm32wbxx_it.o
 HTS_Init                                          build/debug/svc_ctl.o
@@ -7666,6 +7642,7 @@ USBD_Get_USB_Status                               build/debug/usbd_conf.o
 USBD_HID_CUSTOM                                   build/debug/usbd_hid_custom.o
                                                   build/debug/usbd_composite.o
 USBD_HID_KEYBOARD                                 build/debug/usbd_hid_keyboard.o
+                                                  build/debug/usbd_composite.o
 USBD_HID_Keybaord_SendReport                      build/debug/usbd_hid_keyboard.o
 USBD_HID_Keyboard_GetPollingInterval              build/debug/usbd_hid_keyboard.o
 USBD_HID_SendReport                               build/debug/patchouli_bsp_glider_addon_v1.o
@@ -7766,6 +7743,7 @@ USBD_Update_CDC_ACM_DESC                          build/debug/usbd_cdc_acm.o
 USBD_Update_HID_Custom_DESC                       build/debug/usbd_hid_custom.o
                                                   build/debug/usbd_composite.o
 USBD_Update_HID_KBD_DESC                          build/debug/usbd_hid_keyboard.o
+                                                  build/debug/usbd_composite.o
 USB_ActivateEndpoint                              build/debug/stm32wbxx_ll_usb.o
                                                   build/debug/stm32wbxx_hal_pcd.o
 USB_ActivateRemoteWakeup                          build/debug/stm32wbxx_ll_usb.o
@@ -8121,7 +8099,6 @@ _impure_ptr                                       C:/PROGRAM FILES (X86)/ARM GNU
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-wbuf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-vsnprintf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-vprintf.o)
-                                                  C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-puts.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-printf.o)
@@ -8174,17 +8151,14 @@ _sbrk                                             build/debug/sysmem.o
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
 _sbrk_r                                           C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-_siprintf_r                                       C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
 _sniprintf_r                                      C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
 _snprintf_r                                       C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
-_sprintf_r                                        C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
 _stack_init                                       C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crt0.o
 _start                                            C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crt0.o
 _stat                                             build/debug/syscalls.o
 _svfiprintf_r                                     C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
 _svfprintf_r                                      C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-vsnprintf.o)
-                                                  C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
 _times                                            build/debug/syscalls.o
 _unlink                                           build/debug/syscalls.o
@@ -8584,7 +8558,6 @@ hrtc                                              build/debug/rtc.o
 htim1                                             build/debug/tim.o
                                                   build/debug/stm32wbxx_it.o
                                                   build/debug/patchouli_bsp_glider_addon_v1.o
-                                                  build/debug/main.o
 htim16                                            build/debug/tim.o
                                                   build/debug/stm32wbxx_it.o
                                                   build/debug/patchouli_bsp_glider_addon_v1.o
@@ -8647,7 +8620,6 @@ patchouli_coil_select                             build/debug/patchouli_bsp_glid
                                                   build/debug/patchouli.o
 patchouli_comms_init                              build/debug/patchouli_bsp_glider_addon_v1.o
 patchouli_cycle                                   build/debug/patchouli.o
-                                                  build/debug/main.o
 patchouli_debug_output                            build/debug/patchouli.o
                                                   build/debug/patchouli_bsp_glider_addon_v1.o
 patchouli_fir_free                                build/debug/patchouli_math.o
@@ -8663,7 +8635,6 @@ patchouli_gauss_init_kernel                       build/debug/patchouli_math.o
                                                   build/debug/patchouli.o
 patchouli_get_position                            build/debug/patchouli.o
 patchouli_init                                    build/debug/patchouli.o
-                                                  build/debug/main.o
 patchouli_kalman_init                             build/debug/patchouli_math.o
 patchouli_kalman_update                           build/debug/patchouli_math.o
 patchouli_kernel_f32                              build/debug/patchouli_math.o
@@ -8687,7 +8658,6 @@ patchouli_quad_interp                             build/debug/patchouli_math.o
                                                   build/debug/patchouli.o
 patchouli_set_freq                                build/debug/patchouli_bsp_glider_addon_v1.o
 patchouli_set_mode                                build/debug/patchouli.o
-                                                  build/debug/main.o
 patchouli_simple_take_sample                      build/debug/patchouli_bsp_glider_addon_v1.o
                                                   build/debug/patchouli.o
 patchouli_transmit                                build/debug/patchouli_bsp_glider_addon_v1.o
@@ -8723,20 +8693,15 @@ shci_user_evt_proc                                build/debug/shci_tl.o
                                                   build/debug/app_entry.o
 sinf                                              C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
                                                   build/debug/patchouli_math.o
-siprintf                                          C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
 sniprintf                                         C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
 snprintf                                          C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
                                                   build/debug/usbd_composite.o
                                                   build/debug/patchouli.o
 software_init_hook                                C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crt0.o
-sprintf                                           C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
-                                                  build/debug/main.o
 sqrtf                                             C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
                                                   build/debug/patchouli_math.o
 strchr                                            C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strchr.o)
                                                   C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strrchr.o)
-strlen                                            C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
-                                                  build/debug/main.o
 strrchr                                           C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/BIN/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strrchr.o)
                                                   build/debug/dbg_trace.o
 usbhid_txbuf                                      build/debug/main.o

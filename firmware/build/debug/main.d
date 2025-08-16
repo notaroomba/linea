@@ -63,7 +63,11 @@ build/debug/main.o: Core/Src/main.c Core/Inc/main.h \
  Core/Inc/app_common.h Core/Inc/adc.h Core/Inc/main.h Core/Inc/i2c.h \
  Core/Inc/ipcc.h Core/Inc/memorymap.h Core/Inc/rf.h Core/Inc/rtc.h \
  Core/Inc/tim.h Core/Inc/usart.h Core/Inc/usb.h Core/Inc/gpio.h \
- patchouli/inc/patchouli.h Core/Src/patchouli_config.h \
+ Core/Src/patchouli_config.h patchouli/inc/patchouli.h \
+ Core/Src/patchouli_config.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
  patchouli/inc/patchouli_bsp_glider_addon_v1.h patchouli/inc/patchouli.h \
  patchouli/inc/patchouli_passive_pen.h
 Core/Inc/main.h:
@@ -144,8 +148,12 @@ Core/Inc/tim.h:
 Core/Inc/usart.h:
 Core/Inc/usb.h:
 Core/Inc/gpio.h:
+Core/Src/patchouli_config.h:
 patchouli/inc/patchouli.h:
 Core/Src/patchouli_config.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
 patchouli/inc/patchouli_bsp_glider_addon_v1.h:
 patchouli/inc/patchouli.h:
 patchouli/inc/patchouli_passive_pen.h:

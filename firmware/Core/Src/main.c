@@ -32,7 +32,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 // #include "linea.h"
+#include "patchouli_config.h"
 #include "patchouli.h"
+#include "usb_device.h"
 
 #if defined(PATCHOULI_PCB_DISCRETE_SST)
   #include "patchouli_bsp_discrete_sst.h"
@@ -125,21 +127,21 @@ int main(void)
     MX_USB_DEVICE_Init();
   HAL_Delay(500);
 
-  patchouli_init();
-  patchouli_set_mode(PATCHOULI_DEBUG_NONE);
-  CDC_Transmit_FS("Glider Addon Build\r\n", 21);
-  CDC_Transmit_FS("Init Done\r\n", 12);
-  CDC_Transmit_FS("SYSCLK: ", 9);
-  char buf[10];
-  sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
-  CDC_Transmit_FS(buf, strlen(buf));
-  CDC_Transmit_FS(" MHz\r\n", 7);
-  htim1.Instance->RCR=50;
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	GPIO_InitStruct.Pin  = GPIO_PIN_13;
-	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  // patchouli_init();
+  // patchouli_set_mode(PATCHOULI_DEBUG_NONE);
+  // CDC_ACM_Transmit("Glider Addon Build\r\n", 21);
+  // CDC_Transmit_FS("Init Done\r\n", 12);
+  // CDC_Transmit_FS("SYSCLK: ", 9);
+  // char buf[10];
+  // sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
+  // CDC_Transmit_FS(buf, strlen(buf));
+  // CDC_Transmit_FS(" MHz\r\n", 7);
+  // htim1.Instance->RCR=50;
+	// GPIO_InitTypeDef GPIO_InitStruct = {0};
+	// GPIO_InitStruct.Pin  = GPIO_PIN_13;
+	// GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	// GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+	// HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE END 2 */
 
@@ -155,8 +157,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     // Process Linea library
-    CDC_Transmit_FS("x", 1);
-    patchouli_cycle();
+    // CDC_Transmit_FS("x", 1);
+    // patchouli_cycle();
     // linea_cycle();
   }
   /* USER CODE END 3 */

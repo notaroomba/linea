@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
   28:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** /* Private typedef -----------------------------------------------------------*/
   29:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** typedef enum
   30:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 2
 
 
   31:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   HCI_TL_CMD_RESP_RELEASE,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
   85:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   /**
   86:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    * Up to release version v1.2.0, a while loop was implemented to read out events from the queue a
   87:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    * it is not empty. However, in a bare metal implementation, this leads to calling in a "blocking
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 3
 
 
   88:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    * hci_user_evt_proc() as long as events are received without giving the opportunity to run other
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  142:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   /**
  143:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    * It is better to go through the background process as it is not sure from which context this AP
  144:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    * be called
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 4
 
 
  145:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****    */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  199:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****           p_cmd->rlen = MIN(hci_cmd_complete_return_parameters_length, p_cmd->rlen);
  200:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****           memcpy(p_cmd->rparam, pcommand_complete_event->payload, p_cmd->rlen);
  201:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****         }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 5
 
 
  202:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  256:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** {
   29              		.loc 1 256 1 view -0
   30              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 6
 
 
   31              		@ args = 0, pretend = 0, frame = 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
   64              	.LVL3:
  268:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****     }
   65              		.loc 1 268 7 is_stmt 0 view .LVU13
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 7
 
 
   66 0018 9847     		blx	r3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  230:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
  113              		.loc 1 230 3 view .LVU23
  230:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 8
 
 
  114              		.loc 1 230 17 is_stmt 0 view .LVU24
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  158              		.syntax unified
  159              		.thumb
  160              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 9
 
 
  162              	SendCmd:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  203              	.LVL16:
  252:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** }
  204              		.loc 1 252 3 is_stmt 1 view .LVU49
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 10
 
 
  253:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
   75:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
  251              		.loc 1 75 3 is_stmt 1 view .LVU60
  252 0014 2068     		ldr	r0, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 11
 
 
  253 0016 FFF7FEFF 		bl	TlInit
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  298              		.loc 1 100 52 discriminator 1 view .LVU71
  299 0010 4BB9     		cbnz	r3, .L27
  300              	.L21:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 12
 
 
  129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  108:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****       UserEventFlow = UserEvtRxParam.status;
  341              		.loc 1 108 7 is_stmt 1 view .LVU86
  342 003e 01A8     		add	r0, sp, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 13
 
 
  343 0040 9847     		blx	r3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  385 0072 00BF     		.align	2
  386              	.L29:
  387 0074 08000000 		.word	HciAsynchEventQueue
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 14
 
 
  388 0078 00000000 		.word	UserEventFlow
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  275:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** static void TlEvtReceived(TL_EvtPacket_t *hcievt)
  276:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** {
  277:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   if ( ((hcievt->evtserial.evt.evtcode) == TL_BLEEVT_CS_OPCODE) || ((hcievt->evtserial.evt.evtcode)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 15
 
 
  278:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   {
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  472              		@ args = 0, pretend = 0, frame = 8
  473              		@ frame_needed = 0, uses_anonymous_args = 0
  152:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****   (void)(async);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 16
 
 
  474              		.loc 1 152 1 is_stmt 0 view .LVU109
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  512 001c 0122     		movs	r2, #1
  513 001e 1A70     		strb	r2, [r3]
  166:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 17
 
 
  514              		.loc 1 166 3 is_stmt 1 view .LVU126
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  553              		.loc 1 175 11 is_stmt 0 view .LVU141
  554 0046 1848     		ldr	r0, .L55+4
  555 0048 FFF7FEFF 		bl	LST_is_empty
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 18
 
 
  556              	.LVL40:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  184:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****         }
  595              		.loc 1 184 11 is_stmt 1 view .LVU157
  184:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****         }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 19
 
 
  596              		.loc 1 184 29 is_stmt 0 view .LVU158
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  638 0098 0120     		movs	r0, #1
  639 009a FFF7FEFF 		bl	NotifyCmdStatus
  640              	.LVL53:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 20
 
 
  213:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c **** }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  685 0008 00000000 		.word	CmdRspStatusFlag
  686              		.cfi_endproc
  687              	.LFE1424:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 21
 
 
  689              		.section	.text.TlEvtReceived,"ax",%progbits
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  733              	.L64:
  279:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c ****     hci_cmd_resp_release(0); /**< Notify the application a full Cmd Event has been received */
  734              		.loc 1 279 5 is_stmt 1 view .LVU191
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 22
 
 
  735 001e 0448     		ldr	r0, .L65+4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  798              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  799              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  800              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 23
 
 
  801              		.file 5 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
@@ -1328,54 +1328,54 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 1
  805              		.file 9 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.h"
  806              		.file 10 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
  807              		.file 11 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hci_tl.c
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:21     .text.NotifyCmdStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:26     .text.NotifyCmdStatus:00000000 NotifyCmdStatus
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:73     .text.NotifyCmdStatus:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:762    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:78     .text.TlInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:83     .text.TlInit:00000000 TlInit
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:147    .text.TlInit:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:768    .bss.HciCmdEventQueue:00000000 HciCmdEventQueue
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:785    BLE_DRIVER_CONTEXT:00000004 pCmdBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:790    BLE_DRIVER_CONTEXT:00000008 HciAsynchEventQueue
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:780    BLE_DRIVER_CONTEXT:00000000 UserEventFlow
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:774    .bss.hciContext:00000000 hciContext
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:695    .text.TlEvtReceived:00000000 TlEvtReceived
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:157    .text.SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:162    .text.SendCmd:00000000 SendCmd
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:210    .text.SendCmd:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:216    .text.hci_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:222    .text.hci_init:00000000 hci_init
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:263    .text.hci_init:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:269    .text.hci_user_evt_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:275    .text.hci_user_evt_proc:00000000 hci_user_evt_proc
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:387    .text.hci_user_evt_proc:00000074 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:394    .text.hci_resume_flow:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:400    .text.hci_resume_flow:00000000 hci_resume_flow
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:425    .text.hci_resume_flow:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:431    .text.hci_cmd_resp_wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:437    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:456    .text.hci_cmd_resp_wait:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:756    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:461    .text.hci_send_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:467    .text.hci_send_req:00000000 hci_send_req
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:653    .text.hci_send_req:000000a4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:659    .text.hci_cmd_resp_release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:665    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:685    .text.hci_cmd_resp_release:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:690    .text.TlEvtReceived:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:748    .text.TlEvtReceived:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:757    .bss.CmdRspStatusFlag:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:759    .bss.StatusNotCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:765    .bss.HciCmdEventQueue:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:771    .bss.hciContext:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:781    BLE_DRIVER_CONTEXT:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccBnzhjK.s:794    BLE_DRIVER_CONTEXT:00000010 hci_timer_id
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:21     .text.NotifyCmdStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:26     .text.NotifyCmdStatus:00000000 NotifyCmdStatus
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:73     .text.NotifyCmdStatus:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:762    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:78     .text.TlInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:83     .text.TlInit:00000000 TlInit
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:147    .text.TlInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:768    .bss.HciCmdEventQueue:00000000 HciCmdEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:785    BLE_DRIVER_CONTEXT:00000004 pCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:790    BLE_DRIVER_CONTEXT:00000008 HciAsynchEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:780    BLE_DRIVER_CONTEXT:00000000 UserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:774    .bss.hciContext:00000000 hciContext
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:695    .text.TlEvtReceived:00000000 TlEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:157    .text.SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:162    .text.SendCmd:00000000 SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:210    .text.SendCmd:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:216    .text.hci_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:222    .text.hci_init:00000000 hci_init
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:263    .text.hci_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:269    .text.hci_user_evt_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:275    .text.hci_user_evt_proc:00000000 hci_user_evt_proc
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:387    .text.hci_user_evt_proc:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:394    .text.hci_resume_flow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:400    .text.hci_resume_flow:00000000 hci_resume_flow
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:425    .text.hci_resume_flow:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:431    .text.hci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:437    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:456    .text.hci_cmd_resp_wait:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:756    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:461    .text.hci_send_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:467    .text.hci_send_req:00000000 hci_send_req
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:653    .text.hci_send_req:000000a4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:659    .text.hci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:665    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:685    .text.hci_cmd_resp_release:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:690    .text.TlEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:748    .text.TlEvtReceived:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:757    .bss.CmdRspStatusFlag:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:759    .bss.StatusNotCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:765    .bss.HciCmdEventQueue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:771    .bss.hciContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:781    BLE_DRIVER_CONTEXT:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccwBU4FP.s:794    BLE_DRIVER_CONTEXT:00000010 hci_timer_id
 
 UNDEFINED SYMBOLS
 LST_init_head

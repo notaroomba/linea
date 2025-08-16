@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
   37 0002 88B0     		sub	sp, sp, #32
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 2
 
 
   38              		.cfi_def_cfa_offset 40
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
   81              		.cfi_remember_state
   82              		.cfi_def_cfa_offset 8
   83              		@ sp needed
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 3
 
 
   84 003e 10BD     		pop	{r4, pc}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  128 000e 0128     		cmp	r0, #1
  129 0010 13D0     		beq	.L9
  130              		.loc 1 43 78 discriminator 1 view .LVU27
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 4
 
 
  131 0012 0228     		cmp	r0, #2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  173              	.LVL12:
  174              	.L15:
  175              		.loc 1 55 20 view .LVU44
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 5
 
 
  176              	.LBE2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  213 0052 1822     		movs	r2, #24
  214 0054 0021     		movs	r1, #0
  215 0056 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 6
 
 
  216 0058 FFF7FEFF 		bl	Osal_MemSet
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  259              		.loc 1 80 3 is_stmt 1 view .LVU79
  260              		.loc 1 80 25 is_stmt 0 view .LVU80
  261 008a BDF80520 		ldrh	r2, [sp, #5]	@ unaligned
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 7
 
 
  262              		.loc 1 80 19 view .LVU81
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  305              		.loc 1 90 1 is_stmt 0 view .LVU88
  306 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
  307              		.cfi_def_cfa_offset 28
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 8
 
 
  308              		.cfi_offset 4, -28
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  353              		.loc 1 99 3 is_stmt 1 view .LVU104
  354              	.LVL33:
  100:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Include_Start_Handle = Include_Start_Handle;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 9
 
 
  355              		.loc 1 100 3 view .LVU105
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  397              		.loc 1 112 3 is_stmt 1 view .LVU124
  398              		.loc 1 112 11 is_stmt 0 view .LVU125
  399 0058 4595     		str	r5, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 10
 
 
  113:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rparam = &resp;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  116:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   if ( resp.Status )
  444              		.loc 1 116 12 view .LVU142
  445 0086 FF20     		movs	r0, #255
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 11
 
 
  446 0088 F8E7     		b	.L18
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  486 0010 15D0     		beq	.L27
  487              		.loc 1 137 76 discriminator 1 view .LVU150
  488 0012 0229     		cmp	r1, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 12
 
 
  489 0014 11D0     		beq	.L33
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  151:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****       case 2: size = 16; break;
  530              		.loc 1 151 20 is_stmt 0 view .LVU168
  531 0036 1024     		movs	r4, #16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 13
 
 
  532              	.LVL53:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  164:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     {
  165:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****       cp1->Security_Permissions = Security_Permissions;
  571              		.loc 1 165 7 view .LVU182
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 14
 
 
  572              		.loc 1 165 33 is_stmt 0 view .LVU183
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  183:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ocf = 0x104;
  609              		.loc 1 183 3 is_stmt 1 view .LVU199
  610              		.loc 1 183 10 is_stmt 0 view .LVU200
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 15
 
 
  611 0082 4FF48273 		mov	r3, #260
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  194:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
  655              		.loc 1 194 1 is_stmt 0 view .LVU221
  656 00b2 48B0     		add	sp, sp, #288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 16
 
 
  657              		.cfi_remember_state
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  695              		.cfi_offset 4, -36
  696              		.cfi_offset 5, -32
  697              		.cfi_offset 6, -28
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 17
 
 
  698              		.cfi_offset 7, -24
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  747              	.LVL76:
  215:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_add_char_desc_rp0 resp;
  748              		.loc 1 215 3 is_stmt 1 view .LVU242
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 18
 
 
  216:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  788 0052 08E0     		b	.L37
  789              	.LVL85:
  790              	.L47:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 19
 
 
  791              		.loc 1 230 20 view .LVU261
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  237:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     }
  238:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     index_input += 1;
  832              		.loc 1 238 5 is_stmt 1 view .LVU273
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 20
 
 
  833              	.LVL93:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  256:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     index_input += 1;
  870              		.loc 1 256 5 is_stmt 1 view .LVU290
  871              	.LVL100:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 21
 
 
  257:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  912 00ce 4595     		str	r5, [sp, #276]
  271:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rparam = &resp;
  913              		.loc 1 271 3 is_stmt 1 view .LVU310
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 22
 
 
  914              		.loc 1 271 13 is_stmt 0 view .LVU311
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  959              	.LVL110:
  960              	.L45:
  227:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 23
 
 
  961              		.loc 1 227 5 view .LVU327
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1004              	.LVL113:
  292:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Service_Handle = Service_Handle;
  1005              		.loc 1 292 3 view .LVU337
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 24
 
 
  1006              		.loc 1 292 23 is_stmt 0 view .LVU338
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  303:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ogf = 0x3f;
  1050              		.loc 1 303 3 view .LVU357
  1051              		.loc 1 303 10 is_stmt 0 view .LVU358
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 25
 
 
  1052 003a 3F23     		movs	r3, #63
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1096              		.cfi_endproc
  1097              	.LFE5:
  1099              		.section	.text.aci_gatt_del_char,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 26
 
 
  1100              		.align	1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1143 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
  325:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
  1144              		.loc 1 325 3 is_stmt 1 view .LVU390
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 27
 
 
  1145              	.LVL132:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1189 0048 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  1190              	.L54:
  336:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 28
 
 
  1191              		.loc 1 336 1 view .LVU411
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1238              		.loc 1 344 3 is_stmt 1 view .LVU420
  1239              	.LVL140:
  345:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Serv_Handle = Serv_Handle;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 29
 
 
  1240              		.loc 1 345 3 view .LVU421
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1285 0040 A042     		cmp	r0, r4
  1286 0042 03DB     		blt	.L59
  355:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 30
 
 
  356:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  365:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   tBleStatus status = 0;
  1333              		.loc 1 365 3 view .LVU451
  1334              		.loc 1 365 14 is_stmt 0 view .LVU452
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 31
 
 
  1335 0004 0DF10706 		add	r6, sp, #7
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1378              		.loc 1 376 3 is_stmt 1 view .LVU472
  1379              		.loc 1 376 13 is_stmt 0 view .LVU473
  1380 0036 4696     		str	r6, [sp, #280]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 32
 
 
  377:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rlen = 1;
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1428 0000 70B5     		push	{r4, r5, r6, lr}
  1429              		.cfi_def_cfa_offset 16
  1430              		.cfi_offset 4, -16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 33
 
 
  1431              		.cfi_offset 5, -12
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  396:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.clen = index_input;
  1474              		.loc 1 396 3 is_stmt 1 view .LVU503
  1475              		.loc 1 396 11 is_stmt 0 view .LVU504
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 34
 
 
  1476 002c 0423     		movs	r3, #4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  405:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** {
  1523              		.loc 1 405 1 is_stmt 1 view -0
  1524              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 35
 
 
  1525              		@ args = 0, pretend = 0, frame = 288
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1569 0024 40F20B13 		movw	r3, #267
  1570 0028 ADF80A31 		strh	r3, [sp, #266]	@ movhi
  416:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.event = 0x0F;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 36
 
 
  1571              		.loc 1 416 3 is_stmt 1 view .LVU534
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1617              		.section	.text.aci_att_find_info_req,"ax",%progbits
  1618              		.align	1
  1619              		.global	aci_att_find_info_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 37
 
 
  1620              		.syntax unified
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  438:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
  1662              		.loc 1 438 3 is_stmt 1 view .LVU565
  1663              	.LVL181:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 38
 
 
  439:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->End_Handle = End_Handle;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1707              		.loc 1 449 3 is_stmt 1 view .LVU587
  1708              		.loc 1 449 8 is_stmt 0 view .LVU588
  1709 0044 2946     		mov	r1, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 39
 
 
  1710 0046 42A8     		add	r0, sp, #264
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1754              		.cfi_offset 6, -12
  1755              		.cfi_offset 7, -8
  1756              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 40
 
 
  1757 0002 C9B0     		sub	sp, sp, #292
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  475:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 1;
  1797              		.loc 1 475 3 is_stmt 1 view .LVU617
  1798              	.LVL197:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 41
 
 
  476:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemCpy( (void*)&cp0->Attribute_Val, (const void*)Attribute_Val, Attribute_Val_Length );
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1843              		.loc 1 485 11 is_stmt 0 view .LVU638
  1844 0058 0123     		movs	r3, #1
  1845 005a 4793     		str	r3, [sp, #284]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 42
 
 
  486:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1890              		.cfi_def_cfa_offset 12
  1891              		.cfi_offset 4, -12
  1892              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 43
 
 
  1893              		.cfi_offset 14, -4
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  1934 001e 8DF80E30 		strb	r3, [sp, #14]
  510:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 1;
  1935              		.loc 1 510 3 is_stmt 1 view .LVU669
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 44
 
 
  1936              	.LVL214:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  520:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rlen = 1;
  1981              		.loc 1 520 3 is_stmt 1 view .LVU689
  1982              		.loc 1 520 11 is_stmt 0 view .LVU690
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 45
 
 
  1983 0056 0123     		movs	r3, #1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  530:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                            const UUID_t* UUID )
  531:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** {
  2028              		.loc 1 531 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 46
 
 
  2029              		.cfi_startproc
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2072              		.loc 1 542 19 is_stmt 0 view .LVU718
  2073 001a ADF80C20 		strh	r2, [sp, #12]	@ movhi
  543:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 47
 
 
  2074              		.loc 1 543 3 is_stmt 1 view .LVU719
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2118              		.loc 1 553 3 is_stmt 1 view .LVU738
  2119              		.loc 1 553 11 is_stmt 0 view .LVU739
  2120 004e 4595     		str	r5, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 48
 
 
  554:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rparam = &status;
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2169              	aci_att_prepare_write_req:
  2170              	.LVL242:
  2171              	.LFB15:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 49
 
 
  560:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2210              	.LVL247:
  576:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Val_Offset = Val_Offset;
  2211              		.loc 1 576 3 view .LVU767
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 50
 
 
  2212              		.loc 1 576 19 is_stmt 0 view .LVU768
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2256              		.loc 1 586 13 is_stmt 0 view .LVU787
  2257 004c 4495     		str	r5, [sp, #272]
  587:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.clen = index_input;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 51
 
 
  2258              		.loc 1 587 3 is_stmt 1 view .LVU788
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  595:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** tBleStatus aci_att_execute_write_req( uint16_t Connection_Handle,
  596:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                       uint8_t Execute )
  597:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 52
 
 
  2306              		.loc 1 597 1 is_stmt 1 view -0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2350              		.loc 1 607 3 view .LVU818
  2351 001e FFF7FEFF 		bl	Osal_MemSet
  2352              	.LVL266:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 53
 
 
  608:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ogf = 0x3f;
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2396              		@ sp needed
  2397 0052 70BD     		pop	{r4, r5, r6, pc}
  2398              	.LVL268:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 54
 
 
  2399              	.L101:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2445              		.loc 1 627 26 view .LVU850
  2446 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
  628:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 55
 
 
  2447              		.loc 1 628 3 is_stmt 1 view .LVU851
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  638:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
  639:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
  2492              		.loc 1 639 3 is_stmt 1 view .LVU871
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 56
 
 
  2493              		.loc 1 639 10 is_stmt 0 view .LVU872
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  649:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   tBleStatus status = 0;
  2539              		.loc 1 649 3 view .LVU880
  2540              		.loc 1 649 14 is_stmt 0 view .LVU881
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 57
 
 
  2541 0008 0022     		movs	r2, #0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2585              		.loc 1 659 3 view .LVU899
  2586              		.loc 1 659 10 is_stmt 0 view .LVU900
  2587 0034 3F23     		movs	r3, #63
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 58
 
 
  2588 0036 ADF80831 		strh	r3, [sp, #264]	@ movhi
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2632              		.cfi_restore_state
  651:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Connection_Handle = Connection_Handle;
  2633              		.loc 1 651 41 discriminator 1 view .LVU919
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 59
 
 
  2634 0068 1024     		movs	r4, #16
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2678              		.loc 1 680 3 view .LVU929
  2679              		.loc 1 680 26 is_stmt 0 view .LVU930
  2680 000e 02AC     		add	r4, sp, #8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 60
 
 
  2681              	.LVL296:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2724              		.loc 1 691 11 is_stmt 0 view .LVU952
  2725 003a 0623     		movs	r3, #6
  2726 003c 4593     		str	r3, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 61
 
 
  692:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rparam = &status;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  702:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** {
  2772              		.loc 1 702 1 is_stmt 1 view -0
  2773              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 62
 
 
  2774              		@ args = 0, pretend = 0, frame = 288
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2816              	.LVL313:
  2817              		.loc 1 714 3 is_stmt 0 view .LVU983
  2818 001e 2946     		mov	r1, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 63
 
 
  2819              	.LVL314:
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2863 0050 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  2864              	.L119:
  725:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 64
 
 
  2865              		.loc 1 725 1 view .LVU1005
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  2909 0006 8DF80740 		strb	r4, [sp, #7]
  737:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   int index_input = 0;
  2910              		.loc 1 737 3 is_stmt 1 view .LVU1014
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 65
 
 
  2911              	.LVL321:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  748:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += uuid_size;
  2955              		.loc 1 748 3 is_stmt 1 view .LVU1035
  2956              		.loc 1 748 15 is_stmt 0 view .LVU1036
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 66
 
 
  2957 002e 0735     		adds	r5, r5, #7
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3000              		.loc 1 759 3 is_stmt 1 view .LVU1055
  3001              		.loc 1 759 10 is_stmt 0 view .LVU1056
  3002 0066 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 67
 
 
  3003              	.L124:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  768:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_disc_all_char_desc_cp0 *cp0 = (aci_gatt_disc_all_char_desc_cp0*)(cmd_buffer);
  3049              		.loc 1 768 3 view .LVU1064
  3050              	.LVL338:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 68
 
 
  769:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   tBleStatus status = 0;
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3094 002c 40F21713 		movw	r3, #279
  3095 0030 ADF80A31 		strh	r3, [sp, #266]	@ movhi
  780:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.event = 0x0F;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 69
 
 
  3096              		.loc 1 780 3 is_stmt 1 view .LVU1086
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3142              		.section	.text.aci_gatt_read_char_value,"ax",%progbits
  3143              		.align	1
  3144              		.global	aci_gatt_read_char_value
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 70
 
 
  3145              		.syntax unified
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3187              		.loc 1 801 3 is_stmt 1 view .LVU1117
  3188              	.LVL355:
  802:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 71
 
 
  3189              		.loc 1 802 3 view .LVU1118
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  812:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
  3234              		.loc 1 812 3 is_stmt 1 view .LVU1138
  3235              		.loc 1 812 10 is_stmt 0 view .LVU1139
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 72
 
 
  3236 004c 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3279              		.loc 1 824 3 view .LVU1147
  3280              		.loc 1 824 14 is_stmt 0 view .LVU1148
  3281 0004 0024     		movs	r4, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 73
 
 
  3282 0006 8DF80740 		strb	r4, [sp, #7]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3325              		.loc 1 835 3 view .LVU1169
  3326 002a FFF7FEFF 		bl	Osal_MemCpy
  3327              	.LVL373:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 74
 
 
  836:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += uuid_size;
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3372 0064 05DB     		blt	.L141
  846:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
  847:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 75
 
 
  3373              		.loc 1 847 3 is_stmt 1 view .LVU1190
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3420              		.loc 1 854 3 is_stmt 1 view .LVU1197
  855:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
  3421              		.loc 1 855 3 view .LVU1198
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 76
 
 
  856:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_read_long_char_value_cp0 *cp0 = (aci_gatt_read_long_char_value_cp0*)(cmd_buffer);
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  867:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ocf = 0x11a;
  3465              		.loc 1 867 3 is_stmt 1 view .LVU1219
  3466              		.loc 1 867 10 is_stmt 0 view .LVU1220
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 77
 
 
  3467 002c 4FF48D73 		mov	r3, #282
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3511 005a FBE7     		b	.L145
  3512              		.cfi_endproc
  3513              	.LFE25:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 78
 
 
  3515              		.section	.text.aci_gatt_read_multiple_char_value,"ax",%progbits
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3558              		.loc 1 888 3 is_stmt 1 view .LVU1249
  3559              	.LVL396:
  889:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Number_of_Handles = Number_of_Handles;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 79
 
 
  3560              		.loc 1 889 3 view .LVU1250
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  899:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.rparam = &status;
  3605              		.loc 1 899 3 is_stmt 1 view .LVU1270
  3606              		.loc 1 899 13 is_stmt 0 view .LVU1271
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 80
 
 
  3607 004a 4697     		str	r7, [sp, #280]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3651              		.cfi_startproc
  3652              		@ args = 0, pretend = 0, frame = 288
  3653              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 81
 
 
  3654              		.loc 1 910 1 is_stmt 0 view .LVU1282
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3696              	.LVL413:
  3697              		.loc 1 922 3 is_stmt 0 view .LVU1300
  3698 0020 0DF10D00 		add	r0, sp, #13
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 82
 
 
  3699              	.LVL414:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3743              	.LVL418:
  3744              		.loc 1 932 6 discriminator 1 view .LVU1321
  3745 0058 B042     		cmp	r0, r6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 83
 
 
  3746 005a 03DB     		blt	.L154
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  943:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   struct hci_request rq;
  3791              		.loc 1 943 3 is_stmt 1 view .LVU1328
  944:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 84
 
 
  3792              		.loc 1 944 3 view .LVU1329
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3834              		.loc 1 956 3 view .LVU1350
  3835 002a FFF7FEFF 		bl	Osal_MemCpy
  3836              	.LVL431:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 85
 
 
  957:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += Attribute_Val_Length;
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  967:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
  968:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
  3881              		.loc 1 968 3 is_stmt 1 view .LVU1371
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 86
 
 
  3882              		.loc 1 968 10 is_stmt 0 view .LVU1372
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  979:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_write_char_reliable_cp0 *cp0 = (aci_gatt_write_char_reliable_cp0*)(cmd_buffer);
  3927              		.loc 1 979 3 view .LVU1379
  3928              	.LVL437:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 87
 
 
  980:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   tBleStatus status = 0;
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  3971              		.loc 1 991 3 is_stmt 1 view .LVU1400
  3972              		.loc 1 991 15 is_stmt 0 view .LVU1401
  3973 002e 0734     		adds	r4, r4, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 88
 
 
  3974              	.LVL448:
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4017 0062 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  4018              	.L161:
 1003:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 89
 
 
  4019              		.loc 1 1003 1 view .LVU1422
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4063              		.loc 1 1014 3 view .LVU1429
  4064              		.loc 1 1014 14 is_stmt 0 view .LVU1430
  4065 0006 0DF10707 		add	r7, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 90
 
 
  4066 000a 0026     		movs	r6, #0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1026:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
  4109              		.loc 1 1026 3 is_stmt 1 view .LVU1451
  4110 0030 1822     		movs	r2, #24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 91
 
 
  4111 0032 3146     		mov	r1, r6
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4154 0066 49B0     		add	sp, sp, #292
  4155              		.cfi_remember_state
  4156              		.cfi_def_cfa_offset 20
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 92
 
 
  4157              		@ sp needed
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1048:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Connection_Handle = Connection_Handle;
  4202              		.loc 1 1048 3 view .LVU1481
  4203              		.loc 1 1048 26 is_stmt 0 view .LVU1482
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 93
 
 
  4204 000e 02AC     		add	r4, sp, #8
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4247              		.loc 1 1059 3 is_stmt 1 view .LVU1503
  4248              		.loc 1 1059 11 is_stmt 0 view .LVU1504
  4249 003a 0623     		movs	r3, #6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 94
 
 
  4250 003c 4593     		str	r3, [sp, #276]
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1069:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                      uint8_t Attribute_Val_Length,
 1070:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                      const uint8_t* Attribute_Val )
 1071:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 95
 
 
  4296              		.loc 1 1071 1 is_stmt 1 view -0
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4339              	.LVL487:
 1083:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemCpy( (void*)&cp0->Attribute_Val, (const void*)Attribute_Val, Attribute_Val_Length );
  4340              		.loc 1 1083 3 view .LVU1534
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 96
 
 
  4341 001e 1946     		mov	r1, r3
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4385              		.loc 1 1093 8 is_stmt 0 view .LVU1555
  4386 0050 3146     		mov	r1, r6
  4387 0052 42A8     		add	r0, sp, #264
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 97
 
 
  4388 0054 FFF7FEFF 		bl	hci_send_req
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4435              		.loc 1 1101 3 is_stmt 1 view .LVU1563
 1102:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
  4436              		.loc 1 1102 3 view .LVU1564
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 98
 
 
 1103:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_read_char_desc_cp0 *cp0 = (aci_gatt_read_char_desc_cp0*)(cmd_buffer);
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4480 0032 4393     		str	r3, [sp, #268]
 1114:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.cparam = cmd_buffer;
  4481              		.loc 1 1114 3 is_stmt 1 view .LVU1585
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 99
 
 
  4482              		.loc 1 1114 13 is_stmt 0 view .LVU1586
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4530              	aci_gatt_write_without_resp:
  4531              	.LVL506:
  4532              	.LFB34:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 100
 
 
 1122:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** 
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1137:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Attribute_Val_Length = Attribute_Val_Length;
  4572              		.loc 1 1137 3 view .LVU1615
  4573              		.loc 1 1137 29 is_stmt 0 view .LVU1616
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 101
 
 
  4574 001a 8DF80C20 		strb	r2, [sp, #12]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4617              		.loc 1 1148 3 is_stmt 1 view .LVU1636
  4618              		.loc 1 1148 8 is_stmt 0 view .LVU1637
  4619 004c 3146     		mov	r1, r6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 102
 
 
  4620 004e 42A8     		add	r0, sp, #264
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4666              		.cfi_offset 14, -4
  4667 0002 C9B0     		sub	sp, sp, #292
  4668              		.cfi_def_cfa_offset 312
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 103
 
 
  4669 0004 1446     		mov	r4, r2
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4710 0028 0534     		adds	r4, r4, #5
  4711              	.LVL530:
 1171:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 104
 
 
  4712              		.loc 1 1171 3 is_stmt 1 view .LVU1666
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4756              		@ sp needed
  4757 005e F0BD     		pop	{r4, r5, r6, r7, pc}
  4758              	.LVL533:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 105
 
 
  4759              	.L186:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4805              		.loc 1 1190 26 view .LVU1696
  4806 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
 1191:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 106
 
 
  4807              		.loc 1 1191 3 is_stmt 1 view .LVU1697
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4851              	.L189:
 1202:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
  4852              		.loc 1 1202 1 view .LVU1717
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 107
 
 
  4853 0048 48B0     		add	sp, sp, #288
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4896              		.loc 1 1214 3 view .LVU1724
  4897              		.loc 1 1214 14 is_stmt 0 view .LVU1725
  4898 0008 0DF10707 		add	r7, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 108
 
 
  4899 000c 0026     		movs	r6, #0
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  4941 0030 FFF7FEFF 		bl	Osal_MemCpy
  4942              	.LVL555:
 1227:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += Attribute_Val_Length;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 109
 
 
  4943              		.loc 1 1227 3 is_stmt 1 view .LVU1747
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1238:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
  4987              		.loc 1 1238 1 view .LVU1767
  4988 0068 49B0     		add	sp, sp, #292
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 110
 
 
  4989              		.cfi_remember_state
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1247:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Connection_Handle = Connection_Handle;
  5036              		.loc 1 1247 3 view .LVU1777
  5037              		.loc 1 1247 26 is_stmt 0 view .LVU1778
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 111
 
 
  5038 000e 02AE     		add	r6, sp, #8
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1257:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
 1258:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
  5083              		.loc 1 1258 3 is_stmt 1 view .LVU1798
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 112
 
 
  5084              		.loc 1 1258 10 is_stmt 0 view .LVU1799
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5129              		.loc 1 1268 3 view .LVU1807
  5130              		.loc 1 1268 14 is_stmt 0 view .LVU1808
  5131 0004 0DF10706 		add	r6, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 113
 
 
  5132 0008 0025     		movs	r5, #0
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5175              		.loc 1 1279 13 is_stmt 0 view .LVU1829
  5176 0034 4494     		str	r4, [sp, #272]
 1280:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.clen = index_input;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 114
 
 
  5177              		.loc 1 1280 3 is_stmt 1 view .LVU1830
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1287:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** 
 1288:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** tBleStatus aci_gatt_set_desc_value( uint16_t Serv_Handle,
 1289:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                     uint16_t Char_Handle,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 115
 
 
 1290:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                     uint16_t Char_Desc_Handle,
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5265              		.loc 1 1304 3 view .LVU1858
  5266              		.loc 1 1304 25 is_stmt 0 view .LVU1859
  5267 001c ADF80C20 		strh	r2, [sp, #12]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 116
 
 
 1305:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5311              		.loc 1 1315 13 is_stmt 0 view .LVU1879
  5312 004e 4494     		str	r4, [sp, #272]
 1316:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.clen = index_input;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 117
 
 
  5313              		.loc 1 1316 3 is_stmt 1 view .LVU1880
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1324:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** tBleStatus aci_gatt_read_handle_value( uint16_t Attr_Handle,
 1325:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                        uint16_t Offset,
 1326:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                        uint16_t Value_Length_Requested,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 118
 
 
 1327:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                        uint16_t* Length,
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5404              		.loc 1 1337 20 view .LVU1906
  5405 0020 ADF80071 		strh	r7, [sp, #256]	@ movhi
 1338:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 119
 
 
  5406              		.loc 1 1338 3 is_stmt 1 view .LVU1907
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5448 0052 0021     		movs	r1, #0
  5449 0054 80A8     		add	r0, sp, #512
  5450 0056 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 120
 
 
  5451              	.LVL610:
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5489              		.loc 1 1357 3 view .LVU1941
 1357:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
  5490              		.loc 1 1357 10 is_stmt 0 view .LVU1942
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 121
 
 
  5491 008a EBE7     		b	.L209
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5531              		.loc 1 1372 3 view .LVU1950
  5532              		.loc 1 1372 14 is_stmt 0 view .LVU1951
  5533 0008 0DF10707 		add	r7, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 122
 
 
  5534 000c 0026     		movs	r6, #0
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1386:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   cp0->Value_Length = Value_Length;
  5575              		.loc 1 1386 3 view .LVU1973
  5576              		.loc 1 1386 21 is_stmt 0 view .LVU1974
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 123
 
 
  5577 0034 8DF81350 		strb	r5, [sp, #19]
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5621 0062 0123     		movs	r3, #1
  5622 0064 4793     		str	r3, [sp, #284]
 1397:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 124
 
 
  5623              		.loc 1 1397 3 is_stmt 1 view .LVU1995
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5671              		.cfi_offset 14, -4
  5672 0002 C8B0     		sub	sp, sp, #288
  5673              		.cfi_def_cfa_offset 304
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 125
 
 
 1405:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   struct hci_request rq;
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1417:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.cparam = cmd_buffer;
  5716              		.loc 1 1417 3 is_stmt 1 view .LVU2024
  5717              		.loc 1 1417 13 is_stmt 0 view .LVU2025
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 126
 
 
  5718 0030 4495     		str	r5, [sp, #272]
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5766              	.LVL647:
  5767              	.LFB44:
 1425:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 127
 
 
 1426:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** tBleStatus aci_gatt_set_access_permission( uint16_t Serv_Handle,
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1440:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   index_input += 1;
  5808              		.loc 1 1440 3 is_stmt 1 view .LVU2056
  5809              	.LVL653:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 128
 
 
 1441:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5854              		.loc 1 1450 10 is_stmt 0 view .LVU2077
  5855 004c 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
  5856              	.L222:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 129
 
 
 1451:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** }
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5904 0014 3F23     		movs	r3, #63
  5905 0016 ADF80830 		strh	r3, [sp, #8]	@ movhi
 1459:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ocf = 0x130;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 130
 
 
  5906              		.loc 1 1459 3 is_stmt 1 view .LVU2087
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1466:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** 
 1467:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c **** tBleStatus aci_gatt_send_mult_notification( uint16_t Connection_Handle,
 1468:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                             uint8_t Number_of_Handles,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 131
 
 
 1469:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****                                             const Handle_Entry_t* Handle_Entry )
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  5997              	.LVL668:
  5998              		.loc 1 1480 3 is_stmt 0 view .LVU2116
  5999 001e 2246     		mov	r2, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 132
 
 
  6000              	.LVL669:
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  6045 0054 A842     		cmp	r0, r5
  6046 0056 03DB     		blt	.L231
 1490:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****     return BLE_STATUS_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 133
 
 
 1491:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   return status;
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
 1499:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
  6094              		.loc 1 1499 3 view .LVU2144
 1500:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   aci_gatt_read_multiple_var_char_value_cp0 *cp0 = (aci_gatt_read_multiple_var_char_value_cp0*)(cmd
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 134
 
 
  6095              		.loc 1 1500 3 view .LVU2145
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  6139              		.loc 1 1510 10 is_stmt 0 view .LVU2164
  6140 0034 3F23     		movs	r3, #63
  6141 0036 ADF80831 		strh	r3, [sp, #264]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 135
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 135
 
 
 1511:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c ****   rq.ocf = 0x132;
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  6185              		.loc 1 1518 12 view .LVU2183
  6186 0064 FF20     		movs	r0, #255
  6187 0066 FBE7     		b	.L234
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 136
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 136
 
 
  6188              		.cfi_endproc
@@ -8110,110 +8110,110 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 1
  6195              		.file 4 "Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h"
  6196              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
  6197              		.file 6 "Middlewares/ST/STM32_WPAN/ble/core/template/osal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 137
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 137
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ble_gatt_aci.c
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:21     .text.aci_gatt_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:27     .text.aci_gatt_init:00000000 aci_gatt_init
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:94     .text.aci_gatt_add_service:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:100    .text.aci_gatt_add_service:00000000 aci_gatt_add_service
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:292    .text.aci_gatt_include_service:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:298    .text.aci_gatt_include_service:00000000 aci_gatt_include_service
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:451    .text.aci_gatt_add_char:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:457    .text.aci_gatt_add_char:00000000 aci_gatt_add_char
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:679    .text.aci_gatt_add_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:685    .text.aci_gatt_add_char_desc:00000000 aci_gatt_add_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:970    .text.aci_gatt_update_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:976    .text.aci_gatt_update_char_value:00000000 aci_gatt_update_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1100   .text.aci_gatt_del_char:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1106   .text.aci_gatt_del_char:00000000 aci_gatt_del_char
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1207   .text.aci_gatt_del_service:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1213   .text.aci_gatt_del_service:00000000 aci_gatt_del_service
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1307   .text.aci_gatt_del_include_service:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1313   .text.aci_gatt_del_include_service:00000000 aci_gatt_del_include_service
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1414   .text.aci_gatt_set_event_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1420   .text.aci_gatt_set_event_mask:00000000 aci_gatt_set_event_mask
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1514   .text.aci_gatt_exchange_config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1520   .text.aci_gatt_exchange_config:00000000 aci_gatt_exchange_config
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1618   .text.aci_att_find_info_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1624   .text.aci_att_find_info_req:00000000 aci_att_find_info_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1736   .text.aci_att_find_by_type_value_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1742   .text.aci_att_find_by_type_value_req:00000000 aci_att_find_by_type_value_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1875   .text.aci_att_read_by_type_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:1881   .text.aci_att_read_by_type_req:00000000 aci_att_read_by_type_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2019   .text.aci_att_read_by_group_type_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2025   .text.aci_att_read_by_group_type_req:00000000 aci_att_read_by_group_type_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2163   .text.aci_att_prepare_write_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2169   .text.aci_att_prepare_write_req:00000000 aci_att_prepare_write_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2297   .text.aci_att_execute_write_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2303   .text.aci_att_execute_write_req:00000000 aci_att_execute_write_req
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2408   .text.aci_gatt_disc_all_primary_services:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2414   .text.aci_gatt_disc_all_primary_services:00000000 aci_gatt_disc_all_primary_services
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2512   .text.aci_gatt_disc_primary_service_by_uuid:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2518   .text.aci_gatt_disc_primary_service_by_uuid:00000000 aci_gatt_disc_primary_service_by_uuid
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2645   .text.aci_gatt_find_included_services:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2651   .text.aci_gatt_find_included_services:00000000 aci_gatt_find_included_services
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2763   .text.aci_gatt_disc_all_char_of_service:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2769   .text.aci_gatt_disc_all_char_of_service:00000000 aci_gatt_disc_all_char_of_service
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2881   .text.aci_gatt_disc_char_by_uuid:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:2887   .text.aci_gatt_disc_char_by_uuid:00000000 aci_gatt_disc_char_by_uuid
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3025   .text.aci_gatt_disc_all_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3031   .text.aci_gatt_disc_all_char_desc:00000000 aci_gatt_disc_all_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3143   .text.aci_gatt_read_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3149   .text.aci_gatt_read_char_value:00000000 aci_gatt_read_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3254   .text.aci_gatt_read_using_char_uuid:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3260   .text.aci_gatt_read_using_char_uuid:00000000 aci_gatt_read_using_char_uuid
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3398   .text.aci_gatt_read_long_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3404   .text.aci_gatt_read_long_char_value:00000000 aci_gatt_read_long_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3516   .text.aci_gatt_read_multiple_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3522   .text.aci_gatt_read_multiple_char_value:00000000 aci_gatt_read_multiple_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3641   .text.aci_gatt_write_char_value:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s 			page 138
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:21     .text.aci_gatt_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:27     .text.aci_gatt_init:00000000 aci_gatt_init
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:94     .text.aci_gatt_add_service:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:100    .text.aci_gatt_add_service:00000000 aci_gatt_add_service
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:292    .text.aci_gatt_include_service:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:298    .text.aci_gatt_include_service:00000000 aci_gatt_include_service
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:451    .text.aci_gatt_add_char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:457    .text.aci_gatt_add_char:00000000 aci_gatt_add_char
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:679    .text.aci_gatt_add_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:685    .text.aci_gatt_add_char_desc:00000000 aci_gatt_add_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:970    .text.aci_gatt_update_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:976    .text.aci_gatt_update_char_value:00000000 aci_gatt_update_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1100   .text.aci_gatt_del_char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1106   .text.aci_gatt_del_char:00000000 aci_gatt_del_char
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1207   .text.aci_gatt_del_service:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1213   .text.aci_gatt_del_service:00000000 aci_gatt_del_service
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1307   .text.aci_gatt_del_include_service:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1313   .text.aci_gatt_del_include_service:00000000 aci_gatt_del_include_service
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1414   .text.aci_gatt_set_event_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1420   .text.aci_gatt_set_event_mask:00000000 aci_gatt_set_event_mask
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1514   .text.aci_gatt_exchange_config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1520   .text.aci_gatt_exchange_config:00000000 aci_gatt_exchange_config
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1618   .text.aci_att_find_info_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1624   .text.aci_att_find_info_req:00000000 aci_att_find_info_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1736   .text.aci_att_find_by_type_value_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1742   .text.aci_att_find_by_type_value_req:00000000 aci_att_find_by_type_value_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1875   .text.aci_att_read_by_type_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:1881   .text.aci_att_read_by_type_req:00000000 aci_att_read_by_type_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2019   .text.aci_att_read_by_group_type_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2025   .text.aci_att_read_by_group_type_req:00000000 aci_att_read_by_group_type_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2163   .text.aci_att_prepare_write_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2169   .text.aci_att_prepare_write_req:00000000 aci_att_prepare_write_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2297   .text.aci_att_execute_write_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2303   .text.aci_att_execute_write_req:00000000 aci_att_execute_write_req
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2408   .text.aci_gatt_disc_all_primary_services:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2414   .text.aci_gatt_disc_all_primary_services:00000000 aci_gatt_disc_all_primary_services
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2512   .text.aci_gatt_disc_primary_service_by_uuid:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2518   .text.aci_gatt_disc_primary_service_by_uuid:00000000 aci_gatt_disc_primary_service_by_uuid
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2645   .text.aci_gatt_find_included_services:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2651   .text.aci_gatt_find_included_services:00000000 aci_gatt_find_included_services
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2763   .text.aci_gatt_disc_all_char_of_service:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2769   .text.aci_gatt_disc_all_char_of_service:00000000 aci_gatt_disc_all_char_of_service
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2881   .text.aci_gatt_disc_char_by_uuid:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:2887   .text.aci_gatt_disc_char_by_uuid:00000000 aci_gatt_disc_char_by_uuid
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3025   .text.aci_gatt_disc_all_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3031   .text.aci_gatt_disc_all_char_desc:00000000 aci_gatt_disc_all_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3143   .text.aci_gatt_read_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3149   .text.aci_gatt_read_char_value:00000000 aci_gatt_read_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3254   .text.aci_gatt_read_using_char_uuid:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3260   .text.aci_gatt_read_using_char_uuid:00000000 aci_gatt_read_using_char_uuid
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3398   .text.aci_gatt_read_long_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3404   .text.aci_gatt_read_long_char_value:00000000 aci_gatt_read_long_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3516   .text.aci_gatt_read_multiple_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3522   .text.aci_gatt_read_multiple_char_value:00000000 aci_gatt_read_multiple_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3641   .text.aci_gatt_write_char_value:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s 			page 138
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3647   .text.aci_gatt_write_char_value:00000000 aci_gatt_write_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3767   .text.aci_gatt_write_long_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3773   .text.aci_gatt_write_long_char_value:00000000 aci_gatt_write_long_char_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3901   .text.aci_gatt_write_char_reliable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:3907   .text.aci_gatt_write_char_reliable:00000000 aci_gatt_write_char_reliable
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4035   .text.aci_gatt_write_long_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4041   .text.aci_gatt_write_long_char_desc:00000000 aci_gatt_write_long_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4169   .text.aci_gatt_read_long_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4175   .text.aci_gatt_read_long_char_desc:00000000 aci_gatt_read_long_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4287   .text.aci_gatt_write_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4293   .text.aci_gatt_write_char_desc:00000000 aci_gatt_write_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4413   .text.aci_gatt_read_char_desc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4419   .text.aci_gatt_read_char_desc:00000000 aci_gatt_read_char_desc
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4524   .text.aci_gatt_write_without_resp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4530   .text.aci_gatt_write_without_resp:00000000 aci_gatt_write_without_resp
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4646   .text.aci_gatt_signed_write_without_resp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4652   .text.aci_gatt_signed_write_without_resp:00000000 aci_gatt_signed_write_without_resp
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4768   .text.aci_gatt_confirm_indication:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4774   .text.aci_gatt_confirm_indication:00000000 aci_gatt_confirm_indication
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4868   .text.aci_gatt_write_resp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:4874   .text.aci_gatt_write_resp:00000000 aci_gatt_write_resp
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5003   .text.aci_gatt_allow_read:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5009   .text.aci_gatt_allow_read:00000000 aci_gatt_allow_read
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5103   .text.aci_gatt_set_security_permission:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5109   .text.aci_gatt_set_security_permission:00000000 aci_gatt_set_security_permission
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5217   .text.aci_gatt_set_desc_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5223   .text.aci_gatt_set_desc_value:00000000 aci_gatt_set_desc_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5352   .text.aci_gatt_read_handle_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5358   .text.aci_gatt_read_handle_value:00000000 aci_gatt_read_handle_value
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5503   .text.aci_gatt_update_char_value_ext:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5509   .text.aci_gatt_update_char_value_ext:00000000 aci_gatt_update_char_value_ext
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5652   .text.aci_gatt_deny_read:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5658   .text.aci_gatt_deny_read:00000000 aci_gatt_deny_read
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5759   .text.aci_gatt_set_access_permission:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5765   .text.aci_gatt_set_access_permission:00000000 aci_gatt_set_access_permission
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5873   .text.aci_gatt_store_db:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5879   .text.aci_gatt_store_db:00000000 aci_gatt_store_db
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5946   .text.aci_gatt_send_mult_notification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:5952   .text.aci_gatt_send_mult_notification:00000000 aci_gatt_send_mult_notification
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:6067   .text.aci_gatt_read_multiple_var_char_value:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBLOIrp.s:6073   .text.aci_gatt_read_multiple_var_char_value:00000000 aci_gatt_read_multiple_var_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3647   .text.aci_gatt_write_char_value:00000000 aci_gatt_write_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3767   .text.aci_gatt_write_long_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3773   .text.aci_gatt_write_long_char_value:00000000 aci_gatt_write_long_char_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3901   .text.aci_gatt_write_char_reliable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:3907   .text.aci_gatt_write_char_reliable:00000000 aci_gatt_write_char_reliable
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4035   .text.aci_gatt_write_long_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4041   .text.aci_gatt_write_long_char_desc:00000000 aci_gatt_write_long_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4169   .text.aci_gatt_read_long_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4175   .text.aci_gatt_read_long_char_desc:00000000 aci_gatt_read_long_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4287   .text.aci_gatt_write_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4293   .text.aci_gatt_write_char_desc:00000000 aci_gatt_write_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4413   .text.aci_gatt_read_char_desc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4419   .text.aci_gatt_read_char_desc:00000000 aci_gatt_read_char_desc
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4524   .text.aci_gatt_write_without_resp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4530   .text.aci_gatt_write_without_resp:00000000 aci_gatt_write_without_resp
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4646   .text.aci_gatt_signed_write_without_resp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4652   .text.aci_gatt_signed_write_without_resp:00000000 aci_gatt_signed_write_without_resp
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4768   .text.aci_gatt_confirm_indication:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4774   .text.aci_gatt_confirm_indication:00000000 aci_gatt_confirm_indication
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4868   .text.aci_gatt_write_resp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:4874   .text.aci_gatt_write_resp:00000000 aci_gatt_write_resp
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5003   .text.aci_gatt_allow_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5009   .text.aci_gatt_allow_read:00000000 aci_gatt_allow_read
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5103   .text.aci_gatt_set_security_permission:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5109   .text.aci_gatt_set_security_permission:00000000 aci_gatt_set_security_permission
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5217   .text.aci_gatt_set_desc_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5223   .text.aci_gatt_set_desc_value:00000000 aci_gatt_set_desc_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5352   .text.aci_gatt_read_handle_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5358   .text.aci_gatt_read_handle_value:00000000 aci_gatt_read_handle_value
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5503   .text.aci_gatt_update_char_value_ext:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5509   .text.aci_gatt_update_char_value_ext:00000000 aci_gatt_update_char_value_ext
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5652   .text.aci_gatt_deny_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5658   .text.aci_gatt_deny_read:00000000 aci_gatt_deny_read
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5759   .text.aci_gatt_set_access_permission:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5765   .text.aci_gatt_set_access_permission:00000000 aci_gatt_set_access_permission
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5873   .text.aci_gatt_store_db:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5879   .text.aci_gatt_store_db:00000000 aci_gatt_store_db
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5946   .text.aci_gatt_send_mult_notification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:5952   .text.aci_gatt_send_mult_notification:00000000 aci_gatt_send_mult_notification
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:6067   .text.aci_gatt_read_multiple_var_char_value:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc3iUeR9.s:6073   .text.aci_gatt_read_multiple_var_char_value:00000000 aci_gatt_read_multiple_var_char_value
 
 UNDEFINED SYMBOLS
 Osal_MemSet
