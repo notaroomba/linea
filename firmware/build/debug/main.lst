@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	Error_Handler:
-  28              	.LFB1419:
+  28              	.LFB1418:
    1:Core/Src/main.c **** /* USER CODE BEGIN Header */
    2:Core/Src/main.c **** /**
    3:Core/Src/main.c ****   ******************************************************************************
@@ -56,9 +56,9 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   26:Core/Src/main.c **** #include "rtc.h"
   27:Core/Src/main.c **** #include "tim.h"
   28:Core/Src/main.c **** #include "usart.h"
-  29:Core/Src/main.c **** #include "usb_device.h"
+  29:Core/Src/main.c **** #include "usb.h"
   30:Core/Src/main.c **** #include "gpio.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 2
 
 
   31:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   85:Core/Src/main.c **** 
   86:Core/Src/main.c ****   /* USER CODE END 1 */
   87:Core/Src/main.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 3
 
 
   88:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
@@ -154,22 +154,22 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  118:Core/Src/main.c ****   MX_USART1_UART_Init();
  119:Core/Src/main.c ****   MX_TIM2_Init();
  120:Core/Src/main.c ****   MX_RTC_Init();
- 121:Core/Src/main.c ****   MX_USB_Device_Init();
+ 121:Core/Src/main.c ****   MX_USB_PCD_Init();
  122:Core/Src/main.c ****   MX_RF_Init();
  123:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
  124:Core/Src/main.c ****     // CDC_Transmit_FS("Hello World", 12);
- 125:Core/Src/main.c ****     MX_USB_Device_Init();
+ 125:Core/Src/main.c ****     MX_USB_DEVICE_Init();
  126:Core/Src/main.c ****   HAL_Delay(500);
  127:Core/Src/main.c **** 
  128:Core/Src/main.c ****   patchouli_init();
  129:Core/Src/main.c ****   patchouli_set_mode(PATCHOULI_DEBUG_NONE);
- 130:Core/Src/main.c ****   // CDC_Transmit_FS("Glider Addon Build\r\n", 21);
- 131:Core/Src/main.c ****   // CDC_Transmit_FS("Init Done\r\n", 12);
- 132:Core/Src/main.c ****   // CDC_Transmit_FS("SYSCLK: ", 9);
- 133:Core/Src/main.c ****   // char buf[10];
- 134:Core/Src/main.c ****   // sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
- 135:Core/Src/main.c ****   // CDC_Transmit_FS(buf, strlen(buf));
- 136:Core/Src/main.c ****   // CDC_Transmit_FS(" MHz\r\n", 7);
+ 130:Core/Src/main.c ****   CDC_Transmit_FS("Glider Addon Build\r\n", 21);
+ 131:Core/Src/main.c ****   CDC_Transmit_FS("Init Done\r\n", 12);
+ 132:Core/Src/main.c ****   CDC_Transmit_FS("SYSCLK: ", 9);
+ 133:Core/Src/main.c ****   char buf[10];
+ 134:Core/Src/main.c ****   sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
+ 135:Core/Src/main.c ****   CDC_Transmit_FS(buf, strlen(buf));
+ 136:Core/Src/main.c ****   CDC_Transmit_FS(" MHz\r\n", 7);
  137:Core/Src/main.c ****   htim1.Instance->RCR=50;
  138:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
  139:Core/Src/main.c **** 	GPIO_InitStruct.Pin  = GPIO_PIN_13;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  142:Core/Src/main.c **** 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
  143:Core/Src/main.c **** 
  144:Core/Src/main.c ****   /* USER CODE END 2 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 4
 
 
  145:Core/Src/main.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  199:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
  200:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 32;
  201:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 5
 
 
  202:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  256:Core/Src/main.c ****     Error_Handler();
  257:Core/Src/main.c ****   }
  258:Core/Src/main.c ****   /* USER CODE BEGIN Smps */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 6
 
 
  259:Core/Src/main.c ****   LL_HSEM_1StepLock(HSEM, 5);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
   29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
   30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 7
 
 
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
   87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 8
 
 
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
  143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 9
 
 
  145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 10
 
 
  202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -570,7 +570,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   53              		.loc 1 276 9 view .LVU6
   54 0002 FEE7     		b	.L2
   55              		.cfi_endproc
-  56              	.LFE1419:
+  56              	.LFE1418:
   58              		.section	.text.SystemClock_Config,"ax",%progbits
   59              		.align	1
   60              		.global	SystemClock_Config
@@ -578,7 +578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   62              		.thumb
   63              		.thumb_func
   65              	SystemClock_Config:
-  66              	.LFB1417:
+  66              	.LFB1416:
  170:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   67              		.loc 1 170 1 view -0
   68              		.cfi_startproc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   80 0006 0021     		movs	r1, #0
   81 0008 08A8     		add	r0, sp, #32
   82 000a FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 11
 
 
   83              	.LVL0:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   33:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
   34:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC)
   35:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 12
 
 
   36:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL RCC
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   90:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
   91:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
   92:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 13
 
 
   93:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  147:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_PLLRDYC                RCC_CICR_PLLRDYC     /*!< PLL Ready Interrupt Clear     
  148:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC_HSI48_SUPPORT)
  149:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_HSI48RDYC              RCC_CICR_HSI48RDYC   /*!< HSI48 Ready Interrupt Clear   
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 14
 
 
  150:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* RCC_HSI48_SUPPORT */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  204:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
  205:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_PLLSAI1RDYIE           RCC_CIER_PLLSAI1RDYIE  /*!< PLLSAI1 Ready Interrupt Enab
  206:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 15
 
 
  207:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_LSECSSIE               RCC_CIER_LSECSSIE      /*!< LSE CSS Interrupt Enable    
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  261:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_HSEAMPTHRESHOLD_1_2         (0x000000000U)        /*!< HSE sense amplifier bias curr
  262:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_HSEAMPTHRESHOLD_3_4         RCC_HSECR_HSES        /*!< HSE sense amplifier bias curr
  263:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 16
 
 
  264:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  318:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_16               (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_1 | RCC_CFGR_HPRE_0)   
  319:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_32               (RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_1 | RCC_CFGR_HPRE_0)   
  320:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_64               (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_2)                     
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 17
 
 
  321:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_128              (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_0)   
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  375:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* RCC_HSI48_SUPPORT */
  376:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_HSE_BEFORE_STAB  (RCC_CFGR_MCOSEL_2|RCC_CFGR_MCOSEL_3)         /*!< HSE b
  377:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 18
 
 
  378:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  432:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PERIPH_FREQUENCY_NA         0xFFFFFFFFU                 /*!< Frequency cannot be pro
  433:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  434:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 19
 
 
  435:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  489:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  490:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  491:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 20
 
 
  492:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  546:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  547:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  548:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 21
 
 
  549:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  603:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  604:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  605:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 22
 
 
  606:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  660:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_RFWKP_CLKSOURCE_HSE_DIV1024   RCC_CSR_RFWKPSEL            /*!< HSE oscillator clock 
  661:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  662:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 23
 
 
  663:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  717:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_9                  (RCC_PLLCFGR_PLLP_3)                                    
  718:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_10                 (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_3)                 
  719:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_11                 (RCC_PLLCFGR_PLLP_1|RCC_PLLCFGR_PLLP_3)                 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 24
 
 
  720:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_12                 (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_1|RCC_PLLCFGR_PLLP_
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  774:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  775:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_PLLSAI1P  PLLSAI1 division factor (PLLP)
  776:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 25
 
 
  777:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  831:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  832:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /* Exported macro ------------------------------------------------------------*/
  833:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_Exported_Macros RCC Exported Macros
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 26
 
 
  834:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  888:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define __LL_RCC_CALC_PLLCLK_FREQ(__INPUTFREQ__, __PLLM__, __PLLN__, __PLLR__) ((__INPUTFREQ__) * (
  889:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****                                                                                 (((__PLLR__) >> RCC
  890:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 27
 
 
  891:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  945:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Helper macro to calculate the PLLPCLK frequency used on ADC domain
  946:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note ex: @ref __LL_RCC_CALC_PLLCLK_ADC_FREQ (HSE_VALUE,@ref LL_RCC_PLL_GetDivider (),
  947:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *             @ref LL_RCC_PLL_GetN (), @ref LL_RCC_PLL_GetP ());
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 28
 
 
  948:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __INPUTFREQ__ PLL Input frequency (based on MSI/HSE/HSI)
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1002:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __PLLM__ This parameter can be one of the following values:
 1003:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_1
 1004:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 29
 
 
 1005:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1059:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_19
 1060:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_20
 1061:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_21
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 30
 
 
 1062:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_22
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1116:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_3
 1117:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_4
 1118:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 31
 
 
 1119:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_6
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1173:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
 1174:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
 1175:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 32
 
 
 1176:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_128
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1230:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_APB2_DIV_16
 1231:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval PCLK2 clock frequency (in Hz)
 1232:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 33
 
 
 1233:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define __LL_RCC_CALC_PCLK2_FREQ(__HCLKFREQ__, __APB2PRESCALER__) ((__HCLKFREQ__) >> (APBPrescTable
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1287:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1288:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSE_DisableDiv2(void)
 1289:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 34
 
 
 1290:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->CR, RCC_CR_HSEPRE);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1344:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if HSE clock control register is locked or not
 1345:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll HSECR           UNLOCKED        LL_RCC_HSE_IsClockControlLocked
 1346:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval State of bit (1 or 0).
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 35
 
 
 1347:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1401:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_3
 1402:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_4
 1403:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 36
 
 
 1404:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_6
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1458:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 1459:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1460:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSI_DisableInStopMode(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 37
 
 
 1461:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1515:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 1516:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable HSI Automatic from stop mode
 1517:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CR           HSIASFS       LL_RCC_HSI_DisableAutoFromStop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 38
 
 
 1518:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1572:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 1573:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1574:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSI48_Enable(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 39
 
 
 1575:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
 1629:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable  Low Speed External (LSE) crystal.
 1630:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         LSEON         LL_RCC_LSE_Disable
 1631:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 40
 
 
 1632:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  105 0026 D2F89030 		ldr	r3, [r2, #144]
  106 002a 23F01803 		bic	r3, r3, #24
  107 002e 43F01003 		orr	r3, r3, #16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 41
 
 
  108 0032 C2F89030 		str	r3, [r2, #144]
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  192:Core/Src/main.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
  147              		.loc 1 192 30 is_stmt 0 view .LVU32
  148 0064 0F93     		str	r3, [sp, #60]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 42
 
 
  193:Core/Src/main.c ****   RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  183              		.loc 1 202 30 is_stmt 0 view .LVU52
  184 0086 4FF00053 		mov	r3, #536870912
  185 008a 1993     		str	r3, [sp, #100]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 43
 
 
  203:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  221 00ae 0793     		str	r3, [sp, #28]
  221:Core/Src/main.c ****   {
  222              		.loc 1 221 3 is_stmt 1 view .LVU72
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 44
 
 
  221:Core/Src/main.c ****   {
@@ -2612,7 +2612,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  245 00c4 FFF7FEFF 		bl	Error_Handler
  246              	.LVL7:
  247              		.cfi_endproc
- 248              	.LFE1417:
+ 248              	.LFE1416:
  250              		.section	.text.PeriphCommonClock_Config,"ax",%progbits
  251              		.align	1
  252              		.global	PeriphCommonClock_Config
@@ -2620,7 +2620,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  254              		.thumb
  255              		.thumb_func
  257              	PeriphCommonClock_Config:
- 258              	.LFB1418:
+ 258              	.LFB1417:
  236:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
  259              		.loc 1 236 1 view -0
  260              		.cfi_startproc
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  270 0004 5022     		movs	r2, #80
  271 0006 0021     		movs	r1, #0
  272 0008 6846     		mov	r0, sp
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 45
 
 
  273 000a FFF7FEFF 		bl	memset
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  309 003c 4FF44043 		mov	r3, #49152
  310 0040 1193     		str	r3, [sp, #68]
  251:Core/Src/main.c ****   PeriphClkInitStruct.SmpsDivSelection = RCC_SMPSCLKDIV_RANGE1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 46
 
 
  311              		.loc 1 251 3 is_stmt 1 view .LVU100
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   32:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h ****   */
   33:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** 
   34:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** #if defined(HSEM)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 47
 
 
   35:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
   89:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** #define LL_HSEM_SEMAPHORE_20               HSEM_C1IER_ISE20
   90:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** #define LL_HSEM_SEMAPHORE_21               HSEM_C1IER_ISE21
   91:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** #define LL_HSEM_SEMAPHORE_22               HSEM_C1IER_ISE22
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 48
 
 
   92:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** #define LL_HSEM_SEMAPHORE_23               HSEM_C1IER_ISE23
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  146:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h ****   */
  147:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** 
  148:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** /** @defgroup HSEM_LL_EF_Data_Management Data_Management
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 49
 
 
  149:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h ****   * @{
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  203:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** __STATIC_INLINE void LL_HSEM_SetLock(HSEM_TypeDef *HSEMx, uint32_t Semaphore, uint32_t process)
  204:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** {
  205:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h ****   WRITE_REG(HSEMx->R[Semaphore], (HSEM_R_LOCK | LL_HSEM_COREID | process));
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 50
 
 
  206:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_hsem.h **** }
@@ -2998,249 +2998,344 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 1
  350 005e 00BF     		.align	2
  351              	.L13:
  352 0060 00140058 		.word	1476400128
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 51
 
 
  353              		.cfi_endproc
- 354              	.LFE1418:
+ 354              	.LFE1417:
  356              		.section	.rodata.main.str1.4,"aMS",%progbits,1
  357              		.align	2
  358              	.LC0:
- 359 0000 7800     		.ascii	"x\000"
- 360              		.section	.text.main,"ax",%progbits
- 361              		.align	1
- 362              		.global	main
- 363              		.syntax unified
- 364              		.thumb
- 365              		.thumb_func
- 367              	main:
- 368              	.LFB1416:
+ 359 0000 476C6964 		.ascii	"Glider Addon Build\015\012\000"
+ 359      65722041 
+ 359      64646F6E 
+ 359      20427569 
+ 359      6C640D0A 
+ 360 0015 000000   		.align	2
+ 361              	.LC1:
+ 362 0018 496E6974 		.ascii	"Init Done\015\012\000"
+ 362      20446F6E 
+ 362      650D0A00 
+ 363              		.align	2
+ 364              	.LC2:
+ 365 0024 53595343 		.ascii	"SYSCLK: \000"
+ 365      4C4B3A20 
+ 365      00
+ 366 002d 000000   		.align	2
+ 367              	.LC3:
+ 368 0030 256400   		.ascii	"%d\000"
+ 369 0033 00       		.align	2
+ 370              	.LC4:
+ 371 0034 204D487A 		.ascii	" MHz\015\012\000"
+ 371      0D0A00
+ 372 003b 00       		.align	2
+ 373              	.LC5:
+ 374 003c 7800     		.ascii	"x\000"
+ 375              		.section	.text.main,"ax",%progbits
+ 376              		.align	1
+ 377              		.global	main
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 382              	main:
+ 383              	.LFB1415:
   82:Core/Src/main.c **** 
- 369              		.loc 1 82 1 view -0
- 370              		.cfi_startproc
- 371              		@ Volatile: function does not return.
- 372              		@ args = 0, pretend = 0, frame = 24
- 373              		@ frame_needed = 0, uses_anonymous_args = 0
- 374 0000 00B5     		push	{lr}
- 375              		.cfi_def_cfa_offset 4
- 376              		.cfi_offset 14, -4
- 377 0002 87B0     		sub	sp, sp, #28
- 378              		.cfi_def_cfa_offset 32
+ 384              		.loc 1 82 1 view -0
+ 385              		.cfi_startproc
+ 386              		@ Volatile: function does not return.
+ 387              		@ args = 0, pretend = 0, frame = 32
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389 0000 00B5     		push	{lr}
+ 390              		.cfi_def_cfa_offset 4
+ 391              		.cfi_offset 14, -4
+ 392 0002 89B0     		sub	sp, sp, #36
+ 393              		.cfi_def_cfa_offset 40
   91:Core/Src/main.c ****   /* Config code for STM32_WPAN (HSE Tuning must be done before system clock configuration) */
- 379              		.loc 1 91 3 view .LVU114
- 380 0004 FFF7FEFF 		bl	HAL_Init
- 381              	.LVL13:
+ 394              		.loc 1 91 3 view .LVU114
+ 395 0004 FFF7FEFF 		bl	HAL_Init
+ 396              	.LVL13:
   93:Core/Src/main.c **** 
- 382              		.loc 1 93 3 view .LVU115
- 383 0008 FFF7FEFF 		bl	MX_APPE_Config
- 384              	.LVL14:
+ 397              		.loc 1 93 3 view .LVU115
+ 398 0008 FFF7FEFF 		bl	MX_APPE_Config
+ 399              	.LVL14:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 52
+
+
  100:Core/Src/main.c **** 
- 385              		.loc 1 100 3 view .LVU116
- 386 000c FFF7FEFF 		bl	SystemClock_Config
- 387              	.LVL15:
+ 400              		.loc 1 100 3 view .LVU116
+ 401 000c FFF7FEFF 		bl	SystemClock_Config
+ 402              	.LVL15:
  103:Core/Src/main.c **** 
- 388              		.loc 1 103 3 view .LVU117
- 389 0010 FFF7FEFF 		bl	PeriphCommonClock_Config
- 390              	.LVL16:
+ 403              		.loc 1 103 3 view .LVU117
+ 404 0010 FFF7FEFF 		bl	PeriphCommonClock_Config
+ 405              	.LVL16:
  106:Core/Src/main.c **** 
- 391              		.loc 1 106 3 view .LVU118
- 392 0014 FFF7FEFF 		bl	MX_IPCC_Init
- 393              	.LVL17:
+ 406              		.loc 1 106 3 view .LVU118
+ 407 0014 FFF7FEFF 		bl	MX_IPCC_Init
+ 408              	.LVL17:
  113:Core/Src/main.c ****   MX_ADC1_Init();
- 394              		.loc 1 113 3 view .LVU119
- 395 0018 FFF7FEFF 		bl	MX_GPIO_Init
- 396              	.LVL18:
+ 409              		.loc 1 113 3 view .LVU119
+ 410 0018 FFF7FEFF 		bl	MX_GPIO_Init
+ 411              	.LVL18:
  114:Core/Src/main.c ****   MX_I2C1_Init();
- 397              		.loc 1 114 3 view .LVU120
- 398 001c FFF7FEFF 		bl	MX_ADC1_Init
- 399              	.LVL19:
+ 412              		.loc 1 114 3 view .LVU120
+ 413 001c FFF7FEFF 		bl	MX_ADC1_Init
+ 414              	.LVL19:
  115:Core/Src/main.c ****   MX_TIM1_Init();
- 400              		.loc 1 115 3 view .LVU121
- 401 0020 FFF7FEFF 		bl	MX_I2C1_Init
- 402              	.LVL20:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 52
-
-
+ 415              		.loc 1 115 3 view .LVU121
+ 416 0020 FFF7FEFF 		bl	MX_I2C1_Init
+ 417              	.LVL20:
  116:Core/Src/main.c ****   MX_TIM16_Init();
- 403              		.loc 1 116 3 view .LVU122
- 404 0024 FFF7FEFF 		bl	MX_TIM1_Init
- 405              	.LVL21:
+ 418              		.loc 1 116 3 view .LVU122
+ 419 0024 FFF7FEFF 		bl	MX_TIM1_Init
+ 420              	.LVL21:
  117:Core/Src/main.c ****   MX_USART1_UART_Init();
- 406              		.loc 1 117 3 view .LVU123
- 407 0028 FFF7FEFF 		bl	MX_TIM16_Init
- 408              	.LVL22:
+ 421              		.loc 1 117 3 view .LVU123
+ 422 0028 FFF7FEFF 		bl	MX_TIM16_Init
+ 423              	.LVL22:
  118:Core/Src/main.c ****   MX_TIM2_Init();
- 409              		.loc 1 118 3 view .LVU124
- 410 002c FFF7FEFF 		bl	MX_USART1_UART_Init
- 411              	.LVL23:
+ 424              		.loc 1 118 3 view .LVU124
+ 425 002c FFF7FEFF 		bl	MX_USART1_UART_Init
+ 426              	.LVL23:
  119:Core/Src/main.c ****   MX_RTC_Init();
- 412              		.loc 1 119 3 view .LVU125
- 413 0030 FFF7FEFF 		bl	MX_TIM2_Init
- 414              	.LVL24:
- 120:Core/Src/main.c ****   MX_USB_Device_Init();
- 415              		.loc 1 120 3 view .LVU126
- 416 0034 FFF7FEFF 		bl	MX_RTC_Init
- 417              	.LVL25:
+ 427              		.loc 1 119 3 view .LVU125
+ 428 0030 FFF7FEFF 		bl	MX_TIM2_Init
+ 429              	.LVL24:
+ 120:Core/Src/main.c ****   MX_USB_PCD_Init();
+ 430              		.loc 1 120 3 view .LVU126
+ 431 0034 FFF7FEFF 		bl	MX_RTC_Init
+ 432              	.LVL25:
  121:Core/Src/main.c ****   MX_RF_Init();
- 418              		.loc 1 121 3 view .LVU127
- 419 0038 FFF7FEFF 		bl	MX_USB_Device_Init
- 420              	.LVL26:
+ 433              		.loc 1 121 3 view .LVU127
+ 434 0038 FFF7FEFF 		bl	MX_USB_PCD_Init
+ 435              	.LVL26:
  122:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 421              		.loc 1 122 3 view .LVU128
- 422 003c FFF7FEFF 		bl	MX_RF_Init
- 423              	.LVL27:
+ 436              		.loc 1 122 3 view .LVU128
+ 437 003c FFF7FEFF 		bl	MX_RF_Init
+ 438              	.LVL27:
  125:Core/Src/main.c ****   HAL_Delay(500);
- 424              		.loc 1 125 5 view .LVU129
- 425 0040 FFF7FEFF 		bl	MX_USB_Device_Init
- 426              	.LVL28:
+ 439              		.loc 1 125 5 view .LVU129
+ 440 0040 FFF7FEFF 		bl	MX_USB_DEVICE_Init
+ 441              	.LVL28:
  126:Core/Src/main.c **** 
- 427              		.loc 1 126 3 view .LVU130
- 428 0044 4FF4FA70 		mov	r0, #500
- 429 0048 FFF7FEFF 		bl	HAL_Delay
- 430              	.LVL29:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 53
+
+
+ 442              		.loc 1 126 3 view .LVU130
+ 443 0044 4FF4FA70 		mov	r0, #500
+ 444 0048 FFF7FEFF 		bl	HAL_Delay
+ 445              	.LVL29:
  128:Core/Src/main.c ****   patchouli_set_mode(PATCHOULI_DEBUG_NONE);
- 431              		.loc 1 128 3 view .LVU131
- 432 004c FFF7FEFF 		bl	patchouli_init
- 433              	.LVL30:
- 129:Core/Src/main.c ****   // CDC_Transmit_FS("Glider Addon Build\r\n", 21);
- 434              		.loc 1 129 3 view .LVU132
- 435 0050 0020     		movs	r0, #0
- 436 0052 FFF7FEFF 		bl	patchouli_set_mode
- 437              	.LVL31:
- 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
- 438              		.loc 1 137 3 view .LVU133
- 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
- 439              		.loc 1 137 8 is_stmt 0 view .LVU134
- 440 0056 104B     		ldr	r3, .L18
- 441 0058 1B68     		ldr	r3, [r3]
- 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
- 442              		.loc 1 137 22 view .LVU135
- 443 005a 3222     		movs	r2, #50
- 444 005c 1A63     		str	r2, [r3, #48]
- 138:Core/Src/main.c **** 	GPIO_InitStruct.Pin  = GPIO_PIN_13;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 53
+ 446              		.loc 1 128 3 view .LVU131
+ 447 004c FFF7FEFF 		bl	patchouli_init
+ 448              	.LVL30:
+ 129:Core/Src/main.c ****   CDC_Transmit_FS("Glider Addon Build\r\n", 21);
+ 449              		.loc 1 129 3 view .LVU132
+ 450 0050 0020     		movs	r0, #0
+ 451 0052 FFF7FEFF 		bl	patchouli_set_mode
+ 452              	.LVL31:
+ 130:Core/Src/main.c ****   CDC_Transmit_FS("Init Done\r\n", 12);
+ 453              		.loc 1 130 3 view .LVU133
+ 454 0056 1521     		movs	r1, #21
+ 455 0058 2348     		ldr	r0, .L18
+ 456 005a FFF7FEFF 		bl	CDC_Transmit_FS
+ 457              	.LVL32:
+ 131:Core/Src/main.c ****   CDC_Transmit_FS("SYSCLK: ", 9);
+ 458              		.loc 1 131 3 view .LVU134
+ 459 005e 0C21     		movs	r1, #12
+ 460 0060 2248     		ldr	r0, .L18+4
+ 461 0062 FFF7FEFF 		bl	CDC_Transmit_FS
+ 462              	.LVL33:
+ 132:Core/Src/main.c ****   char buf[10];
+ 463              		.loc 1 132 3 view .LVU135
+ 464 0066 0921     		movs	r1, #9
+ 465 0068 2148     		ldr	r0, .L18+8
+ 466 006a FFF7FEFF 		bl	CDC_Transmit_FS
+ 467              	.LVL34:
+ 133:Core/Src/main.c ****   sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
+ 468              		.loc 1 133 3 view .LVU136
+ 134:Core/Src/main.c ****   CDC_Transmit_FS(buf, strlen(buf));
+ 469              		.loc 1 134 3 view .LVU137
+ 134:Core/Src/main.c ****   CDC_Transmit_FS(buf, strlen(buf));
+ 470              		.loc 1 134 28 is_stmt 0 view .LVU138
+ 471 006e FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
+ 472              	.LVL35:
+ 473 0072 07EE900A 		vmov	s15, r0	@ int
+ 134:Core/Src/main.c ****   CDC_Transmit_FS(buf, strlen(buf));
+ 474              		.loc 1 134 53 discriminator 1 view .LVU139
+ 475 0076 F8EE677A 		vcvt.f32.u32	s15, s15
+ 476 007a DFED1E6A 		vldr.32	s13, .L18+12
+ 477 007e 87EEA67A 		vdiv.f32	s14, s15, s13
+ 134:Core/Src/main.c ****   CDC_Transmit_FS(buf, strlen(buf));
+ 478              		.loc 1 134 3 discriminator 1 view .LVU140
+ 479 0082 FDEEC77A 		vcvt.s32.f32	s15, s14
+ 480 0086 17EE902A 		vmov	r2, s15	@ int
+ 481 008a 1B49     		ldr	r1, .L18+16
+ 482 008c 05A8     		add	r0, sp, #20
+ 483 008e FFF7FEFF 		bl	sprintf
+ 484              	.LVL36:
+ 135:Core/Src/main.c ****   CDC_Transmit_FS(" MHz\r\n", 7);
+ 485              		.loc 1 135 3 is_stmt 1 view .LVU141
+ 486 0092 05A8     		add	r0, sp, #20
+ 487 0094 FFF7FEFF 		bl	strlen
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 54
 
 
- 445              		.loc 1 138 2 is_stmt 1 view .LVU136
+ 488              	.LVL37:
+ 489 0098 0146     		mov	r1, r0
+ 135:Core/Src/main.c ****   CDC_Transmit_FS(" MHz\r\n", 7);
+ 490              		.loc 1 135 3 is_stmt 0 discriminator 1 view .LVU142
+ 491 009a 05A8     		add	r0, sp, #20
+ 492 009c FFF7FEFF 		bl	CDC_Transmit_FS
+ 493              	.LVL38:
+ 136:Core/Src/main.c ****   htim1.Instance->RCR=50;
+ 494              		.loc 1 136 3 is_stmt 1 view .LVU143
+ 495 00a0 0721     		movs	r1, #7
+ 496 00a2 1648     		ldr	r0, .L18+20
+ 497 00a4 FFF7FEFF 		bl	CDC_Transmit_FS
+ 498              	.LVL39:
+ 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 499              		.loc 1 137 3 view .LVU144
+ 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 500              		.loc 1 137 8 is_stmt 0 view .LVU145
+ 501 00a8 154B     		ldr	r3, .L18+24
+ 502 00aa 1B68     		ldr	r3, [r3]
+ 137:Core/Src/main.c **** 	GPIO_InitTypeDef GPIO_InitStruct = {0};
+ 503              		.loc 1 137 22 view .LVU146
+ 504 00ac 3222     		movs	r2, #50
+ 505 00ae 1A63     		str	r2, [r3, #48]
  138:Core/Src/main.c **** 	GPIO_InitStruct.Pin  = GPIO_PIN_13;
- 446              		.loc 1 138 19 is_stmt 0 view .LVU137
- 447 005e 0023     		movs	r3, #0
- 448 0060 0193     		str	r3, [sp, #4]
- 449 0062 0293     		str	r3, [sp, #8]
- 450 0064 0393     		str	r3, [sp, #12]
- 451 0066 0493     		str	r3, [sp, #16]
- 452 0068 0593     		str	r3, [sp, #20]
+ 506              		.loc 1 138 2 is_stmt 1 view .LVU147
+ 138:Core/Src/main.c **** 	GPIO_InitStruct.Pin  = GPIO_PIN_13;
+ 507              		.loc 1 138 19 is_stmt 0 view .LVU148
+ 508 00b0 0023     		movs	r3, #0
+ 509 00b2 0093     		str	r3, [sp]
+ 510 00b4 0193     		str	r3, [sp, #4]
+ 511 00b6 0293     		str	r3, [sp, #8]
+ 512 00b8 0393     		str	r3, [sp, #12]
+ 513 00ba 0493     		str	r3, [sp, #16]
  139:Core/Src/main.c **** 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 453              		.loc 1 139 2 is_stmt 1 view .LVU138
+ 514              		.loc 1 139 2 is_stmt 1 view .LVU149
  139:Core/Src/main.c **** 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 454              		.loc 1 139 23 is_stmt 0 view .LVU139
- 455 006a 4FF40053 		mov	r3, #8192
- 456 006e 0193     		str	r3, [sp, #4]
+ 515              		.loc 1 139 23 is_stmt 0 view .LVU150
+ 516 00bc 4FF40053 		mov	r3, #8192
+ 517 00c0 0093     		str	r3, [sp]
  140:Core/Src/main.c **** 	GPIO_InitStruct.Pull = GPIO_PULLDOWN;
- 457              		.loc 1 140 2 is_stmt 1 view .LVU140
+ 518              		.loc 1 140 2 is_stmt 1 view .LVU151
  140:Core/Src/main.c **** 	GPIO_InitStruct.Pull = GPIO_PULLDOWN;
- 458              		.loc 1 140 23 is_stmt 0 view .LVU141
- 459 0070 0123     		movs	r3, #1
- 460 0072 0293     		str	r3, [sp, #8]
+ 519              		.loc 1 140 23 is_stmt 0 view .LVU152
+ 520 00c2 0123     		movs	r3, #1
+ 521 00c4 0193     		str	r3, [sp, #4]
  141:Core/Src/main.c **** 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
- 461              		.loc 1 141 2 is_stmt 1 view .LVU142
+ 522              		.loc 1 141 2 is_stmt 1 view .LVU153
  141:Core/Src/main.c **** 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
- 462              		.loc 1 141 23 is_stmt 0 view .LVU143
- 463 0074 0223     		movs	r3, #2
- 464 0076 0393     		str	r3, [sp, #12]
+ 523              		.loc 1 141 23 is_stmt 0 view .LVU154
+ 524 00c6 0223     		movs	r3, #2
+ 525 00c8 0293     		str	r3, [sp, #8]
  142:Core/Src/main.c **** 
- 465              		.loc 1 142 2 is_stmt 1 view .LVU144
- 466 0078 01A9     		add	r1, sp, #4
- 467 007a 0848     		ldr	r0, .L18+4
- 468 007c FFF7FEFF 		bl	HAL_GPIO_Init
- 469              	.LVL32:
+ 526              		.loc 1 142 2 is_stmt 1 view .LVU155
+ 527 00ca 6946     		mov	r1, sp
+ 528 00cc 0D48     		ldr	r0, .L18+28
+ 529 00ce FFF7FEFF 		bl	HAL_GPIO_Init
+ 530              	.LVL40:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 55
+
+
  147:Core/Src/main.c **** 
- 470              		.loc 1 147 3 view .LVU145
- 471 0080 FFF7FEFF 		bl	MX_APPE_Init
- 472              	.LVL33:
- 473              	.L16:
+ 531              		.loc 1 147 3 view .LVU156
+ 532 00d2 FFF7FEFF 		bl	MX_APPE_Init
+ 533              	.LVL41:
+ 534              	.L16:
  151:Core/Src/main.c ****   {
- 474              		.loc 1 151 3 view .LVU146
- 475              	.LBB16:
+ 535              		.loc 1 151 3 view .LVU157
  154:Core/Src/main.c **** 
- 476              		.loc 1 154 5 view .LVU147
- 477 0084 FFF7FEFF 		bl	MX_APPE_Process
- 478              	.LVL34:
+ 536              		.loc 1 154 5 view .LVU158
+ 537 00d6 FFF7FEFF 		bl	MX_APPE_Process
+ 538              	.LVL42:
  158:Core/Src/main.c ****     patchouli_cycle();
- 479              		.loc 1 158 5 view .LVU148
- 480 0088 0121     		movs	r1, #1
- 481 008a 0548     		ldr	r0, .L18+8
- 482 008c FFF7FEFF 		bl	CDC_Transmit_FS
- 483              	.LVL35:
+ 539              		.loc 1 158 5 view .LVU159
+ 540 00da 0121     		movs	r1, #1
+ 541 00dc 0A48     		ldr	r0, .L18+32
+ 542 00de FFF7FEFF 		bl	CDC_Transmit_FS
+ 543              	.LVL43:
  159:Core/Src/main.c ****     // linea_cycle();
- 484              		.loc 1 159 5 discriminator 1 view .LVU149
- 485 0090 FFF7FEFF 		bl	patchouli_cycle
- 486              	.LVL36:
- 487              	.LBE16:
+ 544              		.loc 1 159 5 discriminator 1 view .LVU160
+ 545 00e2 FFF7FEFF 		bl	patchouli_cycle
+ 546              	.LVL44:
  151:Core/Src/main.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 54
+ 547              		.loc 1 151 9 view .LVU161
+ 548 00e6 F6E7     		b	.L16
+ 549              	.L19:
+ 550              		.align	2
+ 551              	.L18:
+ 552 00e8 00000000 		.word	.LC0
+ 553 00ec 18000000 		.word	.LC1
+ 554 00f0 24000000 		.word	.LC2
+ 555 00f4 00247449 		.word	1232348160
+ 556 00f8 30000000 		.word	.LC3
+ 557 00fc 34000000 		.word	.LC4
+ 558 0100 00000000 		.word	htim1
+ 559 0104 00040048 		.word	1207960576
+ 560 0108 3C000000 		.word	.LC5
+ 561              		.cfi_endproc
+ 562              	.LFE1415:
+ 564              		.global	usbhid_txbuf
+ 565              		.section	.bss.usbhid_txbuf,"aw",%nobits
+ 566              		.align	2
+ 569              	usbhid_txbuf:
+ 570 0000 00000000 		.space	12
+ 570      00000000 
+ 570      00000000 
+ 571              		.text
+ 572              	.Letext0:
+ 573              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 574              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 575              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 576              		.file 8 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
+ 577              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 578              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 579              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ 580              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc.h"
+ 581              		.file 13 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h"
+ 582              		.file 14 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 56
 
 
- 488              		.loc 1 151 9 view .LVU150
- 489 0094 F6E7     		b	.L16
- 490              	.L19:
- 491 0096 00BF     		.align	2
- 492              	.L18:
- 493 0098 00000000 		.word	htim1
- 494 009c 00040048 		.word	1207960576
- 495 00a0 00000000 		.word	.LC0
- 496              		.cfi_endproc
- 497              	.LFE1416:
- 499              		.global	usbhid_txbuf
- 500              		.section	.bss.usbhid_txbuf,"aw",%nobits
- 501              		.align	2
- 504              	usbhid_txbuf:
- 505 0000 00000000 		.space	12
- 505      00000000 
- 505      00000000 
- 506              		.text
- 507              	.Letext0:
- 508              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
- 509              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 510              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
- 511              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
- 512              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
- 513              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
- 514              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc.h"
- 515              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h"
- 516              		.file 13 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
- 517              		.file 14 "Core/Inc/app_conf.h"
- 518              		.file 15 "patchouli/inc/patchouli.h"
- 519              		.file 16 "Core/Inc/tim.h"
- 520              		.file 17 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
- 521              		.file 18 "Core/Inc/app_entry.h"
- 522              		.file 19 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
- 523              		.file 20 "Core/Inc/rf.h"
- 524              		.file 21 "Core/Inc/rtc.h"
- 525              		.file 22 "Core/Inc/usart.h"
- 526              		.file 23 "Core/Inc/i2c.h"
- 527              		.file 24 "Core/Inc/adc.h"
- 528              		.file 25 "Core/Inc/gpio.h"
- 529              		.file 26 "Core/Inc/ipcc.h"
- 530              		.file 27 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s 			page 55
+ 583              		.file 15 "Core/Inc/app_conf.h"
+ 584              		.file 16 "patchouli/inc/patchouli.h"
+ 585              		.file 17 "Core/Inc/tim.h"
+ 586              		.file 18 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
+ 587              		.file 19 "Core/Inc/app_entry.h"
+ 588              		.file 20 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
+ 589              		.file 21 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
+ 590              		.file 22 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ 591              		.file 23 "Core/Inc/rf.h"
+ 592              		.file 24 "Core/Inc/usb.h"
+ 593              		.file 25 "Core/Inc/rtc.h"
+ 594              		.file 26 "Core/Inc/usart.h"
+ 595              		.file 27 "Core/Inc/i2c.h"
+ 596              		.file 28 "Core/Inc/adc.h"
+ 597              		.file 29 "Core/Inc/gpio.h"
+ 598              		.file 30 "Core/Inc/ipcc.h"
+ 599              		.file 31 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s 			page 57
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:21     .text.Error_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:27     .text.Error_Handler:00000000 Error_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:59     .text.SystemClock_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:65     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:251    .text.PeriphCommonClock_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:257    .text.PeriphCommonClock_Config:00000000 PeriphCommonClock_Config
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:352    .text.PeriphCommonClock_Config:00000060 $d
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:357    .rodata.main.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:361    .text.main:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:367    .text.main:00000000 main
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:493    .text.main:00000098 $d
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:504    .bss.usbhid_txbuf:00000000 usbhid_txbuf
-C:\Users\Nathan\AppData\Local\Temp\ccyVDCTo.s:501    .bss.usbhid_txbuf:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:21     .text.Error_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:27     .text.Error_Handler:00000000 Error_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:59     .text.SystemClock_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:65     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:251    .text.PeriphCommonClock_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:257    .text.PeriphCommonClock_Config:00000000 PeriphCommonClock_Config
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:352    .text.PeriphCommonClock_Config:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:357    .rodata.main.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:376    .text.main:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:382    .text.main:00000000 main
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:552    .text.main:000000e8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:569    .bss.usbhid_txbuf:00000000 usbhid_txbuf
+C:\Users\Nathan\AppData\Local\Temp\ccirK8ho.s:566    .bss.usbhid_txbuf:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -3260,14 +3355,18 @@ MX_TIM16_Init
 MX_USART1_UART_Init
 MX_TIM2_Init
 MX_RTC_Init
-MX_USB_Device_Init
+MX_USB_PCD_Init
 MX_RF_Init
+MX_USB_DEVICE_Init
 HAL_Delay
 patchouli_init
 patchouli_set_mode
+CDC_Transmit_FS
+HAL_RCC_GetSysClockFreq
+sprintf
+strlen
 HAL_GPIO_Init
 MX_APPE_Init
 MX_APPE_Process
-CDC_Transmit_FS
 patchouli_cycle
 htim1

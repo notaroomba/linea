@@ -37,7 +37,7 @@
 #define _USBD_USE_CDC_ACM      true
 
 /*---------- _USBD_CDC_ACM_COUNT  -----------*/
-#define _USBD_CDC_ACM_COUNT      2
+#define _USBD_CDC_ACM_COUNT      1
 
 /*---------- _USBD_USE_CDC_RNDIS  -----------*/
 #define _USBD_USE_CDC_RNDIS      false
@@ -49,7 +49,7 @@
 #define _USBD_USE_HID_MOUSE      false
 
 /*---------- _USBD_USE_HID_KEYBOARD  -----------*/
-#define _USBD_USE_HID_KEYBOARD      true
+#define _USBD_USE_HID_KEYBOARD      false
 
 /*---------- _USBD_USE_HID_CUSTOM  -----------*/
 #define _USBD_USE_HID_CUSTOM      true

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
   28:Core/Src/stm32wbxx_hal_msp.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32wbxx_hal_msp.c **** 
   30:Core/Src/stm32wbxx_hal_msp.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 2
 
 
   31:Core/Src/stm32wbxx_hal_msp.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
    1:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
    2:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   ******************************************************************************
    3:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @file    stm32wbxx_ll_bus.h
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 3
 
 
    4:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @author  MCD Application Team
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
   58:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Private variables ---------------------------------------------------------*/
   59:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
   60:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Private constants ---------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 4
 
 
   61:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  115:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  116:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_ALL            (0xFFFFFFFFU)
  117:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(QUADSPI)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 5
 
 
  118:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_QUADSPI        RCC_AHB3ENR_QUADSPIEN
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  172:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  173:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_APB2_GRP1_PERIPH  APB2 GRP1 PERIPH
  174:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 6
 
 
  175:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  229:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOB        RCC_C2AHB2ENR_GPIOBEN
  230:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOC        RCC_C2AHB2ENR_GPIOCEN
  231:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(GPIOD)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 7
 
 
  232:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOD        RCC_C2AHB2ENR_GPIODEN
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  286:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
  287:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  288:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(LPUART1)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 8
 
 
  289:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_APB1_GRP2_PERIPH_LPUART1      RCC_C2APB1ENR2_LPUART1EN
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  343:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  344:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EF_AHB1 AHB1
  345:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 9
 
 
  346:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  400:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      TSCEN         LL_AHB1_GRP1_DisableClock
  401:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  402:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 10
 
 
  403:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA2 (*)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  457:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
  458:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  459:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 11
 
 
  460:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Enable AHB1 peripherals clock during Low Power (Sleep) mode.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  514:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
  515:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  516:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 12
 
 
  517:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  571:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
  572:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   return ((READ_BIT(RCC->AHB2ENR, Periphs) == (Periphs)) ? 1UL : 0UL);
  573:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 13
 
 
  574:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  628:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
  629:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  630:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 14
 
 
  631:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Release AHB2 peripherals reset.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  685:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB2SMENR, Periphs);
  686:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
  687:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 15
 
 
  688:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
  742:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
  743:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  744:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB3_GRP1_EnableClock(uint32_t Periphs)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 16
 
 
   43              		.loc 2 744 22 view .LVU2
@@ -958,20 +958,20 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 1
   79              	.LFE1415:
   81              		.text
   82              	.Letext0:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 17
 
 
   83              		.file 3 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
   84              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
   85              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
   86              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_cortex.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_msp.c
-C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s:21     .text.HAL_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccIfTdsV.s:27     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s:21     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJ0GZ3M.s:27     .text.HAL_MspInit:00000000 HAL_MspInit
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

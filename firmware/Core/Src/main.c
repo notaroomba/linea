@@ -26,7 +26,7 @@
 #include "rtc.h"
 #include "tim.h"
 #include "usart.h"
-#include "usb_device.h"
+#include "usb.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -118,22 +118,22 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM2_Init();
   MX_RTC_Init();
-  MX_USB_Device_Init();
+  MX_USB_PCD_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
     // CDC_Transmit_FS("Hello World", 12);
-    MX_USB_Device_Init();
+    MX_USB_DEVICE_Init();
   HAL_Delay(500);
 
   patchouli_init();
   patchouli_set_mode(PATCHOULI_DEBUG_NONE);
-  // CDC_Transmit_FS("Glider Addon Build\r\n", 21);
-  // CDC_Transmit_FS("Init Done\r\n", 12);
-  // CDC_Transmit_FS("SYSCLK: ", 9);
-  // char buf[10];
-  // sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
-  // CDC_Transmit_FS(buf, strlen(buf));
-  // CDC_Transmit_FS(" MHz\r\n", 7);
+  CDC_Transmit_FS("Glider Addon Build\r\n", 21);
+  CDC_Transmit_FS("Init Done\r\n", 12);
+  CDC_Transmit_FS("SYSCLK: ", 9);
+  char buf[10];
+  sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
+  CDC_Transmit_FS(buf, strlen(buf));
+  CDC_Transmit_FS(" MHz\r\n", 7);
   htim1.Instance->RCR=50;
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	GPIO_InitStruct.Pin  = GPIO_PIN_13;

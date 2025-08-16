@@ -74,6 +74,8 @@ build/debug/usbd_conf.o: \
  Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h \
  Core/Inc/usb.h Core/Inc/main.h
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
@@ -154,5 +156,7 @@ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
 Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h:
 Core/Inc/usb.h:
 Core/Inc/main.h:

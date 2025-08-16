@@ -1,8 +1,8 @@
 build/debug/usbd_composite.o: \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Src/usbd_composite.c \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc/usbd_composite.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
  Core/Inc/main.h Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
  Core/Inc/stm32wbxx_hal_conf.h \
@@ -66,19 +66,18 @@ build/debug/usbd_composite.o: \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rtc.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_bufsize.h Core/Inc/app_entry.h \
  Core/Inc/app_common.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h \
  Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h \
- Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc/usbd_hid_keyboard.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/COMPOSITE/Inc/usbd_composite.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
 Core/Inc/main.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
@@ -147,13 +146,12 @@ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rtc.h:
 Middlewares/ST/STM32_WPAN/ble/core/ble_bufsize.h:
 Core/Inc/app_entry.h:
 Core/Inc/app_common.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h:
 Composite/AL94.I-CUBE-USBD-COMPOSITE_conf.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h:
-Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_KEYBOARD/Inc/usbd_hid_keyboard.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_hid_custom_if.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h:

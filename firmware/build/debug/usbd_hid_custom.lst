@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
   28:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   *
   29:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   * <h2><center>&copy; Copyright (c) 2015 STMicroelectronics.
   30:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   * All rights reserved.</center></h2>
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 2
 
 
   31:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
   85:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   */
   86:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** /**
   87:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 3
 
 
   88:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  142:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x01, /* bNumInterfaces: 1 interface */
  143:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x01, /* bConfigurationValue: Configuration value */
  144:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x00, /* iConfiguration: Index of string descriptor describing the configuration */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 4
 
 
  145:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** #if (USBD_SELF_POWERED == 1U)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  199:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         USB_DESC_TYPE_CONFIGURATION,    /* bDescriptorType: Configuration */
  200:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         USB_CUSTOM_HID_CONFIG_DESC_SIZ, /* wTotalLength: Bytes returned */
  201:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x00,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 5
 
 
  202:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x01, /* bNumInterfaces: 1 interface */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  256:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_OtherSpeedCfgDesc[USB_CUSTOM_HID_CONFIG_DESC_SIZ] __AL
  257:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     {
  258:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         0x09,                           /* bLength: Configuration Descriptor size */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 6
 
 
  259:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****         USB_DESC_TYPE_CONFIGURATION,    /* bDescriptorType: Configuration */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  313:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** };
  314:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  315:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** /* USB CUSTOM_HID device Configuration Descriptor */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 7
 
 
  316:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_Desc[USB_CUSTOM_HID_DESC_SIZ] __ALIGN_END =
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  370:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     return (uint8_t)USBD_EMEM;
  371:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   }
  372:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 8
 
 
  373:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   pdev->pClassData_HID_Custom = (void *)hhid;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  427:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   pdev->ep_out[CUSTOM_HID_OUT_EP & 0xFU].is_used = 0U;
  428:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   pdev->ep_out[CUSTOM_HID_OUT_EP & 0xFU].bInterval = 0U;
  429:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 9
 
 
  430:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   /* Free allocated memory */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  484:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  485:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     case CUSTOM_HID_REQ_SET_REPORT:
  486:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       hhid->IsReportAvailable = 1U;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 10
 
 
  487:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       (void)USBD_CtlPrepareRx(pdev, hhid->Report_buf, req->wLength);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  541:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  542:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     case USB_REQ_SET_INTERFACE:
  543:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       if (pdev->dev_state == USBD_STATE_CONFIGURED)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 11
 
 
  544:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  598:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     else
  599:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     {
  600:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       return (uint8_t)USBD_BUSY;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 12
 
 
  601:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  626:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   */
  627:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** static uint8_t *USBD_CUSTOM_HID_GetHSCfgDesc(uint16_t *length)
  628:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 13
 
 
   60              		.loc 1 628 1 is_stmt 1 view -0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  645:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   return USBD_CUSTOM_HID_OtherSpeedCfgDesc;
  100              		.loc 1 645 3 is_stmt 1 view .LVU15
  646:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 14
 
 
  101              		.loc 1 646 1 is_stmt 0 view .LVU16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  139              		.cfi_endproc
  140              	.LFE1423:
  142              		.section	.text.USBD_CUSTOM_HID_DataOut,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 15
 
 
  143              		.align	1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  175 000e 5978     		ldrb	r1, [r3, #1]	@ zero_extendqisi2
  176              	.LVL10:
  177              		.loc 1 687 4 view .LVU38
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 16
 
 
  178 0010 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  711:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****                                USBD_CUSTOMHID_OUTREPORT_BUF_SIZE);
  712:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  713:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   return (uint8_t)USBD_OK;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 17
 
 
  714:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  238              	.L20:
  733:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     hhid->IsReportAvailable = 0U;
  239              		.loc 1 733 5 is_stmt 1 view .LVU56
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 18
 
 
  733:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     hhid->IsReportAvailable = 0U;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  279              		@ link register save eliminated.
  748:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   *length = (uint16_t)sizeof(USBD_CUSTOM_HID_DeviceQualifierDesc);
  280              		.loc 1 748 3 view .LVU66
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 19
 
 
  281              		.loc 1 748 11 is_stmt 0 view .LVU67
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  326 0008 0022     		movs	r2, #0
  327 000a ADF80620 		strh	r2, [sp, #6]	@ movhi
  457:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 20
 
 
  328              		.loc 1 457 3 is_stmt 1 view .LVU79
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  369              		.loc 1 457 22 is_stmt 0 view .LVU92
  370 003a 0024     		movs	r4, #0
  471:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 21
 
 
  371              		.loc 1 471 7 view .LVU93
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  409              	.LVL33:
  483:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  410              		.loc 1 483 7 is_stmt 1 view .LVU110
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 22
 
 
  457:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  448              		.loc 1 498 16 is_stmt 0 view .LVU127
  449 007a 4D78     		ldrb	r5, [r1, #1]	@ zero_extendqisi2
  498:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 23
 
 
  450              		.loc 1 498 5 view .LVU128
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  494              	.LVL44:
  457:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  495              		.loc 1 457 22 view .LVU139
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 24
 
 
  496 00ac 2C46     		mov	r4, r5
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  516:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       }
  536              		.loc 1 516 9 is_stmt 1 view .LVU154
  516:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 25
 
 
  537              		.loc 1 516 51 is_stmt 0 view .LVU155
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  577              	.L53:
  533:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       }
  578              		.loc 1 533 9 is_stmt 1 view .LVU170
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 26
 
 
  533:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       }
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  559:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****       break;
  618              		.loc 1 559 11 is_stmt 0 view .LVU186
  619 011c 0324     		movs	r4, #3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 27
 
 
  560:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****     }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  667 0000 70B5     		push	{r4, r5, r6, lr}
  668              		.cfi_def_cfa_offset 16
  669              		.cfi_offset 4, -16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 28
 
 
  670              		.cfi_offset 5, -12
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  428:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  710              		.loc 1 428 3 is_stmt 1 view .LVU210
  428:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 29
 
 
  711              		.loc 1 428 52 is_stmt 0 view .LVU211
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  754              		.cfi_startproc
  755              		@ args = 0, pretend = 0, frame = 0
  756              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 30
 
 
  361:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   UNUSED(cfgidx);
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  796 0028 03F00F03 		and	r3, r3, #15
  378:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   }
  797              		.loc 1 378 54 view .LVU240
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 31
 
 
  798 002c 03EB8303 		add	r3, r3, r3, lsl #2
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  840 0074 A3F86461 		strh	r6, [r3, #356]	@ movhi
  398:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
  841              		.loc 1 398 3 is_stmt 1 view .LVU253
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 32
 
 
  398:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  882 00ae 03F00F03 		and	r3, r3, #15
  383:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   }
  883              		.loc 1 383 54 view .LVU268
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 33
 
 
  884 00b2 03EB8303 		add	r3, r3, r3, lsl #2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  930 0014 02D0     		beq	.L73
  603:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c **** }
  931              		.loc 1 603 10 view .LVU279
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 34
 
 
  932 0016 0024     		movs	r4, #0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  972 003a 0324     		movs	r4, #3
  973 003c ECE7     		b	.L68
  974              	.L76:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 35
 
 
  975 003e 00BF     		.align	2
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1019 0014 08BD     		pop	{r3, pc}
  1020              	.LVL96:
  1021              	.L79:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 36
 
 
  1022              		.cfi_def_cfa_offset 0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1058              		.loc 1 769 3 is_stmt 1 view .LVU313
  1059              		.loc 1 769 10 is_stmt 0 view .LVU314
  1060 0006 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 37
 
 
  1061              	.LVL99:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1106              	.LVL103:
  1107              		.loc 1 779 20 view .LVU330
  1108 0012 0270     		strb	r2, [r0]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 38
 
 
  780:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Src/usbd_hid_custom.c ****   CUSTOM_HID_OUT_EP = out_ep;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1156 001e 03020005 		.ascii	"\003\002\000\005\007\005\001\003\002\000\005"
  1156      07050103 
  1156      020005
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 39
 
 
  1157              		.section	.data.USBD_CUSTOM_HID_CfgHSDesc,"aw"
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1199      00000000 
  1200              		.global	CUSTOM_HID_STR_DESC_IDX
  1201              		.section	.bss.CUSTOM_HID_STR_DESC_IDX,"aw",%nobits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 40
 
 
  1204              	CUSTOM_HID_STR_DESC_IDX:
@@ -2365,76 +2365,76 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 1
  1231              		.file 7 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h"
  1232              		.file 8 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h"
  1233              		.file 9 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_hid_custom.c
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:21     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:26     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000000 USBD_CUSTOM_HID_GetFSCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:47     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1169   .data.USBD_CUSTOM_HID_CfgFSDesc:00000000 USBD_CUSTOM_HID_CfgFSDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:52     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:57     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000000 USBD_CUSTOM_HID_GetHSCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:78     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1161   .data.USBD_CUSTOM_HID_CfgHSDesc:00000000 USBD_CUSTOM_HID_CfgHSDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:83     .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:88     .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000000 USBD_CUSTOM_HID_GetOtherSpeedCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:109    .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1153   .data.USBD_CUSTOM_HID_OtherSpeedCfgDesc:00000000 USBD_CUSTOM_HID_OtherSpeedCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:114    .text.USBD_CUSTOM_HID_DataIn:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:119    .text.USBD_CUSTOM_HID_DataIn:00000000 USBD_CUSTOM_HID_DataIn
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:143    .text.USBD_CUSTOM_HID_DataOut:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:148    .text.USBD_CUSTOM_HID_DataOut:00000000 USBD_CUSTOM_HID_DataOut
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:201    .text.USBD_CUSTOM_HID_EP0_RxReady:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:206    .text.USBD_CUSTOM_HID_EP0_RxReady:00000000 USBD_CUSTOM_HID_EP0_RxReady
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:267    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:272    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000000 USBD_CUSTOM_HID_GetDeviceQualifierDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:293    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1141   .data.USBD_CUSTOM_HID_DeviceQualifierDesc:00000000 USBD_CUSTOM_HID_DeviceQualifierDesc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:298    .text.USBD_CUSTOM_HID_Setup:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:303    .text.USBD_CUSTOM_HID_Setup:00000000 USBD_CUSTOM_HID_Setup
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:351    .text.USBD_CUSTOM_HID_Setup:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:361    .text.USBD_CUSTOM_HID_Setup:00000036 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:455    .text.USBD_CUSTOM_HID_Setup:00000084 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:467    .text.USBD_CUSTOM_HID_Setup:00000090 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:649    .text.USBD_CUSTOM_HID_Setup:00000130 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1147   .data.USBD_CUSTOM_HID_Desc:00000000 USBD_CUSTOM_HID_Desc
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:654    .text.USBD_CUSTOM_HID_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:659    .text.USBD_CUSTOM_HID_DeInit:00000000 USBD_CUSTOM_HID_DeInit
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:739    .text.USBD_CUSTOM_HID_DeInit:00000058 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1222   .data.CUSTOM_HID_IN_EP:00000000 CUSTOM_HID_IN_EP
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1216   .data.CUSTOM_HID_OUT_EP:00000000 CUSTOM_HID_OUT_EP
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:745    .text.USBD_CUSTOM_HID_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:750    .text.USBD_CUSTOM_HID_Init:00000000 USBD_CUSTOM_HID_Init
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:891    .text.USBD_CUSTOM_HID_Init:000000c0 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1198   .bss.CUSTOM_HID_Instance:00000000 CUSTOM_HID_Instance
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:898    .text.USBD_CUSTOM_HID_SendReport:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:904    .text.USBD_CUSTOM_HID_SendReport:00000000 USBD_CUSTOM_HID_SendReport
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:977    .text.USBD_CUSTOM_HID_SendReport:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:982    .text.USBD_CUSTOM_HID_ReceivePacket:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:988    .text.USBD_CUSTOM_HID_ReceivePacket:00000000 USBD_CUSTOM_HID_ReceivePacket
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1033   .text.USBD_CUSTOM_HID_ReceivePacket:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1038   .text.USBD_CUSTOM_HID_RegisterInterface:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1044   .text.USBD_CUSTOM_HID_RegisterInterface:00000000 USBD_CUSTOM_HID_RegisterInterface
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1075   .text.USBD_Update_HID_Custom_DESC:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1081   .text.USBD_Update_HID_Custom_DESC:00000000 USBD_Update_HID_Custom_DESC
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1130   .text.USBD_Update_HID_Custom_DESC:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1210   .bss.CUSTOM_HID_ITF_NBR:00000000 CUSTOM_HID_ITF_NBR
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1204   .bss.CUSTOM_HID_STR_DESC_IDX:00000000 CUSTOM_HID_STR_DESC_IDX
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1138   .data.USBD_CUSTOM_HID_DeviceQualifierDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1144   .data.USBD_CUSTOM_HID_Desc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1150   .data.USBD_CUSTOM_HID_OtherSpeedCfgDesc:00000000 $d
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s 			page 42
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:21     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:26     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000000 USBD_CUSTOM_HID_GetFSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:47     .text.USBD_CUSTOM_HID_GetFSCfgDesc:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1169   .data.USBD_CUSTOM_HID_CfgFSDesc:00000000 USBD_CUSTOM_HID_CfgFSDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:52     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:57     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000000 USBD_CUSTOM_HID_GetHSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:78     .text.USBD_CUSTOM_HID_GetHSCfgDesc:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1161   .data.USBD_CUSTOM_HID_CfgHSDesc:00000000 USBD_CUSTOM_HID_CfgHSDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:83     .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:88     .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000000 USBD_CUSTOM_HID_GetOtherSpeedCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:109    .text.USBD_CUSTOM_HID_GetOtherSpeedCfgDesc:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1153   .data.USBD_CUSTOM_HID_OtherSpeedCfgDesc:00000000 USBD_CUSTOM_HID_OtherSpeedCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:114    .text.USBD_CUSTOM_HID_DataIn:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:119    .text.USBD_CUSTOM_HID_DataIn:00000000 USBD_CUSTOM_HID_DataIn
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:143    .text.USBD_CUSTOM_HID_DataOut:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:148    .text.USBD_CUSTOM_HID_DataOut:00000000 USBD_CUSTOM_HID_DataOut
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:201    .text.USBD_CUSTOM_HID_EP0_RxReady:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:206    .text.USBD_CUSTOM_HID_EP0_RxReady:00000000 USBD_CUSTOM_HID_EP0_RxReady
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:267    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:272    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000000 USBD_CUSTOM_HID_GetDeviceQualifierDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:293    .text.USBD_CUSTOM_HID_GetDeviceQualifierDesc:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1141   .data.USBD_CUSTOM_HID_DeviceQualifierDesc:00000000 USBD_CUSTOM_HID_DeviceQualifierDesc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:298    .text.USBD_CUSTOM_HID_Setup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:303    .text.USBD_CUSTOM_HID_Setup:00000000 USBD_CUSTOM_HID_Setup
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:351    .text.USBD_CUSTOM_HID_Setup:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:361    .text.USBD_CUSTOM_HID_Setup:00000036 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:455    .text.USBD_CUSTOM_HID_Setup:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:467    .text.USBD_CUSTOM_HID_Setup:00000090 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:649    .text.USBD_CUSTOM_HID_Setup:00000130 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1147   .data.USBD_CUSTOM_HID_Desc:00000000 USBD_CUSTOM_HID_Desc
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:654    .text.USBD_CUSTOM_HID_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:659    .text.USBD_CUSTOM_HID_DeInit:00000000 USBD_CUSTOM_HID_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:739    .text.USBD_CUSTOM_HID_DeInit:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1222   .data.CUSTOM_HID_IN_EP:00000000 CUSTOM_HID_IN_EP
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1216   .data.CUSTOM_HID_OUT_EP:00000000 CUSTOM_HID_OUT_EP
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:745    .text.USBD_CUSTOM_HID_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:750    .text.USBD_CUSTOM_HID_Init:00000000 USBD_CUSTOM_HID_Init
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:891    .text.USBD_CUSTOM_HID_Init:000000c0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1198   .bss.CUSTOM_HID_Instance:00000000 CUSTOM_HID_Instance
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:898    .text.USBD_CUSTOM_HID_SendReport:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:904    .text.USBD_CUSTOM_HID_SendReport:00000000 USBD_CUSTOM_HID_SendReport
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:977    .text.USBD_CUSTOM_HID_SendReport:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:982    .text.USBD_CUSTOM_HID_ReceivePacket:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:988    .text.USBD_CUSTOM_HID_ReceivePacket:00000000 USBD_CUSTOM_HID_ReceivePacket
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1033   .text.USBD_CUSTOM_HID_ReceivePacket:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1038   .text.USBD_CUSTOM_HID_RegisterInterface:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1044   .text.USBD_CUSTOM_HID_RegisterInterface:00000000 USBD_CUSTOM_HID_RegisterInterface
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1075   .text.USBD_Update_HID_Custom_DESC:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1081   .text.USBD_Update_HID_Custom_DESC:00000000 USBD_Update_HID_Custom_DESC
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1130   .text.USBD_Update_HID_Custom_DESC:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1210   .bss.CUSTOM_HID_ITF_NBR:00000000 CUSTOM_HID_ITF_NBR
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1204   .bss.CUSTOM_HID_STR_DESC_IDX:00000000 CUSTOM_HID_STR_DESC_IDX
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1138   .data.USBD_CUSTOM_HID_DeviceQualifierDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1144   .data.USBD_CUSTOM_HID_Desc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1150   .data.USBD_CUSTOM_HID_OtherSpeedCfgDesc:00000000 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s 			page 42
 
 
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1158   .data.USBD_CUSTOM_HID_CfgHSDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1166   .data.USBD_CUSTOM_HID_CfgFSDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1178   .data.USBD_HID_CUSTOM:00000000 USBD_HID_CUSTOM
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1175   .data.USBD_HID_CUSTOM:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1195   .bss.CUSTOM_HID_Instance:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1205   .bss.CUSTOM_HID_STR_DESC_IDX:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cctUD6mi.s:1211   .bss.CUSTOM_HID_ITF_NBR:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1158   .data.USBD_CUSTOM_HID_CfgHSDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1166   .data.USBD_CUSTOM_HID_CfgFSDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1178   .data.USBD_HID_CUSTOM:00000000 USBD_HID_CUSTOM
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1175   .data.USBD_HID_CUSTOM:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1195   .bss.CUSTOM_HID_Instance:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1205   .bss.CUSTOM_HID_STR_DESC_IDX:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdtnHqh.s:1211   .bss.CUSTOM_HID_ITF_NBR:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_CtlSendData

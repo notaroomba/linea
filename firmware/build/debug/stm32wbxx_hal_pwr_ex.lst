@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @{
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   */
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /** @addtogroup PWREx
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   */
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** uint32_t HAL_PWREx_GetVoltageRange(void)
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 3
 
 
   29              		.loc 1 87 1 view -0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   60              		@ args = 0, pretend = 0, frame = 0
   61              		@ frame_needed = 0, uses_anonymous_args = 0
   62              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 4
 
 
  113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   uint32_t wait_loop_index;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   return HAL_OK;
   83              		.loc 1 147 10 is_stmt 0 view .LVU13
   84 0022 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 5
 
 
   85              	.LVL1:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       {
  127              		.loc 1 127 15 is_stmt 0 view .LVU27
  128 0062 0A4A     		ldr	r2, .L14
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 6
 
 
  129 0064 5269     		ldr	r2, [r2, #20]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  174              	.L14:
  175 008c 00040058 		.word	1476396032
  176 0090 00000000 		.word	SystemCoreClock
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 7
 
 
  177              		.cfi_endproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  210              	.L17:
  211 0018 00040058 		.word	1476396032
  212              		.cfi_endproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 8
 
 
  213              	.LFE1106:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  252              		.loc 1 190 1 is_stmt 1 view -0
  253              		.cfi_startproc
  254              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 9
 
 
  255              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  301              		.global	HAL_PWREx_EnableInternalWakeUpLine
  302              		.syntax unified
  303              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 10
 
 
  304              		.thumb_func
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  341              		.loc 1 221 3 view .LVU60
  342 0000 024A     		ldr	r2, .L32
  343 0002 9368     		ldr	r3, [r2, #8]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 11
 
 
  344 0004 23F40043 		bic	r3, r3, #32768
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  390              	HAL_PWREx_DisableBORH_SMPSBypassIT:
  391              	.LFB1113:
  234:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 12
 
 
  235:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /**
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  253:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** }
  430              		.loc 1 253 1 is_stmt 0 view .LVU70
  431 000a 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 13
 
 
  432              	.L42:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  268:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   */
  269:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** void HAL_PWREx_EnableBLEActivityIT(void)
  270:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 14
 
 
  476              		.loc 1 270 1 is_stmt 1 view -0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  521              	.LFE1117:
  523              		.section	.text.HAL_PWREx_Enable802ActivityIT,"ax",%progbits
  524              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 15
 
 
  525              		.global	HAL_PWREx_Enable802ActivityIT
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  299:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR3, PWR_CR3_E802A);
  565              		.loc 1 299 3 view .LVU84
  566 0000 024A     		ldr	r2, .L56
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 16
 
 
  567 0002 9368     		ldr	r3, [r2, #8]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  614              	HAL_PWREx_DisableHOLDC2IT:
  615              	.LFB1121:
  311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 17
 
 
  312:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /**
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         PWR_GPIO_BIT_0, ..., PWR_GPIO_BIT_15 (except for PORTH where less
  340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         I/O pins are available) or the logical OR of several of them to set
  341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         several bits for a given port in a single API call.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 18
 
 
  342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @retval HAL Status
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  683              	.LVL16:
  684              	.L71:
  357:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     case PWR_GPIO_B:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 19
 
 
  358:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       SET_BIT(PWR->PUCRB, GPIONumber);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  726 0056 22EA0102 		bic	r2, r2, r1
  727 005a DA63     		str	r2, [r3, #60]
  369:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 20
 
 
  728              		.loc 1 369 7 view .LVU114
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  770 008c 0020     		movs	r0, #0
  771              	.LVL27:
  772              		.loc 1 378 7 view .LVU128
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 21
 
 
  773 008e 7047     		bx	lr
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  803              		@ link register save eliminated.
  404:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
  804              		.loc 1 404 3 view .LVU133
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 22
 
 
  405:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  845 002a 7047     		bx	lr
  846              	.LVL34:
  847              	.L82:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 23
 
 
  417:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     case PWR_GPIO_C:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  888              	.LVL41:
  889              	.L78:
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     case PWR_GPIO_H:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 24
 
 
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       CLEAR_BIT(PWR->PUCRH, (GPIONumber & PWR_PORTH_AVAILABLE_PINS));
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  444:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        pull-down state in Standby and Shutdown modes.
  445:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @note  This state is effective in Standby and Shutdown modes only if APC bit
  446:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        is set through HAL_PWREx_EnablePullUpPullDownConfig() API.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 25
 
 
  447:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @note  The configuration is lost when exiting the Shutdown mode due to the
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  473:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       CLEAR_BIT(PWR->PUCRA, GPIONumber);
  957              		.loc 1 473 7 view .LVU172
  958 0018 1A6A     		ldr	r2, [r3, #32]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 26
 
 
  959 001a 22EA0102 		bic	r2, r2, r1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1001              	.LVL52:
  1002              	.L93:
  483:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** #if defined(GPIOD)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 27
 
 
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     case PWR_GPIO_D:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1044              	.LVL58:
  1045              		.loc 1 494 7 is_stmt 0 view .LVU198
  1046 0080 0A43     		orrs	r2, r2, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 28
 
 
  1047 0082 DA65     		str	r2, [r3, #92]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @param GPIONumber Specify the I/O pins numbers.
  514:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         This parameter can be one of the following values:
  515:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         PWR_GPIO_BIT_0, ..., PWR_GPIO_BIT_15 (except for PORTH where less
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 29
 
 
  516:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         I/O pins are available) or the logical OR of several of them to reset
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  533:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       CLEAR_BIT(PWR->PDCRB, GPIONumber);
  1119              		.loc 1 533 7 is_stmt 1 view .LVU215
  1120 001e 144A     		ldr	r2, .L110
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 30
 
 
  1121 0020 D36A     		ldr	r3, [r2, #44]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1161 004c 01F01F01 		and	r1, r1, #31
  1162              	.LVL71:
  1163              		.loc 1 544 7 is_stmt 0 view .LVU228
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 31
 
 
  1164 0050 23EA0101 		bic	r1, r3, r1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1205              		.global	HAL_PWREx_EnablePullUpPullDownConfig
  1206              		.syntax unified
  1207              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 32
 
 
  1208              		.thumb_func
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1241              		.cfi_startproc
  1242              		@ args = 0, pretend = 0, frame = 0
  1243              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 33
 
 
  1244              		@ link register save eliminated.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
    8:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *
    9:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * Copyright (c) 2019 STMicroelectronics.
   10:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * All rights reserved.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 34
 
 
   11:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   65:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
   66:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
   67:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /* Private macros ------------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 35
 
 
   68:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  122:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #if defined(PWR_CR3_EWUP2)
  123:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_SR1_WUF2                    PWR_SR1_WUF2
  124:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #endif /* PWR_CR3_EWUP2 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 36
 
 
  125:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_SR1_WUF1                    PWR_SR1_WUF1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  179:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #endif /* PWR_CR1_VOS */
  180:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
  181:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /** @defgroup PWR_LL_EC_MODE_PWR MODE PWR
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 37
 
 
  182:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @{
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  236:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @}
  237:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
  238:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 38
 
 
  239:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /** @defgroup PWR_LL_EC_WAKEUP WAKEUP
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  293:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_8                  (PWR_PUCRC_PC8)
  294:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_9                  (PWR_PUCRC_PC9)
  295:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_10                 (PWR_PUCRC_PC10)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 39
 
 
  296:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_GPIO_BIT_11                 (PWR_PUCRC_PC11)
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  350:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
  351:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_SMPS_STARTUP_CURRENT_80MA   (0x00000000U)                                           
  352:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_SMPS_STARTUP_CURRENT_100MA  (                                      PWR_CR5_SMPSSC_0)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 40
 
 
  353:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_SMPS_STARTUP_CURRENT_120MA  (                   PWR_CR5_SMPSSC_1                   )
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  407:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** #define LL_PWR_WriteReg(__REG__, __VALUE__) WRITE_REG(PWR->__REG__, (__VALUE__))
  408:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
  409:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 41
 
 
  410:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Read a value in PWR register
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  464:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
  465:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Set the main internal regulator output voltage
  466:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @note   A delay is required for the internal regulator to be ready
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 42
 
 
  467:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         after the voltage scaling has been changed.
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  521:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   return ((READ_BIT(PWR->CR1, PWR_CR1_DBP) == (PWR_CR1_DBP)) ? 1UL : 0UL);
  522:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** }
  523:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 43
 
 
  524:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  578:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR1          FPDR          LL_PWR_GetFlashPowerModeLPRun
  579:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @retval Returned value can be one of the following values:
  580:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_FLASH_LPRUN_MODE_IDLE
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 44
 
 
  581:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_FLASH_LPRUN_MODE_POWER_DOWN
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  635:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Check if VDDUSB supply is enabled
  636:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR2          USV           LL_PWR_IsEnabledVddUSB
  637:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @retval State of bit (1 or 0).
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 45
 
 
  638:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  692:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
  693:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
  694:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Configure the voltage threshold detected by the Power Voltage Detector
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 46
 
 
  695:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR2          PLS           LL_PWR_SetPVDLevel
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  749:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
  750:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
  751:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Check if Power Voltage Detector is enabled
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 47
 
 
  752:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR2          PVDE          LL_PWR_IsEnabledPVD
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  806:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** {
  807:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   CLEAR_BIT(PWR->CR3, PWR_CR3_APC);
  808:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 48
 
 
  809:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  863:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @param  WakeUpPin This parameter can be one of the following values:
  864:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN1
  865:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN2 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 49
 
 
  866:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_WAKEUP_PIN3 (*)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  920:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** }
  921:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
  922:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 50
 
 
  923:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Set the resistor impedance
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  977:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
  978:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Set the Wake-Up pin polarity low for the event detection
  979:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR4          WP1           LL_PWR_SetWakeUpPinPolarityLow\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 51
 
 
  980:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         CR4          WP2           LL_PWR_SetWakeUpPinPolarityLow\n
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1034:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *
 1035:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         (*) Not available on devices STM32WB50xx, STM32WB35xx, STM32WB30xx, STM32WB15xx, STM32W
 1036:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @retval State of bit (1 or 0).
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 52
 
 
 1037:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1091:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         PUCRD        PU0-15        LL_PWR_DisableGPIOPullUp\n
 1092:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         PUCRE        PU0-15        LL_PWR_DisableGPIOPullUp\n
 1093:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         PUCRH        PU0-15        LL_PWR_DisableGPIOPullUp
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 53
 
 
 1094:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @param  GPIO This parameter can be one of the following values:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1148:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_7
 1149:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_8
 1150:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_9
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 54
 
 
 1151:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_10
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1205:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** /**
 1206:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @brief  Disable GPIO pull-down state in Standby and Shutdown modes
 1207:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @note   Some pins are not configurable for pulling in Standby and Shutdown
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 55
 
 
 1208:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         modes. Refer to reference manual for available pins and ports.
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1262:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_0
 1263:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_1
 1264:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 56
 
 
 1265:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_GPIO_BIT_3
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1301              		.section	.text.HAL_PWREx_GetBORConfig,"ax",%progbits
  1302              		.align	1
  1303              		.global	HAL_PWREx_GetBORConfig
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 57
 
 
  1304              		.syntax unified
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1337              		.align	1
  1338              		.global	HAL_PWREx_HoldCore
  1339              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 58
 
 
  1340              		.thumb
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1331:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         Refer to functions
 1332:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @ref LL_PWR_IsActiveFlag_SMPSFB(), @ref LL_PWR_ClearFlag_SMPSFB(),
 1333:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @ref LL_PWR_EnableIT_BORH_SMPSFB().
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 59
 
 
 1334:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll CR5          SMPSEN        LL_PWR_SMPS_SetMode \n
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1388:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @note   This functions check flags of SMPS operating modes step down
 1389:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         and bypass. If the SMPS is not among these 2 operating modes,
 1390:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         then it can be in mode off or open.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 60
 
 
 1391:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @rmtoll SR2          SMPSF         LL_PWR_SMPS_GetEffectiveMode \n
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1445:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   * @param  StartupCurrent This parameter can be one of the following values:
 1446:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_STARTUP_CURRENT_80MA
 1447:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_STARTUP_CURRENT_100MA
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 61
 
 
 1448:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_STARTUP_CURRENT_120MA
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1502:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   */
 1503:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** __STATIC_INLINE void LL_PWR_SMPS_SetOutputVoltageLevel(uint32_t OutputVoltageLevel)
 1504:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 62
 
 
 1505:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   __IO const uint32_t OutputVoltageLevel_calibration = (((*SMPS_VOLTAGE_CAL_ADDR) & SMPS_VOLTAGE_CA
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1559:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_OUTPUT_VOLTAGE_1V75
 1560:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_OUTPUT_VOLTAGE_1V80
 1561:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_OUTPUT_VOLTAGE_1V85
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 63
 
 
 1562:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   *         @arg @ref LL_PWR_SMPS_OUTPUT_VOLTAGE_1V90
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1616:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** {
 1617:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h ****   SET_BIT(PWR->CR4, PWR_CR4_C2BOOT);
 1618:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 64
 
 
 1619:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1388              		.loc 1 636 3 view .LVU266
  637:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
  638:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   LL_PWR_EnableBootC2();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 65
 
 
  1389              		.loc 1 638 3 view .LVU267
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1428              	.LBB67:
  829:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_pwr.h **** }
  1429              		.loc 2 829 3 view .LVU274
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 66
 
 
  1430 0000 024A     		ldr	r2, .L131
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  666:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** }
  1471              		.loc 1 666 1 is_stmt 0 view .LVU280
  1472 000a 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 67
 
 
  1473              	.L135:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1506 000e 024A     		ldr	r2, .L138
  1507 0010 1368     		ldr	r3, [r2]
  1508 0012 0343     		orrs	r3, r3, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 68
 
 
  1509 0014 1360     		str	r3, [r2]
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1547              	.LFE1135:
  1549              		.section	.text.HAL_PWREx_EnablePVM1,"ax",%progbits
  1550              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 69
 
 
  1551              		.global	HAL_PWREx_EnablePVM1
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1590              		@ link register save eliminated.
  726:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR2, PWR_PVM_1);
  1591              		.loc 1 726 3 view .LVU296
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 70
 
 
  1592 0000 024A     		ldr	r2, .L147
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1638              		.thumb_func
  1640              	HAL_PWREx_DisablePVM3:
  1641              	.LFB1139:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 71
 
 
  738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1671              		.loc 1 764 1 is_stmt 1 view -0
  1672              		.cfi_startproc
  1673              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 72
 
 
  1674              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   17:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
   18:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
   19:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /* Define to prevent recursive inclusion -------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 73
 
 
   20:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #ifndef STM32WBxx_LL_EXTI_H
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
   74:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** } LL_EXTI_InitTypeDef;
   75:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
   76:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 74
 
 
   77:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @}
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  131:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  132:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #if defined (STM32WB55xx) || defined (STM32WB5Mxx) || defined (STM32WB35xx)
  133:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_ALL_0_31          (LL_EXTI_LINE_0 | LL_EXTI_LINE_1 | LL_EXTI_LINE_2 | \
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 75
 
 
  134:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                         LL_EXTI_LINE_3 | LL_EXTI_LINE_4 | LL_EXTI_LINE_5 | \
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  188:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #elif defined (STM32WB50xx) || defined (STM32WB35xx) || defined (STM32WB30xx)
  189:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_ALL_32_63         (LL_EXTI_LINE_33 | LL_EXTI_LINE_36 | LL_EXTI_LINE_37 | \
  190:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                         LL_EXTI_LINE_38 | LL_EXTI_LINE_39 | LL_EXTI_LINE_40 | \
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 76
 
 
  191:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                         LL_EXTI_LINE_41 | LL_EXTI_LINE_42 | LL_EXTI_LINE_44 | \
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  245:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  246:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  247:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /** @defgroup EXTI_LL_EM_WRITE_READ Common Write and read registers Macros
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 77
 
 
  248:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @{
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  302:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_14
  303:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
  304:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 78
 
 
  305:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_17
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  359:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_30
  360:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_31 (*)
  361:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_ALL_0_31
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 79
 
 
  362:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         (*) value not defined in all devices
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  416:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  417:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_C2_EXTI_EnableIT_32_63(uint32_t ExtiLine)
  418:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 80
 
 
  419:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   SET_BIT(EXTI->C2IMR2, ExtiLine);
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  473:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_4
  474:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_5
  475:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 81
 
 
  476:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_7
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  530:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
  531:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   CLEAR_BIT(EXTI->IMR2, ExtiLine);
  532:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 82
 
 
  533:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  587:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_23 (*)
  588:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_24
  589:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_25 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 83
 
 
  590:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_28 (*)
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  644:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
  645:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  646:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 84
 
 
  647:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @brief  Indicate if ExtiLine Interrupt request is enabled for Lines in range 32 to 63
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  701:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  702:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /** @defgroup EXTI_LL_EF_Event_Management Event_Management
  703:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 85
 
 
  704:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  758:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
  759:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_17
  760:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_18
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 86
 
 
  761:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_19
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  815:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_13
  816:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_14
  817:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 87
 
 
  818:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_17
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  840:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_6
  841:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_7
  842:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 88
 
 
  843:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_9
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  897:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
  898:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_4
  899:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 89
 
 
  900:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_6
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  954:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
  955:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   return ((READ_BIT(EXTI->C2EMR1, ExtiLine) == (ExtiLine)) ? 1UL : 0UL);
  956:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 90
 
 
  957:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1011:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_8
 1012:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_9
 1013:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 91
 
 
 1014:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_11
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1068:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_1
 1069:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_2
 1070:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 92
 
 
 1071:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_4
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1125:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_0
 1126:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_1
 1127:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 93
 
 
 1128:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1182:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       generated on these lines. If a falling edge on a configurable interrupt
 1183:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       line occurs during a write operation in the EXTI_FTSR register, the
 1184:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       pending bit is not set.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 94
 
 
 1185:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       Rising and falling edge triggers can be set for
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1239:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_EnableFallingTrig_32_63(uint32_t ExtiLine)
 1240:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
 1241:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   SET_BIT(EXTI->FTSR2, ExtiLine);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 95
 
 
 1242:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1735              	.LBB76:
  1736              	.LBI76:
 1093:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 96
 
 
  1737              		.loc 3 1093 22 view .LVU325
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1775              		.loc 1 793 9 is_stmt 1 view .LVU338
  1776              	.LVL94:
  1777              	.LBB80:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 97
 
 
  1778              	.LBI80:
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1817 0078 13F0020F 		tst	r3, #2
  1818 007c 45D0     		beq	.L165
  803:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 98
 
 
  804:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****         __HAL_PWR_PVM1_EXTI_ENABLE_FALLING_EDGE();
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  874:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
  1857              		.loc 3 874 3 is_stmt 0 view .LVU362
  1858              	.LBE89:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 99
 
 
  1859              	.LBE88:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1886              		.loc 1 814 7 is_stmt 1 view .LVU371
  1887              	.LBB94:
  1888              	.LBI94:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 100
 
 
 1116:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  825:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****         __HAL_PWR_PVM3_EXTI_ENABLE_EVENT();
  1927              		.loc 1 825 9 is_stmt 1 view .LVU385
  1928              	.LVL108:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 101
 
 
  1929              	.LBB98:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  1968              		.loc 1 834 10 view .LVU398
  1969 00f6 13F0020F 		tst	r3, #2
  1970 00fa 08D0     		beq	.L166
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 102
 
 
  835:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       {
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  843:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
  844:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   }
  845:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 103
 
 
  846:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   return status;
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  867:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   assert_param(IS_PWR_SMPS_OUTPUT_VOLTAGE(sConfigSMPS->OutputVoltage));
  2043              		.loc 1 867 3 view .LVU415
  868:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 104
 
 
  869:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   __IO const uint32_t OutputVoltageLevel_calibration = (((*SMPS_VOLTAGE_CAL_ADDR) & SMPS_VOLTAGE_CA
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  890:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       OutputVoltageLevelTrimmed = 0;
  891:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       status = HAL_ERROR;
  892:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 105
 
 
  893:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     else
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2105              		.loc 1 895 7 is_stmt 1 view .LVU439
  895:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****       {
  2106              		.loc 1 895 10 is_stmt 0 view .LVU440
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 106
 
 
  2107 003c 0F2A     		cmp	r2, #15
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2151              		.cfi_endproc
  2152              	.LFE1141:
  2154              		.section	.text.HAL_PWREx_SMPS_SetMode,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 107
 
 
  2155              		.align	1
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2196              	.LFB1143:
  925:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
  926:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 108
 
 
  927:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @brief  Get SMPS effective operating mode
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  954:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /**
  955:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @brief Enable the WakeUp PINx functionality.
  956:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @param WakeUpPinPolarity Specifies which Wake-Up pin to enable.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 109
 
 
  957:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         This parameter can be one of the following legacy values which set the default polarity
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  988:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   {
  989:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     SET_BIT(PWR->CR3, (PWR_CR3_EWUP & WakeUpPinPolarity));
  2249              		.loc 1 989 5 is_stmt 1 view .LVU466
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 110
 
 
  2250 0018 064B     		ldr	r3, .L189
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1004:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** uint32_t  HAL_PWREx_GetWakeupFlag(uint32_t WakeUpFlag)
 1005:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** {
  2290              		.loc 1 1005 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 111
 
 
  2291              		.cfi_startproc
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1022:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   PWR->SCR = (1UL << ((WakeUpFlag) & 31U));
  2331              		.loc 1 1022 3 view .LVU479
  2332              		.loc 1 1022 36 is_stmt 0 view .LVU480
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 112
 
 
  2333 0000 00F01F00 		and	r0, r0, #31
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1038:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        Additionally, the clock frequency must be reduced below 2 MHz.
 1039:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        Setting RUN_PD in FLASH_ACR then appropriately reducing the clock frequency must
 1040:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        be done before calling HAL_PWREx_EnableLowPowerRunMode() API.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 113
 
 
 1041:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @retval None
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1063:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR1, PWR_CR1_LPR);
  2407              		.loc 1 1063 3 view .LVU495
  2408 0000 124A     		ldr	r2, .L208
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 114
 
 
  2409 0002 1368     		ldr	r3, [r2]
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2451              		.loc 1 1071 6 view .LVU510
  2452 003c 13F4007F 		tst	r3, #512
  2453 0040 01D1     		bne	.L207
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 115
 
 
 1072:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   {
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1101:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @param STOPEntry  specifies if Stop mode in entered with WFI or WFE instruction.
 1102:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *          This parameter can be one of the following values:
 1103:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *            @arg @ref PWR_STOPENTRY_WFI  Enter Stop mode with WFI instruction
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 116
 
 
 1104:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *            @arg @ref PWR_STOPENTRY_WFE  Enter Stop mode with WFE instruction
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2508              	@ 0 "" 2
 1130:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****     __WFE();
  2509              		.loc 1 1130 5 view .LVU522
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 117
 
 
  2510              	@ 1130 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1146:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        SRAM1, SRAM2 and register contents are preserved.
 1147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *        The BOR is available.
 1148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @note  When exiting Stop 1 mode by issuing an interrupt or a wakeup event,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 118
 
 
 1149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   *         the HSI RC oscillator is selected as system clock if STOPWUCK bit in RCC_CFGR register
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2572              		.syntax unified
  2573              	@ 1180 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
  2574 001c 40BF     		sev
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 119
 
 
  2575              	@ 0 "" 2
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1190:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** /**
 1191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @brief Enter Stop 2 mode.
 1192:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @note  In Stop 2 mode, only low power voltage regulator is ON.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 120
 
 
 1193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   * @note  In Stop 2 mode, all I/O pins keep the same state as in Run mode.
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2635 0010 1369     		ldr	r3, [r2, #16]
  2636 0012 43F00403 		orr	r3, r3, #4
  2637 0016 1361     		str	r3, [r2, #16]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 121
 
 
 1233:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2673 0030 F7E7     		b	.L224
  2674              	.L227:
  2675 0032 00BF     		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 122
 
 
  2676              	.L226:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1276:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** 
 1277:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   /* Request Wait For Interrupt */
 1278:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   __WFI();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 123
 
 
  2707              		.loc 1 1278 3 view .LVU553
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** #if defined(PWR_CR2_PVME1)
 1306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   /* Next, successively check PVMx exti flags */
 1307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   if (__HAL_PWR_PVM1_EXTI_GET_FLAG() != 0U)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 124
 
 
 1308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   {
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c **** {
  2756              		.loc 1 1345 1 view -0
  2757              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 125
 
 
  2758              		@ args = 0, pretend = 0, frame = 0
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1326:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
 1327:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_16
 1328:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_17
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 126
 
 
 1329:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_18
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1383:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_9
 1384:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_10
 1385:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 127
 
 
 1386:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_12
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1440:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_0
 1441:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_1
 1442:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 128
 
 
 1443:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1497:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
 1498:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_4
 1499:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 129
 
 
 1500:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_6
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c ****   {
  2815              		.loc 1 1307 6 discriminator 1 view .LVU572
  2816 0010 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 130
 
 
  2817 0012 0CDB     		blt	.L239
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
 1543:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @brief  Clear ExtLine Flags for Lines in range 0 to 31
 1544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @note This bit is set when the selected edge event arrives on the interrupt
 1545:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       line. This bit is cleared by writing a 1 to the bit.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 131
 
 
 1546:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @rmtoll PR1          PIFx           LL_EXTI_ClearFlag_0_31
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2865              	.LBB115:
 1576:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
  2866              		.loc 3 1576 3 view .LVU588
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 132
 
 
  2867 0032 054B     		ldr	r3, .L241
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2903              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  2904              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  2905              		.file 6 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 133
 
 
  2906              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
@@ -7926,179 +7926,179 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 1
  2908              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr_ex.h"
  2909              		.file 10 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  2910              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 134
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pwr_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:21     .text.HAL_PWREx_GetVoltageRange:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:27     .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:44     .text.HAL_PWREx_GetVoltageRange:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:49     .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:55     .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:175    .text.HAL_PWREx_ControlVoltageScaling:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:181    .text.HAL_PWREx_EnableBatteryCharging:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:187    .text.HAL_PWREx_EnableBatteryCharging:00000000 HAL_PWREx_EnableBatteryCharging
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:211    .text.HAL_PWREx_EnableBatteryCharging:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:216    .text.HAL_PWREx_DisableBatteryCharging:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:222    .text.HAL_PWREx_DisableBatteryCharging:00000000 HAL_PWREx_DisableBatteryCharging
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:239    .text.HAL_PWREx_DisableBatteryCharging:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:244    .text.HAL_PWREx_EnableVddUSB:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:250    .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:267    .text.HAL_PWREx_EnableVddUSB:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:272    .text.HAL_PWREx_DisableVddUSB:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:278    .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:295    .text.HAL_PWREx_DisableVddUSB:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:300    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:306    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 HAL_PWREx_EnableInternalWakeUpLine
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:323    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:328    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:334    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 HAL_PWREx_DisableInternalWakeUpLine
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:351    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:356    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:362    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 HAL_PWREx_EnableBORH_SMPSBypassIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:379    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:384    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:390    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 HAL_PWREx_DisableBORH_SMPSBypassIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:407    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:412    .text.HAL_PWREx_EnableRFPhaseIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:418    .text.HAL_PWREx_EnableRFPhaseIT:00000000 HAL_PWREx_EnableRFPhaseIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:435    .text.HAL_PWREx_EnableRFPhaseIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:440    .text.HAL_PWREx_DisableRFPhaseIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:446    .text.HAL_PWREx_DisableRFPhaseIT:00000000 HAL_PWREx_DisableRFPhaseIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:463    .text.HAL_PWREx_DisableRFPhaseIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:468    .text.HAL_PWREx_EnableBLEActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:474    .text.HAL_PWREx_EnableBLEActivityIT:00000000 HAL_PWREx_EnableBLEActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:491    .text.HAL_PWREx_EnableBLEActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:496    .text.HAL_PWREx_DisableBLEActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:502    .text.HAL_PWREx_DisableBLEActivityIT:00000000 HAL_PWREx_DisableBLEActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:519    .text.HAL_PWREx_DisableBLEActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:524    .text.HAL_PWREx_Enable802ActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:530    .text.HAL_PWREx_Enable802ActivityIT:00000000 HAL_PWREx_Enable802ActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:547    .text.HAL_PWREx_Enable802ActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:552    .text.HAL_PWREx_Disable802ActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:558    .text.HAL_PWREx_Disable802ActivityIT:00000000 HAL_PWREx_Disable802ActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:575    .text.HAL_PWREx_Disable802ActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:580    .text.HAL_PWREx_EnableHOLDC2IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:586    .text.HAL_PWREx_EnableHOLDC2IT:00000000 HAL_PWREx_EnableHOLDC2IT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:603    .text.HAL_PWREx_EnableHOLDC2IT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:608    .text.HAL_PWREx_DisableHOLDC2IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:614    .text.HAL_PWREx_DisableHOLDC2IT:00000000 HAL_PWREx_DisableHOLDC2IT
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:631    .text.HAL_PWREx_DisableHOLDC2IT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:636    .text.HAL_PWREx_EnableGPIOPullUp:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 135
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:21     .text.HAL_PWREx_GetVoltageRange:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:27     .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:44     .text.HAL_PWREx_GetVoltageRange:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:49     .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:55     .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:175    .text.HAL_PWREx_ControlVoltageScaling:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:181    .text.HAL_PWREx_EnableBatteryCharging:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:187    .text.HAL_PWREx_EnableBatteryCharging:00000000 HAL_PWREx_EnableBatteryCharging
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:211    .text.HAL_PWREx_EnableBatteryCharging:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:216    .text.HAL_PWREx_DisableBatteryCharging:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:222    .text.HAL_PWREx_DisableBatteryCharging:00000000 HAL_PWREx_DisableBatteryCharging
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:239    .text.HAL_PWREx_DisableBatteryCharging:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:244    .text.HAL_PWREx_EnableVddUSB:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:250    .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:267    .text.HAL_PWREx_EnableVddUSB:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:272    .text.HAL_PWREx_DisableVddUSB:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:278    .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:295    .text.HAL_PWREx_DisableVddUSB:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:300    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:306    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 HAL_PWREx_EnableInternalWakeUpLine
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:323    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:328    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:334    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 HAL_PWREx_DisableInternalWakeUpLine
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:351    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:356    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:362    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 HAL_PWREx_EnableBORH_SMPSBypassIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:379    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:384    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:390    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 HAL_PWREx_DisableBORH_SMPSBypassIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:407    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:412    .text.HAL_PWREx_EnableRFPhaseIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:418    .text.HAL_PWREx_EnableRFPhaseIT:00000000 HAL_PWREx_EnableRFPhaseIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:435    .text.HAL_PWREx_EnableRFPhaseIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:440    .text.HAL_PWREx_DisableRFPhaseIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:446    .text.HAL_PWREx_DisableRFPhaseIT:00000000 HAL_PWREx_DisableRFPhaseIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:463    .text.HAL_PWREx_DisableRFPhaseIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:468    .text.HAL_PWREx_EnableBLEActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:474    .text.HAL_PWREx_EnableBLEActivityIT:00000000 HAL_PWREx_EnableBLEActivityIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:491    .text.HAL_PWREx_EnableBLEActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:496    .text.HAL_PWREx_DisableBLEActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:502    .text.HAL_PWREx_DisableBLEActivityIT:00000000 HAL_PWREx_DisableBLEActivityIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:519    .text.HAL_PWREx_DisableBLEActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:524    .text.HAL_PWREx_Enable802ActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:530    .text.HAL_PWREx_Enable802ActivityIT:00000000 HAL_PWREx_Enable802ActivityIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:547    .text.HAL_PWREx_Enable802ActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:552    .text.HAL_PWREx_Disable802ActivityIT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:558    .text.HAL_PWREx_Disable802ActivityIT:00000000 HAL_PWREx_Disable802ActivityIT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:575    .text.HAL_PWREx_Disable802ActivityIT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:580    .text.HAL_PWREx_EnableHOLDC2IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:586    .text.HAL_PWREx_EnableHOLDC2IT:00000000 HAL_PWREx_EnableHOLDC2IT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:603    .text.HAL_PWREx_EnableHOLDC2IT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:608    .text.HAL_PWREx_DisableHOLDC2IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:614    .text.HAL_PWREx_DisableHOLDC2IT:00000000 HAL_PWREx_DisableHOLDC2IT
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:631    .text.HAL_PWREx_DisableHOLDC2IT:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:636    .text.HAL_PWREx_EnableGPIOPullUp:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 135
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:642    .text.HAL_PWREx_EnableGPIOPullUp:00000000 HAL_PWREx_EnableGPIOPullUp
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:658    .text.HAL_PWREx_EnableGPIOPullUp:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:666    .text.HAL_PWREx_EnableGPIOPullUp:00000010 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:785    .text.HAL_PWREx_EnableGPIOPullUp:00000094 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:790    .text.HAL_PWREx_DisableGPIOPullUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:796    .text.HAL_PWREx_DisableGPIOPullUp:00000000 HAL_PWREx_DisableGPIOPullUp
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:812    .text.HAL_PWREx_DisableGPIOPullUp:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:820    .text.HAL_PWREx_DisableGPIOPullUp:00000010 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:915    .text.HAL_PWREx_DisableGPIOPullUp:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:920    .text.HAL_PWREx_EnableGPIOPullDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:926    .text.HAL_PWREx_EnableGPIOPullDown:00000000 HAL_PWREx_EnableGPIOPullDown
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:942    .text.HAL_PWREx_EnableGPIOPullDown:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:950    .text.HAL_PWREx_EnableGPIOPullDown:00000010 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1069   .text.HAL_PWREx_EnableGPIOPullDown:00000094 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1074   .text.HAL_PWREx_DisableGPIOPullDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1080   .text.HAL_PWREx_DisableGPIOPullDown:00000000 HAL_PWREx_DisableGPIOPullDown
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1096   .text.HAL_PWREx_DisableGPIOPullDown:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1104   .text.HAL_PWREx_DisableGPIOPullDown:00000010 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1199   .text.HAL_PWREx_DisableGPIOPullDown:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1204   .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1210   .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 HAL_PWREx_EnablePullUpPullDownConfig
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1227   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1232   .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1238   .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 HAL_PWREx_DisablePullUpPullDownConfig
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1255   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1260   .text.HAL_PWREx_SetBORConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1266   .text.HAL_PWREx_SetBORConfig:00000000 HAL_PWREx_SetBORConfig
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1297   .text.HAL_PWREx_SetBORConfig:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1302   .text.HAL_PWREx_GetBORConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1308   .text.HAL_PWREx_GetBORConfig:00000000 HAL_PWREx_GetBORConfig
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1332   .text.HAL_PWREx_GetBORConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1337   .text.HAL_PWREx_HoldCore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1343   .text.HAL_PWREx_HoldCore:00000000 HAL_PWREx_HoldCore
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1369   .text.HAL_PWREx_HoldCore:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1374   .text.HAL_PWREx_ReleaseCore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1380   .text.HAL_PWREx_ReleaseCore:00000000 HAL_PWREx_ReleaseCore
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1406   .text.HAL_PWREx_ReleaseCore:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1411   .text.HAL_PWREx_EnableSRAMRetention:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1417   .text.HAL_PWREx_EnableSRAMRetention:00000000 HAL_PWREx_EnableSRAMRetention
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1441   .text.HAL_PWREx_EnableSRAMRetention:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1446   .text.HAL_PWREx_DisableSRAMRetention:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1452   .text.HAL_PWREx_DisableSRAMRetention:00000000 HAL_PWREx_DisableSRAMRetention
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1476   .text.HAL_PWREx_DisableSRAMRetention:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1481   .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1487   .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1515   .text.HAL_PWREx_EnableFlashPowerDown:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1520   .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1526   .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1545   .text.HAL_PWREx_DisableFlashPowerDown:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1550   .text.HAL_PWREx_EnablePVM1:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1556   .text.HAL_PWREx_EnablePVM1:00000000 HAL_PWREx_EnablePVM1
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1573   .text.HAL_PWREx_EnablePVM1:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1578   .text.HAL_PWREx_DisablePVM1:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1584   .text.HAL_PWREx_DisablePVM1:00000000 HAL_PWREx_DisablePVM1
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1601   .text.HAL_PWREx_DisablePVM1:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1606   .text.HAL_PWREx_EnablePVM3:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1612   .text.HAL_PWREx_EnablePVM3:00000000 HAL_PWREx_EnablePVM3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s 			page 136
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:642    .text.HAL_PWREx_EnableGPIOPullUp:00000000 HAL_PWREx_EnableGPIOPullUp
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:658    .text.HAL_PWREx_EnableGPIOPullUp:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:666    .text.HAL_PWREx_EnableGPIOPullUp:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:785    .text.HAL_PWREx_EnableGPIOPullUp:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:790    .text.HAL_PWREx_DisableGPIOPullUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:796    .text.HAL_PWREx_DisableGPIOPullUp:00000000 HAL_PWREx_DisableGPIOPullUp
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:812    .text.HAL_PWREx_DisableGPIOPullUp:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:820    .text.HAL_PWREx_DisableGPIOPullUp:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:915    .text.HAL_PWREx_DisableGPIOPullUp:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:920    .text.HAL_PWREx_EnableGPIOPullDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:926    .text.HAL_PWREx_EnableGPIOPullDown:00000000 HAL_PWREx_EnableGPIOPullDown
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:942    .text.HAL_PWREx_EnableGPIOPullDown:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:950    .text.HAL_PWREx_EnableGPIOPullDown:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1069   .text.HAL_PWREx_EnableGPIOPullDown:00000094 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1074   .text.HAL_PWREx_DisableGPIOPullDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1080   .text.HAL_PWREx_DisableGPIOPullDown:00000000 HAL_PWREx_DisableGPIOPullDown
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1096   .text.HAL_PWREx_DisableGPIOPullDown:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1104   .text.HAL_PWREx_DisableGPIOPullDown:00000010 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1199   .text.HAL_PWREx_DisableGPIOPullDown:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1204   .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1210   .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 HAL_PWREx_EnablePullUpPullDownConfig
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1227   .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1232   .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1238   .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 HAL_PWREx_DisablePullUpPullDownConfig
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1255   .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1260   .text.HAL_PWREx_SetBORConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1266   .text.HAL_PWREx_SetBORConfig:00000000 HAL_PWREx_SetBORConfig
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1297   .text.HAL_PWREx_SetBORConfig:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1302   .text.HAL_PWREx_GetBORConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1308   .text.HAL_PWREx_GetBORConfig:00000000 HAL_PWREx_GetBORConfig
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1332   .text.HAL_PWREx_GetBORConfig:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1337   .text.HAL_PWREx_HoldCore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1343   .text.HAL_PWREx_HoldCore:00000000 HAL_PWREx_HoldCore
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1369   .text.HAL_PWREx_HoldCore:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1374   .text.HAL_PWREx_ReleaseCore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1380   .text.HAL_PWREx_ReleaseCore:00000000 HAL_PWREx_ReleaseCore
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1406   .text.HAL_PWREx_ReleaseCore:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1411   .text.HAL_PWREx_EnableSRAMRetention:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1417   .text.HAL_PWREx_EnableSRAMRetention:00000000 HAL_PWREx_EnableSRAMRetention
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1441   .text.HAL_PWREx_EnableSRAMRetention:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1446   .text.HAL_PWREx_DisableSRAMRetention:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1452   .text.HAL_PWREx_DisableSRAMRetention:00000000 HAL_PWREx_DisableSRAMRetention
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1476   .text.HAL_PWREx_DisableSRAMRetention:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1481   .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1487   .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1515   .text.HAL_PWREx_EnableFlashPowerDown:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1520   .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1526   .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1545   .text.HAL_PWREx_DisableFlashPowerDown:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1550   .text.HAL_PWREx_EnablePVM1:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1556   .text.HAL_PWREx_EnablePVM1:00000000 HAL_PWREx_EnablePVM1
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1573   .text.HAL_PWREx_EnablePVM1:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1578   .text.HAL_PWREx_DisablePVM1:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1584   .text.HAL_PWREx_DisablePVM1:00000000 HAL_PWREx_DisablePVM1
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1601   .text.HAL_PWREx_DisablePVM1:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1606   .text.HAL_PWREx_EnablePVM3:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1612   .text.HAL_PWREx_EnablePVM3:00000000 HAL_PWREx_EnablePVM3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s 			page 136
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1629   .text.HAL_PWREx_EnablePVM3:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1634   .text.HAL_PWREx_DisablePVM3:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1640   .text.HAL_PWREx_DisablePVM3:00000000 HAL_PWREx_DisablePVM3
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1657   .text.HAL_PWREx_DisablePVM3:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1662   .text.HAL_PWREx_ConfigPVM:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:1668   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2014   .text.HAL_PWREx_ConfigPVM:00000114 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2019   .text.HAL_PWREx_ConfigSMPS:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2025   .text.HAL_PWREx_ConfigSMPS:00000000 HAL_PWREx_ConfigSMPS
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2149   .text.HAL_PWREx_ConfigSMPS:00000060 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2155   .text.HAL_PWREx_SMPS_SetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2161   .text.HAL_PWREx_SMPS_SetMode:00000000 HAL_PWREx_SMPS_SetMode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2184   .text.HAL_PWREx_SMPS_SetMode:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2189   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2195   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 HAL_PWREx_SMPS_GetEffectiveMode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2212   .text.HAL_PWREx_SMPS_GetEffectiveMode:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2217   .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2223   .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2276   .text.HAL_PWREx_EnableWakeUpPin:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2281   .text.HAL_PWREx_GetWakeupFlag:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2287   .text.HAL_PWREx_GetWakeupFlag:00000000 HAL_PWREx_GetWakeupFlag
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2312   .text.HAL_PWREx_GetWakeupFlag:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2317   .text.HAL_PWREx_ClearWakeupFlag:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2323   .text.HAL_PWREx_ClearWakeupFlag:00000000 HAL_PWREx_ClearWakeupFlag
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2360   .text.HAL_PWREx_ClearWakeupFlag:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2365   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2371   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 HAL_PWREx_EnableLowPowerRunMode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2388   .text.HAL_PWREx_EnableLowPowerRunMode:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2393   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2399   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 HAL_PWREx_DisableLowPowerRunMode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2465   .text.HAL_PWREx_DisableLowPowerRunMode:0000004c $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2471   .text.HAL_PWREx_EnterSTOP0Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2477   .text.HAL_PWREx_EnterSTOP0Mode:00000000 HAL_PWREx_EnterSTOP0Mode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2535   .text.HAL_PWREx_EnterSTOP0Mode:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2541   .text.HAL_PWREx_EnterSTOP1Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2547   .text.HAL_PWREx_EnterSTOP1Mode:00000000 HAL_PWREx_EnterSTOP1Mode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2606   .text.HAL_PWREx_EnterSTOP1Mode:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2612   .text.HAL_PWREx_EnterSTOP2Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2618   .text.HAL_PWREx_EnterSTOP2Mode:00000000 HAL_PWREx_EnterSTOP2Mode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2677   .text.HAL_PWREx_EnterSTOP2Mode:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2683   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2689   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 HAL_PWREx_EnterSHUTDOWNMode
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2723   .text.HAL_PWREx_EnterSHUTDOWNMode:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2729   .text.HAL_PWREx_PVM1Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2735   .text.HAL_PWREx_PVM1Callback:00000000 HAL_PWREx_PVM1Callback
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2748   .text.HAL_PWREx_PVM3Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2754   .text.HAL_PWREx_PVM3Callback:00000000 HAL_PWREx_PVM3Callback
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2767   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2773   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccAviUFj.s:2897   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1629   .text.HAL_PWREx_EnablePVM3:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1634   .text.HAL_PWREx_DisablePVM3:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1640   .text.HAL_PWREx_DisablePVM3:00000000 HAL_PWREx_DisablePVM3
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1657   .text.HAL_PWREx_DisablePVM3:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1662   .text.HAL_PWREx_ConfigPVM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:1668   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2014   .text.HAL_PWREx_ConfigPVM:00000114 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2019   .text.HAL_PWREx_ConfigSMPS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2025   .text.HAL_PWREx_ConfigSMPS:00000000 HAL_PWREx_ConfigSMPS
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2149   .text.HAL_PWREx_ConfigSMPS:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2155   .text.HAL_PWREx_SMPS_SetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2161   .text.HAL_PWREx_SMPS_SetMode:00000000 HAL_PWREx_SMPS_SetMode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2184   .text.HAL_PWREx_SMPS_SetMode:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2189   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2195   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 HAL_PWREx_SMPS_GetEffectiveMode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2212   .text.HAL_PWREx_SMPS_GetEffectiveMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2217   .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2223   .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2276   .text.HAL_PWREx_EnableWakeUpPin:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2281   .text.HAL_PWREx_GetWakeupFlag:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2287   .text.HAL_PWREx_GetWakeupFlag:00000000 HAL_PWREx_GetWakeupFlag
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2312   .text.HAL_PWREx_GetWakeupFlag:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2317   .text.HAL_PWREx_ClearWakeupFlag:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2323   .text.HAL_PWREx_ClearWakeupFlag:00000000 HAL_PWREx_ClearWakeupFlag
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2360   .text.HAL_PWREx_ClearWakeupFlag:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2365   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2371   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 HAL_PWREx_EnableLowPowerRunMode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2388   .text.HAL_PWREx_EnableLowPowerRunMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2393   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2399   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 HAL_PWREx_DisableLowPowerRunMode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2465   .text.HAL_PWREx_DisableLowPowerRunMode:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2471   .text.HAL_PWREx_EnterSTOP0Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2477   .text.HAL_PWREx_EnterSTOP0Mode:00000000 HAL_PWREx_EnterSTOP0Mode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2535   .text.HAL_PWREx_EnterSTOP0Mode:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2541   .text.HAL_PWREx_EnterSTOP1Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2547   .text.HAL_PWREx_EnterSTOP1Mode:00000000 HAL_PWREx_EnterSTOP1Mode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2606   .text.HAL_PWREx_EnterSTOP1Mode:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2612   .text.HAL_PWREx_EnterSTOP2Mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2618   .text.HAL_PWREx_EnterSTOP2Mode:00000000 HAL_PWREx_EnterSTOP2Mode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2677   .text.HAL_PWREx_EnterSTOP2Mode:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2683   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2689   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 HAL_PWREx_EnterSHUTDOWNMode
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2723   .text.HAL_PWREx_EnterSHUTDOWNMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2729   .text.HAL_PWREx_PVM1Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2735   .text.HAL_PWREx_PVM1Callback:00000000 HAL_PWREx_PVM1Callback
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2748   .text.HAL_PWREx_PVM3Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2754   .text.HAL_PWREx_PVM3Callback:00000000 HAL_PWREx_PVM3Callback
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2767   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2773   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccTvV3FT.s:2897   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000048 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock

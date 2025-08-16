@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
   27:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****  */
   28:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
   29:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #include "arm_math.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 2
 
 
   30:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
   84:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
   85:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   float32_t in1, in2, in3, in4;
   86:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   uint16_t col, i = 0U, j, row = numRowsA, rowCnt, colCnt;      /* loop counters */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 3
 
 
   87:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****   arm_status status;                             /* status of matrix multiplication */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  141:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       do
  142:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       {
  143:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Set the variable sum, that acts as accumulator, to zero */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 4
 
 
  144:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         sum0 = 0.0f;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  198:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
  199:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[1] = *pIn2;
  200:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 5
 
 
  201:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           temp[2] = *pIn2;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  255:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum5 += *pIn1F++ * (*pIn2);
  256:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum6 += *pIn1G++ * (*pIn2);
  257:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           sum7 += *pIn1H++ * (*pIn2);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 6
 
 
  258:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****           pIn2 += numColsB;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  312:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       pIn2 = pSrcB->pData;
  313:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
  314:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****       j = 0U;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 7
 
 
  315:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  369:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Store the result in the destination buffer */
  370:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         *px++ = sum;
  371:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 8
 
 
  372:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         /* Update the pointer pIn2 to point to the  starting address of the next column */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
   50              		.loc 1 405 3 view .LVU4
   51              		.loc 1 405 14 is_stmt 0 view .LVU5
   52 0008 D0F804C0 		ldr	ip, [r0, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 9
 
 
   53              	.LVL2:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  431:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* The following loop performs the dot-product of each row in pSrcA with each column in pSrcB *
  432:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     /* row loop */
  433:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     do
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 10
 
 
  434:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  488:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** #endif /* #if defined (ARM_MATH_LOOPUNROLL) */
  489:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c **** 
  490:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         while (colCnt > 0U)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 11
 
 
  491:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****         {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  116              		.loc 1 509 9 is_stmt 1 view .LVU35
  117              		.loc 1 509 33 is_stmt 0 view .LVU36
  118 0040 021B     		subs	r2, r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 12
 
 
  119              	.LVL16:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  520:Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c ****     } while (row > 0U);
  153              		.loc 1 520 18 view .LVU54
  154 005a 013F     		subs	r7, r7, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 13
 
 
  155              	.LVL22:
@@ -778,16 +778,16 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 1
  194              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  195              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  196              		.file 4 "Drivers/CMSIS/DSP/Include/arm_math.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 14
 
 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 arm_mat_mult_f32.c
-C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s:21     .text.arm_mat_mult_f32:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s:27     .text.arm_mat_mult_f32:00000000 arm_mat_mult_f32
-C:\Users\Nathan\AppData\Local\Temp\cccjuLD9.s:188    .text.arm_mat_mult_f32:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s:21     .text.arm_mat_mult_f32:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s:27     .text.arm_mat_mult_f32:00000000 arm_mat_mult_f32
+C:\Users\Nathan\AppData\Local\Temp\cchrSDZm.s:188    .text.arm_mat_mult_f32:00000070 $d
 
 NO UNDEFINED SYMBOLS

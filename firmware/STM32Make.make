@@ -94,6 +94,7 @@ Core/Src/sysmem.c \
 Core/Src/system_stm32wbxx.c \
 Core/Src/tim.c \
 Core/Src/usart.c \
+Core/Src/usb.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_inverse_f32.c \
 Drivers/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c \
@@ -127,10 +128,6 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_adc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_rcc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_usb.c \
-Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c \
-Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
-Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
-Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c \
 Middlewares/ST/STM32_WPAN/ble/core/auto/ble_events.c \
 Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gap_aci.c \
 Middlewares/ST/STM32_WPAN/ble/core/auto/ble_gatt_aci.c \
@@ -165,9 +162,6 @@ STM32_WPAN/App/app_ble.c \
 STM32_WPAN/App/custom_app.c \
 STM32_WPAN/App/custom_stm.c \
 STM32_WPAN/Target/hw_ipcc.c \
-USB_Device/App/usb_device.c \
-USB_Device/App/usbd_desc.c \
-USB_Device/Target/usbd_conf.c \
 Utilities/lpm/tiny_lpm/stm32_lpm.c \
 Utilities/sequencer/stm32_seq.c \
 patchouli/src/patchouli.c \
@@ -274,9 +268,6 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Include \
 -IDrivers/STM32WBxx_HAL_Driver/Inc \
 -IDrivers/STM32WBxx_HAL_Driver/Inc/Legacy \
--IMiddlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc \
--IMiddlewares/ST/STM32_USB_Device_Library/Class/HID/Inc \
--IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
 -IMiddlewares/ST/STM32_WPAN \
 -IMiddlewares/ST/STM32_WPAN/ble \
 -IMiddlewares/ST/STM32_WPAN/ble/core \
@@ -296,8 +287,6 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc \
 -IMiddlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target \
 -ISTM32_WPAN/App \
--IUSB_Device/App \
--IUSB_Device/Target \
 -IUtilities/lpm/tiny_lpm \
 -IUtilities/sequencer \
 -Ilinea/inc \

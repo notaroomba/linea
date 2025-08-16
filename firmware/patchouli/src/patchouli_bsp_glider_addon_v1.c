@@ -237,7 +237,7 @@ void patchouli_comms_init(){
     HAL_UART_Receive_IT(&huart1, (uint8_t *)huart1_rxbuffer, 1);
 
 }
-#include "usbd_hid.h"
+#include "usbd_hid_custom.h"
 extern uint8_t usbhid_txbuf[12];
 extern USBD_HandleTypeDef hUsbDeviceFS;
 bool patchouli_transmit(patchouli_report_t* report){

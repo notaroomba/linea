@@ -67,13 +67,13 @@ build/debug/patchouli_bsp_glider_addon_v1.o: \
  Core/Inc/app_common.h patchouli/inc/patchouli_math.h \
  patchouli/inc/patchouli.h patchouli/inc/BCG.h \
  patchouli/inc/patchouli_bsp_tx.h \
- Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
  Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h \
+ Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h
 Core/Src/patchouli_config.h:
 patchouli/inc/patchouli_bsp_glider_addon_v1.h:
 patchouli/inc/patchouli.h:
@@ -149,10 +149,10 @@ patchouli/inc/patchouli_math.h:
 patchouli/inc/patchouli.h:
 patchouli/inc/BCG.h:
 patchouli/inc/patchouli_bsp_tx.h:
-Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/HID_CUSTOM/Inc/usbd_hid_custom.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
 Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_core.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ioreq.h:
+Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_ctlreq.h:

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
   28:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** /* USER CODE END INCLUDE */
   29:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** 
   30:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** /* Private typedef -----------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 2
 
 
   31:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
   85:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** 
   86:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** /** @defgroup USBD_CDC_IF_Private_Variables USBD_CDC_IF_Private_Variables
   87:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   * @brief Private variables.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 3
 
 
   88:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   * @{
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  142:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  UART_HandleTypeDef *handle = NULL;
  143:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //
  144:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  if (cdc_ch == 0)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 4
 
 
  145:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  199:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //    break;
  200:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  default:
  201:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //    handle->Init.StopBits = UART_STOPBITS_1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 5
 
 
  202:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //    break;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  256:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  {
  257:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //    /* Initialization Error */
  258:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //    Error_Handler();
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 6
 
 
  259:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** //  }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		@ link register save eliminated.
  310:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   /* USER CODE BEGIN 4 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 7
 
 
  311:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   /* DeInitialize the UART peripheral */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  339:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****     break;
  340:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** 
  341:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   case CDC_SET_COMM_FEATURE:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 8
 
 
  342:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
   75 0014 C1F30721 		ubfx	r1, r1, #8, #8
   76              		.loc 1 382 13 view .LVU13
   77 0018 5170     		strb	r1, [r2, #1]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 9
 
 
  383:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****     pbuf[2] = (uint8_t)(Line_Coding[cdc_ch].bitrate >> 16);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  122 0042 43EA0123 		orr	r3, r3, r1, lsl #8
  372:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****     Line_Coding[cdc_ch].format = pbuf[4];
  123              		.loc 1 372 51 view .LVU37
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 10
 
 
  124 0046 9178     		ldrb	r1, [r2, #2]	@ zero_extendqisi2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  403:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   /* USER CODE END 5 */
  404:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** }
  152              		.loc 1 404 1 is_stmt 0 view .LVU51
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 11
 
 
  153 0068 0020     		movs	r0, #0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  443:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
  444:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   */
  445:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** static int8_t CDC_TransmitCplt(uint8_t cdc_ch, uint8_t *Buf, uint32_t *Len, uint8_t epnum)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 12
 
 
  446:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  219              	.LFE1416:
  221              		.section	.text.CDC_Transmit,"ax",%progbits
  222              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 13
 
 
  223              		.global	CDC_Transmit
@@ -770,15 +770,15 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  250 0004 0A48     		ldr	r0, .L18
  251              	.LVL16:
  252              		.loc 1 468 11 view .LVU69
- 253 0006 40F21C43 		movw	r3, #1052
+ 253 0006 4FF40773 		mov	r3, #540
  254 000a 03FB0400 		mla	r0, r3, r4, r0
  255              	.LVL17:
  256              		.loc 1 468 11 view .LVU70
- 257 000e D0F81434 		ldr	r3, [r0, #1044]
+ 257 000e D0F81432 		ldr	r3, [r0, #532]
  258              		.loc 1 468 6 view .LVU71
  259 0012 0BB1     		cbz	r3, .L17
  469:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 14
 
 
  470:Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.c ****     return USBD_BUSY;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  300              		.align	1
  301              		.syntax unified
  302              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 15
 
 
  303              		.thumb_func
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  349              		.cfi_endproc
  350              	.LFE1419:
  352              		.global	USBD_CDC_ACM_fops
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 16
 
 
  353              		.section	.data.USBD_CDC_ACM_fops,"aw"
@@ -913,27 +913,23 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  364              		.section	.bss.Read_Index,"aw",%nobits
  365              		.align	2
  368              	Read_Index:
- 369 0000 00000000 		.space	8
- 369      00000000 
+ 369 0000 00000000 		.space	4
  370              		.global	Write_Index
  371              		.section	.bss.Write_Index,"aw",%nobits
  372              		.align	2
  375              	Write_Index:
- 376 0000 00000000 		.space	8
- 376      00000000 
+ 376 0000 00000000 		.space	4
  377              		.global	Line_Coding
  378              		.section	.bss.Line_Coding,"aw",%nobits
  379              		.align	2
  382              	Line_Coding:
- 383 0000 00000000 		.space	16
- 383      00000000 
- 383      00000000 
+ 383 0000 00000000 		.space	8
  383      00000000 
  384              		.global	TX_Buffer
  385              		.section	.bss.TX_Buffer,"aw",%nobits
  386              		.align	2
  389              	TX_Buffer:
- 390 0000 00000000 		.space	256
+ 390 0000 00000000 		.space	128
  390      00000000 
  390      00000000 
  390      00000000 
@@ -942,7 +938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  392              		.section	.bss.RX_Buffer,"aw",%nobits
  393              		.align	2
  396              	RX_Buffer:
- 397 0000 00000000 		.space	256
+ 397 0000 00000000 		.space	128
  397      00000000 
  397      00000000 
  397      00000000 
@@ -951,43 +947,43 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 1
  399              	.Letext0:
  400              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  401              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 402              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 402              		.file 4 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h"
  403              		.file 5 "Core/Inc/app_conf.h"
  404              		.file 6 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Class/CDC_ACM/Inc/usbd_cdc_acm.h"
  405              		.file 7 "Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usbd_cdc_acm_if.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_cdc_acm_if.c
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:21     .text.CDC_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:26     .text.CDC_DeInit:00000000 CDC_DeInit
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:44     .text.CDC_Control:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:49     .text.CDC_Control:00000000 CDC_Control
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:158    .text.CDC_Control:0000006c $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:382    .bss.Line_Coding:00000000 Line_Coding
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:163    .text.CDC_TransmitCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:168    .text.CDC_TransmitCplt:00000000 CDC_TransmitCplt
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:186    .text.CDC_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:191    .text.CDC_Init:00000000 CDC_Init
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:216    .text.CDC_Init:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:396    .bss.RX_Buffer:00000000 RX_Buffer
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:222    .text.CDC_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:228    .text.CDC_Transmit:00000000 CDC_Transmit
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:294    .text.CDC_Transmit:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:300    .text.CDC_Receive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:305    .text.CDC_Receive:00000000 CDC_Receive
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:348    .text.CDC_Receive:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:357    .data.USBD_CDC_ACM_fops:00000000 USBD_CDC_ACM_fops
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:354    .data.USBD_CDC_ACM_fops:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:368    .bss.Read_Index:00000000 Read_Index
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:365    .bss.Read_Index:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:375    .bss.Write_Index:00000000 Write_Index
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:372    .bss.Write_Index:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:379    .bss.Line_Coding:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:389    .bss.TX_Buffer:00000000 TX_Buffer
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:386    .bss.TX_Buffer:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczX8Aez.s:393    .bss.RX_Buffer:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:21     .text.CDC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:26     .text.CDC_DeInit:00000000 CDC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:44     .text.CDC_Control:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:49     .text.CDC_Control:00000000 CDC_Control
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:158    .text.CDC_Control:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:382    .bss.Line_Coding:00000000 Line_Coding
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:163    .text.CDC_TransmitCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:168    .text.CDC_TransmitCplt:00000000 CDC_TransmitCplt
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:186    .text.CDC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:191    .text.CDC_Init:00000000 CDC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:216    .text.CDC_Init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:396    .bss.RX_Buffer:00000000 RX_Buffer
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:222    .text.CDC_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:228    .text.CDC_Transmit:00000000 CDC_Transmit
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:294    .text.CDC_Transmit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:300    .text.CDC_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:305    .text.CDC_Receive:00000000 CDC_Receive
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:348    .text.CDC_Receive:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:357    .data.USBD_CDC_ACM_fops:00000000 USBD_CDC_ACM_fops
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:354    .data.USBD_CDC_ACM_fops:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:368    .bss.Read_Index:00000000 Read_Index
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:365    .bss.Read_Index:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:375    .bss.Write_Index:00000000 Write_Index
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:372    .bss.Write_Index:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:379    .bss.Line_Coding:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:389    .bss.TX_Buffer:00000000 TX_Buffer
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:386    .bss.TX_Buffer:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOrFA8f.s:393    .bss.RX_Buffer:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_CDC_SetRxBuffer

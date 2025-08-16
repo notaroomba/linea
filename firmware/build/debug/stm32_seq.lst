@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   28:Utilities/sequencer/stm32_seq.c **** /** @defgroup SEQUENCER_Private_type SEQUENCER private type
   29:Utilities/sequencer/stm32_seq.c ****  *  @{
   30:Utilities/sequencer/stm32_seq.c ****  */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 2
 
 
   31:Utilities/sequencer/stm32_seq.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   85:Utilities/sequencer/stm32_seq.c **** 
   86:Utilities/sequencer/stm32_seq.c **** /**
   87:Utilities/sequencer/stm32_seq.c ****  * @brief default number of task is default 32 (maximum), can be reduced by redefining in utilities
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 3
 
 
   88:Utilities/sequencer/stm32_seq.c ****  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  142:Utilities/sequencer/stm32_seq.c ****  * @brief evt expected mask.
  143:Utilities/sequencer/stm32_seq.c ****  */
  144:Utilities/sequencer/stm32_seq.c **** static volatile UTIL_SEQ_bm_t EvtWaited = UTIL_SEQ_NO_BIT_SET;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 4
 
 
  145:Utilities/sequencer/stm32_seq.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   44 0008 4FF0FF33 		mov	r3, #-1
   45 000c 0D4A     		ldr	r2, .L5+4
   46 000e 1360     		str	r3, [r2]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 5
 
 
  184:Utilities/sequencer/stm32_seq.c ****   SuperMask = UTIL_SEQ_ALL_BIT_SET;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   87 0032 43F83420 		str	r2, [r3, r4, lsl #3]
  192:Utilities/sequencer/stm32_seq.c ****   }
   88              		.loc 1 192 7 is_stmt 1 view .LVU22
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 6
 
 
  192:Utilities/sequencer/stm32_seq.c ****   }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  140              	.LFB1416:
  200:Utilities/sequencer/stm32_seq.c **** 
  201:Utilities/sequencer/stm32_seq.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 7
 
 
  202:Utilities/sequencer/stm32_seq.c ****  * This function can be nested.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  256:Utilities/sequencer/stm32_seq.c ****      * If on the next UTIL_SEQ_RUN(), the two same flags are set again, the round_robin mask will m
  257:Utilities/sequencer/stm32_seq.c ****      * so that the second one can be executed.
  258:Utilities/sequencer/stm32_seq.c ****      * Note that the first flag is not removed from the list of pending task but just masked by the
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 8
 
 
  259:Utilities/sequencer/stm32_seq.c ****      *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  313:Utilities/sequencer/stm32_seq.c ****   UTIL_SEQ_EXIT_CRITICAL_SECTION_IDLE( );
  314:Utilities/sequencer/stm32_seq.c **** 
  315:Utilities/sequencer/stm32_seq.c ****   UTIL_SEQ_PostIdle( );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 9
 
 
  316:Utilities/sequencer/stm32_seq.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
   26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 10
 
 
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
   81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 11
 
 
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
  140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 12
 
 
  141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
  197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 13
 
 
  198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  252:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  253:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  254:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 14
 
 
  255:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  309:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  310:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
  311:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 15
 
 
  312:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  366:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
  367:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  368:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 16
 
 
  369:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  423:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
  424:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  425:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 17
 
 
  426:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  173 0004 72B6     		cpsid i
  174              	@ 0 "" 2
  175              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 18
 
 
  176              		.syntax unified
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  198              		.loc 2 481 3 view .LVU45
  199              		.syntax unified
  200              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 19
 
 
  201 001a 8CF31088 		MSR primask, ip
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  244              		.syntax unified
  245              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  246 0000 EFF31082 		MRS r2, primask
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 20
 
 
  247              	@ 0 "" 2
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  356:Utilities/sequencer/stm32_seq.c **** 
  357:Utilities/sequencer/stm32_seq.c ****   UTIL_SEQ_EXIT_CRITICAL_SECTION();
  294              		.loc 1 357 3 is_stmt 1 view .LVU70
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 21
 
 
  295              	.LBB83:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  343              		.loc 2 449 31 view .LVU78
  344              	.LBB86:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 22
 
 
  451:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  388              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  389 0010 81F31088 		MSR primask, r1
  390              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 23
 
 
  391              	.LVL18:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  435              		.loc 2 454 3 view .LVU101
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  436              		.loc 2 454 3 is_stmt 0 view .LVU102
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 24
 
 
  437              		.thumb
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  483              		.loc 1 380 3 is_stmt 1 view .LVU114
  381:Utilities/sequencer/stm32_seq.c **** }
  484              		.loc 1 381 1 is_stmt 0 view .LVU115
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 25
 
 
  485 0016 7047     		bx	lr
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  531              		.loc 2 209 3 view .LVU125
  532              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 26
 
 
  533              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  580              		.thumb_func
  582              	UTIL_SEQ_SetEvt:
  583              	.LVL29:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 27
 
 
  584              	.LFB1421:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  625 0008 1368     		ldr	r3, [r2]
  626 000a 1843     		orrs	r0, r0, r3
  627              	.LVL31:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 28
 
 
  628              		.loc 1 398 10 view .LVU147
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  674              	.LBI109:
  449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  675              		.loc 2 449 31 view .LVU156
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 29
 
 
  676              	.LBB110:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  719              		.syntax unified
  720              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  721 0010 81F31088 		MSR primask, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 30
 
 
  722              	@ 0 "" 2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  442:Utilities/sequencer/stm32_seq.c ****    * The system is waiting only for the last waited event.
  443:Utilities/sequencer/stm32_seq.c ****    * When it will go out, it will wait again from the previous one.
  444:Utilities/sequencer/stm32_seq.c ****    * It case it occurs while waiting for the second one, the while loop will exit immediately
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 31
 
 
  445:Utilities/sequencer/stm32_seq.c ****    */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  774              		.align	1
  775              		.weak	UTIL_SEQ_Idle
  776              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 32
 
 
  777              		.thumb
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  815              		.weak	UTIL_SEQ_PostIdle
  816              		.syntax unified
  817              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 33
 
 
  818              		.thumb_func
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  526:Utilities/sequencer/stm32_seq.c **** 
  527:Utilities/sequencer/stm32_seq.c ****   n += SEQ_clz_table_4bit[lvalue >> (32-4)];
  528:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 34
 
 
  529:Utilities/sequencer/stm32_seq.c ****   return (uint8_t)(31U-n);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  517:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_fault_irq(void)
  518:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  519:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid f" : : : "memory");
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 35
 
 
  520:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  574:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  575:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  576:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 36
 
 
  577:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  631:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  632:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Fault Mask (non-secure)
  633:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Fault Mask register when in secure state.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 37
 
 
  634:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  688:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psplim_ns"  : "=r" (result) );
  689:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
  690:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 38
 
 
  691:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  745:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  746:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
  747:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 39
 
 
  748:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  802:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  803:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  804:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 40
 
 
  805:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  859:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
  860:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  861:Drivers/CMSIS/Include/cmsis_gcc.h **** #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 41
 
 
  862:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  916:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  917:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __WFE()                             __ASM volatile ("wfe")
  918:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 42
 
 
  919:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  973:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  974:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("rev %0, %1" : __CMSIS_GCC_OUT_REG (result) : __CMSIS_GCC_USE_REG (value) );
  975:Drivers/CMSIS/Include/cmsis_gcc.h ****   return result;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 43
 
 
  976:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
 1030:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1031:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1032:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 44
 
 
 1033:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Breakpoint
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
 1085:Drivers/CMSIS/Include/cmsis_gcc.h ****      is non-zero".
 1086:Drivers/CMSIS/Include/cmsis_gcc.h ****      ARM GCC 7.3 and possibly earlier will optimise this test away, leaving a
 1087:Drivers/CMSIS/Include/cmsis_gcc.h ****      single CLZ instruction.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 45
 
 
 1088:Drivers/CMSIS/Include/cmsis_gcc.h ****    */
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  898 0000 70B5     		push	{r4, r5, r6, lr}
  899              		.cfi_def_cfa_offset 16
  900              		.cfi_offset 4, -16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 46
 
 
  901              		.cfi_offset 5, -12
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  235:Utilities/sequencer/stm32_seq.c ****   while(((local_taskset & local_taskmask & SuperMask) != 0U) && ((local_evtset & local_evtwaited)==
  937              		.loc 1 235 3 is_stmt 1 view .LVU220
  235:Utilities/sequencer/stm32_seq.c ****   while(((local_taskset & local_taskmask & SuperMask) != 0U) && ((local_evtset & local_evtwaited)==
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 47
 
 
  938              		.loc 1 235 19 is_stmt 0 view .LVU221
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  978              	.LBB120:
  979              	.LBI120:
  449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 48
 
 
  980              		.loc 2 449 31 view .LVU236
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1022              	.L45:
  283:Utilities/sequencer/stm32_seq.c ****     {
  1023              		.loc 1 283 52 discriminator 1 view .LVU249
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 49
 
 
  1024 0058 002B     		cmp	r3, #0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1065              	.LVL61:
  295:Utilities/sequencer/stm32_seq.c ****   }
  1066              		.loc 1 295 5 is_stmt 1 view .LVU263
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 50
 
 
  295:Utilities/sequencer/stm32_seq.c ****   }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1106 0098 51F83320 		ldr	r2, [r1, r3, lsl #3]
  249:Utilities/sequencer/stm32_seq.c **** 
  1107              		.loc 1 249 51 view .LVU279
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 51
 
 
  1108 009c 0240     		ands	r2, r2, r0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  299:Utilities/sequencer/stm32_seq.c ****   UTIL_SEQ_PreIdle( );
  1148              		.loc 1 299 3 is_stmt 1 view .LVU294
  299:Utilities/sequencer/stm32_seq.c ****   UTIL_SEQ_PreIdle( );
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 52
 
 
  1149              		.loc 1 299 18 is_stmt 0 view .LVU295
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1191 00dc 1B68     		ldr	r3, [r3]
  1192              	.LVL75:
  304:Utilities/sequencer/stm32_seq.c ****   local_taskmask = TaskMask;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 53
 
 
  1193              		.loc 1 304 3 is_stmt 1 view .LVU308
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1233              	@ 0 "" 2
  1234              		.thumb
  1235              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 54
 
 
  1236              	.LBE132:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1283              		.loc 1 476 1 is_stmt 0 view .LVU331
  1284 0000 08B5     		push	{r3, lr}
  1285              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 55
 
 
  1286              		.cfi_offset 3, -8
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1330 0004 114B     		ldr	r3, .L62
  1331 0006 1E68     		ldr	r6, [r3]
  1332              	.LVL88:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 56
 
 
  426:Utilities/sequencer/stm32_seq.c ****   {
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1372 002a 2342     		tst	r3, r4
  1373 002c F7D0     		beq	.L59
  457:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 57
 
 
  1374              		.loc 1 457 3 is_stmt 1 view .LVU359
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  463:Utilities/sequencer/stm32_seq.c **** 
  1416              		.loc 1 463 3 is_stmt 1 view .LVU372
  1417              	.LVL95:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 58
 
 
  1418              	.LBB137:
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  324:Utilities/sequencer/stm32_seq.c ****   (void)Flags;
  1465              		.loc 1 324 1 is_stmt 0 view .LVU382
  1466 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 59
 
 
  1467              		.cfi_def_cfa_offset 16
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1509              	.LVL100:
  328:Utilities/sequencer/stm32_seq.c **** 
  1510              		.loc 1 328 38 discriminator 1 view .LVU395
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 60
 
 
  1511 000e 034B     		ldr	r3, .L66
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1560              		.section	.bss.EvtWaited,"aw",%nobits
  1561              		.align	2
  1564              	EvtWaited:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 61
 
 
  1565 0000 00000000 		.space	4
@@ -3627,78 +3627,78 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 1
  1596              		.file 7 "Core/Inc/app_conf.h"
  1597              		.file 8 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
  1598              		.file 9 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 62
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_seq.c
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:21     .text.UTIL_SEQ_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:27     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:100    .text.UTIL_SEQ_Init:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1588   .bss.TaskSet:00000000 TaskSet
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1582   .data.TaskMask:00000000 TaskMask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1576   .data.SuperMask:00000000 SuperMask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1570   .bss.EvtSet:00000000 EvtSet
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1564   .bss.EvtWaited:00000000 EvtWaited
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1558   .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1552   .bss.TaskCb:00000000 TaskCb
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1546   .bss.TaskPrio:00000000 TaskPrio
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:113    .text.UTIL_SEQ_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:119    .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:132    .text.UTIL_SEQ_SetTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:138    .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:215    .text.UTIL_SEQ_SetTask:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:221    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:227    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:319    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:326    .text.UTIL_SEQ_PauseTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:332    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:403    .text.UTIL_SEQ_PauseTask:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:408    .text.UTIL_SEQ_IsPauseTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:414    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:489    .text.UTIL_SEQ_IsPauseTask:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:494    .text.UTIL_SEQ_ResumeTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:500    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:571    .text.UTIL_SEQ_ResumeTask:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:576    .text.UTIL_SEQ_SetEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:582    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:653    .text.UTIL_SEQ_SetEvt:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:658    .text.UTIL_SEQ_ClrEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:664    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:735    .text.UTIL_SEQ_ClrEvt:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:740    .text.UTIL_SEQ_IsEvtPend:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:746    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:768    .text.UTIL_SEQ_IsEvtPend:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:774    .text.UTIL_SEQ_Idle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:780    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:794    .text.UTIL_SEQ_PreIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:800    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:814    .text.UTIL_SEQ_PostIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:820    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:834    .text.SEQ_BitPosition:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:840    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:884    .text.UTIL_SEQ_Run:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:890    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1258   .text.UTIL_SEQ_Run:0000010c $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1270   .text.UTIL_SEQ_EvtIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1276   .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1302   .text.UTIL_SEQ_WaitEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1308   .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1445   .text.UTIL_SEQ_WaitEvt:0000004c $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1452   .text.UTIL_SEQ_RegTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1458   .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s 			page 63
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:21     .text.UTIL_SEQ_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:27     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:100    .text.UTIL_SEQ_Init:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1588   .bss.TaskSet:00000000 TaskSet
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1582   .data.TaskMask:00000000 TaskMask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1576   .data.SuperMask:00000000 SuperMask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1570   .bss.EvtSet:00000000 EvtSet
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1564   .bss.EvtWaited:00000000 EvtWaited
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1558   .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1552   .bss.TaskCb:00000000 TaskCb
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1546   .bss.TaskPrio:00000000 TaskPrio
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:113    .text.UTIL_SEQ_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:119    .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:132    .text.UTIL_SEQ_SetTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:138    .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:215    .text.UTIL_SEQ_SetTask:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:221    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:227    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:319    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:326    .text.UTIL_SEQ_PauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:332    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:403    .text.UTIL_SEQ_PauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:408    .text.UTIL_SEQ_IsPauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:414    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:489    .text.UTIL_SEQ_IsPauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:494    .text.UTIL_SEQ_ResumeTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:500    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:571    .text.UTIL_SEQ_ResumeTask:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:576    .text.UTIL_SEQ_SetEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:582    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:653    .text.UTIL_SEQ_SetEvt:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:658    .text.UTIL_SEQ_ClrEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:664    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:735    .text.UTIL_SEQ_ClrEvt:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:740    .text.UTIL_SEQ_IsEvtPend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:746    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:768    .text.UTIL_SEQ_IsEvtPend:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:774    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:780    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:794    .text.UTIL_SEQ_PreIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:800    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:814    .text.UTIL_SEQ_PostIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:820    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:834    .text.SEQ_BitPosition:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:840    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:884    .text.UTIL_SEQ_Run:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:890    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1258   .text.UTIL_SEQ_Run:0000010c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1270   .text.UTIL_SEQ_EvtIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1276   .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1302   .text.UTIL_SEQ_WaitEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1308   .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1445   .text.UTIL_SEQ_WaitEvt:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1452   .text.UTIL_SEQ_RegTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1458   .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s 			page 63
 
 
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1538   .text.UTIL_SEQ_RegTask:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1543   .bss.TaskPrio:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1549   .bss.TaskCb:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1555   .bss.CurrentTaskIdx:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1561   .bss.EvtWaited:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1567   .bss.EvtSet:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1573   .data.SuperMask:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1579   .data.TaskMask:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc1PsdOt.s:1585   .bss.TaskSet:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1538   .text.UTIL_SEQ_RegTask:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1543   .bss.TaskPrio:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1549   .bss.TaskCb:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1555   .bss.CurrentTaskIdx:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1561   .bss.EvtWaited:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1567   .bss.EvtSet:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1573   .data.SuperMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1579   .data.TaskMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEiax1S.s:1585   .bss.TaskSet:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

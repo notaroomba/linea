@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****        to the Flash memory. It implements the erase and program Flash memory operations
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****        and the read and write protection mechanisms.
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   [..] The Flash memory interface accelerates code execution with a system of instruction
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****        (+) Monitor the Flash flags status
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****  @endverbatim
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   ******************************************************************************
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   */
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** /* Exported functions --------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** /** @defgroup FLASH_Exported_Functions FLASH Exported Functions
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****       /* Check the parameters */
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****       assert_param(IS_FLASH_PROGRAM_ADDRESS(Address));
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****       /* Program double-word (64-bit) at a specified address */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   /* Verify that next operation can be proceed */
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   status = FLASH_WaitForLastOperation(FLASH_TIMEOUT_VALUE);
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   if (status != HAL_OK)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   {
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     /* return address being programmed */
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     param = pFlash.Address;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****       /*Stop the ongoing procedure */
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****       pFlash.ProcedureOnGoing = FLASH_TYPENONE;
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   *  @brief   Management functions
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   *
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** @verbatim
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****  ===============================================================================
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** }
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @brief  Unlock the FLASH Option Bytes Registers access.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   /* We should not reach here : Option byte launch generates Option byte reset
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****      so return error */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   return HAL_ERROR;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** /**
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @brief  Wait for a FLASH operation to complete.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @param  Timeout Maximum flash operation timeout
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   }
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   /* Wait for control register to be written */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   while (__HAL_FLASH_GET_FLAG(FLASH_FLAG_CFGBSY))
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
    6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
    7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
    8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 14
 
 
    9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
   63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
   65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 15
 
 
   66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
  121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 16
 
 
  123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
  178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
  179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 17
 
 
  180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  234:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  235:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
  236:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 18
 
 
  237:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control_ns" : "=r" (result) );
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  291:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  292:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  293:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 19
 
 
  294:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  348:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  349:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  350:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 20
 
 
  351:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  405:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  406:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer (non-secure)
  407:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 21
 
 
  408:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  462:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Priority Mask value
  463:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  464:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_PRIMASK_NS(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 22
 
 
  465:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  519:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid f" : : : "memory");
  520:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  521:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 23
 
 
  522:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  576:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  577:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  578:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Base Priority with condition
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 24
 
 
  579:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register only if BASEPRI masking is disable
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  633:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the non-secure Fault Mask register when in secure state.
  634:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
  635:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 25
 
 
  636:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_FAULTMASK_NS(uint32_t faultMask)
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  690:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  691:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  692:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 26
 
 
  693:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  747:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  748:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
  749:Drivers/CMSIS/Include/cmsis_gcc.h ****     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 27
 
 
  750:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  804:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE  ) && (__ARM_FEATURE_CMSE   == 3))
  805:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  806:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer Limit (non-secure)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 28
 
 
  807:Drivers/CMSIS/Include/cmsis_gcc.h ****   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  861:Drivers/CMSIS/Include/cmsis_gcc.h **** #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
  862:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
  863:Drivers/CMSIS/Include/cmsis_gcc.h **** #if __has_builtin(__builtin_arm_set_fpscr)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 29
 
 
  864:Drivers/CMSIS/Include/cmsis_gcc.h **** // Re-enable using built-in when GCC has been fixed
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  918:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  919:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  920:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 30
 
 
  921:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Send Event
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  692:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @brief  Fast program a 32 row double-word (64-bit) at a specified address.
  693:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @param  Address Specifies the address to be programmed.
  694:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @param  DataAddress Specifies the address where the data are stored.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 31
 
 
  695:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   * @retval None
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  119              	.LBI14:
  207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  120              		.loc 2 207 27 view .LVU24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 32
 
 
  121              	.LBB15:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  156              		.loc 1 723 47 discriminator 1 view .LVU38
  723:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   {
  157              		.loc 1 723 10 is_stmt 0 discriminator 1 view .LVU39
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 33
 
 
  158 0022 044B     		ldr	r3, .L8
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  204              		.cfi_endproc
  205              	.LFE1107:
  207              		.section	.text.HAL_FLASH_OperationErrorCallback,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 34
 
 
  208              		.align	1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  256 0010 1B0C     		lsrs	r3, r3, #16
  257              	.LVL11:
  308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 35
 
 
  258              		.loc 1 308 3 is_stmt 1 view .LVU57
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  295              		.loc 1 338 5 view .LVU74
  338:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  296              		.loc 1 338 29 is_stmt 0 view .LVU75
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 36
 
 
  297 0038 0022     		movs	r2, #0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  336              	.L17:
  378:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   {
  337              		.loc 1 378 3 view .LVU91
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 37
 
 
  378:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  301:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   uint32_t error;
  376              		.loc 1 301 12 view .LVU108
  377 008a 4FF0FF34 		mov	r4, #-1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 38
 
 
  378 008e CCE7     		b	.L14
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  422              		.thumb_func
  424              	HAL_FLASH_Unlock:
  425              	.LFB1109:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 39
 
 
  446:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   HAL_StatusTypeDef status = HAL_OK;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  465              		.loc 1 463 1 is_stmt 0 view .LVU134
  466 0024 7047     		bx	lr
  467              	.L34:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 40
 
 
  468 0026 00BF     		.align	2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  514              		.align	2
  515              	.L39:
  516 0018 00400058 		.word	1476411392
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 41
 
 
  517              		.cfi_endproc
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  562              	.L44:
  504:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     }
  563              		.loc 1 504 14 view .LVU156
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 42
 
 
  564 0026 0020     		movs	r0, #0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  610              	.LVL28:
  529:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** }
  611              		.loc 1 529 3 is_stmt 1 view .LVU167
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 43
 
 
  530:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  664              		@ link register save eliminated.
  582:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** }
  665              		.loc 1 582 3 view .LVU174
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 44
 
 
  583:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  713 0012 06D0     		beq	.L71
  614:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     {
  714              		.loc 1 614 5 view .LVU184
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 45
 
 
  614:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****     {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  752              		.loc 1 644 3 is_stmt 1 view .LVU201
  644:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  753              		.loc 1 644 9 is_stmt 0 view .LVU202
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 46
 
 
  754 0038 4CF2FA31 		movw	r1, #50170
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  637:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  794              		.loc 1 637 5 view .LVU217
  637:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 47
 
 
  795              		.loc 1 637 5 discriminator 3 view .LVU218
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  837              		.global	HAL_FLASH_Program
  838              		.syntax unified
  839              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 48
 
 
  840              		.thumb_func
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  882 001a 5A60     		str	r2, [r3, #4]
  193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
  883              		.loc 1 193 3 is_stmt 1 view .LVU245
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 49
 
 
  193:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c **** }
  923              		.loc 1 225 3 view .LVU261
  924              	.LVL49:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 50
 
 
  925              	.L77:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  973              		.cfi_offset 5, -20
  974              		.cfi_offset 6, -16
  975              		.cfi_offset 7, -12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 51
 
 
  976              		.cfi_offset 8, -8
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  262:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   }
  1014              		.loc 1 262 5 is_stmt 1 view .LVU286
  262:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 52
 
 
  1015              		.loc 1 262 5 view .LVU287
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  1053 004e FFF7FEFF 		bl	FLASH_Program_Fast
  1054              	.LVL62:
  1055 0052 EDE7     		b	.L87
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 53
 
 
  1056              	.LVL63:
@@ -3167,53 +3167,53 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 1
  1094              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_flash.h"
  1095              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
  1096              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_flash_ex.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s 			page 54
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_flash.c
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:21     .text.FLASH_Program_DoubleWord:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:26     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:72     .text.FLASH_Program_DoubleWord:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:77     .RamFunc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:82     .RamFunc:00000000 FLASH_Program_Fast
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:182    .RamFunc:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:187    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:193    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:208    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:214    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:229    .text.HAL_FLASH_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:235    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:411    .text.HAL_FLASH_IRQHandler:000000b0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:1086   .bss.pFlash:00000000 pFlash
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:418    .text.HAL_FLASH_Unlock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:424    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:470    .text.HAL_FLASH_Unlock:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:476    .text.HAL_FLASH_Lock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:482    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:516    .text.HAL_FLASH_Lock:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:521    .text.HAL_FLASH_OB_Unlock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:527    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:572    .text.HAL_FLASH_OB_Unlock:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:578    .text.HAL_FLASH_OB_Lock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:584    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:617    .text.HAL_FLASH_OB_Lock:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:622    .text.HAL_FLASH_OB_Launch:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:628    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:647    .text.HAL_FLASH_OB_Launch:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:652    .text.HAL_FLASH_GetError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:658    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:673    .text.HAL_FLASH_GetError:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:678    .text.FLASH_WaitForLastOperation:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:684    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:830    .text.FLASH_WaitForLastOperation:00000084 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:836    .text.HAL_FLASH_Program:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:842    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:950    .text.HAL_FLASH_Program:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:956    .text.HAL_FLASH_Program_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:962    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:1076   .text.HAL_FLASH_Program_IT:00000068 $d
-C:\Users\Nathan\AppData\Local\Temp\ccdWKGI8.s:1083   .bss.pFlash:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:21     .text.FLASH_Program_DoubleWord:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:26     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:72     .text.FLASH_Program_DoubleWord:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:77     .RamFunc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:82     .RamFunc:00000000 FLASH_Program_Fast
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:182    .RamFunc:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:187    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:193    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:208    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:214    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:229    .text.HAL_FLASH_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:235    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:411    .text.HAL_FLASH_IRQHandler:000000b0 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:1086   .bss.pFlash:00000000 pFlash
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:418    .text.HAL_FLASH_Unlock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:424    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:470    .text.HAL_FLASH_Unlock:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:476    .text.HAL_FLASH_Lock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:482    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:516    .text.HAL_FLASH_Lock:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:521    .text.HAL_FLASH_OB_Unlock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:527    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:572    .text.HAL_FLASH_OB_Unlock:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:578    .text.HAL_FLASH_OB_Lock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:584    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:617    .text.HAL_FLASH_OB_Lock:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:622    .text.HAL_FLASH_OB_Launch:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:628    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:647    .text.HAL_FLASH_OB_Launch:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:652    .text.HAL_FLASH_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:658    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:673    .text.HAL_FLASH_GetError:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:678    .text.FLASH_WaitForLastOperation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:684    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:830    .text.FLASH_WaitForLastOperation:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:836    .text.HAL_FLASH_Program:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:842    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:950    .text.HAL_FLASH_Program:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:956    .text.HAL_FLASH_Program_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:962    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:1076   .text.HAL_FLASH_Program_IT:00000068 $d
+C:\Users\Nathan\AppData\Local\Temp\cchgGBff.s:1083   .bss.pFlash:00000000 $d
 
 UNDEFINED SYMBOLS
 FLASH_PageErase
