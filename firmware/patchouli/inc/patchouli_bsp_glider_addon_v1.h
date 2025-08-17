@@ -55,9 +55,9 @@ bool     patchouli_transmit(patchouli_report_t* report);
 
 #define PATCHOULI_DISCHARGE_ENABLE()  do{DISCHARGE_GPIO_Port->BSRR = DISCHARGE_Pin;      }while(0)
 #define PATCHOULI_DISCHARGE_DISABLE() do{DISCHARGE_GPIO_Port->BSRR = DISCHARGE_Pin << 16;}while(0)
-#define PATCHOULI_TX_HIGH()           do{GPIOB->BSRR = GPIO_PIN_13;                      }while(0)
-#define PATCHOULI_TX_LOW()            do{GPIOB->BSRR = GPIO_PIN_13 << 16;                }while(0)
-#define PATCHOULI_TX_TRISTATE()       do{GPIOB->MODER &= ~GPIO_MODER_MODE13_Msk;         }while(0)
-#define PATCHOULI_TX_PP()             do{GPIOB->MODER |=  GPIO_MODER_MODE13_0;           }while(0)
+#define PATCHOULI_TX_HIGH()           do{GPIOB->BSRR = GPIO_PIN_6;                      }while(0)
+#define PATCHOULI_TX_LOW()            do{GPIOB->BSRR = GPIO_PIN_6 << 16;                }while(0)
+#define PATCHOULI_TX_TRISTATE()       do{GPIOB->MODER &= ~GPIO_MODER_MODE6_Msk;         }while(0)
+#define PATCHOULI_TX_PP()             do{GPIOB->MODER |=  GPIO_MODER_MODE6_0;           }while(0)
 
 #endif /* __PATCHOULI_BSP_H */

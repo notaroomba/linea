@@ -75,7 +75,7 @@ patchouli_tx_t patchouli_pen_pw100 = {
     .tx_fstep_kHz  = 5,
     .tx_steps      = 8,
     .tx_ncycle     = 50,
-    .cpu_freq      = 144.0E6f,
+    .cpu_freq      = 64.0E6f,
     .tx_fptr_table = patchouli_tx_fptr_table
 };
 

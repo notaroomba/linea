@@ -50,6 +50,7 @@ void patchouli_coil_select(int id, bool x_yn){
         // X Coils
         if(id >= PATCHOULI_N_X_COIL) {
             PATCHOULI_ErrLog("Invalid X Coil ID: %d", id);
+            // CDC_Transmit_FS((uint8_t*)"Invalid X Coil ID\n", 19);
             return;
         }
         switch(id) {
@@ -83,12 +84,14 @@ void patchouli_coil_select(int id, bool x_yn){
             case 27:  ExN[3] = GPIO_PIN_RESET; S = 6; break;
             default: 
                 PATCHOULI_ErrLog("Invalid X Coil ID: %d", id); 
+                // CDC_Transmit_FS((uint8_t*)"Invalid X Coil ID2\n", 20);
                 return;
         }
     } else {
         // Y Coils
         if(id >= PATCHOULI_N_Y_COIL) {
             PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+            // CDC_Transmit_FS((uint8_t*)"Invalid Y Coil ID\n", 19);
             return;
         }
         switch (id) {
@@ -109,10 +112,11 @@ void patchouli_coil_select(int id, bool x_yn){
             case 14:  ExN[5] = GPIO_PIN_RESET; S = 7; break;
             case 15:  ExN[5] = GPIO_PIN_RESET; S = 5; break;
             case 16:  ExN[0] = GPIO_PIN_RESET; S = 3; break; // U7
-            case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break; // U7
+            case 17:  ExN[0] = GPIO_PIN_RESET; S = 0; break;
             
             default: 
                 PATCHOULI_ErrLog("Invalid Y Coil ID: %d", id);
+                // CDC_Transmit_FS((uint8_t*)"Invalid Y Coil ID2\n", 20);
                 return;
         }
     }
@@ -237,38 +241,39 @@ void patchouli_comms_init(){
     HAL_UART_Receive_IT(&huart1, (uint8_t *)huart1_rxbuffer, 1);
 
 }
-#include "usbd_hid_custom.h"
-extern uint8_t usbhid_txbuf[12];
-extern USBD_HandleTypeDef hUsbDeviceFS;
-bool patchouli_transmit(patchouli_report_t* report){
-    int16_t p = report->tip;
-    int16_t x = report->xpos;
-    int16_t y = report->ypos;
-    // printf("%d\t%d\t%d\r\n", p,x,y);
-    usbhid_txbuf[0]  = 0x08;
-    usbhid_txbuf[1]  = 0x80;
-    usbhid_txbuf[2]  = x&0xFF;
-    usbhid_txbuf[3]  = (x>>8)&0xFF;
-    usbhid_txbuf[4]  = y&0xFF;
-    usbhid_txbuf[5]  = (y>>8)&0xFF;
-    usbhid_txbuf[6]  = p&0xFF;
-    usbhid_txbuf[7]  = (p>>8)&0xFF;
-    usbhid_txbuf[8]  = 0;
-    usbhid_txbuf[9]  = 0;
-    usbhid_txbuf[10] = 0;
-    usbhid_txbuf[11] = 0;
-    USBD_HID_SendReport(&hUsbDeviceFS, usbhid_txbuf, 12);
-    return true;
-}
-//#include "usbd_cdc_if.h"
+// #include "usbd_hid.h"
+// extern uint8_t usbhid_txbuf[12];
+// extern USBD_HandleTypeDef hUsbDeviceFS;
 // bool patchouli_transmit(patchouli_report_t* report){
-//     // through cdc
 //     int16_t p = report->tip;
 //     int16_t x = report->xpos;
 //     int16_t y = report->ypos;
-//     char txbuf[32];
-//     sprintf(txbuf, "%d\t%d\t%d\r\n", x, y, p);
-//     CDC_Transmit_FS(txbuf, strlen(txbuf));
+//     // printf("%d\t%d\t%d\r\n", p,x,y);
+//     usbhid_txbuf[0]  = 0x08;
+//     usbhid_txbuf[1]  = 0x80;
+//     usbhid_txbuf[2]  = x&0xFF;
+//     usbhid_txbuf[3]  = (x>>8)&0xFF;
+//     usbhid_txbuf[4]  = y&0xFF;
+//     usbhid_txbuf[5]  = (y>>8)&0xFF;
+//     usbhid_txbuf[6]  = p&0xFF;
+//     usbhid_txbuf[7]  = (p>>8)&0xFF;
+//     usbhid_txbuf[8]  = 0;
+//     usbhid_txbuf[9]  = 0;
+//     usbhid_txbuf[10] = 0;
+//     usbhid_txbuf[11] = 0;
+//     USBD_HID_SendReport(&hUsbDeviceFS, usbhid_txbuf, 12);
 //     return true;
 // }
+#include "usb_device.h"
+bool patchouli_transmit(patchouli_report_t* report){
+    // through cdc
+    CDC_Transmit_FS("Transmit\n", 9);
+    int16_t p = report->tip;
+    int16_t x = report->xpos;
+    int16_t y = report->ypos;
+    char txbuf[32];
+    sprintf(txbuf, "%d\t%d\t%d\n", x, y, p);
+    CDC_Transmit_FS(txbuf, strlen(txbuf));
+    return true;
+}
 #endif /* PATCHOULI_PCB_GLIDER_ADDON_V1 */

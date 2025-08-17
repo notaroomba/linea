@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
   28:Core/Src/rtc.c **** 
   29:Core/Src/rtc.c **** /* RTC init function */
   30:Core/Src/rtc.c **** void MX_RTC_Init(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 2
 
 
   31:Core/Src/rtc.c **** {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
   63              		.loc 1 50 3 is_stmt 1 view .LVU15
   64              		.loc 1 50 25 is_stmt 0 view .LVU16
   65 001c 4361     		str	r3, [r0, #20]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 3
 
 
   51:Core/Src/rtc.c ****   if (HAL_RTC_Init(&hrtc) != HAL_OK)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  102              	.LFE1415:
  104              		.section	.text.HAL_RTC_MspInit,"ax",%progbits
  105              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 4
 
 
  106              		.global	HAL_RTC_MspInit
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
   85:Core/Src/rtc.c ****     PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
   86:Core/Src/rtc.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   87:Core/Src/rtc.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 5
 
 
   88:Core/Src/rtc.c ****       Error_Handler();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  173              	.LBI10:
  174              		.file 2 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h"
    1:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 6
 
 
    2:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   ******************************************************************************
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
   56:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
   57:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
   58:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 7
 
 
   59:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  113:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* !HSI_VALUE */
  114:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  115:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if !defined  (LSE_VALUE)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 8
 
 
  116:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(STM32WB5Mxx)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  170:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIFR_PLLRDYF                RCC_CIFR_PLLRDYF     /*!< PLL Ready Interrupt flag      
  171:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC_HSI48_SUPPORT)
  172:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIFR_HSI48RDYF              RCC_CIFR_HSI48RDYF   /*!< HSI48 Ready Interrupt flag    
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 9
 
 
  173:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* RCC_HSI48_SUPPORT */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  227:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MSIRANGE_1                  RCC_CR_MSIRANGE_1  /*!< MSI = 200 KHz  */
  228:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MSIRANGE_2                  RCC_CR_MSIRANGE_2  /*!< MSI = 400 KHz  */
  229:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MSIRANGE_3                  RCC_CR_MSIRANGE_3  /*!< MSI = 800 KHz  */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 10
 
 
  230:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MSIRANGE_4                  RCC_CR_MSIRANGE_4  /*!< MSI = 1 MHz    */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  285:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  286:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 11
 
 
  287:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_SYS_CLKSOURCE_STATUS  System clock switch status
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  341:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
  342:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  343:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_APB2_DIV_1                  0x00000000U                                             
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 12
 
 
  344:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_APB2_DIV_2                  RCC_CFGR_PPRE2_2                                        
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  398:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SMPS_CLKSOURCE_MSI           RCC_SMPSCR_SMPSSEL_0    /*!< MSI selection as SMPS cloc
  399:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SMPS_CLKSOURCE_HSE           RCC_SMPSCR_SMPSSEL_1    /*!< HSE selection as SMPS cloc
  400:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 13
 
 
  401:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  455:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPUART1_CLKSOURCE_HSI       RCC_CCIPR_LPUART1SEL_1    /*!< HSI selected as LPUART1 c
  456:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPUART1_CLKSOURCE_LSE       RCC_CCIPR_LPUART1SEL      /*!< LSE selected as LPUART1 c
  457:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 14
 
 
  458:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  512:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CLK48_CLKSOURCE_PLLSAI1     RCC_CCIPR_CLK48SEL_0  /*!< PLLSAI1 selected as CLK48 clo
  513:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
  514:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CLK48_CLKSOURCE_PLL         RCC_CCIPR_CLK48SEL_1  /*!< PLL selected as CLK48 clock  
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 15
 
 
  515:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CLK48_CLKSOURCE_MSI         RCC_CCIPR_CLK48SEL    /*!< MSI selected as CLK48 clock  
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  569:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(LPUART1)
  570:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_LPUART1 LPUART1
  571:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 16
 
 
  572:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  626:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_RNG_CLKSOURCE               RCC_CCIPR_RNGSEL  /*!< RNG clock source selection bits *
  627:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  628:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 17
 
 
  629:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  683:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLM_DIV_3                  (RCC_PLLCFGR_PLLM_1)                        /*!< PLL and
  684:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLM_DIV_4                  ((RCC_PLLCFGR_PLLM_1 | RCC_PLLCFGR_PLLM_0)) /*!< PLL and
  685:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLM_DIV_5                  (RCC_PLLCFGR_PLLM_2)                        /*!< PLL and
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 18
 
 
  686:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLM_DIV_6                  ((RCC_PLLCFGR_PLLM_2 | RCC_PLLCFGR_PLLM_0)) /*!< PLL and
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  740:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_32                 (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_1|RCC_PLLCFGR_PLLP_
  741:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  742:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 19
 
 
  743:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  797:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1P_DIV_21                 (RCC_PLLSAI1CFGR_PLLP_2|RCC_PLLSAI1CFGR_PLLP_4)     
  798:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1P_DIV_22                 (RCC_PLLSAI1CFGR_PLLP_0|RCC_PLLSAI1CFGR_PLLP_2|RCC_P
  799:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1P_DIV_23                 (RCC_PLLSAI1CFGR_PLLP_1|RCC_PLLSAI1CFGR_PLLP_2|RCC_P
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 20
 
 
  800:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1P_DIV_24                 (RCC_PLLSAI1CFGR_PLLP_0|RCC_PLLSAI1CFGR_PLLP_1|RCC_P
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  854:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_ReadReg(__REG__) READ_REG(RCC->__REG__)
  855:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  856:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 21
 
 
  857:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  911:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_5
  912:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_6
  913:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 22
 
 
  914:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  968:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_10
  969:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_11
  970:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 23
 
 
  971:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_13
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1025:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
 1026:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 1027:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Helper macro to calculate the PLLSAI1PCLK frequency used for SAI domain
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 24
 
 
 1028:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note ex: @ref __LL_RCC_CALC_PLLSAI1_SAI_FREQ (HSE_VALUE,@ref LL_RCC_PLL_GetDivider (),
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1082:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *             @ref LL_RCC_PLLSAI1_GetN (), @ref LL_RCC_PLLSAI1_GetQ ());
 1083:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __INPUTFREQ__ PLL Input frequency (based on MSI/HSE/HSI)
 1084:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __PLLM__ This parameter can be one of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 25
 
 
 1085:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1139:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Helper macro to calculate the HCLK1 frequency
 1140:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __SYSCLKFREQ__ SYSCLK frequency (based on MSI/HSE/HSI/PLLCLK)
 1141:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __CPU1PRESCALER__ This parameter can be one of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 26
 
 
 1142:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1196:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
 1197:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
 1198:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 27
 
 
 1199:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_128
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1253:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1254:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define __LL_RCC_CALC_MSI_FREQ(__MSIRANGE__) MSIRangeTable[((__MSIRANGE__)\
 1255:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****                                                             & RCC_CR_MSIRANGE_Msk) >> RCC_CR_MSIRAN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 28
 
 
 1256:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1310:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CR, RCC_CR_CSSON);
 1311:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1312:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 29
 
 
 1313:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1367:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll HSECR        HSETUNE       LL_RCC_HSE_GetCapacitorTuning
 1368:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Between Min_Data = 0 and Max_Data = 63
 1369:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 30
 
 
 1370:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_HSE_GetCapacitorTuning(void)
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1424:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 1425:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 1426:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get HSE current control
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 31
 
 
 1427:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll HSECR        HSES       LL_RCC_HSE_GetSenseAmplifier
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1481:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1482:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CR, RCC_CR_HSION);
 1483:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 32
 
 
 1484:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1538:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note user-programmable trimming value that is added to the HSICAL
 1539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note Default value is 64, which, when added to the HSICAL value,
 1540:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       should trim the HSI to 16 MHz +/- 1 %
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 33
 
 
 1541:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll ICSCR        HSITRIM       LL_RCC_HSI_SetCalibTrimming
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1595:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1596:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->CRRCR, RCC_CRRCR_HSI48RDY) == (RCC_CRRCR_HSI48RDY)) ? 1UL : 0UL);
 1597:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 34
 
 
 1598:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1652:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1653:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSE_EnableBypass(void)
 1654:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 35
 
 
 1655:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->BDCR, RCC_BDCR_LSEBYP);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1709:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable Clock security system on LSE.
 1710:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note Clock security system can be disabled only after a LSE
 1711:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       failure detection. In that case it MUST be disabled by software.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 36
 
 
 1712:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         LSECSSON      LL_RCC_LSE_DisableCSS
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1766:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1767:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 1768:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 37
 
 
 1769:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if LSI1 is Ready
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1823:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1824:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->CSR, RCC_CSR_LSI2TRIM, Value << RCC_CSR_LSI2TRIM_Pos);
 1825:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 38
 
 
 1826:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1880:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       ready
 1881:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CR           MSIPLLEN      LL_RCC_MSI_EnablePLLMode
 1882:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 39
 
 
 1883:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1937:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_8
 1938:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_9
 1939:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 40
 
 
 1940:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_11
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1994:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 1995:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 1996:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Enable Low speed clock
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 41
 
 
 1997:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         LSCOEN        LL_RCC_LSCO_Enable
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2051:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  Source This parameter can be one of the following values:
 2052:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYS_CLKSOURCE_MSI
 2053:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYS_CLKSOURCE_HSI
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 42
 
 
 2054:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYS_CLKSOURCE_HSE
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2108:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CSR         RFWKPSEL        LL_RCC_GetRFWKPClockSource
 2109:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
 2110:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_RFWKP_CLKSOURCE_NONE
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 43
 
 
 2111:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_RFWKP_CLKSOURCE_LSE
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2165:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_5
 2166:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_6
 2167:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 44
 
 
 2168:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_10
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2222:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2223:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2224:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Set APB2 prescaler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 45
 
 
 2225:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CFGR         PPRE2         LL_RCC_SetAPB2Prescaler
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2279:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_256
 2280:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_512
 2281:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 46
 
 
 2282:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_C2_RCC_GetAHBPrescaler(void)
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2336:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_GetAPB2Prescaler(void)
 2337:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 2338:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->CFGR, RCC_CFGR_PPRE2));
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 47
 
 
 2339:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2393:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2394:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get the SMPS clock source selection
 2395:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll SMPSCR         SMPSSEL           LL_RCC_GetSMPSClockSelection
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 48
 
 
 2396:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2450:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2451:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
 2452:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 49
 
 
 2453:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* RCC_SMPS_SUPPORT */
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2507:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_SetUSARTClockSource(uint32_t USARTxSource)
 2508:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 2509:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->CCIPR, RCC_CCIPR_USART1SEL, USARTxSource);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 50
 
 
 2510:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2564:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 2565:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2566:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 51
 
 
 2567:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2621:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_USB_CLKSOURCE_PLL
 2622:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_USB_CLKSOURCE_MSI
 2623:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 52
 
 
 2624:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2678:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get USARTx clock source
 2679:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CCIPR        USART1SEL     LL_RCC_GetUSARTClockSource
 2680:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  USARTx This parameter can be one of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 53
 
 
 2681:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_USART1_CLKSOURCE
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2735:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LPTIM1_CLKSOURCE
 2736:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LPTIM2_CLKSOURCE
 2737:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 54
 
 
 2738:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LPTIM1_CLKSOURCE_PCLK1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2792:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_CLK48_CLKSOURCE_PLLSAI1 (*)
 2793:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_CLK48_CLKSOURCE_PLL
 2794:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_CLK48_CLKSOURCE_MSI
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 55
 
 
 2795:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note   (*) Value not defined for all devices
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 2849:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       the Backup domain is reset, or unless a failure is detected on LSE (LSECSSD is
 2850:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       set). The BDRST bit can be used to reset them.
 2851:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         RTCSEL        LL_RCC_SetRTCClockSource
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 56
 
 
 2852:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  Source This parameter can be one of the following values:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
    6:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   ******************************************************************************
    7:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @attention
    8:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 57
 
 
    9:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * Copyright (c) 2019 STMicroelectronics.
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
   63:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
   64:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Exported types ------------------------------------------------------------*/
   65:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 58
 
 
   66:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Exported constants --------------------------------------------------------*/
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  120:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_PKA            RCC_AHB3ENR_PKAEN
  121:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_AES2           RCC_AHB3ENR_AES2EN
  122:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_RNG            RCC_AHB3ENR_RNGEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 59
 
 
  123:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_HSEM           RCC_AHB3ENR_HSEMEN
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  177:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  178:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(ADC_SUPPORT_2_5_MSPS)
  179:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_ADC            RCC_APB2ENR_ADCEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 60
 
 
  180:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* ADC_SUPPORT_2_5_MSPS */
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  234:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOE        RCC_C2AHB2ENR_GPIOEEN
  235:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_GPIOH        RCC_C2AHB2ENR_GPIOHEN
  236:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(ADC_SUPPORT_5_MSPS)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 61
 
 
  237:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_ADC          RCC_C2AHB2ENR_ADCEN
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  291:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_APB1_GRP2_PERIPH_LPTIM2       RCC_C2APB1ENR2_LPTIM2EN
  292:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  293:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 62
 
 
  294:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  348:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  349:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Enable AHB1 peripherals clock.
  350:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB1ENR      DMA1EN        LL_AHB1_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 63
 
 
  351:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMA2EN        LL_AHB1_GRP1_EnableClock\n
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  405:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_CRC
  406:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_TSC
  407:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 64
 
 
  408:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  462:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    DMA2SMEN      LL_AHB1_GRP1_EnableClockSleep\n
  463:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    DMAMUX1SMEN    LL_AHB1_GRP1_EnableClockSleep\n
  464:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    SRAM1SMEN     LL_AHB1_GRP1_EnableClockSleep\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 65
 
 
  465:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    CRCSMEN       LL_AHB1_GRP1_EnableClockSleep\n
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  519:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB2ENR      GPIOAEN       LL_AHB2_GRP1_EnableClock\n
  520:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOBEN       LL_AHB2_GRP1_EnableClock\n
  521:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOCEN       LL_AHB2_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 66
 
 
  522:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIODEN       LL_AHB2_GRP1_EnableClock\n
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  576:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Disable AHB2 peripherals clock.
  577:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB2ENR      GPIOAEN       LL_AHB2_GRP1_DisableClock\n
  578:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOBEN       LL_AHB2_GRP1_DisableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 67
 
 
  579:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOCEN       LL_AHB2_GRP1_DisableClock\n
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  633:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2RSTR     GPIOBRST      LL_AHB2_GRP1_ReleaseReset\n
  634:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2RSTR     GPIOCRST      LL_AHB2_GRP1_ReleaseReset\n
  635:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2RSTR     GPIODRST      LL_AHB2_GRP1_ReleaseReset\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 68
 
 
  636:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2RSTR     GPIOERST      LL_AHB2_GRP1_ReleaseReset\n
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  690:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Disable AHB2 peripherals clock during Low Power (Sleep) mode.
  691:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB2SMENR    GPIOASMEN     LL_AHB2_GRP1_DisableClockSleep\n
  692:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2SMENR    GPIOBSMEN     LL_AHB2_GRP1_DisableClockSleep\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 69
 
 
  693:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2SMENR    GPIOCSMEN     LL_AHB2_GRP1_DisableClockSleep\n
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  747:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB3ENR, Periphs);
  748:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   /* Delay after an RCC peripheral clock enabling */
  749:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB3ENR, Periphs);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 70
 
 
  750:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  804:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Force AHB3 peripherals reset.
  805:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB3RSTR     QUADSPIRST       LL_AHB3_GRP1_ForceReset\n
  806:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB3RSTR     PKARST        LL_AHB3_GRP1_ForceReset\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 71
 
 
  807:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB3RSTR     AES2RST       LL_AHB3_GRP1_ForceReset\n
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  861:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB3SMENR    SRAM2SMEN     LL_AHB3_GRP1_EnableClockSleep\n
  862:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB3SMENR    FLASHSMEN     LL_AHB3_GRP1_EnableClockSleep
  863:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 72
 
 
  864:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_QUADSPI (*)
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  918:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     WWDGEN        LL_APB1_GRP1_EnableClock\n
  919:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     SPI2EN        LL_APB1_GRP1_EnableClock\n
  920:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     I2C1EN        LL_APB1_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 73
 
 
  921:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     I2C3EN        LL_APB1_GRP1_EnableClock\n
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  216 0062 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  217              	.LVL13:
  218              		.loc 1 102 1 is_stmt 0 view .LVU58
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 74
 
 
  219 0066 D7E7     		b	.L9
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  117:Core/Src/rtc.c ****     HAL_NVIC_DisableIRQ(RTC_WKUP_IRQn);
  118:Core/Src/rtc.c ****   /* USER CODE BEGIN RTC_MspDeInit 1 */
  119:Core/Src/rtc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 75
 
 
  120:Core/Src/rtc.c ****   /* USER CODE END RTC_MspDeInit 1 */
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  965:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
  966:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  967:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 76
 
 
  968:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @brief  Check if APB1 peripheral clock is enabled or not
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
 1022:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     USBEN         LL_APB1_GRP1_DisableClock\n
 1023:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR1     LPTIM1EN      LL_APB1_GRP1_DisableClock
 1024:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 77
 
 
 1025:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_TIM2
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  315              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
  316              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
  317              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 78
 
 
  318              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h"
@@ -4630,22 +4630,22 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 1
  324              		.file 14 "Core/Inc/main.h"
  325              		.file 15 "Core/Inc/rtc.h"
  326              		.file 16 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s 			page 79
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 rtc.c
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:21     .text.MX_RTC_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:27     .text.MX_RTC_Init:00000000 MX_RTC_Init
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:99     .text.MX_RTC_Init:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:310    .bss.hrtc:00000000 hrtc
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:105    .text.HAL_RTC_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:111    .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:228    .text.HAL_RTC_MspInit:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:233    .text.HAL_RTC_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:239    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:301    .text.HAL_RTC_MspDeInit:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccVzCwYw.s:307    .bss.hrtc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:21     .text.MX_RTC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:27     .text.MX_RTC_Init:00000000 MX_RTC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:99     .text.MX_RTC_Init:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:310    .bss.hrtc:00000000 hrtc
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:105    .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:111    .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:228    .text.HAL_RTC_MspInit:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:233    .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:239    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:301    .text.HAL_RTC_MspDeInit:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccKjrcef.s:307    .bss.hrtc:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_RTC_Init

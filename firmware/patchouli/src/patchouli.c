@@ -31,6 +31,7 @@
 #include <stdbool.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include "usbd_cdc_if.h"
 // #include "usbd_cdc_acms.h"
 
 // #define OLD_IMPL
@@ -40,7 +41,7 @@ patchouli_mva_t mva_xpos;	// X Position
 patchouli_mva_t mva_ypos;	// Y Position
 patchouli_mva_t mva_p;		// Tip Pressure
 
-patchouli_debug_t debug_state = PATCHOULI_DEBUG_XSCAN;
+patchouli_debug_t debug_state = PATCHOULI_DEBUG_NONE;
 float    pavg;
 int      maxpptr = 7;
 uint16_t psamples[PATCHOULI_TIM_N_STEP];
@@ -68,6 +69,10 @@ patchouli_position_t patchouli_get_position(uint8_t fstep, int lastpos, bool x_y
         .data = smem,
     };
     float posavg = patchouli_quad_interp(&interp) + lastpos - window_half;
+    CDC_Transmit_FS((uint8_t*)"Posavg:\n", 8);
+    char buf[17];
+    sprintf(buf, "%f\n", posavg);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));    
     patchouli_position_t ret = {
         .idx = interp.result_maxidx + lastpos - window_half,
         .val = posavg,
@@ -88,8 +93,11 @@ void _patchouli_cycle_default(){
     // Scan X-Y Position
     xpos = patchouli_get_position(maxpptr, xpos.idx, true );
     ypos = patchouli_get_position(maxpptr, ypos.idx, false);
+    // CDC_Transmit_FS((uint8_t*)"X-Y Position\n", 13);
     float xavg = xpos.val;
     float yavg = ypos.val;
+    
+    char buf[17]; // Buffer for string conversion
 
 	// Scan Frequency to find the peak
 	uint16_t maxpval = 0;
@@ -101,9 +109,23 @@ void _patchouli_cycle_default(){
             maxpptr = fstep;
         }
 	}
+    // CDC_Transmit_FS((uint8_t*)"Max Pressure\n", 13);
+
+    // CDC_Transmit_FS((uint8_t*)"Max Pressure Value:\n", 20);
+    // sprintf(buf, "%d\n", maxpval);
+    // uint8_t res = CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    // if(res == 0){
+    //     CDC_Transmit_FS((uint8_t*)"Successfully transmitted maxpval\n", 33);
+    // } else if(res == 1) {
+    //     CDC_Transmit_FS((uint8_t*)"Busy\n", 5);
+    // } else {
+    //     CDC_Transmit_FS((uint8_t*)"Failed\n", 7);
+    // }
+    // CDC_Transmit_FS((uint8_t*)"\n", 1);
 	if(maxpval>PATCHOULI_PDET_THRES){
 		patchouli_led_on();
 		// Gauss Fit PDET
+        CDC_Transmit_FS((uint8_t*)"Gauss Fit PDET\n", 15);
 		float c1[3];
 		patchouli_gauss_apply((psamples+maxpptr-2), c1);
 		float t = exp(11-(maxpptr-c1[1]/(2*c1[2])));
@@ -127,6 +149,14 @@ void _patchouli_cycle_default(){
         int x = (int)round(patchouli_linear_map(x_src_min, x_src_max, x_dst_min, x_dst_max, xavg));
         int y = (int)round(patchouli_linear_map(y_src_min, y_src_max, y_dst_min, y_dst_max, yavg));
 
+        // Print the mapped coordinates
+        CDC_Transmit_FS((uint8_t*)"X:", 2);
+        sprintf(buf, "%d\n", x);
+        CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+        CDC_Transmit_FS((uint8_t*)"Y:", 2);
+        sprintf(buf, "%d\n", y);
+        CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+
         const float pmax = 28.8f;
         const float pmin = 970.0f;
         const float prange = pmax-pmin;
@@ -140,6 +170,7 @@ void _patchouli_cycle_default(){
 		report.tip  = p*4;
 		patchouli_transmit(&report);
 	} else {
+        // CDC_Transmit_FS((uint8_t*)"Pen not present\n", 17);
         pen_present = false;
 		patchouli_led_off();
 	}
@@ -175,6 +206,7 @@ void patchouli_set_mode(patchouli_debug_t mode){
     debug_state = mode;
 }
 void patchouli_cycle(){
+    CDC_Transmit_FS((uint8_t*)"Cycle\n", 6);
     switch (debug_state) {
         case PATCHOULI_DEBUG_NONE:
             _patchouli_cycle_default();
@@ -184,6 +216,9 @@ void patchouli_cycle(){
             break;
         case PATCHOULI_DEBUG_YSCAN:
             _patchouli_cycle_yscan();
+            break;
+        case PATCHOULI_DEBUG_PEN_SCAN:
+            patchouli_scan_passive_pen_parameters();
             break;
         default:
             // Undefined mode
@@ -204,5 +239,79 @@ void patchouli_debug_output(const char* prefix, const char* format, ...) {
     va_end(args);
     
     // Send via CDC
-    CDC_Transmit_FS((uint8_t*)debug_buffer, len);
+    CDC_Transmit_FS(debug_buffer, len);
+}
+
+// Passive pen detection and parameter logging helper function
+void patchouli_scan_passive_pen_parameters() {
+    char buf[32];
+    uint16_t max_val = 0;
+    uint16_t min_val = 0xFFFF;
+    uint32_t total_sum = 0;
+    uint16_t sample_count = 0;
+    
+    CDC_Transmit_FS((uint8_t*)"=== PASSIVE PEN SCAN ===\n", 25);
+    
+    // Scan through all X coils at different frequencies
+    CDC_Transmit_FS((uint8_t*)"Scanning X coils:\n", 18);
+    for (int coil = 0; coil < PATCHOULI_N_X_COIL; coil++) {
+        patchouli_coil_select(coil, true);
+        
+        for (int fstep = 0; fstep < 8; fstep++) {
+            uint16_t sample = patchouli_simple_take_sample(false, fstep);
+            
+            // Track min/max/average
+            if (sample > max_val) max_val = sample;
+            if (sample < min_val) min_val = sample;
+            total_sum += sample;
+            sample_count++;
+            
+            // Log individual readings
+            sprintf(buf, "X%d-F%d: %d\n", coil, fstep, sample);
+            CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+        }
+    }
+    
+    // Scan through all Y coils at different frequencies
+    CDC_Transmit_FS((uint8_t*)"Scanning Y coils:\n", 18);
+    for (int coil = 0; coil < PATCHOULI_N_Y_COIL; coil++) {
+        patchouli_coil_select(coil, false);
+        
+        for (int fstep = 0; fstep < 8; fstep++) {
+            uint16_t sample = patchouli_simple_take_sample(true, fstep);
+            
+            // Track min/max/average
+            if (sample > max_val) max_val = sample;
+            if (sample < min_val) min_val = sample;
+            total_sum += sample;
+            sample_count++;
+            
+            // Log individual readings
+            sprintf(buf, "Y%d-F%d: %d\n", coil, fstep, sample);
+            CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+        }
+    }
+    
+    // Calculate and log statistics
+    uint16_t avg_val = total_sum / sample_count;
+    uint16_t range = max_val - min_val;
+    
+    CDC_Transmit_FS((uint8_t*)"=== SCAN STATISTICS ===\n", 24);
+    sprintf(buf, "Min: %d\n", min_val);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    sprintf(buf, "Max: %d\n", max_val);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    sprintf(buf, "Avg: %d\n", avg_val);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    sprintf(buf, "Range: %d\n", range);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    sprintf(buf, "Samples: %d\n", sample_count);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    
+    // Suggest threshold based on statistics
+    uint16_t suggested_threshold = avg_val + (range / 4);
+    sprintf(buf, "Suggested threshold: %d\n", suggested_threshold);
+    CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+    
+    CDC_Transmit_FS((uint8_t*)"=== SCAN COMPLETE ===\n", 22);
 }

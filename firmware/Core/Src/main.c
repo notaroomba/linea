@@ -26,15 +26,18 @@
 #include "rtc.h"
 #include "tim.h"
 #include "usart.h"
-#include "usb.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 // #include "linea.h"
+#include "stdio.h"
 #include "patchouli_config.h"
 #include "patchouli.h"
-#include "usb_device.h"
+#include "usbd_cdc_if.h"
+
+#define VERBOSE 1
 
 #if defined(PATCHOULI_PCB_DISCRETE_SST)
   #include "patchouli_bsp_discrete_sst.h"
@@ -118,30 +121,37 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM16_Init();
   MX_USART1_UART_Init();
-  MX_TIM2_Init();
   MX_RTC_Init();
-  MX_USB_PCD_Init();
+  MX_USB_Device_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
     // CDC_Transmit_FS("Hello World", 12);
-    MX_USB_DEVICE_Init();
-  HAL_Delay(500);
+    MX_USB_Device_Init();
+  HAL_Delay(1000);
+  CDC_Transmit_FS("Hello World\n", 13);
+  CDC_Transmit_FS("Hello Worldaa\n", 15);
 
-  // patchouli_init();
-  // patchouli_set_mode(PATCHOULI_DEBUG_NONE);
-  // CDC_ACM_Transmit("Glider Addon Build\r\n", 21);
-  // CDC_Transmit_FS("Init Done\r\n", 12);
+  patchouli_init();
+  patchouli_set_mode(PATCHOULI_DEBUG_PEN_SCAN);
+  HAL_Delay(1000);
+  
+  // CDC_Transmit_FS("Init Done\n", 11);
   // CDC_Transmit_FS("SYSCLK: ", 9);
   // char buf[10];
   // sprintf(buf, "%d", (int)(HAL_RCC_GetSysClockFreq()/1.0e6f));
   // CDC_Transmit_FS(buf, strlen(buf));
-  // CDC_Transmit_FS(" MHz\r\n", 7);
-  // htim1.Instance->RCR=50;
-	// GPIO_InitTypeDef GPIO_InitStruct = {0};
-	// GPIO_InitStruct.Pin  = GPIO_PIN_13;
-	// GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	// GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-	// HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  // CDC_Transmit_FS(" MHz", 7);
+  htim16.Instance->RCR=50;
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+	GPIO_InitStruct.Pin  = GPIO_PIN_6;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  // CDC_Transmit_FS("Glider Addon Build\n", 20);
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  CDC_Transmit_FS("Glider Addon Build2\n", 20);
+  HAL_Delay(1000);
+  CDC_Transmit_FS("Glider Addon Build3\n", 20);
+
 
   /* USER CODE END 2 */
 
@@ -157,8 +167,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     // Process Linea library
-    // CDC_Transmit_FS("x", 1);
-    // patchouli_cycle();
+    patchouli_cycle();
     // linea_cycle();
   }
   /* USER CODE END 3 */

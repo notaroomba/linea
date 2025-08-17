@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../Downloads/patchouli-main/firmware"
+		}
+	],
+	"settings": {
+		"cortex-debug.armToolchainPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN",
+		"cortex-debug.openocdPath": "C:\\USERS\\NATHAN\\DOWNLOADS\\OPENOCD-V0.12.0-I686-W64-MINGW32\\BIN\\OPENOCD.EXE",
+		"files.associations": {
+			"ble_manager.h": "c",
+			"linea.h": "c",
+			"patchouli.h": "c",
+			"patchouli_config.h": "c",
+			"stdio.h": "c",
+			"usbd_cdc_acm.h": "c",
+			"al94.i-cube-usbd-composite_conf.h": "c",
+			"usbd_def.h": "c",
+			"patchouli_bsp_glider_addon_v1.h": "c",
+			"usbd_hid_custom.h": "c",
+			"usbd_ctlreq.h": "c",
+			"gpio.h": "c",
+			"usb_device.h": "c",
+			"usbd_cdc_if.h": "c",
+			"stm32wbxx_hal.h": "c",
+			"usbd_conf.h": "c",
+			"stm32wbxx.h": "c",
+			"usbd_desc.h": "c",
+			"stdint.h": "c",
+			"patchouli_math.h": "c",
+			"patchouli_bsp.h": "c",
+			"cmath": "c",
+			"usbd_core.h": "c",
+			"stm32wb55xx.h": "c",
+			"stdlib.h": "c"
+		}
+	}
+}

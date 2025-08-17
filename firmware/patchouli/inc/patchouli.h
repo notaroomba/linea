@@ -61,7 +61,8 @@ typedef enum {
     PATCHOULI_DEBUG_XSCAN,  // X Scan
     PATCHOULI_DEBUG_YSCAN,  // Y Scan
     PATCHOULI_DEBUG_PSCAN,  // Pressure Scan
-    PATCHOULI_DEBUG_XYTRACK
+    PATCHOULI_DEBUG_XYTRACK, // X-Y Tracking
+    PATCHOULI_DEBUG_PEN_SCAN // Passive pen parameter scan
 } patchouli_debug_t;
 
 typedef struct {

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -71,10 +71,12 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   38:Core/Src/gpio.c ****         * Output
   39:Core/Src/gpio.c ****         * EVENT_OUT
   40:Core/Src/gpio.c ****         * EXTI
-  41:Core/Src/gpio.c **** */
-  42:Core/Src/gpio.c **** void MX_GPIO_Init(void)
-  43:Core/Src/gpio.c **** {
-  29              		.loc 1 43 1 view -0
+  41:Core/Src/gpio.c ****      PA1   ------> S_TIM2_CH2
+  42:Core/Src/gpio.c ****      PA2   ------> S_TIM2_CH3
+  43:Core/Src/gpio.c **** */
+  44:Core/Src/gpio.c **** void MX_GPIO_Init(void)
+  45:Core/Src/gpio.c **** {
+  29              		.loc 1 45 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 40
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -88,20 +90,20 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   40              		.cfi_offset 14, -4
   41 0004 8AB0     		sub	sp, sp, #40
   42              		.cfi_def_cfa_offset 64
-  44:Core/Src/gpio.c **** 
-  45:Core/Src/gpio.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  43              		.loc 1 45 3 view .LVU1
-  44              		.loc 1 45 20 is_stmt 0 view .LVU2
+  46:Core/Src/gpio.c **** 
+  47:Core/Src/gpio.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  43              		.loc 1 47 3 view .LVU1
+  44              		.loc 1 47 20 is_stmt 0 view .LVU2
   45 0006 0024     		movs	r4, #0
   46 0008 0594     		str	r4, [sp, #20]
   47 000a 0694     		str	r4, [sp, #24]
   48 000c 0794     		str	r4, [sp, #28]
   49 000e 0894     		str	r4, [sp, #32]
   50 0010 0994     		str	r4, [sp, #36]
-  46:Core/Src/gpio.c **** 
-  47:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
-  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOC_CLK_ENABLE();
-  51              		.loc 1 48 3 is_stmt 1 view .LVU3
+  48:Core/Src/gpio.c **** 
+  49:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
+  50:Core/Src/gpio.c ****   __HAL_RCC_GPIOC_CLK_ENABLE();
+  51              		.loc 1 50 3 is_stmt 1 view .LVU3
   52              	.LVL0:
   53              	.LBB12:
   54              	.LBI12:
@@ -116,11 +118,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
    8:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
    9:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * Copyright (c) 2019 STMicroelectronics.
   10:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * All rights reserved.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 3
+
+
   11:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
   12:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * This software is licensed under terms that can be found in the LICENSE file
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 3
-
-
   13:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * in the root directory of this software component.
   14:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * If no LICENSE file comes with this software, it is provided AS-IS.
   15:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
@@ -176,11 +178,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   65:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
   66:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Exported constants --------------------------------------------------------*/
   67:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_Exported_Constants BUS Exported Constants
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 4
+
+
   68:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
   69:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 4
-
-
   70:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
   71:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_AHB1_GRP1_PERIPH  AHB1 GRP1 PERIPH
   72:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
@@ -236,11 +238,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  122:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_RNG            RCC_AHB3ENR_RNGEN
  123:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_HSEM           RCC_AHB3ENR_HSEMEN
  124:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_IPCC           RCC_AHB3ENR_IPCCEN
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 5
+
+
  125:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_SRAM2          RCC_AHB3SMENR_SRAM2SMEN
  126:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_FLASH          RCC_AHB3ENR_FLASHEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 5
-
-
  127:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  128:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
  129:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
@@ -296,11 +298,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  179:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_ADC            RCC_APB2ENR_ADCEN
  180:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* ADC_SUPPORT_2_5_MSPS */
  181:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_TIM1           RCC_APB2ENR_TIM1EN
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 6
+
+
  182:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_SPI1           RCC_APB2ENR_SPI1EN
  183:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_USART1         RCC_APB2ENR_USART1EN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 6
-
-
  184:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(TIM16)
  185:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_TIM16          RCC_APB2ENR_TIM16EN
  186:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* TIM16 */
@@ -356,11 +358,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  236:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(ADC_SUPPORT_5_MSPS)
  237:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_ADC          RCC_C2AHB2ENR_ADCEN
  238:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* ADC_SUPPORT_5_MSPS */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 7
+
+
  239:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(AES1)
  240:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_AES1         RCC_C2AHB2ENR_AES1EN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 7
-
-
  241:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* AES1 */
  242:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /**
  243:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
@@ -416,11 +418,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  293:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
  294:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  295:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 8
+
+
  296:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  297:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_C2_APB2_GRP1_PERIPH  C2 APB2 GRP1 PERIPH
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 8
-
-
  298:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
  299:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  300:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(ADC_SUPPORT_2_5_MSPS)
@@ -476,11 +478,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  350:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB1ENR      DMA1EN        LL_AHB1_GRP1_EnableClock\n
  351:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMA2EN        LL_AHB1_GRP1_EnableClock\n
  352:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMAMUX1EN      LL_AHB1_GRP1_EnableClock\n
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 9
+
+
  353:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      CRCEN         LL_AHB1_GRP1_EnableClock\n
  354:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      TSCEN         LL_AHB1_GRP1_EnableClock
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 9
-
-
  355:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  356:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA1
  357:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA2 (*)
@@ -536,11 +538,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  407:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
  408:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
  409:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 10
+
+
  410:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB1_GRP1_DisableClock(uint32_t Periphs)
  411:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 10
-
-
  412:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   CLEAR_BIT(RCC->AHB1ENR, Periphs);
  413:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
  414:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -596,11 +598,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  464:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    SRAM1SMEN     LL_AHB1_GRP1_EnableClockSleep\n
  465:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    CRCSMEN       LL_AHB1_GRP1_EnableClockSleep\n
  466:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    TSCSMEN       LL_AHB1_GRP1_EnableClockSleep
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 11
+
+
  467:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  468:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 11
-
-
  469:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA2 (*)
  470:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMAMUX1
  471:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_SRAM1
@@ -656,11 +658,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  521:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOCEN       LL_AHB2_GRP1_EnableClock\n
  522:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIODEN       LL_AHB2_GRP1_EnableClock\n
  523:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOEEN       LL_AHB2_GRP1_EnableClock\n
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 12
+
+
  524:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOHEN       LL_AHB2_GRP1_EnableClock\n
  525:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      ADCEN         LL_AHB2_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 12
-
-
  526:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      AES1EN        LL_AHB2_GRP1_EnableClock
  527:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  528:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOA
@@ -701,8 +703,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   73              		.loc 2 545 3 is_stmt 0 view .LVU11
   74              	.LBE13:
   75              	.LBE12:
-  49:Core/Src/gpio.c ****   __HAL_RCC_GPIOH_CLK_ENABLE();
-  76              		.loc 1 49 3 is_stmt 1 view .LVU12
+  51:Core/Src/gpio.c ****   __HAL_RCC_GPIOH_CLK_ENABLE();
+  76              		.loc 1 51 3 is_stmt 1 view .LVU12
   77              	.LBB14:
   78              	.LBI14:
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
@@ -716,11 +718,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   84 002a 42F08002 		orr	r2, r2, #128
   85 002e DA64     		str	r2, [r3, #76]
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 13
+
+
   86              		.loc 2 544 3 view .LVU16
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 13
-
-
   87              		.loc 2 544 12 is_stmt 0 view .LVU17
   88 0030 DA6C     		ldr	r2, [r3, #76]
   89 0032 02F08002 		and	r2, r2, #128
@@ -733,8 +735,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
   95              		.loc 2 545 3 is_stmt 0 view .LVU20
   96              	.LBE15:
   97              	.LBE14:
-  50:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
-  98              		.loc 1 50 3 is_stmt 1 view .LVU21
+  52:Core/Src/gpio.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  98              		.loc 1 52 3 is_stmt 1 view .LVU21
   99              	.LBB16:
  100              	.LBI16:
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
@@ -762,8 +764,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  117              		.loc 2 545 3 is_stmt 0 view .LVU29
  118              	.LBE17:
  119              	.LBE16:
-  51:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
- 120              		.loc 1 51 3 is_stmt 1 view .LVU30
+  53:Core/Src/gpio.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+ 120              		.loc 1 53 3 is_stmt 1 view .LVU30
  121              	.LBB18:
  122              	.LBI18:
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
@@ -776,11 +778,11 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  127 004c DA6C     		ldr	r2, [r3, #76]
  128 004e 42F00102 		orr	r2, r2, #1
  129 0052 DA64     		str	r2, [r3, #76]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 14
+
+
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
  130              		.loc 2 544 3 view .LVU34
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 14
-
-
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
  131              		.loc 2 544 12 is_stmt 0 view .LVU35
  132 0054 DA6C     		ldr	r2, [r3, #76]
@@ -794,8 +796,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  139              		.loc 2 545 3 is_stmt 0 view .LVU38
  140              	.LBE19:
  141              	.LBE18:
-  52:Core/Src/gpio.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
- 142              		.loc 1 52 3 is_stmt 1 view .LVU39
+  54:Core/Src/gpio.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
+ 142              		.loc 1 54 3 is_stmt 1 view .LVU39
  143              	.LBB20:
  144              	.LBI20:
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
@@ -823,230 +825,260 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 1
  161              		.loc 2 545 3 is_stmt 0 view .LVU47
  162              	.LBE21:
  163              	.LBE20:
-  53:Core/Src/gpio.c **** 
-  54:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
-  55:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOA, S2_Pin|S1_Pin, GPIO_PIN_RESET);
- 164              		.loc 1 55 3 is_stmt 1 view .LVU48
+  55:Core/Src/gpio.c **** 
+  56:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
+  57:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOA, DISCHARGE_Pin|S2_Pin|S1_Pin, GPIO_PIN_RESET);
+ 164              		.loc 1 57 3 is_stmt 1 view .LVU48
  165 0070 2246     		mov	r2, r4
- 166 0072 4FF44041 		mov	r1, #49152
+ 166 0072 4CF20101 		movw	r1, #49153
  167 0076 4FF09040 		mov	r0, #1207959552
  168 007a FFF7FEFF 		bl	HAL_GPIO_WritePin
  169              	.LVL6:
-  56:Core/Src/gpio.c **** 
-  57:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
-  58:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOC, S0_Pin|E5N_Pin, GPIO_PIN_RESET);
- 170              		.loc 1 58 3 view .LVU49
- 171 007e 284E     		ldr	r6, .L3
+  58:Core/Src/gpio.c **** 
+  59:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
+  60:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOC, S0_Pin|E5N_Pin, GPIO_PIN_RESET);
+ 170              		.loc 1 60 3 view .LVU49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 15
+
+
+ 171 007e 2E4E     		ldr	r6, .L3
  172 0080 2246     		mov	r2, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 15
-
-
  173 0082 4FF4A051 		mov	r1, #5120
  174 0086 3046     		mov	r0, r6
  175 0088 FFF7FEFF 		bl	HAL_GPIO_WritePin
  176              	.LVL7:
-  59:Core/Src/gpio.c **** 
-  60:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
-  61:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOD, E4N_Pin|E3N_Pin, GPIO_PIN_RESET);
- 177              		.loc 1 61 3 view .LVU50
- 178 008c DFF89C80 		ldr	r8, .L3+12
+  61:Core/Src/gpio.c **** 
+  62:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
+  63:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOD, E4N_Pin|E3N_Pin, GPIO_PIN_RESET);
+ 177              		.loc 1 63 3 view .LVU50
+ 178 008c DFF8B480 		ldr	r8, .L3+12
  179 0090 2246     		mov	r2, r4
  180 0092 0321     		movs	r1, #3
  181 0094 4046     		mov	r0, r8
  182 0096 FFF7FEFF 		bl	HAL_GPIO_WritePin
  183              	.LVL8:
-  62:Core/Src/gpio.c **** 
-  63:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
-  64:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOB, E2N_Pin|E1N_Pin|E0N_Pin, GPIO_PIN_RESET);
- 184              		.loc 1 64 3 view .LVU51
- 185 009a 224F     		ldr	r7, .L3+4
+  64:Core/Src/gpio.c **** 
+  65:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
+  66:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOB, E2N_Pin|E1N_Pin|E0N_Pin, GPIO_PIN_RESET);
+ 184              		.loc 1 66 3 view .LVU51
+ 185 009a 284F     		ldr	r7, .L3+4
  186 009c 2246     		mov	r2, r4
  187 009e 3821     		movs	r1, #56
  188 00a0 3846     		mov	r0, r7
  189 00a2 FFF7FEFF 		bl	HAL_GPIO_WritePin
  190              	.LVL9:
-  65:Core/Src/gpio.c **** 
-  66:Core/Src/gpio.c ****   /*Configure GPIO pin : PC13 */
-  67:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_13;
- 191              		.loc 1 67 3 view .LVU52
- 192              		.loc 1 67 23 is_stmt 0 view .LVU53
+  67:Core/Src/gpio.c **** 
+  68:Core/Src/gpio.c ****   /*Configure GPIO pin : PC13 */
+  69:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_13;
+ 191              		.loc 1 69 3 view .LVU52
+ 192              		.loc 1 69 23 is_stmt 0 view .LVU53
  193 00a6 4FF40053 		mov	r3, #8192
  194 00aa 0593     		str	r3, [sp, #20]
-  68:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
- 195              		.loc 1 68 3 is_stmt 1 view .LVU54
- 196              		.loc 1 68 24 is_stmt 0 view .LVU55
+  70:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+ 195              		.loc 1 70 3 is_stmt 1 view .LVU54
+ 196              		.loc 1 70 24 is_stmt 0 view .LVU55
  197 00ac 0694     		str	r4, [sp, #24]
-  69:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 198              		.loc 1 69 3 is_stmt 1 view .LVU56
- 199              		.loc 1 69 24 is_stmt 0 view .LVU57
+  71:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 198              		.loc 1 71 3 is_stmt 1 view .LVU56
+ 199              		.loc 1 71 24 is_stmt 0 view .LVU57
  200 00ae 0794     		str	r4, [sp, #28]
-  70:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
- 201              		.loc 1 70 3 is_stmt 1 view .LVU58
+  72:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+ 201              		.loc 1 72 3 is_stmt 1 view .LVU58
  202 00b0 05A9     		add	r1, sp, #20
  203 00b2 3046     		mov	r0, r6
  204 00b4 FFF7FEFF 		bl	HAL_GPIO_Init
  205              	.LVL10:
-  71:Core/Src/gpio.c **** 
-  72:Core/Src/gpio.c ****   /*Configure GPIO pin : PH3 */
-  73:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_3;
- 206              		.loc 1 73 3 view .LVU59
- 207              		.loc 1 73 23 is_stmt 0 view .LVU60
+  73:Core/Src/gpio.c **** 
+  74:Core/Src/gpio.c ****   /*Configure GPIO pin : PH3 */
+  75:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_3;
+ 206              		.loc 1 75 3 view .LVU59
+ 207              		.loc 1 75 23 is_stmt 0 view .LVU60
  208 00b8 0823     		movs	r3, #8
  209 00ba 0593     		str	r3, [sp, #20]
-  74:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
- 210              		.loc 1 74 3 is_stmt 1 view .LVU61
- 211              		.loc 1 74 24 is_stmt 0 view .LVU62
+  76:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+ 210              		.loc 1 76 3 is_stmt 1 view .LVU61
+ 211              		.loc 1 76 24 is_stmt 0 view .LVU62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 16
+
+
  212 00bc 0694     		str	r4, [sp, #24]
-  75:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 16
-
-
- 213              		.loc 1 75 3 is_stmt 1 view .LVU63
- 214              		.loc 1 75 24 is_stmt 0 view .LVU64
+  77:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 213              		.loc 1 77 3 is_stmt 1 view .LVU63
+ 214              		.loc 1 77 24 is_stmt 0 view .LVU64
  215 00be 0794     		str	r4, [sp, #28]
-  76:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
- 216              		.loc 1 76 3 is_stmt 1 view .LVU65
+  78:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+ 216              		.loc 1 78 3 is_stmt 1 view .LVU65
  217 00c0 05A9     		add	r1, sp, #20
- 218 00c2 1948     		ldr	r0, .L3+8
+ 218 00c2 1F48     		ldr	r0, .L3+8
  219 00c4 FFF7FEFF 		bl	HAL_GPIO_Init
  220              	.LVL11:
-  77:Core/Src/gpio.c **** 
-  78:Core/Src/gpio.c ****   /*Configure GPIO pins : S2_Pin S1_Pin */
-  79:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = S2_Pin|S1_Pin;
- 221              		.loc 1 79 3 view .LVU66
- 222              		.loc 1 79 23 is_stmt 0 view .LVU67
- 223 00c8 4FF44043 		mov	r3, #49152
+  79:Core/Src/gpio.c **** 
+  80:Core/Src/gpio.c ****   /*Configure GPIO pins : DISCHARGE_Pin S2_Pin S1_Pin */
+  81:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = DISCHARGE_Pin|S2_Pin|S1_Pin;
+ 221              		.loc 1 81 3 view .LVU66
+ 222              		.loc 1 81 23 is_stmt 0 view .LVU67
+ 223 00c8 4CF20103 		movw	r3, #49153
  224 00cc 0593     		str	r3, [sp, #20]
-  80:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 225              		.loc 1 80 3 is_stmt 1 view .LVU68
- 226              		.loc 1 80 24 is_stmt 0 view .LVU69
+  82:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 225              		.loc 1 82 3 is_stmt 1 view .LVU68
+ 226              		.loc 1 82 24 is_stmt 0 view .LVU69
  227 00ce 0125     		movs	r5, #1
  228 00d0 0695     		str	r5, [sp, #24]
-  81:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 229              		.loc 1 81 3 is_stmt 1 view .LVU70
- 230              		.loc 1 81 24 is_stmt 0 view .LVU71
+  83:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 229              		.loc 1 83 3 is_stmt 1 view .LVU70
+ 230              		.loc 1 83 24 is_stmt 0 view .LVU71
  231 00d2 0794     		str	r4, [sp, #28]
-  82:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 232              		.loc 1 82 3 is_stmt 1 view .LVU72
- 233              		.loc 1 82 25 is_stmt 0 view .LVU73
+  84:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 232              		.loc 1 84 3 is_stmt 1 view .LVU72
+ 233              		.loc 1 84 25 is_stmt 0 view .LVU73
  234 00d4 0894     		str	r4, [sp, #32]
-  83:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 235              		.loc 1 83 3 is_stmt 1 view .LVU74
+  85:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 235              		.loc 1 85 3 is_stmt 1 view .LVU74
  236 00d6 05A9     		add	r1, sp, #20
  237 00d8 4FF09040 		mov	r0, #1207959552
  238 00dc FFF7FEFF 		bl	HAL_GPIO_Init
  239              	.LVL12:
-  84:Core/Src/gpio.c **** 
-  85:Core/Src/gpio.c ****   /*Configure GPIO pins : S0_Pin E5N_Pin */
-  86:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = S0_Pin|E5N_Pin;
- 240              		.loc 1 86 3 view .LVU75
- 241              		.loc 1 86 23 is_stmt 0 view .LVU76
- 242 00e0 4FF4A053 		mov	r3, #5120
- 243 00e4 0593     		str	r3, [sp, #20]
-  87:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 244              		.loc 1 87 3 is_stmt 1 view .LVU77
- 245              		.loc 1 87 24 is_stmt 0 view .LVU78
- 246 00e6 0695     		str	r5, [sp, #24]
-  88:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 247              		.loc 1 88 3 is_stmt 1 view .LVU79
- 248              		.loc 1 88 24 is_stmt 0 view .LVU80
- 249 00e8 0794     		str	r4, [sp, #28]
-  89:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 250              		.loc 1 89 3 is_stmt 1 view .LVU81
- 251              		.loc 1 89 25 is_stmt 0 view .LVU82
- 252 00ea 0894     		str	r4, [sp, #32]
-  90:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
- 253              		.loc 1 90 3 is_stmt 1 view .LVU83
- 254 00ec 05A9     		add	r1, sp, #20
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 17
+  86:Core/Src/gpio.c **** 
+  87:Core/Src/gpio.c ****   /*Configure GPIO pins : PA1 PA2 */
+  88:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2;
+ 240              		.loc 1 88 3 view .LVU75
+ 241              		.loc 1 88 23 is_stmt 0 view .LVU76
+ 242 00e0 0623     		movs	r3, #6
+ 243 00e2 0593     		str	r3, [sp, #20]
+  89:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 244              		.loc 1 89 3 is_stmt 1 view .LVU77
+ 245              		.loc 1 89 24 is_stmt 0 view .LVU78
+ 246 00e4 0223     		movs	r3, #2
+ 247 00e6 0693     		str	r3, [sp, #24]
+  90:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 248              		.loc 1 90 3 is_stmt 1 view .LVU79
+ 249              		.loc 1 90 24 is_stmt 0 view .LVU80
+ 250 00e8 0794     		str	r4, [sp, #28]
+  91:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 251              		.loc 1 91 3 is_stmt 1 view .LVU81
+ 252              		.loc 1 91 25 is_stmt 0 view .LVU82
+ 253 00ea 0894     		str	r4, [sp, #32]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 17
 
 
- 255 00ee 3046     		mov	r0, r6
- 256 00f0 FFF7FEFF 		bl	HAL_GPIO_Init
- 257              	.LVL13:
-  91:Core/Src/gpio.c **** 
-  92:Core/Src/gpio.c ****   /*Configure GPIO pins : E4N_Pin E3N_Pin */
-  93:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = E4N_Pin|E3N_Pin;
- 258              		.loc 1 93 3 view .LVU84
- 259              		.loc 1 93 23 is_stmt 0 view .LVU85
- 260 00f4 0323     		movs	r3, #3
- 261 00f6 0593     		str	r3, [sp, #20]
-  94:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 262              		.loc 1 94 3 is_stmt 1 view .LVU86
- 263              		.loc 1 94 24 is_stmt 0 view .LVU87
- 264 00f8 0695     		str	r5, [sp, #24]
-  95:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 265              		.loc 1 95 3 is_stmt 1 view .LVU88
- 266              		.loc 1 95 24 is_stmt 0 view .LVU89
- 267 00fa 0794     		str	r4, [sp, #28]
-  96:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 268              		.loc 1 96 3 is_stmt 1 view .LVU90
- 269              		.loc 1 96 25 is_stmt 0 view .LVU91
- 270 00fc 0894     		str	r4, [sp, #32]
-  97:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
- 271              		.loc 1 97 3 is_stmt 1 view .LVU92
- 272 00fe 05A9     		add	r1, sp, #20
- 273 0100 4046     		mov	r0, r8
- 274 0102 FFF7FEFF 		bl	HAL_GPIO_Init
- 275              	.LVL14:
-  98:Core/Src/gpio.c **** 
-  99:Core/Src/gpio.c ****   /*Configure GPIO pins : E2N_Pin E1N_Pin E0N_Pin */
- 100:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = E2N_Pin|E1N_Pin|E0N_Pin;
- 276              		.loc 1 100 3 view .LVU93
- 277              		.loc 1 100 23 is_stmt 0 view .LVU94
- 278 0106 3823     		movs	r3, #56
- 279 0108 0593     		str	r3, [sp, #20]
- 101:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 280              		.loc 1 101 3 is_stmt 1 view .LVU95
- 281              		.loc 1 101 24 is_stmt 0 view .LVU96
- 282 010a 0695     		str	r5, [sp, #24]
- 102:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 283              		.loc 1 102 3 is_stmt 1 view .LVU97
- 284              		.loc 1 102 24 is_stmt 0 view .LVU98
- 285 010c 0794     		str	r4, [sp, #28]
- 103:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 286              		.loc 1 103 3 is_stmt 1 view .LVU99
- 287              		.loc 1 103 25 is_stmt 0 view .LVU100
- 288 010e 0894     		str	r4, [sp, #32]
- 104:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
- 289              		.loc 1 104 3 is_stmt 1 view .LVU101
- 290 0110 05A9     		add	r1, sp, #20
- 291 0112 3846     		mov	r0, r7
- 292 0114 FFF7FEFF 		bl	HAL_GPIO_Init
- 293              	.LVL15:
- 105:Core/Src/gpio.c **** 
- 106:Core/Src/gpio.c **** }
- 294              		.loc 1 106 1 is_stmt 0 view .LVU102
- 295 0118 0AB0     		add	sp, sp, #40
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 18
+  92:Core/Src/gpio.c ****   GPIO_InitStruct.Alternate = GPIO_AF1_TIM2;
+ 254              		.loc 1 92 3 is_stmt 1 view .LVU83
+ 255              		.loc 1 92 29 is_stmt 0 view .LVU84
+ 256 00ec 0995     		str	r5, [sp, #36]
+  93:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+ 257              		.loc 1 93 3 is_stmt 1 view .LVU85
+ 258 00ee 05A9     		add	r1, sp, #20
+ 259 00f0 4FF09040 		mov	r0, #1207959552
+ 260 00f4 FFF7FEFF 		bl	HAL_GPIO_Init
+ 261              	.LVL13:
+  94:Core/Src/gpio.c **** 
+  95:Core/Src/gpio.c ****   /*Configure GPIO pins : S0_Pin E5N_Pin */
+  96:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = S0_Pin|E5N_Pin;
+ 262              		.loc 1 96 3 view .LVU86
+ 263              		.loc 1 96 23 is_stmt 0 view .LVU87
+ 264 00f8 4FF4A053 		mov	r3, #5120
+ 265 00fc 0593     		str	r3, [sp, #20]
+  97:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 266              		.loc 1 97 3 is_stmt 1 view .LVU88
+ 267              		.loc 1 97 24 is_stmt 0 view .LVU89
+ 268 00fe 0695     		str	r5, [sp, #24]
+  98:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 269              		.loc 1 98 3 is_stmt 1 view .LVU90
+ 270              		.loc 1 98 24 is_stmt 0 view .LVU91
+ 271 0100 0794     		str	r4, [sp, #28]
+  99:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 272              		.loc 1 99 3 is_stmt 1 view .LVU92
+ 273              		.loc 1 99 25 is_stmt 0 view .LVU93
+ 274 0102 0894     		str	r4, [sp, #32]
+ 100:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+ 275              		.loc 1 100 3 is_stmt 1 view .LVU94
+ 276 0104 05A9     		add	r1, sp, #20
+ 277 0106 3046     		mov	r0, r6
+ 278 0108 FFF7FEFF 		bl	HAL_GPIO_Init
+ 279              	.LVL14:
+ 101:Core/Src/gpio.c **** 
+ 102:Core/Src/gpio.c ****   /*Configure GPIO pins : E4N_Pin E3N_Pin */
+ 103:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = E4N_Pin|E3N_Pin;
+ 280              		.loc 1 103 3 view .LVU95
+ 281              		.loc 1 103 23 is_stmt 0 view .LVU96
+ 282 010c 0323     		movs	r3, #3
+ 283 010e 0593     		str	r3, [sp, #20]
+ 104:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 284              		.loc 1 104 3 is_stmt 1 view .LVU97
+ 285              		.loc 1 104 24 is_stmt 0 view .LVU98
+ 286 0110 0695     		str	r5, [sp, #24]
+ 105:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 287              		.loc 1 105 3 is_stmt 1 view .LVU99
+ 288              		.loc 1 105 24 is_stmt 0 view .LVU100
+ 289 0112 0794     		str	r4, [sp, #28]
+ 106:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 290              		.loc 1 106 3 is_stmt 1 view .LVU101
+ 291              		.loc 1 106 25 is_stmt 0 view .LVU102
+ 292 0114 0894     		str	r4, [sp, #32]
+ 107:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 293              		.loc 1 107 3 is_stmt 1 view .LVU103
+ 294 0116 05A9     		add	r1, sp, #20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 18
 
 
- 296              		.cfi_def_cfa_offset 24
- 297              		@ sp needed
- 298 011a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 299              	.L4:
- 300 011e 00BF     		.align	2
- 301              	.L3:
- 302 0120 00080048 		.word	1207961600
- 303 0124 00040048 		.word	1207960576
- 304 0128 001C0048 		.word	1207966720
- 305 012c 000C0048 		.word	1207962624
- 306              		.cfi_endproc
- 307              	.LFE1415:
- 309              		.text
- 310              	.Letext0:
- 311              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
- 312              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 313              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
- 314              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s 			page 19
+ 295 0118 4046     		mov	r0, r8
+ 296 011a FFF7FEFF 		bl	HAL_GPIO_Init
+ 297              	.LVL15:
+ 108:Core/Src/gpio.c **** 
+ 109:Core/Src/gpio.c ****   /*Configure GPIO pins : E2N_Pin E1N_Pin E0N_Pin */
+ 110:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = E2N_Pin|E1N_Pin|E0N_Pin;
+ 298              		.loc 1 110 3 view .LVU104
+ 299              		.loc 1 110 23 is_stmt 0 view .LVU105
+ 300 011e 3823     		movs	r3, #56
+ 301 0120 0593     		str	r3, [sp, #20]
+ 111:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 302              		.loc 1 111 3 is_stmt 1 view .LVU106
+ 303              		.loc 1 111 24 is_stmt 0 view .LVU107
+ 304 0122 0695     		str	r5, [sp, #24]
+ 112:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 305              		.loc 1 112 3 is_stmt 1 view .LVU108
+ 306              		.loc 1 112 24 is_stmt 0 view .LVU109
+ 307 0124 0794     		str	r4, [sp, #28]
+ 113:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 308              		.loc 1 113 3 is_stmt 1 view .LVU110
+ 309              		.loc 1 113 25 is_stmt 0 view .LVU111
+ 310 0126 0894     		str	r4, [sp, #32]
+ 114:Core/Src/gpio.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+ 311              		.loc 1 114 3 is_stmt 1 view .LVU112
+ 312 0128 05A9     		add	r1, sp, #20
+ 313 012a 3846     		mov	r0, r7
+ 314 012c FFF7FEFF 		bl	HAL_GPIO_Init
+ 315              	.LVL16:
+ 115:Core/Src/gpio.c **** 
+ 116:Core/Src/gpio.c **** }
+ 316              		.loc 1 116 1 is_stmt 0 view .LVU113
+ 317 0130 0AB0     		add	sp, sp, #40
+ 318              		.cfi_def_cfa_offset 24
+ 319              		@ sp needed
+ 320 0132 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 321              	.L4:
+ 322 0136 00BF     		.align	2
+ 323              	.L3:
+ 324 0138 00080048 		.word	1207961600
+ 325 013c 00040048 		.word	1207960576
+ 326 0140 001C0048 		.word	1207966720
+ 327 0144 000C0048 		.word	1207962624
+ 328              		.cfi_endproc
+ 329              	.LFE1415:
+ 331              		.text
+ 332              	.Letext0:
+ 333              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 334              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 335              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 336              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Nathan\AppData\Local\Temp\ccwLSUQH.s:302    .text.MX_GPIO_Init:00000120 $d
+C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\cch5agnz.s:324    .text.MX_GPIO_Init:00000138 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

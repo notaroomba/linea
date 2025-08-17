@@ -62,12 +62,17 @@ build/debug/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_bufsize.h Core/Inc/app_entry.h \
  Core/Inc/app_common.h Core/Inc/adc.h Core/Inc/main.h Core/Inc/i2c.h \
  Core/Inc/ipcc.h Core/Inc/memorymap.h Core/Inc/rf.h Core/Inc/rtc.h \
- Core/Inc/tim.h Core/Inc/usart.h Core/Inc/usb.h Core/Inc/gpio.h \
+ Core/Inc/tim.h Core/Inc/usart.h USB_Device/App/usb_device.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ USB_Device/Target/usbd_conf.h Core/Inc/gpio.h \
  Core/Src/patchouli_config.h patchouli/inc/patchouli.h \
- Core/Src/patchouli_config.h \
- Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h \
- Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h \
- Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h \
+ Core/Src/patchouli_config.h USB_Device/App/usbd_cdc_if.h \
+ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
  patchouli/inc/patchouli_bsp_glider_addon_v1.h patchouli/inc/patchouli.h \
  patchouli/inc/patchouli_passive_pen.h
 Core/Inc/main.h:
@@ -146,14 +151,20 @@ Core/Inc/rf.h:
 Core/Inc/rtc.h:
 Core/Inc/tim.h:
 Core/Inc/usart.h:
-Core/Inc/usb.h:
+USB_Device/App/usb_device.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+USB_Device/Target/usbd_conf.h:
 Core/Inc/gpio.h:
 Core/Src/patchouli_config.h:
 patchouli/inc/patchouli.h:
 Core/Src/patchouli_config.h:
-Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/App/usb_device.h:
-Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Core/Inc/usbd_def.h:
-Middlewares/Third_Party/AL94_USB_Composite/COMPOSITE/Target/usbd_conf.h:
+USB_Device/App/usbd_cdc_if.h:
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 patchouli/inc/patchouli_bsp_glider_addon_v1.h:
 patchouli/inc/patchouli.h:
 patchouli/inc/patchouli_passive_pen.h:

@@ -22,6 +22,7 @@
 // -- Define the type of pen
 // #define PATCHOULI_PEN_PW550
 #define PATCHOULI_PEN_PW100
+// #define PATCHOULI_PEN_LP1100K
 
 // -- Define the type of PCB
 // #define PATCHOULI_PCB_DISCRETE_SST
@@ -29,7 +30,7 @@
 
 // -- Define the Log level
 // Higher level may lead to performance issues
-#define PATCHOULI_DEBUG_LEVEL 3U
+#define PATCHOULI_DEBUG_LEVEL 0U
 
 // Subtracting base level when sampling
 #define PATCHOULI_CDS
