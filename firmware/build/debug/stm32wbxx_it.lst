@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
   28:Core/Src/stm32wbxx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32wbxx_it.c **** 
   30:Core/Src/stm32wbxx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 2
 
 
   31:Core/Src/stm32wbxx_it.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
   78:Core/Src/stm32wbxx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
   79:Core/Src/stm32wbxx_it.c ****    while (1)
   36              		.loc 1 79 4 view .LVU1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 3
 
 
   80:Core/Src/stm32wbxx_it.c ****   {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
   98:Core/Src/stm32wbxx_it.c **** }
   99:Core/Src/stm32wbxx_it.c **** 
  100:Core/Src/stm32wbxx_it.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 4
 
 
  101:Core/Src/stm32wbxx_it.c ****   * @brief This function handles Memory management fault.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  125:Core/Src/stm32wbxx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
  126:Core/Src/stm32wbxx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
  127:Core/Src/stm32wbxx_it.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 5
 
 
  106              		.loc 1 127 3 view .LVU14
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  146:Core/Src/stm32wbxx_it.c ****   * @brief This function handles System service call via SWI instruction.
  147:Core/Src/stm32wbxx_it.c ****   */
  148:Core/Src/stm32wbxx_it.c **** void SVC_Handler(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 6
 
 
  149:Core/Src/stm32wbxx_it.c **** {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  181              	.LFB1422:
  170:Core/Src/stm32wbxx_it.c **** 
  171:Core/Src/stm32wbxx_it.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 7
 
 
  172:Core/Src/stm32wbxx_it.c ****   * @brief This function handles Pendable request for system service.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  213 0006 08BD     		pop	{r3, pc}
  214              		.cfi_endproc
  215              	.LFE1423:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 8
 
 
  217              		.section	.text.RTC_WKUP_IRQHandler,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  220:Core/Src/stm32wbxx_it.c ****   * @brief This function handles USB high priority interrupt.
  221:Core/Src/stm32wbxx_it.c ****   */
  222:Core/Src/stm32wbxx_it.c **** void USB_HP_IRQHandler(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 9
 
 
  223:Core/Src/stm32wbxx_it.c **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  241:Core/Src/stm32wbxx_it.c ****   HAL_PCD_IRQHandler(&hpcd_USB_FS);
  289              		.loc 1 241 3 view .LVU36
  290 0002 0248     		ldr	r0, .L24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 10
 
 
  291 0004 FFF7FEFF 		bl	HAL_PCD_IRQHandler
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  328 000e 08BD     		pop	{r3, pc}
  329              	.L29:
  330              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 11
 
 
  331              	.L28:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  279:Core/Src/stm32wbxx_it.c **** void IPCC_C1_TX_IRQHandler(void)
  280:Core/Src/stm32wbxx_it.c **** {
  371              		.loc 1 280 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 12
 
 
  372              		.cfi_startproc
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  302:Core/Src/stm32wbxx_it.c **** }
  407              		.loc 1 302 1 is_stmt 0 view .LVU50
  408 0006 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 13
 
 
  409              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  455              		@ frame_needed = 0, uses_anonymous_args = 0
  456              		.loc 1 314 56 is_stmt 0 view .LVU55
  457 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 14
 
 
  458              		.cfi_def_cfa_offset 16
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  497              	.L45:
  498              		.align	2
  499              	.L44:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 15
 
 
  500 0028 00380140 		.word	1073821696
@@ -876,56 +876,56 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 1
  533              		.file 13 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/hw.h"
  534              		.file 14 "Core/Inc/hw_if.h"
  535              		.file 15 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_it.c
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:21     .text.NMI_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:27     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:218    .text.RTC_WKUP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:224    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:243    .text.USB_HP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:249    .text.USB_HP_IRQHandler:00000000 USB_HP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:268    .text.USB_HP_IRQHandler:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:273    .text.USB_LP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:279    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:298    .text.USB_LP_IRQHandler:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:303    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:309    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:332    .text.TIM1_UP_TIM16_IRQHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:338    .text.IPCC_C1_RX_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:344    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:363    .text.IPCC_C1_TX_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:369    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:388    .text.HSEM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:394    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:413    .text.USB_LP_CAN_RX0_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:419    .text.USB_LP_CAN_RX0_IRQHandler:00000000 USB_LP_CAN_RX0_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:438    .text.USB_LP_CAN_RX0_IRQHandler:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:443    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:449    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:500    .text.HAL_UART_RxCpltCallback:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:511    .bss.huart1_rxbuffer:00000000 huart1_rxbuffer
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:508    .bss.huart1_rxbuffer:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:518    .bss.gfreq:00000000 gfreq
-C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s:515    .bss.gfreq:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:21     .text.NMI_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:27     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:136    .text.SVC_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:142    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:155    .text.DebugMon_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:174    .text.PendSV_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:193    .text.SysTick_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:218    .text.RTC_WKUP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:224    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:243    .text.USB_HP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:249    .text.USB_HP_IRQHandler:00000000 USB_HP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:268    .text.USB_HP_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:273    .text.USB_LP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:279    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:298    .text.USB_LP_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:303    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:309    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:332    .text.TIM1_UP_TIM16_IRQHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:338    .text.IPCC_C1_RX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:344    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:363    .text.IPCC_C1_TX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:369    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:388    .text.HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:394    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:413    .text.USB_LP_CAN_RX0_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:419    .text.USB_LP_CAN_RX0_IRQHandler:00000000 USB_LP_CAN_RX0_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:438    .text.USB_LP_CAN_RX0_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:443    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:449    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:500    .text.HAL_UART_RxCpltCallback:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:511    .bss.huart1_rxbuffer:00000000 huart1_rxbuffer
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:508    .bss.huart1_rxbuffer:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:518    .bss.gfreq:00000000 gfreq
+C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s:515    .bss.gfreq:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
@@ -936,7 +936,7 @@ HAL_TIM_IRQHandler
 htim1
 htim16
 HW_IPCC_Rx_Handler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczpN5Za.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz2qT3a.s 			page 17
 
 
 HW_IPCC_Tx_Handler

@@ -132,7 +132,7 @@ int main(void)
   CDC_Transmit_FS("Hello Worldaa\n", 15);
 
   patchouli_init();
-  patchouli_set_mode(PATCHOULI_DEBUG_PEN_SCAN);
+  patchouli_set_mode(PATCHOULI_DEBUG_NONE);
   HAL_Delay(1000);
   
   // CDC_Transmit_FS("Init Done\n", 11);

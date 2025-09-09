@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,25 +20,15 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "patchouli/src/patchouli.c"
-  20              		.section	.rodata.patchouli_get_position.str1.4,"aMS",%progbits,1
-  21              		.align	2
-  22              	.LC0:
-  23 0000 506F7361 		.ascii	"Posavg:\012\000"
-  23      76673A0A 
-  23      00
-  24              		.global	__aeabi_f2d
-  25 0009 000000   		.align	2
-  26              	.LC1:
-  27 000c 25660A00 		.ascii	"%f\012\000"
-  28              		.section	.text.patchouli_get_position,"ax",%progbits
-  29              		.align	1
-  30              		.global	patchouli_get_position
-  31              		.syntax unified
-  32              		.thumb
-  33              		.thumb_func
-  35              	patchouli_get_position:
-  36              	.LVL0:
-  37              	.LFB1108:
+  20              		.section	.text.patchouli_get_position,"ax",%progbits
+  21              		.align	1
+  22              		.global	patchouli_get_position
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	patchouli_get_position:
+  28              	.LVL0:
+  29              	.LFB1108:
    1:patchouli/src/patchouli.c **** /*
    2:patchouli/src/patchouli.c **** * Project Patchouli
    3:patchouli/src/patchouli.c **** * Copyright (C) 2024 Anhang Li (thelithcore@gmail.com)
@@ -58,9 +48,6 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 1
   17:patchouli/src/patchouli.c **** */
   18:patchouli/src/patchouli.c **** 
   19:patchouli/src/patchouli.c **** #include "patchouli_config.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 2
-
-
   20:patchouli/src/patchouli.c **** 
   21:patchouli/src/patchouli.c **** #if defined(PATCHOULI_PCB_DISCRETE_SST)
   22:patchouli/src/patchouli.c ****   #include "patchouli_bsp_discrete_sst.h"
@@ -71,6 +58,9 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 1
   27:patchouli/src/patchouli.c **** #include "patchouli.h"
   28:patchouli/src/patchouli.c **** #include "patchouli_math.h"
   29:patchouli/src/patchouli.c **** #include <math.h>
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 2
+
+
   30:patchouli/src/patchouli.c **** #include <stdint.h>
   31:patchouli/src/patchouli.c **** #include <stdbool.h>
   32:patchouli/src/patchouli.c **** #include <stdarg.h>
@@ -95,2133 +85,1343 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 1
   51:patchouli/src/patchouli.c **** patchouli_position_t xpos, ypos;
   52:patchouli/src/patchouli.c **** 
   53:patchouli/src/patchouli.c **** patchouli_position_t patchouli_get_position(uint8_t fstep, int lastpos, bool x_yn){
-  38              		.loc 1 53 83 view -0
-  39              		.cfi_startproc
-  40              		@ args = 0, pretend = 0, frame = 72
-  41              		@ frame_needed = 0, uses_anonymous_args = 0
-  42              		.loc 1 53 83 is_stmt 0 view .LVU1
-  43 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
-  44              		.cfi_def_cfa_offset 24
-  45              		.cfi_offset 4, -24
-  46              		.cfi_offset 5, -20
-  47              		.cfi_offset 6, -16
-  48              		.cfi_offset 7, -12
-  49              		.cfi_offset 8, -8
-  50              		.cfi_offset 14, -4
-  51 0004 2DED028B 		vpush.64	{d8}
-  52              		.cfi_def_cfa_offset 32
-  53              		.cfi_offset 80, -32
-  54              		.cfi_offset 81, -28
-  55 0008 92B0     		sub	sp, sp, #72
-  56              		.cfi_def_cfa_offset 104
-  57 000a 8046     		mov	r8, r0
-  58 000c 0F46     		mov	r7, r1
-  59 000e 1546     		mov	r5, r2
+  30              		.loc 1 53 83 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 56
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 53 83 is_stmt 0 view .LVU1
+  35 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  36              		.cfi_def_cfa_offset 24
+  37              		.cfi_offset 4, -24
+  38              		.cfi_offset 5, -20
+  39              		.cfi_offset 6, -16
+  40              		.cfi_offset 7, -12
+  41              		.cfi_offset 8, -8
+  42              		.cfi_offset 14, -4
+  43 0004 8EB0     		sub	sp, sp, #56
+  44              		.cfi_def_cfa_offset 80
+  45 0006 8046     		mov	r8, r0
+  46 0008 0F46     		mov	r7, r1
+  47 000a 1546     		mov	r5, r2
   54:patchouli/src/patchouli.c ****     float smem[PATCHOULI_GWIN];
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 3
-
-
-  60              		.loc 1 54 5 is_stmt 1 view .LVU2
+  48              		.loc 1 54 5 is_stmt 1 view .LVU2
   55:patchouli/src/patchouli.c ****     const int window_size = PATCHOULI_GWIN;
-  61              		.loc 1 55 5 view .LVU3
-  62              	.LVL1:
+  49              		.loc 1 55 5 view .LVU3
+  50              	.LVL1:
   56:patchouli/src/patchouli.c ****     const int window_half = window_size/2;
-  63              		.loc 1 56 5 view .LVU4
+  51              		.loc 1 56 5 view .LVU4
   57:patchouli/src/patchouli.c ****     const int n_coils = x_yn ? PATCHOULI_N_X_COIL : PATCHOULI_N_Y_COIL;
-  64              		.loc 1 57 5 view .LVU5
-  65              		.loc 1 57 51 is_stmt 0 view .LVU6
-  66 0010 1E46     		mov	r6, r3
-  67 0012 43B1     		cbz	r3, .L7
-  68              		.loc 1 57 51 discriminator 1 view .LVU7
-  69 0014 1C23     		movs	r3, #28
-  70              	.LVL2:
-  71              	.L2:
+  52              		.loc 1 57 5 view .LVU5
+  53              		.loc 1 57 51 is_stmt 0 view .LVU6
+  54 000c 1E46     		mov	r6, r3
+  55 000e 43B1     		cbz	r3, .L7
+  56              		.loc 1 57 51 discriminator 1 view .LVU7
+  57 0010 1C23     		movs	r3, #28
+  58              	.LVL2:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 3
+
+
+  59              	.L2:
   58:patchouli/src/patchouli.c ****     if (lastpos<window_half)           lastpos =         window_half  ;
-  72              		.loc 1 58 5 is_stmt 1 view .LVU8
-  73              		.loc 1 58 8 is_stmt 0 view .LVU9
-  74 0016 012D     		cmp	r5, #1
-  75 0018 07DD     		ble	.L10
-  76              	.L3:
-  77              	.LVL3:
+  60              		.loc 1 58 5 is_stmt 1 view .LVU8
+  61              		.loc 1 58 8 is_stmt 0 view .LVU9
+  62 0012 012D     		cmp	r5, #1
+  63 0014 07DD     		ble	.L10
+  64              	.L3:
+  65              	.LVL3:
   59:patchouli/src/patchouli.c ****     if (lastpos>n_coils-window_half-1) lastpos = n_coils-window_half-1;
-  78              		.loc 1 59 5 is_stmt 1 view .LVU10
-  79              		.loc 1 59 16 is_stmt 0 view .LVU11
-  80 001a 9A1E     		subs	r2, r3, #2
-  81              		.loc 1 59 8 view .LVU12
-  82 001c AA42     		cmp	r2, r5
-  83 001e 00DC     		bgt	.L4
-  84              		.loc 1 59 40 is_stmt 1 discriminator 1 view .LVU13
-  85              		.loc 1 59 48 is_stmt 0 discriminator 1 view .LVU14
-  86 0020 DD1E     		subs	r5, r3, #3
-  87              	.LVL4:
-  88              	.L4:
+  66              		.loc 1 59 5 is_stmt 1 view .LVU10
+  67              		.loc 1 59 16 is_stmt 0 view .LVU11
+  68 0016 9A1E     		subs	r2, r3, #2
+  69              		.loc 1 59 8 view .LVU12
+  70 0018 AA42     		cmp	r2, r5
+  71 001a 00DC     		bgt	.L4
+  72              		.loc 1 59 40 is_stmt 1 discriminator 1 view .LVU13
+  73              		.loc 1 59 48 is_stmt 0 discriminator 1 view .LVU14
+  74 001c DD1E     		subs	r5, r3, #3
+  75              	.LVL4:
+  76              	.L4:
   60:patchouli/src/patchouli.c **** 
   61:patchouli/src/patchouli.c ****     for (int i=0; i<window_size; i++){
-  89              		.loc 1 61 5 is_stmt 1 view .LVU15
-  90              	.LBB2:
-  91              		.loc 1 61 10 view .LVU16
-  92              		.loc 1 61 14 is_stmt 0 view .LVU17
-  93 0022 0024     		movs	r4, #0
-  94              		.loc 1 61 5 view .LVU18
-  95 0024 1BE0     		b	.L5
-  96              	.LVL5:
-  97              	.L7:
-  98              		.loc 1 61 5 view .LVU19
-  99              	.LBE2:
+  77              		.loc 1 61 5 is_stmt 1 view .LVU15
+  78              	.LBB2:
+  79              		.loc 1 61 10 view .LVU16
+  80              		.loc 1 61 14 is_stmt 0 view .LVU17
+  81 001e 0024     		movs	r4, #0
+  82              		.loc 1 61 5 view .LVU18
+  83 0020 1BE0     		b	.L5
+  84              	.LVL5:
+  85              	.L7:
+  86              		.loc 1 61 5 view .LVU19
+  87              	.LBE2:
   57:patchouli/src/patchouli.c ****     if (lastpos<window_half)           lastpos =         window_half  ;
- 100              		.loc 1 57 51 discriminator 2 view .LVU20
- 101 0026 1223     		movs	r3, #18
- 102              	.LVL6:
+  88              		.loc 1 57 51 discriminator 2 view .LVU20
+  89 0022 1223     		movs	r3, #18
+  90              	.LVL6:
   57:patchouli/src/patchouli.c ****     if (lastpos<window_half)           lastpos =         window_half  ;
- 103              		.loc 1 57 51 discriminator 2 view .LVU21
- 104 0028 F5E7     		b	.L2
- 105              	.LVL7:
- 106              	.L10:
+  91              		.loc 1 57 51 discriminator 2 view .LVU21
+  92 0024 F5E7     		b	.L2
+  93              	.LVL7:
+  94              	.L10:
   58:patchouli/src/patchouli.c ****     if (lastpos>n_coils-window_half-1) lastpos = n_coils-window_half-1;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 4
-
-
- 107              		.loc 1 58 48 discriminator 1 view .LVU22
- 108 002a 0225     		movs	r5, #2
- 109 002c F5E7     		b	.L3
- 110              	.LVL8:
- 111              	.L6:
- 112              	.LBB3:
+  95              		.loc 1 58 48 discriminator 1 view .LVU22
+  96 0026 0225     		movs	r5, #2
+  97 0028 F5E7     		b	.L3
+  98              	.LVL8:
+  99              	.L6:
+ 100              	.LBB3:
   62:patchouli/src/patchouli.c ****         patchouli_coil_select(lastpos-window_half+i,x_yn);
- 113              		.loc 1 62 9 is_stmt 1 view .LVU23
- 114              		.loc 1 62 38 is_stmt 0 view .LVU24
- 115 002e A81E     		subs	r0, r5, #2
- 116              		.loc 1 62 9 view .LVU25
- 117 0030 3146     		mov	r1, r6
- 118 0032 2044     		add	r0, r0, r4
- 119 0034 FFF7FEFF 		bl	patchouli_coil_select
- 120              	.LVL9:
+ 101              		.loc 1 62 9 is_stmt 1 view .LVU23
+ 102              		.loc 1 62 38 is_stmt 0 view .LVU24
+ 103 002a A81E     		subs	r0, r5, #2
+ 104              		.loc 1 62 9 view .LVU25
+ 105 002c 3146     		mov	r1, r6
+ 106 002e 2044     		add	r0, r0, r4
+ 107 0030 FFF7FEFF 		bl	patchouli_coil_select
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 4
+
+
+ 108              	.LVL9:
   63:patchouli/src/patchouli.c ****         smem[i] = (float)patchouli_simple_take_sample(!x_yn, fstep) - PATCHOULI_DATA_OFFSET;
- 121              		.loc 1 63 9 is_stmt 1 view .LVU26
- 122              		.loc 1 63 26 is_stmt 0 view .LVU27
- 123 0038 3946     		mov	r1, r7
- 124 003a 86F00100 		eor	r0, r6, #1
- 125 003e FFF7FEFF 		bl	patchouli_simple_take_sample
- 126              	.LVL10:
- 127 0042 07EE900A 		vmov	s15, r0	@ int
- 128              		.loc 1 63 19 discriminator 1 view .LVU28
- 129 0046 F8EE677A 		vcvt.f32.u32	s15, s15
- 130              		.loc 1 63 69 discriminator 1 view .LVU29
- 131 004a 9FED257A 		vldr.32	s14, .L11
- 132 004e 77EEC77A 		vsub.f32	s15, s15, s14
- 133              		.loc 1 63 17 discriminator 1 view .LVU30
- 134 0052 12AB     		add	r3, sp, #72
- 135 0054 03EB8403 		add	r3, r3, r4, lsl #2
- 136 0058 43ED057A 		vstr.32	s15, [r3, #-20]
+ 109              		.loc 1 63 9 is_stmt 1 view .LVU26
+ 110              		.loc 1 63 26 is_stmt 0 view .LVU27
+ 111 0034 3946     		mov	r1, r7
+ 112 0036 86F00100 		eor	r0, r6, #1
+ 113 003a FFF7FEFF 		bl	patchouli_simple_take_sample
+ 114              	.LVL10:
+ 115 003e 07EE900A 		vmov	s15, r0	@ int
+ 116              		.loc 1 63 19 discriminator 1 view .LVU28
+ 117 0042 F8EE677A 		vcvt.f32.u32	s15, s15
+ 118              		.loc 1 63 69 discriminator 1 view .LVU29
+ 119 0046 9FED197A 		vldr.32	s14, .L11
+ 120 004a 77EEC77A 		vsub.f32	s15, s15, s14
+ 121              		.loc 1 63 17 discriminator 1 view .LVU30
+ 122 004e 0EAB     		add	r3, sp, #56
+ 123 0050 03EB8403 		add	r3, r3, r4, lsl #2
+ 124 0054 43ED057A 		vstr.32	s15, [r3, #-20]
   61:patchouli/src/patchouli.c ****         patchouli_coil_select(lastpos-window_half+i,x_yn);
- 137              		.loc 1 61 35 is_stmt 1 discriminator 3 view .LVU31
- 138 005c 0134     		adds	r4, r4, #1
- 139              	.LVL11:
- 140              	.L5:
+ 125              		.loc 1 61 35 is_stmt 1 discriminator 3 view .LVU31
+ 126 0058 0134     		adds	r4, r4, #1
+ 127              	.LVL11:
+ 128              	.L5:
   61:patchouli/src/patchouli.c ****         patchouli_coil_select(lastpos-window_half+i,x_yn);
- 141              		.loc 1 61 20 discriminator 1 view .LVU32
- 142 005e 042C     		cmp	r4, #4
- 143 0060 E5DD     		ble	.L6
- 144              	.LBE3:
+ 129              		.loc 1 61 20 discriminator 1 view .LVU32
+ 130 005a 042C     		cmp	r4, #4
+ 131 005c E5DD     		ble	.L6
+ 132              	.LBE3:
   64:patchouli/src/patchouli.c ****     }
   65:patchouli/src/patchouli.c ****     patchouli_quad_interp_t interp = {
- 145              		.loc 1 65 5 view .LVU33
- 146              		.loc 1 65 29 is_stmt 0 view .LVU34
- 147 0062 2022     		movs	r2, #32
- 148 0064 0021     		movs	r1, #0
- 149 0066 05A8     		add	r0, sp, #20
- 150 0068 FFF7FEFF 		bl	memset
- 151              	.LVL12:
- 152 006c 0523     		movs	r3, #5
- 153 006e 8DF81430 		strb	r3, [sp, #20]
- 154 0072 4FF08143 		mov	r3, #1082130432
- 155 0076 0793     		str	r3, [sp, #28]	@ float
- 156 0078 0DAB     		add	r3, sp, #52
- 157 007a 0893     		str	r3, [sp, #32]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 5
-
-
+ 133              		.loc 1 65 5 view .LVU33
+ 134              		.loc 1 65 29 is_stmt 0 view .LVU34
+ 135 005e 2022     		movs	r2, #32
+ 136 0060 0021     		movs	r1, #0
+ 137 0062 01A8     		add	r0, sp, #4
+ 138 0064 FFF7FEFF 		bl	memset
+ 139              	.LVL12:
+ 140 0068 0523     		movs	r3, #5
+ 141 006a 8DF80430 		strb	r3, [sp, #4]
+ 142 006e 4FF08143 		mov	r3, #1082130432
+ 143 0072 0393     		str	r3, [sp, #12]	@ float
+ 144 0074 09AB     		add	r3, sp, #36
+ 145 0076 0493     		str	r3, [sp, #16]
   66:patchouli/src/patchouli.c ****         .n = PATCHOULI_GWIN,
   67:patchouli/src/patchouli.c ****         .low = 0,
   68:patchouli/src/patchouli.c ****         .high = PATCHOULI_GWIN-1,
   69:patchouli/src/patchouli.c ****         .data = smem,
   70:patchouli/src/patchouli.c ****     };
   71:patchouli/src/patchouli.c ****     float posavg = patchouli_quad_interp(&interp) + lastpos - window_half;
- 158              		.loc 1 71 5 is_stmt 1 view .LVU35
- 159              		.loc 1 71 20 is_stmt 0 view .LVU36
- 160 007c 05A8     		add	r0, sp, #20
- 161 007e FFF7FEFF 		bl	patchouli_quad_interp
- 162              	.LVL13:
- 163              		.loc 1 71 51 discriminator 1 view .LVU37
- 164 0082 07EE905A 		vmov	s15, r5	@ int
- 165 0086 B8EEE78A 		vcvt.f32.s32	s16, s15
- 166 008a 38EE008A 		vadd.f32	s16, s16, s0
- 167              		.loc 1 71 11 discriminator 1 view .LVU38
- 168 008e F0EE007A 		vmov.f32	s15, #2.0e+0
- 169 0092 38EE678A 		vsub.f32	s16, s16, s15
- 170              	.LVL14:
-  72:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"Posavg:\n", 8);
- 171              		.loc 1 72 5 is_stmt 1 view .LVU39
- 172 0096 0821     		movs	r1, #8
- 173 0098 1248     		ldr	r0, .L11+4
- 174 009a FFF7FEFF 		bl	CDC_Transmit_FS
- 175              	.LVL15:
-  73:patchouli/src/patchouli.c ****     char buf[17];
- 176              		.loc 1 73 5 view .LVU40
-  74:patchouli/src/patchouli.c ****     sprintf(buf, "%f\n", posavg);
- 177              		.loc 1 74 5 view .LVU41
- 178 009e 18EE100A 		vmov	r0, s16
- 179 00a2 FFF7FEFF 		bl	__aeabi_f2d
- 180              	.LVL16:
- 181 00a6 0246     		mov	r2, r0
- 182 00a8 0B46     		mov	r3, r1
- 183 00aa 0F49     		ldr	r1, .L11+8
- 184 00ac 6846     		mov	r0, sp
- 185 00ae FFF7FEFF 		bl	sprintf
- 186              	.LVL17:
-  75:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));    
- 187              		.loc 1 75 5 view .LVU42
- 188              		.loc 1 75 36 is_stmt 0 view .LVU43
- 189 00b2 6846     		mov	r0, sp
- 190 00b4 FFF7FEFF 		bl	strlen
- 191              	.LVL18:
- 192              		.loc 1 75 5 discriminator 1 view .LVU44
- 193 00b8 81B2     		uxth	r1, r0
- 194 00ba 6846     		mov	r0, sp
- 195 00bc FFF7FEFF 		bl	CDC_Transmit_FS
- 196              	.LVL19:
-  76:patchouli/src/patchouli.c ****     patchouli_position_t ret = {
- 197              		.loc 1 76 5 is_stmt 1 view .LVU45
+ 146              		.loc 1 71 5 is_stmt 1 view .LVU35
+ 147              		.loc 1 71 20 is_stmt 0 view .LVU36
+ 148 0078 01A8     		add	r0, sp, #4
+ 149 007a FFF7FEFF 		bl	patchouli_quad_interp
+ 150              	.LVL13:
+ 151              		.loc 1 71 51 discriminator 1 view .LVU37
+ 152 007e 07EE905A 		vmov	s15, r5	@ int
+ 153 0082 F8EEE77A 		vcvt.f32.s32	s15, s15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 5
+
+
+ 154 0086 77EE807A 		vadd.f32	s15, s15, s0
+ 155              		.loc 1 71 11 discriminator 1 view .LVU38
+ 156 008a B0EE007A 		vmov.f32	s14, #2.0e+0
+ 157 008e 77EEC77A 		vsub.f32	s15, s15, s14
+ 158              	.LVL14:
+  72:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Posavg:\n", 8);
+  73:patchouli/src/patchouli.c ****     // char buf[17];
+  74:patchouli/src/patchouli.c ****     // buf[0] = 'a';
+  75:patchouli/src/patchouli.c ****     // sprintf(buf, "%f\n", posavg);
+  76:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)buf, strlen(buf));    
+  77:patchouli/src/patchouli.c ****     patchouli_position_t ret = {
+ 159              		.loc 1 77 5 is_stmt 1 view .LVU39
+  78:patchouli/src/patchouli.c ****         .idx = interp.result_maxidx + lastpos - window_half,
+ 160              		.loc 1 78 22 is_stmt 0 view .LVU40
+ 161 0092 059B     		ldr	r3, [sp, #20]
+ 162              		.loc 1 78 37 view .LVU41
+ 163 0094 2B44     		add	r3, r3, r5
+ 164              		.loc 1 78 47 view .LVU42
+ 165 0096 023B     		subs	r3, r3, #2
   77:patchouli/src/patchouli.c ****         .idx = interp.result_maxidx + lastpos - window_half,
- 198              		.loc 1 77 22 is_stmt 0 view .LVU46
- 199 00c0 099B     		ldr	r3, [sp, #36]
- 200              		.loc 1 77 37 view .LVU47
- 201 00c2 2B44     		add	r3, r3, r5
- 202              		.loc 1 77 47 view .LVU48
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 6
+ 166              		.loc 1 77 26 view .LVU43
+ 167 0098 C8F80030 		str	r3, [r8]
+ 168 009c C8ED017A 		vstr.32	s15, [r8, #4]
+ 169 00a0 88F80860 		strb	r6, [r8, #8]
+  79:patchouli/src/patchouli.c ****         .val = posavg,
+  80:patchouli/src/patchouli.c ****         .x_yn = x_yn,
+  81:patchouli/src/patchouli.c ****     };
+  82:patchouli/src/patchouli.c ****     return ret;
+ 170              		.loc 1 82 5 is_stmt 1 view .LVU44
+  83:patchouli/src/patchouli.c **** }
+ 171              		.loc 1 83 1 is_stmt 0 view .LVU45
+ 172 00a4 4046     		mov	r0, r8
+ 173 00a6 0EB0     		add	sp, sp, #56
+ 174              		.cfi_def_cfa_offset 24
+ 175              		@ sp needed
+ 176 00a8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 177              	.LVL15:
+ 178              	.L12:
+ 179              		.loc 1 83 1 view .LVU46
+ 180              		.align	2
+ 181              	.L11:
+ 182 00ac 0000C842 		.word	1120403456
+ 183              		.cfi_endproc
+ 184              	.LFE1108:
+ 186              		.section	.text.patchouli_init,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	patchouli_init
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 193              	patchouli_init:
+ 194              	.LFB1109:
+  84:patchouli/src/patchouli.c **** 
+  85:patchouli/src/patchouli.c **** void patchouli_init(){
+ 195              		.loc 1 85 22 is_stmt 1 view -0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 6
 
 
- 203 00c4 023B     		subs	r3, r3, #2
-  76:patchouli/src/patchouli.c ****     patchouli_position_t ret = {
- 204              		.loc 1 76 26 view .LVU49
- 205 00c6 C8F80030 		str	r3, [r8]
- 206 00ca 88ED018A 		vstr.32	s16, [r8, #4]
- 207 00ce 88F80860 		strb	r6, [r8, #8]
-  78:patchouli/src/patchouli.c ****         .val = posavg,
-  79:patchouli/src/patchouli.c ****         .x_yn = x_yn,
-  80:patchouli/src/patchouli.c ****     };
-  81:patchouli/src/patchouli.c ****     return ret;
- 208              		.loc 1 81 5 is_stmt 1 view .LVU50
-  82:patchouli/src/patchouli.c **** }
- 209              		.loc 1 82 1 is_stmt 0 view .LVU51
- 210 00d2 4046     		mov	r0, r8
- 211 00d4 12B0     		add	sp, sp, #72
- 212              		.cfi_def_cfa_offset 32
- 213              		@ sp needed
- 214 00d6 BDEC028B 		vldm	sp!, {d8}
- 215              		.cfi_restore 80
- 216              		.cfi_restore 81
- 217              		.cfi_def_cfa_offset 24
- 218              	.LVL20:
- 219              		.loc 1 82 1 view .LVU52
- 220 00da BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 221              	.LVL21:
- 222              	.L12:
- 223              		.loc 1 82 1 view .LVU53
- 224 00de 00BF     		.align	2
- 225              	.L11:
- 226 00e0 0000C842 		.word	1120403456
- 227 00e4 00000000 		.word	.LC0
- 228 00e8 0C000000 		.word	.LC1
- 229              		.cfi_endproc
- 230              	.LFE1108:
- 232              		.section	.text.patchouli_init,"ax",%progbits
- 233              		.align	1
- 234              		.global	patchouli_init
- 235              		.syntax unified
- 236              		.thumb
- 237              		.thumb_func
- 239              	patchouli_init:
- 240              	.LFB1109:
-  83:patchouli/src/patchouli.c **** 
-  84:patchouli/src/patchouli.c **** void patchouli_init(){
- 241              		.loc 1 84 22 is_stmt 1 view -0
- 242              		.cfi_startproc
- 243              		@ args = 0, pretend = 0, frame = 0
- 244              		@ frame_needed = 0, uses_anonymous_args = 0
- 245 0000 08B5     		push	{r3, lr}
- 246              		.cfi_def_cfa_offset 8
- 247              		.cfi_offset 3, -8
- 248              		.cfi_offset 14, -4
-  85:patchouli/src/patchouli.c **** 	  patchouli_coil_select(0,1);
- 249              		.loc 1 85 4 view .LVU55
- 250 0002 0121     		movs	r1, #1
- 251 0004 0020     		movs	r0, #0
- 252 0006 FFF7FEFF 		bl	patchouli_coil_select
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 7
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199 0000 08B5     		push	{r3, lr}
+ 200              		.cfi_def_cfa_offset 8
+ 201              		.cfi_offset 3, -8
+ 202              		.cfi_offset 14, -4
+  86:patchouli/src/patchouli.c **** 	  patchouli_coil_select(0,1);
+ 203              		.loc 1 86 4 view .LVU48
+ 204 0002 0121     		movs	r1, #1
+ 205 0004 0020     		movs	r0, #0
+ 206 0006 FFF7FEFF 		bl	patchouli_coil_select
+ 207              	.LVL16:
+  87:patchouli/src/patchouli.c **** 	  patchouli_TIM_init();
+ 208              		.loc 1 87 4 view .LVU49
+ 209 000a FFF7FEFF 		bl	patchouli_TIM_init
+ 210              	.LVL17:
+  88:patchouli/src/patchouli.c **** 	  patchouli_gauss_init_kernel();
+ 211              		.loc 1 88 4 view .LVU50
+ 212 000e FFF7FEFF 		bl	patchouli_gauss_init_kernel
+ 213              	.LVL18:
+  89:patchouli/src/patchouli.c **** 	  patchouli_mva_buffer_init(&mva_p,3);
+ 214              		.loc 1 89 4 view .LVU51
+ 215 0012 0321     		movs	r1, #3
+ 216 0014 0148     		ldr	r0, .L15
+ 217 0016 FFF7FEFF 		bl	patchouli_mva_buffer_init
+ 218              	.LVL19:
+  90:patchouli/src/patchouli.c **** }
+ 219              		.loc 1 90 1 is_stmt 0 view .LVU52
+ 220 001a 08BD     		pop	{r3, pc}
+ 221              	.L16:
+ 222              		.align	2
+ 223              	.L15:
+ 224 001c 00000000 		.word	mva_p
+ 225              		.cfi_endproc
+ 226              	.LFE1109:
+ 228              		.section	.rodata._patchouli_cycle_default.str1.4,"aMS",%progbits,1
+ 229              		.align	2
+ 230              	.LC0:
+ 231 0000 47617573 		.ascii	"Gauss Fit PDET\012\000"
+ 231      73204669 
+ 231      74205044 
+ 231      45540A00 
+ 232              		.global	__aeabi_f2d
+ 233              		.global	__aeabi_d2f
+ 234              		.global	__aeabi_d2iz
+ 235              		.section	.text._patchouli_cycle_default,"ax",%progbits
+ 236              		.align	1
+ 237              		.global	_patchouli_cycle_default
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 242              	_patchouli_cycle_default:
+ 243              	.LFB1110:
+  91:patchouli/src/patchouli.c **** 
+  92:patchouli/src/patchouli.c **** // Default Running Mode
+  93:patchouli/src/patchouli.c **** void _patchouli_cycle_default(){
+ 244              		.loc 1 93 32 is_stmt 1 view -0
+ 245              		.cfi_startproc
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 7
 
 
- 253              	.LVL22:
-  86:patchouli/src/patchouli.c **** 	  patchouli_TIM_init();
- 254              		.loc 1 86 4 view .LVU56
- 255 000a FFF7FEFF 		bl	patchouli_TIM_init
- 256              	.LVL23:
-  87:patchouli/src/patchouli.c **** 	  patchouli_gauss_init_kernel();
- 257              		.loc 1 87 4 view .LVU57
- 258 000e FFF7FEFF 		bl	patchouli_gauss_init_kernel
- 259              	.LVL24:
-  88:patchouli/src/patchouli.c **** 	  patchouli_mva_buffer_init(&mva_p,3);
- 260              		.loc 1 88 4 view .LVU58
- 261 0012 0321     		movs	r1, #3
- 262 0014 0148     		ldr	r0, .L15
- 263 0016 FFF7FEFF 		bl	patchouli_mva_buffer_init
- 264              	.LVL25:
-  89:patchouli/src/patchouli.c **** }
- 265              		.loc 1 89 1 is_stmt 0 view .LVU59
- 266 001a 08BD     		pop	{r3, pc}
- 267              	.L16:
- 268              		.align	2
- 269              	.L15:
- 270 001c 00000000 		.word	mva_p
- 271              		.cfi_endproc
- 272              	.LFE1109:
- 274              		.section	.rodata._patchouli_cycle_default.str1.4,"aMS",%progbits,1
- 275              		.align	2
- 276              	.LC2:
- 277 0000 47617573 		.ascii	"Gauss Fit PDET\012\000"
- 277      73204669 
- 277      74205044 
- 277      45540A00 
- 278              		.global	__aeabi_d2f
- 279              		.global	__aeabi_d2iz
- 280              		.align	2
- 281              	.LC3:
- 282 0010 583A00   		.ascii	"X:\000"
- 283 0013 00       		.align	2
- 284              	.LC4:
- 285 0014 25640A00 		.ascii	"%d\012\000"
- 286              		.align	2
- 287              	.LC5:
- 288 0018 593A00   		.ascii	"Y:\000"
- 289              		.section	.text._patchouli_cycle_default,"ax",%progbits
- 290              		.align	1
- 291              		.global	_patchouli_cycle_default
- 292              		.syntax unified
- 293              		.thumb
- 294              		.thumb_func
- 296              	_patchouli_cycle_default:
- 297              	.LFB1110:
-  90:patchouli/src/patchouli.c **** 
-  91:patchouli/src/patchouli.c **** // Default Running Mode
-  92:patchouli/src/patchouli.c **** void _patchouli_cycle_default(){
- 298              		.loc 1 92 32 is_stmt 1 view -0
- 299              		.cfi_startproc
- 300              		@ args = 0, pretend = 0, frame = 64
- 301              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 8
+ 246              		@ args = 0, pretend = 0, frame = 48
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 249              		.cfi_def_cfa_offset 20
+ 250              		.cfi_offset 4, -20
+ 251              		.cfi_offset 5, -16
+ 252              		.cfi_offset 6, -12
+ 253              		.cfi_offset 7, -8
+ 254              		.cfi_offset 14, -4
+ 255 0002 2DED048B 		vpush.64	{d8, d9}
+ 256              		.cfi_def_cfa_offset 36
+ 257              		.cfi_offset 80, -36
+ 258              		.cfi_offset 81, -32
+ 259              		.cfi_offset 82, -28
+ 260              		.cfi_offset 83, -24
+ 261 0006 8DB0     		sub	sp, sp, #52
+ 262              		.cfi_def_cfa_offset 88
+  94:patchouli/src/patchouli.c ****     // Scan X-Y Position
+  95:patchouli/src/patchouli.c ****     xpos = patchouli_get_position(maxpptr, xpos.idx, true );
+ 263              		.loc 1 95 5 view .LVU54
+ 264              		.loc 1 95 12 is_stmt 0 view .LVU55
+ 265 0008 724E     		ldr	r6, .L32
+ 266 000a 6C46     		mov	r4, sp
+ 267 000c 724F     		ldr	r7, .L32+4
+ 268 000e 0123     		movs	r3, #1
+ 269 0010 3268     		ldr	r2, [r6]
+ 270 0012 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
+ 271 0014 2046     		mov	r0, r4
+ 272 0016 FFF7FEFF 		bl	patchouli_get_position
+ 273              	.LVL20:
+ 274 001a 94E80700 		ldm	r4, {r0, r1, r2}
+ 275 001e 86E80700 		stm	r6, {r0, r1, r2}
+  96:patchouli/src/patchouli.c ****     ypos = patchouli_get_position(maxpptr, ypos.idx, false);
+ 276              		.loc 1 96 5 is_stmt 1 view .LVU56
+ 277              		.loc 1 96 12 is_stmt 0 view .LVU57
+ 278 0022 6E4D     		ldr	r5, .L32+8
+ 279 0024 0023     		movs	r3, #0
+ 280 0026 2A68     		ldr	r2, [r5]
+ 281 0028 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
+ 282 002a 2046     		mov	r0, r4
+ 283 002c FFF7FEFF 		bl	patchouli_get_position
+ 284              	.LVL21:
+ 285 0030 94E80700 		ldm	r4, {r0, r1, r2}
+ 286 0034 85E80700 		stm	r5, {r0, r1, r2}
+  97:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"X-Y Position\n", 13);
+  98:patchouli/src/patchouli.c ****     float xavg = xpos.val;
+ 287              		.loc 1 98 5 is_stmt 1 view .LVU58
+ 288              		.loc 1 98 11 is_stmt 0 view .LVU59
+ 289 0038 D6ED018A 		vldr.32	s17, [r6, #4]
+ 290              	.LVL22:
+  99:patchouli/src/patchouli.c ****     float yavg = ypos.val;
+ 291              		.loc 1 99 5 is_stmt 1 view .LVU60
+ 292              		.loc 1 99 11 is_stmt 0 view .LVU61
+ 293 003c 95ED018A 		vldr.32	s16, [r5, #4]
+ 294              	.LVL23:
+ 100:patchouli/src/patchouli.c ****     
+ 101:patchouli/src/patchouli.c ****     // char buf[17]; // Buffer for string conversion
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 8
 
 
- 302 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 303              		.cfi_def_cfa_offset 20
- 304              		.cfi_offset 4, -20
- 305              		.cfi_offset 5, -16
- 306              		.cfi_offset 6, -12
- 307              		.cfi_offset 7, -8
- 308              		.cfi_offset 14, -4
- 309 0002 2DED048B 		vpush.64	{d8, d9}
- 310              		.cfi_def_cfa_offset 36
- 311              		.cfi_offset 80, -36
- 312              		.cfi_offset 81, -32
- 313              		.cfi_offset 82, -28
- 314              		.cfi_offset 83, -24
- 315 0006 91B0     		sub	sp, sp, #68
- 316              		.cfi_def_cfa_offset 104
-  93:patchouli/src/patchouli.c ****     // Scan X-Y Position
-  94:patchouli/src/patchouli.c ****     xpos = patchouli_get_position(maxpptr, xpos.idx, true );
- 317              		.loc 1 94 5 view .LVU61
- 318              		.loc 1 94 12 is_stmt 0 view .LVU62
- 319 0008 834E     		ldr	r6, .L32
- 320 000a 6C46     		mov	r4, sp
- 321 000c 834F     		ldr	r7, .L32+4
- 322 000e 0123     		movs	r3, #1
- 323 0010 3268     		ldr	r2, [r6]
- 324 0012 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
- 325 0014 2046     		mov	r0, r4
- 326 0016 FFF7FEFF 		bl	patchouli_get_position
- 327              	.LVL26:
- 328 001a 94E80700 		ldm	r4, {r0, r1, r2}
- 329 001e 86E80700 		stm	r6, {r0, r1, r2}
-  95:patchouli/src/patchouli.c ****     ypos = patchouli_get_position(maxpptr, ypos.idx, false);
- 330              		.loc 1 95 5 is_stmt 1 view .LVU63
- 331              		.loc 1 95 12 is_stmt 0 view .LVU64
- 332 0022 7F4D     		ldr	r5, .L32+8
- 333 0024 0023     		movs	r3, #0
- 334 0026 2A68     		ldr	r2, [r5]
- 335 0028 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
- 336 002a 2046     		mov	r0, r4
- 337 002c FFF7FEFF 		bl	patchouli_get_position
- 338              	.LVL27:
- 339 0030 94E80700 		ldm	r4, {r0, r1, r2}
- 340 0034 85E80700 		stm	r5, {r0, r1, r2}
-  96:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"X-Y Position\n", 13);
-  97:patchouli/src/patchouli.c ****     float xavg = xpos.val;
- 341              		.loc 1 97 5 is_stmt 1 view .LVU65
- 342              		.loc 1 97 11 is_stmt 0 view .LVU66
- 343 0038 D6ED018A 		vldr.32	s17, [r6, #4]
- 344              	.LVL28:
-  98:patchouli/src/patchouli.c ****     float yavg = ypos.val;
- 345              		.loc 1 98 5 is_stmt 1 view .LVU67
- 346              		.loc 1 98 11 is_stmt 0 view .LVU68
- 347 003c 95ED018A 		vldr.32	s16, [r5, #4]
- 348              	.LVL29:
-  99:patchouli/src/patchouli.c ****     
- 100:patchouli/src/patchouli.c ****     char buf[17]; // Buffer for string conversion
- 349              		.loc 1 100 5 is_stmt 1 view .LVU69
- 101:patchouli/src/patchouli.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 9
-
-
- 102:patchouli/src/patchouli.c **** 	// Scan Frequency to find the peak
- 103:patchouli/src/patchouli.c **** 	uint16_t maxpval = 0;
- 350              		.loc 1 103 2 view .LVU70
+ 102:patchouli/src/patchouli.c **** 
+ 103:patchouli/src/patchouli.c **** 	// Scan Frequency to find the peak
+ 104:patchouli/src/patchouli.c **** 	uint16_t maxpval = 0;
+ 295              		.loc 1 104 2 is_stmt 1 view .LVU62
+ 105:patchouli/src/patchouli.c **** 	for (int fstep=0;fstep<8;fstep++){
+ 296              		.loc 1 105 2 view .LVU63
+ 297              	.LBB4:
+ 298              		.loc 1 105 7 view .LVU64
+ 299              		.loc 1 105 11 is_stmt 0 view .LVU65
+ 300 0040 0024     		movs	r4, #0
+ 301              	.LBE4:
  104:patchouli/src/patchouli.c **** 	for (int fstep=0;fstep<8;fstep++){
- 351              		.loc 1 104 2 view .LVU71
- 352              	.LBB4:
- 353              		.loc 1 104 7 view .LVU72
- 354              		.loc 1 104 11 is_stmt 0 view .LVU73
- 355 0040 0024     		movs	r4, #0
- 356              	.LBE4:
- 103:patchouli/src/patchouli.c **** 	for (int fstep=0;fstep<8;fstep++){
- 357              		.loc 1 103 11 view .LVU74
- 358 0042 2546     		mov	r5, r4
- 359              	.LBB5:
- 360              		.loc 1 104 2 view .LVU75
- 361 0044 00E0     		b	.L18
- 362              	.LVL30:
- 363              	.L19:
- 364              		.loc 1 104 32 is_stmt 1 discriminator 2 view .LVU76
- 365 0046 0134     		adds	r4, r4, #1
- 366              	.LVL31:
- 367              	.L18:
- 368              		.loc 1 104 24 discriminator 1 view .LVU77
- 369 0048 072C     		cmp	r4, #7
- 370 004a 11DC     		bgt	.L30
- 105:patchouli/src/patchouli.c **** 		patchouli_coil_select(xpos.idx, 1);
- 371              		.loc 1 105 3 view .LVU78
- 372 004c 0121     		movs	r1, #1
- 373 004e 724B     		ldr	r3, .L32
- 374 0050 1868     		ldr	r0, [r3]
- 375 0052 FFF7FEFF 		bl	patchouli_coil_select
- 376              	.LVL32:
- 106:patchouli/src/patchouli.c **** 		psamples[fstep] = patchouli_simple_take_sample(false, fstep);
- 377              		.loc 1 106 3 view .LVU79
- 378              		.loc 1 106 21 is_stmt 0 view .LVU80
- 379 0056 E1B2     		uxtb	r1, r4
- 380 0058 0020     		movs	r0, #0
- 381 005a FFF7FEFF 		bl	patchouli_simple_take_sample
- 382              	.LVL33:
- 383              		.loc 1 106 19 discriminator 1 view .LVU81
- 384 005e 714B     		ldr	r3, .L32+12
- 385 0060 23F81400 		strh	r0, [r3, r4, lsl #1]	@ movhi
- 107:patchouli/src/patchouli.c **** 		if(psamples[fstep]>maxpval){
- 386              		.loc 1 107 3 is_stmt 1 view .LVU82
- 387              		.loc 1 107 5 is_stmt 0 view .LVU83
- 388 0064 A842     		cmp	r0, r5
- 389 0066 EED9     		bls	.L19
- 108:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
- 390              		.loc 1 108 13 is_stmt 1 view .LVU84
- 391              	.LVL34:
- 109:patchouli/src/patchouli.c ****             maxpptr = fstep;
- 392              		.loc 1 109 13 view .LVU85
- 393              		.loc 1 109 21 is_stmt 0 view .LVU86
- 394 0068 6C4B     		ldr	r3, .L32+4
- 395 006a 1C60     		str	r4, [r3]
- 108:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
- 396              		.loc 1 108 21 view .LVU87
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 10
+ 302              		.loc 1 104 11 view .LVU66
+ 303 0042 2546     		mov	r5, r4
+ 304              	.LBB5:
+ 305              		.loc 1 105 2 view .LVU67
+ 306 0044 00E0     		b	.L18
+ 307              	.LVL24:
+ 308              	.L19:
+ 309              		.loc 1 105 32 is_stmt 1 discriminator 2 view .LVU68
+ 310 0046 0134     		adds	r4, r4, #1
+ 311              	.LVL25:
+ 312              	.L18:
+ 313              		.loc 1 105 24 discriminator 1 view .LVU69
+ 314 0048 072C     		cmp	r4, #7
+ 315 004a 11DC     		bgt	.L30
+ 106:patchouli/src/patchouli.c **** 		patchouli_coil_select(xpos.idx, 1);
+ 316              		.loc 1 106 3 view .LVU70
+ 317 004c 0121     		movs	r1, #1
+ 318 004e 614B     		ldr	r3, .L32
+ 319 0050 1868     		ldr	r0, [r3]
+ 320 0052 FFF7FEFF 		bl	patchouli_coil_select
+ 321              	.LVL26:
+ 107:patchouli/src/patchouli.c **** 		psamples[fstep] = patchouli_simple_take_sample(false, fstep);
+ 322              		.loc 1 107 3 view .LVU71
+ 323              		.loc 1 107 21 is_stmt 0 view .LVU72
+ 324 0056 E1B2     		uxtb	r1, r4
+ 325 0058 0020     		movs	r0, #0
+ 326 005a FFF7FEFF 		bl	patchouli_simple_take_sample
+ 327              	.LVL27:
+ 328              		.loc 1 107 19 discriminator 1 view .LVU73
+ 329 005e 604B     		ldr	r3, .L32+12
+ 330 0060 23F81400 		strh	r0, [r3, r4, lsl #1]	@ movhi
+ 108:patchouli/src/patchouli.c **** 		if(psamples[fstep]>maxpval){
+ 331              		.loc 1 108 3 is_stmt 1 view .LVU74
+ 332              		.loc 1 108 5 is_stmt 0 view .LVU75
+ 333 0064 A842     		cmp	r0, r5
+ 334 0066 EED9     		bls	.L19
+ 109:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
+ 335              		.loc 1 109 13 is_stmt 1 view .LVU76
+ 336              	.LVL28:
+ 110:patchouli/src/patchouli.c ****             maxpptr = fstep;
+ 337              		.loc 1 110 13 view .LVU77
+ 338              		.loc 1 110 21 is_stmt 0 view .LVU78
+ 339 0068 5B4B     		ldr	r3, .L32+4
+ 340 006a 1C60     		str	r4, [r3]
+ 109:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 9
 
 
- 397 006c 0546     		mov	r5, r0
- 398 006e EAE7     		b	.L19
- 399              	.LVL35:
- 400              	.L30:
- 108:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
- 401              		.loc 1 108 21 view .LVU88
- 402              	.LBE5:
- 110:patchouli/src/patchouli.c ****         }
- 111:patchouli/src/patchouli.c **** 	}
- 112:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Max Pressure\n", 13);
- 113:patchouli/src/patchouli.c **** 
- 114:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Max Pressure Value:\n", 20);
- 115:patchouli/src/patchouli.c ****     // sprintf(buf, "%d\n", maxpval);
- 116:patchouli/src/patchouli.c ****     // uint8_t res = CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 117:patchouli/src/patchouli.c ****     // if(res == 0){
- 118:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Successfully transmitted maxpval\n", 33);
- 119:patchouli/src/patchouli.c ****     // } else if(res == 1) {
- 120:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Busy\n", 5);
- 121:patchouli/src/patchouli.c ****     // } else {
- 122:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Failed\n", 7);
- 123:patchouli/src/patchouli.c ****     // }
- 124:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"\n", 1);
- 125:patchouli/src/patchouli.c **** 	if(maxpval>PATCHOULI_PDET_THRES){
- 403              		.loc 1 125 2 is_stmt 1 view .LVU89
- 404              		.loc 1 125 4 is_stmt 0 view .LVU90
- 405 0070 962D     		cmp	r5, #150
- 406 0072 40F2CB80 		bls	.L21
- 407              	.LBB6:
- 126:patchouli/src/patchouli.c **** 		patchouli_led_on();
- 408              		.loc 1 126 3 is_stmt 1 view .LVU91
- 409 0076 FFF7FEFF 		bl	patchouli_led_on
- 410              	.LVL36:
- 127:patchouli/src/patchouli.c **** 		// Gauss Fit PDET
- 128:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)"Gauss Fit PDET\n", 15);
- 411              		.loc 1 128 9 view .LVU92
- 412 007a 0F21     		movs	r1, #15
- 413 007c 6A48     		ldr	r0, .L32+16
- 414 007e FFF7FEFF 		bl	CDC_Transmit_FS
- 415              	.LVL37:
- 129:patchouli/src/patchouli.c **** 		float c1[3];
- 416              		.loc 1 129 3 view .LVU93
- 130:patchouli/src/patchouli.c **** 		patchouli_gauss_apply((psamples+maxpptr-2), c1);
- 417              		.loc 1 130 3 view .LVU94
- 418              		.loc 1 130 42 is_stmt 0 view .LVU95
- 419 0082 664C     		ldr	r4, .L32+4
- 420              	.LVL38:
- 421              		.loc 1 130 42 view .LVU96
- 422 0084 2368     		ldr	r3, [r4]
- 423 0086 03F10043 		add	r3, r3, #-2147483648
- 424 008a 023B     		subs	r3, r3, #2
- 425              		.loc 1 130 3 view .LVU97
- 426 008c 04A9     		add	r1, sp, #16
- 427 008e 6548     		ldr	r0, .L32+12
- 428 0090 00EB4300 		add	r0, r0, r3, lsl #1
- 429 0094 FFF7FEFF 		bl	patchouli_gauss_apply
+ 341              		.loc 1 109 21 view .LVU79
+ 342 006c 0546     		mov	r5, r0
+ 343 006e EAE7     		b	.L19
+ 344              	.LVL29:
+ 345              	.L30:
+ 109:patchouli/src/patchouli.c ****             maxpval = psamples[fstep];
+ 346              		.loc 1 109 21 view .LVU80
+ 347              	.LBE5:
+ 111:patchouli/src/patchouli.c ****         }
+ 112:patchouli/src/patchouli.c **** 	}
+ 113:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Max Pressure\n", 13);
+ 114:patchouli/src/patchouli.c **** 
+ 115:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Max Pressure Value:\n", 20);
+ 116:patchouli/src/patchouli.c ****     // sprintf(buf, "%d\n", maxpval);
+ 117:patchouli/src/patchouli.c ****     // uint8_t res = CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+ 118:patchouli/src/patchouli.c ****     // if(res == 0){
+ 119:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Successfully transmitted maxpval\n", 33);
+ 120:patchouli/src/patchouli.c ****     // } else if(res == 1) {
+ 121:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Busy\n", 5);
+ 122:patchouli/src/patchouli.c ****     // } else {
+ 123:patchouli/src/patchouli.c ****     //     CDC_Transmit_FS((uint8_t*)"Failed\n", 7);
+ 124:patchouli/src/patchouli.c ****     // }
+ 125:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"\n", 1);
+ 126:patchouli/src/patchouli.c **** 	if(maxpval>PATCHOULI_PDET_THRES){
+ 348              		.loc 1 126 2 is_stmt 1 view .LVU81
+ 349              		.loc 1 126 4 is_stmt 0 view .LVU82
+ 350 0070 962D     		cmp	r5, #150
+ 351 0072 40F2A880 		bls	.L21
+ 352              	.LBB6:
+ 127:patchouli/src/patchouli.c **** 		patchouli_led_on();
+ 353              		.loc 1 127 3 is_stmt 1 view .LVU83
+ 354 0076 FFF7FEFF 		bl	patchouli_led_on
+ 355              	.LVL30:
+ 128:patchouli/src/patchouli.c **** 		// Gauss Fit PDET
+ 129:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)"Gauss Fit PDET\n", 15);
+ 356              		.loc 1 129 9 view .LVU84
+ 357 007a 0F21     		movs	r1, #15
+ 358 007c 5948     		ldr	r0, .L32+16
+ 359 007e FFF7FEFF 		bl	CDC_Transmit_FS
+ 360              	.LVL31:
+ 130:patchouli/src/patchouli.c **** 		float c1[3];
+ 361              		.loc 1 130 3 view .LVU85
+ 131:patchouli/src/patchouli.c **** 		patchouli_gauss_apply((psamples+maxpptr-2), c1);
+ 362              		.loc 1 131 3 view .LVU86
+ 363              		.loc 1 131 42 is_stmt 0 view .LVU87
+ 364 0082 554C     		ldr	r4, .L32+4
+ 365              	.LVL32:
+ 366              		.loc 1 131 42 view .LVU88
+ 367 0084 2368     		ldr	r3, [r4]
+ 368 0086 03F10043 		add	r3, r3, #-2147483648
+ 369 008a 023B     		subs	r3, r3, #2
+ 370              		.loc 1 131 3 view .LVU89
+ 371 008c 05A9     		add	r1, sp, #20
+ 372 008e 5448     		ldr	r0, .L32+12
+ 373 0090 00EB4300 		add	r0, r0, r3, lsl #1
+ 374 0094 FFF7FEFF 		bl	patchouli_gauss_apply
+ 375              	.LVL33:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 10
+
+
+ 132:patchouli/src/patchouli.c **** 		float t = exp(11-(maxpptr-c1[1]/(2*c1[2])));
+ 376              		.loc 1 132 3 is_stmt 1 view .LVU90
+ 377              		.loc 1 132 40 is_stmt 0 view .LVU91
+ 378 0098 DDED077A 		vldr.32	s15, [sp, #28]
+ 379              		.loc 1 132 37 view .LVU92
+ 380 009c 77EEA77A 		vadd.f32	s15, s15, s15
+ 381              		.loc 1 132 34 view .LVU93
+ 382 00a0 DDED066A 		vldr.32	s13, [sp, #24]
+ 383 00a4 86EEA77A 		vdiv.f32	s14, s13, s15
+ 384              		.loc 1 132 28 view .LVU94
+ 385 00a8 D4ED007A 		vldr.32	s15, [r4]	@ int
+ 386 00ac F8EEE77A 		vcvt.f32.s32	s15, s15
+ 387 00b0 77EEC77A 		vsub.f32	s15, s15, s14
+ 388              		.loc 1 132 13 view .LVU95
+ 389 00b4 B2EE067A 		vmov.f32	s14, #1.1e+1
+ 390 00b8 77EE677A 		vsub.f32	s15, s14, s15
+ 391 00bc 17EE900A 		vmov	r0, s15
+ 392 00c0 FFF7FEFF 		bl	__aeabi_f2d
+ 393              	.LVL34:
+ 394 00c4 41EC100B 		vmov	d0, r0, r1
+ 395 00c8 FFF7FEFF 		bl	exp
+ 396              	.LVL35:
+ 397 00cc 51EC100B 		vmov	r0, r1, d0
+ 398              		.loc 1 132 9 discriminator 1 view .LVU96
+ 399 00d0 FFF7FEFF 		bl	__aeabi_d2f
+ 400              	.LVL36:
+ 401 00d4 00EE100A 		vmov	s0, r0
+ 402              	.LVL37:
+ 133:patchouli/src/patchouli.c **** 		if(t<2000) pavg = patchouli_mva_buffer_push(&mva_p, t);
+ 403              		.loc 1 133 3 is_stmt 1 view .LVU97
+ 404              		.loc 1 133 5 is_stmt 0 view .LVU98
+ 405 00d8 DFED437A 		vldr.32	s15, .L32+20
+ 406 00dc B4EEE70A 		vcmpe.f32	s0, s15
+ 407 00e0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 408 00e4 68D4     		bmi	.L31
+ 409              	.LVL38:
+ 410              	.L22:
+ 134:patchouli/src/patchouli.c **** 
+ 135:patchouli/src/patchouli.c ****         // Auto-zeroing
+ 136:patchouli/src/patchouli.c ****         if (!pen_present) {
+ 411              		.loc 1 136 9 is_stmt 1 view .LVU99
+ 412              		.loc 1 136 13 is_stmt 0 view .LVU100
+ 413 00e6 414B     		ldr	r3, .L32+24
+ 414 00e8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 415              		.loc 1 136 12 view .LVU101
+ 416 00ea 33B9     		cbnz	r3, .L24
+ 137:patchouli/src/patchouli.c ****             pen_present       = true;
+ 417              		.loc 1 137 13 is_stmt 1 view .LVU102
+ 418              		.loc 1 137 31 is_stmt 0 view .LVU103
+ 419 00ec 3F4B     		ldr	r3, .L32+24
+ 420 00ee 0122     		movs	r2, #1
+ 421 00f0 1A70     		strb	r2, [r3]
+ 138:patchouli/src/patchouli.c ****             pen_zero_pressure = pavg;
+ 422              		.loc 1 138 13 is_stmt 1 view .LVU104
+ 423              		.loc 1 138 31 is_stmt 0 view .LVU105
+ 424 00f2 3F4B     		ldr	r3, .L32+28
+ 425 00f4 1A68     		ldr	r2, [r3]	@ float
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 11
+
+
+ 426 00f6 3F4B     		ldr	r3, .L32+32
+ 427 00f8 1A60     		str	r2, [r3]	@ float
+ 428              	.L24:
+ 139:patchouli/src/patchouli.c ****         }
+ 140:patchouli/src/patchouli.c ****         const float x_src_min = 0.5f;
+ 429              		.loc 1 140 9 is_stmt 1 view .LVU106
  430              	.LVL39:
- 131:patchouli/src/patchouli.c **** 		float t = exp(11-(maxpptr-c1[1]/(2*c1[2])));
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 11
-
-
- 431              		.loc 1 131 3 is_stmt 1 view .LVU98
- 432              		.loc 1 131 40 is_stmt 0 view .LVU99
- 433 0098 DDED067A 		vldr.32	s15, [sp, #24]
- 434              		.loc 1 131 37 view .LVU100
- 435 009c 77EEA77A 		vadd.f32	s15, s15, s15
- 436              		.loc 1 131 34 view .LVU101
- 437 00a0 DDED056A 		vldr.32	s13, [sp, #20]
- 438 00a4 86EEA77A 		vdiv.f32	s14, s13, s15
- 439              		.loc 1 131 28 view .LVU102
- 440 00a8 D4ED007A 		vldr.32	s15, [r4]	@ int
- 441 00ac F8EEE77A 		vcvt.f32.s32	s15, s15
- 442 00b0 77EEC77A 		vsub.f32	s15, s15, s14
- 443              		.loc 1 131 13 view .LVU103
- 444 00b4 B2EE067A 		vmov.f32	s14, #1.1e+1
- 445 00b8 77EE677A 		vsub.f32	s15, s14, s15
- 446 00bc 17EE900A 		vmov	r0, s15
- 447 00c0 FFF7FEFF 		bl	__aeabi_f2d
- 448              	.LVL40:
- 449 00c4 41EC100B 		vmov	d0, r0, r1
- 450 00c8 FFF7FEFF 		bl	exp
+ 141:patchouli/src/patchouli.c ****         const float x_src_max = 10.5f;
+ 431              		.loc 1 141 9 view .LVU107
+ 142:patchouli/src/patchouli.c ****         const float y_src_min = 0.5f;
+ 432              		.loc 1 142 9 view .LVU108
+ 143:patchouli/src/patchouli.c ****         const float y_src_max = 7.5f;
+ 433              		.loc 1 143 9 view .LVU109
+ 144:patchouli/src/patchouli.c **** 
+ 145:patchouli/src/patchouli.c ****         const float x_dst_min = 0.0f;
+ 434              		.loc 1 145 9 view .LVU110
+ 146:patchouli/src/patchouli.c ****         const float x_dst_max = 32000.0f;
+ 435              		.loc 1 146 9 view .LVU111
+ 147:patchouli/src/patchouli.c ****         const float y_dst_min = 20000.0f;
+ 436              		.loc 1 147 9 view .LVU112
+ 148:patchouli/src/patchouli.c ****         const float y_dst_max = 0.0f;
+ 437              		.loc 1 148 9 view .LVU113
+ 149:patchouli/src/patchouli.c **** 
+ 150:patchouli/src/patchouli.c ****         int x = (int)round(patchouli_linear_map(x_src_min, x_src_max, x_dst_min, x_dst_max, xavg));
+ 438              		.loc 1 150 9 view .LVU114
+ 439              		.loc 1 150 28 is_stmt 0 view .LVU115
+ 440 00fa 9FED3F9A 		vldr.32	s18, .L32+36
+ 441 00fe B0EE682A 		vmov.f32	s4, s17
+ 442 0102 DFED3E1A 		vldr.32	s3, .L32+40
+ 443 0106 B0EE491A 		vmov.f32	s2, s18
+ 444 010a F2EE050A 		vmov.f32	s1, #1.05e+1
+ 445 010e B6EE000A 		vmov.f32	s0, #5.0e-1
+ 446 0112 FFF7FEFF 		bl	patchouli_linear_map
+ 447              	.LVL40:
+ 448 0116 10EE100A 		vmov	r0, s0
+ 449              		.loc 1 150 22 discriminator 1 view .LVU116
+ 450 011a FFF7FEFF 		bl	__aeabi_f2d
  451              	.LVL41:
- 452 00cc 51EC100B 		vmov	r0, r1, d0
- 453              		.loc 1 131 9 discriminator 1 view .LVU104
- 454 00d0 FFF7FEFF 		bl	__aeabi_d2f
- 455              	.LVL42:
- 456 00d4 00EE100A 		vmov	s0, r0
- 457              	.LVL43:
- 132:patchouli/src/patchouli.c **** 		if(t<2000) pavg = patchouli_mva_buffer_push(&mva_p, t);
- 458              		.loc 1 132 3 is_stmt 1 view .LVU105
- 459              		.loc 1 132 5 is_stmt 0 view .LVU106
- 460 00d8 DFED547A 		vldr.32	s15, .L32+20
- 461 00dc B4EEE70A 		vcmpe.f32	s0, s15
- 462 00e0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 463 00e4 00F18B80 		bmi	.L31
- 464              	.LVL44:
- 465              	.L22:
+ 452 011e 41EC100B 		vmov	d0, r0, r1
+ 453 0122 FFF7FEFF 		bl	round
+ 454              	.LVL42:
+ 455 0126 51EC100B 		vmov	r0, r1, d0
+ 456              		.loc 1 150 13 discriminator 2 view .LVU117
+ 457 012a FFF7FEFF 		bl	__aeabi_d2iz
+ 458              	.LVL43:
+ 459 012e 0446     		mov	r4, r0
+ 460              	.LVL44:
+ 151:patchouli/src/patchouli.c ****         int y = (int)round(patchouli_linear_map(y_src_min, y_src_max, y_dst_min, y_dst_max, yavg));
+ 461              		.loc 1 151 9 is_stmt 1 view .LVU118
+ 462              		.loc 1 151 28 is_stmt 0 view .LVU119
+ 463 0130 B0EE482A 		vmov.f32	s4, s16
+ 464 0134 F0EE491A 		vmov.f32	s3, s18
+ 465 0138 9FED311A 		vldr.32	s2, .L32+44
+ 466 013c F1EE0E0A 		vmov.f32	s1, #7.5e+0
+ 467 0140 B6EE000A 		vmov.f32	s0, #5.0e-1
+ 468 0144 FFF7FEFF 		bl	patchouli_linear_map
+ 469              	.LVL45:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 12
+
+
+ 470              		.loc 1 151 28 view .LVU120
+ 471 0148 10EE100A 		vmov	r0, s0
+ 472              		.loc 1 151 22 discriminator 1 view .LVU121
+ 473 014c FFF7FEFF 		bl	__aeabi_f2d
+ 474              	.LVL46:
+ 475 0150 41EC100B 		vmov	d0, r0, r1
+ 476 0154 FFF7FEFF 		bl	round
+ 477              	.LVL47:
+ 478 0158 51EC100B 		vmov	r0, r1, d0
+ 479              		.loc 1 151 13 discriminator 2 view .LVU122
+ 480 015c FFF7FEFF 		bl	__aeabi_d2iz
+ 481              	.LVL48:
+ 152:patchouli/src/patchouli.c **** 
+ 153:patchouli/src/patchouli.c ****         // Print the mapped coordinates
+ 154:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)"X:", 2);
+ 155:patchouli/src/patchouli.c ****         // sprintf(buf, "%d\n", x);
+ 156:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+ 157:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)"Y:", 2);
+ 158:patchouli/src/patchouli.c ****         // sprintf(buf, "%d\n", y);
+ 159:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
+ 160:patchouli/src/patchouli.c **** 
+ 161:patchouli/src/patchouli.c ****         const float pmax = 28.8f;
+ 482              		.loc 1 161 9 is_stmt 1 view .LVU123
+ 162:patchouli/src/patchouli.c ****         const float pmin = 970.0f;
+ 483              		.loc 1 162 9 view .LVU124
+ 163:patchouli/src/patchouli.c ****         const float prange = pmax-pmin;
+ 484              		.loc 1 163 9 view .LVU125
+ 164:patchouli/src/patchouli.c **** 
+ 165:patchouli/src/patchouli.c ****         int p = (int)(4096*(((pavg-pen_zero_pressure)/prange)*((pavg-pen_zero_pressure)/prange))); 
+ 485              		.loc 1 165 9 view .LVU126
+ 486              		.loc 1 165 35 is_stmt 0 view .LVU127
+ 487 0160 234B     		ldr	r3, .L32+28
+ 488 0162 93ED007A 		vldr.32	s14, [r3]
+ 489 0166 234B     		ldr	r3, .L32+32
+ 490 0168 D3ED007A 		vldr.32	s15, [r3]
+ 491 016c 37EE677A 		vsub.f32	s14, s14, s15
+ 492              		.loc 1 165 54 view .LVU128
+ 493 0170 DFED246A 		vldr.32	s13, .L32+48
+ 494 0174 C7EE267A 		vdiv.f32	s15, s14, s13
+ 495              		.loc 1 165 62 view .LVU129
+ 496 0178 67EEA77A 		vmul.f32	s15, s15, s15
+ 497              		.loc 1 165 13 view .LVU130
+ 498 017c B0EE677A 		vmov.f32	s14, s15
+ 499 0180 BEEECA7A 		vcvt.s32.f32	s14, s14, #12
+ 500 0184 17EE103A 		vmov	r3, s14	@ int
+ 501              	.LVL49:
+ 166:patchouli/src/patchouli.c ****         if (p>4095) p = 4095;
+ 502              		.loc 1 166 9 is_stmt 1 view .LVU131
+ 503              		.loc 1 166 12 is_stmt 0 view .LVU132
+ 504 0188 B3F5805F 		cmp	r3, #4096
+ 505 018c 01DB     		blt	.L25
+ 506              		.loc 1 166 23 discriminator 1 view .LVU133
+ 507 018e 40F6FF73 		movw	r3, #4095
+ 508              	.LVL50:
+ 509              	.L25:
+ 167:patchouli/src/patchouli.c ****         PATCHOULI_UsrLog("$%d, %d, %d, %d, %d;\r\n", (int)(xavg*1000), (int)(yavg*1000),(int)(pavg*
+ 510              		.loc 1 167 118 is_stmt 1 view .LVU134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 13
+
+
+ 168:patchouli/src/patchouli.c **** 		patchouli_report_t report = {0};
+ 511              		.loc 1 168 3 view .LVU135
+ 512              		.loc 1 168 22 is_stmt 0 view .LVU136
+ 513 0192 0022     		movs	r2, #0
+ 514 0194 0892     		str	r2, [sp, #32]
+ 515 0196 0992     		str	r2, [sp, #36]
+ 516 0198 0A92     		str	r2, [sp, #40]
+ 517 019a 0B92     		str	r2, [sp, #44]
+ 169:patchouli/src/patchouli.c **** 		report.xpos = x;
+ 518              		.loc 1 169 3 is_stmt 1 view .LVU137
+ 519              		.loc 1 169 15 is_stmt 0 view .LVU138
+ 520 019c ADF82040 		strh	r4, [sp, #32]	@ movhi
+ 170:patchouli/src/patchouli.c **** 		report.ypos = y;
+ 521              		.loc 1 170 3 is_stmt 1 view .LVU139
+ 522              		.loc 1 170 15 is_stmt 0 view .LVU140
+ 523 01a0 ADF82200 		strh	r0, [sp, #34]	@ movhi
+ 171:patchouli/src/patchouli.c **** 		report.tip  = p*4;
+ 524              		.loc 1 171 3 is_stmt 1 view .LVU141
+ 525              		.loc 1 171 15 is_stmt 0 view .LVU142
+ 526 01a4 9B00     		lsls	r3, r3, #2
+ 527              	.LVL51:
+ 528              		.loc 1 171 15 view .LVU143
+ 529 01a6 ADF82A30 		strh	r3, [sp, #42]	@ movhi
+ 172:patchouli/src/patchouli.c **** 		patchouli_transmit(&report);
+ 530              		.loc 1 172 3 is_stmt 1 view .LVU144
+ 531 01aa 08A8     		add	r0, sp, #32
+ 532              	.LVL52:
+ 533              		.loc 1 172 3 is_stmt 0 view .LVU145
+ 534 01ac FFF7FEFF 		bl	patchouli_transmit
+ 535              	.LVL53:
+ 536              	.L17:
+ 537              		.loc 1 172 3 view .LVU146
+ 538              	.LBE6:
+ 173:patchouli/src/patchouli.c **** 	} else {
+ 174:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)"Pen not present\n", 17);
+ 175:patchouli/src/patchouli.c ****         pen_present = false;
+ 176:patchouli/src/patchouli.c **** 		patchouli_led_off();
+ 177:patchouli/src/patchouli.c **** 	}
+ 178:patchouli/src/patchouli.c **** }
+ 539              		.loc 1 178 1 view .LVU147
+ 540 01b0 0DB0     		add	sp, sp, #52
+ 541              		.cfi_remember_state
+ 542              		.cfi_def_cfa_offset 36
+ 543              		@ sp needed
+ 544 01b2 BDEC048B 		vldm	sp!, {d8-d9}
+ 545              		.cfi_restore 82
+ 546              		.cfi_restore 83
+ 547              		.cfi_restore 80
+ 548              		.cfi_restore 81
+ 549              		.cfi_def_cfa_offset 20
+ 550              	.LVL54:
+ 551              		.loc 1 178 1 view .LVU148
+ 552 01b6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 553              	.LVL55:
+ 554              	.L31:
+ 555              		.cfi_restore_state
+ 556              	.LBB7:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 14
+
+
  133:patchouli/src/patchouli.c **** 
- 134:patchouli/src/patchouli.c ****         // Auto-zeroing
- 135:patchouli/src/patchouli.c ****         if (!pen_present) {
- 466              		.loc 1 135 9 is_stmt 1 view .LVU107
- 467              		.loc 1 135 13 is_stmt 0 view .LVU108
- 468 00e8 514B     		ldr	r3, .L32+24
- 469 00ea 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 470              		.loc 1 135 12 view .LVU109
- 471 00ec 33B9     		cbnz	r3, .L24
- 136:patchouli/src/patchouli.c ****             pen_present       = true;
- 472              		.loc 1 136 13 is_stmt 1 view .LVU110
- 473              		.loc 1 136 31 is_stmt 0 view .LVU111
- 474 00ee 504B     		ldr	r3, .L32+24
- 475 00f0 0122     		movs	r2, #1
- 476 00f2 1A70     		strb	r2, [r3]
- 137:patchouli/src/patchouli.c ****             pen_zero_pressure = pavg;
- 477              		.loc 1 137 13 is_stmt 1 view .LVU112
- 478              		.loc 1 137 31 is_stmt 0 view .LVU113
- 479 00f4 4F4B     		ldr	r3, .L32+28
- 480 00f6 1A68     		ldr	r2, [r3]	@ float
- 481 00f8 4F4B     		ldr	r3, .L32+32
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 12
-
-
- 482 00fa 1A60     		str	r2, [r3]	@ float
- 483              	.L24:
- 138:patchouli/src/patchouli.c ****         }
- 139:patchouli/src/patchouli.c ****         const float x_src_min = 0.5f;
- 484              		.loc 1 139 9 is_stmt 1 view .LVU114
- 485              	.LVL45:
- 140:patchouli/src/patchouli.c ****         const float x_src_max = 10.5f;
- 486              		.loc 1 140 9 view .LVU115
- 141:patchouli/src/patchouli.c ****         const float y_src_min = 0.5f;
- 487              		.loc 1 141 9 view .LVU116
- 142:patchouli/src/patchouli.c ****         const float y_src_max = 7.5f;
- 488              		.loc 1 142 9 view .LVU117
- 143:patchouli/src/patchouli.c **** 
- 144:patchouli/src/patchouli.c ****         const float x_dst_min = 0.0f;
- 489              		.loc 1 144 9 view .LVU118
- 145:patchouli/src/patchouli.c ****         const float x_dst_max = 32000.0f;
- 490              		.loc 1 145 9 view .LVU119
- 146:patchouli/src/patchouli.c ****         const float y_dst_min = 20000.0f;
- 491              		.loc 1 146 9 view .LVU120
- 147:patchouli/src/patchouli.c ****         const float y_dst_max = 0.0f;
- 492              		.loc 1 147 9 view .LVU121
- 148:patchouli/src/patchouli.c **** 
- 149:patchouli/src/patchouli.c ****         int x = (int)round(patchouli_linear_map(x_src_min, x_src_max, x_dst_min, x_dst_max, xavg));
- 493              		.loc 1 149 9 view .LVU122
- 494              		.loc 1 149 28 is_stmt 0 view .LVU123
- 495 00fc 9FED4F9A 		vldr.32	s18, .L32+36
- 496 0100 B0EE682A 		vmov.f32	s4, s17
- 497 0104 DFED4E1A 		vldr.32	s3, .L32+40
- 498 0108 B0EE491A 		vmov.f32	s2, s18
- 499 010c F2EE050A 		vmov.f32	s1, #1.05e+1
- 500 0110 B6EE000A 		vmov.f32	s0, #5.0e-1
- 501 0114 FFF7FEFF 		bl	patchouli_linear_map
- 502              	.LVL46:
- 503 0118 10EE100A 		vmov	r0, s0
- 504              		.loc 1 149 22 discriminator 1 view .LVU124
- 505 011c FFF7FEFF 		bl	__aeabi_f2d
- 506              	.LVL47:
- 507 0120 41EC100B 		vmov	d0, r0, r1
- 508 0124 FFF7FEFF 		bl	round
- 509              	.LVL48:
- 510 0128 51EC100B 		vmov	r0, r1, d0
- 511              		.loc 1 149 13 discriminator 2 view .LVU125
- 512 012c FFF7FEFF 		bl	__aeabi_d2iz
- 513              	.LVL49:
- 514 0130 0546     		mov	r5, r0
- 515              	.LVL50:
- 150:patchouli/src/patchouli.c ****         int y = (int)round(patchouli_linear_map(y_src_min, y_src_max, y_dst_min, y_dst_max, yavg));
- 516              		.loc 1 150 9 is_stmt 1 view .LVU126
- 517              		.loc 1 150 28 is_stmt 0 view .LVU127
- 518 0132 B0EE482A 		vmov.f32	s4, s16
- 519 0136 F0EE491A 		vmov.f32	s3, s18
- 520 013a 9FED421A 		vldr.32	s2, .L32+44
- 521 013e F1EE0E0A 		vmov.f32	s1, #7.5e+0
- 522 0142 B6EE000A 		vmov.f32	s0, #5.0e-1
- 523 0146 FFF7FEFF 		bl	patchouli_linear_map
- 524              	.LVL51:
- 525              		.loc 1 150 28 view .LVU128
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 13
-
-
- 526 014a 10EE100A 		vmov	r0, s0
- 527              		.loc 1 150 22 discriminator 1 view .LVU129
- 528 014e FFF7FEFF 		bl	__aeabi_f2d
- 529              	.LVL52:
- 530 0152 41EC100B 		vmov	d0, r0, r1
- 531 0156 FFF7FEFF 		bl	round
- 532              	.LVL53:
- 533 015a 51EC100B 		vmov	r0, r1, d0
- 534              		.loc 1 150 13 discriminator 2 view .LVU130
- 535 015e FFF7FEFF 		bl	__aeabi_d2iz
- 536              	.LVL54:
- 537 0162 0446     		mov	r4, r0
- 538              	.LVL55:
- 151:patchouli/src/patchouli.c **** 
- 152:patchouli/src/patchouli.c ****         // Print the mapped coordinates
- 153:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)"X:", 2);
- 539              		.loc 1 153 9 is_stmt 1 view .LVU131
- 540 0164 0221     		movs	r1, #2
- 541 0166 3848     		ldr	r0, .L32+48
- 542              	.LVL56:
- 543              		.loc 1 153 9 is_stmt 0 view .LVU132
- 544 0168 FFF7FEFF 		bl	CDC_Transmit_FS
- 545              	.LVL57:
- 154:patchouli/src/patchouli.c ****         sprintf(buf, "%d\n", x);
- 546              		.loc 1 154 9 is_stmt 1 view .LVU133
- 547 016c 374E     		ldr	r6, .L32+52
- 548 016e 2A46     		mov	r2, r5
- 549 0170 3146     		mov	r1, r6
- 550 0172 0BA8     		add	r0, sp, #44
- 551 0174 FFF7FEFF 		bl	sprintf
- 552              	.LVL58:
- 155:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 553              		.loc 1 155 9 view .LVU134
- 554              		.loc 1 155 40 is_stmt 0 view .LVU135
- 555 0178 0BA8     		add	r0, sp, #44
- 556 017a FFF7FEFF 		bl	strlen
- 557              	.LVL59:
- 558              		.loc 1 155 9 discriminator 1 view .LVU136
- 559 017e 81B2     		uxth	r1, r0
- 560 0180 0BA8     		add	r0, sp, #44
- 561 0182 FFF7FEFF 		bl	CDC_Transmit_FS
- 562              	.LVL60:
- 156:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)"Y:", 2);
- 563              		.loc 1 156 9 is_stmt 1 view .LVU137
- 564 0186 0221     		movs	r1, #2
- 565 0188 3148     		ldr	r0, .L32+56
- 566 018a FFF7FEFF 		bl	CDC_Transmit_FS
- 567              	.LVL61:
- 157:patchouli/src/patchouli.c ****         sprintf(buf, "%d\n", y);
- 568              		.loc 1 157 9 view .LVU138
- 569 018e 2246     		mov	r2, r4
- 570 0190 3146     		mov	r1, r6
- 571 0192 0BA8     		add	r0, sp, #44
- 572 0194 FFF7FEFF 		bl	sprintf
- 573              	.LVL62:
- 158:patchouli/src/patchouli.c ****         CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 574              		.loc 1 158 9 view .LVU139
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 14
-
-
- 575              		.loc 1 158 40 is_stmt 0 view .LVU140
- 576 0198 0BA8     		add	r0, sp, #44
- 577 019a FFF7FEFF 		bl	strlen
- 578              	.LVL63:
- 579              		.loc 1 158 9 discriminator 1 view .LVU141
- 580 019e 81B2     		uxth	r1, r0
- 581 01a0 0BA8     		add	r0, sp, #44
- 582 01a2 FFF7FEFF 		bl	CDC_Transmit_FS
- 583              	.LVL64:
- 159:patchouli/src/patchouli.c **** 
- 160:patchouli/src/patchouli.c ****         const float pmax = 28.8f;
- 584              		.loc 1 160 9 is_stmt 1 view .LVU142
- 161:patchouli/src/patchouli.c ****         const float pmin = 970.0f;
- 585              		.loc 1 161 9 view .LVU143
- 162:patchouli/src/patchouli.c ****         const float prange = pmax-pmin;
- 586              		.loc 1 162 9 view .LVU144
- 163:patchouli/src/patchouli.c **** 
- 164:patchouli/src/patchouli.c ****         int p = (int)(4096*(((pavg-pen_zero_pressure)/prange)*((pavg-pen_zero_pressure)/prange))); 
- 587              		.loc 1 164 9 view .LVU145
- 588              		.loc 1 164 35 is_stmt 0 view .LVU146
- 589 01a6 234B     		ldr	r3, .L32+28
- 590 01a8 93ED007A 		vldr.32	s14, [r3]
- 591 01ac 224B     		ldr	r3, .L32+32
- 592 01ae D3ED007A 		vldr.32	s15, [r3]
- 593 01b2 37EE677A 		vsub.f32	s14, s14, s15
- 594              		.loc 1 164 54 view .LVU147
- 595 01b6 DFED276A 		vldr.32	s13, .L32+60
- 596 01ba C7EE267A 		vdiv.f32	s15, s14, s13
- 597              		.loc 1 164 62 view .LVU148
- 598 01be 67EEA77A 		vmul.f32	s15, s15, s15
- 599              		.loc 1 164 13 view .LVU149
- 600 01c2 B0EE677A 		vmov.f32	s14, s15
- 601 01c6 BEEECA7A 		vcvt.s32.f32	s14, s14, #12
- 602 01ca 17EE103A 		vmov	r3, s14	@ int
- 603              	.LVL65:
- 165:patchouli/src/patchouli.c ****         if (p>4095) p = 4095;
- 604              		.loc 1 165 9 is_stmt 1 view .LVU150
- 605              		.loc 1 165 12 is_stmt 0 view .LVU151
- 606 01ce B3F5805F 		cmp	r3, #4096
- 607 01d2 01DB     		blt	.L25
- 608              		.loc 1 165 23 discriminator 1 view .LVU152
- 609 01d4 40F6FF73 		movw	r3, #4095
- 610              	.LVL66:
- 611              	.L25:
- 166:patchouli/src/patchouli.c ****         PATCHOULI_UsrLog("$%d, %d, %d, %d, %d;\r\n", (int)(xavg*1000), (int)(yavg*1000),(int)(pavg*
- 612              		.loc 1 166 118 is_stmt 1 view .LVU153
- 167:patchouli/src/patchouli.c **** 		patchouli_report_t report = {0};
- 613              		.loc 1 167 3 view .LVU154
- 614              		.loc 1 167 22 is_stmt 0 view .LVU155
- 615 01d8 0022     		movs	r2, #0
- 616 01da 0792     		str	r2, [sp, #28]
- 617 01dc 0892     		str	r2, [sp, #32]
- 618 01de 0992     		str	r2, [sp, #36]
- 619 01e0 0A92     		str	r2, [sp, #40]
- 168:patchouli/src/patchouli.c **** 		report.xpos = x;
- 620              		.loc 1 168 3 is_stmt 1 view .LVU156
- 621              		.loc 1 168 15 is_stmt 0 view .LVU157
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 15
-
-
- 622 01e2 ADF81C50 		strh	r5, [sp, #28]	@ movhi
- 169:patchouli/src/patchouli.c **** 		report.ypos = y;
- 623              		.loc 1 169 3 is_stmt 1 view .LVU158
- 624              		.loc 1 169 15 is_stmt 0 view .LVU159
- 625 01e6 ADF81E40 		strh	r4, [sp, #30]	@ movhi
- 170:patchouli/src/patchouli.c **** 		report.tip  = p*4;
- 626              		.loc 1 170 3 is_stmt 1 view .LVU160
- 627              		.loc 1 170 15 is_stmt 0 view .LVU161
- 628 01ea 9B00     		lsls	r3, r3, #2
- 629              	.LVL67:
- 630              		.loc 1 170 15 view .LVU162
- 631 01ec ADF82630 		strh	r3, [sp, #38]	@ movhi
- 171:patchouli/src/patchouli.c **** 		patchouli_transmit(&report);
- 632              		.loc 1 171 3 is_stmt 1 view .LVU163
- 633 01f0 07A8     		add	r0, sp, #28
- 634 01f2 FFF7FEFF 		bl	patchouli_transmit
- 635              	.LVL68:
- 636              	.L17:
- 637              		.loc 1 171 3 is_stmt 0 view .LVU164
- 638              	.LBE6:
- 172:patchouli/src/patchouli.c **** 	} else {
- 173:patchouli/src/patchouli.c ****         // CDC_Transmit_FS((uint8_t*)"Pen not present\n", 17);
- 174:patchouli/src/patchouli.c ****         pen_present = false;
+ 557              		.loc 1 133 14 is_stmt 1 discriminator 1 view .LVU149
+ 133:patchouli/src/patchouli.c **** 
+ 558              		.loc 1 133 21 is_stmt 0 discriminator 1 view .LVU150
+ 559 01b8 1348     		ldr	r0, .L32+52
+ 560              	.LVL56:
+ 133:patchouli/src/patchouli.c **** 
+ 561              		.loc 1 133 21 discriminator 1 view .LVU151
+ 562 01ba FFF7FEFF 		bl	patchouli_mva_buffer_push
+ 563              	.LVL57:
+ 133:patchouli/src/patchouli.c **** 
+ 564              		.loc 1 133 19 discriminator 1 view .LVU152
+ 565 01be 0C4B     		ldr	r3, .L32+28
+ 566 01c0 83ED000A 		vstr.32	s0, [r3]
+ 567 01c4 8FE7     		b	.L22
+ 568              	.LVL58:
+ 569              	.L21:
+ 133:patchouli/src/patchouli.c **** 
+ 570              		.loc 1 133 19 discriminator 1 view .LVU153
+ 571              	.LBE7:
  175:patchouli/src/patchouli.c **** 		patchouli_led_off();
+ 572              		.loc 1 175 9 is_stmt 1 view .LVU154
+ 175:patchouli/src/patchouli.c **** 		patchouli_led_off();
+ 573              		.loc 1 175 21 is_stmt 0 view .LVU155
+ 574 01c6 094B     		ldr	r3, .L32+24
+ 575 01c8 0022     		movs	r2, #0
+ 576 01ca 1A70     		strb	r2, [r3]
  176:patchouli/src/patchouli.c **** 	}
- 177:patchouli/src/patchouli.c **** }
- 639              		.loc 1 177 1 view .LVU165
- 640 01f6 11B0     		add	sp, sp, #68
- 641              		.cfi_remember_state
- 642              		.cfi_def_cfa_offset 36
- 643              		@ sp needed
- 644 01f8 BDEC048B 		vldm	sp!, {d8-d9}
- 645              		.cfi_restore 82
- 646              		.cfi_restore 83
- 647              		.cfi_restore 80
- 648              		.cfi_restore 81
- 649              		.cfi_def_cfa_offset 20
- 650              	.LVL69:
- 651              		.loc 1 177 1 view .LVU166
- 652 01fc F0BD     		pop	{r4, r5, r6, r7, pc}
- 653              	.LVL70:
- 654              	.L31:
- 655              		.cfi_restore_state
- 656              	.LBB7:
- 132:patchouli/src/patchouli.c **** 
- 657              		.loc 1 132 14 is_stmt 1 discriminator 1 view .LVU167
- 132:patchouli/src/patchouli.c **** 
- 658              		.loc 1 132 21 is_stmt 0 discriminator 1 view .LVU168
- 659 01fe 1648     		ldr	r0, .L32+64
- 660              	.LVL71:
- 132:patchouli/src/patchouli.c **** 
- 661              		.loc 1 132 21 discriminator 1 view .LVU169
- 662 0200 FFF7FEFF 		bl	patchouli_mva_buffer_push
- 663              	.LVL72:
- 132:patchouli/src/patchouli.c **** 
- 664              		.loc 1 132 19 discriminator 1 view .LVU170
- 665 0204 0B4B     		ldr	r3, .L32+28
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 16
+ 577              		.loc 1 176 3 is_stmt 1 view .LVU156
+ 578 01cc FFF7FEFF 		bl	patchouli_led_off
+ 579              	.LVL59:
+ 580              		.loc 1 178 1 is_stmt 0 view .LVU157
+ 581 01d0 EEE7     		b	.L17
+ 582              	.L33:
+ 583 01d2 00BF     		.align	2
+ 584              	.L32:
+ 585 01d4 00000000 		.word	xpos
+ 586 01d8 00000000 		.word	maxpptr
+ 587 01dc 00000000 		.word	ypos
+ 588 01e0 00000000 		.word	psamples
+ 589 01e4 00000000 		.word	.LC0
+ 590 01e8 0000FA44 		.word	1157234688
+ 591 01ec 00000000 		.word	pen_present
+ 592 01f0 00000000 		.word	pavg
+ 593 01f4 00000000 		.word	pen_zero_pressure
+ 594 01f8 00000000 		.word	0
+ 595 01fc 0000FA46 		.word	1190789120
+ 596 0200 00409C46 		.word	1184645120
+ 597 0204 CD4C6BC4 		.word	-999600947
+ 598 0208 00000000 		.word	mva_p
+ 599              		.cfi_endproc
+ 600              	.LFE1110:
+ 602              		.section	.text._patchouli_cycle_xscan,"ax",%progbits
+ 603              		.align	1
+ 604              		.global	_patchouli_cycle_xscan
+ 605              		.syntax unified
+ 606              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 15
 
 
- 666 0206 83ED000A 		vstr.32	s0, [r3]
- 667 020a 6DE7     		b	.L22
- 668              	.LVL73:
- 669              	.L21:
- 132:patchouli/src/patchouli.c **** 
- 670              		.loc 1 132 19 discriminator 1 view .LVU171
- 671              	.LBE7:
- 174:patchouli/src/patchouli.c **** 		patchouli_led_off();
- 672              		.loc 1 174 9 is_stmt 1 view .LVU172
- 174:patchouli/src/patchouli.c **** 		patchouli_led_off();
- 673              		.loc 1 174 21 is_stmt 0 view .LVU173
- 674 020c 084B     		ldr	r3, .L32+24
- 675 020e 0022     		movs	r2, #0
- 676 0210 1A70     		strb	r2, [r3]
- 175:patchouli/src/patchouli.c **** 	}
- 677              		.loc 1 175 3 is_stmt 1 view .LVU174
- 678 0212 FFF7FEFF 		bl	patchouli_led_off
- 679              	.LVL74:
- 680              		.loc 1 177 1 is_stmt 0 view .LVU175
- 681 0216 EEE7     		b	.L17
- 682              	.L33:
- 683              		.align	2
- 684              	.L32:
- 685 0218 00000000 		.word	xpos
- 686 021c 00000000 		.word	maxpptr
- 687 0220 00000000 		.word	ypos
- 688 0224 00000000 		.word	psamples
- 689 0228 00000000 		.word	.LC2
- 690 022c 0000FA44 		.word	1157234688
- 691 0230 00000000 		.word	pen_present
- 692 0234 00000000 		.word	pavg
- 693 0238 00000000 		.word	pen_zero_pressure
- 694 023c 00000000 		.word	0
- 695 0240 0000FA46 		.word	1190789120
- 696 0244 00409C46 		.word	1184645120
- 697 0248 10000000 		.word	.LC3
- 698 024c 14000000 		.word	.LC4
- 699 0250 18000000 		.word	.LC5
- 700 0254 CD4C6BC4 		.word	-999600947
- 701 0258 00000000 		.word	mva_p
- 702              		.cfi_endproc
- 703              	.LFE1110:
- 705              		.section	.text._patchouli_cycle_xscan,"ax",%progbits
- 706              		.align	1
- 707              		.global	_patchouli_cycle_xscan
- 708              		.syntax unified
- 709              		.thumb
- 710              		.thumb_func
- 712              	_patchouli_cycle_xscan:
- 713              	.LFB1111:
- 178:patchouli/src/patchouli.c **** 
- 179:patchouli/src/patchouli.c **** void _patchouli_cycle_xscan(){
- 714              		.loc 1 179 30 is_stmt 1 view -0
- 715              		.cfi_startproc
- 716              		@ args = 0, pretend = 0, frame = 0
- 717              		@ frame_needed = 0, uses_anonymous_args = 0
- 718 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 17
-
-
- 719              		.cfi_def_cfa_offset 8
- 720              		.cfi_offset 4, -8
- 721              		.cfi_offset 14, -4
- 180:patchouli/src/patchouli.c ****     // Scan X Position
- 181:patchouli/src/patchouli.c ****     for (int xstep=0;xstep<PATCHOULI_N_X_COIL;xstep++){
- 722              		.loc 1 181 5 view .LVU177
- 723              	.LBB8:
- 724              		.loc 1 181 10 view .LVU178
- 725              	.LVL75:
- 726              		.loc 1 181 14 is_stmt 0 view .LVU179
- 727 0002 0024     		movs	r4, #0
- 728              		.loc 1 181 5 view .LVU180
- 729 0004 08E0     		b	.L35
- 730              	.LVL76:
- 731              	.L36:
+ 607              		.thumb_func
+ 609              	_patchouli_cycle_xscan:
+ 610              	.LFB1111:
+ 179:patchouli/src/patchouli.c **** 
+ 180:patchouli/src/patchouli.c **** void _patchouli_cycle_xscan(){
+ 611              		.loc 1 180 30 is_stmt 1 view -0
+ 612              		.cfi_startproc
+ 613              		@ args = 0, pretend = 0, frame = 0
+ 614              		@ frame_needed = 0, uses_anonymous_args = 0
+ 615 0000 10B5     		push	{r4, lr}
+ 616              		.cfi_def_cfa_offset 8
+ 617              		.cfi_offset 4, -8
+ 618              		.cfi_offset 14, -4
+ 181:patchouli/src/patchouli.c ****     // Scan X Position
+ 182:patchouli/src/patchouli.c ****     for (int xstep=0;xstep<PATCHOULI_N_X_COIL;xstep++){
+ 619              		.loc 1 182 5 view .LVU159
+ 620              	.LBB8:
+ 621              		.loc 1 182 10 view .LVU160
+ 622              	.LVL60:
+ 623              		.loc 1 182 14 is_stmt 0 view .LVU161
+ 624 0002 0024     		movs	r4, #0
+ 625              		.loc 1 182 5 view .LVU162
+ 626 0004 08E0     		b	.L35
+ 627              	.LVL61:
+ 628              	.L36:
+ 183:patchouli/src/patchouli.c ****         patchouli_coil_select(xstep, true);
+ 629              		.loc 1 183 9 is_stmt 1 view .LVU163
+ 630 0006 0121     		movs	r1, #1
+ 631 0008 2046     		mov	r0, r4
+ 632 000a FFF7FEFF 		bl	patchouli_coil_select
+ 633              	.LVL62:
+ 184:patchouli/src/patchouli.c ****         patchouli_simple_take_sample(false, 0);
+ 634              		.loc 1 184 9 view .LVU164
+ 635 000e 0021     		movs	r1, #0
+ 636 0010 0846     		mov	r0, r1
+ 637 0012 FFF7FEFF 		bl	patchouli_simple_take_sample
+ 638              	.LVL63:
  182:patchouli/src/patchouli.c ****         patchouli_coil_select(xstep, true);
- 732              		.loc 1 182 9 is_stmt 1 view .LVU181
- 733 0006 0121     		movs	r1, #1
- 734 0008 2046     		mov	r0, r4
- 735 000a FFF7FEFF 		bl	patchouli_coil_select
- 736              	.LVL77:
- 183:patchouli/src/patchouli.c ****         patchouli_simple_take_sample(false, 0);
- 737              		.loc 1 183 9 view .LVU182
- 738 000e 0021     		movs	r1, #0
- 739 0010 0846     		mov	r0, r1
- 740 0012 FFF7FEFF 		bl	patchouli_simple_take_sample
- 741              	.LVL78:
- 181:patchouli/src/patchouli.c ****         patchouli_coil_select(xstep, true);
- 742              		.loc 1 181 52 discriminator 3 view .LVU183
- 743 0016 0134     		adds	r4, r4, #1
- 744              	.LVL79:
- 745              	.L35:
- 181:patchouli/src/patchouli.c ****         patchouli_coil_select(xstep, true);
- 746              		.loc 1 181 27 discriminator 1 view .LVU184
- 747 0018 1B2C     		cmp	r4, #27
- 748 001a F4D9     		bls	.L36
- 749              	.LBE8:
- 750              	.LBB9:
- 184:patchouli/src/patchouli.c ****     }
- 185:patchouli/src/patchouli.c ****     // Sleep for 1000 cycles
- 186:patchouli/src/patchouli.c ****     for (int i=0;i<50000;i++){
- 751              		.loc 1 186 14 is_stmt 0 view .LVU185
- 752 001c 0023     		movs	r3, #0
- 753 001e 01E0     		b	.L37
- 754              	.LVL80:
- 755              	.L38:
+ 639              		.loc 1 182 52 discriminator 3 view .LVU165
+ 640 0016 0134     		adds	r4, r4, #1
+ 641              	.LVL64:
+ 642              	.L35:
+ 182:patchouli/src/patchouli.c ****         patchouli_coil_select(xstep, true);
+ 643              		.loc 1 182 27 discriminator 1 view .LVU166
+ 644 0018 1B2C     		cmp	r4, #27
+ 645 001a F4D9     		bls	.L36
+ 646              	.LBE8:
+ 647              	.LBB9:
+ 185:patchouli/src/patchouli.c ****     }
+ 186:patchouli/src/patchouli.c ****     // Sleep for 1000 cycles
+ 187:patchouli/src/patchouli.c ****     for (int i=0;i<50000;i++){
+ 648              		.loc 1 187 14 is_stmt 0 view .LVU167
+ 649 001c 0023     		movs	r3, #0
+ 650 001e 01E0     		b	.L37
+ 651              	.LVL65:
+ 652              	.L38:
+ 188:patchouli/src/patchouli.c ****         // Do nothing, just wait
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 16
+
+
+ 189:patchouli/src/patchouli.c ****         __asm__ volatile ("nop");
+ 653              		.loc 1 189 9 is_stmt 1 view .LVU168
+ 654              		.syntax unified
+ 655              	@ 189 "patchouli/src/patchouli.c" 1
+ 656 0020 00BF     		nop
+ 657              	@ 0 "" 2
  187:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 188:patchouli/src/patchouli.c ****         __asm__ volatile ("nop");
- 756              		.loc 1 188 9 is_stmt 1 view .LVU186
- 757              		.syntax unified
- 758              	@ 188 "patchouli/src/patchouli.c" 1
- 759 0020 00BF     		nop
- 760              	@ 0 "" 2
- 186:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 761              		.loc 1 186 27 discriminator 3 view .LVU187
- 762              		.thumb
- 763              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 18
+ 658              		.loc 1 187 27 discriminator 3 view .LVU169
+ 659              		.thumb
+ 660              		.syntax unified
+ 661 0022 0133     		adds	r3, r3, #1
+ 662              	.LVL66:
+ 663              	.L37:
+ 187:patchouli/src/patchouli.c ****         // Do nothing, just wait
+ 664              		.loc 1 187 19 discriminator 1 view .LVU170
+ 665 0024 4CF24F32 		movw	r2, #49999
+ 666 0028 9342     		cmp	r3, r2
+ 667 002a F9DD     		ble	.L38
+ 668              	.LBE9:
+ 190:patchouli/src/patchouli.c ****     }
+ 191:patchouli/src/patchouli.c **** }
+ 669              		.loc 1 191 1 is_stmt 0 view .LVU171
+ 670 002c 10BD     		pop	{r4, pc}
+ 671              		.loc 1 191 1 view .LVU172
+ 672              		.cfi_endproc
+ 673              	.LFE1111:
+ 675              		.section	.text._patchouli_cycle_yscan,"ax",%progbits
+ 676              		.align	1
+ 677              		.global	_patchouli_cycle_yscan
+ 678              		.syntax unified
+ 679              		.thumb
+ 680              		.thumb_func
+ 682              	_patchouli_cycle_yscan:
+ 683              	.LFB1112:
+ 192:patchouli/src/patchouli.c **** 
+ 193:patchouli/src/patchouli.c **** void _patchouli_cycle_yscan(){
+ 684              		.loc 1 193 30 is_stmt 1 view -0
+ 685              		.cfi_startproc
+ 686              		@ args = 0, pretend = 0, frame = 0
+ 687              		@ frame_needed = 0, uses_anonymous_args = 0
+ 688 0000 10B5     		push	{r4, lr}
+ 689              		.cfi_def_cfa_offset 8
+ 690              		.cfi_offset 4, -8
+ 691              		.cfi_offset 14, -4
+ 194:patchouli/src/patchouli.c ****     // Scan Y Position
+ 195:patchouli/src/patchouli.c ****     for (int ystep=0;ystep<PATCHOULI_N_Y_COIL;ystep++){
+ 692              		.loc 1 195 5 view .LVU174
+ 693              	.LBB10:
+ 694              		.loc 1 195 10 view .LVU175
+ 695              	.LVL67:
+ 696              		.loc 1 195 14 is_stmt 0 view .LVU176
+ 697 0002 0024     		movs	r4, #0
+ 698              		.loc 1 195 5 view .LVU177
+ 699 0004 08E0     		b	.L41
+ 700              	.LVL68:
+ 701              	.L42:
+ 196:patchouli/src/patchouli.c ****         patchouli_coil_select(ystep, false);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 17
 
 
- 764 0022 0133     		adds	r3, r3, #1
- 765              	.LVL81:
- 766              	.L37:
- 186:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 767              		.loc 1 186 19 discriminator 1 view .LVU188
- 768 0024 4CF24F32 		movw	r2, #49999
- 769 0028 9342     		cmp	r3, r2
- 770 002a F9DD     		ble	.L38
- 771              	.LBE9:
- 189:patchouli/src/patchouli.c ****     }
- 190:patchouli/src/patchouli.c **** }
- 772              		.loc 1 190 1 is_stmt 0 view .LVU189
- 773 002c 10BD     		pop	{r4, pc}
- 774              		.loc 1 190 1 view .LVU190
- 775              		.cfi_endproc
- 776              	.LFE1111:
- 778              		.section	.text._patchouli_cycle_yscan,"ax",%progbits
- 779              		.align	1
- 780              		.global	_patchouli_cycle_yscan
- 781              		.syntax unified
- 782              		.thumb
- 783              		.thumb_func
- 785              	_patchouli_cycle_yscan:
- 786              	.LFB1112:
- 191:patchouli/src/patchouli.c **** 
- 192:patchouli/src/patchouli.c **** void _patchouli_cycle_yscan(){
- 787              		.loc 1 192 30 is_stmt 1 view -0
- 788              		.cfi_startproc
- 789              		@ args = 0, pretend = 0, frame = 0
- 790              		@ frame_needed = 0, uses_anonymous_args = 0
- 791 0000 10B5     		push	{r4, lr}
- 792              		.cfi_def_cfa_offset 8
- 793              		.cfi_offset 4, -8
- 794              		.cfi_offset 14, -4
- 193:patchouli/src/patchouli.c ****     // Scan Y Position
- 194:patchouli/src/patchouli.c ****     for (int ystep=0;ystep<PATCHOULI_N_Y_COIL;ystep++){
- 795              		.loc 1 194 5 view .LVU192
- 796              	.LBB10:
- 797              		.loc 1 194 10 view .LVU193
- 798              	.LVL82:
- 799              		.loc 1 194 14 is_stmt 0 view .LVU194
- 800 0002 0024     		movs	r4, #0
- 801              		.loc 1 194 5 view .LVU195
- 802 0004 08E0     		b	.L41
- 803              	.LVL83:
- 804              	.L42:
+ 702              		.loc 1 196 9 is_stmt 1 view .LVU178
+ 703 0006 0021     		movs	r1, #0
+ 704 0008 2046     		mov	r0, r4
+ 705 000a FFF7FEFF 		bl	patchouli_coil_select
+ 706              	.LVL69:
+ 197:patchouli/src/patchouli.c ****         patchouli_simple_take_sample(true, 0);
+ 707              		.loc 1 197 9 view .LVU179
+ 708 000e 0021     		movs	r1, #0
+ 709 0010 0120     		movs	r0, #1
+ 710 0012 FFF7FEFF 		bl	patchouli_simple_take_sample
+ 711              	.LVL70:
  195:patchouli/src/patchouli.c ****         patchouli_coil_select(ystep, false);
- 805              		.loc 1 195 9 is_stmt 1 view .LVU196
- 806 0006 0021     		movs	r1, #0
- 807 0008 2046     		mov	r0, r4
- 808 000a FFF7FEFF 		bl	patchouli_coil_select
- 809              	.LVL84:
- 196:patchouli/src/patchouli.c ****         patchouli_simple_take_sample(true, 0);
- 810              		.loc 1 196 9 view .LVU197
- 811 000e 0021     		movs	r1, #0
- 812 0010 0120     		movs	r0, #1
- 813 0012 FFF7FEFF 		bl	patchouli_simple_take_sample
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 19
-
-
- 814              	.LVL85:
- 194:patchouli/src/patchouli.c ****         patchouli_coil_select(ystep, false);
- 815              		.loc 1 194 52 discriminator 3 view .LVU198
- 816 0016 0134     		adds	r4, r4, #1
- 817              	.LVL86:
- 818              	.L41:
- 194:patchouli/src/patchouli.c ****         patchouli_coil_select(ystep, false);
- 819              		.loc 1 194 27 discriminator 1 view .LVU199
- 820 0018 112C     		cmp	r4, #17
- 821 001a F4D9     		bls	.L42
- 822              	.LBE10:
- 823              	.LBB11:
- 197:patchouli/src/patchouli.c ****     }
- 198:patchouli/src/patchouli.c ****     // Sleep for 1000 cycles
- 199:patchouli/src/patchouli.c ****     for (int i=0;i<50000;i++){
- 824              		.loc 1 199 14 is_stmt 0 view .LVU200
- 825 001c 0023     		movs	r3, #0
- 826 001e 01E0     		b	.L43
- 827              	.LVL87:
- 828              	.L44:
+ 712              		.loc 1 195 52 discriminator 3 view .LVU180
+ 713 0016 0134     		adds	r4, r4, #1
+ 714              	.LVL71:
+ 715              	.L41:
+ 195:patchouli/src/patchouli.c ****         patchouli_coil_select(ystep, false);
+ 716              		.loc 1 195 27 discriminator 1 view .LVU181
+ 717 0018 112C     		cmp	r4, #17
+ 718 001a F4D9     		bls	.L42
+ 719              	.LBE10:
+ 720              	.LBB11:
+ 198:patchouli/src/patchouli.c ****     }
+ 199:patchouli/src/patchouli.c ****     // Sleep for 1000 cycles
+ 200:patchouli/src/patchouli.c ****     for (int i=0;i<50000;i++){
+ 721              		.loc 1 200 14 is_stmt 0 view .LVU182
+ 722 001c 0023     		movs	r3, #0
+ 723 001e 01E0     		b	.L43
+ 724              	.LVL72:
+ 725              	.L44:
+ 201:patchouli/src/patchouli.c ****         // Do nothing, just wait
+ 202:patchouli/src/patchouli.c ****         __asm__ volatile ("nop");
+ 726              		.loc 1 202 9 is_stmt 1 view .LVU183
+ 727              		.syntax unified
+ 728              	@ 202 "patchouli/src/patchouli.c" 1
+ 729 0020 00BF     		nop
+ 730              	@ 0 "" 2
  200:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 201:patchouli/src/patchouli.c ****         __asm__ volatile ("nop");
- 829              		.loc 1 201 9 is_stmt 1 view .LVU201
- 830              		.syntax unified
- 831              	@ 201 "patchouli/src/patchouli.c" 1
- 832 0020 00BF     		nop
- 833              	@ 0 "" 2
- 199:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 834              		.loc 1 199 27 discriminator 3 view .LVU202
- 835              		.thumb
- 836              		.syntax unified
- 837 0022 0133     		adds	r3, r3, #1
- 838              	.LVL88:
- 839              	.L43:
- 199:patchouli/src/patchouli.c ****         // Do nothing, just wait
- 840              		.loc 1 199 19 discriminator 1 view .LVU203
- 841 0024 4CF24F32 		movw	r2, #49999
- 842 0028 9342     		cmp	r3, r2
- 843 002a F9DD     		ble	.L44
- 844              	.LBE11:
- 202:patchouli/src/patchouli.c ****     }
- 203:patchouli/src/patchouli.c **** }
- 845              		.loc 1 203 1 is_stmt 0 view .LVU204
- 846 002c 10BD     		pop	{r4, pc}
- 847              		.loc 1 203 1 view .LVU205
- 848              		.cfi_endproc
- 849              	.LFE1112:
- 851              		.section	.text.patchouli_set_mode,"ax",%progbits
- 852              		.align	1
- 853              		.global	patchouli_set_mode
- 854              		.syntax unified
- 855              		.thumb
- 856              		.thumb_func
- 858              	patchouli_set_mode:
- 859              	.LVL89:
- 860              	.LFB1113:
- 204:patchouli/src/patchouli.c **** void patchouli_set_mode(patchouli_debug_t mode){
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 20
+ 731              		.loc 1 200 27 discriminator 3 view .LVU184
+ 732              		.thumb
+ 733              		.syntax unified
+ 734 0022 0133     		adds	r3, r3, #1
+ 735              	.LVL73:
+ 736              	.L43:
+ 200:patchouli/src/patchouli.c ****         // Do nothing, just wait
+ 737              		.loc 1 200 19 discriminator 1 view .LVU185
+ 738 0024 4CF24F32 		movw	r2, #49999
+ 739 0028 9342     		cmp	r3, r2
+ 740 002a F9DD     		ble	.L44
+ 741              	.LBE11:
+ 203:patchouli/src/patchouli.c ****     }
+ 204:patchouli/src/patchouli.c **** }
+ 742              		.loc 1 204 1 is_stmt 0 view .LVU186
+ 743 002c 10BD     		pop	{r4, pc}
+ 744              		.loc 1 204 1 view .LVU187
+ 745              		.cfi_endproc
+ 746              	.LFE1112:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 18
 
 
- 861              		.loc 1 204 48 is_stmt 1 view -0
- 862              		.cfi_startproc
- 863              		@ args = 0, pretend = 0, frame = 0
- 864              		@ frame_needed = 0, uses_anonymous_args = 0
- 865              		@ link register save eliminated.
- 205:patchouli/src/patchouli.c ****     // todo: reset all global variables when mode changes
- 206:patchouli/src/patchouli.c ****     debug_state = mode;
- 866              		.loc 1 206 5 view .LVU207
- 867              		.loc 1 206 17 is_stmt 0 view .LVU208
- 868 0000 014B     		ldr	r3, .L47
- 869 0002 1870     		strb	r0, [r3]
- 207:patchouli/src/patchouli.c **** }
- 870              		.loc 1 207 1 view .LVU209
- 871 0004 7047     		bx	lr
- 872              	.L48:
- 873 0006 00BF     		.align	2
- 874              	.L47:
- 875 0008 00000000 		.word	debug_state
- 876              		.cfi_endproc
- 877              	.LFE1113:
- 879              		.section	.rodata.patchouli_debug_output.str1.4,"aMS",%progbits,1
- 880              		.align	2
- 881              	.LC6:
- 882 0000 257300   		.ascii	"%s\000"
- 883 0003 00       		.align	2
- 884              	.LC7:
- 885 0004 0A00     		.ascii	"\012\000"
- 886              		.section	.text.patchouli_debug_output,"ax",%progbits
- 887              		.align	1
- 888              		.global	patchouli_debug_output
- 889              		.syntax unified
- 890              		.thumb
- 891              		.thumb_func
- 893              	patchouli_debug_output:
- 894              	.LVL90:
- 895              	.LFB1115:
- 208:patchouli/src/patchouli.c **** void patchouli_cycle(){
- 209:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"Cycle\n", 6);
- 210:patchouli/src/patchouli.c ****     switch (debug_state) {
- 211:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_NONE:
- 212:patchouli/src/patchouli.c ****             _patchouli_cycle_default();
- 213:patchouli/src/patchouli.c ****             break;
- 214:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_XSCAN:
- 215:patchouli/src/patchouli.c ****             _patchouli_cycle_xscan();
+ 748              		.section	.text.patchouli_set_mode,"ax",%progbits
+ 749              		.align	1
+ 750              		.global	patchouli_set_mode
+ 751              		.syntax unified
+ 752              		.thumb
+ 753              		.thumb_func
+ 755              	patchouli_set_mode:
+ 756              	.LVL74:
+ 757              	.LFB1113:
+ 205:patchouli/src/patchouli.c **** void patchouli_set_mode(patchouli_debug_t mode){
+ 758              		.loc 1 205 48 is_stmt 1 view -0
+ 759              		.cfi_startproc
+ 760              		@ args = 0, pretend = 0, frame = 0
+ 761              		@ frame_needed = 0, uses_anonymous_args = 0
+ 762              		@ link register save eliminated.
+ 206:patchouli/src/patchouli.c ****     // todo: reset all global variables when mode changes
+ 207:patchouli/src/patchouli.c ****     debug_state = mode;
+ 763              		.loc 1 207 5 view .LVU189
+ 764              		.loc 1 207 17 is_stmt 0 view .LVU190
+ 765 0000 014B     		ldr	r3, .L47
+ 766 0002 1870     		strb	r0, [r3]
+ 208:patchouli/src/patchouli.c **** }
+ 767              		.loc 1 208 1 view .LVU191
+ 768 0004 7047     		bx	lr
+ 769              	.L48:
+ 770 0006 00BF     		.align	2
+ 771              	.L47:
+ 772 0008 00000000 		.word	debug_state
+ 773              		.cfi_endproc
+ 774              	.LFE1113:
+ 776              		.section	.text.patchouli_cycle,"ax",%progbits
+ 777              		.align	1
+ 778              		.global	patchouli_cycle
+ 779              		.syntax unified
+ 780              		.thumb
+ 781              		.thumb_func
+ 783              	patchouli_cycle:
+ 784              	.LFB1114:
+ 209:patchouli/src/patchouli.c **** void patchouli_cycle(){
+ 785              		.loc 1 209 23 is_stmt 1 view -0
+ 786              		.cfi_startproc
+ 787              		@ args = 0, pretend = 0, frame = 0
+ 788              		@ frame_needed = 0, uses_anonymous_args = 0
+ 789 0000 08B5     		push	{r3, lr}
+ 790              		.cfi_def_cfa_offset 8
+ 791              		.cfi_offset 3, -8
+ 792              		.cfi_offset 14, -4
+ 210:patchouli/src/patchouli.c ****     // CDC_Transmit_FS((uint8_t*)"Cycle\n", 6);
+ 211:patchouli/src/patchouli.c ****     switch (debug_state) {
+ 793              		.loc 1 211 5 view .LVU193
+ 794 0002 084B     		ldr	r3, .L54
+ 795 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 796 0006 012B     		cmp	r3, #1
+ 797 0008 05D0     		beq	.L50
+ 798 000a 022B     		cmp	r3, #2
+ 799 000c 06D0     		beq	.L51
+ 800 000e 0BB9     		cbnz	r3, .L49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 19
+
+
+ 212:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_NONE:
+ 213:patchouli/src/patchouli.c ****             _patchouli_cycle_default();
+ 801              		.loc 1 213 13 view .LVU194
+ 802 0010 FFF7FEFF 		bl	_patchouli_cycle_default
+ 803              	.LVL75:
+ 214:patchouli/src/patchouli.c ****             break;
+ 804              		.loc 1 214 13 view .LVU195
+ 805              	.L49:
+ 215:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_XSCAN:
+ 216:patchouli/src/patchouli.c ****             _patchouli_cycle_xscan();
+ 217:patchouli/src/patchouli.c ****             break;
+ 218:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_YSCAN:
+ 219:patchouli/src/patchouli.c ****             _patchouli_cycle_yscan();
+ 220:patchouli/src/patchouli.c ****             break;
+ 221:patchouli/src/patchouli.c ****         // case PATCHOULI_DEBUG_PEN_SCAN:
+ 222:patchouli/src/patchouli.c ****         //     _patchouli_scan_passive_pen_parameters();
+ 223:patchouli/src/patchouli.c ****             // break;
+ 224:patchouli/src/patchouli.c ****         default:
+ 225:patchouli/src/patchouli.c ****             // Undefined mode
+ 226:patchouli/src/patchouli.c ****             PATCHOULI_ErrLog("Undefined mode: %d", debug_state);
+ 227:patchouli/src/patchouli.c ****     }
+ 228:patchouli/src/patchouli.c **** }
+ 806              		.loc 1 228 1 is_stmt 0 view .LVU196
+ 807 0014 08BD     		pop	{r3, pc}
+ 808              	.L50:
  216:patchouli/src/patchouli.c ****             break;
+ 809              		.loc 1 216 13 is_stmt 1 view .LVU197
+ 810 0016 FFF7FEFF 		bl	_patchouli_cycle_xscan
+ 811              	.LVL76:
  217:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_YSCAN:
- 218:patchouli/src/patchouli.c ****             _patchouli_cycle_yscan();
+ 812              		.loc 1 217 13 view .LVU198
+ 813 001a FBE7     		b	.L49
+ 814              	.L51:
  219:patchouli/src/patchouli.c ****             break;
- 220:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_PEN_SCAN:
- 221:patchouli/src/patchouli.c ****             patchouli_scan_passive_pen_parameters();
- 222:patchouli/src/patchouli.c ****             break;
- 223:patchouli/src/patchouli.c ****         default:
- 224:patchouli/src/patchouli.c ****             // Undefined mode
- 225:patchouli/src/patchouli.c ****             PATCHOULI_ErrLog("Undefined mode: %d", debug_state);
+ 815              		.loc 1 219 13 view .LVU199
+ 816 001c FFF7FEFF 		bl	_patchouli_cycle_yscan
+ 817              	.LVL77:
+ 220:patchouli/src/patchouli.c ****         // case PATCHOULI_DEBUG_PEN_SCAN:
+ 818              		.loc 1 220 13 view .LVU200
  226:patchouli/src/patchouli.c ****     }
- 227:patchouli/src/patchouli.c **** }
- 228:patchouli/src/patchouli.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 21
+ 819              		.loc 1 226 64 view .LVU201
+ 820              		.loc 1 228 1 is_stmt 0 view .LVU202
+ 821 0020 F8E7     		b	.L49
+ 822              	.L55:
+ 823 0022 00BF     		.align	2
+ 824              	.L54:
+ 825 0024 00000000 		.word	debug_state
+ 826              		.cfi_endproc
+ 827              	.LFE1114:
+ 829              		.section	.rodata.patchouli_debug_output.str1.4,"aMS",%progbits,1
+ 830              		.align	2
+ 831              	.LC1:
+ 832 0000 257300   		.ascii	"%s\000"
+ 833 0003 00       		.align	2
+ 834              	.LC2:
+ 835 0004 0A00     		.ascii	"\012\000"
+ 836              		.section	.text.patchouli_debug_output,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 20
 
 
- 229:patchouli/src/patchouli.c **** // Debug helper function implementation
- 230:patchouli/src/patchouli.c **** void patchouli_debug_output(const char* prefix, const char* format, ...) {
- 896              		.loc 1 230 74 is_stmt 1 view -0
- 897              		.cfi_startproc
- 898              		@ args = 4, pretend = 12, frame = 264
- 899              		@ frame_needed = 0, uses_anonymous_args = 1
- 900              		.loc 1 230 74 is_stmt 0 view .LVU211
- 901 0000 0EB4     		push	{r1, r2, r3}
- 902              		.cfi_def_cfa_offset 12
- 903              		.cfi_offset 1, -12
- 904              		.cfi_offset 2, -8
- 905              		.cfi_offset 3, -4
- 906 0002 30B5     		push	{r4, r5, lr}
- 907              		.cfi_def_cfa_offset 24
- 908              		.cfi_offset 4, -24
- 909              		.cfi_offset 5, -20
- 910              		.cfi_offset 14, -16
- 911 0004 C2B0     		sub	sp, sp, #264
- 912              		.cfi_def_cfa_offset 288
- 913 0006 0346     		mov	r3, r0
- 914 0008 45AA     		add	r2, sp, #276
- 915 000a 52F8045B 		ldr	r5, [r2], #4
- 231:patchouli/src/patchouli.c ****     char debug_buffer[256];
- 916              		.loc 1 231 5 is_stmt 1 view .LVU212
- 232:patchouli/src/patchouli.c ****     va_list args;
- 917              		.loc 1 232 5 view .LVU213
- 233:patchouli/src/patchouli.c ****     
- 234:patchouli/src/patchouli.c ****     // Format the message
- 235:patchouli/src/patchouli.c ****     va_start(args, format);
- 918              		.loc 1 235 5 view .LVU214
- 919 000e 0192     		str	r2, [sp, #4]
- 236:patchouli/src/patchouli.c ****     int len = snprintf(debug_buffer, sizeof(debug_buffer), "%s", prefix);
- 920              		.loc 1 236 5 view .LVU215
- 921              		.loc 1 236 15 is_stmt 0 view .LVU216
- 922 0010 104A     		ldr	r2, .L51
- 923 0012 4FF48071 		mov	r1, #256
- 924 0016 02A8     		add	r0, sp, #8
- 925              	.LVL91:
- 926              		.loc 1 236 15 view .LVU217
- 927 0018 FFF7FEFF 		bl	snprintf
- 928              	.LVL92:
- 929              		.loc 1 236 15 view .LVU218
- 930 001c 0446     		mov	r4, r0
- 931              	.LVL93:
- 237:patchouli/src/patchouli.c ****     len += vsnprintf(debug_buffer + len, sizeof(debug_buffer) - len, format, args);
- 932              		.loc 1 237 5 is_stmt 1 view .LVU219
- 933              		.loc 1 237 12 is_stmt 0 view .LVU220
- 934 001e 019B     		ldr	r3, [sp, #4]
- 935 0020 2A46     		mov	r2, r5
- 936 0022 C0F58071 		rsb	r1, r0, #256
- 937 0026 02A8     		add	r0, sp, #8
- 938              	.LVL94:
- 939              		.loc 1 237 12 view .LVU221
- 940 0028 2044     		add	r0, r0, r4
- 941 002a FFF7FEFF 		bl	vsnprintf
- 942              	.LVL95:
- 943              		.loc 1 237 9 discriminator 1 view .LVU222
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 22
+ 837              		.align	1
+ 838              		.global	patchouli_debug_output
+ 839              		.syntax unified
+ 840              		.thumb
+ 841              		.thumb_func
+ 843              	patchouli_debug_output:
+ 844              	.LVL78:
+ 845              	.LFB1115:
+ 229:patchouli/src/patchouli.c **** 
+ 230:patchouli/src/patchouli.c **** // Debug helper function implementation
+ 231:patchouli/src/patchouli.c **** void patchouli_debug_output(const char* prefix, const char* format, ...) {
+ 846              		.loc 1 231 74 is_stmt 1 view -0
+ 847              		.cfi_startproc
+ 848              		@ args = 4, pretend = 12, frame = 264
+ 849              		@ frame_needed = 0, uses_anonymous_args = 1
+ 850              		.loc 1 231 74 is_stmt 0 view .LVU204
+ 851 0000 0EB4     		push	{r1, r2, r3}
+ 852              		.cfi_def_cfa_offset 12
+ 853              		.cfi_offset 1, -12
+ 854              		.cfi_offset 2, -8
+ 855              		.cfi_offset 3, -4
+ 856 0002 30B5     		push	{r4, r5, lr}
+ 857              		.cfi_def_cfa_offset 24
+ 858              		.cfi_offset 4, -24
+ 859              		.cfi_offset 5, -20
+ 860              		.cfi_offset 14, -16
+ 861 0004 C2B0     		sub	sp, sp, #264
+ 862              		.cfi_def_cfa_offset 288
+ 863 0006 0346     		mov	r3, r0
+ 864 0008 45AA     		add	r2, sp, #276
+ 865 000a 52F8045B 		ldr	r5, [r2], #4
+ 232:patchouli/src/patchouli.c ****     char debug_buffer[256];
+ 866              		.loc 1 232 5 is_stmt 1 view .LVU205
+ 233:patchouli/src/patchouli.c ****     va_list args;
+ 867              		.loc 1 233 5 view .LVU206
+ 234:patchouli/src/patchouli.c ****     
+ 235:patchouli/src/patchouli.c ****     // Format the message
+ 236:patchouli/src/patchouli.c ****     va_start(args, format);
+ 868              		.loc 1 236 5 view .LVU207
+ 869 000e 0192     		str	r2, [sp, #4]
+ 237:patchouli/src/patchouli.c ****     int len = snprintf(debug_buffer, sizeof(debug_buffer), "%s", prefix);
+ 870              		.loc 1 237 5 view .LVU208
+ 871              		.loc 1 237 15 is_stmt 0 view .LVU209
+ 872 0010 104A     		ldr	r2, .L58
+ 873 0012 4FF48071 		mov	r1, #256
+ 874 0016 02A8     		add	r0, sp, #8
+ 875              	.LVL79:
+ 876              		.loc 1 237 15 view .LVU210
+ 877 0018 FFF7FEFF 		bl	snprintf
+ 878              	.LVL80:
+ 879              		.loc 1 237 15 view .LVU211
+ 880 001c 0446     		mov	r4, r0
+ 881              	.LVL81:
+ 238:patchouli/src/patchouli.c ****     len += vsnprintf(debug_buffer + len, sizeof(debug_buffer) - len, format, args);
+ 882              		.loc 1 238 5 is_stmt 1 view .LVU212
+ 883              		.loc 1 238 12 is_stmt 0 view .LVU213
+ 884 001e 019B     		ldr	r3, [sp, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 21
 
 
- 944 002e 0444     		add	r4, r4, r0
- 945              	.LVL96:
- 238:patchouli/src/patchouli.c ****     len += snprintf(debug_buffer + len, sizeof(debug_buffer) - len, "\n");
- 946              		.loc 1 238 5 is_stmt 1 view .LVU223
- 947              		.loc 1 238 12 is_stmt 0 view .LVU224
- 948 0030 094A     		ldr	r2, .L51+4
- 949 0032 C4F58071 		rsb	r1, r4, #256
- 950 0036 02AB     		add	r3, sp, #8
- 951 0038 1819     		adds	r0, r3, r4
- 952 003a FFF7FEFF 		bl	snprintf
- 953              	.LVL97:
- 954              		.loc 1 238 9 discriminator 1 view .LVU225
- 955 003e 2118     		adds	r1, r4, r0
- 956              	.LVL98:
- 239:patchouli/src/patchouli.c ****     va_end(args);
- 957              		.loc 1 239 5 is_stmt 1 view .LVU226
- 240:patchouli/src/patchouli.c ****     
- 241:patchouli/src/patchouli.c ****     // Send via CDC
- 242:patchouli/src/patchouli.c ****     CDC_Transmit_FS(debug_buffer, len);
- 958              		.loc 1 242 5 view .LVU227
- 959 0040 89B2     		uxth	r1, r1
- 960              	.LVL99:
- 961              		.loc 1 242 5 is_stmt 0 view .LVU228
- 962 0042 02A8     		add	r0, sp, #8
- 963              	.LVL100:
- 964              		.loc 1 242 5 view .LVU229
- 965 0044 FFF7FEFF 		bl	CDC_Transmit_FS
- 966              	.LVL101:
- 243:patchouli/src/patchouli.c **** }
- 967              		.loc 1 243 1 view .LVU230
- 968 0048 42B0     		add	sp, sp, #264
- 969              		.cfi_def_cfa_offset 24
- 970              		@ sp needed
- 971 004a BDE83040 		pop	{r4, r5, lr}
- 972              		.cfi_restore 14
- 973              		.cfi_restore 5
- 974              		.cfi_restore 4
- 975              		.cfi_def_cfa_offset 12
- 976              		.loc 1 243 1 view .LVU231
- 977 004e 03B0     		add	sp, sp, #12
- 978              		.cfi_restore 3
- 979              		.cfi_restore 2
- 980              		.cfi_restore 1
- 981              		.cfi_def_cfa_offset 0
- 982 0050 7047     		bx	lr
- 983              	.L52:
- 984 0052 00BF     		.align	2
- 985              	.L51:
- 986 0054 00000000 		.word	.LC6
- 987 0058 04000000 		.word	.LC7
- 988              		.cfi_endproc
- 989              	.LFE1115:
- 991              		.section	.rodata.patchouli_scan_passive_pen_parameters.str1.4,"aMS",%progbits,1
- 992              		.align	2
- 993              	.LC8:
- 994 0000 3D3D3D20 		.ascii	"=== PASSIVE PEN SCAN ===\012\000"
- 994      50415353 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 23
+ 885 0020 2A46     		mov	r2, r5
+ 886 0022 C0F58071 		rsb	r1, r0, #256
+ 887 0026 02A8     		add	r0, sp, #8
+ 888              	.LVL82:
+ 889              		.loc 1 238 12 view .LVU214
+ 890 0028 2044     		add	r0, r0, r4
+ 891 002a FFF7FEFF 		bl	vsnprintf
+ 892              	.LVL83:
+ 893              		.loc 1 238 9 discriminator 1 view .LVU215
+ 894 002e 0444     		add	r4, r4, r0
+ 895              	.LVL84:
+ 239:patchouli/src/patchouli.c ****     len += snprintf(debug_buffer + len, sizeof(debug_buffer) - len, "\n");
+ 896              		.loc 1 239 5 is_stmt 1 view .LVU216
+ 897              		.loc 1 239 12 is_stmt 0 view .LVU217
+ 898 0030 094A     		ldr	r2, .L58+4
+ 899 0032 C4F58071 		rsb	r1, r4, #256
+ 900 0036 02AB     		add	r3, sp, #8
+ 901 0038 1819     		adds	r0, r3, r4
+ 902 003a FFF7FEFF 		bl	snprintf
+ 903              	.LVL85:
+ 904              		.loc 1 239 9 discriminator 1 view .LVU218
+ 905 003e 2118     		adds	r1, r4, r0
+ 906              	.LVL86:
+ 240:patchouli/src/patchouli.c ****     va_end(args);
+ 907              		.loc 1 240 5 is_stmt 1 view .LVU219
+ 241:patchouli/src/patchouli.c ****     
+ 242:patchouli/src/patchouli.c ****     // Send via CDC
+ 243:patchouli/src/patchouli.c ****     CDC_Transmit_FS(debug_buffer, len);
+ 908              		.loc 1 243 5 view .LVU220
+ 909 0040 89B2     		uxth	r1, r1
+ 910              	.LVL87:
+ 911              		.loc 1 243 5 is_stmt 0 view .LVU221
+ 912 0042 02A8     		add	r0, sp, #8
+ 913              	.LVL88:
+ 914              		.loc 1 243 5 view .LVU222
+ 915 0044 FFF7FEFF 		bl	CDC_Transmit_FS
+ 916              	.LVL89:
+ 244:patchouli/src/patchouli.c **** }
+ 917              		.loc 1 244 1 view .LVU223
+ 918 0048 42B0     		add	sp, sp, #264
+ 919              		.cfi_def_cfa_offset 24
+ 920              		@ sp needed
+ 921 004a BDE83040 		pop	{r4, r5, lr}
+ 922              		.cfi_restore 14
+ 923              		.cfi_restore 5
+ 924              		.cfi_restore 4
+ 925              		.cfi_def_cfa_offset 12
+ 926              		.loc 1 244 1 view .LVU224
+ 927 004e 03B0     		add	sp, sp, #12
+ 928              		.cfi_restore 3
+ 929              		.cfi_restore 2
+ 930              		.cfi_restore 1
+ 931              		.cfi_def_cfa_offset 0
+ 932 0050 7047     		bx	lr
+ 933              	.L59:
+ 934 0052 00BF     		.align	2
+ 935              	.L58:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 22
 
 
- 994      49564520 
- 994      50454E20 
- 994      5343414E 
- 995 001a 0000     		.align	2
- 996              	.LC9:
- 997 001c 5363616E 		.ascii	"Scanning X coils:\012\000"
- 997      6E696E67 
- 997      20582063 
- 997      6F696C73 
- 997      3A0A00
- 998 002f 00       		.align	2
- 999              	.LC10:
- 1000 0030 5825642D 		.ascii	"X%d-F%d: %d\012\000"
- 1000      4625643A 
- 1000      2025640A 
- 1000      00
- 1001 003d 000000   		.align	2
- 1002              	.LC11:
- 1003 0040 5363616E 		.ascii	"Scanning Y coils:\012\000"
- 1003      6E696E67 
- 1003      20592063 
- 1003      6F696C73 
- 1003      3A0A00
- 1004 0053 00       		.align	2
- 1005              	.LC12:
- 1006 0054 5925642D 		.ascii	"Y%d-F%d: %d\012\000"
- 1006      4625643A 
- 1006      2025640A 
- 1006      00
- 1007 0061 000000   		.align	2
- 1008              	.LC13:
- 1009 0064 3D3D3D20 		.ascii	"=== SCAN STATISTICS ===\012\000"
- 1009      5343414E 
- 1009      20535441 
- 1009      54495354 
- 1009      49435320 
- 1010 007d 000000   		.align	2
- 1011              	.LC14:
- 1012 0080 4D696E3A 		.ascii	"Min: %d\012\000"
- 1012      2025640A 
- 1012      00
- 1013 0089 000000   		.align	2
- 1014              	.LC15:
- 1015 008c 4D61783A 		.ascii	"Max: %d\012\000"
- 1015      2025640A 
- 1015      00
- 1016 0095 000000   		.align	2
- 1017              	.LC16:
- 1018 0098 4176673A 		.ascii	"Avg: %d\012\000"
- 1018      2025640A 
- 1018      00
- 1019 00a1 000000   		.align	2
- 1020              	.LC17:
- 1021 00a4 52616E67 		.ascii	"Range: %d\012\000"
- 1021      653A2025 
- 1021      640A00
- 1022 00af 00       		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 24
+ 936 0054 00000000 		.word	.LC1
+ 937 0058 04000000 		.word	.LC2
+ 938              		.cfi_endproc
+ 939              	.LFE1115:
+ 941              		.global	ypos
+ 942              		.section	.bss.ypos,"aw",%nobits
+ 943              		.align	2
+ 946              	ypos:
+ 947 0000 00000000 		.space	12
+ 947      00000000 
+ 947      00000000 
+ 948              		.global	xpos
+ 949              		.section	.bss.xpos,"aw",%nobits
+ 950              		.align	2
+ 953              	xpos:
+ 954 0000 00000000 		.space	12
+ 954      00000000 
+ 954      00000000 
+ 955              		.global	pen_zero_pressure
+ 956              		.section	.bss.pen_zero_pressure,"aw",%nobits
+ 957              		.align	2
+ 960              	pen_zero_pressure:
+ 961 0000 00000000 		.space	4
+ 962              		.global	pen_present
+ 963              		.section	.bss.pen_present,"aw",%nobits
+ 966              	pen_present:
+ 967 0000 00       		.space	1
+ 968              		.global	psamples
+ 969              		.section	.bss.psamples,"aw",%nobits
+ 970              		.align	2
+ 973              	psamples:
+ 974 0000 00000000 		.space	18
+ 974      00000000 
+ 974      00000000 
+ 974      00000000 
+ 974      0000
+ 975              		.global	maxpptr
+ 976              		.section	.data.maxpptr,"aw"
+ 977              		.align	2
+ 980              	maxpptr:
+ 981 0000 07000000 		.word	7
+ 982              		.global	pavg
+ 983              		.section	.bss.pavg,"aw",%nobits
+ 984              		.align	2
+ 987              	pavg:
+ 988 0000 00000000 		.space	4
+ 989              		.global	debug_state
+ 990              		.section	.bss.debug_state,"aw",%nobits
+ 993              	debug_state:
+ 994 0000 00       		.space	1
+ 995              		.global	mva_p
+ 996              		.section	.bss.mva_p,"aw",%nobits
+ 997              		.align	2
+ 1000              	mva_p:
+ 1001 0000 00000000 		.space	20
+ 1001      00000000 
+ 1001      00000000 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 23
 
 
- 1023              	.LC18:
- 1024 00b0 53616D70 		.ascii	"Samples: %d\012\000"
- 1024      6C65733A 
- 1024      2025640A 
- 1024      00
- 1025 00bd 000000   		.align	2
- 1026              	.LC19:
- 1027 00c0 53756767 		.ascii	"Suggested threshold: %d\012\000"
- 1027      65737465 
- 1027      64207468 
- 1027      72657368 
- 1027      6F6C643A 
- 1028 00d9 000000   		.align	2
- 1029              	.LC20:
- 1030 00dc 3D3D3D20 		.ascii	"=== SCAN COMPLETE ===\012\000"
- 1030      5343414E 
- 1030      20434F4D 
- 1030      504C4554 
- 1030      45203D3D 
- 1031              		.section	.text.patchouli_scan_passive_pen_parameters,"ax",%progbits
- 1032              		.align	1
- 1033              		.global	patchouli_scan_passive_pen_parameters
- 1034              		.syntax unified
- 1035              		.thumb
- 1036              		.thumb_func
- 1038              	patchouli_scan_passive_pen_parameters:
- 1039              	.LFB1116:
- 244:patchouli/src/patchouli.c **** 
- 245:patchouli/src/patchouli.c **** // Passive pen detection and parameter logging helper function
- 246:patchouli/src/patchouli.c **** void patchouli_scan_passive_pen_parameters() {
- 1040              		.loc 1 246 46 is_stmt 1 view -0
- 1041              		.cfi_startproc
- 1042              		@ args = 0, pretend = 0, frame = 32
- 1043              		@ frame_needed = 0, uses_anonymous_args = 0
- 1044 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 1045              		.cfi_def_cfa_offset 28
- 1046              		.cfi_offset 4, -28
- 1047              		.cfi_offset 5, -24
- 1048              		.cfi_offset 6, -20
- 1049              		.cfi_offset 7, -16
- 1050              		.cfi_offset 8, -12
- 1051              		.cfi_offset 9, -8
- 1052              		.cfi_offset 14, -4
- 1053 0004 8BB0     		sub	sp, sp, #44
- 1054              		.cfi_def_cfa_offset 72
- 247:patchouli/src/patchouli.c ****     char buf[32];
- 1055              		.loc 1 247 5 view .LVU233
- 248:patchouli/src/patchouli.c ****     uint16_t max_val = 0;
- 1056              		.loc 1 248 5 view .LVU234
- 1057              	.LVL102:
- 249:patchouli/src/patchouli.c ****     uint16_t min_val = 0xFFFF;
- 1058              		.loc 1 249 5 view .LVU235
- 250:patchouli/src/patchouli.c ****     uint32_t total_sum = 0;
- 1059              		.loc 1 250 5 view .LVU236
- 251:patchouli/src/patchouli.c ****     uint16_t sample_count = 0;
- 1060              		.loc 1 251 5 view .LVU237
- 252:patchouli/src/patchouli.c ****     
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 25
-
-
- 253:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"=== PASSIVE PEN SCAN ===\n", 25);
- 1061              		.loc 1 253 5 view .LVU238
- 1062 0006 1921     		movs	r1, #25
- 1063 0008 6248     		ldr	r0, .L75
- 1064 000a FFF7FEFF 		bl	CDC_Transmit_FS
- 1065              	.LVL103:
- 254:patchouli/src/patchouli.c ****     
- 255:patchouli/src/patchouli.c ****     // Scan through all X coils at different frequencies
- 256:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"Scanning X coils:\n", 18);
- 1066              		.loc 1 256 5 view .LVU239
- 1067 000e 1221     		movs	r1, #18
- 1068 0010 6148     		ldr	r0, .L75+4
- 1069 0012 FFF7FEFF 		bl	CDC_Transmit_FS
- 1070              	.LVL104:
- 257:patchouli/src/patchouli.c ****     for (int coil = 0; coil < PATCHOULI_N_X_COIL; coil++) {
- 1071              		.loc 1 257 5 view .LVU240
- 1072              	.LBB12:
- 1073              		.loc 1 257 10 view .LVU241
- 1074              		.loc 1 257 14 is_stmt 0 view .LVU242
- 1075 0016 4FF00009 		mov	r9, #0
- 1076              	.LBE12:
- 251:patchouli/src/patchouli.c ****     
- 1077              		.loc 1 251 14 view .LVU243
- 1078 001a 4C46     		mov	r4, r9
- 250:patchouli/src/patchouli.c ****     uint16_t sample_count = 0;
- 1079              		.loc 1 250 14 view .LVU244
- 1080 001c 4E46     		mov	r6, r9
- 249:patchouli/src/patchouli.c ****     uint32_t total_sum = 0;
- 1081              		.loc 1 249 14 view .LVU245
- 1082 001e 4FF6FF78 		movw	r8, #65535
- 248:patchouli/src/patchouli.c ****     uint16_t min_val = 0xFFFF;
- 1083              		.loc 1 248 14 view .LVU246
- 1084 0022 4F46     		mov	r7, r9
- 1085              	.LBB17:
- 1086              		.loc 1 257 5 view .LVU247
- 1087 0024 20E0     		b	.L54
- 1088              	.LVL105:
- 1089              	.L57:
- 1090              	.LBB13:
- 1091              	.LBB14:
- 258:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, true);
- 259:patchouli/src/patchouli.c ****         
- 260:patchouli/src/patchouli.c ****         for (int fstep = 0; fstep < 8; fstep++) {
- 261:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 262:patchouli/src/patchouli.c ****             
- 263:patchouli/src/patchouli.c ****             // Track min/max/average
- 264:patchouli/src/patchouli.c ****             if (sample > max_val) max_val = sample;
- 265:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 266:patchouli/src/patchouli.c ****             total_sum += sample;
- 1092              		.loc 1 266 13 is_stmt 1 view .LVU248
- 1093              		.loc 1 266 23 is_stmt 0 view .LVU249
- 1094 0026 0644     		add	r6, r6, r0
- 1095              	.LVL106:
- 267:patchouli/src/patchouli.c ****             sample_count++;
- 1096              		.loc 1 267 13 is_stmt 1 view .LVU250
- 1097              		.loc 1 267 25 is_stmt 0 view .LVU251
- 1098 0028 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 26
-
-
- 1099              	.LVL107:
- 1100              		.loc 1 267 25 view .LVU252
- 1101 002a A4B2     		uxth	r4, r4
- 1102              	.LVL108:
- 268:patchouli/src/patchouli.c ****             
- 269:patchouli/src/patchouli.c ****             // Log individual readings
- 270:patchouli/src/patchouli.c ****             sprintf(buf, "X%d-F%d: %d\n", coil, fstep, sample);
- 1103              		.loc 1 270 13 is_stmt 1 view .LVU253
- 1104 002c 0090     		str	r0, [sp]
- 1105 002e 2B46     		mov	r3, r5
- 1106 0030 4A46     		mov	r2, r9
- 1107 0032 5A49     		ldr	r1, .L75+8
- 1108 0034 02A8     		add	r0, sp, #8
- 1109              	.LVL109:
- 1110              		.loc 1 270 13 is_stmt 0 view .LVU254
- 1111 0036 FFF7FEFF 		bl	sprintf
- 1112              	.LVL110:
- 271:patchouli/src/patchouli.c ****             CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1113              		.loc 1 271 13 is_stmt 1 view .LVU255
- 1114              		.loc 1 271 44 is_stmt 0 view .LVU256
- 1115 003a 02A8     		add	r0, sp, #8
- 1116 003c FFF7FEFF 		bl	strlen
- 1117              	.LVL111:
- 1118              		.loc 1 271 13 discriminator 1 view .LVU257
- 1119 0040 81B2     		uxth	r1, r0
- 1120 0042 02A8     		add	r0, sp, #8
- 1121 0044 FFF7FEFF 		bl	CDC_Transmit_FS
- 1122              	.LVL112:
- 1123              	.LBE14:
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1124              		.loc 1 260 45 is_stmt 1 discriminator 2 view .LVU258
- 1125 0048 0135     		adds	r5, r5, #1
- 1126              	.LVL113:
- 1127              	.L55:
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1128              		.loc 1 260 35 discriminator 1 view .LVU259
- 1129 004a 072D     		cmp	r5, #7
- 1130 004c 0ADC     		bgt	.L71
- 1131              	.LBB15:
- 261:patchouli/src/patchouli.c ****             
- 1132              		.loc 1 261 13 view .LVU260
- 261:patchouli/src/patchouli.c ****             
- 1133              		.loc 1 261 31 is_stmt 0 view .LVU261
- 1134 004e E9B2     		uxtb	r1, r5
- 1135 0050 0020     		movs	r0, #0
- 1136 0052 FFF7FEFF 		bl	patchouli_simple_take_sample
- 1137              	.LVL114:
- 264:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1138              		.loc 1 264 13 is_stmt 1 view .LVU262
- 264:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1139              		.loc 1 264 16 is_stmt 0 view .LVU263
- 1140 0056 8742     		cmp	r7, r0
- 1141 0058 00D2     		bcs	.L56
- 264:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1142              		.loc 1 264 43 discriminator 1 view .LVU264
- 1143 005a 0746     		mov	r7, r0
- 1144              	.LVL115:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 27
-
-
- 1145              	.L56:
- 265:patchouli/src/patchouli.c ****             total_sum += sample;
- 1146              		.loc 1 265 13 is_stmt 1 view .LVU265
- 265:patchouli/src/patchouli.c ****             total_sum += sample;
- 1147              		.loc 1 265 16 is_stmt 0 view .LVU266
- 1148 005c 8045     		cmp	r8, r0
- 1149 005e E2D9     		bls	.L57
- 265:patchouli/src/patchouli.c ****             total_sum += sample;
- 1150              		.loc 1 265 43 discriminator 1 view .LVU267
- 1151 0060 8046     		mov	r8, r0
- 1152              	.LVL116:
- 265:patchouli/src/patchouli.c ****             total_sum += sample;
- 1153              		.loc 1 265 43 discriminator 1 view .LVU268
- 1154 0062 E0E7     		b	.L57
- 1155              	.LVL117:
- 1156              	.L71:
- 265:patchouli/src/patchouli.c ****             total_sum += sample;
- 1157              		.loc 1 265 43 discriminator 1 view .LVU269
- 1158              	.LBE15:
- 1159              	.LBE13:
- 257:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, true);
- 1160              		.loc 1 257 55 is_stmt 1 discriminator 2 view .LVU270
- 1161 0064 09F10109 		add	r9, r9, #1
- 1162              	.LVL118:
- 1163              	.L54:
- 257:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, true);
- 1164              		.loc 1 257 29 discriminator 1 view .LVU271
- 1165 0068 B9F11B0F 		cmp	r9, #27
- 1166 006c 05D8     		bhi	.L72
- 258:patchouli/src/patchouli.c ****         
- 1167              		.loc 1 258 9 view .LVU272
- 1168 006e 0121     		movs	r1, #1
- 1169 0070 4846     		mov	r0, r9
- 1170 0072 FFF7FEFF 		bl	patchouli_coil_select
- 1171              	.LVL119:
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1172              		.loc 1 260 9 view .LVU273
- 1173              	.LBB16:
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1174              		.loc 1 260 14 view .LVU274
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1175              		.loc 1 260 18 is_stmt 0 view .LVU275
- 1176 0076 0025     		movs	r5, #0
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1177              		.loc 1 260 9 view .LVU276
- 1178 0078 E7E7     		b	.L55
- 1179              	.LVL120:
- 1180              	.L72:
- 260:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(false, fstep);
- 1181              		.loc 1 260 9 view .LVU277
- 1182              	.LBE16:
- 1183              	.LBE17:
- 272:patchouli/src/patchouli.c ****         }
- 273:patchouli/src/patchouli.c ****     }
- 274:patchouli/src/patchouli.c ****     
- 275:patchouli/src/patchouli.c ****     // Scan through all Y coils at different frequencies
- 276:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"Scanning Y coils:\n", 18);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 28
-
-
- 1184              		.loc 1 276 5 is_stmt 1 view .LVU278
- 1185 007a 1221     		movs	r1, #18
- 1186 007c 4848     		ldr	r0, .L75+12
- 1187 007e FFF7FEFF 		bl	CDC_Transmit_FS
- 1188              	.LVL121:
- 277:patchouli/src/patchouli.c ****     for (int coil = 0; coil < PATCHOULI_N_Y_COIL; coil++) {
- 1189              		.loc 1 277 5 view .LVU279
- 1190              	.LBB18:
- 1191              		.loc 1 277 10 view .LVU280
- 1192              		.loc 1 277 14 is_stmt 0 view .LVU281
- 1193 0082 4FF00009 		mov	r9, #0
- 1194              	.LVL122:
- 1195              		.loc 1 277 5 view .LVU282
- 1196 0086 20E0     		b	.L60
- 1197              	.LVL123:
- 1198              	.L63:
- 1199              	.LBB19:
- 1200              	.LBB20:
- 278:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, false);
- 279:patchouli/src/patchouli.c ****         
- 280:patchouli/src/patchouli.c ****         for (int fstep = 0; fstep < 8; fstep++) {
- 281:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 282:patchouli/src/patchouli.c ****             
- 283:patchouli/src/patchouli.c ****             // Track min/max/average
- 284:patchouli/src/patchouli.c ****             if (sample > max_val) max_val = sample;
- 285:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 286:patchouli/src/patchouli.c ****             total_sum += sample;
- 1201              		.loc 1 286 13 is_stmt 1 view .LVU283
- 1202              		.loc 1 286 23 is_stmt 0 view .LVU284
- 1203 0088 0644     		add	r6, r6, r0
- 1204              	.LVL124:
- 287:patchouli/src/patchouli.c ****             sample_count++;
- 1205              		.loc 1 287 13 is_stmt 1 view .LVU285
- 1206              		.loc 1 287 25 is_stmt 0 view .LVU286
- 1207 008a 0134     		adds	r4, r4, #1
- 1208              	.LVL125:
- 1209              		.loc 1 287 25 view .LVU287
- 1210 008c A4B2     		uxth	r4, r4
- 1211              	.LVL126:
- 288:patchouli/src/patchouli.c ****             
- 289:patchouli/src/patchouli.c ****             // Log individual readings
- 290:patchouli/src/patchouli.c ****             sprintf(buf, "Y%d-F%d: %d\n", coil, fstep, sample);
- 1212              		.loc 1 290 13 is_stmt 1 view .LVU288
- 1213 008e 0090     		str	r0, [sp]
- 1214 0090 2B46     		mov	r3, r5
- 1215 0092 4A46     		mov	r2, r9
- 1216 0094 4349     		ldr	r1, .L75+16
- 1217 0096 02A8     		add	r0, sp, #8
- 1218              	.LVL127:
- 1219              		.loc 1 290 13 is_stmt 0 view .LVU289
- 1220 0098 FFF7FEFF 		bl	sprintf
- 1221              	.LVL128:
- 291:patchouli/src/patchouli.c ****             CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1222              		.loc 1 291 13 is_stmt 1 view .LVU290
- 1223              		.loc 1 291 44 is_stmt 0 view .LVU291
- 1224 009c 02A8     		add	r0, sp, #8
- 1225 009e FFF7FEFF 		bl	strlen
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 29
-
-
- 1226              	.LVL129:
- 1227              		.loc 1 291 13 discriminator 1 view .LVU292
- 1228 00a2 81B2     		uxth	r1, r0
- 1229 00a4 02A8     		add	r0, sp, #8
- 1230 00a6 FFF7FEFF 		bl	CDC_Transmit_FS
- 1231              	.LVL130:
- 1232              	.LBE20:
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1233              		.loc 1 280 45 is_stmt 1 discriminator 2 view .LVU293
- 1234 00aa 0135     		adds	r5, r5, #1
- 1235              	.LVL131:
- 1236              	.L61:
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1237              		.loc 1 280 35 discriminator 1 view .LVU294
- 1238 00ac 072D     		cmp	r5, #7
- 1239 00ae 0ADC     		bgt	.L73
- 1240              	.LBB21:
- 281:patchouli/src/patchouli.c ****             
- 1241              		.loc 1 281 13 view .LVU295
- 281:patchouli/src/patchouli.c ****             
- 1242              		.loc 1 281 31 is_stmt 0 view .LVU296
- 1243 00b0 E9B2     		uxtb	r1, r5
- 1244 00b2 0120     		movs	r0, #1
- 1245 00b4 FFF7FEFF 		bl	patchouli_simple_take_sample
- 1246              	.LVL132:
- 284:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1247              		.loc 1 284 13 is_stmt 1 view .LVU297
- 284:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1248              		.loc 1 284 16 is_stmt 0 view .LVU298
- 1249 00b8 8742     		cmp	r7, r0
- 1250 00ba 00D2     		bcs	.L62
- 284:patchouli/src/patchouli.c ****             if (sample < min_val) min_val = sample;
- 1251              		.loc 1 284 43 discriminator 1 view .LVU299
- 1252 00bc 0746     		mov	r7, r0
- 1253              	.LVL133:
- 1254              	.L62:
- 285:patchouli/src/patchouli.c ****             total_sum += sample;
- 1255              		.loc 1 285 13 is_stmt 1 view .LVU300
- 285:patchouli/src/patchouli.c ****             total_sum += sample;
- 1256              		.loc 1 285 16 is_stmt 0 view .LVU301
- 1257 00be 8045     		cmp	r8, r0
- 1258 00c0 E2D9     		bls	.L63
- 285:patchouli/src/patchouli.c ****             total_sum += sample;
- 1259              		.loc 1 285 43 discriminator 1 view .LVU302
- 1260 00c2 8046     		mov	r8, r0
- 1261              	.LVL134:
- 285:patchouli/src/patchouli.c ****             total_sum += sample;
- 1262              		.loc 1 285 43 discriminator 1 view .LVU303
- 1263 00c4 E0E7     		b	.L63
- 1264              	.LVL135:
- 1265              	.L73:
- 285:patchouli/src/patchouli.c ****             total_sum += sample;
- 1266              		.loc 1 285 43 discriminator 1 view .LVU304
- 1267              	.LBE21:
- 1268              	.LBE19:
- 277:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, false);
- 1269              		.loc 1 277 55 is_stmt 1 discriminator 2 view .LVU305
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 30
-
-
- 1270 00c6 09F10109 		add	r9, r9, #1
- 1271              	.LVL136:
- 1272              	.L60:
- 277:patchouli/src/patchouli.c ****         patchouli_coil_select(coil, false);
- 1273              		.loc 1 277 29 discriminator 1 view .LVU306
- 1274 00ca B9F1110F 		cmp	r9, #17
- 1275 00ce 05D8     		bhi	.L74
- 278:patchouli/src/patchouli.c ****         
- 1276              		.loc 1 278 9 view .LVU307
- 1277 00d0 0021     		movs	r1, #0
- 1278 00d2 4846     		mov	r0, r9
- 1279 00d4 FFF7FEFF 		bl	patchouli_coil_select
- 1280              	.LVL137:
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1281              		.loc 1 280 9 view .LVU308
- 1282              	.LBB22:
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1283              		.loc 1 280 14 view .LVU309
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1284              		.loc 1 280 18 is_stmt 0 view .LVU310
- 1285 00d8 0025     		movs	r5, #0
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1286              		.loc 1 280 9 view .LVU311
- 1287 00da E7E7     		b	.L61
- 1288              	.LVL138:
- 1289              	.L74:
- 280:patchouli/src/patchouli.c ****             uint16_t sample = patchouli_simple_take_sample(true, fstep);
- 1290              		.loc 1 280 9 view .LVU312
- 1291              	.LBE22:
- 1292              	.LBE18:
- 292:patchouli/src/patchouli.c ****         }
- 293:patchouli/src/patchouli.c ****     }
- 294:patchouli/src/patchouli.c ****     
- 295:patchouli/src/patchouli.c ****     // Calculate and log statistics
- 296:patchouli/src/patchouli.c ****     uint16_t avg_val = total_sum / sample_count;
- 1293              		.loc 1 296 5 is_stmt 1 view .LVU313
- 1294              		.loc 1 296 34 is_stmt 0 view .LVU314
- 1295 00dc B6FBF4F5 		udiv	r5, r6, r4
- 1296              		.loc 1 296 14 view .LVU315
- 1297 00e0 ADB2     		uxth	r5, r5
- 1298              	.LVL139:
- 297:patchouli/src/patchouli.c ****     uint16_t range = max_val - min_val;
- 1299              		.loc 1 297 5 is_stmt 1 view .LVU316
- 1300              		.loc 1 297 14 is_stmt 0 view .LVU317
- 1301 00e2 A7EB0806 		sub	r6, r7, r8
- 1302              	.LVL140:
- 1303              		.loc 1 297 14 view .LVU318
- 1304 00e6 B6B2     		uxth	r6, r6
- 1305              	.LVL141:
- 298:patchouli/src/patchouli.c ****     
- 299:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"=== SCAN STATISTICS ===\n", 24);
- 1306              		.loc 1 299 5 is_stmt 1 view .LVU319
- 1307 00e8 1821     		movs	r1, #24
- 1308 00ea 2F48     		ldr	r0, .L75+20
- 1309 00ec FFF7FEFF 		bl	CDC_Transmit_FS
- 1310              	.LVL142:
- 300:patchouli/src/patchouli.c ****     sprintf(buf, "Min: %d\n", min_val);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 31
-
-
- 1311              		.loc 1 300 5 view .LVU320
- 1312 00f0 4246     		mov	r2, r8
- 1313 00f2 2E49     		ldr	r1, .L75+24
- 1314 00f4 02A8     		add	r0, sp, #8
- 1315 00f6 FFF7FEFF 		bl	sprintf
- 1316              	.LVL143:
- 301:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1317              		.loc 1 301 5 view .LVU321
- 1318              		.loc 1 301 36 is_stmt 0 view .LVU322
- 1319 00fa 02A8     		add	r0, sp, #8
- 1320 00fc FFF7FEFF 		bl	strlen
- 1321              	.LVL144:
- 1322              		.loc 1 301 5 discriminator 1 view .LVU323
- 1323 0100 81B2     		uxth	r1, r0
- 1324 0102 02A8     		add	r0, sp, #8
- 1325 0104 FFF7FEFF 		bl	CDC_Transmit_FS
- 1326              	.LVL145:
- 302:patchouli/src/patchouli.c ****     sprintf(buf, "Max: %d\n", max_val);
- 1327              		.loc 1 302 5 is_stmt 1 view .LVU324
- 1328 0108 3A46     		mov	r2, r7
- 1329 010a 2949     		ldr	r1, .L75+28
- 1330 010c 02A8     		add	r0, sp, #8
- 1331 010e FFF7FEFF 		bl	sprintf
- 1332              	.LVL146:
- 303:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1333              		.loc 1 303 5 view .LVU325
- 1334              		.loc 1 303 36 is_stmt 0 view .LVU326
- 1335 0112 02A8     		add	r0, sp, #8
- 1336 0114 FFF7FEFF 		bl	strlen
- 1337              	.LVL147:
- 1338              		.loc 1 303 5 discriminator 1 view .LVU327
- 1339 0118 81B2     		uxth	r1, r0
- 1340 011a 02A8     		add	r0, sp, #8
- 1341 011c FFF7FEFF 		bl	CDC_Transmit_FS
- 1342              	.LVL148:
- 304:patchouli/src/patchouli.c ****     sprintf(buf, "Avg: %d\n", avg_val);
- 1343              		.loc 1 304 5 is_stmt 1 view .LVU328
- 1344 0120 2A46     		mov	r2, r5
- 1345 0122 2449     		ldr	r1, .L75+32
- 1346 0124 02A8     		add	r0, sp, #8
- 1347 0126 FFF7FEFF 		bl	sprintf
- 1348              	.LVL149:
- 305:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1349              		.loc 1 305 5 view .LVU329
- 1350              		.loc 1 305 36 is_stmt 0 view .LVU330
- 1351 012a 02A8     		add	r0, sp, #8
- 1352 012c FFF7FEFF 		bl	strlen
- 1353              	.LVL150:
- 1354              		.loc 1 305 5 discriminator 1 view .LVU331
- 1355 0130 81B2     		uxth	r1, r0
- 1356 0132 02A8     		add	r0, sp, #8
- 1357 0134 FFF7FEFF 		bl	CDC_Transmit_FS
- 1358              	.LVL151:
- 306:patchouli/src/patchouli.c ****     sprintf(buf, "Range: %d\n", range);
- 1359              		.loc 1 306 5 is_stmt 1 view .LVU332
- 1360 0138 3246     		mov	r2, r6
- 1361 013a 1F49     		ldr	r1, .L75+36
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 32
-
-
- 1362 013c 02A8     		add	r0, sp, #8
- 1363 013e FFF7FEFF 		bl	sprintf
- 1364              	.LVL152:
- 307:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1365              		.loc 1 307 5 view .LVU333
- 1366              		.loc 1 307 36 is_stmt 0 view .LVU334
- 1367 0142 02A8     		add	r0, sp, #8
- 1368 0144 FFF7FEFF 		bl	strlen
- 1369              	.LVL153:
- 1370              		.loc 1 307 5 discriminator 1 view .LVU335
- 1371 0148 81B2     		uxth	r1, r0
- 1372 014a 02A8     		add	r0, sp, #8
- 1373 014c FFF7FEFF 		bl	CDC_Transmit_FS
- 1374              	.LVL154:
- 308:patchouli/src/patchouli.c ****     sprintf(buf, "Samples: %d\n", sample_count);
- 1375              		.loc 1 308 5 is_stmt 1 view .LVU336
- 1376 0150 2246     		mov	r2, r4
- 1377 0152 1A49     		ldr	r1, .L75+40
- 1378 0154 02A8     		add	r0, sp, #8
- 1379 0156 FFF7FEFF 		bl	sprintf
- 1380              	.LVL155:
- 309:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1381              		.loc 1 309 5 view .LVU337
- 1382              		.loc 1 309 36 is_stmt 0 view .LVU338
- 1383 015a 02A8     		add	r0, sp, #8
- 1384 015c FFF7FEFF 		bl	strlen
- 1385              	.LVL156:
- 1386              		.loc 1 309 5 discriminator 1 view .LVU339
- 1387 0160 81B2     		uxth	r1, r0
- 1388 0162 02A8     		add	r0, sp, #8
- 1389 0164 FFF7FEFF 		bl	CDC_Transmit_FS
- 1390              	.LVL157:
- 310:patchouli/src/patchouli.c ****     
- 311:patchouli/src/patchouli.c ****     // Suggest threshold based on statistics
- 312:patchouli/src/patchouli.c ****     uint16_t suggested_threshold = avg_val + (range / 4);
- 1391              		.loc 1 312 5 is_stmt 1 view .LVU340
- 1392              		.loc 1 312 14 is_stmt 0 view .LVU341
- 1393 0168 05EB9602 		add	r2, r5, r6, lsr #2
- 1394              	.LVL158:
- 313:patchouli/src/patchouli.c ****     sprintf(buf, "Suggested threshold: %d\n", suggested_threshold);
- 1395              		.loc 1 313 5 is_stmt 1 view .LVU342
- 1396 016c 92B2     		uxth	r2, r2
- 1397              		.loc 1 313 5 is_stmt 0 view .LVU343
- 1398 016e 1449     		ldr	r1, .L75+44
- 1399 0170 02A8     		add	r0, sp, #8
- 1400 0172 FFF7FEFF 		bl	sprintf
- 1401              	.LVL159:
- 314:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)buf, strlen(buf));
- 1402              		.loc 1 314 5 is_stmt 1 view .LVU344
- 1403              		.loc 1 314 36 is_stmt 0 view .LVU345
- 1404 0176 02A8     		add	r0, sp, #8
- 1405 0178 FFF7FEFF 		bl	strlen
- 1406              	.LVL160:
- 1407              		.loc 1 314 5 discriminator 1 view .LVU346
- 1408 017c 81B2     		uxth	r1, r0
- 1409 017e 02A8     		add	r0, sp, #8
- 1410 0180 FFF7FEFF 		bl	CDC_Transmit_FS
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 33
-
-
- 1411              	.LVL161:
- 315:patchouli/src/patchouli.c ****     
- 316:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"=== SCAN COMPLETE ===\n", 22);
- 1412              		.loc 1 316 5 is_stmt 1 view .LVU347
- 1413 0184 1621     		movs	r1, #22
- 1414 0186 0F48     		ldr	r0, .L75+48
- 1415 0188 FFF7FEFF 		bl	CDC_Transmit_FS
- 1416              	.LVL162:
- 317:patchouli/src/patchouli.c **** }
- 1417              		.loc 1 317 1 is_stmt 0 view .LVU348
- 1418 018c 0BB0     		add	sp, sp, #44
- 1419              		.cfi_def_cfa_offset 28
- 1420              		@ sp needed
- 1421 018e BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 1422              	.LVL163:
- 1423              	.L76:
- 1424              		.loc 1 317 1 view .LVU349
- 1425 0192 00BF     		.align	2
- 1426              	.L75:
- 1427 0194 00000000 		.word	.LC8
- 1428 0198 1C000000 		.word	.LC9
- 1429 019c 30000000 		.word	.LC10
- 1430 01a0 40000000 		.word	.LC11
- 1431 01a4 54000000 		.word	.LC12
- 1432 01a8 64000000 		.word	.LC13
- 1433 01ac 80000000 		.word	.LC14
- 1434 01b0 8C000000 		.word	.LC15
- 1435 01b4 98000000 		.word	.LC16
- 1436 01b8 A4000000 		.word	.LC17
- 1437 01bc B0000000 		.word	.LC18
- 1438 01c0 C0000000 		.word	.LC19
- 1439 01c4 DC000000 		.word	.LC20
- 1440              		.cfi_endproc
- 1441              	.LFE1116:
- 1443              		.section	.rodata.patchouli_cycle.str1.4,"aMS",%progbits,1
- 1444              		.align	2
- 1445              	.LC21:
- 1446 0000 4379636C 		.ascii	"Cycle\012\000"
- 1446      650A00
- 1447              		.section	.text.patchouli_cycle,"ax",%progbits
- 1448              		.align	1
- 1449              		.global	patchouli_cycle
- 1450              		.syntax unified
- 1451              		.thumb
- 1452              		.thumb_func
- 1454              	patchouli_cycle:
- 1455              	.LFB1114:
- 208:patchouli/src/patchouli.c ****     CDC_Transmit_FS((uint8_t*)"Cycle\n", 6);
- 1456              		.loc 1 208 23 is_stmt 1 view -0
- 1457              		.cfi_startproc
- 1458              		@ args = 0, pretend = 0, frame = 0
- 1459              		@ frame_needed = 0, uses_anonymous_args = 0
- 1460 0000 08B5     		push	{r3, lr}
- 1461              		.cfi_def_cfa_offset 8
- 1462              		.cfi_offset 3, -8
- 1463              		.cfi_offset 14, -4
- 209:patchouli/src/patchouli.c ****     switch (debug_state) {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 34
-
-
- 1464              		.loc 1 209 5 view .LVU351
- 1465 0002 0621     		movs	r1, #6
- 1466 0004 0B48     		ldr	r0, .L86
- 1467 0006 FFF7FEFF 		bl	CDC_Transmit_FS
- 1468              	.LVL164:
- 210:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_NONE:
- 1469              		.loc 1 210 5 view .LVU352
- 1470 000a 0B4B     		ldr	r3, .L86+4
- 1471 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 1472 000e 052B     		cmp	r3, #5
- 1473 0010 06D8     		bhi	.L77
- 1474 0012 DFE803F0 		tbb	[pc, r3]
- 1475              	.L80:
- 1476 0016 03       		.byte	(.L83-.L80)/2
- 1477 0017 06       		.byte	(.L82-.L80)/2
- 1478 0018 09       		.byte	(.L81-.L80)/2
- 1479 0019 05       		.byte	(.L77-.L80)/2
- 1480 001a 05       		.byte	(.L77-.L80)/2
- 1481 001b 0C       		.byte	(.L79-.L80)/2
- 1482              		.p2align 1
- 1483              	.L83:
- 1484              	.LBB23:
- 212:patchouli/src/patchouli.c ****             break;
- 1485              		.loc 1 212 13 view .LVU353
- 1486 001c FFF7FEFF 		bl	_patchouli_cycle_default
- 1487              	.LVL165:
- 213:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_XSCAN:
- 1488              		.loc 1 213 13 view .LVU354
- 1489              	.L77:
- 1490              	.LBE23:
- 227:patchouli/src/patchouli.c **** 
- 1491              		.loc 1 227 1 is_stmt 0 view .LVU355
- 1492 0020 08BD     		pop	{r3, pc}
- 1493              	.L82:
- 1494              	.LBB24:
- 215:patchouli/src/patchouli.c ****             break;
- 1495              		.loc 1 215 13 is_stmt 1 view .LVU356
- 1496 0022 FFF7FEFF 		bl	_patchouli_cycle_xscan
- 1497              	.LVL166:
- 216:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_YSCAN:
- 1498              		.loc 1 216 13 view .LVU357
- 1499 0026 FBE7     		b	.L77
- 1500              	.L81:
- 218:patchouli/src/patchouli.c ****             break;
- 1501              		.loc 1 218 13 view .LVU358
- 1502 0028 FFF7FEFF 		bl	_patchouli_cycle_yscan
- 1503              	.LVL167:
- 219:patchouli/src/patchouli.c ****         case PATCHOULI_DEBUG_PEN_SCAN:
- 1504              		.loc 1 219 13 view .LVU359
- 1505 002c F8E7     		b	.L77
- 1506              	.L79:
- 221:patchouli/src/patchouli.c ****             break;
- 1507              		.loc 1 221 13 view .LVU360
- 1508 002e FFF7FEFF 		bl	patchouli_scan_passive_pen_parameters
- 1509              	.LVL168:
- 222:patchouli/src/patchouli.c ****         default:
- 1510              		.loc 1 222 13 view .LVU361
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 35
-
-
- 225:patchouli/src/patchouli.c ****     }
- 1511              		.loc 1 225 64 view .LVU362
- 1512              	.LBE24:
- 227:patchouli/src/patchouli.c **** 
- 1513              		.loc 1 227 1 is_stmt 0 view .LVU363
- 1514 0032 F5E7     		b	.L77
- 1515              	.L87:
- 1516              		.align	2
- 1517              	.L86:
- 1518 0034 00000000 		.word	.LC21
- 1519 0038 00000000 		.word	debug_state
- 1520              		.cfi_endproc
- 1521              	.LFE1114:
- 1523              		.global	ypos
- 1524              		.section	.bss.ypos,"aw",%nobits
- 1525              		.align	2
- 1528              	ypos:
- 1529 0000 00000000 		.space	12
- 1529      00000000 
- 1529      00000000 
- 1530              		.global	xpos
- 1531              		.section	.bss.xpos,"aw",%nobits
- 1532              		.align	2
- 1535              	xpos:
- 1536 0000 00000000 		.space	12
- 1536      00000000 
- 1536      00000000 
- 1537              		.global	pen_zero_pressure
- 1538              		.section	.bss.pen_zero_pressure,"aw",%nobits
- 1539              		.align	2
- 1542              	pen_zero_pressure:
- 1543 0000 00000000 		.space	4
- 1544              		.global	pen_present
- 1545              		.section	.bss.pen_present,"aw",%nobits
- 1548              	pen_present:
- 1549 0000 00       		.space	1
- 1550              		.global	psamples
- 1551              		.section	.bss.psamples,"aw",%nobits
- 1552              		.align	2
- 1555              	psamples:
- 1556 0000 00000000 		.space	18
- 1556      00000000 
- 1556      00000000 
- 1556      00000000 
- 1556      0000
- 1557              		.global	maxpptr
- 1558              		.section	.data.maxpptr,"aw"
- 1559              		.align	2
- 1562              	maxpptr:
- 1563 0000 07000000 		.word	7
- 1564              		.global	pavg
- 1565              		.section	.bss.pavg,"aw",%nobits
- 1566              		.align	2
- 1569              	pavg:
- 1570 0000 00000000 		.space	4
- 1571              		.global	debug_state
- 1572              		.section	.bss.debug_state,"aw",%nobits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 36
-
-
- 1575              	debug_state:
- 1576 0000 00       		.space	1
- 1577              		.global	mva_p
- 1578              		.section	.bss.mva_p,"aw",%nobits
- 1579              		.align	2
- 1582              	mva_p:
- 1583 0000 00000000 		.space	20
- 1583      00000000 
- 1583      00000000 
- 1583      00000000 
- 1583      00000000 
- 1584              		.global	mva_ypos
- 1585              		.section	.bss.mva_ypos,"aw",%nobits
- 1586              		.align	2
- 1589              	mva_ypos:
- 1590 0000 00000000 		.space	20
- 1590      00000000 
- 1590      00000000 
- 1590      00000000 
- 1590      00000000 
- 1591              		.global	mva_xpos
- 1592              		.section	.bss.mva_xpos,"aw",%nobits
- 1593              		.align	2
- 1596              	mva_xpos:
- 1597 0000 00000000 		.space	20
- 1597      00000000 
- 1597      00000000 
- 1597      00000000 
- 1597      00000000 
- 1598              		.text
- 1599              	.Letext0:
- 1600              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
- 1601              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
- 1602              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
- 1603              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
- 1604              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
- 1605              		.file 7 "patchouli/inc/patchouli.h"
- 1606              		.file 8 "patchouli/inc/patchouli_math.h"
- 1607              		.file 9 "patchouli/inc/patchouli_bsp_glider_addon_v1.h"
- 1608              		.file 10 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/m
- 1609              		.file 11 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/s
- 1610              		.file 12 "USB_Device/App/usbd_cdc_if.h"
- 1611              		.file 13 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 37
+ 1001      00000000 
+ 1001      00000000 
+ 1002              		.global	mva_ypos
+ 1003              		.section	.bss.mva_ypos,"aw",%nobits
+ 1004              		.align	2
+ 1007              	mva_ypos:
+ 1008 0000 00000000 		.space	20
+ 1008      00000000 
+ 1008      00000000 
+ 1008      00000000 
+ 1008      00000000 
+ 1009              		.global	mva_xpos
+ 1010              		.section	.bss.mva_xpos,"aw",%nobits
+ 1011              		.align	2
+ 1014              	mva_xpos:
+ 1015 0000 00000000 		.space	20
+ 1015      00000000 
+ 1015      00000000 
+ 1015      00000000 
+ 1015      00000000 
+ 1016              		.text
+ 1017              	.Letext0:
+ 1018              		.file 2 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/ma
+ 1019              		.file 3 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/sy
+ 1020              		.file 4 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
+ 1021              		.file 5 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/lib/gcc/arm-none-eabi/13
+ 1022              		.file 6 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/st
+ 1023              		.file 7 "patchouli/inc/patchouli.h"
+ 1024              		.file 8 "patchouli/inc/patchouli_math.h"
+ 1025              		.file 9 "patchouli/inc/patchouli_bsp_glider_addon_v1.h"
+ 1026              		.file 10 "C:/PROGRAM FILES (X86)/ARM GNU TOOLCHAIN ARM-NONE-EABI/13.3 REL1/arm-none-eabi/include/m
+ 1027              		.file 11 "USB_Device/App/usbd_cdc_if.h"
+ 1028              		.file 12 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 patchouli.c
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:21     .rodata.patchouli_get_position.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:29     .text.patchouli_get_position:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:35     .text.patchouli_get_position:00000000 patchouli_get_position
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:226    .text.patchouli_get_position:000000e0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:233    .text.patchouli_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:239    .text.patchouli_init:00000000 patchouli_init
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:270    .text.patchouli_init:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1582   .bss.mva_p:00000000 mva_p
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:275    .rodata._patchouli_cycle_default.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:290    .text._patchouli_cycle_default:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:296    .text._patchouli_cycle_default:00000000 _patchouli_cycle_default
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:685    .text._patchouli_cycle_default:00000218 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1535   .bss.xpos:00000000 xpos
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1562   .data.maxpptr:00000000 maxpptr
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1528   .bss.ypos:00000000 ypos
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1555   .bss.psamples:00000000 psamples
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1548   .bss.pen_present:00000000 pen_present
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1569   .bss.pavg:00000000 pavg
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1542   .bss.pen_zero_pressure:00000000 pen_zero_pressure
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:706    .text._patchouli_cycle_xscan:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:712    .text._patchouli_cycle_xscan:00000000 _patchouli_cycle_xscan
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:779    .text._patchouli_cycle_yscan:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:785    .text._patchouli_cycle_yscan:00000000 _patchouli_cycle_yscan
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:852    .text.patchouli_set_mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:858    .text.patchouli_set_mode:00000000 patchouli_set_mode
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:875    .text.patchouli_set_mode:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1575   .bss.debug_state:00000000 debug_state
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:880    .rodata.patchouli_debug_output.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:887    .text.patchouli_debug_output:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:893    .text.patchouli_debug_output:00000000 patchouli_debug_output
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:986    .text.patchouli_debug_output:00000054 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:992    .rodata.patchouli_scan_passive_pen_parameters.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1032   .text.patchouli_scan_passive_pen_parameters:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1038   .text.patchouli_scan_passive_pen_parameters:00000000 patchouli_scan_passive_pen_parameters
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1427   .text.patchouli_scan_passive_pen_parameters:00000194 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1444   .rodata.patchouli_cycle.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1448   .text.patchouli_cycle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1454   .text.patchouli_cycle:00000000 patchouli_cycle
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1476   .text.patchouli_cycle:00000016 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1482   .text.patchouli_cycle:0000001c $t
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1518   .text.patchouli_cycle:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1525   .bss.ypos:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1532   .bss.xpos:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1539   .bss.pen_zero_pressure:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1549   .bss.pen_present:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1552   .bss.psamples:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1559   .data.maxpptr:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1566   .bss.pavg:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1576   .bss.debug_state:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1579   .bss.mva_p:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1589   .bss.mva_ypos:00000000 mva_ypos
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1586   .bss.mva_ypos:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1596   .bss.mva_xpos:00000000 mva_xpos
-C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s:1593   .bss.mva_xpos:00000000 $d
-
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCqrjUH.s 			page 38
-
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:21     .text.patchouli_get_position:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:27     .text.patchouli_get_position:00000000 patchouli_get_position
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:182    .text.patchouli_get_position:000000ac $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:187    .text.patchouli_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:193    .text.patchouli_init:00000000 patchouli_init
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:224    .text.patchouli_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:1000   .bss.mva_p:00000000 mva_p
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:229    .rodata._patchouli_cycle_default.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:236    .text._patchouli_cycle_default:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:242    .text._patchouli_cycle_default:00000000 _patchouli_cycle_default
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:585    .text._patchouli_cycle_default:000001d4 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:953    .bss.xpos:00000000 xpos
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:980    .data.maxpptr:00000000 maxpptr
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:946    .bss.ypos:00000000 ypos
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:973    .bss.psamples:00000000 psamples
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:966    .bss.pen_present:00000000 pen_present
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:987    .bss.pavg:00000000 pavg
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:960    .bss.pen_zero_pressure:00000000 pen_zero_pressure
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:603    .text._patchouli_cycle_xscan:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:609    .text._patchouli_cycle_xscan:00000000 _patchouli_cycle_xscan
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:676    .text._patchouli_cycle_yscan:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:682    .text._patchouli_cycle_yscan:00000000 _patchouli_cycle_yscan
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:749    .text.patchouli_set_mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:755    .text.patchouli_set_mode:00000000 patchouli_set_mode
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:772    .text.patchouli_set_mode:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:993    .bss.debug_state:00000000 debug_state
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:777    .text.patchouli_cycle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:783    .text.patchouli_cycle:00000000 patchouli_cycle
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:825    .text.patchouli_cycle:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:830    .rodata.patchouli_debug_output.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:837    .text.patchouli_debug_output:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:843    .text.patchouli_debug_output:00000000 patchouli_debug_output
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:936    .text.patchouli_debug_output:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:943    .bss.ypos:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:950    .bss.xpos:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:957    .bss.pen_zero_pressure:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:967    .bss.pen_present:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:970    .bss.psamples:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:977    .data.maxpptr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:984    .bss.pavg:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:994    .bss.debug_state:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:997    .bss.mva_p:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:1007   .bss.mva_ypos:00000000 mva_ypos
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:1004   .bss.mva_ypos:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:1014   .bss.mva_xpos:00000000 mva_xpos
+C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s:1011   .bss.mva_xpos:00000000 $d
 
 UNDEFINED SYMBOLS
-__aeabi_f2d
 patchouli_coil_select
 patchouli_simple_take_sample
 memset
 patchouli_quad_interp
-CDC_Transmit_FS
-sprintf
-strlen
 patchouli_TIM_init
 patchouli_gauss_init_kernel
 patchouli_mva_buffer_init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cciYjCdv.s 			page 25
+
+
+__aeabi_f2d
 __aeabi_d2f
 __aeabi_d2iz
 patchouli_led_on
+CDC_Transmit_FS
 patchouli_gauss_apply
 exp
 patchouli_linear_map

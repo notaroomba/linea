@@ -55,95 +55,167 @@ void _PW100_FSTEP_535(void);
 void _PW100_FSTEP_540(void);
 void _PW100_FSTEP_545(void);
 void _PW100_FSTEP_550(void);
+//include all the high frequency steps from 650-780kHz
+// void _PW100_FSTEP_650(void);
+// void _PW100_FSTEP_660(void);
+// void _PW100_FSTEP_670(void);
+// void _PW100_FSTEP_680(void);
+// void _PW100_FSTEP_690(void);
+// void _PW100_FSTEP_700(void);
+// void _PW100_FSTEP_710(void);
+// void _PW100_FSTEP_720(void);
+// void _PW100_FSTEP_730(void);
+// void _PW100_FSTEP_740(void);
+// void _PW100_FSTEP_750(void);
+// void _PW100_FSTEP_760(void);
+// void _PW100_FSTEP_770(void);
+// void _PW100_FSTEP_780(void);
 
 patchouli_void_fptr_t patchouli_tx_fptr_table[] = {
+    _PW100_FSTEP_480,
+    _PW100_FSTEP_490,
     _PW100_FSTEP_510,
-    _PW100_FSTEP_515,
+    // _PW100_FSTEP_515,
     _PW100_FSTEP_520,
-    _PW100_FSTEP_525,
+    // _PW100_FSTEP_525,
     _PW100_FSTEP_530,
     _PW100_FSTEP_535,
     _PW100_FSTEP_540,
-    _PW100_FSTEP_545
+    // _PW100_FSTEP_545,
+    _PW100_FSTEP_550,
+
 };
 
+// patchouli_void_fptr_t patchouli_high_tx_fptr_table[] = {
+//     _PW100_FSTEP_650,
+//     _PW100_FSTEP_660,
+//     _PW100_FSTEP_670,
+//     _PW100_FSTEP_680,
+//     _PW100_FSTEP_690,
+//     _PW100_FSTEP_700,
+//     _PW100_FSTEP_710,
+//     _PW100_FSTEP_720,
+//     _PW100_FSTEP_730,
+//     _PW100_FSTEP_740,
+//     _PW100_FSTEP_750,
+//     _PW100_FSTEP_760,
+//     _PW100_FSTEP_770,
+//     _PW100_FSTEP_780
+// };
+
 patchouli_tx_t patchouli_pen_pw100 = {
-    // .tx_fmin_kHz   = 470,
-    // .tx_fmax_kHz   = 550,
-    .tx_fmin_kHz   = 510,
-    .tx_fmax_kHz   = 545,
-    .tx_fstep_kHz  = 5,
+    .tx_fmin_kHz   = 480,
+    .tx_fmax_kHz   = 550,
+    // .tx_fmin_kHz   = 510,
+    // .tx_fmax_kHz   = 545,
+    .tx_fstep_kHz  = 10,
     .tx_steps      = 8,
     .tx_ncycle     = 50,
     .cpu_freq      = 64.0E6f,
     .tx_fptr_table = patchouli_tx_fptr_table
 };
 
+// patchouli_tx_t patchouli_pen_pw100_high = {
+//     .tx_fmin_kHz   = 650,
+//     .tx_fmax_kHz   = 780,
+//     .tx_fstep_kHz  = 10,
+//     .tx_steps      = 14,
+//     .tx_ncycle     = 50,
+//     .cpu_freq      = 64.0E6f,
+//     .tx_fptr_table = patchouli_high_tx_fptr_table
+// };
+
+
 #define _5NOP()   do{asm volatile ("nop\nnop\nnop\nnop\nnop");} while(0)
 #define _10NOP()  do{_5NOP();_5NOP();} while(0)
 #define _100NOP() do{_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();}while(0)
-
+// nops are calculated from the round(((CPU Freq/TX Freq) - 13)/2 +- 5.5) where the larger value is before the tx_low
 void _PW100_FSTEP_480(void){
     // 480kHz
-    // need 300 cycles
+    // need 300 cycles (old)
+    // need 133 cycles (new) (64MHz / 480kHz)
+    // 133 - 13 = 120
+    // 120 / 2 = 60
+    // 60 - 5.5 = 55
+    // 60 + 5.5 = 65.5
+    // 54.5 to 65.5
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();_10NOP();
+        //66
+        _10NOP();
+        _10NOP();
+        _10NOP();
+        _10NOP();
+        _10NOP();
+        _10NOP();
         _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
+        //55
+        _10NOP();
+        _10NOP();
+        _10NOP();
+        _10NOP();
+        _10NOP();
         _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_490(void){
     // 490kHz
-    // need 294 cycles
+    // need 294 cycles (old)
+    // need 130.6 cycles (new) (64MHz / 490kHz)
+    // 130 - 13 = 117
+    // 117 / 2 = 58.5
+    // 58.5 - 5.5 = 53
+    // 58.5 + 5.5 = 64
+    // 53 to 64
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();_10NOP();
-        _5NOP();
+        // 64
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        asm volatile ("nop");
+        asm volatile ("nop");
+        asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
-        _5NOP();
+        // 53
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        asm volatile ("nop");
+        asm volatile ("nop");
+        asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_500(void){
     // 500kHz
+    // need 128 cycles (new) (64MHz / 500kHz)
+    // 128 - 13 = 115
+    // 115 / 2 = 57.5
+    // 57.5 - 5.5 = 52
+    // 57.5 + 5.5 = 63
+    // 52 to 63
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();_10NOP();
+        // 63
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
+        // 52
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         asm volatile ("nop");
         asm volatile ("nop");
     }
@@ -152,20 +224,24 @@ void _PW100_FSTEP_500(void){
 
 void _PW100_FSTEP_510(void){
     // 510kHz
+    // need 125.4 cycles (new) (64MHz / 510kHz)
+    // 125 - 13 = 112
+    // 112 / 2 = 56
+    // 56 - 5.5 = 51
+    // 56 + 5.5 = 61.5
+    // 51 to 62
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();_10NOP();
+        // 62
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        asm volatile ("nop");
+        asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
-        _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 51
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
@@ -173,69 +249,68 @@ void _PW100_FSTEP_510(void){
 
 void _PW100_FSTEP_515(void){
     // 516.2kHz
+    // need 124 cycles (new) (64MHz / 516.2kHz)
+    // 124 - 13 = 111
+    // 111 / 2 = 55.5
+    // 55.5 - 5.5 = 50
+    // 55.5 + 5.5 = 61
+    // 50 to 61
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
-        _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 61
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
-        _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 50
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_520(void){
     // 520kHz
+    // need 123 cycles (new) (64MHz / 520kHz)
+    // 123 - 13 = 110
+    // 110 / 2 = 55
+    // 55 - 5.5 = 49.5
+    // 55 + 5.5 = 60.5
+    // 49.5 to 60.5
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
-        _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 60
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
-        _5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 50
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_525(void){
     // 525.5kHz
+    // need 121 cycles (new) (64MHz / 525.5kHz)
+    // 121 - 13 = 108
+    // 108 / 2 = 54
+    // 54 - 5.5 = 48.5
+    // 54 + 5.5 = 59.5
+    // 48.5 to 59.5
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        //60
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
-        asm volatile ("nop");
+        //49
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
@@ -246,18 +321,28 @@ void _PW100_FSTEP_525(void){
 
 void _PW100_FSTEP_530(void){
     // 530kHz
+    // need 120 cycles (new) (64MHz / 530kHz)
+    // 120 - 13 = 107
+    // 107 / 2 = 53.5
+    // 53.5 - 5.5 = 48
+    // 53.5 + 5.5 = 59
+    // 48 to 59
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
+        // 59
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         _5NOP();
-        PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
         asm volatile ("nop");
+        asm volatile ("nop");
+        asm volatile ("nop");
+        asm volatile ("nop");
+        PATCHOULI_TX_LOW();
+        // 48
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
@@ -267,19 +352,27 @@ void _PW100_FSTEP_530(void){
 
 void _PW100_FSTEP_535(void){
     // 535.2kHz
+    // need 119 cycles (new) (64MHz / 535.2kHz)
+    // 119 - 13 = 106
+    // 106 / 2 = 53
+    // 53 - 5.5 = 47.5
+    // 53 + 5.5 = 58.5
+    // 47.5 to 58.5
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
+        // 58
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
+        // 48
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
@@ -288,19 +381,28 @@ void _PW100_FSTEP_535(void){
 }
 
 void _PW100_FSTEP_540(void){
-    // 540kHz, 266.7 cycles
+    // 540kHz, 266.7 cycles (old)
+    // need 118 cycles (new) (64MHz / 540kHz)
+    // 118 - 13 = 105
+    // 105 / 2 = 52.5
+    // 52.5 - 5.5 = 47
+    // 52.5 + 5.5 = 58
+    // 47 to 58
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
+            // 58
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
+        asm volatile ("nop");
         asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
+        // 47
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
     }
@@ -309,41 +411,54 @@ void _PW100_FSTEP_540(void){
 
 void _PW100_FSTEP_545(void){
     // 545.3kHz
+    // need 117 cycles (new) (64MHz / 545.3kHz)
+    // 117 - 13 = 104
+    // 104 / 2 = 52
+    // 52 - 5.5 = 46.5
+    // 52 + 5.5 = 57.5
+    // 46.5 to 57.5
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_5NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 57
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
         PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();_10NOP();
+        // 47
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
+        asm volatile ("nop");
         asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_550(void){
-    // 550kHz, 261.8 cycles
+    // 550kHz, 261.8 cycles (old)
+    // need 116 cycles (new) (64MHz / 550kHz)
+    // 116 - 13 = 103
+    // 103 / 2 = 51.5
+    // 51.5 - 5.5 = 46
+    // 51.5 + 5.5 = 57
+    // 46 to 57
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
     uint16_t  i;
     for (i=0; i<ncycle; i++){ // 3 cycles
         PATCHOULI_TX_HIGH();
-        _100NOP();
-        _10NOP();_10NOP();_10NOP();
-        PATCHOULI_TX_LOW();
-        _100NOP();
-        _10NOP();
+        // 57
+        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
         _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
+        PATCHOULI_TX_LOW();
+        // 46
+        _10NOP();_10NOP();_10NOP();_10NOP();
+        _5NOP();
         asm volatile ("nop");
         asm volatile ("nop");
     }
@@ -353,3 +468,273 @@ void _PW100_FSTEP_550(void){
 // PW100
 // 0   1   2   3   4   5   6   7
 // 480 490 500 510 520 530 540 550
+
+
+// OLD
+
+// void _PW100_FSTEP_480(void){
+//     // 480kHz
+//     // need 300 cycles
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_490(void){
+//     // 490kHz
+//     // need 294 cycles
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_500(void){
+//     // 500kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_510(void){
+//     // 510kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();_10NOP();
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_515(void){
+//     // 516.2kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_520(void){
+//     // 520kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_525(void){
+//     // 525.5kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_530(void){
+//     // 530kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         _5NOP();
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_535(void){
+//     // 535.2kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_540(void){
+//     // 540kHz, 266.7 cycles
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_545(void){
+//     // 545.3kHz
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();_10NOP();
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }
+
+// void _PW100_FSTEP_550(void){
+//     // 550kHz, 261.8 cycles
+//     PATCHOULI_TX_PP();
+//     const int ncycle = patchouli_pen_pw100.tx_ncycle;
+//     uint16_t  i;
+//     for (i=0; i<ncycle; i++){ // 3 cycles
+//         PATCHOULI_TX_HIGH();
+//         _100NOP();
+//         _10NOP();_10NOP();_10NOP();
+//         PATCHOULI_TX_LOW();
+//         _100NOP();
+//         _10NOP();
+//         _5NOP();
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//         asm volatile ("nop");
+//     }
+//     PATCHOULI_TX_TRISTATE();
+// }

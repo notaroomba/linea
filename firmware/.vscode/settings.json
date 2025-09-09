@@ -2,6 +2,7 @@
   "cortex-debug.armToolchainPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN",
   "cortex-debug.openocdPath": "C:\\USERS\\NATHAN\\DOWNLOADS\\OPENOCD-V0.12.0-I686-W64-MINGW32\\BIN\\OPENOCD.EXE",
   "files.associations": {
-    "ble_manager.h": "c"
+    "ble_manager.h": "c",
+    "patchouli_bsp_glider_addon_v1.h": "c"
   }
 }

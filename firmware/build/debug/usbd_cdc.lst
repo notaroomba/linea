@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
   28:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *          ===================================================================
   29:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *           This driver manages the "Universal Serial Bus Class Definitions for Communications De
   30:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *           Revision 1.2 November 16, 2007" and the sub-protocol specification of "Universal Seri
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 2
 
 
   31:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *           Communications Class Subclass Specification for PSTN Devices Revision 1.2 February 9,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
   85:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @}
   86:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   */
   87:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 3
 
 
   88:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  142:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** {
  143:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_CDC_Init,
  144:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_CDC_DeInit,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 4
 
 
  145:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_CDC_Setup,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  199:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  200:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   /* Header Functional Descriptor */
  201:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   0x05,                                       /* bLength: Endpoint Descriptor size */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 5
 
 
  202:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   0x24,                                       /* bDescriptorType: CS_INTERFACE */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  256:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  257:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   /* Endpoint IN Descriptor */
  258:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   0x07,                                       /* bLength: Endpoint Descriptor size */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 6
 
 
  259:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USB_DESC_TYPE_ENDPOINT,                     /* bDescriptorType: Endpoint */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  313:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
  314:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     /* Open EP IN */
  315:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     (void)USBD_LL_OpenEP(pdev, CDCInEpAdd, USBD_EP_TYPE_BULK,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 7
 
 
  316:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                          CDC_DATA_HS_IN_PACKET_SIZE);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  370:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
  371:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   else
  372:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 8
 
 
  373:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     /* Prepare Out endpoint to receive next packet */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  427:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *         Handle the CDC specific requests
  428:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  pdev: instance
  429:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  req: usb requests
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 9
 
 
  430:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @retval status
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  484:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****           {
  485:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****             USBD_CtlError(pdev, req);
  486:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****             ret = USBD_FAIL;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 10
 
 
  487:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****           }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  541:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   if (pdev->pClassDataCmsit[pdev->classId] == NULL)
  542:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
  543:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     return (uint8_t)USBD_FAIL;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 11
 
 
  544:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  598:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @brief  USBD_CDC_EP0_RxReady
  599:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   *         Handle EP0 Rx Ready event
  600:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  pdev: device instance
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 12
 
 
  601:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @retval status
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  615:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                                                      (uint8_t *)hcdc->data,
  616:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                                                      (uint16_t)hcdc->CmdLength);
  617:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     hcdc->CmdOpCode = 0xFFU;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 13
 
 
   69              		.loc 1 617 5 is_stmt 1 view .LVU16
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  635:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   if (pEpCmdDesc != NULL)
  636:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
  637:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     pEpCmdDesc->bInterval = CDC_FS_BINTERVAL;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 14
 
 
  638:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  692:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** {
  693:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_EpDescTypeDef *pEpCmdDesc = USBD_GetEpDesc(USBD_CDC_CfgDesc, CDC_CMD_EP);
  694:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_EpDescTypeDef *pEpOutDesc = USBD_GetEpDesc(USBD_CDC_CfgDesc, CDC_OUT_EP);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 15
 
 
  695:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_EpDescTypeDef *pEpInDesc = USBD_GetEpDesc(USBD_CDC_CfgDesc, CDC_IN_EP);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  127              		.section	.text.USBD_CDC_GetOtherSpeedCfgDesc,"ax",%progbits
  128              		.align	1
  129              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 16
 
 
  130              		.thumb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  175              	.LVL15:
  695:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  176              		.loc 1 695 35 view .LVU39
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 17
 
 
  177 001e FFF7FEFF 		bl	USBD_GetEpDesc
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  714:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  215              		.loc 1 714 1 view .LVU56
  216 0042 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 18
 
 
  217              	.LVL18:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  632:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_EpDescTypeDef *pEpInDesc = USBD_GetEpDesc(USBD_CDC_CfgDesc, CDC_IN_EP);
  265              		.loc 1 632 36 view .LVU65
  266 0014 FFF7FEFF 		bl	USBD_GetEpDesc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 19
 
 
  267              	.LVL24:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  650:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   return USBD_CDC_CfgDesc;
  306              		.loc 1 650 3 is_stmt 1 view .LVU81
  650:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   return USBD_CDC_CfgDesc;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 20
 
 
  307              		.loc 1 650 11 is_stmt 0 view .LVU82
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  354              		.loc 1 662 36 view .LVU91
  355 000a FFF7FEFF 		bl	USBD_GetEpDesc
  356              	.LVL32:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 21
 
 
  357 000e 0546     		mov	r5, r0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  676:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
  396              		.loc 1 676 6 is_stmt 0 view .LVU107
  397 0032 18B1     		cbz	r0, .L27
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 22
 
 
  678:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  579:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  444              		.loc 1 579 3 is_stmt 1 view .LVU118
  579:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 23
 
 
  445              		.loc 1 579 86 is_stmt 0 view .LVU119
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  484              	.L33:
  583:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
  485              		.loc 1 583 12 view .LVU135
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 24
 
 
  486 0034 0320     		movs	r0, #3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  529              		.loc 1 548 26 is_stmt 0 view .LVU148
  530 0012 01F00F03 		and	r3, r1, #15
  548:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****       ((pdev->ep_in[epnum & 0xFU].total_length % hpcd->IN_ep[epnum & 0xFU].maxpacket) == 0U))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 25
 
 
  531              		.loc 1 548 33 view .LVU149
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  570 004e 04F50471 		add	r1, r4, #528
  571              	.LVL54:
  563:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 26
 
 
  572              		.loc 1 563 8 view .LVU165
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  614 007a EEE7     		b	.L36
  615              		.cfi_endproc
  616              	.LFE1111:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 27
 
 
  618              		.section	.text.USBD_CDC_Setup,"ax",%progbits
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  660 001a 002F     		cmp	r7, #0
  661 001c 7BD0     		beq	.L56
  662 001e 0446     		mov	r4, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 28
 
 
  663 0020 0D46     		mov	r5, r1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  700 004a 00EB8303 		add	r3, r0, r3, lsl #2
  701 004e 5B68     		ldr	r3, [r3, #4]
  453:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                                                            (uint8_t *)hcdc->data,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 29
 
 
  702              		.loc 1 453 66 view .LVU208
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  743              	.LVL75:
  439:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  744              		.loc 1 439 22 view .LVU222
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 30
 
 
  745 007a 0026     		movs	r6, #0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  790 00a9 26       		.byte	(.L50-.L51)/2
  791              		.p2align 1
  792              	.L53:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 31
 
 
  479:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****           {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  498:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****           }
  833              		.loc 1 498 17 is_stmt 0 view .LVU246
  834 00da 0326     		movs	r6, #3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 32
 
 
  835 00dc 18E0     		b	.L43
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  875              	.LVL93:
  876              	.L45:
  521:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****       ret = USBD_FAIL;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 33
 
 
  877              		.loc 1 521 7 is_stmt 1 view .LVU261
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  401:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   pdev->ep_in[CDCInEpAdd & 0xFU].is_used = 0U;
  925              		.loc 1 401 3 view .LVU270
  401:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   pdev->ep_in[CDCInEpAdd & 0xFU].is_used = 0U;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 34
 
 
  926              		.loc 1 401 9 is_stmt 0 view .LVU271
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  963              		.loc 1 414 6 view .LVU288
  964 0036 9AB1     		cbz	r2, .L64
  416:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****     (void)USBD_free(pdev->pClassDataCmsit[pdev->classId]);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 35
 
 
  965              		.loc 1 416 5 is_stmt 1 view .LVU289
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1007              	USBD_CDC_Init:
  1008              	.LVL104:
  1009              	.LFB1108:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 36
 
 
  288:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   UNUSED(cfgidx);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  303:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  1049              		.loc 1 303 20 is_stmt 0 view .LVU319
  1050 0026 C4F8BC52 		str	r5, [r4, #700]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 37
 
 
  312:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1090 0060 2046     		mov	r0, r4
  1091 0062 FFF7FEFF 		bl	USBD_LL_OpenEP
  1092              	.LVL110:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 38
 
 
  349:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1128              		.loc 1 365 6 view .LVU353
  1129 0092 1DBB     		cbnz	r5, .L71
  368:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                  CDC_DATA_HS_OUT_PACKET_SIZE);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 39
 
 
  1130              		.loc 1 368 5 is_stmt 1 view .LVU354
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1171 00c6 0222     		movs	r2, #2
  1172 00c8 3146     		mov	r1, r6
  1173 00ca 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 40
 
 
  1174 00cc FFF7FEFF 		bl	USBD_LL_OpenEP
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  733:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @retval status
  734:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   */
  735:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** uint8_t USBD_CDC_RegisterInterface(USBD_HandleTypeDef *pdev,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 41
 
 
  736:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                    USBD_CDC_ItfTypeDef *fops)
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  750:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @brief  USBD_CDC_SetTxBuffer
  751:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  pdev: device instance
  752:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  pbuff: Tx Buffer
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 42
 
 
  753:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   * @param  length: length of data to be sent
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  771:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   }
  1286              		.loc 1 771 12 view .LVU401
  1287 0018 0320     		movs	r0, #3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 43
 
 
  1288              	.LVL130:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1324 0010 0020     		movs	r0, #0
  1325              	.LVL133:
  1326              		.loc 1 797 10 view .LVU413
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 44
 
 
  1327 0012 7047     		bx	lr
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  816:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** #endif  /* USE_USBD_COMPOSITE */
  817:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
  818:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_StatusTypeDef ret = USBD_BUSY;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 45
 
 
  1364              		.loc 1 818 3 is_stmt 1 view .LVU421
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1386              		.loc 1 836 55 is_stmt 0 view .LVU432
  1387 001e D2F81032 		ldr	r3, [r2, #528]
  836:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 46
 
 
  1388              		.loc 1 836 49 view .LVU433
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1428              		.cfi_def_cfa_offset 8
  1429              		.cfi_offset 4, -8
  1430              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 47
 
 
  855:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****   USBD_CDC_HandleTypeDef *hcdc = (USBD_CDC_HandleTypeDef *)pdev->pClassDataCmsit[pdev->classId];
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1458 0022 10BD     		pop	{r4, pc}
  1459              	.LVL148:
  1460              	.L92:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 48
 
 
  876:Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c ****                                  CDC_DATA_FS_OUT_PACKET_SIZE);
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1501 0010 00000000 		.word	USBD_CDC_EP0_RxReady
  1502 0014 00000000 		.word	USBD_CDC_DataIn
  1503 0018 00000000 		.word	USBD_CDC_DataOut
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 49
 
 
  1504 001c 00000000 		.word	0
@@ -2911,53 +2911,53 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 1
  1531              		.file 14 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
  1532              		.file 15 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h"
  1533              		.file 16 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 50
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_cdc.c
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:21     .text.USBD_CDC_EP0_RxReady:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:26     .text.USBD_CDC_EP0_RxReady:00000000 USBD_CDC_EP0_RxReady
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:96     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:102    .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 USBD_CDC_GetDeviceQualifierDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:123    .text.USBD_CDC_GetDeviceQualifierDescriptor:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1515   .data.USBD_CDC_DeviceQualifierDesc:00000000 USBD_CDC_DeviceQualifierDesc
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:128    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:133    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 USBD_CDC_GetOtherSpeedCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:222    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1485   .data.USBD_CDC_CfgDesc:00000000 USBD_CDC_CfgDesc
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:227    .text.USBD_CDC_GetFSCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:232    .text.USBD_CDC_GetFSCfgDesc:00000000 USBD_CDC_GetFSCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:321    .text.USBD_CDC_GetFSCfgDesc:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:326    .text.USBD_CDC_GetHSCfgDesc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:331    .text.USBD_CDC_GetHSCfgDesc:00000000 USBD_CDC_GetHSCfgDesc
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:420    .text.USBD_CDC_GetHSCfgDesc:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:425    .text.USBD_CDC_DataOut:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:430    .text.USBD_CDC_DataOut:00000000 USBD_CDC_DataOut
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:494    .text.USBD_CDC_DataIn:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:499    .text.USBD_CDC_DataIn:00000000 USBD_CDC_DataIn
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:619    .text.USBD_CDC_Setup:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:624    .text.USBD_CDC_Setup:00000000 USBD_CDC_Setup
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:779    .text.USBD_CDC_Setup:0000009e $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:791    .text.USBD_CDC_Setup:000000aa $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:904    .text.USBD_CDC_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:909    .text.USBD_CDC_DeInit:00000000 USBD_CDC_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1002   .text.USBD_CDC_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1007   .text.USBD_CDC_Init:00000000 USBD_CDC_Init
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1207   .text.USBD_CDC_RegisterInterface:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1213   .text.USBD_CDC_RegisterInterface:00000000 USBD_CDC_RegisterInterface
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1248   .text.USBD_CDC_SetTxBuffer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1254   .text.USBD_CDC_SetTxBuffer:00000000 USBD_CDC_SetTxBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1295   .text.USBD_CDC_SetRxBuffer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1301   .text.USBD_CDC_SetRxBuffer:00000000 USBD_CDC_SetRxBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1339   .text.USBD_CDC_TransmitPacket:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1345   .text.USBD_CDC_TransmitPacket:00000000 USBD_CDC_TransmitPacket
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1413   .text.USBD_CDC_ReceivePacket:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1419   .text.USBD_CDC_ReceivePacket:00000000 USBD_CDC_ReceivePacket
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1482   .data.USBD_CDC_CfgDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1496   .data.USBD_CDC:00000000 USBD_CDC
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1493   .data.USBD_CDC:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s:1512   .data.USBD_CDC_DeviceQualifierDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:21     .text.USBD_CDC_EP0_RxReady:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:26     .text.USBD_CDC_EP0_RxReady:00000000 USBD_CDC_EP0_RxReady
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:96     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:102    .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 USBD_CDC_GetDeviceQualifierDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:123    .text.USBD_CDC_GetDeviceQualifierDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1515   .data.USBD_CDC_DeviceQualifierDesc:00000000 USBD_CDC_DeviceQualifierDesc
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:128    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:133    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 USBD_CDC_GetOtherSpeedCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:222    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1485   .data.USBD_CDC_CfgDesc:00000000 USBD_CDC_CfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:227    .text.USBD_CDC_GetFSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:232    .text.USBD_CDC_GetFSCfgDesc:00000000 USBD_CDC_GetFSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:321    .text.USBD_CDC_GetFSCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:326    .text.USBD_CDC_GetHSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:331    .text.USBD_CDC_GetHSCfgDesc:00000000 USBD_CDC_GetHSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:420    .text.USBD_CDC_GetHSCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:425    .text.USBD_CDC_DataOut:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:430    .text.USBD_CDC_DataOut:00000000 USBD_CDC_DataOut
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:494    .text.USBD_CDC_DataIn:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:499    .text.USBD_CDC_DataIn:00000000 USBD_CDC_DataIn
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:619    .text.USBD_CDC_Setup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:624    .text.USBD_CDC_Setup:00000000 USBD_CDC_Setup
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:779    .text.USBD_CDC_Setup:0000009e $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:791    .text.USBD_CDC_Setup:000000aa $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:904    .text.USBD_CDC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:909    .text.USBD_CDC_DeInit:00000000 USBD_CDC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1002   .text.USBD_CDC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1007   .text.USBD_CDC_Init:00000000 USBD_CDC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1207   .text.USBD_CDC_RegisterInterface:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1213   .text.USBD_CDC_RegisterInterface:00000000 USBD_CDC_RegisterInterface
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1248   .text.USBD_CDC_SetTxBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1254   .text.USBD_CDC_SetTxBuffer:00000000 USBD_CDC_SetTxBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1295   .text.USBD_CDC_SetRxBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1301   .text.USBD_CDC_SetRxBuffer:00000000 USBD_CDC_SetRxBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1339   .text.USBD_CDC_TransmitPacket:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1345   .text.USBD_CDC_TransmitPacket:00000000 USBD_CDC_TransmitPacket
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1413   .text.USBD_CDC_ReceivePacket:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1419   .text.USBD_CDC_ReceivePacket:00000000 USBD_CDC_ReceivePacket
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1482   .data.USBD_CDC_CfgDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1496   .data.USBD_CDC:00000000 USBD_CDC
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1493   .data.USBD_CDC:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s:1512   .data.USBD_CDC_DeviceQualifierDesc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetEpDesc
@@ -2971,7 +2971,7 @@ USBD_static_free
 USBD_static_malloc
 memset
 USBD_LL_OpenEP
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnygn1s.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccY8MyLe.s 			page 51
 
 
 USBD_LL_PrepareReceive

@@ -26,6 +26,7 @@
 #include "patchouli.h"
 #include "BCG.h"
 #include "patchouli_bsp_tx.h"
+#include "usbd_cdc_if.h"
 
 // ExN List
 #define PATCHOULI_N_EXN (6u)
@@ -172,6 +173,8 @@ uint16_t _patchouli_adc_multisample(){
             HAL_ADC_Start(&hadc1);
             HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
             sample[i] = HAL_ADC_GetValue(&hadc1);
+            CDC_Transmit_FS(sample[i], 2);
+            CDC_Transmit_FS("\n", 1);
         }
         value = patchouli_median(sample, PATCHOULI_ADC_NSAMPLE);
     }
@@ -183,17 +186,24 @@ uint16_t patchouli_simple_take_sample(bool back_side, uint8_t fstep){
     __disable_irq();
     patchouli_pen_pw100.tx_fptr_table[fstep]();
       if(!back_side)
-          for (int i=0;i<400;i++)  asm volatile ("nop");
-      else
-          for (int i=0;i<100;i++)  asm volatile ("nop");
+      //before 400 but due to clocks eedp 178
+          for (int i=0;i<178;i++)  asm volatile ("nop");
+      else // before 100 now 44
+          for (int i=0;i<44;i++)  asm volatile ("nop");
       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_RESET);
-      for (int i=0;i<5000;i++) asm volatile ("nop");
+      // before 5k no 2222
+      for (int i=0;i<2222;i++) asm volatile ("nop");
       uint16_t value = _patchouli_adc_multisample();
+    //   CDC_Transmit_FS(value, 2);
+    //   CDC_Transmit_FS("\n", 1);
+
 # ifdef PATCHOULI_CDS
       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_SET);
-      for (int i=0;i<100;i++) asm volatile ("nop");
+      // before 100 now 
+      for (int i=0;i<44;i++) asm volatile ("nop");
       HAL_GPIO_WritePin(DISCHARGE_GPIO_Port, DISCHARGE_Pin, GPIO_PIN_RESET);
-      for (int i=0;i<200;i++) asm volatile ("nop");
+      //before 200 now 88.8
+      for (int i=0;i<89;i++) asm volatile ("nop");
       HAL_ADC_Start(&hadc1);
       HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
       uint16_t base = HAL_ADC_GetValue(&hadc1);

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   29:Core/Src/hw_timerserver.c ****   TimerID_Created,
   30:Core/Src/hw_timerserver.c ****   TimerID_Running
   31:Core/Src/hw_timerserver.c **** }TimerIDStatus_t;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 2
 
 
   32:Core/Src/hw_timerserver.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   86:Core/Src/hw_timerserver.c **** /* Private function prototypes -----------------------------------------------*/
   87:Core/Src/hw_timerserver.c **** static void RestartWakeupCounter(uint16_t Value);
   88:Core/Src/hw_timerserver.c **** static uint16_t ReturnTimeElapsed(void);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 3
 
 
   89:Core/Src/hw_timerserver.c **** static void RescheduleTimerList(void);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   52              		.loc 1 118 5 is_stmt 1 view .LVU11
   53              	.LVL2:
  119:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 4
 
 
  120:Core/Src/hw_timerserver.c ****     second_read = (uint32_t)(READ_BIT(RTC->SSR, RTC_SSR_SS));
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  135:Core/Src/hw_timerserver.c **** 
  136:Core/Src/hw_timerserver.c ****   next_id = aTimerContext[RefTimerID].NextID;
   93              		.loc 1 136 3 view .LVU21
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 5
 
 
   94              		.loc 1 136 11 is_stmt 0 view .LVU22
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  137              	.LFE1416:
  139              		.section	.text.LinkTimerBefore,"ax",%progbits
  140              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 6
 
 
  141              		.syntax unified
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  179 002c 5175     		strb	r1, [r2, #21]
  165:Core/Src/hw_timerserver.c ****     aTimerContext[TimerID].PreviousID = previous_id ;
  180              		.loc 1 165 5 is_stmt 1 view .LVU47
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 7
 
 
  181              		.loc 1 165 39 is_stmt 0 view .LVU48
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  227              	.LVL15:
  228              	.LFB1419:
  176:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 8
 
 
  177:Core/Src/hw_timerserver.c **** /**
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  231:Core/Src/hw_timerserver.c ****     }
  232:Core/Src/hw_timerserver.c ****     else
  233:Core/Src/hw_timerserver.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 9
 
 
  234:Core/Src/hw_timerserver.c ****       /**
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  252 0012 04EBC202 		add	r2, r4, r2, lsl #3
  253 0016 92F814C0 		ldrb	ip, [r2, #20]	@ zero_extendqisi2
  254              	.LVL16:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 10
 
 
  265:Core/Src/hw_timerserver.c ****     next_id = aTimerContext[TimerID].NextID;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  296 0052 0122     		movs	r2, #1
  297 0054 1A73     		strb	r2, [r3, #12]
  278:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 11
 
 
  279:Core/Src/hw_timerserver.c ****   if((CurrentRunningTimerID == CFG_HW_TS_MAX_NBR_CONCURRENT_TIMER) && (RequestReadSSR == SSR_Read_R
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  338              		.loc 1 281 5 is_stmt 1 view .LVU93
  281:Core/Src/hw_timerserver.c ****   }
  339              		.loc 1 281 25 is_stmt 0 view .LVU94
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 12
 
 
  340 0086 054B     		ldr	r3, .L22+12
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  301:Core/Src/hw_timerserver.c ****     return_value = ReadRtcSsrValue(); /**< Read SSR register first */
  302:Core/Src/hw_timerserver.c **** 
  303:Core/Src/hw_timerserver.c ****     if (SSRValueOnLastSetup >= return_value)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 13
 
 
  304:Core/Src/hw_timerserver.c ****     {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  404              		.loc 1 305 42 is_stmt 0 view .LVU112
  405 001e 094B     		ldr	r3, .L31
  406 0020 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 14
 
 
  305:Core/Src/hw_timerserver.c ****     }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  446              	.L31:
  447 0044 00000000 		.word	SSRValueOnLastSetup
  448 0048 00000000 		.word	AsynchPrescalerUserConfig
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 15
 
 
  449 004c 00000000 		.word	WakeupTimerDivider
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  195:Core/Src/hw_timerserver.c ****     aTimerContext[TimerID].NextID = CFG_HW_TS_MAX_NBR_CONCURRENT_TIMER;
  494              		.loc 1 195 5 is_stmt 1 view .LVU139
  195:Core/Src/hw_timerserver.c ****     aTimerContext[TimerID].NextID = CFG_HW_TS_MAX_NBR_CONCURRENT_TIMER;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 16
 
 
  495              		.loc 1 195 27 is_stmt 0 view .LVU140
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  535 0048 0144     		add	r1, r1, r0
  536 004a 9160     		str	r1, [r2, #8]
  209:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 17
 
 
  537              		.loc 1 209 5 is_stmt 1 view .LVU155
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  578 0084 02EBC101 		add	r1, r2, r1, lsl #3
  579 0088 4B7D     		ldrb	r3, [r1, #21]	@ zero_extendqisi2
  580 008a D9B2     		uxtb	r1, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 18
 
 
  581              	.LVL44:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  238:Core/Src/hw_timerserver.c ****       CurrentRunningTimerID = TimerID;
  623              		.loc 1 238 30 is_stmt 0 view .LVU181
  624 00be 3378     		ldrb	r3, [r6]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 19
 
 
  625 00c0 DBB2     		uxtb	r3, r3
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  661              		.loc 1 344 5 is_stmt 0 view .LVU187
  662 0002 48B3     		cbz	r0, .L50
  663 0004 0446     		mov	r4, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 20
 
 
  345:Core/Src/hw_timerserver.c ****   {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  371:Core/Src/hw_timerserver.c ****     HAL_NVIC_ClearPendingIRQ(CFG_HW_TS_RTC_WAKEUP_HANDLER_ID);   /**<  Clear pending bit in NVIC */
  692              		.loc 1 371 5 view .LVU197
  693 002c 0320     		movs	r0, #3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 21
 
 
  694 002e FFF7FEFF 		bl	HAL_NVIC_ClearPendingIRQ
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  730              		.loc 1 346 25 discriminator 1 view .LVU209
  731 005c 084B     		ldr	r3, .L52+12
  732 005e 1860     		str	r0, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 22
 
 
  351:Core/Src/hw_timerserver.c ****   }
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  397:Core/Src/hw_timerserver.c ****   uint8_t   localTimerID;
  776              		.loc 1 397 3 view .LVU214
  398:Core/Src/hw_timerserver.c ****   uint32_t  timecountleft;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 23
 
 
  777              		.loc 1 398 3 view .LVU215
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  809              		.loc 1 420 3 is_stmt 1 view .LVU227
  810              		.loc 1 420 17 is_stmt 0 view .LVU228
  811 002a 03EB4303 		add	r3, r3, r3, lsl #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 24
 
 
  812 002e 264A     		ldr	r2, .L66+12
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  847 0054 06D2     		bcs	.L59
  438:Core/Src/hw_timerserver.c ****     {
  439:Core/Src/hw_timerserver.c ****       /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 25
 
 
  440:Core/Src/hw_timerserver.c ****        * The number of tick left is greater than the Wakeuptimer maximum value
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  463:Core/Src/hw_timerserver.c ****     else
  464:Core/Src/hw_timerserver.c ****     {
  465:Core/Src/hw_timerserver.c ****       aTimerContext[localTimerID].CountLeft -= time_elapsed;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 26
 
 
  879              		.loc 1 465 7 is_stmt 1 view .LVU251
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  924              	.LVL78:
  925              	.L65:
  468:Core/Src/hw_timerserver.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 27
 
 
  469:Core/Src/hw_timerserver.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  495:Core/Src/hw_timerserver.c **** 
  496:Core/Src/hw_timerserver.c **** #if (CFG_HW_TS_USE_PRIMASK_AS_CRITICAL_SECTION == 1)
  497:Core/Src/hw_timerserver.c ****   primask_bit = __get_PRIMASK();  /**< backup PRIMASK bit */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 28
 
 
  498:Core/Src/hw_timerserver.c ****   __disable_irq();          /**< Disable all interrupts by setting PRIMASK bit on Cortex*/
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  552:Core/Src/hw_timerserver.c ****     {
  553:Core/Src/hw_timerserver.c ****       RescheduleTimerList();
  554:Core/Src/hw_timerserver.c **** #if (CFG_HW_TS_USE_PRIMASK_AS_CRITICAL_SECTION == 1)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 29
 
 
  555:Core/Src/hw_timerserver.c ****       __set_PRIMASK(primask_bit); /**< Restore PRIMASK bit*/
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  969 0002 484B     		ldr	r3, .L78
  970 0004 1B68     		ldr	r3, [r3]
  971 0006 CA22     		movs	r2, #202
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 30
 
 
  972 0008 5A62     		str	r2, [r3, #36]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 31
 
 
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 32
 
 
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
  130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 33
 
 
  132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
  187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
  188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 34
 
 
  189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  243:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  244:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register
  245:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 35
 
 
  246:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  300:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_xPSR(void)
  301:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  302:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 36
 
 
  303:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  357:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  358:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp_ns, %0" : : "r" (topOfProcStack) : );
  359:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 37
 
 
  360:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  414:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  415:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  416:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 38
 
 
  417:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  471:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  472:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  473:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 39
 
 
  474:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  528:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_BASEPRI(void)
  529:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  530:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 40
 
 
  531:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  585:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
  586:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  587:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 41
 
 
  588:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  642:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* ((defined (__ARM_ARCH_7M__      ) && (__ARM_ARCH_7M__      == 1)) || \
  643:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
  644:Drivers/CMSIS/Include/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    ) */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 42
 
 
  645:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  699:Drivers/CMSIS/Include/cmsis_gcc.h ****   mode.
  700:Drivers/CMSIS/Include/cmsis_gcc.h ****   
  701:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer Limit (PSPLIM).
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 43
 
 
  702:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    ProcStackPtrLimit  Process Stack Pointer Limit value to set
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  756:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  757:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  758:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 44
 
 
  759:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  813:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __TZ_set_MSPLIM_NS(uint32_t MainStackPtrLimit)
  814:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  815:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 45
 
 
  816:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  870:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  871:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
  872:Drivers/CMSIS/Include/cmsis_gcc.h ****   (void)fpscr;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 46
 
 
  873:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  927:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  928:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
  929:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 47
 
 
  930:Drivers/CMSIS/Include/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  984:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
  985:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  986:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 48
 
 
  987:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
 1041:Drivers/CMSIS/Include/cmsis_gcc.h **** 
 1042:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
 1043:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Reverse bit order of value
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 49
 
 
 1044:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the bit order of the given value.
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1022              	.LBB55:
 1079:Drivers/CMSIS/Include/cmsis_gcc.h **** {
 1080:Drivers/CMSIS/Include/cmsis_gcc.h ****   /* Even though __builtin_clz produces a CLZ instruction on ARM, formally
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 50
 
 
 1081:Drivers/CMSIS/Include/cmsis_gcc.h ****      __builtin_clz(0) is undefined behaviour, so handle this case specially.
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1056              		.loc 1 612 3 is_stmt 1 view .LVU306
  1057              		.loc 1 612 59 is_stmt 0 view .LVU307
  1058 0058 0139     		subs	r1, r1, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 51
 
 
  1059              		.loc 1 612 63 view .LVU308
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   16:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   ******************************************************************************
   17:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
   18:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 52
 
 
   19:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /* Define to prevent recursive inclusion -------------------------------------*/
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
   73:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                      This parameter can be a value of @ref EXTI_LL_EC_TRIGGER. */
   74:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** } LL_EXTI_InitTypeDef;
   75:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 53
 
 
   76:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  130:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #endif /* STM32WB55xx || STM32WB5Mxx || ... */
  131:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  132:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #if defined (STM32WB55xx) || defined (STM32WB5Mxx) || defined (STM32WB35xx)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 54
 
 
  133:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_ALL_0_31          (LL_EXTI_LINE_0 | LL_EXTI_LINE_1 | LL_EXTI_LINE_2 | \
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  187:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                         LL_EXTI_LINE_48)                    /*!< All Extended line 
  188:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #elif defined (STM32WB50xx) || defined (STM32WB35xx) || defined (STM32WB30xx)
  189:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_ALL_32_63         (LL_EXTI_LINE_33 | LL_EXTI_LINE_36 | LL_EXTI_LINE_37 | \
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 55
 
 
  190:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****                                         LL_EXTI_LINE_38 | LL_EXTI_LINE_39 | LL_EXTI_LINE_40 | \
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  244:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @{
  245:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  246:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 56
 
 
  247:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /** @defgroup EXTI_LL_EM_WRITE_READ Common Write and read registers Macros
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  301:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_13
  302:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_14
  303:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 57
 
 
  304:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_16
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  358:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_29
  359:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_30
  360:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_31 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 58
 
 
  361:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_ALL_0_31
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  415:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @retval None
  416:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  417:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_C2_EXTI_EnableIT_32_63(uint32_t ExtiLine)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 59
 
 
  418:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  472:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
  473:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_4
  474:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 60
 
 
  475:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_6
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  529:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_DisableIT_32_63(uint32_t ExtiLine)
  530:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
  531:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   CLEAR_BIT(EXTI->IMR2, ExtiLine);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 61
 
 
  532:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  586:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_22
  587:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_23 (*)
  588:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 62
 
 
  589:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_25 (*)
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  643:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   return ((READ_BIT(EXTI->C2IMR1, ExtiLine) == (ExtiLine)) ? 1UL : 0UL);
  644:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
  645:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 63
 
 
  646:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  700:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  701:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  702:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /** @defgroup EXTI_LL_EF_Event_Management Event_Management
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 64
 
 
  703:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @{
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  757:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_14
  758:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
  759:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_17
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 65
 
 
  760:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_18
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  814:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_12
  815:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_13
  816:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_14
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 66
 
 
  817:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_15
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  871:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  872:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_DisableEvent_32_63(uint32_t ExtiLine)
  873:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 67
 
 
  874:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   CLEAR_BIT(EXTI->EMR2, ExtiLine);
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  928:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_0
  929:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_1
  930:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 68
 
 
  931:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_3
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  985:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @}
  986:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  987:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 69
 
 
  988:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /** @defgroup EXTI_LL_EF_Rising_Trigger_Management Rising_Trigger_Management
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1094              	.LBE57:
  627:Core/Src/hw_timerserver.c ****   LL_EXTI_EnableIT_0_31(RTC_EXTI_LINE_WAKEUPTIMER_EVENT);
  1095              		.loc 1 627 3 is_stmt 1 view .LVU320
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 70
 
 
  1096              	.LBB59:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1135              	.LVL94:
  1136              	.L70:
 1091:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 71
 
 
  1137              		.loc 2 1091 12 view .LVU334
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  645:Core/Src/hw_timerserver.c ****     __HAL_RTC_WAKEUPTIMER_CLEAR_FLAG(&hrtc, RTC_FLAG_WUTF);     /**<  Clear flag in RTC module */
  1178              		.loc 1 645 5 view .LVU346
  1179 00d2 D368     		ldr	r3, [r2, #12]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 72
 
 
  1180 00d4 DBB2     		uxtb	r3, r3
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1214 0106 0320     		movs	r0, #3
  1215 0108 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  1216              	.LVL103:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 73
 
 
  666:Core/Src/hw_timerserver.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1264              	.LFB1425:
  669:Core/Src/hw_timerserver.c **** 
  670:Core/Src/hw_timerserver.c **** HW_TS_ReturnStatus_t HW_TS_Create(uint32_t TimerProcessID, uint8_t *pTimerId, HW_TS_Mode_t TimerMod
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 74
 
 
  671:Core/Src/hw_timerserver.c **** {
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1303              	.LBB65:
  209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  1304              		.loc 2 209 3 view .LVU377
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 75
 
 
  1305              		.syntax unified
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1348 0040 0127     		movs	r7, #1
  1349 0042 8EF80C70 		strb	r7, [lr, #12]
  691:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 76
 
 
  692:Core/Src/hw_timerserver.c **** #if (CFG_HW_TS_USE_PRIMASK_AS_CRITICAL_SECTION == 1)
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  707:Core/Src/hw_timerserver.c **** #endif
  708:Core/Src/hw_timerserver.c **** 
  709:Core/Src/hw_timerserver.c ****     localreturnstatus = hw_ts_Failed;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 77
 
 
  710:Core/Src/hw_timerserver.c ****   }
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  717:Core/Src/hw_timerserver.c ****   HW_TS_Stop(timer_id);
  718:Core/Src/hw_timerserver.c **** 
  719:Core/Src/hw_timerserver.c ****   aTimerContext[timer_id].TimerIDStatus = TimerID_Free; /**<  release ID */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 78
 
 
  720:Core/Src/hw_timerserver.c **** 
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1464              	.LBI72:
  207:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  1465              		.loc 2 207 27 view .LVU424
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 79
 
 
  1466              	.LBB73:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  751:Core/Src/hw_timerserver.c ****        */
  752:Core/Src/hw_timerserver.c **** 
  753:Core/Src/hw_timerserver.c ****       /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 80
 
 
  754:Core/Src/hw_timerserver.c ****        * Disable the timer
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  481:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  1519              		.loc 2 481 3 view .LVU441
  1520              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 81
 
 
  1521              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1561              	.LVL129:
  1562              	.L97:
  756:Core/Src/hw_timerserver.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 82
 
 
  1563              		.loc 1 756 7 is_stmt 1 view .LVU454
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1604 009e DA60     		str	r2, [r3, #12]
  776:Core/Src/hw_timerserver.c ****     }
  1605              		.loc 1 776 7 view .LVU468
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 83
 
 
  1606 00a0 0320     		movs	r0, #3
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  722:Core/Src/hw_timerserver.c **** 
  1655              		.loc 1 722 1 is_stmt 0 view .LVU476
  1656 0016 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 84
 
 
  1657              	.L103:
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  806:Core/Src/hw_timerserver.c ****   {
  807:Core/Src/hw_timerserver.c ****     HW_TS_Stop( timer_id );
  808:Core/Src/hw_timerserver.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 85
 
 
  809:Core/Src/hw_timerserver.c **** 
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1739              		.loc 1 818 3 view .LVU496
  1740 0024 1B4B     		ldr	r3, .L111+4
  1741 0026 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 86
 
 
  1742 0028 CA22     		movs	r2, #202
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  835:Core/Src/hw_timerserver.c ****     aTimerContext[timer_id].CountLeft -= time_elapsed;
  1780              		.loc 1 835 5 is_stmt 1 view .LVU512
  1781              		.loc 1 835 28 is_stmt 0 view .LVU513
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 87
 
 
  1782 0058 0D4B     		ldr	r3, .L111
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1822              		.loc 1 847 3 view .LVU524
  848:Core/Src/hw_timerserver.c **** }
  1823              		.loc 1 848 1 is_stmt 0 view .LVU525
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 88
 
 
  1824 0082 70BD     		pop	{r4, r5, r6, pc}
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  855:Core/Src/hw_timerserver.c ****   primask_bit = __get_PRIMASK();  /**< backup PRIMASK bit */
  1870              		.loc 1 855 3 view .LVU533
  1871              	.LBB82:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 89
 
 
  1872              	.LBI82:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  866:Core/Src/hw_timerserver.c ****       return_value = auro_reload_value - elapsed_time_value;
  867:Core/Src/hw_timerserver.c ****     }
  868:Core/Src/hw_timerserver.c ****     else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 90
 
 
  869:Core/Src/hw_timerserver.c ****     {
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  864:Core/Src/hw_timerserver.c ****     {
  1943              		.loc 1 864 5 is_stmt 1 view .LVU556
  864:Core/Src/hw_timerserver.c ****     {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 91
 
 
  1944              		.loc 1 864 7 is_stmt 0 view .LVU557
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  1990 0002 9047     		blx	r2
  1991              	.LVL159:
  886:Core/Src/hw_timerserver.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 92
 
 
  887:Core/Src/hw_timerserver.c ****   return;
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  2036              		.loc 2 454 3 is_stmt 0 view .LVU579
  2037              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 93
 
 
  2038              		.syntax unified
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2080 002a 0A44     		add	r2, r2, r1
  2081 002c 127B     		ldrb	r2, [r2, #12]	@ zero_extendqisi2
  2082 002e D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 94
 
 
  513:Core/Src/hw_timerserver.c ****   {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2124              		.loc 1 586 3 view .LVU604
  587:Core/Src/hw_timerserver.c **** 
  2125              		.loc 1 587 1 is_stmt 0 view .LVU605
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 95
 
 
  2126 005a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2167              	.LBE94:
  543:Core/Src/hw_timerserver.c **** 
  2168              		.loc 1 543 9 view .LVU619
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 96
 
 
  2169 007c 2046     		mov	r0, r4
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2212 00a6 04EB4403 		add	r3, r4, r4, lsl #1
  2213 00aa DA00     		lsls	r2, r3, #3
  2214 00ac 0A4B     		ldr	r3, .L132+8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 97
 
 
  2215 00ae 1344     		add	r3, r3, r2
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2259              	.LBE98:
  2260              		.cfi_endproc
  2261              	.LFE1423:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 98
 
 
  2263              		.section	.bss.MaxWakeupTimerSetup,"aw",%nobits
@@ -5868,79 +5868,79 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 1
  2321              		.file 10 "Core/Inc/hw_if.h"
  2322              		.file 11 "Core/Inc/app_conf.h"
  2323              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_cortex.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 99
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hw_timerserver.c
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:21     .text.ReadRtcSsrValue:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:26     .text.ReadRtcSsrValue:00000000 ReadRtcSsrValue
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:74     .text.ReadRtcSsrValue:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:79     .text.LinkTimerAfter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:84     .text.LinkTimerAfter:00000000 LinkTimerAfter
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:135    .text.LinkTimerAfter:0000003c $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2310   .bss.aTimerContext:00000000 aTimerContext
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:140    .text.LinkTimerBefore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:145    .text.LinkTimerBefore:00000000 LinkTimerBefore
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:215    .text.LinkTimerBefore:00000060 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2304   .bss.CurrentRunningTimerID:00000000 CurrentRunningTimerID
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:221    .text.UnlinkTimer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:226    .text.UnlinkTimer:00000000 UnlinkTimer
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:348    .text.UnlinkTimer:00000090 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2299   .bss.PreviousRunningTimerID:00000000 PreviousRunningTimerID
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2294   .bss.SSRValueOnLastSetup:00000000 SSRValueOnLastSetup
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:356    .text.ReturnTimeElapsed:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:361    .text.ReturnTimeElapsed:00000000 ReturnTimeElapsed
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:447    .text.ReturnTimeElapsed:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2278   .bss.AsynchPrescalerUserConfig:00000000 AsynchPrescalerUserConfig
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2283   .bss.WakeupTimerDivider:00000000 WakeupTimerDivider
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2273   .bss.SynchPrescalerUserConfig:00000000 SynchPrescalerUserConfig
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:455    .text.linkTimer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:460    .text.linkTimer:00000000 linkTimer
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:635    .text.linkTimer:000000cc $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:643    .text.RestartWakeupCounter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:648    .text.RestartWakeupCounter:00000000 RestartWakeupCounter
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:750    .text.RestartWakeupCounter:00000074 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:759    .text.RescheduleTimerList:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:764    .text.RescheduleTimerList:00000000 RescheduleTimerList
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:937    .text.RescheduleTimerList:000000bc $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2288   .bss.WakeupTimerLimitation:00000000 WakeupTimerLimitation
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2267   .bss.MaxWakeupTimerSetup:00000000 MaxWakeupTimerSetup
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:947    .text.HW_TS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:953    .text.HW_TS_Init:00000000 HW_TS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1241   .text.HW_TS_Init:00000124 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1256   .text.HW_TS_Create:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1262   .text.HW_TS_Create:00000000 HW_TS_Create
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1416   .text.HW_TS_Create:0000006c $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1421   .text.HW_TS_Stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1427   .text.HW_TS_Stop:00000000 HW_TS_Stop
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1613   .text.HW_TS_Stop:000000a8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1623   .text.HW_TS_Delete:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1629   .text.HW_TS_Delete:00000000 HW_TS_Delete
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1660   .text.HW_TS_Delete:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1665   .text.HW_TS_Start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1671   .text.HW_TS_Start:00000000 HW_TS_Start
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1842   .text.HW_TS_Start:00000090 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1850   .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1856   .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 HW_TS_RTC_ReadLeftTicksToCount
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1966   .text.HW_TS_RTC_ReadLeftTicksToCount:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1971   .text.HW_TS_RTC_Int_AppNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1977   .text.HW_TS_RTC_Int_AppNot:00000000 HW_TS_RTC_Int_AppNot
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:1999   .text.HW_TS_RTC_Wakeup_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2005   .text.HW_TS_RTC_Wakeup_Handler:00000000 HW_TS_RTC_Wakeup_Handler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s 			page 100
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:21     .text.ReadRtcSsrValue:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:26     .text.ReadRtcSsrValue:00000000 ReadRtcSsrValue
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:74     .text.ReadRtcSsrValue:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:79     .text.LinkTimerAfter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:84     .text.LinkTimerAfter:00000000 LinkTimerAfter
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:135    .text.LinkTimerAfter:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2310   .bss.aTimerContext:00000000 aTimerContext
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:140    .text.LinkTimerBefore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:145    .text.LinkTimerBefore:00000000 LinkTimerBefore
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:215    .text.LinkTimerBefore:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2304   .bss.CurrentRunningTimerID:00000000 CurrentRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:221    .text.UnlinkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:226    .text.UnlinkTimer:00000000 UnlinkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:348    .text.UnlinkTimer:00000090 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2299   .bss.PreviousRunningTimerID:00000000 PreviousRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2294   .bss.SSRValueOnLastSetup:00000000 SSRValueOnLastSetup
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:356    .text.ReturnTimeElapsed:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:361    .text.ReturnTimeElapsed:00000000 ReturnTimeElapsed
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:447    .text.ReturnTimeElapsed:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2278   .bss.AsynchPrescalerUserConfig:00000000 AsynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2283   .bss.WakeupTimerDivider:00000000 WakeupTimerDivider
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2273   .bss.SynchPrescalerUserConfig:00000000 SynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:455    .text.linkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:460    .text.linkTimer:00000000 linkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:635    .text.linkTimer:000000cc $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:643    .text.RestartWakeupCounter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:648    .text.RestartWakeupCounter:00000000 RestartWakeupCounter
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:750    .text.RestartWakeupCounter:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:759    .text.RescheduleTimerList:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:764    .text.RescheduleTimerList:00000000 RescheduleTimerList
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:937    .text.RescheduleTimerList:000000bc $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2288   .bss.WakeupTimerLimitation:00000000 WakeupTimerLimitation
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2267   .bss.MaxWakeupTimerSetup:00000000 MaxWakeupTimerSetup
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:947    .text.HW_TS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:953    .text.HW_TS_Init:00000000 HW_TS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1241   .text.HW_TS_Init:00000124 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1256   .text.HW_TS_Create:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1262   .text.HW_TS_Create:00000000 HW_TS_Create
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1416   .text.HW_TS_Create:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1421   .text.HW_TS_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1427   .text.HW_TS_Stop:00000000 HW_TS_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1613   .text.HW_TS_Stop:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1623   .text.HW_TS_Delete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1629   .text.HW_TS_Delete:00000000 HW_TS_Delete
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1660   .text.HW_TS_Delete:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1665   .text.HW_TS_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1671   .text.HW_TS_Start:00000000 HW_TS_Start
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1842   .text.HW_TS_Start:00000090 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1850   .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1856   .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 HW_TS_RTC_ReadLeftTicksToCount
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1966   .text.HW_TS_RTC_ReadLeftTicksToCount:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1971   .text.HW_TS_RTC_Int_AppNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1977   .text.HW_TS_RTC_Int_AppNot:00000000 HW_TS_RTC_Int_AppNot
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:1999   .text.HW_TS_RTC_Wakeup_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2005   .text.HW_TS_RTC_Wakeup_Handler:00000000 HW_TS_RTC_Wakeup_Handler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s 			page 100
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2253   .text.HW_TS_RTC_Wakeup_Handler:000000d0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2264   .bss.MaxWakeupTimerSetup:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2270   .bss.SynchPrescalerUserConfig:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2279   .bss.AsynchPrescalerUserConfig:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2284   .bss.WakeupTimerDivider:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2289   .bss.WakeupTimerLimitation:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2291   .bss.SSRValueOnLastSetup:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2300   .bss.PreviousRunningTimerID:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2305   .bss.CurrentRunningTimerID:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRlKZfN.s:2307   .bss.aTimerContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2253   .text.HW_TS_RTC_Wakeup_Handler:000000d0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2264   .bss.MaxWakeupTimerSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2270   .bss.SynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2279   .bss.AsynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2284   .bss.WakeupTimerDivider:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2289   .bss.WakeupTimerLimitation:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2291   .bss.SSRValueOnLastSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2300   .bss.PreviousRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2305   .bss.CurrentRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccL5x7LW.s:2307   .bss.aTimerContext:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_ClearPendingIRQ

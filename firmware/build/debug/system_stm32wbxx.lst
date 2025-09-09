@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
   28:Core/Src/system_stm32wbxx.c ****   *        System Clock source                    | MSI
   29:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
   30:Core/Src/system_stm32wbxx.c ****   *        SYSCLK(Hz)                             | 4000000
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 2
 
 
   31:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
   85:Core/Src/system_stm32wbxx.c **** #include "stm32wbxx.h"
   86:Core/Src/system_stm32wbxx.c **** 
   87:Core/Src/system_stm32wbxx.c **** #if !defined  (HSE_VALUE)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 3
 
 
   88:Core/Src/system_stm32wbxx.c **** #define HSE_VALUE    (32000000UL) /*!< Value of the External oscillator in Hz */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  142:Core/Src/system_stm32wbxx.c **** #else
  143:Core/Src/system_stm32wbxx.c **** #define VECT_TAB_BASE_ADDRESS   FLASH_BASE      /*!< Vector Table base address field.
  144:Core/Src/system_stm32wbxx.c ****                                                      This value must be a multiple of 0x200. */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 4
 
 
  145:Core/Src/system_stm32wbxx.c **** #define VECT_TAB_OFFSET         0x00000000U     /*!< Vector Table base offset field.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  199:Core/Src/system_stm32wbxx.c **** /**
  200:Core/Src/system_stm32wbxx.c ****   * @}
  201:Core/Src/system_stm32wbxx.c ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 5
 
 
  202:Core/Src/system_stm32wbxx.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
   52              		.loc 1 232 3 is_stmt 1 view .LVU9
   53              		.loc 1 232 6 is_stmt 0 view .LVU10
   54 0020 1968     		ldr	r1, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 6
 
 
   55              		.loc 1 232 11 view .LVU11
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  253:Core/Src/system_stm32wbxx.c **** }
   89              		.loc 1 253 1 view .LVU27
   90 0058 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 7
 
 
   91              	.L3:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  293:Core/Src/system_stm32wbxx.c ****   *
  294:Core/Src/system_stm32wbxx.c ****   * @param  None
  295:Core/Src/system_stm32wbxx.c ****   * @retval None
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 8
 
 
  296:Core/Src/system_stm32wbxx.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  309:Core/Src/system_stm32wbxx.c ****     case 0x00: /* MSI used as system clock source */
  310:Core/Src/system_stm32wbxx.c ****       SystemCoreClock = msirange;
  149              		.loc 1 310 7 is_stmt 1 view .LVU38
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 9
 
 
  150              		.loc 1 310 23 is_stmt 0 view .LVU39
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  159 0034 9B68     		ldr	r3, [r3, #8]
  160              		.loc 1 355 52 view .LVU43
  161 0036 C3F30313 		ubfx	r3, r3, #4, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 10
 
 
  162              		.loc 1 355 7 view .LVU44
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  201              		.loc 1 327 19 is_stmt 0 view .LVU59
  202 0066 DB68     		ldr	r3, [r3, #12]
  327:Core/Src/system_stm32wbxx.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 11
 
 
  203              		.loc 1 327 49 view .LVU60
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  345:Core/Src/system_stm32wbxx.c ****       break;
  241              		.loc 1 345 7 is_stmt 1 view .LVU77
  345:Core/Src/system_stm32wbxx.c ****       break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 12
 
 
  242              		.loc 1 345 32 is_stmt 0 view .LVU78
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  282              	.L18:
  283 00ae 00BF     		.align	2
  284              	.L17:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 13
 
 
  285 00b0 00000000 		.word	MSIRangeTable
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  344 003c 00000000 		.word	0
  345              		.global	APBPrescTable
  346              		.section	.rodata.APBPrescTable,"a"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 14
 
 
  347              		.align	2
@@ -823,29 +823,29 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 1
  392              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  393              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  394              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:21     .text.SystemInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:27     .text.SystemInit:00000000 SystemInit
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:94     .text.SystemInit:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:100    .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:134    .text.SystemCoreClockUpdate:0000001e $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:285    .text.SystemCoreClockUpdate:000000b0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:328    .rodata.MSIRangeTable:00000000 MSIRangeTable
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:386    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:364    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:298    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:295    .rodata.SmpsPrescalerTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:325    .rodata.MSIRangeTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:350    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:347    .rodata.APBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:361    .rodata.AHBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:383    .data.SystemCoreClock:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:147    .text.SystemCoreClockUpdate:0000002b $d
-C:\Users\Nathan\AppData\Local\Temp\ccOyOHmk.s:147    .text.SystemCoreClockUpdate:0000002c $t
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:21     .text.SystemInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:27     .text.SystemInit:00000000 SystemInit
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:94     .text.SystemInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:100    .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:134    .text.SystemCoreClockUpdate:0000001e $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:285    .text.SystemCoreClockUpdate:000000b0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:328    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:386    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:364    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:298    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:295    .rodata.SmpsPrescalerTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:325    .rodata.MSIRangeTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:350    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:347    .rodata.APBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:361    .rodata.AHBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:383    .data.SystemCoreClock:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:147    .text.SystemCoreClockUpdate:0000002b $d
+C:\Users\Nathan\AppData\Local\Temp\ccCDdAB0.s:147    .text.SystemCoreClockUpdate:0000002c $t
 
 NO UNDEFINED SYMBOLS
