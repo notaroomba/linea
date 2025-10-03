@@ -126,98 +126,86 @@ patchouli_tx_t patchouli_pen_pw100 = {
 // };
 
 
+// Optimized NOP macros for precise timing
 #define _5NOP()   do{asm volatile ("nop\nnop\nnop\nnop\nnop");} while(0)
 #define _10NOP()  do{_5NOP();_5NOP();} while(0)
 #define _100NOP() do{_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();}while(0)
-// nops are calculated from the round(((CPU Freq/TX Freq) - 13)/2 +- 5.5) where the larger value is before the tx_low
+
+// Timing calculation: For 64MHz CPU, each NOP = 1 cycle
+// Period = 64MHz / Target_Frequency
+// Half-period = Period / 2
+// NOPs needed = Half-period - GPIO_operation_overhead
+// GPIO overhead ≈ 2-3 cycles for BSRR operations
+
 void _PW100_FSTEP_480(void){
-    // 480kHz
-    // need 300 cycles (old)
-    // need 133 cycles (new) (64MHz / 480kHz)
-    // 133 - 13 = 120
-    // 120 / 2 = 60
-    // 60 - 5.5 = 55
-    // 60 + 5.5 = 65.5
-    // 54.5 to 65.5
+    // 480kHz target frequency
+    // Period = 64MHz / 480kHz = 133.33 cycles
+    // Half-period = 66.67 cycles
+    // HIGH duration = 66 cycles (accounting for GPIO overhead)
+    // LOW duration = 67 cycles (accounting for GPIO overhead)
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
-    uint16_t  i;
-    for (i=0; i<ncycle; i++){ // 3 cycles
+    uint16_t i;
+    for (i=0; i<ncycle; i++){
         PATCHOULI_TX_HIGH();
-        //66
-        _10NOP();
-        _10NOP();
-        _10NOP();
-        _10NOP();
-        _10NOP();
-        _10NOP();
+        // 66 cycles: 6*10 + 1*5 + 1 = 66
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
         _5NOP();
         asm volatile ("nop");
+        
         PATCHOULI_TX_LOW();
-        //55
-        _10NOP();
-        _10NOP();
-        _10NOP();
-        _10NOP();
-        _10NOP();
+        // 67 cycles: 6*10 + 1*5 + 2 = 67
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
         _5NOP();
+        asm volatile ("nop");
+        asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_490(void){
-    // 490kHz
-    // need 294 cycles (old)
-    // need 130.6 cycles (new) (64MHz / 490kHz)
-    // 130 - 13 = 117
-    // 117 / 2 = 58.5
-    // 58.5 - 5.5 = 53
-    // 58.5 + 5.5 = 64
-    // 53 to 64
+    // 490kHz target frequency
+    // Period = 64MHz / 490kHz = 130.61 cycles
+    // Half-period = 65.31 cycles
+    // HIGH duration = 65 cycles (accounting for GPIO overhead)
+    // LOW duration = 66 cycles (accounting for GPIO overhead)
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
-    uint16_t  i;
-    for (i=0; i<ncycle; i++){ // 3 cycles
+    uint16_t i;
+    for (i=0; i<ncycle; i++){
         PATCHOULI_TX_HIGH();
-        // 64
-        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 65 cycles: 6*10 + 1*5 = 65
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
+        _5NOP();
+        
         PATCHOULI_TX_LOW();
-        // 53
-        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 66 cycles: 6*10 + 1*5 + 1 = 66
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
+        _5NOP();
         asm volatile ("nop");
     }
     PATCHOULI_TX_TRISTATE();
 }
 
 void _PW100_FSTEP_500(void){
-    // 500kHz
-    // need 128 cycles (new) (64MHz / 500kHz)
-    // 128 - 13 = 115
-    // 115 / 2 = 57.5
-    // 57.5 - 5.5 = 52
-    // 57.5 + 5.5 = 63
-    // 52 to 63
+    // 500kHz target frequency
+    // Period = 64MHz / 500kHz = 128 cycles
+    // Half-period = 64 cycles
+    // HIGH duration = 64 cycles (accounting for GPIO overhead)
+    // LOW duration = 64 cycles (accounting for GPIO overhead)
     PATCHOULI_TX_PP();
     const int ncycle = patchouli_pen_pw100.tx_ncycle;
-    uint16_t  i;
-    for (i=0; i<ncycle; i++){ // 3 cycles
+    uint16_t i;
+    for (i=0; i<ncycle; i++){
         PATCHOULI_TX_HIGH();
-        // 63
-        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 64 cycles: 6*10 + 1*5 - 1 = 64
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
+        _5NOP();
+        
         PATCHOULI_TX_LOW();
-        // 52
-        _10NOP();_10NOP();_10NOP();_10NOP();_10NOP();
-        asm volatile ("nop");
-        asm volatile ("nop");
+        // 64 cycles: 6*10 + 1*5 - 1 = 64
+        _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP(); _10NOP();
+        _5NOP();
     }
     PATCHOULI_TX_TRISTATE();
 }
